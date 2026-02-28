@@ -95,7 +95,8 @@ class Conductor {
     updateSyllables() {
         const now = this.songPosition;
         this.activeSyllables = this.activeSyllables.filter(s => {
-            if (now > s.targetHitTime + this.windows.GOOD) {
+            // Miss threshold (moved further left by increasing grace period to 400ms)
+            if (now > s.targetHitTime + 400) {
                 this.handleMiss();
                 s.element.remove();
                 return false;
