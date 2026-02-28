@@ -67,8 +67,9 @@ class Conductor {
         this.totalPossible = 0;
         this.activeSyllables = [];
         this.pendingFirstSyllables = [];
+        this.queuedSyllables = [];
         this.update();
-        this.spawnLoop();
+        this.spawnWord();
 
         setTimeout(() => this.endGame(), this.gameDuration);
     }
@@ -98,15 +99,6 @@ class Conductor {
 
     updateSyllables() {
         const now = this.songPosition;
-
-        // Auto-play the first syllable exactly on beat
-        if (this.pendingFirstSyllables.length > 0) {
-            const pendingParams = this.pendingFirstSyllables[0];
-            if (now >= pendingParams.targetHitTime) {
-                this.pendingFirstSyllables.shift();
-                this.handleAutoHit(pendingParams);
-            }
-        }
 
         this.activeSyllables = this.activeSyllables.filter(s => {
             if (now > s.targetHitTime + this.windows.GOOD) {
@@ -150,15 +142,6 @@ class Conductor {
         }
     }
 
-    spawnLoop() {
-        if (!this.isPlaying) return;
-        try {
-            this.spawnWord();
-        } catch (e) {
-            console.warn('Spawn loop error, retrying...', e);
-        }
-    }
-
     spawnWord() {
         const pool = levelManager.getFilteredVocabulary();
         if (!pool || pool.length === 0) {
@@ -192,10 +175,11 @@ class Conductor {
         this.canvas.appendChild(wordContainer);
         this.currentWordContainer = wordContainer;
 
+        this.queuedSyllables = [];
+        this.pendingFirstSyllables = [];
+
         wordData.syllables.forEach((syll, index) => {
             const isStress = index === wordData.stress_index;
-            const targetHitTime = baseTime + (index * this.msPerBeat);
-            this.totalPossible++;
 
             const element = document.createElement('div');
             element.className = 'syllable-wrapper';
@@ -208,33 +192,47 @@ class Conductor {
             const syllableObj = {
                 syllable: syll,
                 isStress,
-                targetHitTime,
+                targetHitTime: 0,
                 element,
                 wordId,
                 wordData,
+                index,
                 isLastSyllable: index === wordData.syllables.length - 1
             };
 
-            // If it's the first syllable of a multi-syllable word, it's a "free" beat to establish rhythm
-            if (index === 0 && wordData.syllables.length > 1) {
-                // We pre-decrement the total possible targets so accuracy math doesn't break
-                // And schedule it to be auto-played
-                if (!this.pendingFirstSyllables) this.pendingFirstSyllables = [];
+            // First syllable waits for user to tap to start the rhythm sequence
+            if (index === 0) {
+                syllableObj.element.querySelector('.syllable-card').classList.add('waiting-pulse');
                 this.pendingFirstSyllables.push(syllableObj);
             } else {
-                this.totalPossible++;
-                this.activeSyllables.push(syllableObj);
+                this.queuedSyllables.push(syllableObj);
             }
         });
-
-        let loopWait = 1500 + (wordData.syllables.length * this.msPerBeat) + 800;
-        if (this.nextWordTimeout) clearTimeout(this.nextWordTimeout);
-        this.nextWordTimeout = setTimeout(() => this.spawnLoop(), loopWait);
     }
 
     checkInput() {
         if (!this.isPlaying) return;
         const now = this.songPosition;
+
+        // User tapped the first syllable! Start the rhythm.
+        if (this.pendingFirstSyllables.length > 0) {
+            const first = this.pendingFirstSyllables.shift();
+
+            const card = first.element.querySelector('.syllable-card');
+            if (card) card.classList.remove('waiting-pulse');
+
+            this.handleAutoHit(first);
+
+            // Cascade the timing for all subsequent syllables relative to this exact tap
+            this.queuedSyllables.forEach(q => {
+                q.targetHitTime = now + (q.index * this.msPerBeat);
+                this.activeSyllables.push(q);
+                this.totalPossible++;
+            });
+            this.queuedSyllables = [];
+            return;
+        }
+
         let hit = false;
 
         if (this.activeSyllables.length > 0) {
@@ -290,6 +288,7 @@ class Conductor {
                 levelManager.markWordMastered(syllableObj.wordData.word);
             }
             delete this.wordTracking[syllableObj.wordId];
+            setTimeout(() => this.spawnWord(), 1500);
         }
 
         const feedback = document.createElement('div');
@@ -314,12 +313,14 @@ class Conductor {
         if (syllableObj.isLastSyllable) {
             // Technically impossible under current rules, but safe guarding
             this.showTranslation(syllableObj.wordData, true);
+            setTimeout(() => this.spawnWord(), 1500);
         }
     }
 
     handleMiss(syllableObj) {
         if (syllableObj && syllableObj.isLastSyllable) {
             this.showTranslation(syllableObj.wordData, false);
+            setTimeout(() => this.spawnWord(), 1500);
         }
 
         if (syllableObj && syllableObj.wordId) {
