@@ -113,33 +113,40 @@ h1 {
     /* Ensure off-screen cards don't expand width */
 }
 
-/* Hit Zone Target Line */
-#hit-zone {
+.word-container {
     position: absolute;
+    top: 50%;
     left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 60px;
-    transform: translateX(-50%);
-    pointer-events: none;
-    z-index: 5;
+    transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 90%;
+    flex-wrap: wrap;
+    z-index: 10;
 }
 
-.hit-line {
-    width: 4px;
+.syllable-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.approach-ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, transparent, rgba(78, 205, 196, 0.5) 20%, rgba(78, 205, 196, 0.8) 50%, rgba(78, 205, 196, 0.5) 80%, transparent);
-    box-shadow: 0 0 15px rgba(78, 205, 196, 0.8);
-    border-radius: 2px;
-    transition: all 0.1s;
-}
-
-body.pulse-active .hit-line {
-    background: linear-gradient(180deg, transparent, rgba(255, 217, 61, 0.6) 20%, rgba(255, 217, 61, 1) 50%, rgba(255, 217, 61, 0.6) 80%, transparent);
-    box-shadow: 0 0 25px rgba(255, 217, 61, 1);
-    transform: scaleX(1.5);
+    min-width: 80px;
+    min-height: 80px;
+    border: 4px solid var(--accent-coral);
+    border-radius: 16px;
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 15;
+    transition: background 0.2s ease;
 }
 
 .syllable-card {
@@ -150,7 +157,6 @@ body.pulse-active .hit-line {
     border-bottom: 4px solid var(--accent-bamboo);
     border-radius: 16px;
     padding: 1rem 1.5rem;
-    margin: 0.5rem;
     min-width: var(--card-min-width);
     text-align: center;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
@@ -159,11 +165,31 @@ body.pulse-active .hit-line {
     font-weight: 800;
     font-size: clamp(1.4rem, 6vw, 2.2rem);
     z-index: 10;
+    position: relative;
+    left: auto !important;
+    /* override any old absolute inline styles */
 }
 
 .syllable-card.stress-beat {
     border-color: var(--accent-gold);
     box-shadow: 0 0 20px rgba(255, 217, 61, 0.2);
+}
+
+.syllable-card.hit {
+    background: var(--accent-bamboo);
+    color: white;
+    border-color: white;
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+.syllable-card.hit.perfect {
+    background: var(--accent-gold);
+}
+
+.syllable-card.missed {
+    background: #ff4a4a;
+    opacity: 0.3;
 }
 
 /* Hit Feedback */

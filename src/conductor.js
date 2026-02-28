@@ -96,10 +96,12 @@ class Conductor {
     updateSyllables() {
         const now = this.songPosition;
         this.activeSyllables = this.activeSyllables.filter(s => {
-            // Miss threshold (moved further left by increasing grace period to 400ms)
-            if (now > s.targetHitTime + 400) {
+            if (now > s.targetHitTime + this.windows.GOOD) {
                 this.handleMiss(s);
-                s.element.remove();
+                const card = s.element.querySelector('.syllable-card');
+                if (card) card.classList.add('missed');
+                const ring = s.element.querySelector('.approach-ring');
+                if (ring) ring.style.display = 'none';
                 return false;
             }
             return true;
@@ -107,11 +109,23 @@ class Conductor {
 
         this.activeSyllables.forEach(s => {
             const remaining = s.targetHitTime - now;
-            const x = (remaining / 2000) * 100 + 50;
-            s.element.style.left = `${x}%`;
+            const ring = s.element.querySelector('.approach-ring');
+            if (!ring) return;
 
-            if (s.isStress && Math.abs(remaining) < 16) {
-                // Stress pulse logic handled here visually if needed
+            if (remaining < 2000 && remaining > 0) {
+                // Shrink ring from 3x down to 1x exactly at 0ms
+                const scale = 1 + (remaining / 2000) * 2;
+                const opacity = remaining > 1500 ? (2000 - remaining) / 500 : 1;
+                ring.style.transform = `translate(-50%, -50%) scale(${scale})`;
+                ring.style.opacity = opacity;
+                if (s.isStress && remaining < 100) {
+                    ring.style.borderColor = 'var(--accent-gold)';
+                }
+            } else if (remaining <= 0) {
+                ring.style.transform = `translate(-50%, -50%) scale(1)`;
+                ring.style.opacity = 0;
+            } else {
+                ring.style.opacity = 0;
             }
         });
     }
@@ -130,7 +144,6 @@ class Conductor {
         } catch (e) {
             console.warn('Spawn loop error, retrying...', e);
         }
-        setTimeout(() => this.spawnLoop(), 2000 + Math.random() * 1000);
     }
 
     spawnWord() {
@@ -138,6 +151,10 @@ class Conductor {
         if (!pool || pool.length === 0) {
             console.warn('No vocabulary loaded yet.');
             return;
+        }
+
+        if (this.currentWordContainer) {
+            this.currentWordContainer.remove();
         }
 
         const wordData = pool[Math.floor(Math.random() * pool.length)];
@@ -150,16 +167,23 @@ class Conductor {
             isValid: true
         };
 
+        const wordContainer = document.createElement('div');
+        wordContainer.className = 'word-container';
+        this.canvas.appendChild(wordContainer);
+        this.currentWordContainer = wordContainer;
+
         wordData.syllables.forEach((syll, index) => {
             const isStress = index === wordData.stress_index;
             const targetHitTime = baseTime + (index * this.msPerBeat);
             this.totalPossible++;
 
             const element = document.createElement('div');
-            element.className = `syllable-card ${isStress ? 'stress-beat' : ''}`;
-            element.innerText = syll;
-            element.style.position = 'absolute';
-            this.canvas.appendChild(element);
+            element.className = 'syllable-wrapper';
+            element.innerHTML = `
+                <div class="approach-ring" style="opacity: 0;"></div>
+                <div class="syllable-card ${isStress ? 'stress-beat' : ''}">${syll}</div>
+            `;
+            wordContainer.appendChild(element);
 
             this.activeSyllables.push({
                 syllable: syll,
@@ -171,6 +195,10 @@ class Conductor {
                 isLastSyllable: index === wordData.syllables.length - 1
             });
         });
+
+        let loopWait = 2500 + (wordData.syllables.length * this.msPerBeat) + 1000;
+        if (this.nextWordTimeout) clearTimeout(this.nextWordTimeout);
+        this.nextWordTimeout = setTimeout(() => this.spawnLoop(), loopWait);
     }
 
     checkInput() {
@@ -187,7 +215,16 @@ class Conductor {
                 const rating = diff <= this.windows.PERFECT ? 'PERFECT' : 'GOOD';
                 this.handleHit(rating, diff, first);
                 indakAudio.playSyllable(first.isStress);
-                first.element.remove();
+
+                const card = first.element.querySelector('.syllable-card');
+                if (card) {
+                    card.classList.add('hit', rating.toLowerCase());
+                }
+                const ring = first.element.querySelector('.approach-ring');
+                if (ring) {
+                    ring.style.display = 'none';
+                }
+
                 this.activeSyllables.shift();
                 this.spawnParticles(first.element.getBoundingClientRect());
             }
