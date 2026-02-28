@@ -25,11 +25,20 @@ class Conductor {
     }
 
     async init() {
-        const response = await fetch('data/vocabulary.json');
-        const vocab = await response.json();
-        levelManager.setVocabulary(vocab);
-        this.createDebugOverlay();
-        this.highScore = parseInt(localStorage.getItem('indak_high_flow') || '0');
+        try {
+            const response = await fetch('/data/vocabulary.json');
+            if (!response.ok) throw new Error('Vocabulary fail');
+            const vocab = await response.json();
+            levelManager.setVocabulary(vocab);
+            this.createDebugOverlay();
+            this.highScore = parseInt(localStorage.getItem('indak_high_flow') || '0');
+        } catch (error) {
+            console.error('Conductor Init Error:', error);
+            // Fallback: use a small hardcoded vocab if fetch fails
+            levelManager.setVocabulary([
+                { word: "Indak", syllables: ["In", "dak"], stress_index: 0, meaning: "To dance rhythmically" }
+            ]);
+        }
     }
 
     createDebugOverlay() {
@@ -113,12 +122,21 @@ class Conductor {
 
     spawnLoop() {
         if (!this.isPlaying) return;
-        this.spawnWord();
+        try {
+            this.spawnWord();
+        } catch (e) {
+            console.warn('Spawn loop error, retrying...', e);
+        }
         setTimeout(() => this.spawnLoop(), 2000 + Math.random() * 1000);
     }
 
     spawnWord() {
         const pool = levelManager.getFilteredVocabulary();
+        if (!pool || pool.length === 0) {
+            console.warn('No vocabulary loaded yet.');
+            return;
+        }
+
         const wordData = pool[Math.floor(Math.random() * pool.length)];
         const baseTime = this.songPosition + 2500;
 

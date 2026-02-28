@@ -8,6 +8,7 @@ const ASSETS_TO_CACHE = [
     '/main.js',
     '/install-prompt.js',
     '/manifest.json',
+    '/data/vocabulary.json',
     '/assets/images/tropical_night_bg.png',
     '/icons/icon-192.png',
     '/icons/icon-512.png'
