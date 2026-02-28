@@ -254,10 +254,11 @@ class Conductor {
         // Definition
         let content = `<div>${wordData.word} = ${wordData.meaning}</div>`;
 
-        // Pronunciation Guide (Only if not perfect)
         if (!isPerfect) {
-            const pron = wordData.syllables.join('-');
-            content += `<div class="pronunciation-guide">Pronounce: ${pron}</div>`;
+            const pron = wordData.syllables.map((s, i) =>
+                i === wordData.stress_index ? s.toUpperCase() : s.toLowerCase()
+            ).join('-');
+            content += `<div class="pronunciation-guide">Stress: ${pron}</div>`;
         }
 
         trans.innerHTML = content;
