@@ -1090,5 +1090,473 @@
         ],
         "stress_index": 1,
         "meaning": "Play"
+    },
+    {
+        "word": "Palamahaw",
+        "syllables": [
+            "Pa",
+            "la",
+            "ma",
+            "haw"
+        ],
+        "stress_index": 3,
+        "meaning": "Breakfast"
+    },
+    {
+        "word": "Panyapon",
+        "syllables": [
+            "Pan",
+            "ya",
+            "pon"
+        ],
+        "stress_index": 1,
+        "meaning": "Dinner"
+    },
+    {
+        "word": "Panyaga",
+        "syllables": [
+            "Pan",
+            "ya",
+            "ga"
+        ],
+        "stress_index": 1,
+        "meaning": "Lunch"
+    },
+    {
+        "word": "Pahuway",
+        "syllables": [
+            "Pa",
+            "hu",
+            "way"
+        ],
+        "stress_index": 2,
+        "meaning": "Rest"
+    },
+    {
+        "word": "Dalagan",
+        "syllables": [
+            "Da",
+            "la",
+            "gan"
+        ],
+        "stress_index": 1,
+        "meaning": "Run"
+    },
+    {
+        "word": "Pamatian",
+        "syllables": [
+            "Pa",
+            "ma",
+            "ti",
+            "an"
+        ],
+        "stress_index": 2,
+        "meaning": "Listen to"
+    },
+    {
+        "word": "Hampangan",
+        "syllables": [
+            "Ham",
+            "pa",
+            "ngan"
+        ],
+        "stress_index": 1,
+        "meaning": "Toy / Playground"
+    },
+    {
+        "word": "Kadlawan",
+        "syllables": [
+            "Kad",
+            "la",
+            "wan"
+        ],
+        "stress_index": 1,
+        "meaning": "Funny / To laugh at"
+    },
+    {
+        "word": "Hibian",
+        "syllables": [
+            "Hi",
+            "bi",
+            "an"
+        ],
+        "stress_index": 1,
+        "meaning": "To cry over"
+    },
+    {
+        "word": "Sapatos",
+        "syllables": [
+            "Sa",
+            "pa",
+            "tos"
+        ],
+        "stress_index": 1,
+        "meaning": "Shoes"
+    },
+    {
+        "word": "Panapton",
+        "syllables": [
+            "Pa",
+            "nap",
+            "ton"
+        ],
+        "stress_index": 1,
+        "meaning": "Clothes"
+    },
+    {
+        "word": "Batalan",
+        "syllables": [
+            "Ba",
+            "ta",
+            "lan"
+        ],
+        "stress_index": 1,
+        "meaning": "Washroom"
+    },
+    {
+        "word": "Kasilyas",
+        "syllables": [
+            "Ka",
+            "sil",
+            "yas"
+        ],
+        "stress_index": 1,
+        "meaning": "Toilet"
+    },
+    {
+        "word": "Kusina",
+        "syllables": [
+            "Ku",
+            "si",
+            "na"
+        ],
+        "stress_index": 1,
+        "meaning": "Kitchen"
+    },
+    {
+        "word": "Bintana",
+        "syllables": [
+            "Bin",
+            "ta",
+            "na"
+        ],
+        "stress_index": 1,
+        "meaning": "Window"
+    },
+    {
+        "word": "Hagdanan",
+        "syllables": [
+            "Hag",
+            "da",
+            "nan"
+        ],
+        "stress_index": 1,
+        "meaning": "Stairs"
+    },
+    {
+        "word": "Pirtahan",
+        "syllables": [
+            "Pir",
+            "ta",
+            "han"
+        ],
+        "stress_index": 1,
+        "meaning": "Door"
+    },
+    {
+        "word": "Karsada",
+        "syllables": [
+            "Kar",
+            "sa",
+            "da"
+        ],
+        "stress_index": 1,
+        "meaning": "Street / Road"
+    },
+    {
+        "word": "Tindahan",
+        "syllables": [
+            "Tin",
+            "da",
+            "han"
+        ],
+        "stress_index": 1,
+        "meaning": "Store / Market"
+    },
+    {
+        "word": "Eskwelahan",
+        "syllables": [
+            "Es",
+            "kwe",
+            "la",
+            "han"
+        ],
+        "stress_index": 2,
+        "meaning": "School"
+    },
+    {
+        "word": "Simbahan",
+        "syllables": [
+            "Sim",
+            "ba",
+            "han"
+        ],
+        "stress_index": 1,
+        "meaning": "Church"
+    },
+    {
+        "word": "Ospital",
+        "syllables": [
+            "Os",
+            "pi",
+            "tal"
+        ],
+        "stress_index": 2,
+        "meaning": "Hospital"
+    },
+    {
+        "word": "Pulisya",
+        "syllables": [
+            "Pu",
+            "lis",
+            "ya"
+        ],
+        "stress_index": 1,
+        "meaning": "Police"
+    },
+    {
+        "word": "Bombero",
+        "syllables": [
+            "Bom",
+            "be",
+            "ro"
+        ],
+        "stress_index": 1,
+        "meaning": "Firefighter"
+    },
+    {
+        "word": "Maestro",
+        "syllables": [
+            "Ma",
+            "es",
+            "tro"
+        ],
+        "stress_index": 1,
+        "meaning": "Male Teacher"
+    },
+    {
+        "word": "Maestra",
+        "syllables": [
+            "Ma",
+            "es",
+            "tra"
+        ],
+        "stress_index": 1,
+        "meaning": "Female Teacher"
+    },
+    {
+        "word": "Estudyante",
+        "syllables": [
+            "Es",
+            "tud",
+            "yan",
+            "te"
+        ],
+        "stress_index": 2,
+        "meaning": "Student"
+    },
+    {
+        "word": "Pandayan",
+        "syllables": [
+            "Pan",
+            "da",
+            "yan"
+        ],
+        "stress_index": 1,
+        "meaning": "Blacksmith / Forge"
+    },
+    {
+        "word": "Mangingisda",
+        "syllables": [
+            "Ma",
+            "ngi",
+            "ngis",
+            "da"
+        ],
+        "stress_index": 2,
+        "meaning": "Fisherman"
+    },
+    {
+        "word": "Mangunguma",
+        "syllables": [
+            "Ma",
+            "ngu",
+            "ngu",
+            "ma"
+        ],
+        "stress_index": 2,
+        "meaning": "Farmer"
+    },
+    {
+        "word": "Manugbaligya",
+        "syllables": [
+            "Ma",
+            "nug",
+            "ba",
+            "lig",
+            "ya"
+        ],
+        "stress_index": 3,
+        "meaning": "Seller / Vendor"
+    },
+    {
+        "word": "Manugbakal",
+        "syllables": [
+            "Ma",
+            "nug",
+            "ba",
+            "kal"
+        ],
+        "stress_index": 3,
+        "meaning": "Buyer / Shopper"
+    },
+    {
+        "word": "Salakyan",
+        "syllables": [
+            "Sa",
+            "lak",
+            "yan"
+        ],
+        "stress_index": 1,
+        "meaning": "Vehicle"
+    },
+    {
+        "word": "Eroplano",
+        "syllables": [
+            "E",
+            "rop",
+            "la",
+            "no"
+        ],
+        "stress_index": 2,
+        "meaning": "Airplane"
+    },
+    {
+        "word": "Pasahero",
+        "syllables": [
+            "Pa",
+            "sa",
+            "he",
+            "ro"
+        ],
+        "stress_index": 2,
+        "meaning": "Passenger"
+    },
+    {
+        "word": "Baybayon",
+        "syllables": [
+            "Bay",
+            "ba",
+            "yon"
+        ],
+        "stress_index": 1,
+        "meaning": "Beach / Shore"
+    },
+    {
+        "word": "Talampas",
+        "syllables": [
+            "Ta",
+            "lam",
+            "pas"
+        ],
+        "stress_index": 2,
+        "meaning": "Plateau"
+    },
+    {
+        "word": "Kapatagan",
+        "syllables": [
+            "Ka",
+            "pa",
+            "ta",
+            "gan"
+        ],
+        "stress_index": 2,
+        "meaning": "Plains"
+    },
+    {
+        "word": "Kagulangan",
+        "syllables": [
+            "Ka",
+            "gu",
+            "la",
+            "ngan"
+        ],
+        "stress_index": 2,
+        "meaning": "Forest"
+    },
+    {
+        "word": "Kasapatan",
+        "syllables": [
+            "Ka",
+            "sa",
+            "pa",
+            "tan"
+        ],
+        "stress_index": 2,
+        "meaning": "Animals"
+    },
+    {
+        "word": "Kalibutan",
+        "syllables": [
+            "Ka",
+            "li",
+            "bu",
+            "tan"
+        ],
+        "stress_index": 2,
+        "meaning": "World"
+    },
+    {
+        "word": "Kasanag",
+        "syllables": [
+            "Ka",
+            "sa",
+            "nag"
+        ],
+        "stress_index": 1,
+        "meaning": "Brightness"
+    },
+    {
+        "word": "Kadulom",
+        "syllables": [
+            "Ka",
+            "du",
+            "lom"
+        ],
+        "stress_index": 1,
+        "meaning": "Darkness"
+    },
+    {
+        "word": "Palanggaon",
+        "syllables": [
+            "Pa",
+            "lang",
+            "ga",
+            "on"
+        ],
+        "stress_index": 2,
+        "meaning": "To be loved"
+    },
+    {
+        "word": "Madinalag-on",
+        "syllables": [
+            "Ma",
+            "di",
+            "na",
+            "lag",
+            "on"
+        ],
+        "stress_index": 3,
+        "meaning": "Successful"
     }
 ]
