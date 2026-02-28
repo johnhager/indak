@@ -20,10 +20,18 @@ class AudioManager {
     initVoice() {
         const setVoice = () => {
             const voices = this.synth.getVoices();
-            // Priority: Hiligaynon (hil-PH) -> Tagalog (tl-PH) -> Generic Spanish (es-ES is phonetically closer than English)
+            // Priority: Hiligaynon (hil-PH) -> Tagalog (tl-PH) -> Filipino (fil-PH) -> Spanish (es-ES / es-US) -> English (en-US)
             this.voice = voices.find(v => v.lang === 'hil-PH') ||
                 voices.find(v => v.lang === 'tl-PH') ||
-                voices.find(v => v.lang.startsWith('es'));
+                voices.find(v => v.lang === 'fil-PH') ||
+                voices.find(v => v.lang.startsWith('es')) ||
+                voices.find(v => v.lang.startsWith('en'));
+
+            if (this.voice) {
+                console.log('AudioManager: Voice loaded -', this.voice.name, this.voice.lang);
+            } else {
+                console.warn('AudioManager: No voices found yet.');
+            }
         };
         setVoice();
         if (this.synth.onvoiceschanged !== undefined) {
