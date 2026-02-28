@@ -10,6 +10,25 @@ class AudioManager {
         this.vocalPath = 'assets/audio/vocals/';
         this.sounds = ['beat_normal.wav', 'beat_stress.wav', 'beat_fail.wav'];
         this.vocalBuffers = {};
+
+        // Native Speech Synthesis Fallback
+        this.synth = window.speechSynthesis;
+        this.voice = null;
+        this.initVoice();
+    }
+
+    initVoice() {
+        const setVoice = () => {
+            const voices = this.synth.getVoices();
+            // Priority: Hiligaynon (hil-PH) -> Tagalog (tl-PH) -> Generic Spanish (es-ES is phonetically closer than English)
+            this.voice = voices.find(v => v.lang === 'hil-PH') ||
+                voices.find(v => v.lang === 'tl-PH') ||
+                voices.find(v => v.lang.startsWith('es'));
+        };
+        setVoice();
+        if (this.synth.onvoiceschanged !== undefined) {
+            this.synth.onvoiceschanged = setVoice;
+        }
     }
 
     /**
@@ -78,24 +97,44 @@ class AudioManager {
         const key = syllableText.toLowerCase().replace(/[^a-z-]/g, '');
         const buffer = this.vocalBuffers[key];
 
-        if (!buffer) return;
+        if (buffer) {
+            const source = this.ctx.createBufferSource();
+            const gainNode = this.ctx.createGain();
 
-        const source = this.ctx.createBufferSource();
-        const gainNode = this.ctx.createGain();
+            source.buffer = buffer;
 
-        source.buffer = buffer;
+            // Rhythmic Pitch Shifting for Ilonggo "Lilt"
+            if (isStress) {
+                source.playbackRate.value = 1.05;
+                gainNode.gain.value = 0.8;
+            } else {
+                gainNode.gain.value = 0.6;
+            }
 
-        // Rhythmic Pitch Shifting for Ilonggo "Lilt"
-        if (isStress) {
-            source.playbackRate.value = 1.05; // 5% pitch increase
-            gainNode.gain.value = 0.8; // Boost volume for stress
+            source.connect(gainNode);
+            gainNode.connect(this.ctx.destination);
+            source.start(0);
         } else {
-            gainNode.gain.value = 0.6;
+            // Fallback: Native Speech Synthesis
+            this.speakSyllable(syllableText, isStress);
         }
+    }
 
-        source.connect(gainNode);
-        gainNode.connect(this.ctx.destination);
-        source.start(0);
+    speakSyllable(text, isStress) {
+        if (!this.synth) return;
+
+        // "Sharp Stab" interrupt
+        this.synth.cancel();
+
+        const utterance = new SpeechSynthesisUtterance(text);
+        if (this.voice) utterance.voice = this.voice;
+
+        // Ilonggo Lilt via Synthesis
+        utterance.pitch = isStress ? 1.4 : 1.2;
+        utterance.rate = 1.8; // High speed for percussion-like snap
+        utterance.volume = isStress ? 1.0 : 0.7;
+
+        this.synth.speak(utterance);
     }
 
     playFail() {
