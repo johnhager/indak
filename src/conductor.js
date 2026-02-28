@@ -215,8 +215,10 @@ class Conductor {
         }
 
         if (syllableObj.isLastSyllable) {
-            if (tracker && tracker.isValid && tracker.perfects === tracker.total) {
-                this.showTranslation(syllableObj.wordData);
+            const isPerfect = (tracker && tracker.isValid && tracker.perfects === tracker.total);
+            this.showTranslation(syllableObj.wordData, isPerfect);
+
+            if (isPerfect) {
                 levelManager.markWordMastered(syllableObj.wordData.word);
             }
             delete this.wordTracking[syllableObj.wordId];
@@ -230,6 +232,10 @@ class Conductor {
     }
 
     handleMiss(syllableObj) {
+        if (syllableObj && syllableObj.isLastSyllable) {
+            this.showTranslation(syllableObj.wordData, false);
+        }
+
         if (syllableObj && syllableObj.wordId) {
             delete this.wordTracking[syllableObj.wordId];
         }
@@ -241,12 +247,22 @@ class Conductor {
         setTimeout(() => document.body.classList.remove('miss-shake'), 200);
     }
 
-    showTranslation(wordData) {
+    showTranslation(wordData, isPerfect) {
         const trans = document.createElement('div');
         trans.className = 'translation-reveal';
-        trans.innerText = `${wordData.word} = ${wordData.meaning}`;
+
+        // Definition
+        let content = `<div>${wordData.word} = ${wordData.meaning}</div>`;
+
+        // Pronunciation Guide (Only if not perfect)
+        if (!isPerfect) {
+            const pron = wordData.syllables.join('-');
+            content += `<div class="pronunciation-guide">Pronounce: ${pron}</div>`;
+        }
+
+        trans.innerHTML = content;
         this.canvas.appendChild(trans);
-        setTimeout(() => trans.remove(), 1500);
+        setTimeout(() => trans.remove(), 2000);
     }
 
     spawnParticles(rect) {
