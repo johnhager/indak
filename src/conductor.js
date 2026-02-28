@@ -30,15 +30,16 @@ class Conductor {
             if (!response.ok) throw new Error('Vocabulary fail');
             const vocab = await response.json();
             levelManager.setVocabulary(vocab);
-            this.createDebugOverlay();
-            this.highScore = parseInt(localStorage.getItem('indak_high_flow') || '0');
         } catch (error) {
             console.error('Conductor Init Error:', error);
-            // Fallback: use a small hardcoded vocab if fetch fails
             levelManager.setVocabulary([
                 { word: "Indak", syllables: ["In", "dak"], stress_index: 0, meaning: "To dance rhythmically" }
             ]);
         }
+
+        // Critical UI/State - ensure these run regardless of network
+        this.createDebugOverlay();
+        this.highScore = parseInt(localStorage.getItem('indak_high_flow') || '0');
     }
 
     createDebugOverlay() {
