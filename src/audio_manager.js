@@ -139,9 +139,9 @@ class AudioManager {
         if (this.voice) utterance.voice = this.voice;
 
         // Ilonggo Lilt via Synthesis
-        utterance.pitch = isStress ? 1.4 : 1.2;
-        utterance.rate = 1.8; // High speed for percussion-like snap
-        utterance.volume = isStress ? 1.0 : 0.7;
+        utterance.pitch = isStress ? 1.3 : 1.1;
+        utterance.rate = 1.1; // Slower speed to allow the syllable to fully form
+        utterance.volume = isStress ? 1.0 : 0.8;
 
         this.synth.speak(utterance);
     }
