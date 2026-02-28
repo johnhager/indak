@@ -41,7 +41,12 @@ class Conductor {
 
         // Critical UI/State - ensure these run regardless of network
         this.createDebugOverlay();
-        this.highScore = parseInt(localStorage.getItem('indak_high_flow') || '0');
+        this.topScores = JSON.parse(localStorage.getItem('indak_top_flows') || '[]');
+        const oldHigh = parseInt(localStorage.getItem('indak_high_flow') || '0');
+        if (this.topScores.length === 0 && oldHigh > 0) {
+            this.topScores.push(oldHigh);
+        }
+        while (this.topScores.length < 3) this.topScores.push(0);
     }
 
     createDebugOverlay() {
@@ -269,11 +274,6 @@ class Conductor {
         else if (this.combo >= 10) this.multiplier = 2;
         else this.multiplier = 1;
 
-        if (this.combo > this.highScore) {
-            this.highScore = this.combo;
-            localStorage.setItem('indak_high_flow', this.highScore.toString());
-        }
-
         const tracker = this.wordTracking[syllableObj.wordId];
         if (tracker && tracker.isValid) {
             if (rating === 'PERFECT') tracker.perfects++;
@@ -327,6 +327,7 @@ class Conductor {
             delete this.wordTracking[syllableObj.wordId];
         }
         levelManager.handleRating('MISS');
+        this.checkTopScore(this.combo);
         this.combo = 0;
         this.multiplier = 1;
         indakAudio.playFail();
@@ -368,24 +369,35 @@ class Conductor {
         }
     }
 
+    checkTopScore(score) {
+        if (score === 0) return;
+        this.topScores.push(score);
+        this.topScores.sort((a, b) => b - a);
+        this.topScores = this.topScores.slice(0, 3);
+        localStorage.setItem('indak_top_flows', JSON.stringify(this.topScores));
+    }
+
     endGame() {
         this.isPlaying = false;
+        this.checkTopScore(this.combo);
         const accuracy = ((this.totalHits / this.totalPossible) * 100).toFixed(1);
         const summary = levelManager.getSummary();
 
         const summaryEl = document.getElementById('summary-screen');
         summaryEl.innerHTML = `
             <div class="glass-card">
-                <h2>Song Complete!</h2>
+                <h2>Session Complete!</h2>
                 <div class="stats-grid">
                     <div class="stat-item"><span>Accuracy</span><strong>${accuracy}%</strong></div>
-                    <div class="stat-item"><span>Highest Flow</span><strong>${this.highScore}</strong></div>
+                    <div class="stat-item"><span>Top Flow</span><strong>${this.topScores[0] || 0}</strong></div>
                     <div class="stat-item"><span>End Tier</span><strong>${summary.tier}</strong></div>
                 </div>
+                <h3>All-Time Best Flows</h3>
+                <div class="word-list">1st: ${this.topScores[0] || 0} | 2nd: ${this.topScores[1] || 0} | 3rd: ${this.topScores[2] || 0}</div>
                 <h3>Words Mastered</h3>
                 <div class="word-list">${summary.mastered.slice(0, 10).join(', ')}...</div>
                 <button id="restart-btn" class="btn-primary">TEKOT ULI (Play Again)</button>
-                <button id="share-btn" class="btn-primary" style="background: var(--accent-bamboo)">SHARE TO ILOILO</button>
+                <button id="share-btn" class="btn-primary" style="background: var(--accent-bamboo)">SHARE TO MANAPLA</button>
             </div>
         `;
         summaryEl.classList.remove('hidden');
@@ -398,7 +410,7 @@ class Conductor {
             if (navigator.share) {
                 navigator.share({
                     title: 'Indak - Ilonggo Rhythm Game',
-                    text: `I scored ${this.highScore} Flow and mastered ${summary.mastered.length} Hiligaynon words on Indak!`,
+                    text: `I hit a Top Flow of ${this.topScores[0] || 0} and mastered ${summary.mastered.length} Hiligaynon words on Indak!`,
                     url: window.location.href
                 });
             }
