@@ -33,9 +33,15 @@ body {
     background-position: center;
     color: var(--text-main);
     font-family: 'Outfit', sans-serif;
-    height: 100vh;
+    height: 100dvh;
+    /* Dynamic Fill for iOS */
     width: 100vw;
     overflow: hidden;
+    overscroll-behavior: none;
+    /* Block iOS rubber-banding */
+    user-select: none;
+    /* Prevent accidental text selection */
+    -webkit-user-select: none;
     display: flex;
     flex-direction: column;
     transition: background-color 0.1s ease;
@@ -46,8 +52,10 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
     padding: var(--safe-top) var(--safe-right) var(--safe-bottom) var(--safe-left);
     touch-action: none;
+    overscroll-behavior: none;
 }
 
 /* Stress Pulse Effect */
@@ -101,6 +109,8 @@ h1 {
     justify-content: center;
     position: relative;
     width: 100%;
+    overflow: hidden;
+    /* Ensure off-screen cards don't expand width */
 }
 
 .syllable-card {
