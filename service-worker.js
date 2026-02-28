@@ -7,7 +7,10 @@ const ASSETS_TO_CACHE = [
     '/style.css',
     '/main.js',
     '/install-prompt.js',
-    '/manifest.json'
+    '/manifest.json',
+    '/assets/images/tropical_night_bg.png',
+    '/icons/icon-192.png',
+    '/icons/icon-512.png'
 ];
 
 self.addEventListener('install', (event) => {
