@@ -79,8 +79,8 @@ class Conductor {
         // Sync with AudioContext
         this.songPosition = (indakAudio.ctx.currentTime - this.startTime) * 1000;
 
-        // Adaptive BPM update
-        this.bpm = levelManager.adaptiveBpm;
+        // Static BPM update
+        this.bpm = levelManager.currentBpm;
         this.msPerBeat = 60000 / this.bpm;
 
         this.updateSyllables();

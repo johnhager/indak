@@ -1,38 +1,25 @@
 class LevelManager {
     constructor() {
-        this.baseBpm = 80;
-        this.maxBpm = 160;
-        this.minBpm = 60;
-        this.tiers = this.getTeirsForSpeed('slow');
+        this.currentBpm = 80;
+        this.tiers = this.getTeirsForSpeed();
         this.currentTier = 1;
-        this.adaptiveBpm = this.baseBpm;
         this.consecutivePerfects = 0;
         this.consecutiveMisses = 0;
         this.vocabulary = [];
         this.masteredWords = new Set();
     }
 
-    getTeirsForSpeed(mode) {
-        if (mode === 'fast') {
-            return {
-                1: { name: 'Bugtaw', bpm: 140, maxSyllables: 2 },
-                2: { name: 'Lakat', bpm: 160, maxSyllables: 3 },
-                3: { name: 'Indak', bpm: 180, maxSyllables: 10 }
-            };
-        }
+    getTeirsForSpeed() {
         return {
-            1: { name: 'Bugtaw', bpm: 80, maxSyllables: 2 },
-            2: { name: 'Lakat', bpm: 100, maxSyllables: 3 },
-            3: { name: 'Indak', bpm: 120, maxSyllables: 10 }
+            1: { name: 'Bugtaw', maxSyllables: 2 },
+            2: { name: 'Lakat', maxSyllables: 3 },
+            3: { name: 'Indak', maxSyllables: 10 }
         };
     }
 
     setSpeedMode(mode) {
-        this.tiers = this.getTeirsForSpeed(mode);
-        this.baseBpm = this.tiers[1].bpm;
-        this.maxBpm = mode === 'fast' ? 220 : 160;
-        this.minBpm = mode === 'fast' ? 120 : 60;
-        this.adaptiveBpm = this.baseBpm;
+        this.tiers = this.getTeirsForSpeed();
+        this.currentBpm = mode === 'fast' ? 140 : 80;
         this.currentTier = 1;
     }
 
@@ -50,16 +37,14 @@ class LevelManager {
         if (rating === 'PERFECT') {
             this.consecutivePerfects++;
             this.consecutiveMisses = 0;
-            if (this.consecutivePerfects >= 3) {
-                this.adaptiveBpm = Math.min(this.adaptiveBpm + 2, this.maxBpm);
+            if (this.consecutivePerfects >= 4) { // Upgrade tier every 4 consecutive perfects
                 this.consecutivePerfects = 0;
                 this.checkTierUpgrade();
             }
         } else if (rating === 'MISS') {
             this.consecutiveMisses++;
             this.consecutivePerfects = 0;
-            if (this.consecutiveMisses >= 2) {
-                this.adaptiveBpm = Math.max(this.adaptiveBpm - 5, this.minBpm);
+            if (this.consecutiveMisses >= 3) {
                 this.consecutiveMisses = 0;
                 this.checkTierDowngrade();
             }
@@ -67,14 +52,14 @@ class LevelManager {
     }
 
     checkTierUpgrade() {
-        if (this.currentTier < 3 && this.adaptiveBpm >= this.tiers[this.currentTier + 1].bpm) {
+        if (this.currentTier < 3) {
             this.currentTier++;
             console.log(`Tier Up: ${this.tiers[this.currentTier].name}`);
         }
     }
 
     checkTierDowngrade() {
-        if (this.currentTier > 1 && this.adaptiveBpm < this.tiers[this.currentTier].bpm) {
+        if (this.currentTier > 1) {
             this.currentTier--;
             console.log(`Tier Down: ${this.tiers[this.currentTier].name}`);
         }
@@ -87,7 +72,7 @@ class LevelManager {
     getSummary() {
         return {
             tier: this.tiers[this.currentTier].name,
-            bpm: Math.floor(this.adaptiveBpm),
+            bpm: this.currentBpm,
             mastered: Array.from(this.masteredWords)
         };
     }
