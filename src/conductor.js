@@ -11,6 +11,7 @@ class Conductor {
         this.isPlaying = false;
 
         this.activeSyllables = [];
+        this.pendingFirstSyllables = [];
         this.combo = 0;
         this.multiplier = 1;
         this.totalHits = 0;
@@ -64,6 +65,8 @@ class Conductor {
         this.multiplier = 1;
         this.totalHits = 0;
         this.totalPossible = 0;
+        this.activeSyllables = [];
+        this.pendingFirstSyllables = [];
         this.update();
         this.spawnLoop();
 
