@@ -95,6 +95,16 @@ class Conductor {
 
     updateSyllables() {
         const now = this.songPosition;
+
+        // Auto-play the first syllable exactly on beat
+        if (this.pendingFirstSyllables.length > 0) {
+            const pendingParams = this.pendingFirstSyllables[0];
+            if (now >= pendingParams.targetHitTime) {
+                this.pendingFirstSyllables.shift();
+                this.handleAutoHit(pendingParams);
+            }
+        }
+
         this.activeSyllables = this.activeSyllables.filter(s => {
             if (now > s.targetHitTime + this.windows.GOOD) {
                 this.handleMiss(s);
@@ -162,10 +172,14 @@ class Conductor {
 
         const wordId = Math.random().toString(36).substr(2, 9);
         this.wordTracking[wordId] = {
-            total: wordData.syllables.length,
+            total: wordData.syllables.length - 1, // First syllable is free
             perfects: 0,
             isValid: true
         };
+
+        if (wordData.syllables.length === 1) {
+            this.wordTracking[wordId].total = 1; // Unless it's a 1-syllable word
+        }
 
         const wordContainer = document.createElement('div');
         wordContainer.className = 'word-container';
@@ -188,7 +202,7 @@ class Conductor {
             `;
             wordContainer.appendChild(element);
 
-            this.activeSyllables.push({
+            const syllableObj = {
                 syllable: syll,
                 isStress,
                 targetHitTime,
@@ -196,7 +210,18 @@ class Conductor {
                 wordId,
                 wordData,
                 isLastSyllable: index === wordData.syllables.length - 1
-            });
+            };
+
+            // If it's the first syllable of a multi-syllable word, it's a "free" beat to establish rhythm
+            if (index === 0 && wordData.syllables.length > 1) {
+                // We pre-decrement the total possible targets so accuracy math doesn't break
+                // And schedule it to be auto-played
+                if (!this.pendingFirstSyllables) this.pendingFirstSyllables = [];
+                this.pendingFirstSyllables.push(syllableObj);
+            } else {
+                this.totalPossible++;
+                this.activeSyllables.push(syllableObj);
+            }
         });
 
         let loopWait = 1500 + (wordData.syllables.length * this.msPerBeat) + 800;
@@ -269,6 +294,24 @@ class Conductor {
         feedback.innerText = rating;
         document.body.appendChild(feedback);
         setTimeout(() => feedback.remove(), 500);
+    }
+
+    handleAutoHit(syllableObj) {
+        indakAudio.playSyllable(syllableObj.isStress);
+        const card = syllableObj.element.querySelector('.syllable-card');
+        if (card) {
+            card.classList.add('hit', 'perfect');
+        }
+        const ring = syllableObj.element.querySelector('.approach-ring');
+        if (ring) {
+            ring.style.display = 'none';
+        }
+        this.spawnParticles(syllableObj.element.getBoundingClientRect());
+
+        if (syllableObj.isLastSyllable) {
+            // Technically impossible under current rules, but safe guarding
+            this.showTranslation(syllableObj.wordData, true);
+        }
     }
 
     handleMiss(syllableObj) {
