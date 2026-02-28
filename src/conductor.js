@@ -75,8 +75,6 @@ class Conductor {
         this.queuedSyllables = [];
         this.update();
         this.spawnWord();
-
-        setTimeout(() => this.endGame(), this.gameDuration);
     }
 
     update() {
@@ -148,6 +146,11 @@ class Conductor {
     }
 
     spawnWord() {
+        if (this.songPosition >= this.gameDuration) {
+            this.endGame();
+            return;
+        }
+
         const pool = levelManager.getFilteredVocabulary();
         if (!pool || pool.length === 0) {
             console.warn('No vocabulary loaded yet.');

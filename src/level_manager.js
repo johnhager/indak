@@ -30,7 +30,17 @@ class LevelManager {
 
     getFilteredVocabulary() {
         const tier = this.tiers[this.currentTier];
-        return this.vocabulary.filter(word => word.syllables.length <= tier.maxSyllables);
+        const validWords = this.vocabulary.filter(word => word.syllables.length <= tier.maxSyllables);
+
+        // Spaced Repetition weighting: unmastered = 5 copies, mastered = 4 copies (20% less frequent)
+        let pool = [];
+        validWords.forEach(word => {
+            const copies = this.masteredWords.has(word.word) ? 4 : 5;
+            for (let i = 0; i < copies; i++) {
+                pool.push(word);
+            }
+        });
+        return pool;
     }
 
     handleRating(rating) {
