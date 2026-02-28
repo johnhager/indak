@@ -161,6 +161,9 @@ class Conductor {
             element.style.position = 'absolute';
             this.canvas.appendChild(element);
 
+            // Pre-load the vocal asset
+            indakAudio.loadVocal(syll);
+
             this.activeSyllables.push({
                 syllable: syll,
                 isStress,
@@ -186,99 +189,99 @@ class Conductor {
                 hit = true;
                 const rating = diff <= this.windows.PERFECT ? 'PERFECT' : 'GOOD';
                 this.handleHit(rating, diff, first);
-                indakAudio.playSyllable(first.isStress);
+                indakAudio.playSyllable(first.isStress, first.syllable);
                 first.element.remove();
                 this.activeSyllables.shift();
                 this.spawnParticles(first.element.getBoundingClientRect());
             }
         }
     }
+}
 
-    handleHit(rating, offset, syllableObj) {
-        levelManager.handleRating(rating);
-        this.combo++;
-        this.totalHits += (rating === 'PERFECT' ? 1 : 0.5);
+handleHit(rating, offset, syllableObj) {
+    levelManager.handleRating(rating);
+    this.combo++;
+    this.totalHits += (rating === 'PERFECT' ? 1 : 0.5);
 
-        if (this.combo >= 20) this.multiplier = 4;
-        else if (this.combo >= 10) this.multiplier = 2;
-        else this.multiplier = 1;
+    if (this.combo >= 20) this.multiplier = 4;
+    else if (this.combo >= 10) this.multiplier = 2;
+    else this.multiplier = 1;
 
-        if (this.combo > this.highScore) {
-            this.highScore = this.combo;
-            localStorage.setItem('indak_high_flow', this.highScore.toString());
-        }
-
-        const tracker = this.wordTracking[syllableObj.wordId];
-        if (tracker && tracker.isValid) {
-            if (rating === 'PERFECT') tracker.perfects++;
-            else tracker.isValid = false; // "GOOD" hit invalidates the "PERFECT" word chain
-        }
-
-        if (syllableObj.isLastSyllable) {
-            const isPerfect = (tracker && tracker.isValid && tracker.perfects === tracker.total);
-            this.showTranslation(syllableObj.wordData, isPerfect);
-
-            if (isPerfect) {
-                levelManager.markWordMastered(syllableObj.wordData.word);
-            }
-            delete this.wordTracking[syllableObj.wordId];
-        }
-
-        const feedback = document.createElement('div');
-        feedback.className = `hit-feedback ${rating.toLowerCase()}`;
-        feedback.innerText = rating;
-        document.body.appendChild(feedback);
-        setTimeout(() => feedback.remove(), 500);
+    if (this.combo > this.highScore) {
+        this.highScore = this.combo;
+        localStorage.setItem('indak_high_flow', this.highScore.toString());
     }
 
-    handleMiss(syllableObj) {
-        if (syllableObj && syllableObj.isLastSyllable) {
-            this.showTranslation(syllableObj.wordData, false);
-        }
-
-        if (syllableObj && syllableObj.wordId) {
-            delete this.wordTracking[syllableObj.wordId];
-        }
-        levelManager.handleRating('MISS');
-        this.combo = 0;
-        this.multiplier = 1;
-        indakAudio.playFail();
-        document.body.classList.add('miss-shake');
-        setTimeout(() => document.body.classList.remove('miss-shake'), 200);
+    const tracker = this.wordTracking[syllableObj.wordId];
+    if (tracker && tracker.isValid) {
+        if (rating === 'PERFECT') tracker.perfects++;
+        else tracker.isValid = false; // "GOOD" hit invalidates the "PERFECT" word chain
     }
 
-    showTranslation(wordData, isPerfect) {
-        const trans = document.createElement('div');
-        trans.className = 'translation-reveal';
+    if (syllableObj.isLastSyllable) {
+        const isPerfect = (tracker && tracker.isValid && tracker.perfects === tracker.total);
+        this.showTranslation(syllableObj.wordData, isPerfect);
 
-        // Definition
-        let content = `<div>${wordData.word} = ${wordData.meaning}</div>`;
-
-        if (!isPerfect) {
-            const pron = wordData.syllables.map((s, i) =>
-                i === wordData.stress_index ? s.toUpperCase() : s.toLowerCase()
-            ).join('-');
-            content += `<div class="pronunciation-guide">Stress: ${pron}</div>`;
+        if (isPerfect) {
+            levelManager.markWordMastered(syllableObj.wordData.word);
         }
-
-        trans.innerHTML = content;
-        this.canvas.appendChild(trans);
-        setTimeout(() => trans.remove(), 2000);
+        delete this.wordTracking[syllableObj.wordId];
     }
 
-    spawnParticles(rect) {
-        for (let i = 0; i < 8; i++) {
-            const p = document.createElement('div');
-            p.className = 'spark';
-            p.style.left = `${rect.left + rect.width / 2}px`;
-            p.style.top = `${rect.top + rect.height / 2}px`;
-            const angle = Math.random() * Math.PI * 2;
-            const velocity = 2 + Math.random() * 5;
-            p.style.setProperty('--vx', Math.cos(angle) * velocity + 'px');
-            p.style.setProperty('--vy', Math.sin(angle) * velocity + 'px');
-            document.body.appendChild(p);
-            setTimeout(() => p.remove(), 600);
-        }
+    const feedback = document.createElement('div');
+    feedback.className = `hit-feedback ${rating.toLowerCase()}`;
+    feedback.innerText = rating;
+    document.body.appendChild(feedback);
+    setTimeout(() => feedback.remove(), 500);
+}
+
+handleMiss(syllableObj) {
+    if (syllableObj && syllableObj.isLastSyllable) {
+        this.showTranslation(syllableObj.wordData, false);
+    }
+
+    if (syllableObj && syllableObj.wordId) {
+        delete this.wordTracking[syllableObj.wordId];
+    }
+    levelManager.handleRating('MISS');
+    this.combo = 0;
+    this.multiplier = 1;
+    indakAudio.playFail();
+    document.body.classList.add('miss-shake');
+    setTimeout(() => document.body.classList.remove('miss-shake'), 200);
+}
+
+showTranslation(wordData, isPerfect) {
+    const trans = document.createElement('div');
+    trans.className = 'translation-reveal';
+
+    // Definition
+    let content = `<div>${wordData.word} = ${wordData.meaning}</div>`;
+
+    if (!isPerfect) {
+        const pron = wordData.syllables.map((s, i) =>
+            i === wordData.stress_index ? s.toUpperCase() : s.toLowerCase()
+        ).join('-');
+        content += `<div class="pronunciation-guide">Stress: ${pron}</div>`;
+    }
+
+    trans.innerHTML = content;
+    this.canvas.appendChild(trans);
+    setTimeout(() => trans.remove(), 2000);
+}
+
+spawnParticles(rect) {
+    for (let i = 0; i < 8; i++) {
+        const p = document.createElement('div');
+        p.className = 'spark';
+        p.style.left = `${rect.left + rect.width / 2}px`;
+        p.style.top = `${rect.top + rect.height / 2}px`;
+        const angle = Math.random() * Math.PI * 2;
+        const velocity = 2 + Math.random() * 5;
+        p.style.setProperty('--vx', Math.cos(angle) * velocity + 'px');
+        p.style.setProperty('--vy', Math.sin(angle) * velocity + 'px');
+        document.body.appendChild(p);
+        setTimeout(() => p.remove(), 600);
     }
 
     endGame() {

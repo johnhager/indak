@@ -7,9 +7,11 @@ const ASSETS_TO_CACHE = [
     '/style.css',
     '/main.js',
     '/install-prompt.js',
-    '/manifest.json',
     '/data/vocabulary.json',
     '/assets/images/tropical_night_bg.png',
+    '/assets/audio/beat_normal.wav',
+    '/assets/audio/beat_stress.wav',
+    '/assets/audio/beat_fail.wav',
     '/icons/icon-192.png',
     '/icons/icon-512.png'
 ];
@@ -41,8 +43,8 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
     const url = new URL(event.request.url);
 
-    // Cache-First Strategy for Audio Assets (Hiligaynon syllables)
-    if (url.pathname.endsWith('.mp3') || url.pathname.endsWith('.wav') || url.pathname.includes('/audio/')) {
+    // Cache-First Strategy for Audio Assets (Hiligaynon syllables & Vocals)
+    if (url.pathname.endsWith('.mp3') || url.pathname.endsWith('.wav') || url.pathname.endsWith('.webm') || url.pathname.includes('/audio/')) {
         event.respondWith(
             caches.open(AUDIO_CACHE_NAME).then((cache) => {
                 return cache.match(event.request).then((response) => {

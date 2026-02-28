@@ -6,9 +6,10 @@
 class AudioManager {
     constructor() {
         this.ctx = new (window.AudioContext || window.webkitAudioContext)();
-        this.buffers = {};
         this.audioPath = 'assets/audio/';
+        this.vocalPath = 'assets/audio/vocals/';
         this.sounds = ['beat_normal.wav', 'beat_stress.wav', 'beat_fail.wav'];
+        this.vocalBuffers = {};
     }
 
     /**
@@ -17,7 +18,25 @@ class AudioManager {
     async init() {
         const loadPromises = this.sounds.map(sound => this.loadBuffer(sound));
         await Promise.all(loadPromises);
-        console.log('Indak Audio Manager: All samples loaded and ready.');
+        console.log('Indak Audio Manager: Percussion samples loaded.');
+    }
+
+    /**
+     * Loads a vocal syllable into the cache on-demand or during initial load
+     */
+    async loadVocal(syllable) {
+        const key = syllable.toLowerCase().replace(/[^a-z-]/g, '');
+        if (this.vocalBuffers[key]) return;
+
+        try {
+            const response = await fetch(`${this.vocalPath}${key}.webm`);
+            if (!response.ok) throw new Error('Vocal missing');
+            const arrayBuffer = await response.arrayBuffer();
+            this.vocalBuffers[key] = await this.ctx.decodeAudioData(arrayBuffer);
+        } catch (e) {
+            // No error log here to prevent console spam for missing syllables
+            this.vocalBuffers[key] = null;
+        }
     }
 
     async loadBuffer(filename) {
@@ -36,7 +55,7 @@ class AudioManager {
      * Plays the appropriate beat based on stress
      * @param {boolean} isStress - Whether the current syllable is the stressed beat
      */
-    playSyllable(isStress) {
+    playSyllable(isStress, syllableText = '') {
         if (this.ctx.state === 'suspended') {
             this.ctx.resume();
         }
@@ -44,11 +63,39 @@ class AudioManager {
         const filename = isStress ? 'beat_stress.wav' : 'beat_normal.wav';
         this.playSound(filename);
 
+        if (syllableText) {
+            this.playVocal(syllableText, isStress);
+        }
+
         // Trigger visual pulse event
         if (isStress) {
             document.body.classList.add('pulse-active');
             setTimeout(() => document.body.classList.remove('pulse-active'), 150);
         }
+    }
+
+    playVocal(syllableText, isStress) {
+        const key = syllableText.toLowerCase().replace(/[^a-z-]/g, '');
+        const buffer = this.vocalBuffers[key];
+
+        if (!buffer) return;
+
+        const source = this.ctx.createBufferSource();
+        const gainNode = this.ctx.createGain();
+
+        source.buffer = buffer;
+
+        // Rhythmic Pitch Shifting for Ilonggo "Lilt"
+        if (isStress) {
+            source.playbackRate.value = 1.05; // 5% pitch increase
+            gainNode.gain.value = 0.8; // Boost volume for stress
+        } else {
+            gainNode.gain.value = 0.6;
+        }
+
+        source.connect(gainNode);
+        gainNode.connect(this.ctx.destination);
+        source.start(0);
     }
 
     playFail() {
