@@ -21,7 +21,8 @@ class Conductor {
         this.canvas = document.getElementById('game-canvas');
         this.debugOverlay = null;
 
-        this.wordSequence = []; // To track syllables of the current word being hit
+        this.wordSequence = [];
+        this.wordTracking = {}; // { wordId: { total: N, perfects: M, isValid: bool } }
     }
 
     async init() {
@@ -97,7 +98,7 @@ class Conductor {
         this.activeSyllables = this.activeSyllables.filter(s => {
             // Miss threshold (moved further left by increasing grace period to 400ms)
             if (now > s.targetHitTime + 400) {
-                this.handleMiss();
+                this.handleMiss(s);
                 s.element.remove();
                 return false;
             }
@@ -143,6 +144,11 @@ class Conductor {
         const baseTime = this.songPosition + 2500;
 
         const wordId = Math.random().toString(36).substr(2, 9);
+        this.wordTracking[wordId] = {
+            total: wordData.syllables.length,
+            perfects: 0,
+            isValid: true
+        };
 
         wordData.syllables.forEach((syll, index) => {
             const isStress = index === wordData.stress_index;
@@ -202,9 +208,18 @@ class Conductor {
             localStorage.setItem('indak_high_flow', this.highScore.toString());
         }
 
-        if (syllableObj.isLastSyllable && rating === 'PERFECT') {
-            this.showTranslation(syllableObj.wordData);
-            levelManager.markWordMastered(syllableObj.wordData.word);
+        const tracker = this.wordTracking[syllableObj.wordId];
+        if (tracker && tracker.isValid) {
+            if (rating === 'PERFECT') tracker.perfects++;
+            else tracker.isValid = false; // "GOOD" hit invalidates the "PERFECT" word chain
+        }
+
+        if (syllableObj.isLastSyllable) {
+            if (tracker && tracker.isValid && tracker.perfects === tracker.total) {
+                this.showTranslation(syllableObj.wordData);
+                levelManager.markWordMastered(syllableObj.wordData.word);
+            }
+            delete this.wordTracking[syllableObj.wordId];
         }
 
         const feedback = document.createElement('div');
@@ -214,7 +229,10 @@ class Conductor {
         setTimeout(() => feedback.remove(), 500);
     }
 
-    handleMiss() {
+    handleMiss(syllableObj) {
+        if (syllableObj && syllableObj.wordId) {
+            delete this.wordTracking[syllableObj.wordId];
+        }
         levelManager.handleRating('MISS');
         this.combo = 0;
         this.multiplier = 1;
