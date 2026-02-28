@@ -113,6 +113,35 @@ h1 {
     /* Ensure off-screen cards don't expand width */
 }
 
+/* Hit Zone Target Line */
+#hit-zone {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+}
+
+.hit-line {
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, rgba(78, 205, 196, 0.5) 20%, rgba(78, 205, 196, 0.8) 50%, rgba(78, 205, 196, 0.5) 80%, transparent);
+    box-shadow: 0 0 15px rgba(78, 205, 196, 0.8);
+    border-radius: 2px;
+    transition: all 0.1s;
+}
+
+body.pulse-active .hit-line {
+    background: linear-gradient(180deg, transparent, rgba(255, 217, 61, 0.6) 20%, rgba(255, 217, 61, 1) 50%, rgba(255, 217, 61, 0.6) 80%, transparent);
+    box-shadow: 0 0 25px rgba(255, 217, 61, 1);
+    transform: scaleX(1.5);
+}
+
 .syllable-card {
     background: var(--glass-bg);
     backdrop-filter: blur(20px);
