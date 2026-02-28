@@ -169,6 +169,9 @@ class Conductor {
 
         const wordContainer = document.createElement('div');
         wordContainer.className = 'word-container';
+        if (wordData.syllables.length <= 3) {
+            wordContainer.classList.add('fewer-syllables');
+        }
         this.canvas.appendChild(wordContainer);
         this.currentWordContainer = wordContainer;
 
