@@ -1,0 +1,1094 @@
+[
+    {
+        "word": "Salamat",
+        "syllables": [
+            "Sa",
+            "la",
+            "mat"
+        ],
+        "stress_index": 2,
+        "meaning": "Thank you"
+    },
+    {
+        "word": "Maayo",
+        "syllables": [
+            "Ma",
+            "a",
+            "yo"
+        ],
+        "stress_index": 1,
+        "meaning": "Good/Fine"
+    },
+    {
+        "word": "Kaon",
+        "syllables": [
+            "Ka",
+            "on"
+        ],
+        "stress_index": 0,
+        "meaning": "Eat"
+    },
+    {
+        "word": "Hambal",
+        "syllables": [
+            "Ham",
+            "bal"
+        ],
+        "stress_index": 1,
+        "meaning": "Speak"
+    },
+    {
+        "word": "Palangga",
+        "syllables": [
+            "Pa",
+            "lang",
+            "ga"
+        ],
+        "stress_index": 2,
+        "meaning": "Love"
+    },
+    {
+        "word": "Halong",
+        "syllables": [
+            "Ha",
+            "long"
+        ],
+        "stress_index": 1,
+        "meaning": "Take care"
+    },
+    {
+        "word": "Damo",
+        "syllables": [
+            "Da",
+            "mo"
+        ],
+        "stress_index": 1,
+        "meaning": "Many"
+    },
+    {
+        "word": "Balay",
+        "syllables": [
+            "Ba",
+            "lay"
+        ],
+        "stress_index": 1,
+        "meaning": "House"
+    },
+    {
+        "word": "Tubig",
+        "syllables": [
+            "Tu",
+            "big"
+        ],
+        "stress_index": 0,
+        "meaning": "Water"
+    },
+    {
+        "word": "Tawo",
+        "syllables": [
+            "Ta",
+            "wo"
+        ],
+        "stress_index": 0,
+        "meaning": "Person"
+    },
+    {
+        "word": "Bata",
+        "syllables": [
+            "Ba",
+            "ta"
+        ],
+        "stress_index": 1,
+        "meaning": "Child"
+    },
+    {
+        "word": "Abyan",
+        "syllables": [
+            "Ab",
+            "yan"
+        ],
+        "stress_index": 1,
+        "meaning": "Friend"
+    },
+    {
+        "word": "Kumusta",
+        "syllables": [
+            "Ku",
+            "mus",
+            "ta"
+        ],
+        "stress_index": 2,
+        "meaning": "How are you"
+    },
+    {
+        "word": "Hapon",
+        "syllables": [
+            "Ha",
+            "pon"
+        ],
+        "stress_index": 1,
+        "meaning": "Afternoon"
+    },
+    {
+        "word": "Gab-i",
+        "syllables": [
+            "Gab",
+            "i"
+        ],
+        "stress_index": 1,
+        "meaning": "Evening"
+    },
+    {
+        "word": "Adlaw",
+        "syllables": [
+            "Ad",
+            "law"
+        ],
+        "stress_index": 0,
+        "meaning": "Day"
+    },
+    {
+        "word": "Gugma",
+        "syllables": [
+            "Gug",
+            "ma"
+        ],
+        "stress_index": 0,
+        "meaning": "Love (Noun)"
+    },
+    {
+        "word": "Lakat",
+        "syllables": [
+            "La",
+            "kat"
+        ],
+        "stress_index": 1,
+        "meaning": "Walk"
+    },
+    {
+        "word": "Dagan",
+        "syllables": [
+            "Da",
+            "gan"
+        ],
+        "stress_index": 1,
+        "meaning": "Run"
+    },
+    {
+        "word": "Inum",
+        "syllables": [
+            "I",
+            "num"
+        ],
+        "stress_index": 1,
+        "meaning": "Drink"
+    },
+    {
+        "word": "Namit",
+        "syllables": [
+            "Na",
+            "mit"
+        ],
+        "stress_index": 1,
+        "meaning": "Delicious"
+    },
+    {
+        "word": "Inasal",
+        "syllables": [
+            "I",
+            "na",
+            "sal"
+        ],
+        "stress_index": 2,
+        "meaning": "Grilled meat"
+    },
+    {
+        "word": "Laswa",
+        "syllables": [
+            "Las",
+            "wa"
+        ],
+        "stress_index": 1,
+        "meaning": "Vegetable stew"
+    },
+    {
+        "word": "Kan-on",
+        "syllables": [
+            "Kan",
+            "on"
+        ],
+        "stress_index": 0,
+        "meaning": "Cooked rice"
+    },
+    {
+        "word": "Gwapa",
+        "syllables": [
+            "Gwa",
+            "pa"
+        ],
+        "stress_index": 0,
+        "meaning": "Beautiful"
+    },
+    {
+        "word": "Mabug-at",
+        "syllables": [
+            "Ma",
+            "bug",
+            "at"
+        ],
+        "stress_index": 2,
+        "meaning": "Heavy"
+    },
+    {
+        "word": "Mainit",
+        "syllables": [
+            "Ma",
+            "i",
+            "nit"
+        ],
+        "stress_index": 1,
+        "meaning": "Hot"
+    },
+    {
+        "word": "Masadya",
+        "syllables": [
+            "Ma",
+            "sa",
+            "dya"
+        ],
+        "stress_index": 2,
+        "meaning": "Happy"
+    },
+    {
+        "word": "Bukid",
+        "syllables": [
+            "Bu",
+            "kid"
+        ],
+        "stress_index": 0,
+        "meaning": "Mountain"
+    },
+    {
+        "word": "Dagat",
+        "syllables": [
+            "Da",
+            "gat"
+        ],
+        "stress_index": 0,
+        "meaning": "Sea"
+    },
+    {
+        "word": "Balud",
+        "syllables": [
+            "Ba",
+            "lud"
+        ],
+        "stress_index": 1,
+        "meaning": "Wave"
+    },
+    {
+        "word": "Ulan",
+        "syllables": [
+            "U",
+            "lan"
+        ],
+        "stress_index": 1,
+        "meaning": "Rain"
+    },
+    {
+        "word": "Gid",
+        "syllables": [
+            "Gid"
+        ],
+        "stress_index": 0,
+        "meaning": "Indeed/Really"
+    },
+    {
+        "word": "Lang",
+        "syllables": [
+            "Lang"
+        ],
+        "stress_index": 0,
+        "meaning": "Only"
+    },
+    {
+        "word": "Anay",
+        "syllables": [
+            "A",
+            "nay"
+        ],
+        "stress_index": 1,
+        "meaning": "Wait/First"
+    },
+    {
+        "word": "Bala",
+        "syllables": [
+            "Ba",
+            "la"
+        ],
+        "stress_index": 1,
+        "meaning": "Question particle"
+    },
+    {
+        "word": "Aga",
+        "syllables": [
+            "A",
+            "ga"
+        ],
+        "stress_index": 1,
+        "meaning": "Morning"
+    },
+    {
+        "word": "Udto",
+        "syllables": [
+            "Ud",
+            "to"
+        ],
+        "stress_index": 1,
+        "meaning": "Noon"
+    },
+    {
+        "word": "Dako",
+        "syllables": [
+            "Da",
+            "ko"
+        ],
+        "stress_index": 1,
+        "meaning": "Big"
+    },
+    {
+        "word": "Gamay",
+        "syllables": [
+            "Ga",
+            "may"
+        ],
+        "stress_index": 1,
+        "meaning": "Small"
+    },
+    {
+        "word": "Tambok",
+        "syllables": [
+            "Tam",
+            "bok"
+        ],
+        "stress_index": 1,
+        "meaning": "Fat"
+    },
+    {
+        "word": "Payat",
+        "syllables": [
+            "Pa",
+            "yat"
+        ],
+        "stress_index": 1,
+        "meaning": "Thin"
+    },
+    {
+        "word": "Taas",
+        "syllables": [
+            "Ta",
+            "as"
+        ],
+        "stress_index": 1,
+        "meaning": "Tall/High"
+    },
+    {
+        "word": "Nubo",
+        "syllables": [
+            "Nu",
+            "bo"
+        ],
+        "stress_index": 1,
+        "meaning": "Short"
+    },
+    {
+        "word": "Laba",
+        "syllables": [
+            "La",
+            "ba"
+        ],
+        "stress_index": 0,
+        "meaning": "Long"
+    },
+    {
+        "word": "Kitid",
+        "syllables": [
+            "Ki",
+            "tid"
+        ],
+        "stress_index": 1,
+        "meaning": "Narrow"
+    },
+    {
+        "word": "Halog",
+        "syllables": [
+            "Ha",
+            "log"
+        ],
+        "stress_index": 1,
+        "meaning": "Loose"
+    },
+    {
+        "word": "Gutok",
+        "syllables": [
+            "Gu",
+            "tok"
+        ],
+        "stress_index": 1,
+        "meaning": "Tight"
+    },
+    {
+        "word": "Matam-is",
+        "syllables": [
+            "Ma",
+            "tam",
+            "is"
+        ],
+        "stress_index": 2,
+        "meaning": "Sweet"
+    },
+    {
+        "word": "Maaslum",
+        "syllables": [
+            "Ma",
+            "as",
+            "lum"
+        ],
+        "stress_index": 1,
+        "meaning": "Sour"
+    },
+    {
+        "word": "Hubog",
+        "syllables": [
+            "Hu",
+            "bog"
+        ],
+        "stress_index": 1,
+        "meaning": "Drunk"
+    },
+    {
+        "word": "Bugnaw",
+        "syllables": [
+            "Bug",
+            "naw"
+        ],
+        "stress_index": 0,
+        "meaning": "Cold"
+    },
+    {
+        "word": "Punu",
+        "syllables": [
+            "Pu",
+            "nu"
+        ],
+        "stress_index": 0,
+        "meaning": "Tree/Source"
+    },
+    {
+        "word": "Kahoy",
+        "syllables": [
+            "Ka",
+            "hoy"
+        ],
+        "stress_index": 0,
+        "meaning": "Wood"
+    },
+    {
+        "word": "Bulak",
+        "syllables": [
+            "Bu",
+            "lak"
+        ],
+        "stress_index": 0,
+        "meaning": "Flower"
+    },
+    {
+        "word": "Tuna",
+        "syllables": [
+            "Tu",
+            "na"
+        ],
+        "stress_index": 0,
+        "meaning": "Land/Earth"
+    },
+    {
+        "word": "Suga",
+        "syllables": [
+            "Su",
+            "ga"
+        ],
+        "stress_index": 0,
+        "meaning": "Light"
+    },
+    {
+        "word": "Panganod",
+        "syllables": [
+            "Pa",
+            "nga",
+            "nod"
+        ],
+        "stress_index": 2,
+        "meaning": "Cloud"
+    },
+    {
+        "word": "Hangin",
+        "syllables": [
+            "Ha",
+            "ngin"
+        ],
+        "stress_index": 0,
+        "meaning": "Wind"
+    },
+    {
+        "word": "Kilat",
+        "syllables": [
+            "Ki",
+            "lat"
+        ],
+        "stress_index": 0,
+        "meaning": "Lightning"
+    },
+    {
+        "word": "Kuno",
+        "syllables": [
+            "Ku",
+            "no"
+        ],
+        "stress_index": 1,
+        "meaning": "Supposedly"
+    },
+    {
+        "word": "Ti",
+        "syllables": [
+            "Ti"
+        ],
+        "stress_index": 0,
+        "meaning": "Well..."
+    },
+    {
+        "word": "Na",
+        "syllables": [
+            "Na"
+        ],
+        "stress_index": 0,
+        "meaning": "Already"
+    },
+    {
+        "word": "Kape",
+        "syllables": [
+            "Ka",
+            "pe"
+        ],
+        "stress_index": 1,
+        "meaning": "Coffee"
+    },
+    {
+        "word": "Tinapay",
+        "syllables": [
+            "Ti",
+            "na",
+            "pay"
+        ],
+        "stress_index": 2,
+        "meaning": "Bread"
+    },
+    {
+        "word": "Sud-an",
+        "syllables": [
+            "Sud",
+            "an"
+        ],
+        "stress_index": 1,
+        "meaning": "Viand"
+    },
+    {
+        "word": "Isda",
+        "syllables": [
+            "Is",
+            "da"
+        ],
+        "stress_index": 0,
+        "meaning": "Fish"
+    },
+    {
+        "word": "Karne",
+        "syllables": [
+            "Kar",
+            "ne"
+        ],
+        "stress_index": 1,
+        "meaning": "Meat"
+    },
+    {
+        "word": "Prutas",
+        "syllables": [
+            "Pru",
+            "tas"
+        ],
+        "stress_index": 1,
+        "meaning": "Fruit"
+    },
+    {
+        "word": "Tulog",
+        "syllables": [
+            "Tu",
+            "log"
+        ],
+        "stress_index": 1,
+        "meaning": "Sleep"
+    },
+    {
+        "word": "Bugtaw",
+        "syllables": [
+            "Bug",
+            "taw"
+        ],
+        "stress_index": 1,
+        "meaning": "Wake up"
+    },
+    {
+        "word": "Lingkod",
+        "syllables": [
+            "Ling",
+            "kod"
+        ],
+        "stress_index": 1,
+        "meaning": "Sit"
+    },
+    {
+        "word": "Tindog",
+        "syllables": [
+            "Tin",
+            "dog"
+        ],
+        "stress_index": 1,
+        "meaning": "Stand"
+    },
+    {
+        "word": "Pamati",
+        "syllables": [
+            "Pa",
+            "ma",
+            "ti"
+        ],
+        "stress_index": 2,
+        "meaning": "Listen"
+    },
+    {
+        "word": "Lantaw",
+        "syllables": [
+            "Lan",
+            "taw"
+        ],
+        "stress_index": 1,
+        "meaning": "Look"
+    },
+    {
+        "word": "Pungko",
+        "syllables": [
+            "Pung",
+            "ko"
+        ],
+        "stress_index": 1,
+        "meaning": "Squat/Sit"
+    },
+    {
+        "word": "Bituon",
+        "syllables": [
+            "Bi",
+            "tu",
+            "on"
+        ],
+        "stress_index": 2,
+        "meaning": "Star"
+    },
+    {
+        "word": "Bulan",
+        "syllables": [
+            "Bu",
+            "lan"
+        ],
+        "stress_index": 0,
+        "meaning": "Moon/Month"
+    },
+    {
+        "word": "Langit",
+        "syllables": [
+            "La",
+            "ngit"
+        ],
+        "stress_index": 0,
+        "meaning": "Sky/Heaven"
+    },
+    {
+        "word": "Bwas",
+        "syllables": [
+            "Bwas"
+        ],
+        "stress_index": 0,
+        "meaning": "Tomorrow"
+    },
+    {
+        "word": "Karon",
+        "syllables": [
+            "Ka",
+            "ron"
+        ],
+        "stress_index": 1,
+        "meaning": "Today/Now"
+    },
+    {
+        "word": "Kahapon",
+        "syllables": [
+            "Ka",
+            "ha",
+            "pon"
+        ],
+        "stress_index": 1,
+        "meaning": "Yesterday"
+    },
+    {
+        "word": "Hin-o",
+        "syllables": [
+            "Hin",
+            "o"
+        ],
+        "stress_index": 1,
+        "meaning": "Who"
+    },
+    {
+        "word": "Ano",
+        "syllables": [
+            "A",
+            "no"
+        ],
+        "stress_index": 1,
+        "meaning": "What"
+    },
+    {
+        "word": "Diin",
+        "syllables": [
+            "Di",
+            "in"
+        ],
+        "stress_index": 1,
+        "meaning": "Where"
+    },
+    {
+        "word": "San-o",
+        "syllables": [
+            "San",
+            "o"
+        ],
+        "stress_index": 1,
+        "meaning": "When"
+    },
+    {
+        "word": "Pa-no",
+        "syllables": [
+            "Pa",
+            "no"
+        ],
+        "stress_index": 1,
+        "meaning": "How"
+    },
+    {
+        "word": "Nga-a",
+        "syllables": [
+            "Nga",
+            "a"
+        ],
+        "stress_index": 1,
+        "meaning": "Why"
+    },
+    {
+        "word": "Kag",
+        "syllables": [
+            "Kag"
+        ],
+        "stress_index": 0,
+        "meaning": "And"
+    },
+    {
+        "word": "Pero",
+        "syllables": [
+            "Pe",
+            "ro"
+        ],
+        "stress_index": 0,
+        "meaning": "But"
+    },
+    {
+        "word": "Kay",
+        "syllables": [
+            "Kay"
+        ],
+        "stress_index": 0,
+        "meaning": "Because/For"
+    },
+    {
+        "word": "Kon",
+        "syllables": [
+            "Kon"
+        ],
+        "stress_index": 0,
+        "meaning": "If"
+    },
+    {
+        "word": "Bisan",
+        "syllables": [
+            "Bi",
+            "san"
+        ],
+        "stress_index": 1,
+        "meaning": "Even/Although"
+    },
+    {
+        "word": "Tungod",
+        "syllables": [
+            "Tu",
+            "ngod"
+        ],
+        "stress_index": 1,
+        "meaning": "Because of"
+    },
+    {
+        "word": "Gali",
+        "syllables": [
+            "Ga",
+            "li"
+        ],
+        "stress_index": 1,
+        "meaning": "Surprise particle"
+    },
+    {
+        "word": "Man",
+        "syllables": [
+            "Man"
+        ],
+        "stress_index": 0,
+        "meaning": "Also/Too"
+    },
+    {
+        "word": "Naman",
+        "syllables": [
+            "Na",
+            "man"
+        ],
+        "stress_index": 1,
+        "meaning": "Again"
+    },
+    {
+        "word": "Pwede",
+        "syllables": [
+            "Pwe",
+            "de"
+        ],
+        "stress_index": 0,
+        "meaning": "Can/Possible"
+    },
+    {
+        "word": "Indi",
+        "syllables": [
+            "In",
+            "di"
+        ],
+        "stress_index": 1,
+        "meaning": "No/Cannot"
+    },
+    {
+        "word": "Huo",
+        "syllables": [
+            "Hu",
+            "o"
+        ],
+        "stress_index": 0,
+        "meaning": "Yes"
+    },
+    {
+        "word": "Ambot",
+        "syllables": [
+            "Am",
+            "bot"
+        ],
+        "stress_index": 1,
+        "meaning": "I don't know"
+    },
+    {
+        "word": "Sapatos",
+        "syllables": [
+            "Sa",
+            "pa",
+            "tos"
+        ],
+        "stress_index": 1,
+        "meaning": "Shoes"
+    },
+    {
+        "word": "Katre",
+        "syllables": [
+            "Kat",
+            "re"
+        ],
+        "stress_index": 1,
+        "meaning": "Bed"
+    },
+    {
+        "word": "Kutsara",
+        "syllables": [
+            "Kut",
+            "sa",
+            "ra"
+        ],
+        "stress_index": 1,
+        "meaning": "Spoon"
+    },
+    {
+        "word": "Tinidor",
+        "syllables": [
+            "Ti",
+            "ni",
+            "dor"
+        ],
+        "stress_index": 2,
+        "meaning": "Fork"
+    },
+    {
+        "word": "Plato",
+        "syllables": [
+            "Pla",
+            "to"
+        ],
+        "stress_index": 0,
+        "meaning": "Plate"
+    },
+    {
+        "word": "Baso",
+        "syllables": [
+            "Ba",
+            "so"
+        ],
+        "stress_index": 0,
+        "meaning": "Glass/Cup"
+    },
+    {
+        "word": "Payong",
+        "syllables": [
+            "Pa",
+            "yong"
+        ],
+        "stress_index": 0,
+        "meaning": "Umbrella"
+    },
+    {
+        "word": "Kwarta",
+        "syllables": [
+            "Kwar",
+            "ta"
+        ],
+        "stress_index": 1,
+        "meaning": "Money"
+    },
+    {
+        "word": "Merkado",
+        "syllables": [
+            "Mer",
+            "ka",
+            "do"
+        ],
+        "stress_index": 1,
+        "meaning": "Market"
+    },
+    {
+        "word": "Simbahan",
+        "syllables": [
+            "Sim",
+            "ba",
+            "han"
+        ],
+        "stress_index": 1,
+        "meaning": "Church"
+    },
+    {
+        "word": "Eskwelahan",
+        "syllables": [
+            "Es",
+            "kwe",
+            "la",
+            "han"
+        ],
+        "stress_index": 3,
+        "meaning": "School"
+    },
+    {
+        "word": "Gabay",
+        "syllables": [
+            "Ga",
+            "bay"
+        ],
+        "stress_index": 1,
+        "meaning": "Guide"
+    },
+    {
+        "word": "Bulig",
+        "syllables": [
+            "Bu",
+            "lig"
+        ],
+        "stress_index": 1,
+        "meaning": "Help"
+    },
+    {
+        "word": "Tabang",
+        "syllables": [
+            "Ta",
+            "bang"
+        ],
+        "stress_index": 1,
+        "meaning": "Help (Urgent)"
+    },
+    {
+        "word": "Gwa",
+        "syllables": [
+            "Gwa"
+        ],
+        "stress_index": 0,
+        "meaning": "Outside"
+    },
+    {
+        "word": "Sulod",
+        "syllables": [
+            "Su",
+            "lod"
+        ],
+        "stress_index": 1,
+        "meaning": "Inside"
+    },
+    {
+        "word": "Tu-on",
+        "syllables": [
+            "Tu",
+            "on"
+        ],
+        "stress_index": 1,
+        "meaning": "Study/Learn"
+    },
+    {
+        "word": "Basa",
+        "syllables": [
+            "Ba",
+            "sa"
+        ],
+        "stress_index": 0,
+        "meaning": "Read"
+    },
+    {
+        "word": "Hampang",
+        "syllables": [
+            "Ham",
+            "pang"
+        ],
+        "stress_index": 1,
+        "meaning": "Play"
+    }
+]
