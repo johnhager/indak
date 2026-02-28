@@ -112,10 +112,10 @@ class Conductor {
             const ring = s.element.querySelector('.approach-ring');
             if (!ring) return;
 
-            if (remaining < 2000 && remaining > 0) {
+            if (remaining < 1500 && remaining > 0) {
                 // Shrink ring from 3x down to 1x exactly at 0ms
-                const scale = 1 + (remaining / 2000) * 2;
-                const opacity = remaining > 1500 ? (2000 - remaining) / 500 : 1;
+                const scale = 1 + (remaining / 1500) * 2;
+                const opacity = remaining > 1200 ? (1500 - remaining) / 300 : 1;
                 ring.style.transform = `translate(-50%, -50%) scale(${scale})`;
                 ring.style.opacity = opacity;
                 if (s.isStress && remaining < 100) {
@@ -158,7 +158,7 @@ class Conductor {
         }
 
         const wordData = pool[Math.floor(Math.random() * pool.length)];
-        const baseTime = this.songPosition + 2500;
+        const baseTime = this.songPosition + 1500;
 
         const wordId = Math.random().toString(36).substr(2, 9);
         this.wordTracking[wordId] = {
@@ -196,7 +196,7 @@ class Conductor {
             });
         });
 
-        let loopWait = 2500 + (wordData.syllables.length * this.msPerBeat) + 1000;
+        let loopWait = 1500 + (wordData.syllables.length * this.msPerBeat) + 800;
         if (this.nextWordTimeout) clearTimeout(this.nextWordTimeout);
         this.nextWordTimeout = setTimeout(() => this.spawnLoop(), loopWait);
     }
