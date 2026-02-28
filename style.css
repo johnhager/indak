@@ -385,6 +385,40 @@ h1 {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
+.speed-selector {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 1.5rem 0;
+}
+
+.speed-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px 15px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.speed-option:has(input:checked) {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-bamboo);
+    box-shadow: 0 0 10px rgba(78, 205, 196, 0.3);
+}
+
+.speed-option input {
+    margin-right: 8px;
+    accent-color: var(--accent-bamboo);
+}
+
+.speed-option span {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
 .btn-primary {
     background: linear-gradient(90deg, var(--accent-coral), #FF8E8E);
     border: none;

@@ -1,5 +1,6 @@
 import indakAudio from './src/audio_manager.js';
 import conductor from './src/conductor.js';
+import levelManager from './src/level_manager.js';
 
 // Indak Main Logic
 const app = document.getElementById('app');
@@ -17,6 +18,9 @@ startBtn?.addEventListener('click', async () => {
     document.querySelector('.hero-section').classList.add('hidden');
 
     try {
+        const speedMode = document.querySelector('input[name="game-speed"]:checked').value;
+        levelManager.setSpeedMode(speedMode);
+
         // Init Systems
         await indakAudio.init();
         await conductor.init();
