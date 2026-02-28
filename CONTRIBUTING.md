@@ -21,5 +21,23 @@ Since this app functions entirely as an offline-first PWA:
 
 ## 4. UI Extensibility
 When creating a brand-new game mode or screen, do not introduce arbitrarily new CSS colors.
-- Always use the predefined `--glass-bg`, `--accent-coral`, and `--text-main` variables to maintain the exact same design language.
 - Re-use the existing `LevelManager` singleton and `.syllable-card` CSS classes when possible so mechanics bridge seamlessly.
+
+## 5. Multi-Agent AI Architecture Roles
+When scaling this app into a multi-game ecosystem with distinct AI assistants, adhere strictly to this Separation of Concerns:
+
+### Agent A: "The Curriculum & Platform Architect"
+- **Focus**: Global State, Curriculum, Vocabulary Database, and Main Menu/Navigation.
+- **Responsibilities**: 
+  - Structuring `vocabulary.json` and creating diverse "Learning Paths" (e.g. tracking what the user learns across all games).
+  - Injecting/Validating hundreds of new Ilonggo definitions, grammar rules, and cultural notes.
+  - Building the central "Mastery Dashboard" shell surrounding the mini-games.
+- **Restriction**: Must not attempt to rewrite or refactor the intricate `requestAnimationFrame` zero-latency game engines or procedural audio synthesizers. 
+
+### Agent B: Antigravity ("Lead Engine Developer & UI/UX Specialist")
+- **Focus**: Mini-Game Engines, Zero-Latency Logic, and the Glassmorphism Design System.
+- **Responsibilities**: 
+  - Establishing real-time gamemodes (`conductor.js`, Flashcards, Gamified Quizzes) and plugging into Agent A's databases.
+  - Ensuring silky smooth 60PFS animations and iOS touch event latency.
+  - Enforcing the strict Fluid Typography, Mobile-First (iPhone 13 Mini), and Glassmorphism CSS architecture across all modules.
+- **Restriction**: Relies on Agent A to provide the actual linguistic curriculum content via structured arrays.
