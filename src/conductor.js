@@ -161,9 +161,6 @@ class Conductor {
             element.style.position = 'absolute';
             this.canvas.appendChild(element);
 
-            // Pre-load the vocal asset
-            indakAudio.loadVocal(syll);
-
             this.activeSyllables.push({
                 syllable: syll,
                 isStress,
@@ -189,7 +186,7 @@ class Conductor {
                 hit = true;
                 const rating = diff <= this.windows.PERFECT ? 'PERFECT' : 'GOOD';
                 this.handleHit(rating, diff, first);
-                indakAudio.playSyllable(first.isStress, first.syllable);
+                indakAudio.playSyllable(first.isStress);
                 first.element.remove();
                 this.activeSyllables.shift();
                 this.spawnParticles(first.element.getBoundingClientRect());

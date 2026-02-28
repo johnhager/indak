@@ -13,14 +13,7 @@ startBtn?.addEventListener('click', async () => {
         indakAudio.ctx.resume();
     }
 
-    // 2. Synchronously Unlock Speech Synthesis (Crucial for iOS)
-    if (window.speechSynthesis) {
-        const unlockUtterance = new SpeechSynthesisUtterance('');
-        unlockUtterance.volume = 0;
-        window.speechSynthesis.speak(unlockUtterance);
-    }
-
-    // 3. Keep UI responsive immediately
+    // Keep UI responsive immediately
     document.querySelector('.hero-section').classList.add('hidden');
 
     try {
