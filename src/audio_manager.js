@@ -76,10 +76,16 @@ class AudioManager {
     playSynth(freq) {
         const osc = this.ctx.createOscillator();
         const gain = this.ctx.createGain();
-        osc.type = 'sine';
+
+        // Woodblock/Percussion style envelope
+        osc.type = 'triangle';
         osc.frequency.setValueAtTime(freq, this.ctx.currentTime);
-        gain.gain.setValueAtTime(0.1, this.ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.0001, this.ctx.currentTime + 0.1);
+        osc.frequency.exponentialRampToValueAtTime(freq * 0.1, this.ctx.currentTime + 0.1);
+
+        // Stronger, louder initial strike
+        gain.gain.setValueAtTime(0.8, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.1);
+
         osc.connect(gain);
         gain.connect(this.ctx.destination);
         osc.start();
