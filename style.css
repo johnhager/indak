@@ -385,6 +385,35 @@ h1 {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
+.instructions {
+    margin: 1.5rem 0;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+}
+
+.instructions ul {
+    margin: 0;
+    padding-left: 20px;
+    opacity: 0.9;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+}
+
+.instructions li strong {
+    color: var(--accent-bamboo);
+}
+
+.instructions li:last-child {
+    margin-bottom: 0;
+}
+
 .speed-selector {
     display: flex;
     justify-content: center;
