@@ -8,19 +8,29 @@ const startBtn = document.getElementById('start-btn');
 startBtn?.addEventListener('click', async () => {
     console.log('Indak: Initializing Engine...');
 
-    // UI Transitions
-    document.querySelector('.hero-section').classList.add('hidden');
-
-    // Init Systems
-    await indakAudio.init();
-    await conductor.init();
-
-    // Fix: Resume AudioContext (crucial for iOS/Chrome to advance currentTime)
+    // 1. Synchronously Unlock Audio Context (Crucial for iOS)
     if (indakAudio.ctx.state === 'suspended') {
-        await indakAudio.ctx.resume();
+        indakAudio.ctx.resume();
     }
 
-    conductor.start();
+    // 2. Synchronously Unlock Speech Synthesis (Crucial for iOS)
+    if (window.speechSynthesis) {
+        const unlockUtterance = new SpeechSynthesisUtterance('');
+        unlockUtterance.volume = 0;
+        window.speechSynthesis.speak(unlockUtterance);
+    }
+
+    // 3. Keep UI responsive immediately
+    document.querySelector('.hero-section').classList.add('hidden');
+
+    try {
+        // Init Systems
+        await indakAudio.init();
+        await conductor.init();
+        conductor.start();
+    } catch (e) {
+        console.error('Failed to start game loop:', e);
+    }
 });
 
 // PWA High-Performance Input

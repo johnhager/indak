@@ -13,20 +13,21 @@ class AudioManager {
         this.vocalBuffers = {};
 
         // Native Speech Synthesis Fallback
-        this.synth = window.speechSynthesis;
+        this.synth = window.speechSynthesis || null;
         this.voice = null;
-        this.initVoice();
+        if (this.synth) {
+            this.initVoice();
+        }
     }
 
     initVoice() {
         const setVoice = () => {
             const voices = this.synth.getVoices();
-            // Priority: Hiligaynon (hil-PH) -> Tagalog (tl-PH) -> Filipino (fil-PH) -> Spanish (es-ES / es-US) -> English (en-US)
             this.voice = voices.find(v => v.lang === 'hil-PH') ||
                 voices.find(v => v.lang === 'tl-PH') ||
                 voices.find(v => v.lang === 'fil-PH') ||
-                voices.find(v => v.lang.startsWith('es')) ||
-                voices.find(v => v.lang.startsWith('en'));
+                voices.find(v => v.lang.startsWith('es-')) ||
+                voices.find(v => v.lang.startsWith('en-'));
 
             if (this.voice) {
                 console.log('AudioManager: Voice loaded -', this.voice.name, this.voice.lang);
@@ -132,8 +133,7 @@ class AudioManager {
     speakSyllable(text, isStress) {
         if (!this.synth) return;
 
-        // "Sharp Stab" interrupt
-        this.synth.cancel();
+        // Note: Removed this.synth.cancel() to prevent iOS Safari from hanging or abruptly chopping off rapid consecutive syllables.
 
         const utterance = new SpeechSynthesisUtterance(text);
         if (this.voice) utterance.voice = this.voice;
