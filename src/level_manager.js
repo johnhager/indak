@@ -6,7 +6,7 @@ class LevelManager {
         this.consecutivePerfects = 0;
         this.consecutiveMisses = 0;
         this.vocabulary = [];
-        this.masteredWords = new Set();
+        this.masteredWords = new Set(JSON.parse(localStorage.getItem('indak_mastered_words')) || []);
     }
 
     getTeirsForSpeed() {
@@ -67,6 +67,7 @@ class LevelManager {
 
     markWordMastered(word) {
         this.masteredWords.add(word);
+        localStorage.setItem('indak_mastered_words', JSON.stringify(Array.from(this.masteredWords)));
     }
 
     getSummary() {
