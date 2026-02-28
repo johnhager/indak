@@ -23,11 +23,14 @@ class AudioManager {
     initVoice() {
         const setVoice = () => {
             const voices = this.synth.getVoices();
+            // Priority: Regional native -> Indonesian/Malay (phonetically identical vowels to Ilonggo) -> Spanish -> Any
             this.voice = voices.find(v => v.lang === 'hil-PH') ||
                 voices.find(v => v.lang === 'tl-PH') ||
                 voices.find(v => v.lang === 'fil-PH') ||
-                voices.find(v => v.lang.startsWith('es-')) ||
-                voices.find(v => v.lang.startsWith('en-'));
+                voices.find(v => v.lang === 'id-ID') || // Indonesian
+                voices.find(v => v.lang === 'ms-MY') || // Malay
+                voices.find(v => v.lang.startsWith('es-')) || // Spanish (Monica/Paulina)
+                voices[0];
 
             if (this.voice) {
                 console.log('AudioManager: Voice loaded -', this.voice.name, this.voice.lang);
@@ -35,7 +38,9 @@ class AudioManager {
                 console.warn('AudioManager: No voices found yet.');
             }
         };
+
         setVoice();
+
         if (this.synth.onvoiceschanged !== undefined) {
             this.synth.onvoiceschanged = setVoice;
         }
