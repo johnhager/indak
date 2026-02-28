@@ -6,9 +6,10 @@
 class AudioManager {
     constructor() {
         this.ctx = new (window.AudioContext || window.webkitAudioContext)();
-        this.audioPath = 'assets/audio/';
-        this.vocalPath = 'assets/audio/vocals/';
+        this.audioPath = '/assets/audio/';
+        this.vocalPath = '/assets/audio/vocals/';
         this.sounds = ['beat_normal.wav', 'beat_stress.wav', 'beat_fail.wav'];
+        this.buffers = {};
         this.vocalBuffers = {};
 
         // Native Speech Synthesis Fallback
