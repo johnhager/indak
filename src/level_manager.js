@@ -51,7 +51,7 @@ class LevelManager {
         this.tiers = this.getTeirsForSpeed();
         // Both Native and Complex run at full speed
         this.currentBpm = 140;
-        this.currentTier = 1;
+        // logic: don't reset this.currentTier here, let it persist from constructor or previous sessions
     }
 
     setVocabulary(vocab) {
@@ -65,19 +65,18 @@ class LevelManager {
         let candidates = this.vocabulary.filter(word => {
             if (excludeWords.includes(word.word)) return false;
 
-            // NEW: Complex Mode constraint - force at least 3 syllables
-            if (this.speedMode === 'complex') {
-                if (word.syllables.length < 3) return false;
-                // In complex mode, we ignore the 'maxSyllables' ceiling of early tiers
-                return true;
-            }
+            // 1. Complex Mode constraint - force at least 3 syllables
+            if (this.speedMode === 'complex' && word.syllables.length < 3) return false;
 
-            // Tier 4+ uses explicit tier tagging
+            // 2. Tier 4+ uses explicit tier tagging
             if (this.currentTier >= 4) {
                 return word.tier === this.currentTier;
             }
 
-            // Tiers 1-3 use syllable-based progression
+            // 3. Tiers 1-3 use syllable-based progression
+            // In complex mode, we ignore the 'maxSyllables' ceiling of early tiers to find candidates
+            if (this.speedMode === 'complex') return true;
+
             return word.syllables.length <= (tier.maxSyllables || 10);
         });
 
