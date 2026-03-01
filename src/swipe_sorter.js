@@ -55,7 +55,7 @@ export class SwipeSorter {
         this.gameActive = true;
         this.totalRounds = 15;
         this.currentRound = 0;
-        this.score = 0;
+        this.score = 0; // This will now track "First Try" corrects
         this.totalAttempts = 0;
         this.resetLabelHighlight();
         [this.defTop, this.defBottom, this.defLeft, this.defRight].forEach(el => el.style.opacity = '0');
@@ -68,6 +68,7 @@ export class SwipeSorter {
             return;
         }
 
+        this.roundAttempts = 0; // Reset for the new card
         this.resetLabelHighlight();
         [this.defTop, this.defBottom, this.defLeft, this.defRight].forEach(el => el.style.opacity = '0');
 
@@ -215,11 +216,14 @@ export class SwipeSorter {
     commitSwipe(direction) {
         if (!this.currentCard) return;
         this.totalAttempts++;
+        this.roundAttempts++;
         const isCorrect = direction === this.correctDirection;
 
         if (isCorrect) {
-            this.score++;
-            levelManager.markWordMastered(this.targetWordData.word, 'meaning');
+            if (this.roundAttempts === 1) {
+                this.score++;
+                levelManager.markWordMastered(this.targetWordData.word, 'meaning');
+            }
 
             this.currentCard.style.transition = 'transform 0.5s ease-out, opacity 0.5s ease-out';
             let tx = 0, ty = 0;

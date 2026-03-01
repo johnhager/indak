@@ -74,6 +74,7 @@ export class SentenceBuilder {
 
         if (!this.sentences || this.sentences.length === 0) return;
         this.currentRound++;
+        this.roundAttempts = 0; // Reset for the new sentence
 
         // 1. Pick a random sentence
         const targetIndex = Math.floor(Math.random() * this.sentences.length);
@@ -162,6 +163,7 @@ export class SentenceBuilder {
 
     evaluateSyntax() {
         this.totalAttempts++;
+        this.roundAttempts++;
         // Read DOM order of chunks in this.dropZone
         const dropZoneChunks = Array.from(this.dropZone.querySelectorAll('.word-chunk'));
         const currentAnswer = dropZoneChunks.map(div => div.textContent);
@@ -181,7 +183,9 @@ export class SentenceBuilder {
         }
 
         if (isCorrect) {
-            this.score++;
+            if (this.roundAttempts === 1) {
+                this.score++;
+            }
             // Glow green, proceed
             this.dropZone.style.border = '2px solid rgba(0, 255, 100, 0.8)';
             this.dropZone.style.boxShadow = '0 0 20px rgba(0, 255, 100, 0.5)';
