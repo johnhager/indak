@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signInAnonymously, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { getFirestore, doc, setDoc, getDoc, serverTimestamp, initializeFirestore } from "firebase/firestore";
+import { getFirestore, doc, setDoc, getDoc, serverTimestamp, initializeFirestore, getDocFromServer } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -10,6 +10,11 @@ const firebaseConfig = {
     messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
     appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
+
+// Debug: Verify config presence (values hidden)
+Object.entries(firebaseConfig).forEach(([key, val]) => {
+    if (!val) console.warn(`CloudManager: Missing config for ${key}`);
+});
 
 class CloudManager {
     constructor() {
@@ -45,13 +50,13 @@ class CloudManager {
         if (this.isInitialized && this.user) return this.user;
 
         return new Promise((resolve) => {
-            // Increase to 20s for mobile cold-starts
+            // Increase to 30s for poor mobile connections
             const timeout = setTimeout(() => {
                 console.warn("CloudManager: Auth initialization timed out");
-                this.lastError = "Connection Timeout (20s)";
+                this.lastError = "Auth Timeout (30s)";
                 this.status = 'error';
                 resolve(null);
-            }, 20000);
+            }, 30000);
 
             const unsubscribe = onAuthStateChanged(this.auth, async (user) => {
                 clearTimeout(timeout);
@@ -110,7 +115,7 @@ class CloudManager {
 
             // Add a timeout
             const timeoutPromise = new Promise((_, reject) =>
-                setTimeout(() => reject(new Error("Save Timeout")), 15000)
+                setTimeout(() => reject(new Error("Save Timeout (30s)")), 30000)
             );
 
             const userDoc = doc(this.db, "users", this.user.uid);
@@ -140,11 +145,12 @@ class CloudManager {
 
         try {
             const timeoutPromise = new Promise((_, reject) =>
-                setTimeout(() => reject(new Error("Load Timeout")), 15000)
+                setTimeout(() => reject(new Error("Load Timeout (30s)")), 30000)
             );
 
             const userDoc = doc(this.db, "users", this.user.uid);
-            const loadPromise = getDoc(userDoc);
+            // Use getDocFromServer to bypass potentially buggy mobile IndexedDB cache
+            const loadPromise = getDocFromServer(userDoc);
 
             const snap = await Promise.race([loadPromise, timeoutPromise]);
 
