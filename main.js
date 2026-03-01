@@ -18,6 +18,20 @@ const cancelPrepBtn = document.getElementById('cancel-prep-btn');
 const masteryBtn = document.getElementById('mastery-btn');
 
 let activeGame = null;
+let globalVocabulary = [];
+
+// Pre-fetch vocabulary on app load
+async function preFetchData() {
+    try {
+        const vocabResp = await fetch('./data/vocabulary.json');
+        globalVocabulary = await vocabResp.json();
+        levelManager.setVocabulary(globalVocabulary);
+        console.log("Indak: Dictionary Loaded.");
+    } catch (e) {
+        console.error("Critical: Failed to load dictionary", e);
+    }
+}
+preFetchData();
 
 function showExitButton() {
     exitBtn?.classList.remove('hidden');
@@ -35,12 +49,18 @@ function showMasteryDashboard() {
     if (!dash) {
         dash = document.createElement('div');
         dash.id = 'mastery-dashboard';
-        dash.className = 'summary-screen'; // Reuse base styling
+        dash.className = 'summary-screen';
         document.getElementById('app').appendChild(dash);
     }
 
-    const words = levelManager.vocabulary;
-    const wordItems = words.map(w => {
+    // If dictionary isn't loaded yet, show loading state
+    if (globalVocabulary.length === 0) {
+        dash.innerHTML = `<div class="glass-card"><h2>Loading Dictionary...</h2></div>`;
+        dash.classList.remove('hidden');
+        return;
+    }
+
+    const wordItems = globalVocabulary.map(w => {
         const m = stats.details[w.word] || { rhythm: false, meaning: false };
         return `
             <div class="word-status-item" style="background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.1);">
@@ -54,21 +74,21 @@ function showMasteryDashboard() {
     }).join('');
 
     dash.innerHTML = `
-        <div class="glass-card" style="width: 90%; max-width: 500px; max-height: 80vh; overflow-y: auto;">
-            <h2 style="color: var(--accent-gold);">Mastery Status</h2>
-            <p style="font-size: 0.8rem; opacity: 0.7; margin-bottom: 1rem;">🥁 = Rhythm Perfected | 📖 = Meaning Known</p>
+        <div class="glass-card" style="width: 90%; max-width: 500px; max-height: 80vh; display: flex; flex-direction: column;">
+            <h2 style="color: var(--accent-gold); flex-shrink: 0;">Mastery Status</h2>
+            <p style="font-size: 0.8rem; opacity: 0.7; margin-bottom: 1rem; flex-shrink: 0;">🥁 = Rhythm Perfected | 📖 = Meaning Known</p>
             
-            <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 1.5rem;">
+            <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 1.5rem; flex-shrink: 0;">
                 <div class="stat-item" style="padding: 10px;"><span style="font-size: 0.7rem;">Rhythm</span><strong>${stats.rhythmPercent}%</strong></div>
                 <div class="stat-item" style="padding: 10px;"><span style="font-size: 0.7rem;">Meaning</span><strong>${stats.meaningPercent}%</strong></div>
                 <div class="stat-item" style="padding: 10px;"><span style="font-size: 0.7rem;">Goal</span><strong>${stats.fullPercent}%</strong></div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; text-align: left; margin-bottom: 1.5rem;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; text-align: left; margin-bottom: 1.5rem; overflow-y: auto; padding-right: 5px;">
                 ${wordItems}
             </div>
 
-            <button id="close-dash-btn" class="btn-primary">BALIK (Return)</button>
+            <button id="close-dash-btn" class="btn-primary" style="flex-shrink: 0; margin-top: auto;">BALIK (Return)</button>
         </div>
     `;
 
@@ -96,18 +116,11 @@ function hideMenu() {
 }
 
 exitBtn?.addEventListener('click', () => {
-    // Force stop all potential engines
     if (activeGame && typeof activeGame.stop === 'function') activeGame.stop();
     if (conductor && typeof conductor.stop === 'function') conductor.stop();
-
-    // Clear the dynamic stage
     gameStage.innerHTML = '';
-
-    // Reset Overlays
     const summaryScreen = document.getElementById('summary-screen');
     if (summaryScreen) summaryScreen.classList.add('hidden');
-
-    // Return to Menu
     showMenu();
     hideExitButton();
     activeGame = null;
@@ -123,19 +136,14 @@ cancelPrepBtn?.addEventListener('click', () => {
 });
 
 confirmStartBtn?.addEventListener('click', async () => {
-    console.log('Indak: Initializing Engine...');
-
     if (indakAudio.ctx.state === 'suspended') {
         indakAudio.ctx.resume();
     }
-
     hideMenu();
     showExitButton();
-
     try {
         const speedMode = document.querySelector('input[name="game-speed"]:checked').value;
         levelManager.setSpeedMode(speedMode);
-
         await indakAudio.init();
         await conductor.init();
         conductor.start();
@@ -145,36 +153,41 @@ confirmStartBtn?.addEventListener('click', async () => {
 });
 
 startSwipeBtn?.addEventListener('click', async () => {
-    console.log('Swipe Sorter: Initializing...');
     hideMenu();
     showExitButton();
-
-    try {
-        const response = await fetch('./data/vocabulary.json');
-        const vocabularyData = await response.json();
-
-        activeGame = new SwipeSorter(gameStage, vocabularyData);
-        activeGame.startRound();
-    } catch (e) {
-        console.error('Failed to fetch vocabulary:', e);
-    }
+    activeGame = new SwipeSorter(gameStage, globalVocabulary);
+    activeGame.startRound();
 });
 
 startSentenceBtn?.addEventListener('click', async () => {
-    console.log('Sentence Builder: Initializing...');
     hideMenu();
     showExitButton();
-
     try {
         const response = await fetch('./data/sentences.json');
         const sentencesData = await response.json();
-
         activeGame = new SentenceBuilder(gameStage, sentencesData);
         activeGame.startRound();
     } catch (e) {
         console.error('Failed to fetch sentences:', e);
     }
 });
+
+app.addEventListener('pointerdown', (e) => {
+    if (e.target.tagName === 'BUTTON') return;
+    conductor.checkInput();
+    createTapCircle(e.clientX, e.clientY);
+});
+
+function createTapCircle(x, y) {
+    const circle = document.createElement('div');
+    circle.className = 'tap-circle';
+    circle.style.left = `${x}px`;
+    circle.style.top = `${y}px`;
+    document.body.appendChild(circle);
+    setTimeout(() => circle.remove(), 400);
+}
+
+console.log('Indak Core Initialized.');
 
 // PWA High-Performance Input
 app.addEventListener('pointerdown', (e) => {

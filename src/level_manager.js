@@ -91,7 +91,15 @@ class LevelManager {
     }
 
     getMasteryStats() {
-        const totalWords = this.vocabulary.length || 1;
+        const totalWords = this.vocabulary.length;
+        if (totalWords === 0) {
+            return {
+                total: 0, rhythm: 0, meaning: 0, full: 0,
+                rhythmPercent: 0, meaningPercent: 0, fullPercent: 0,
+                details: this.masteryData
+            };
+        }
+
         const rhythmCount = Object.values(this.masteryData).filter(m => m.rhythm).length;
         const meaningCount = Object.values(this.masteryData).filter(m => m.meaning).length;
         const bothCount = Object.values(this.masteryData).filter(m => m.rhythm && m.meaning).length;
