@@ -3,12 +3,12 @@ import { getAuth, signInAnonymously, onAuthStateChanged, GoogleAuthProvider, sig
 import { getFirestore, doc, setDoc, getDoc, serverTimestamp } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBI0gM0wO-Iqvuv0SM5TkJ9Z_OZwKKK3js",
-    authDomain: "indak-dfe3f.firebaseapp.com",
-    projectId: "indak-dfe3f",
-    storageBucket: "indak-dfe3f.firebasestorage.app",
-    messagingSenderId: "426226920472",
-    appId: "1:426226920472:web:60a673b3e1daf30257276d"
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 class CloudManager {
