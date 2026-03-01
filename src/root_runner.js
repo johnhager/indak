@@ -93,28 +93,29 @@ export class RootRunner {
                 }
                 .runner-word {
                     position: absolute;
-                    padding: 10px 20px;
-                    background: rgba(255,255,255,0.1);
-                    backdrop-filter: blur(5px);
-                    border: 1px solid rgba(255,255,255,0.2);
-                    border-radius: 20px;
+                    padding: 12px 24px;
+                    background: rgba(255,255,255,0.15);
+                    backdrop-filter: blur(15px);
+                    border: 1px solid rgba(255,255,255,0.3);
+                    border-radius: 30px;
                     color: white;
-                    font-weight: bold;
+                    font-weight: 800;
                     pointer-events: auto;
                     cursor: grab;
                     white-space: nowrap;
-                    transition: transform 0.1s;
+                    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                    touch-action: none;
                 }
                 .runner-word.correct-merge {
                     transform: scale(0) !important;
-                    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                    background: var(--accent-bamboo) !important;
+                    opacity: 0 !important;
+                    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
                 }
                 .runner-word.shatter {
-                    opacity: 0;
-                    transform: scale(1.5) rotate(15deg);
-                    filter: blur(10px);
-                    transition: all 0.4s ease-out;
+                    transform: scale(2) rotate(20deg) !important;
+                    opacity: 0 !important;
+                    filter: blur(20px) !important;
+                    transition: all 0.5s ease-out !important;
                 }
             `;
             document.head.appendChild(style);
@@ -122,6 +123,7 @@ export class RootRunner {
     }
 
     startRound() {
+        this.container.style.touchAction = 'none';
         this.currentRound = 0;
         this.score = 0;
         this.totalAttempts = 0;
@@ -263,26 +265,46 @@ export class RootRunner {
         this.totalAttempts++;
 
         const success = (direction === 'right' && wordObj.isCorrect) || (direction === 'left' && !wordObj.isCorrect);
+        const orb = this.container.querySelector('.orb');
 
         if (success) {
             this.score++;
+            // Feedback Glow
+            orb.style.transition = 'all 0.2s';
+            orb.style.boxShadow = '0 0 50px var(--accent-bamboo)';
+            orb.style.borderColor = 'var(--accent-bamboo)';
+            orb.style.transform = 'scale(1.1)';
+
             if (direction === 'right') {
                 wordObj.el.classList.add('correct-merge');
             } else {
                 wordObj.el.classList.add('shatter');
             }
         } else {
-            wordObj.el.style.background = 'rgba(255,107,107,0.5)';
-            wordObj.el.style.transform = 'translateY(100px) rotate(45deg)';
+            // Failure Feedback
+            orb.style.transition = 'all 0.2s';
+            orb.style.boxShadow = '0 0 50px rgba(255, 107, 107, 0.8)';
+            orb.style.borderColor = 'rgba(255, 107, 107, 0.8)';
+            orb.style.transform = 'scale(0.9)';
+
+            wordObj.el.style.background = 'rgba(255, 107, 107, 0.8)';
+            wordObj.el.style.transition = 'all 0.4s ease-out';
+            wordObj.el.style.transform = `translate(${direction === 'right' ? 300 : -300}px, 200px) rotate(90deg) scale(0)`;
             wordObj.el.style.opacity = '0';
         }
+
+        // Reset Orb after feedback
+        setTimeout(() => {
+            orb.style.transform = 'scale(1)';
+            orb.style.boxShadow = '0 0 30px rgba(255,217,61,0.2)';
+            orb.style.borderColor = 'rgba(255,217,61,0.5)';
+        }, 400);
 
         setTimeout(() => {
             wordObj.el.remove();
             this.activeWords = this.activeWords.filter(aw => aw !== wordObj);
         }, 500);
 
-        // Finish logic
         if (this.totalAttempts >= 20) {
             this.endGame();
         }
