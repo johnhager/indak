@@ -175,6 +175,7 @@ class LevelManager {
 
             // Prefer higher tier
             if (cloudData.tier > this.currentTier) {
+                console.log(`LevelManager: Upgrading Tier from ${this.currentTier} to ${cloudData.tier}`);
                 this.currentTier = cloudData.tier;
                 localStorage.setItem('indak_tier', this.currentTier);
                 merged = true;
@@ -196,8 +197,11 @@ class LevelManager {
 
             if (merged) {
                 localStorage.setItem('indak_mastery_v3', JSON.stringify(this.masteryData));
-                console.log("LevelManager: Merged cloud data into local");
+                localStorage.setItem('indak_last_sync', Date.now());
+                console.log("LevelManager: Local storage updated with cloud data.");
             }
+        } else {
+            console.log("LevelManager: Cloud is empty, nothing to load.");
         }
 
         // 2. Save current state to cloud

@@ -88,13 +88,17 @@ class CloudManager {
     }
 
     async saveProgress(masteryData, currentTier) {
-        if (!this.user) return;
+        if (!this.user) {
+            console.warn("CloudManager: Save attempt without an authenticated user.");
+            this.status = 'error';
+            return;
+        }
         this.status = 'syncing';
 
         try {
             // Add a timeout to prevent hanging on mobile
             const timeoutPromise = new Promise((_, reject) =>
-                setTimeout(() => reject(new Error("Save Timeout")), 5000)
+                setTimeout(() => reject(new Error("Save Timeout")), 15000)
             );
 
             const userDoc = doc(this.db, "users", this.user.uid);
@@ -105,22 +109,25 @@ class CloudManager {
             }, { merge: true });
 
             await Promise.race([savePromise, timeoutPromise]);
-            console.log("CloudManager: Progress saved");
+            console.log("CloudManager: Cloud Save Successful for UID:", this.user.uid);
             this.status = 'synced';
         } catch (error) {
-            console.warn("CloudManager: Save failed or timed out", error);
-            // Don't show error to user if it's just a slow mobile connection
-            this.status = 'synced';
+            console.error("CloudManager: Save failed - ", error);
+            this.status = 'error';
         }
     }
 
     async loadProgress() {
-        if (!this.user) return null;
+        if (!this.user) {
+            console.warn("CloudManager: Load attempt without an authenticated user.");
+            this.status = 'error';
+            return null;
+        }
         this.status = 'syncing';
 
         try {
             const timeoutPromise = new Promise((_, reject) =>
-                setTimeout(() => reject(new Error("Load Timeout")), 5000)
+                setTimeout(() => reject(new Error("Load Timeout")), 15000)
             );
 
             const userDoc = doc(this.db, "users", this.user.uid);
@@ -129,15 +136,15 @@ class CloudManager {
             const snap = await Promise.race([loadPromise, timeoutPromise]);
 
             if (snap && snap.exists()) {
-                console.log("CloudManager: Data pull successful");
+                console.log("CloudManager: Cloud Data Pulled for UID:", this.user.uid);
                 this.status = 'synced';
                 return snap.data();
             } else {
-                console.log("CloudManager: No cloud data found");
+                console.log("CloudManager: No existing cloud data for this user.");
                 this.status = 'synced';
             }
         } catch (error) {
-            console.warn("CloudManager: Cloud pull timed out or failed", error);
+            console.error("CloudManager: Load failed - ", error);
             this.status = 'error';
         }
         return null;

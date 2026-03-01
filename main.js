@@ -106,7 +106,9 @@ function showMasteryDashboard() {
                         <div style="font-size: 0.6rem; opacity: 0.6; display: flex; align-items: center; gap: 4px; justify-content: flex-end;">
                             <span id="cloud-status-dot" style="width: 6px; height: 6px; border-radius: 50%; background: #aaa;"></span>
                             <span id="cloud-status-text">DISCONNECTED</span>
+                            <button id="force-sync-btn" style="background: none; border: none; font-size: 0.8rem; cursor: pointer; padding: 0 4px; opacity: 0.5;">🔄</button>
                         </div>
+                        <div id="last-sync-time" style="font-size: 0.5rem; opacity: 0.4; margin-top: 2px;"></div>
                         <button id="cloud-login-btn" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 30px; color: white; font-size: 0.6rem; margin-top: 4px; cursor: pointer;">
                             ${cloudManager.user?.isAnonymous !== false ? '☁️ SYNC ACCOUNT' : '✅ ACCOUNT SYNCED'}
                         </button>
@@ -157,6 +159,15 @@ function showMasteryDashboard() {
             loginBtn.textContent = '☁️ SYNC ACCOUNT';
         }
     });
+
+    document.getElementById('force-sync-btn')?.addEventListener('click', async () => {
+        const btn = document.getElementById('force-sync-btn');
+        btn.style.animation = 'spin 1s linear infinite';
+        await levelManager.syncWithCloud();
+        showMasteryDashboard();
+    });
+
+    updateCloudStatusUI();
 }
 
 function updateCloudStatusUI() {
@@ -178,6 +189,13 @@ function updateCloudStatusUI() {
         } else if (cloudManager.status === 'error') {
             dot.style.background = '#ff4d4d';
             txt.textContent = 'SYNC ERROR';
+        }
+
+        const lastSync = localStorage.getItem('indak_last_sync');
+        const timeDisplay = document.getElementById('last-sync-time');
+        if (lastSync && timeDisplay) {
+            const date = new Date(parseInt(lastSync));
+            timeDisplay.textContent = `Last sync: ${date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
         }
     }
 }
