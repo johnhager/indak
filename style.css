@@ -263,9 +263,20 @@ h1 {
     max-width: 90vw;
     text-align: center;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     gap: 4px;
+}
+
+.hero-section p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 1rem;
+}
+
+.hero-desc {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
 }
 
 .pronunciation-guide {
@@ -390,8 +401,15 @@ h1 {
     }
 
     h2 {
-        font-size: 0.9rem;
-        margin-bottom: 0.1rem;
+        font-size: 1.4rem;
+        margin-bottom: 0.15rem;
+        font-weight: 800;
+    }
+
+    .hero-desc {
+        font-size: 0.95rem !important;
+        margin-bottom: 0.8rem;
+        opacity: 0.9;
     }
 
     .instructions {
