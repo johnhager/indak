@@ -42,6 +42,7 @@ export class SentenceBuilder {
                 </div>
                 
                 <button class="check-button btn-primary" style="padding: 1rem 4rem; border-radius: 50px; font-size: 1.2rem; display: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">CHECK SENTENCE</button>
+                <button class="continue-button btn-primary" style="padding: 1rem 4rem; border-radius: 50px; font-size: 1.2rem; display: none; background: var(--accent-bamboo); box-shadow: 0 10px 30px rgba(0,0,0,0.3);">CONTINUE</button>
             </div>
         `;
 
@@ -49,6 +50,7 @@ export class SentenceBuilder {
         this.wordBank = this.container.querySelector('.word-bank');
         this.targetEnglish = this.container.querySelector('.target-english');
         this.checkBtn = this.container.querySelector('.check-button');
+        this.continueBtn = this.container.querySelector('.continue-button');
         this.cluePanel = this.container.querySelector('.clue-panel');
         this.perfectEl = this.container.querySelector('.perfect-count');
         this.misplacedEl = this.container.querySelector('.misplaced-count');
@@ -57,14 +59,11 @@ export class SentenceBuilder {
     }
 
     bindEvents() {
-        // Native HTML5 Drag & Drop is finicky on mobile
-        // Need to add touch polyfill logic or pointer events for "Glassy puzzle pieces"
-
-        // For now, setting up delegation for pointer down/up to move chunks between bank/zone 
-        // purely on tap as a fallback, or robust pointer-tracking for drag.
-
         this.container.addEventListener('pointerdown', this.onPointerDown.bind(this));
         this.checkBtn.addEventListener('click', this.evaluateSyntax.bind(this));
+        this.continueBtn.addEventListener('click', () => {
+            this.loadSentence();
+        });
     }
 
     startRound() {
@@ -101,7 +100,17 @@ export class SentenceBuilder {
         this.dropZone.innerHTML = '';
         this.wordBank.innerHTML = '';
         this.targetEnglish.textContent = this.currentSentence.english;
+        this.cluePanel.innerHTML = `
+            <div style="color: #00ffaa;"><span class="perfect-count">0</span> PERFECT</div>
+            <div style="color: #ffcc00;"><span class="misplaced-count">0</span> MISPLACED</div>
+        `;
+        this.perfectEl = this.container.querySelector('.perfect-count');
+        this.misplacedEl = this.container.querySelector('.misplaced-count');
         this.cluePanel.style.opacity = '0';
+        this.continueBtn.style.display = 'none';
+        this.checkBtn.textContent = 'CHECK SENTENCE';
+        this.dropZone.style.borderColor = 'rgba(255,255,255,0.1)';
+        this.dropZone.style.background = 'rgba(255,255,255,0.03)';
 
         // Create Slots
         this.currentSentence.ilonggo_chunks.forEach(() => {
@@ -133,7 +142,9 @@ export class SentenceBuilder {
         allChunks.forEach(chunkData => {
             const chunkDiv = document.createElement('div');
             chunkDiv.className = 'word-chunk';
-            chunkDiv.textContent = chunkData.text;
+            // Show all bank words in lowercase to remove capitalization clues
+            chunkDiv.textContent = chunkData.text.toLowerCase();
+            chunkDiv.dataset.originalText = chunkData.text; // Store original for comparison
             chunkDiv.dataset.isCorrect = chunkData.isCorrect;
 
             // Stylish glassmorphism styling
@@ -165,6 +176,7 @@ export class SentenceBuilder {
     }
 
     onPointerDown(e) {
+        if (this.continueBtn.style.display === 'block') return; // Lock pieces after success
         const target = e.target.closest('.word-chunk');
         if (!target) return;
 
@@ -188,7 +200,29 @@ export class SentenceBuilder {
             slot.style.borderColor = 'rgba(255,255,255,0.2)';
         }
 
+        this.refreshCapitalization();
         this.checkIfReady();
+    }
+
+    refreshCapitalization() {
+        const slots = Array.from(this.dropZone.querySelectorAll('.drop-slot'));
+        slots.forEach((slot, index) => {
+            const chunk = slot.querySelector('.word-chunk');
+            if (chunk) {
+                const text = chunk.textContent;
+                if (index === 0) {
+                    chunk.textContent = text.charAt(0).toUpperCase() + text.slice(1);
+                } else {
+                    chunk.textContent = text.toLowerCase();
+                }
+            }
+        });
+
+        // Ensure all bank words are lowercase
+        const bankChunks = Array.from(this.wordBank.querySelectorAll('.word-chunk'));
+        bankChunks.forEach(chunk => {
+            chunk.textContent = chunk.textContent.toLowerCase();
+        });
     }
 
     checkIfReady() {
@@ -206,8 +240,8 @@ export class SentenceBuilder {
         this.roundAttempts++;
 
         const slots = Array.from(this.dropZone.querySelectorAll('.drop-slot'));
-        const currentAnswer = slots.map(s => s.children[0]?.textContent || "");
-        const correctAnswer = this.currentSentence.ilonggo_chunks;
+        const currentAnswer = slots.map(s => s.children[0]?.textContent.toLowerCase() || "");
+        const correctAnswer = this.currentSentence.ilonggo_chunks.map(c => c.toLowerCase());
 
         // Mastermind Logic
         let perfectMatches = 0;
@@ -249,15 +283,17 @@ export class SentenceBuilder {
             if (this.roundAttempts === 1) {
                 this.score++;
             }
-            // Glow green, proceed
+            // Glow green
             this.dropZone.style.borderColor = '#00ffaa';
             this.dropZone.style.background = 'rgba(0, 255, 170, 0.1)';
 
-            setTimeout(() => {
-                this.dropZone.style.borderColor = 'rgba(255,255,255,0.1)';
-                this.dropZone.style.background = 'rgba(255,255,255,0.03)';
-                this.loadSentence();
-            }, 1200);
+            // Show "CORRECT!" in clue panel
+            this.cluePanel.innerHTML = `<div style="color: #00ffaa; font-weight: 800; font-size: 1rem; letter-spacing: 2px;">✨ CORRECT! ✨</div>`;
+            this.cluePanel.style.opacity = '1';
+
+            // Swap buttons
+            this.checkBtn.style.display = 'none';
+            this.continueBtn.style.display = 'block';
         } else {
             // Update Clue Panel
             this.perfectEl.textContent = perfectMatches;
