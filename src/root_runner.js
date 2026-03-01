@@ -167,12 +167,22 @@ export class RootRunner {
         if (!this.gameActive) return;
 
         const now = Date.now();
-        if (now - this.lastSpawnTime > this.spawnInterval) {
-            this.spawnWord();
-            this.lastSpawnTime = now;
+        const isPaused = this.activeWords.some(w => w.isDragging);
+
+        if (!isPaused) {
+            if (now - this.lastSpawnTime > this.spawnInterval) {
+                this.spawnWord();
+                this.lastSpawnTime = now;
+            }
+            this.updateWords();
+        } else {
+            // Keep pushing lastSpawnTime forward so the timer pauses while dragging
+            if (this.lastFrameTime) {
+                this.lastSpawnTime += (now - this.lastFrameTime);
+            }
         }
 
-        this.updateWords();
+        this.lastFrameTime = now;
         requestAnimationFrame(() => this.loop());
     }
 
@@ -234,16 +244,16 @@ export class RootRunner {
     }
 
     updateWords() {
+        const isPaused = this.activeWords.some(w => w.isDragging);
+        if (isPaused) return;
+
         for (let i = this.activeWords.length - 1; i >= 0; i--) {
             const w = this.activeWords[i];
             if (w.isProcessed) continue;
 
-            if (!w.isDragging) {
-                w.y += this.speed;
-                w.el.style.top = `${w.y}px`;
-            }
+            w.y += this.speed;
+            w.el.style.top = `${w.y}px`;
 
-            // If word passes bottom half, speed it up or pick up
             if (w.y > window.innerHeight) {
                 w.el.remove();
                 this.activeWords.splice(i, 1);
