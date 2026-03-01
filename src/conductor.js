@@ -253,9 +253,43 @@ class Conductor {
 
             this.handleAutoHit(first);
 
-            // Cascade the timing for all subsequent syllables relative to this exact tap
-            this.queuedSyllables.forEach(q => {
-                q.targetHitTime = now + (q.index * this.msPerBeat);
+            // 1. Pre-calculate the rhythm map for the word relative to this tap
+            let cumulativeOffset = 0;
+            // Strip spaces for accurate char-to-syllable mapping
+            const fullWord = first.wordData.word.replace(/\s+/g, '');
+
+            this.queuedSyllables.forEach((q, i) => {
+                // Base timing
+                let skipOffset = 0;
+
+                // 2. Glottal Stop Detection (Hiccup)
+                // If there is a dash in the word string, find where it is relative to syllables
+                // This is a heuristic: check if the word has a dash and if we are crossing it
+                if (fullWord.includes('-')) {
+                    const parts = fullWord.split('-');
+                    // If the current syllable (q.index) matches the start of a post-dash part
+                    let charPos = 0;
+                    for (let p = 0; p < parts.length - 1; p++) {
+                        charPos += parts[p].length;
+                        // Find which syllable index the dash occurs BEFORE
+                        // We estimate syllable boundaries based on the string parts
+                        const syllableBeforeDash = first.wordData.syllables.slice(0, q.index).join('').length;
+                        if (syllableBeforeDash === charPos) {
+                            skipOffset += 65; // The "Hiligaynon Bounce" gap
+                            break;
+                        }
+                    }
+                }
+
+                // 3. Stress Anticipation (Punch)
+                // Stressed syllables often feel more natural if hit slightly 'ahead' of a perfect grid
+                if (q.isStress) {
+                    skipOffset -= 15;
+                }
+
+                cumulativeOffset += skipOffset;
+
+                q.targetHitTime = now + (q.index * this.msPerBeat) + cumulativeOffset;
                 this.activeSyllables.push(q);
                 this.totalPossible++;
             });

@@ -186,8 +186,23 @@ h1 {
 }
 
 .syllable-card.stress-beat {
-    border-color: var(--accent-gold);
-    box-shadow: 0 0 20px rgba(255, 217, 61, 0.2);
+    border: 2px solid var(--accent-gold);
+    box-shadow: 0 0 25px rgba(255, 217, 61, 0.4);
+    animation: thumping 1.5s infinite ease-in-out;
+}
+
+@keyframes thumping {
+    0% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.08);
+    }
+
+    30% {
+        transform: scale(1);
+    }
 }
 
 .syllable-card.hit {
