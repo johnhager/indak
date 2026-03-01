@@ -1,0 +1,167 @@
+[
+    {
+        "id": 1,
+        "sentence": "Dako ___ balay.",
+        "correct": "ang",
+        "distractors": [
+            "sa",
+            "sang"
+        ],
+        "english": "The house is big.",
+        "category": "Subject Markers"
+    },
+    {
+        "id": 2,
+        "sentence": "Makadto ako ___ palengke.",
+        "correct": "sa",
+        "distractors": [
+            "ang",
+            "si"
+        ],
+        "english": "I am going to the market.",
+        "category": "Direction Markers"
+    },
+    {
+        "id": 3,
+        "sentence": "Namit ___ inasal.",
+        "correct": "ang",
+        "distractors": [
+            "sang",
+            "ni"
+        ],
+        "english": "The grilled meat is delicious.",
+        "category": "Subject Markers"
+    },
+    {
+        "id": 4,
+        "sentence": "Nagakaon ___ bata.",
+        "correct": "ang",
+        "distractors": [
+            "sa",
+            "si"
+        ],
+        "english": "The child is eating.",
+        "category": "Subject Markers"
+    },
+    {
+        "id": 5,
+        "sentence": "Libro ___ Maria.",
+        "correct": "ni",
+        "distractors": [
+            "si",
+            "sa"
+        ],
+        "english": "Maria's book.",
+        "category": "Possessive Markers"
+    },
+    {
+        "id": 6,
+        "sentence": "Maayo ___ aga.",
+        "correct": "nga",
+        "distractors": [
+            "ang",
+            "sa"
+        ],
+        "english": "Good morning.",
+        "category": "Connectors"
+    },
+    {
+        "id": 7,
+        "sentence": "Gusto ko ___ kape.",
+        "correct": "sang",
+        "distractors": [
+            "ang",
+            "si"
+        ],
+        "english": "I want some coffee.",
+        "category": "Object Markers"
+    },
+    {
+        "id": 8,
+        "sentence": "Gwapa ___ maestra.",
+        "correct": "ang",
+        "distractors": [
+            "sa",
+            "sang"
+        ],
+        "english": "The teacher is beautiful.",
+        "category": "Subject Markers"
+    },
+    {
+        "id": 9,
+        "sentence": "Nagahampang ___ Juan.",
+        "correct": "si",
+        "distractors": [
+            "ang",
+            "ni"
+        ],
+        "english": "Juan is playing.",
+        "category": "Personal Markers"
+    },
+    {
+        "id": 10,
+        "sentence": "Diin ___ balay mo?",
+        "correct": "ang",
+        "distractors": [
+            "sa",
+            "sang"
+        ],
+        "english": "Where is your house?",
+        "category": "Subject Markers"
+    },
+    {
+        "id": 11,
+        "sentence": "Hampang kita ___ gwa.",
+        "correct": "sa",
+        "distractors": [
+            "ang",
+            "si"
+        ],
+        "english": "Let's play outside.",
+        "category": "Direction Markers"
+    },
+    {
+        "id": 12,
+        "sentence": "Inum ___ tubig.",
+        "correct": "sang",
+        "distractors": [
+            "ang",
+            "sa"
+        ],
+        "english": "Drink some water.",
+        "category": "Object Markers"
+    },
+    {
+        "id": 13,
+        "sentence": "Sapatos ___ tatay.",
+        "correct": "ni",
+        "distractors": [
+            "si",
+            "sang"
+        ],
+        "english": "Father's shoes.",
+        "category": "Possessive Markers"
+    },
+    {
+        "id": 14,
+        "sentence": "Madasig ___ dalagan.",
+        "correct": "ang",
+        "distractors": [
+            "sa",
+            "sang"
+        ],
+        "english": "The run is fast.",
+        "category": "Subject Markers"
+    },
+    {
+        "id": 15,
+        "sentence": "Salamat ___ bulig.",
+        "correct": "sa",
+        "distractors": [
+            "ang",
+            "sang"
+        ],
+        "english": "Thank you for the help.",
+        "category": "Direction Markers"
+    }
+]

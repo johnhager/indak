@@ -3,11 +3,13 @@ import conductor from './src/conductor.js';
 import levelManager from './src/level_manager.js';
 import { SwipeSorter } from './src/swipe_sorter.js';
 import { SentenceBuilder } from './src/sentence_builder.js';
+import { MarkerMission } from './src/marker_mission.js';
 
 const app = document.getElementById('app');
 const startBtn = document.getElementById('start-btn');
 const startSwipeBtn = document.getElementById('start-swipe-btn');
 const startSentenceBtn = document.getElementById('start-sentence-btn');
+const startMarkerBtn = document.getElementById('start-marker-btn');
 const exitBtn = document.getElementById('exit-btn');
 const gameStage = document.getElementById('game-stage');
 const menuOverlay = document.getElementById('menu-overlay');
@@ -169,6 +171,19 @@ startSentenceBtn?.addEventListener('click', async () => {
         activeGame.startRound();
     } catch (e) {
         console.error('Failed to fetch sentences:', e);
+    }
+});
+
+startMarkerBtn?.addEventListener('click', async () => {
+    hideMenu();
+    showExitButton();
+    try {
+        const response = await fetch('./data/grammar_drills.json');
+        const drillsData = await response.json();
+        activeGame = new MarkerMission(gameStage, drillsData);
+        activeGame.startRound();
+    } catch (e) {
+        console.error('Failed to fetch drills:', e);
     }
 });
 

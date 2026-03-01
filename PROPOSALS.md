@@ -82,3 +82,34 @@ We will need a new JSON data file or an expansion to the current one (e.g., `sen
 - **Interactions:** Use vanilla HTML5 Drag and Drop or custom Pointer events for moving the puzzle pieces. Track `data-order` indexes to validate correct syntax.
 - **UI State & Feedback:** Chunks snap to grid, playing sharp Web Audio API synths when locked in. Apply CSS `.shake` for incorrect validations and deep glow for correct ones.
 - **Mobile-First Layout:** Flex flow with `gap: clamp(0.5rem, 2vw, 1rem)` to ensure pieces don't overlap. Font resizing using clamp to keep things proportional inside the Drop Zone.
+
+---
+
+### Title: Marker Mission (Grammar Gap-Fill)
+**Status:** 🟡 PROPOSED
+**Date:** 2026-02-28
+**Proposed By:** Agent A
+
+#### 1. Curriculum Goal
+To teach the foundational "connectors" of Hiligaynon (Markers like *ang, sa, sang, si, ni* and Pronouns). This acts as a gateway to syntax, focusing on small, high-impact choices instead of building entire sentences from scratch.
+
+#### 2. Proposed Mechanics (For Agent B)
+A short sentence is displayed with a single prominent gap (`___`). Three glassy "Choice Bubbles" float at the bottom of the screen. The player taps the correct bubble to fill the gap.
+- **Micro-Interaction:** Tapping a bubble triggers a fast "magnetic" animation where the bubble snaps into the gap.
+- **Immediate Feedback:** Correct answers turn the gap green and translate the full sentence globally. Incorrect answers trigger a red "pulse" and the bubble shakes back to its origin.
+
+#### 3. Data Schema Requirements
+We will use a new JSON structure (`grammar_drills.json`):
+```json
+{
+    "sentence_pattern": "Dako ___ balay.",
+    "gap_index": 5, 
+    "correct": "ang",
+    "distractors": ["sa", "sang"],
+    "english": "The house is big.",
+    "category": "Markers"
+}
+```
+
+#### 4. Engineering & UI Notes (Agent B's Section)
+*(Leave this blank. Agent B will fill this in with architecture notes once Approved).*
