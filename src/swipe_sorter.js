@@ -1,13 +1,13 @@
-/**
- * @file swipe_sorter.js
- * @description Architecture for the "Swipe Sorter" mini-game. 
- * Handles the 4-way swiping mechanics for rapid word definition association.
- */
+import levelManager from './level_manager.js';
 
 export class SwipeSorter {
     constructor(containerElement, vocabularyData) {
         this.container = containerElement;
         this.vocabulary = vocabularyData;
+
+        // Ensure LevelManager has the latest vocab
+        levelManager.setVocabulary(vocabularyData);
+
         this.currentCard = null;
         this.gameActive = false;
 
@@ -65,18 +65,24 @@ export class SwipeSorter {
             return;
         }
 
-        if (!this.vocabulary || this.vocabulary.length < 4) return;
+        // Get pool from LevelManager (handles 20% reduction for mastered words)
+        const pool = levelManager.getFilteredVocabulary();
+        if (!pool || pool.length < 4) {
+            console.warn('Insufficient vocabulary for Swipe Sorter');
+            return;
+        }
+
         this.currentRound++;
 
-        // 1. Pick a random word
-        const targetIndex = Math.floor(Math.random() * this.vocabulary.length);
-        this.targetWordData = this.vocabulary[targetIndex];
+        // 1. Pick a random word from the weighted pool
+        const targetIndex = Math.floor(Math.random() * pool.length);
+        this.targetWordData = pool[targetIndex];
 
-        // 2. Pick 3 unique trap definitions
+        // 2. Pick 3 unique trap definitions from the full vocabulary
         let traps = [];
         while (traps.length < 3) {
             let trapIdx = Math.floor(Math.random() * this.vocabulary.length);
-            if (trapIdx !== targetIndex && !traps.some(t => t.meaning === this.vocabulary[trapIdx].meaning)) {
+            if (this.vocabulary[trapIdx].word !== this.targetWordData.word && !traps.some(t => t.meaning === this.vocabulary[trapIdx].meaning)) {
                 traps.push(this.vocabulary[trapIdx]);
             }
         }
@@ -205,6 +211,8 @@ export class SwipeSorter {
 
         if (isCorrect) {
             this.score++;
+            levelManager.markWordMastered(this.targetWordData.word);
+
             this.currentCard.style.transition = 'transform 0.5s ease-out, opacity 0.5s ease-out';
             let tx = 0, ty = 0;
             if (direction === 'left') tx = -window.innerWidth;
@@ -239,6 +247,7 @@ export class SwipeSorter {
         this.gameActive = false;
         this.container.innerHTML = '';
         const accuracy = Math.round((this.score / this.totalRounds) * 100);
+        const masterySummary = levelManager.getSummary();
 
         const summaryEl = document.getElementById('summary-screen');
         summaryEl.innerHTML = `
@@ -248,6 +257,8 @@ export class SwipeSorter {
                     <div class="stat-item"><span>Accuracy</span><strong>${accuracy}%</strong></div>
                     <div class="stat-item"><span>Correct</span><strong>${this.score}/${this.totalRounds}</strong></div>
                 </div>
+                <h3>Words Mastered</h3>
+                <div class="word-list">${masterySummary.mastered.slice(0, 10).join(', ')}...</div>
                 <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
                     <button id="swipe-restart-btn" class="btn-primary">TEKOT ULI (Play Again)</button>
                     <button id="swipe-exit-btn" class="btn-secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 12px; border-radius: 12px; color: white;">BACK TO MENU</button>
