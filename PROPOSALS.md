@@ -1,10 +1,10 @@
 # Feature & Curriculum Proposals
-This document serves as the formal handoff point between **Agent A (Curriculum & Platform Architect)** and **Antigravity (Lead Engine Developer & UI/UX Specialist)**.
+This document serves as the formal handoff point between **Agent A (Curriculum & Platform Architect)** and **Agent(s) B (Lead Engine Developers & UI/UX Specialists - e.g., Antigravity)**.
 
 ## Workflow Statuses
 - 🟡 **PROPOSED**: Agent A has drafted a new curriculum module or game idea. It is awaiting the User's approval.
-- 🟢 **APPROVED**: The User has greenlit the proposal. Antigravity is cleared to begin engineering the UI/UX and engine logic.
-- 🔵 **IN PROGRESS**: Antigravity is actively writing the Javascript/CSS for this feature.
+- 🟢 **APPROVED**: The User has greenlit the proposal. Agent B is cleared to begin engineering the UI/UX and engine logic.
+- 🔵 **IN PROGRESS**: Agent B is actively writing the Javascript/CSS for this feature.
 - 🟣 **COMPLETED**: The feature is live and deployed in `main`.
 - 🔴 **REJECTED**: The User decided not to move forward with this idea.
 
@@ -21,17 +21,58 @@ This document serves as the formal handoff point between **Agent A (Curriculum &
 #### 1. Curriculum Goal
 *What linguistic concept does this feature teach? (e.g., "Sight-reading verbs", "Listening comprehension for numbers", "Speed translation").*
 
-#### 2. Proposed Mechanics (For Antigravity)
+#### 2. Proposed Mechanics (For Agent B)
 *How do you envision the user interacting with the screen? (e.g., "Swiping flashcards left/right", "A multiple choice quiz", "Dragging words to build a sentence").*
 
 #### 3. Data Schema Requirements
 *What does the required JSON data look like for this? Provide a 1-item example of the schema (e.g., do we need new keys like `"audio_clip_path"` or `"incorrect_options"`?).*
 
-#### 4. Engineering & UI Notes (Antigravity's Section)
-*(Leave this blank. Antigravity will fill this in with architecture notes once Approved).*
+#### 4. Engineering & UI Notes (Agent B's Section)
+*(Leave this blank. Agent B will fill this in with architecture notes once Approved).*
 
 ---
 
 ## Active Proposals
 
-*(No active proposals yet. Agent A will populate the first proposal here!)*
+### Title: The Swipe Sorter (Single Word Definitions)
+**Status:** 🟡 PROPOSED
+**Date:** 2026-02-28
+**Proposed By:** Agent A
+
+#### 1. Curriculum Goal
+To build rapid-fire recall and high-volume repetition for the exact semantic meaning of single Ilonggo words. This bridges the gap between phonetic familiarity (taught by Indak) and practical translation.
+
+#### 2. Proposed Mechanics (For Agent B)
+A Tinder-style binary flashcard system. An Ilonggo word appears on a beautiful, frosted-glass card in the center of the screen. Two English definitions float on the left and right sides. The player must swipe the card left or right toward the correct definition before a short timer (e.g., 3 seconds) runs out. The interaction should seamlessly support one-handed mobile thumb swiping.
+
+#### 3. Data Schema Requirements
+We can likely reuse the existing `/data/vocabulary.json` schema to pull the target word and its `meaning`. However, we will need to inject incorrect "dummy" definitions dynamically from other entries in the JSON array to serve as the wrong swipe option.
+
+#### 4. Engineering & UI Notes (Agent B's Section)
+*(Leave this blank. Agent B will fill this in with architecture notes once Approved).*
+
+---
+
+### Title: Sentence Builder (Magnetic Poetics)
+**Status:** 🟡 PROPOSED
+**Date:** 2026-02-28
+**Proposed By:** Agent A
+
+#### 1. Curriculum Goal
+To teach Hiligaynon grammar and syntax, specifically internalizing the VSO (Verb-Subject-Object) sentence structure for long, complex sentences, which feels backward to English speakers.
+
+#### 2. Proposed Mechanics (For Agent B)
+An English sentence is displayed at the top. Below it is an empty "Drop Zone" with blank slots. At the bottom of the screen is a jumbled bank of Ilonggo word-chunks (glassy puzzle pieces). The player must drag and drop the Ilonggo word-chunks into the correct grammatical order in the Drop Zone.
+
+#### 3. Data Schema Requirements
+We will need a new JSON data file or an expansion to the current one (e.g., `sentences.json`):
+```json
+{
+    "english": "I am going to the market.",
+    "ilonggo_chunks": ["Makadto", "ako", "sa", "palengke"],
+    "trap_words": ["ikaw", "nagkadto"]
+}
+```
+
+#### 4. Engineering & UI Notes (Agent B's Section)
+*(Leave this blank. Agent B will fill this in with architecture notes once Approved).*

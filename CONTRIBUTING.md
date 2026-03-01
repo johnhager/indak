@@ -11,8 +11,8 @@ As of right now, development occurs primarily on the `main` branch deployed inst
 This project utilizes aggressive AI-assisted Pair Programming. When requesting new features or bug fixes:
 1. Always state exactly which mobile screen or device is breaking. We optimize explicitly for narrower screens (iPhone 13 Mini and similar 375px bounds).
 2. If introducing a new feature, clearly explain its *gameplay loop* intent. (Is it meant to test memory? Is it meant to test listening comprehension?)
-3. **Formal Handoff**: For entirely new learning games or curriculum structures, Agent A or the user must format it according to the `PROPOSALS.md` template. This acts as the official handoff sheet to Agent B (Antigravity).
-4. Let Agent B (Antigravity) write the actual scripts (Vanilla JS) to execute the approved `PROPOSALS.md` features.
+3. **Formal Handoff**: For entirely new learning games or curriculum structures, Agent A or the user must format it according to the `PROPOSALS.md` template. This acts as the official handoff sheet to Agent B (Engine Developers).
+4. Let an Agent B write the actual scripts (Vanilla JS) to execute the approved `PROPOSALS.md` features.
 
 ## 3. PWA Development Guidelines
 Since this app functions entirely as an offline-first PWA:
@@ -35,10 +35,10 @@ When scaling this app into a multi-game ecosystem with distinct AI assistants, a
   - Building the central "Mastery Dashboard" shell surrounding the mini-games.
 - **Restriction**: Must not attempt to rewrite or refactor the intricate `requestAnimationFrame` zero-latency game engines or procedural audio synthesizers. 
 
-### Agent B: Antigravity ("Lead Engine Developer & UI/UX Specialist")
+### Agent(s) B: "Lead Engine Developers & UI/UX Specialists" (e.g., Antigravity)
 - **Focus**: Mini-Game Engines, Zero-Latency Logic, and the Glassmorphism Design System.
 - **Responsibilities**: 
   - Establishing real-time gamemodes (`conductor.js`, Flashcards, Gamified Quizzes) and plugging into Agent A's databases.
   - Ensuring silky smooth 60PFS animations and iOS touch event latency.
   - Enforcing the strict Fluid Typography, Mobile-First (iPhone 13 Mini), and Glassmorphism CSS architecture across all modules.
-- **Restriction**: Relies on Agent A to provide the actual linguistic curriculum content via structured arrays.
+- **Restriction**: Must not alter the core vocabulary or grammar definitions directly, but rather rely on Agent A to provide the actual linguistic curriculum content via structured arrays.
