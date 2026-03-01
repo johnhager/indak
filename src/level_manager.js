@@ -64,7 +64,12 @@ class LevelManager {
         // 1. Identify valid candidates based on tier logic
         let candidates = this.vocabulary.filter(word => {
             // 1. Complex Mode constraint - force at least 3 syllables
-            if (this.speedMode === 'complex' && word.syllables.length < 3) return false;
+            if (this.speedMode === 'complex') {
+                if (word.syllables.length < 3) return false;
+                // Allow any 3+ syllable word from the player's current or previous tiers
+                const wordTier = word.tier || 1;
+                return wordTier <= this.currentTier;
+            }
 
             // 2. Tier 4+ uses explicit tier tagging
             if (this.currentTier >= 4) {
@@ -72,9 +77,6 @@ class LevelManager {
             }
 
             // 3. Tiers 1-3 use syllable-based progression
-            // In complex mode, we ignore the 'maxSyllables' ceiling of early tiers to find candidates
-            if (this.speedMode === 'complex') return true;
-
             return word.syllables.length <= (tier.maxSyllables || 10);
         });
 
