@@ -110,7 +110,7 @@ function showMasteryDashboard() {
                         </div>
                         <div id="last-sync-time" style="font-size: 0.5rem; opacity: 0.4; margin-top: 2px;"></div>
                         <button id="cloud-login-btn" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 30px; color: white; font-size: 0.6rem; margin-top: 4px; cursor: pointer;">
-                            ${cloudManager.user?.isAnonymous !== false ? '☁️ SYNC ACCOUNT' : '✅ ACCOUNT SYNCED'}
+                            ${cloudManager.user && !cloudManager.user.isAnonymous ? '🚪 EXIT ACCOUNT' : '☁️ SYNC ACCOUNT'}
                         </button>
                     </div>
                 </div>
@@ -153,7 +153,13 @@ function showMasteryDashboard() {
 
     const loginBtn = document.getElementById('cloud-login-btn');
     loginBtn?.addEventListener('click', async () => {
-        if (cloudManager.user && !cloudManager.user.isAnonymous) return;
+        if (cloudManager.user && !cloudManager.user.isAnonymous) {
+            if (confirm("Sign out of cloud sync? Your local progress will stay on this device.")) {
+                await cloudManager.logout();
+                showMasteryDashboard();
+            }
+            return;
+        }
 
         loginBtn.textContent = 'AUTHENTICATING...';
         const user = await cloudManager.loginWithGoogle();
@@ -191,8 +197,8 @@ function updateCloudStatusUI() {
             dot.style.background = '#00ffaa';
             txt.textContent = 'CLOUD SYNCED';
             if (loginBtn && cloudManager.user && !cloudManager.user.isAnonymous) {
-                loginBtn.textContent = '✅ ACCOUNT SYNCED';
-                loginBtn.style.opacity = '0.5';
+                loginBtn.textContent = '🚪 EXIT ACCOUNT';
+                loginBtn.style.opacity = '1.0';
             }
         } else if (cloudManager.status === 'syncing') {
             dot.style.background = '#ffcc00';

@@ -183,11 +183,23 @@ class CloudManager {
     async forceReset() {
         console.log("CloudManager: Performing hard reset...");
         try {
+            await this.logout();
             await terminate(this.db);
             await clearIndexedDbPersistence(this.db);
             window.location.reload();
         } catch (e) {
             console.error("CloudManager: Reset failed", e);
+        }
+    }
+
+    async logout() {
+        try {
+            await this.auth.signOut();
+            this.user = null;
+            this.status = 'disconnected';
+            console.log("CloudManager: Logged out");
+        } catch (e) {
+            console.error("CloudManager: Logout failed", e);
         }
     }
 }

@@ -165,47 +165,55 @@ class LevelManager {
     }
 
     async syncWithCloud() {
-        await cloudManager.init();
+        if (this._isSyncing) return;
+        this._isSyncing = true;
 
-        // 1. Load from cloud
-        const cloudData = await cloudManager.loadProgress();
-        if (cloudData) {
-            // Merge logic: Prefer the data with the highest total attempts (t) per word
-            let merged = false;
+        try {
+            await cloudManager.ready; // Wait for initial auth attempt
 
-            // Prefer higher tier
-            if (cloudData.tier > this.currentTier) {
-                console.log(`LevelManager: Upgrading Tier from ${this.currentTier} to ${cloudData.tier}`);
-                this.currentTier = cloudData.tier;
-                localStorage.setItem('indak_tier', this.currentTier);
-                merged = true;
-            }
+            // 1. Load from cloud
+            const cloudData = await cloudManager.loadProgress();
+            if (cloudData) {
+                let merged = false;
 
-            for (const [word, cloudStats] of Object.entries(cloudData.mastery)) {
-                if (!this.masteryData[word]) {
-                    this.masteryData[word] = cloudStats;
+                // Prefer higher tier
+                if (cloudData.tier > this.currentTier) {
+                    console.log(`LevelManager: Upgrading Tier from ${this.currentTier} to ${cloudData.tier}`);
+                    this.currentTier = cloudData.tier;
+                    localStorage.setItem('indak_tier', this.currentTier);
                     merged = true;
-                } else {
-                    ['rhythm', 'meaning'].forEach(type => {
-                        if (cloudStats[type].t > this.masteryData[word][type].t) {
-                            this.masteryData[word][type] = cloudStats[type];
-                            merged = true;
-                        }
-                    });
                 }
+
+                for (const [word, cloudStats] of Object.entries(cloudData.mastery)) {
+                    if (!this.masteryData[word]) {
+                        this.masteryData[word] = cloudStats;
+                        merged = true;
+                    } else {
+                        ['rhythm', 'meaning'].forEach(type => {
+                            if (cloudStats[type].t > (this.masteryData[word][type]?.t || 0)) {
+                                this.masteryData[word][type] = cloudStats[type];
+                                merged = true;
+                            }
+                        });
+                    }
+                }
+
+                if (merged) {
+                    localStorage.setItem('indak_mastery_v3', JSON.stringify(this.masteryData));
+                    localStorage.setItem('indak_last_sync', Date.now());
+                    console.log("LevelManager: Local storage updated with cloud data.");
+                }
+            } else {
+                console.log("LevelManager: Cloud is empty or pull failed.");
             }
 
-            if (merged) {
-                localStorage.setItem('indak_mastery_v3', JSON.stringify(this.masteryData));
-                localStorage.setItem('indak_last_sync', Date.now());
-                console.log("LevelManager: Local storage updated with cloud data.");
-            }
-        } else {
-            console.log("LevelManager: Cloud is empty, nothing to load.");
+            // 2. Save current state to cloud
+            await cloudManager.saveProgress(this.masteryData, this.currentTier);
+        } catch (e) {
+            console.error("LevelManager: Sync failed", e);
+        } finally {
+            this._isSyncing = false;
         }
-
-        // 2. Save current state to cloud
-        await cloudManager.saveProgress(this.masteryData, this.currentTier);
     }
 
     getMasteryStats() {
