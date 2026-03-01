@@ -56,6 +56,8 @@ export class SwipeSorter {
         this.totalRounds = 15;
         this.currentRound = 0;
         this.score = 0;
+        this.resetLabelHighlight();
+        [this.defTop, this.defBottom, this.defLeft, this.defRight].forEach(el => el.style.opacity = '0');
         this.loadNextCard();
     }
 
@@ -64,6 +66,9 @@ export class SwipeSorter {
             this.endGame();
             return;
         }
+
+        this.resetLabelHighlight();
+        [this.defTop, this.defBottom, this.defLeft, this.defRight].forEach(el => el.style.opacity = '0');
 
         // Get pool from LevelManager (handles 20% reduction for mastered words)
         const pool = levelManager.getFilteredVocabulary();
