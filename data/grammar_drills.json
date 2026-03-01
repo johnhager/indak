@@ -100,7 +100,7 @@
     },
     {
         "id": 10,
-        "sentence": "Diin ___ balay mo?",
+        "sentence": "Di-in ___ balay mo?",
         "correct": "ang",
         "distractors": [
             "sa",
@@ -122,7 +122,7 @@
     },
     {
         "id": 12,
-        "sentence": "Inum ___ tubig.",
+        "sentence": "Inom ___ tubig.",
         "correct": "sang",
         "distractors": [
             "ang",

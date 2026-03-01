@@ -148,19 +148,19 @@
         ]
     },
     {
-        "root": "Inum",
+        "root": "Inom",
         "meaning": "Drink",
         "valid_forms": [
             {
-                "word": "Nagainum",
+                "word": "Nagainom",
                 "english": "Drinking"
             },
             {
-                "word": "Gininum",
+                "word": "Gininom",
                 "english": "Drank"
             },
             {
-                "word": "Mainum",
+                "word": "Mainom",
                 "english": "Will drink"
             },
             {
@@ -169,9 +169,9 @@
             }
         ],
         "nonsense_forms": [
-            "Nagainums",
-            "Miinum",
-            "Inum-man"
+            "Nagainoms",
+            "Miinom",
+            "Inom-man"
         ]
     },
     {
@@ -218,7 +218,7 @@
                 "english": "Will cook"
             },
             {
-                "word": "Lutoon",
+                "word": "Lutuon",
                 "english": "To be cooked"
             }
         ],

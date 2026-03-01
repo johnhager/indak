@@ -36,5 +36,29 @@ A perfectly concise, one-to-three word English translation. Do not write full ex
 
 ---
 
-## Content Expansion Protocol
-When generating new words via scripts, ALWAYS test for lengths anywhere from 1 up to 10 syllables. Ensure the JSON remains syntactically perfect without trailing commas to avoid JSON parse failures upon Service Worker caching.
+## KWF 2024 Orthography Standards
+
+To ensure the modern relevance of "Indak," we follow the **Ortograpiya sang Hiligaynon (2024)** published by the Komisyon sa Wikang Filipino (KWF).
+
+### 1. Modern Hyphenation (Purong)
+*   **Glottal Stops (C-V):** Use a hyphen when a syllable ends in a consonant and the next starts with a vowel (e.g., `Gab-i`, `San-o`).
+*   **Reduplication:** Hyphenate full roots if they are independent (e.g., `Tawo-tawo`, `Lakat-lakat`).
+*   **Syncopation:** Mark vowels dropped during suffixation with a hyphen (e.g., `Dala` + `on` -> `Dal-on`).
+*   **Imperatives:** Hyphenate command forms (e.g., `Himu-a`, `Lutu-a`).
+*   **Prefixes:** Use hyphens between prefixes and proper nouns (e.g., `Taga-Iloilo`, `Maka-Filipino`).
+
+### 2. Vowel Selection (O/U and E/I)
+*   **The O/U Rule:** 
+    *   Use **O** in the final syllable of a root (`Bato`).
+    *   Use **U** in internal syllables (`Kuntani`).
+    *   **Shift:** O changes to U when a suffix is added (`Bato` -> `Batuhon`).
+*   **D to R Change:** The letter **D** usually changes to **R** when it falls between two vowels (e.g., `Dako` -> `Marako`).
+
+### 3. Official Stress Markers (Tuldik)
+While the game uses a `stress_index` for engine logic, the display text should ideally use these marks for advanced learners:
+*   **Pahilig (Acute ´):** Standard stress (e.g., `Maáyo`).
+*   **Paiwa (Grave `):** Final glottal stop with penultimate stress (e.g., `Lutò`).
+*   **Sunok (Circumflex ^):** Final stress + final glottal stop (e.g., `Dakû`).
+
+### 4. Modern Loanwords
+Respelle foreign words phonetically unless they are technical (e.g., `Jabon` -> `Habon`, `Calle` -> `Kalye`).
