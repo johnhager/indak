@@ -180,8 +180,8 @@ export class SwipeSorter {
         this.defRight.textContent = this.directionMap.right[labelKey];
 
         const cardHTML = `
-            <div class="swipe-card" style="width: 180px; height: 260px; background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.3); transform-origin: center center; transition: transform 0.1s linear;">
-                <h1 style="font-size: clamp(0.9rem, 5vw, 1.3rem); color: white; margin: 0; pointer-events: none; text-align: center; padding: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">${this.targetWordData[cardKey]}</h1>
+            <div class="swipe-card" style="width: 150px; height: 220px; background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.3); transform-origin: center center; transition: transform 0.1s linear;">
+                <h1 style="font-size: clamp(0.8rem, 4vw, 1.1rem); color: white; margin: 0; pointer-events: none; text-align: center; padding: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">${this.targetWordData[cardKey]}</h1>
             </div>
         `;
         this.cardStack.innerHTML = cardHTML;

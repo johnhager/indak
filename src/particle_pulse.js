@@ -83,7 +83,7 @@ export class ParticlePulse {
                 <div class="pulse-node node-right" style="position: absolute; right: 3vw; top: 50%; transform: translateY(-50%); text-align: center; font-weight: 800; padding: 15px 25px; border-radius: 30px; background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.3); backdrop-filter: blur(8px); transition: all 0.2s; color: white;">RIGHT</div>
 
                 <!-- Central Area -->
-                <div id="card-placeholder" style="position: relative; width: 280px; height: 160px; z-index: 100;"></div>
+                <div id="card-placeholder" style="position: relative; width: 180px; height: 120px; z-index: 100;"></div>
             </div>
         `;
 
@@ -168,10 +168,10 @@ export class ParticlePulse {
         this.activeCard.style.alignItems = 'center';
         this.activeCard.style.justifyContent = 'center';
         this.activeCard.style.textAlign = 'center';
-        this.activeCard.style.padding = '1.5rem';
-        this.activeCard.style.borderRadius = '20px';
+        this.activeCard.style.padding = '1rem';
+        this.activeCard.style.borderRadius = '16px';
         this.activeCard.style.fontWeight = '800';
-        this.activeCard.style.fontSize = '1.2rem';
+        this.activeCard.style.fontSize = '1rem';
         this.activeCard.style.boxShadow = '0 15px 35px rgba(0,0,0,0.4)';
         this.activeCard.style.cursor = 'grab';
         this.activeCard.style.transition = 'transform 0.1s, opacity 0.3s';
