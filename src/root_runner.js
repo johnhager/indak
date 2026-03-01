@@ -52,7 +52,10 @@ export class RootRunner {
                         <h2 class="lesson-title" style="margin: 1rem 0; font-size: 2rem; color: white;"></h2>
                         <p class="lesson-text" style="font-size: 1.1rem; line-height: 1.6; color: #ddd; margin-bottom: 2rem;"></p>
                         <div class="lesson-examples" style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 12px; font-family: monospace; color: var(--accent-gold); margin-bottom: 2rem;"></div>
-                        <button class="lesson-next-btn btn-primary" style="width: 100%;">START TRAINING</button>
+                        <div style="display: flex; gap: 1rem; width: 100%;">
+                            <button class="lesson-back-btn btn-secondary" style="flex: 1; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 12px; padding: 12px;">BACK</button>
+                            <button class="lesson-next-btn btn-primary" style="flex: 2;">NEXT</button>
+                        </div>
                     </div>
                 </div>
 
@@ -133,6 +136,7 @@ export class RootRunner {
     }
 
     showLesson(index) {
+        if (index < 0) return;
         if (index >= this.lessons.length) {
             this.lessonOverlay.style.display = 'none';
             this.startGame();
@@ -145,10 +149,25 @@ export class RootRunner {
         this.lessonOverlay.querySelector('.lesson-examples').innerHTML = lesson.examples;
         this.lessonOverlay.style.display = 'flex';
 
+        // Navigation Buttons
         const nextBtn = this.lessonOverlay.querySelector('.lesson-next-btn');
-        const newBtn = nextBtn.cloneNode(true);
-        nextBtn.parentNode.replaceChild(newBtn, nextBtn);
-        newBtn.addEventListener('click', () => this.showLesson(index + 1));
+        const backBtn = this.lessonOverlay.querySelector('.lesson-back-btn');
+
+        // Update button text
+        const isLastSlide = index === this.lessons.length - 1;
+        nextBtn.textContent = isLastSlide ? 'START TRAINING' : 'NEXT';
+
+        // Back button visibility
+        backBtn.style.display = index === 0 ? 'none' : 'block';
+
+        // Reset and add listeners
+        const newNextBtn = nextBtn.cloneNode(true);
+        nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+        newNextBtn.addEventListener('click', () => this.showLesson(index + 1));
+
+        const newBackBtn = backBtn.cloneNode(true);
+        backBtn.parentNode.replaceChild(newBackBtn, backBtn);
+        newBackBtn.addEventListener('click', () => this.showLesson(index - 1));
     }
 
     startGame() {
