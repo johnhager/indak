@@ -8,6 +8,7 @@ class LevelManager {
         this.consecutivePerfects = 0;
         this.consecutiveMisses = 0;
         this.vocabulary = [];
+        this.speedMode = 'native'; // Default
 
         // Mastery V3: { [word]: { rhythm: { c: N, t: M }, meaning: { c: N, t: M } } }
         // Migration from V2 (bool) to V3 (stats)
@@ -46,8 +47,10 @@ class LevelManager {
     }
 
     setSpeedMode(mode) {
+        this.speedMode = mode;
         this.tiers = this.getTeirsForSpeed();
-        this.currentBpm = mode === 'fast' ? 140 : 80;
+        // Both Native and Complex run at full speed
+        this.currentBpm = 140;
         this.currentTier = 1;
     }
 
@@ -61,6 +64,9 @@ class LevelManager {
         // 1. Identify valid candidates based on tier logic
         let candidates = this.vocabulary.filter(word => {
             if (excludeWords.includes(word.word)) return false;
+
+            // NEW: Complex Mode constraint - force at least 3 syllables
+            if (this.speedMode === 'complex' && word.syllables.length < 3) return false;
 
             // Tier 4+ uses explicit tier tagging
             if (this.currentTier >= 4) {

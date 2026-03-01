@@ -111,7 +111,7 @@ class Conductor {
         this.draw();
 
         if (this.debugOverlay) {
-            this.debugOverlay.innerText = `Pos: ${Math.floor(this.songPosition)}ms\nBPM: ${Math.floor(this.bpm)}\nCombo: ${this.combo}\nMult: ${this.multiplier}x\nTier: ${levelManager.tiers[levelManager.currentTier].name}`;
+            this.debugOverlay.innerText = `Pos: ${Math.floor(this.songPosition)}ms\nBPM: ${Math.floor(this.bpm)}\nCombo: ${this.combo}\nMult: ${this.multiplier}x\nTier: ${levelManager.tiers[levelManager.currentTier].name}\nMode: ${levelManager.speedMode.toUpperCase()}`;
         }
 
         requestAnimationFrame(() => this.update());
