@@ -128,14 +128,15 @@ class LevelManager {
         }
 
         const threshold = 0.9;
+        const minAttempts = 5;
         const rhythmCount = Object.values(this.masteryData).filter(m =>
-            m.rhythm.t > 0 && (m.rhythm.c / m.rhythm.t) >= threshold).length;
+            m.rhythm.t >= minAttempts && (m.rhythm.c / m.rhythm.t) >= threshold).length;
         const meaningCount = Object.values(this.masteryData).filter(m =>
-            m.meaning.t > 0 && (m.meaning.c / m.meaning.t) >= threshold).length;
+            m.meaning.t >= minAttempts && (m.meaning.c / m.meaning.t) >= threshold).length;
 
         const bothCount = Object.values(this.masteryData).filter(m =>
-            (m.rhythm.t > 0 && (m.rhythm.c / m.rhythm.t) >= threshold) &&
-            (m.meaning.t > 0 && (m.meaning.c / m.meaning.t) >= threshold)
+            (m.rhythm.t >= minAttempts && (m.rhythm.c / m.rhythm.t) >= threshold) &&
+            (m.meaning.t >= minAttempts && (m.meaning.c / m.meaning.t) >= threshold)
         ).length;
 
         return {

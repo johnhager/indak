@@ -48,7 +48,7 @@ function hideExitButton() {
 function showMasteryDashboard() {
     const stats = levelManager.getMasteryStats();
     const threshold = 0.9;
-    const minAttempts = 1; // Show as "mastered" immediately if they hit the target on first try
+    const minAttempts = 5;
 
     // Create or find container
     let dash = document.getElementById('mastery-dashboard');
@@ -97,7 +97,7 @@ function showMasteryDashboard() {
             <div style="flex-shrink: 0; padding-bottom: 1rem;">
                 <h2 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Vocab Mastery</h2>
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                    <p style="font-size: 0.7rem; opacity: 0.7;">Threshold: <b>90% Efficiency</b></p>
+                    <p style="font-size: 0.7rem; opacity: 0.7;">Threshold: <b>90% Success (5+ Tries)</b></p>
                     <p style="font-size: 0.7rem; color: var(--accent-gold);">Mastered: <b>${stats.full}/${stats.total}</b></p>
                 </div>
                 
