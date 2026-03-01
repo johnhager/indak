@@ -55,6 +55,7 @@ export class SwipeSorter {
         this.gameActive = true;
         this.totalRounds = 15;
         this.currentRound = 0;
+        this.score = 0;
         this.totalAttempts = 0;
         this.missedWords = new Set();
         this.roundUsedWords = [];
@@ -269,7 +270,7 @@ export class SwipeSorter {
     endGame() {
         this.gameActive = false;
         this.container.innerHTML = '';
-        const accuracy = Math.round((this.score / this.totalRounds) * 100);
+        const accuracy = this.totalRounds === 0 ? 0 : Math.round((this.score / this.totalRounds) * 100);
         const masteryStats = levelManager.getMasteryStats();
 
         let reviewHtml = '';

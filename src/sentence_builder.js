@@ -232,7 +232,7 @@ export class SentenceBuilder {
 
     endGame() {
         this.container.innerHTML = '';
-        const accuracy = Math.round((this.totalRounds / this.totalAttempts) * 100);
+        const accuracy = this.totalAttempts === 0 ? 0 : Math.round((this.score / this.totalRounds) * 100);
 
         const summaryEl = document.getElementById('summary-screen');
         summaryEl.innerHTML = `
