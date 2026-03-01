@@ -403,12 +403,19 @@ export class RootRunner {
         this.activeWords.forEach(w => w.el.remove());
         this.activeWords = [];
 
-        const accuracy = Math.round((this.score / this.totalAttempts) * 100);
+        const accuracy = this.totalAttempts === 0 ? 0 : Math.round((this.score / this.totalAttempts) * 100);
+
+        let levelUpMessage = '';
+        if (accuracy >= 80) {
+            const leveled = levelManager.advanceTier();
+            if (leveled) levelUpMessage = `<div style="color: var(--accent-gold); font-weight: 800; margin-bottom: 1rem; animation: pulse 2s infinite;">LEVEL UP! ACCESSING NEW ROOTS...</div>`;
+        }
 
         const summaryEl = document.getElementById('summary-screen');
         summaryEl.innerHTML = `
             <div class="glass-card">
                 <h2>Morphology Complete!</h2>
+                ${levelUpMessage}
                 <div class="stats-grid">
                     <div class="stat-item"><span>Accuracy</span><strong>${accuracy}%</strong></div>
                     <div class="stat-item"><span>Handled</span><strong>${this.score}/${this.totalAttempts}</strong></div>

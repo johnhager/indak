@@ -232,12 +232,19 @@ export class SentenceBuilder {
 
     endGame() {
         this.container.innerHTML = '';
-        const accuracy = this.totalAttempts === 0 ? 0 : Math.round((this.score / this.totalRounds) * 100);
+        const accuracy = this.totalRounds === 0 ? 0 : Math.round((this.score / this.totalRounds) * 100);
+
+        let levelUpMessage = '';
+        if (accuracy >= 80) {
+            const leveled = levelManager.advanceTier();
+            if (leveled) levelUpMessage = `<div style="color: var(--accent-gold); font-weight: 800; margin-bottom: 1rem; animation: pulse 2s infinite;">LEVEL UP! ACCESSING COMPLEX SYNTAX...</div>`;
+        }
 
         const summaryEl = document.getElementById('summary-screen');
         summaryEl.innerHTML = `
             <div class="glass-card">
                 <h2>Builder Complete!</h2>
+                ${levelUpMessage}
                 <div class="stats-grid">
                     <div class="stat-item"><span>Success Rate</span><strong>${accuracy}%</strong></div>
                     <div class="stat-item"><span>Solved</span><strong>${this.score}/${this.totalRounds}</strong></div>

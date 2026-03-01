@@ -19,6 +19,8 @@ class LevelManager {
                 meaning: this.migrateStat(stats.meaning)
             };
         }
+
+        this.currentTier = parseInt(localStorage.getItem('indak_tier')) || 1;
     }
 
     migrateStat(val) {
@@ -49,7 +51,6 @@ class LevelManager {
         const tier = this.tiers[this.currentTier];
         let validWords = this.vocabulary.filter(word => word.syllables.length <= tier.maxSyllables);
 
-        // Try to exclude recently used words, but don't if it leaves us empty
         const nonDuplicateWords = validWords.filter(w => !excludeWords.includes(w.word));
         if (nonDuplicateWords.length > 0) {
             validWords = nonDuplicateWords;
@@ -64,17 +65,28 @@ class LevelManager {
             const skill = stats[gameType] || { c: 0, t: 0 };
 
             // Inverse Proportional Spawning:
-            // Success Rate (sr) = correct / total (or 0 if t=0)
-            // Weight = 10 - (9 * successRate)
-            // New words (sr=0) are 10x more likely than mastered words (sr=1)
+            // Successfully mastered words (sr=1) get weight 1
+            // Words with 0 tries (t=0) get weight 15
+            // Partial success scales between 1-10
             const sr = skill.t === 0 ? 0 : skill.c / skill.t;
-            const weight = Math.max(1, Math.round(10 - (9 * sr)));
+            let weight = Math.max(1, Math.round(10 - (9 * sr)));
+
+            if (skill.t === 0) weight = 15;
 
             for (let i = 0; i < weight; i++) {
                 pool.push(word);
             }
         });
         return pool;
+    }
+
+    advanceTier() {
+        if (this.currentTier < 3) {
+            this.currentTier++;
+            localStorage.setItem('indak_tier', this.currentTier);
+            return true;
+        }
+        return false;
     }
 
     handleRating(rating) {
@@ -98,12 +110,14 @@ class LevelManager {
     checkTierUpgrade() {
         if (this.currentTier < 3) {
             this.currentTier++;
+            localStorage.setItem('indak_tier', this.currentTier);
         }
     }
 
     checkTierDowngrade() {
         if (this.currentTier > 1) {
             this.currentTier--;
+            localStorage.setItem('indak_tier', this.currentTier);
         }
     }
 

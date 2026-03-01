@@ -95,8 +95,13 @@ function showMasteryDashboard() {
     dash.innerHTML = `
         <div class="glass-card" style="width: 95%; max-width: 550px; max-height: 85vh; display: flex; flex-direction: column; overflow: hidden;">
             <div style="flex-shrink: 0; padding-bottom: 1rem;">
-                <h2 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Vocab Mastery</h2>
-                <p style="font-size: 0.7rem; opacity: 0.7; margin-bottom: 1rem;">90% Success (5+ Tries)</p>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+                    <div>
+                        <h2 style="color: var(--accent-gold); margin-bottom: 0.2rem;">Vocab Mastery</h2>
+                        <div style="background: var(--accent-gold); color: black; display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.65rem; font-weight: 800; margin-bottom: 0.5rem;">LEVEL ${levelManager.currentTier}: ${levelManager.getSummary().tier}</div>
+                    </div>
+                </div>
+                <p style="font-size: 0.6rem; opacity: 0.7; margin-bottom: 1rem;">90% Success (5+ Tries)</p>
                 
                 <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 10px;">
                     <div class="stat-item" style="padding: 12px;">

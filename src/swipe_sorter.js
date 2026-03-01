@@ -271,6 +271,14 @@ export class SwipeSorter {
         this.gameActive = false;
         this.container.innerHTML = '';
         const accuracy = this.totalRounds === 0 ? 0 : Math.round((this.score / this.totalRounds) * 100);
+
+        // Level up logic: if 80%+ accuracy, try to advance the global tier
+        let levelUpMessage = '';
+        if (accuracy >= 80) {
+            const leveled = levelManager.advanceTier();
+            if (leveled) levelUpMessage = `<div style="color: var(--accent-gold); font-weight: 800; margin-bottom: 1rem; animation: pulse 2s infinite;">LEVEL UP! ACCESSING NEW WORDS...</div>`;
+        }
+
         const masteryStats = levelManager.getMasteryStats();
 
         let reviewHtml = '';
@@ -299,6 +307,9 @@ export class SwipeSorter {
         summaryEl.innerHTML = `
             <div class="glass-card" style="width: 90%; max-width: 450px; display: flex; flex-direction: column;">
                 <h2 style="margin-bottom: 1.5rem;">Session Complete</h2>
+                
+                ${levelUpMessage}
+
                 <div class="stats-grid" style="margin-bottom: 1.5rem;">
                     <div class="stat-item"><span>Accuracy</span><strong>${accuracy}%</strong></div>
                     <div class="stat-item"><span>Correct</span><strong>${this.score}/${this.totalRounds}</strong></div>
