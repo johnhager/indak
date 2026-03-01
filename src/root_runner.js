@@ -43,22 +43,79 @@ export class RootRunner {
     }
 
     init() {
+        this.showStartScreen();
+    }
+
+    stop() {
+        this.gameActive = false;
+        this.container.innerHTML = '';
+        const summary = document.getElementById('summary-screen');
+        if (summary) summary.classList.add('hidden');
+    }
+
+    showStartScreen() {
+        this.container.innerHTML = `
+            <div class="root-runner-start" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);">
+                <div class="glass-card" style="width: 90%; max-width: 400px; padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; text-align: center;">
+                    <div style="margin-bottom: 0.5rem;">
+                        <span style="font-size: 3rem; display: block; margin-bottom: 10px;">🏃</span>
+                        <h2 style="margin: 0; font-size: 1.8rem; letter-spacing: 1px; color: var(--accent-gold);">Root Runner</h2>
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 5px;">Master Hiligaynon Morphology</p>
+                    </div>
+
+                    <div style="display: flex; gap: 10px; margin-top: 1rem;">
+                        <button id="start-rr-btn" class="btn-primary" style="flex: 2; padding: 1rem; border-radius: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">START</button>
+                        <button id="lesson-btn" class="btn-secondary" style="flex: 1; padding: 1rem; border-radius: 16px; font-weight: 800; background: rgba(255, 204, 0, 0.1); border: 1px solid var(--accent-gold); color: var(--accent-gold);">📖 HELP</button>
+                    </div>
+
+                    <button id="exit-rr-btn" class="btn-secondary" style="background: transparent; border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem; border-radius: 12px; color: rgba(255,255,255,0.5); font-size: 0.8rem;">BACK TO MENU</button>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('start-rr-btn').addEventListener('click', () => {
+            this.setupGameUI();
+            this.startGame();
+        });
+
+        document.getElementById('lesson-btn').addEventListener('click', () => {
+            this.showLessonScreen();
+        });
+
+        document.getElementById('exit-rr-btn').addEventListener('click', () => {
+            location.reload();
+        });
+    }
+
+    showLessonScreen() {
+        this.container.innerHTML = `
+            <div class="root-runner-start" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%); padding: 1rem;">
+                <div class="glass-card" style="width: 100%; max-width: 450px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; text-align: left; max-height: 85vh; overflow-y: auto;">
+                    <h2 style="margin: 0; font-size: 1.5rem; color: var(--accent-gold); text-align: center;">📖 Crash Course</h2>
+                    
+                    ${this.lessons.map((lesson, i) => `
+                    <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                        <strong style="color: ${['#00ffaa', '#ffcc00', '#ff6b6b', '#00bfff'][i % 4]}; font-size: 1.1rem;">${i + 1}. ${lesson.title}</strong>
+                        <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.5;">
+                            <li style="margin-bottom: 5px;">${lesson.content}</li>
+                            <li><i style="color: var(--accent-gold);">${lesson.examples}</i></li>
+                        </ul>
+                    </div>
+                    `).join('')}
+
+                    <button id="back-to-rr-btn" class="btn-primary" style="margin-top: 5px; padding: 1rem; border-radius: 16px; font-weight: 800;">GOT IT, LET'S PLAY</button>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('back-to-rr-btn').addEventListener('click', () => {
+            this.showStartScreen();
+        });
+    }
+
+    setupGameUI() {
         this.container.innerHTML = `
             <div class="root-runner-ui" style="position:relative; width: 100%; height: 100%; overflow: hidden; user-select: none;">
-                <!-- Lesson Overlay -->
-                <div class="lesson-overlay" style="position: absolute; inset:0; background: rgba(0,0,0,0.85); backdrop-filter: blur(10px); z-index: 200; display: none; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; text-align: center;">
-                    <div class="glass-card" style="width: 100%; max-width: 400px; padding: 2.5rem;">
-                        <span style="color: var(--accent-gold); font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase;">Morphology Lesson</span>
-                        <h2 class="lesson-title" style="margin: 1rem 0; font-size: 2rem; color: white;"></h2>
-                        <p class="lesson-text" style="font-size: 1.1rem; line-height: 1.6; color: #ddd; margin-bottom: 2rem;"></p>
-                        <div class="lesson-examples" style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 12px; font-family: monospace; color: var(--accent-gold); margin-bottom: 2rem;"></div>
-                        <div style="display: flex; gap: 1rem; width: 100%;">
-                            <button class="lesson-back-btn btn-secondary" style="flex: 1; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 12px; padding: 12px;">BACK</button>
-                            <button class="lesson-next-btn btn-primary" style="flex: 2;">NEXT</button>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Game Layer -->
                 <div class="game-layer" style="width:100%; height:100%; position:relative;">
                     <!-- Central Orb -->
@@ -82,7 +139,6 @@ export class RootRunner {
             </div>
         `;
 
-        this.lessonOverlay = this.container.querySelector('.lesson-overlay');
         this.wordStream = this.container.querySelector('#word-stream');
         this.rootDisplay = this.container.querySelector('#root-display');
         this.rootMeaning = this.container.querySelector('#root-meaning');
@@ -132,42 +188,7 @@ export class RootRunner {
         this.score = 0;
         this.totalAttempts = 0;
         this.recentWords = []; // Recent spawns to avoid duplicates
-        this.showLesson(0);
-    }
-
-    showLesson(index) {
-        if (index < 0) return;
-        if (index >= this.lessons.length) {
-            this.lessonOverlay.style.display = 'none';
-            this.startGame();
-            return;
-        }
-
-        const lesson = this.lessons[index];
-        this.lessonOverlay.querySelector('.lesson-title').textContent = lesson.title;
-        this.lessonOverlay.querySelector('.lesson-text').innerHTML = lesson.content;
-        this.lessonOverlay.querySelector('.lesson-examples').innerHTML = lesson.examples;
-        this.lessonOverlay.style.display = 'flex';
-
-        // Navigation Buttons
-        const nextBtn = this.lessonOverlay.querySelector('.lesson-next-btn');
-        const backBtn = this.lessonOverlay.querySelector('.lesson-back-btn');
-
-        // Update button text
-        const isLastSlide = index === this.lessons.length - 1;
-        nextBtn.textContent = isLastSlide ? 'START TRAINING' : 'NEXT';
-
-        // Back button visibility
-        backBtn.style.display = index === 0 ? 'none' : 'block';
-
-        // Reset and add listeners
-        const newNextBtn = nextBtn.cloneNode(true);
-        nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
-        newNextBtn.addEventListener('click', () => this.showLesson(index + 1));
-
-        const newBackBtn = backBtn.cloneNode(true);
-        backBtn.parentNode.replaceChild(newBackBtn, backBtn);
-        newBackBtn.addEventListener('click', () => this.showLesson(index - 1));
+        this.startGame();
     }
 
     startGame() {
