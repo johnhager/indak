@@ -35,7 +35,7 @@ This document serves as the formal handoff point between **Agent A (Curriculum &
 ## Active Proposals
 
 ### Title: The Swipe Sorter (Single Word Definitions)
-**Status:** 🟡 PROPOSED
+**Status:** 🟢 APPROVED
 **Date:** 2026-02-28
 **Proposed By:** Agent A
 
@@ -49,12 +49,15 @@ A Tinder-style binary flashcard system. An Ilonggo word appears on a beautiful, 
 We can likely reuse the existing `/data/vocabulary.json` schema to pull the target word and its `meaning`. However, we will need to inject incorrect "dummy" definitions dynamically from other entries in the JSON array to serve as the wrong swipe option.
 
 #### 4. Engineering & UI Notes (Agent B's Section)
-*(Leave this blank. Agent B will fill this in with architecture notes once Approved).*
+- **Engine Setup:** Will build `swipe_sorter.js` to manage the game loop.
+- **Interactions:** Use vanilla `pointerdown`, `pointermove`, and `pointerup` for cross-device one-handed swipes. Calculate `transform: translate(x) rotate(deg)` based on input drag distance.
+- **UI State & Feedback:** If dragged > 40% of screen width, lock in the choice. Play Web Audio API stabs for correct/incorrect, fade card out, pull next. No React springs, pure CSS transitions for snap-back if released early. 
+- **Mobile-First Layout:** Flex container ensuring 100vh on iPhone 13 Mini, avoiding Safari nav bars.
 
 ---
 
 ### Title: Sentence Builder (Magnetic Poetics)
-**Status:** 🟡 PROPOSED
+**Status:** 🟢 APPROVED
 **Date:** 2026-02-28
 **Proposed By:** Agent A
 
@@ -75,4 +78,7 @@ We will need a new JSON data file or an expansion to the current one (e.g., `sen
 ```
 
 #### 4. Engineering & UI Notes (Agent B's Section)
-*(Leave this blank. Agent B will fill this in with architecture notes once Approved).*
+- **Engine Setup:** Will build `sentence_builder.js` and structure `sentences.json` to load dynamically.
+- **Interactions:** Use vanilla HTML5 Drag and Drop or custom Pointer events for moving the puzzle pieces. Track `data-order` indexes to validate correct syntax.
+- **UI State & Feedback:** Chunks snap to grid, playing sharp Web Audio API synths when locked in. Apply CSS `.shake` for incorrect validations and deep glow for correct ones.
+- **Mobile-First Layout:** Flex flow with `gap: clamp(0.5rem, 2vw, 1rem)` to ensure pieces don't overlap. Font resizing using clamp to keep things proportional inside the Drop Zone.

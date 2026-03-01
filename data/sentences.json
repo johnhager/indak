@@ -1,0 +1,70 @@
+[
+    {
+        "english": "I am going to the market.",
+        "ilonggo_chunks": [
+            "Makadto",
+            "ako",
+            "sa",
+            "palengke"
+        ],
+        "trap_words": [
+            "ikaw",
+            "nagkadto"
+        ]
+    },
+    {
+        "english": "I ate the delicious food.",
+        "ilonggo_chunks": [
+            "Ginkaon",
+            "ko",
+            "ang",
+            "namit",
+            "nga",
+            "pagkaon"
+        ],
+        "trap_words": [
+            "makaon",
+            "siya"
+        ]
+    },
+    {
+        "english": "The child is running fast.",
+        "ilonggo_chunks": [
+            "Madasig",
+            "nga",
+            "nagadagan",
+            "ang",
+            "bata"
+        ],
+        "trap_words": [
+            "nagahambal",
+            "mahinay"
+        ]
+    },
+    {
+        "english": "Where are you going?",
+        "ilonggo_chunks": [
+            "Sa",
+            "diin",
+            "ka",
+            "makadto"
+        ],
+        "trap_words": [
+            "nga-a",
+            "naglakat"
+        ]
+    },
+    {
+        "english": "My house is big.",
+        "ilonggo_chunks": [
+            "Dako",
+            "ang",
+            "akon",
+            "balay"
+        ],
+        "trap_words": [
+            "gamay",
+            "imo"
+        ]
+    }
+]

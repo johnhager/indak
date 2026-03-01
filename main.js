@@ -1,10 +1,14 @@
 import indakAudio from './src/audio_manager.js';
 import conductor from './src/conductor.js';
 import levelManager from './src/level_manager.js';
+import { SwipeSorter } from './src/swipe_sorter.js';
+import { SentenceBuilder } from './src/sentence_builder.js';
 
-// Indak Main Logic
 const app = document.getElementById('app');
 const startBtn = document.getElementById('start-btn');
+const startSwipeBtn = document.getElementById('start-swipe-btn');
+const startSentenceBtn = document.getElementById('start-sentence-btn');
+const gameCanvas = document.getElementById('game-canvas');
 
 startBtn?.addEventListener('click', async () => {
     console.log('Indak: Initializing Engine...');
@@ -27,6 +31,36 @@ startBtn?.addEventListener('click', async () => {
         conductor.start();
     } catch (e) {
         console.error('Failed to start game loop:', e);
+    }
+});
+
+startSwipeBtn?.addEventListener('click', async () => {
+    console.log('Swipe Sorter: Initializing...');
+    document.querySelector('.hero-section').classList.add('hidden');
+
+    try {
+        const response = await fetch('./data/vocabulary.json');
+        const vocabularyData = await response.json();
+
+        const swipeSorter = new SwipeSorter(gameCanvas, vocabularyData);
+        swipeSorter.startRound();
+    } catch (e) {
+        console.error('Failed to fetch vocabulary:', e);
+    }
+});
+
+startSentenceBtn?.addEventListener('click', async () => {
+    console.log('Sentence Builder: Initializing...');
+    document.querySelector('.hero-section').classList.add('hidden');
+
+    try {
+        const response = await fetch('./data/sentences.json');
+        const sentencesData = await response.json();
+
+        const sentenceBuilder = new SentenceBuilder(gameCanvas, sentencesData);
+        sentenceBuilder.startRound();
+    } catch (e) {
+        console.error('Failed to fetch sentences:', e);
     }
 });
 
