@@ -53,7 +53,7 @@ export class SwipeSorter {
                         <div class="toggle-group">
                             <div style="text-align: left;">
                                 <label style="display: block;">Hard Mode</label>
-                                <span style="font-size: 0.65rem; color: var(--accent-gold); opacity: 0.8;">Target 50% Weakest Words</span>
+                                <span style="font-size: 0.65rem; color: var(--accent-gold); opacity: 0.8;">Target 30% Most Challenging</span>
                             </div>
                             <label class="switch">
                                 <input type="checkbox" id="difficulty-toggle">
