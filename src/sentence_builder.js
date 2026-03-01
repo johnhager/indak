@@ -17,7 +17,9 @@ export class SentenceBuilder {
         this.ghostChunk = null;
         this.originalParent = null;
 
-        this.init();
+        this.gameDirection = 'en-to-il';
+
+        this.showStartScreen();
     }
 
     stop() {
@@ -26,7 +28,51 @@ export class SentenceBuilder {
         if (summary) summary.classList.add('hidden');
     }
 
-    init() {
+    showStartScreen() {
+        this.container.innerHTML = `
+            <div class="sentence-builder-start" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at top, rgba(255,255,255,0.05) 0%, transparent 60%);">
+                <div class="glass-card" style="width: 90%; max-width: 400px; padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; text-align: center;">
+                    <div style="margin-bottom: 0.5rem;">
+                        <h2 style="margin: 0; font-size: 1.8rem; letter-spacing: 1px; color: var(--accent-gold);">Sentence Builder</h2>
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 5px;">Master Syntax & Structure</p>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0;">
+                        <!-- Direction Toggle -->
+                        <div class="toggle-group" style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2); padding: 10px 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                            <label style="font-size: 0.9rem; font-weight: bold;">EN ➔ IL Mode</label>
+                            <label class="switch">
+                                <input type="checkbox" id="sb-direction-toggle" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button id="start-sb-btn" class="btn-primary" style="padding: 1rem; border-radius: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">START BUILDING</button>
+                    <button id="exit-sb-btn" class="btn-secondary" style="background: transparent; border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem; border-radius: 12px; color: rgba(255,255,255,0.5); font-size: 0.8rem;">BACK TO MENU</button>
+                </div>
+            </div>
+        `;
+
+        const startBtn = document.getElementById('start-sb-btn');
+        if (startBtn) {
+            startBtn.addEventListener('click', () => {
+                this.gameDirection = document.getElementById('sb-direction-toggle').checked ? 'en-to-il' : 'il-to-en';
+                this.setupGameUI();
+                this.startRound();
+            });
+        }
+
+        const exitBtn = document.getElementById('exit-sb-btn');
+        if (exitBtn) {
+            exitBtn.addEventListener('click', () => {
+                location.reload();
+            });
+        }
+    }
+
+    setupGameUI() {
+
         this.container.innerHTML = `
             <div class="sentence-builder-ui" style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; padding-top: 1rem;">
                 <!-- Target English Sentence -->
@@ -93,8 +139,10 @@ export class SentenceBuilder {
         this.currentRound++;
         this.roundAttempts = 0; // Reset for the new sentence
 
+        const isILToEN = this.gameDirection === 'il-to-en';
+
         // 1. Pick a unique sentence
-        let options = this.sentences.filter(s => !this.roundUsedSentences.has(s.ilonggo));
+        let options = this.sentences.filter(s => !this.roundUsedSentences.has(s.english));
         if (options.length === 0) {
             options = this.sentences; // Fallback if all used
             this.roundUsedSentences.clear();
@@ -102,12 +150,19 @@ export class SentenceBuilder {
 
         const targetIndex = Math.floor(Math.random() * options.length);
         this.currentSentence = options[targetIndex];
-        this.roundUsedSentences.add(this.currentSentence.ilonggo);
+        this.roundUsedSentences.add(this.currentSentence.english);
 
         // 2. Clear current UI
         this.dropZone.innerHTML = '';
         this.wordBank.innerHTML = '';
-        this.targetEnglish.textContent = this.currentSentence.english;
+
+        if (isILToEN) {
+            this.targetEnglish.textContent = this.currentSentence.ilonggo_chunks
+                .map((w, i) => i === 0 ? w.charAt(0).toUpperCase() + w.slice(1).toLowerCase() : w.toLowerCase())
+                .join(' ') + '.';
+        } else {
+            this.targetEnglish.textContent = this.currentSentence.english;
+        }
         this.cluePanel.innerHTML = `
             <div style="color: #00ffaa;"><span class="perfect-count">0</span> PERFECT</div>
             <div style="color: #ffcc00;"><span class="misplaced-count">0</span> MISPLACED</div>
@@ -121,7 +176,11 @@ export class SentenceBuilder {
         this.dropZone.style.background = 'rgba(255,255,255,0.03)';
 
         // Create Slots
-        this.currentSentence.ilonggo_chunks.forEach(() => {
+        const correctChunksText = isILToEN
+            ? this.currentSentence.english.replace(/[^a-zA-Z\s]/g, '').split(' ')
+            : this.currentSentence.ilonggo_chunks;
+
+        correctChunksText.forEach(() => {
             const slot = document.createElement('div');
             slot.className = 'drop-slot';
             slot.style.minWidth = '80px';
@@ -135,9 +194,24 @@ export class SentenceBuilder {
             this.dropZone.appendChild(slot);
         });
 
-        // 3. Mix valid Ilonggo chunks with trap words
-        const correctChunks = this.currentSentence.ilonggo_chunks.map(chunk => ({ text: chunk, isCorrect: true }));
-        const trapChunks = this.currentSentence.trap_words.map(chunk => ({ text: chunk, isCorrect: false }));
+        // 3. Mix valid chunks with trap words
+        const correctChunks = correctChunksText.map(chunk => ({ text: chunk, isCorrect: true }));
+        let trapChunks = [];
+
+        if (!isILToEN && this.currentSentence.trap_words) {
+            trapChunks = this.currentSentence.trap_words.map(chunk => ({ text: chunk, isCorrect: false }));
+        } else if (isILToEN) {
+            // Generate some random English trap words from other sentences
+            const otherSentences = this.sentences.filter(s => s.english !== this.currentSentence.english);
+            if (otherSentences.length > 0) {
+                for (let i = 0; i < 2; i++) {
+                    const randomSent = otherSentences[Math.floor(Math.random() * otherSentences.length)];
+                    const words = randomSent.english.replace(/[^a-zA-Z\s]/g, '').split(' ');
+                    const trapWord = words[Math.floor(Math.random() * words.length)].toLowerCase();
+                    trapChunks.push({ text: trapWord, isCorrect: false });
+                }
+            }
+        }
 
         const allChunks = [...correctChunks, ...trapChunks];
 
@@ -406,9 +480,14 @@ export class SentenceBuilder {
         this.totalAttempts++;
         this.roundAttempts++;
 
+        const isILToEN = this.gameDirection === 'il-to-en';
+
         const slots = Array.from(this.dropZone.querySelectorAll('.drop-slot'));
-        const currentAnswer = slots.map(s => s.children[0]?.textContent.toLowerCase() || "");
-        const correctAnswer = this.currentSentence.ilonggo_chunks.map(c => c.toLowerCase());
+        // Use dataset.originalText to sidestep any UI capitalization variations
+        const currentAnswer = slots.map(s => s.children[0]?.dataset.originalText.toLowerCase() || "");
+        const correctAnswer = isILToEN
+            ? this.currentSentence.english.replace(/[^a-zA-Z\s]/g, '').toLowerCase().split(' ')
+            : this.currentSentence.ilonggo_chunks.map(c => c.toLowerCase());
 
         // Mastermind Logic
         let perfectMatches = 0;
@@ -439,9 +518,10 @@ export class SentenceBuilder {
 
         const isCorrect = perfectMatches === correctAnswer.length;
 
-        // Record accuracy for all words in the sentence on first attempt
+        // Record accuracy for all Ilonggo words in the sentence on first attempt
         if (this.roundAttempts === 1) {
-            correctAnswer.forEach(word => {
+            const ilonggoWords = this.currentSentence.ilonggo_chunks.map(c => c.toLowerCase());
+            ilonggoWords.forEach(word => {
                 levelManager.markWordMastered(word, 'meaning', isCorrect);
             });
         }
