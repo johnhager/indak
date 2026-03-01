@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signInAnonymously, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { getFirestore, doc, setDoc, getDoc, serverTimestamp, initializeFirestore, getDocFromServer } from "firebase/firestore";
+import { getFirestore, doc, setDoc, getDoc, serverTimestamp, initializeFirestore, getDocFromServer, terminate, clearIndexedDbPersistence } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -178,6 +178,17 @@ class CloudManager {
             this.status = 'error';
         }
         return null;
+    }
+
+    async forceReset() {
+        console.log("CloudManager: Performing hard reset...");
+        try {
+            await terminate(this.db);
+            await clearIndexedDbPersistence(this.db);
+            window.location.reload();
+        } catch (e) {
+            console.error("CloudManager: Reset failed", e);
+        }
     }
 }
 
