@@ -11,7 +11,8 @@ As of right now, development occurs primarily on the `main` branch deployed inst
 This project utilizes aggressive AI-assisted Pair Programming. When requesting new features or bug fixes:
 1. Always state exactly which mobile screen or device is breaking. We optimize explicitly for narrower screens (iPhone 13 Mini and similar 375px bounds).
 2. If introducing a new feature, clearly explain its *gameplay loop* intent. (Is it meant to test memory? Is it meant to test listening comprehension?)
-3. Let the primary Developer write the actual scripts (Vanilla JS) to insert features or JSON.
+3. **Formal Handoff**: For entirely new learning games or curriculum structures, Agent A or the user must format it according to the `PROPOSALS.md` template. This acts as the official handoff sheet to Agent B (Antigravity).
+4. Let Agent B (Antigravity) write the actual scripts (Vanilla JS) to execute the approved `PROPOSALS.md` features.
 
 ## 3. PWA Development Guidelines
 Since this app functions entirely as an offline-first PWA:
