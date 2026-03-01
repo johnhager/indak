@@ -8,7 +8,7 @@
         ],
         "stress_index": 2,
         "meaning": "Thank you",
-        "category": "Greetings & Basics"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Maayo",
@@ -19,7 +19,7 @@
         ],
         "stress_index": 1,
         "meaning": "Good/Fine",
-        "category": "Verbs"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Kaon",
@@ -60,7 +60,7 @@
         ],
         "stress_index": 1,
         "meaning": "Take care",
-        "category": "Verbs"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Damo",
@@ -70,7 +70,7 @@
         ],
         "stress_index": 1,
         "meaning": "Many",
-        "category": "People & Family"
+        "category": "Adjectives"
     },
     {
         "word": "Balay",
@@ -90,7 +90,7 @@
         ],
         "stress_index": 0,
         "meaning": "Water",
-        "category": "Time & Nature"
+        "category": "Places & Nature"
     },
     {
         "word": "Tawo",
@@ -100,7 +100,7 @@
         ],
         "stress_index": 0,
         "meaning": "Person",
-        "category": "People & Family"
+        "category": "Nouns"
     },
     {
         "word": "Bata",
@@ -110,7 +110,7 @@
         ],
         "stress_index": 1,
         "meaning": "Child",
-        "category": "People & Family"
+        "category": "Nouns"
     },
     {
         "word": "Abyan",
@@ -120,7 +120,7 @@
         ],
         "stress_index": 1,
         "meaning": "Friend",
-        "category": "People & Family"
+        "category": "Nouns"
     },
     {
         "word": "Kumusta",
@@ -131,7 +131,7 @@
         ],
         "stress_index": 2,
         "meaning": "How are you",
-        "category": "Greetings & Basics"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Hapon",
@@ -141,7 +141,7 @@
         ],
         "stress_index": 1,
         "meaning": "Afternoon",
-        "category": "Greetings & Basics"
+        "category": "Numbers & Time"
     },
     {
         "word": "Gab-i",
@@ -151,7 +151,7 @@
         ],
         "stress_index": 1,
         "meaning": "Evening",
-        "category": "Time & Nature"
+        "category": "Numbers & Time"
     },
     {
         "word": "Adlaw",
@@ -161,7 +161,7 @@
         ],
         "stress_index": 0,
         "meaning": "Day",
-        "category": "Time & Nature"
+        "category": "Numbers & Time"
     },
     {
         "word": "Gugma",
@@ -171,7 +171,7 @@
         ],
         "stress_index": 0,
         "meaning": "Love (Noun)",
-        "category": "Verbs"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Lakat",
@@ -232,7 +232,7 @@
         ],
         "stress_index": 1,
         "meaning": "Vegetable stew",
-        "category": "Food & Things"
+        "category": "Nouns"
     },
     {
         "word": "Kan-on",
@@ -295,7 +295,7 @@
         ],
         "stress_index": 0,
         "meaning": "Mountain",
-        "category": "Time & Nature"
+        "category": "Places & Nature"
     },
     {
         "word": "Dagat",
@@ -305,7 +305,7 @@
         ],
         "stress_index": 0,
         "meaning": "Sea",
-        "category": "Time & Nature"
+        "category": "Places & Nature"
     },
     {
         "word": "Balud",
@@ -315,7 +315,7 @@
         ],
         "stress_index": 1,
         "meaning": "Wave",
-        "category": "Other"
+        "category": "Verbs"
     },
     {
         "word": "Ulan",
@@ -325,7 +325,7 @@
         ],
         "stress_index": 1,
         "meaning": "Rain",
-        "category": "Time & Nature"
+        "category": "Places & Nature"
     },
     {
         "word": "Gid",
@@ -334,7 +334,7 @@
         ],
         "stress_index": 0,
         "meaning": "Indeed/Really",
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Lang",
@@ -343,7 +343,7 @@
         ],
         "stress_index": 0,
         "meaning": "Only",
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Anay",
@@ -363,7 +363,7 @@
         ],
         "stress_index": 1,
         "meaning": "Question particle",
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Aga",
@@ -373,7 +373,7 @@
         ],
         "stress_index": 1,
         "meaning": "Morning",
-        "category": "Time & Nature"
+        "category": "Numbers & Time"
     },
     {
         "word": "Udto",
@@ -383,7 +383,7 @@
         ],
         "stress_index": 1,
         "meaning": "Noon",
-        "category": "Greetings & Basics"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Dako",
@@ -413,7 +413,7 @@
         ],
         "stress_index": 1,
         "meaning": "Fat",
-        "category": "Other"
+        "category": "Adjectives"
     },
     {
         "word": "Payat",
@@ -423,7 +423,7 @@
         ],
         "stress_index": 1,
         "meaning": "Thin",
-        "category": "Other"
+        "category": "Adjectives"
     },
     {
         "word": "Taas",
@@ -473,7 +473,7 @@
         ],
         "stress_index": 1,
         "meaning": "Loose",
-        "category": "Other"
+        "category": "Adjectives"
     },
     {
         "word": "Gutok",
@@ -483,7 +483,7 @@
         ],
         "stress_index": 1,
         "meaning": "Tight",
-        "category": "Other"
+        "category": "Adjectives"
     },
     {
         "word": "Matam-is",
@@ -494,7 +494,7 @@
         ],
         "stress_index": 2,
         "meaning": "Sweet",
-        "category": "Other"
+        "category": "Adjectives"
     },
     {
         "word": "Maaslum",
@@ -505,7 +505,7 @@
         ],
         "stress_index": 1,
         "meaning": "Sour",
-        "category": "Other"
+        "category": "Adjectives"
     },
     {
         "word": "Hubog",
@@ -535,7 +535,7 @@
         ],
         "stress_index": 0,
         "meaning": "Tree/Source",
-        "category": "Time & Nature"
+        "category": "Adjectives"
     },
     {
         "word": "Kahoy",
@@ -545,7 +545,7 @@
         ],
         "stress_index": 0,
         "meaning": "Wood",
-        "category": "Other"
+        "category": "Places & Nature"
     },
     {
         "word": "Bulak",
@@ -555,7 +555,7 @@
         ],
         "stress_index": 0,
         "meaning": "Flower",
-        "category": "Time & Nature"
+        "category": "Adjectives"
     },
     {
         "word": "Tuna",
@@ -565,7 +565,7 @@
         ],
         "stress_index": 0,
         "meaning": "Land/Earth",
-        "category": "Time & Nature"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Suga",
@@ -586,7 +586,7 @@
         ],
         "stress_index": 2,
         "meaning": "Cloud",
-        "category": "Time & Nature"
+        "category": "Adjectives"
     },
     {
         "word": "Hangin",
@@ -596,7 +596,7 @@
         ],
         "stress_index": 0,
         "meaning": "Wind",
-        "category": "Time & Nature"
+        "category": "Places & Nature"
     },
     {
         "word": "Kilat",
@@ -616,7 +616,7 @@
         ],
         "stress_index": 1,
         "meaning": "Supposedly",
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Ti",
@@ -625,7 +625,7 @@
         ],
         "stress_index": 0,
         "meaning": "Well...",
-        "category": "Other"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Na",
@@ -644,7 +644,7 @@
         ],
         "stress_index": 1,
         "meaning": "Coffee",
-        "category": "Food & Things"
+        "category": "Nouns"
     },
     {
         "word": "Tinapay",
@@ -665,7 +665,7 @@
         ],
         "stress_index": 1,
         "meaning": "Viand",
-        "category": "Other"
+        "category": "Nouns"
     },
     {
         "word": "Isda",
@@ -675,7 +675,7 @@
         ],
         "stress_index": 0,
         "meaning": "Fish",
-        "category": "Time & Nature"
+        "category": "Places & Nature"
     },
     {
         "word": "Karne",
@@ -695,7 +695,7 @@
         ],
         "stress_index": 1,
         "meaning": "Fruit",
-        "category": "Food & Things"
+        "category": "Nouns"
     },
     {
         "word": "Tulog",
@@ -777,7 +777,7 @@
         ],
         "stress_index": 2,
         "meaning": "Star",
-        "category": "Time & Nature"
+        "category": "Places & Nature"
     },
     {
         "word": "Bulan",
@@ -787,7 +787,7 @@
         ],
         "stress_index": 0,
         "meaning": "Moon/Month",
-        "category": "Time & Nature"
+        "category": "Numbers & Time"
     },
     {
         "word": "Langit",
@@ -797,7 +797,7 @@
         ],
         "stress_index": 0,
         "meaning": "Sky/Heaven",
-        "category": "Time & Nature"
+        "category": "Places & Nature"
     },
     {
         "word": "Bwas",
@@ -806,7 +806,7 @@
         ],
         "stress_index": 0,
         "meaning": "Tomorrow",
-        "category": "Time & Nature"
+        "category": "Numbers & Time"
     },
     {
         "word": "Karon",
@@ -816,7 +816,7 @@
         ],
         "stress_index": 1,
         "meaning": "Today/Now",
-        "category": "Greetings & Basics"
+        "category": "Numbers & Time"
     },
     {
         "word": "Kahapon",
@@ -827,7 +827,7 @@
         ],
         "stress_index": 1,
         "meaning": "Yesterday",
-        "category": "Greetings & Basics"
+        "category": "Numbers & Time"
     },
     {
         "word": "Hin-o",
@@ -837,7 +837,7 @@
         ],
         "stress_index": 1,
         "meaning": "Who",
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Ano",
@@ -847,7 +847,7 @@
         ],
         "stress_index": 1,
         "meaning": "What",
-        "category": "Food & Things"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Diin",
@@ -857,7 +857,7 @@
         ],
         "stress_index": 1,
         "meaning": "Where",
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "San-o",
@@ -867,7 +867,7 @@
         ],
         "stress_index": 1,
         "meaning": "When",
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Pa-no",
@@ -877,7 +877,7 @@
         ],
         "stress_index": 1,
         "meaning": "How",
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Nga-a",
@@ -887,7 +887,7 @@
         ],
         "stress_index": 1,
         "meaning": "Why",
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Kag",
@@ -896,7 +896,7 @@
         ],
         "stress_index": 0,
         "meaning": "And",
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Pero",
@@ -906,7 +906,7 @@
         ],
         "stress_index": 0,
         "meaning": "But",
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Kay",
@@ -924,7 +924,7 @@
         ],
         "stress_index": 0,
         "meaning": "If",
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Bisan",
@@ -934,7 +934,7 @@
         ],
         "stress_index": 1,
         "meaning": "Even/Although",
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Tungod",
@@ -954,7 +954,7 @@
         ],
         "stress_index": 1,
         "meaning": "Surprise particle",
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Man",
@@ -963,7 +963,7 @@
         ],
         "stress_index": 0,
         "meaning": "Also/Too",
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Naman",
@@ -973,7 +973,7 @@
         ],
         "stress_index": 1,
         "meaning": "Again",
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Pwede",
@@ -983,7 +983,7 @@
         ],
         "stress_index": 0,
         "meaning": "Can/Possible",
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Indi",
@@ -993,7 +993,7 @@
         ],
         "stress_index": 1,
         "meaning": "No/Cannot",
-        "category": "Greetings & Basics"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Huo",
@@ -1003,7 +1003,7 @@
         ],
         "stress_index": 0,
         "meaning": "Yes",
-        "category": "Greetings & Basics"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Ambot",
@@ -1013,7 +1013,7 @@
         ],
         "stress_index": 1,
         "meaning": "I don't know",
-        "category": "Verbs"
+        "category": "Numbers & Time"
     },
     {
         "word": "Sapatos",
@@ -1024,7 +1024,7 @@
         ],
         "stress_index": 1,
         "meaning": "Shoes",
-        "category": "Food & Things"
+        "category": "Nouns"
     },
     {
         "word": "Katre",
@@ -1034,7 +1034,7 @@
         ],
         "stress_index": 1,
         "meaning": "Bed",
-        "category": "Food & Things"
+        "category": "Nouns"
     },
     {
         "word": "Kutsara",
@@ -1045,7 +1045,7 @@
         ],
         "stress_index": 1,
         "meaning": "Spoon",
-        "category": "Food & Things"
+        "category": "Nouns"
     },
     {
         "word": "Tinidor",
@@ -1056,7 +1056,7 @@
         ],
         "stress_index": 2,
         "meaning": "Fork",
-        "category": "Food & Things"
+        "category": "Nouns"
     },
     {
         "word": "Plato",
@@ -1066,7 +1066,7 @@
         ],
         "stress_index": 0,
         "meaning": "Plate",
-        "category": "Food & Things"
+        "category": "Nouns"
     },
     {
         "word": "Baso",
@@ -1076,7 +1076,7 @@
         ],
         "stress_index": 0,
         "meaning": "Glass/Cup",
-        "category": "Food & Things"
+        "category": "Nouns"
     },
     {
         "word": "Payong",
@@ -1086,7 +1086,7 @@
         ],
         "stress_index": 0,
         "meaning": "Umbrella",
-        "category": "Other"
+        "category": "Nouns"
     },
     {
         "word": "Kwarta",
@@ -1096,7 +1096,7 @@
         ],
         "stress_index": 1,
         "meaning": "Money",
-        "category": "Food & Things"
+        "category": "Nouns"
     },
     {
         "word": "Merkado",
@@ -1107,7 +1107,7 @@
         ],
         "stress_index": 1,
         "meaning": "Market",
-        "category": "Other"
+        "category": "Places & Nature"
     },
     {
         "word": "Simbahan",
@@ -1118,7 +1118,7 @@
         ],
         "stress_index": 1,
         "meaning": "Church",
-        "category": "Other"
+        "category": "Places & Nature"
     },
     {
         "word": "Eskwelahan",
@@ -1130,7 +1130,7 @@
         ],
         "stress_index": 3,
         "meaning": "School",
-        "category": "Other"
+        "category": "Places & Nature"
     },
     {
         "word": "Gabay",
@@ -1140,7 +1140,7 @@
         ],
         "stress_index": 1,
         "meaning": "Guide",
-        "category": "Other"
+        "category": "Verbs"
     },
     {
         "word": "Bulig",
@@ -1169,7 +1169,7 @@
         ],
         "stress_index": 0,
         "meaning": "Outside",
-        "category": "Other"
+        "category": "Places & Nature"
     },
     {
         "word": "Sulod",
@@ -1179,7 +1179,7 @@
         ],
         "stress_index": 1,
         "meaning": "Inside",
-        "category": "Other"
+        "category": "Places & Nature"
     },
     {
         "word": "Tu-on",
@@ -1232,7 +1232,7 @@
         ],
         "stress_index": 1,
         "meaning": "Dinner",
-        "category": "Other"
+        "category": "Nouns"
     },
     {
         "word": "Panyaga",
@@ -1243,7 +1243,7 @@
         ],
         "stress_index": 1,
         "meaning": "Lunch",
-        "category": "Other"
+        "category": "Nouns"
     },
     {
         "word": "Pahuway",
@@ -1254,7 +1254,7 @@
         ],
         "stress_index": 2,
         "meaning": "Rest",
-        "category": "Other"
+        "category": "Verbs"
     },
     {
         "word": "Dalagan",
@@ -1299,7 +1299,7 @@
         ],
         "stress_index": 1,
         "meaning": "Funny / To laugh at",
-        "category": "Other"
+        "category": "Verbs"
     },
     {
         "word": "Hibian",
@@ -1310,7 +1310,7 @@
         ],
         "stress_index": 1,
         "meaning": "To cry over",
-        "category": "Other"
+        "category": "Verbs"
     },
     {
         "word": "Sapatos",
@@ -1321,7 +1321,7 @@
         ],
         "stress_index": 1,
         "meaning": "Shoes",
-        "category": "Food & Things"
+        "category": "Nouns"
     },
     {
         "word": "Panapton",
@@ -1332,7 +1332,7 @@
         ],
         "stress_index": 1,
         "meaning": "Clothes",
-        "category": "Food & Things"
+        "category": "Nouns"
     },
     {
         "word": "Batalan",
@@ -1354,7 +1354,7 @@
         ],
         "stress_index": 1,
         "meaning": "Toilet",
-        "category": "Other"
+        "category": "Nouns"
     },
     {
         "word": "Kusina",
@@ -1365,7 +1365,7 @@
         ],
         "stress_index": 1,
         "meaning": "Kitchen",
-        "category": "Other"
+        "category": "Nouns"
     },
     {
         "word": "Bintana",
@@ -1387,7 +1387,7 @@
         ],
         "stress_index": 1,
         "meaning": "Stairs",
-        "category": "Other"
+        "category": "Places & Nature"
     },
     {
         "word": "Pirtahan",
@@ -1409,7 +1409,7 @@
         ],
         "stress_index": 1,
         "meaning": "Street / Road",
-        "category": "Time & Nature"
+        "category": "Places & Nature"
     },
     {
         "word": "Tindahan",
@@ -1420,7 +1420,7 @@
         ],
         "stress_index": 1,
         "meaning": "Store / Market",
-        "category": "Other"
+        "category": "Places & Nature"
     },
     {
         "word": "Eskwelahan",
@@ -1432,7 +1432,7 @@
         ],
         "stress_index": 2,
         "meaning": "School",
-        "category": "Other"
+        "category": "Places & Nature"
     },
     {
         "word": "Simbahan",
@@ -1443,7 +1443,7 @@
         ],
         "stress_index": 1,
         "meaning": "Church",
-        "category": "Other"
+        "category": "Places & Nature"
     },
     {
         "word": "Ospital",
@@ -1454,7 +1454,7 @@
         ],
         "stress_index": 2,
         "meaning": "Hospital",
-        "category": "Other"
+        "category": "Places & Nature"
     },
     {
         "word": "Pulisya",
@@ -1465,7 +1465,7 @@
         ],
         "stress_index": 1,
         "meaning": "Police",
-        "category": "Other"
+        "category": "Places & Nature"
     },
     {
         "word": "Bombero",
@@ -1476,7 +1476,7 @@
         ],
         "stress_index": 1,
         "meaning": "Firefighter",
-        "category": "Time & Nature"
+        "category": "Places & Nature"
     },
     {
         "word": "Maestro",
@@ -1510,7 +1510,7 @@
         ],
         "stress_index": 2,
         "meaning": "Student",
-        "category": "Other"
+        "category": "Nouns"
     },
     {
         "word": "Pandayan",
@@ -1521,7 +1521,7 @@
         ],
         "stress_index": 1,
         "meaning": "Blacksmith / Forge",
-        "category": "Other"
+        "category": "Nouns"
     },
     {
         "word": "Mangingisda",
@@ -1533,7 +1533,7 @@
         ],
         "stress_index": 2,
         "meaning": "Fisherman",
-        "category": "Time & Nature"
+        "category": "Places & Nature"
     },
     {
         "word": "Mangunguma",
@@ -1581,7 +1581,7 @@
         ],
         "stress_index": 1,
         "meaning": "Vehicle",
-        "category": "Other"
+        "category": "Nouns"
     },
     {
         "word": "Eroplano",
@@ -1593,7 +1593,7 @@
         ],
         "stress_index": 2,
         "meaning": "Airplane",
-        "category": "Food & Things"
+        "category": "Nouns"
     },
     {
         "word": "Pasahero",
@@ -1605,7 +1605,7 @@
         ],
         "stress_index": 2,
         "meaning": "Passenger",
-        "category": "Other"
+        "category": "Nouns"
     },
     {
         "word": "Baybayon",
@@ -1616,7 +1616,7 @@
         ],
         "stress_index": 1,
         "meaning": "Beach / Shore",
-        "category": "Other"
+        "category": "Places & Nature"
     },
     {
         "word": "Talampas",
@@ -1627,7 +1627,7 @@
         ],
         "stress_index": 2,
         "meaning": "Plateau",
-        "category": "Food & Things"
+        "category": "Nouns"
     },
     {
         "word": "Kapatagan",
@@ -1639,7 +1639,7 @@
         ],
         "stress_index": 2,
         "meaning": "Plains",
-        "category": "Other"
+        "category": "Places & Nature"
     },
     {
         "word": "Kagulangan",
@@ -1651,7 +1651,7 @@
         ],
         "stress_index": 2,
         "meaning": "Forest",
-        "category": "Other"
+        "category": "Verbs"
     },
     {
         "word": "Kasapatan",
@@ -1663,7 +1663,7 @@
         ],
         "stress_index": 2,
         "meaning": "Animals",
-        "category": "Time & Nature"
+        "category": "Places & Nature"
     },
     {
         "word": "Kalibutan",
@@ -1675,7 +1675,7 @@
         ],
         "stress_index": 2,
         "meaning": "World",
-        "category": "Food & Things"
+        "category": "Places & Nature"
     },
     {
         "word": "Kasanag",
@@ -1722,7 +1722,7 @@
         ],
         "stress_index": 3,
         "meaning": "Successful",
-        "category": "Other"
+        "category": "Adjectives"
     },
     {
         "word": "Indi",
@@ -1733,7 +1733,7 @@
         "stress_index": 0,
         "meaning": "No / Not (Future/General)",
         "tier": 4,
-        "category": "Greetings & Basics"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Wala",
@@ -1744,7 +1744,7 @@
         "stress_index": 1,
         "meaning": "No / Not (Past/Existential)",
         "tier": 4,
-        "category": "Greetings & Basics"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Waay",
@@ -1755,7 +1755,7 @@
         "stress_index": 0,
         "meaning": "None / Absent",
         "tier": 4,
-        "category": "Greetings & Basics"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "May",
@@ -1765,7 +1765,7 @@
         "stress_index": 0,
         "meaning": "There is / To have",
         "tier": 4,
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Ano",
@@ -1776,7 +1776,7 @@
         "stress_index": 1,
         "meaning": "What",
         "tier": 5,
-        "category": "Food & Things"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Diin",
@@ -1787,7 +1787,7 @@
         "stress_index": 1,
         "meaning": "Where",
         "tier": 5,
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Sin-o",
@@ -1798,7 +1798,7 @@
         "stress_index": 1,
         "meaning": "Who",
         "tier": 5,
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "San-o",
@@ -1809,7 +1809,7 @@
         "stress_index": 1,
         "meaning": "When",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Nga-a",
@@ -1820,7 +1820,7 @@
         "stress_index": 1,
         "meaning": "Why",
         "tier": 5,
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Paano",
@@ -1832,7 +1832,7 @@
         "stress_index": 1,
         "meaning": "How",
         "tier": 5,
-        "category": "Other"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Pila",
@@ -1843,7 +1843,7 @@
         "stress_index": 1,
         "meaning": "How much / many",
         "tier": 5,
-        "category": "People & Family"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Anay",
@@ -1854,7 +1854,7 @@
         "stress_index": 1,
         "meaning": "First / For a while",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Antis",
@@ -1865,7 +1865,7 @@
         "stress_index": 0,
         "meaning": "Before",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Maayong aga",
@@ -1879,7 +1879,7 @@
         "stress_index": 3,
         "meaning": "Good morning",
         "tier": 4,
-        "category": "Verbs"
+        "category": "Numbers & Time"
     },
     {
         "word": "Maayong hapon",
@@ -1893,7 +1893,7 @@
         "stress_index": 3,
         "meaning": "Good afternoon",
         "tier": 4,
-        "category": "Verbs"
+        "category": "Numbers & Time"
     },
     {
         "word": "Maayong gab-i",
@@ -1907,7 +1907,7 @@
         "stress_index": 3,
         "meaning": "Good evening",
         "tier": 4,
-        "category": "Verbs"
+        "category": "Numbers & Time"
     },
     {
         "word": "Maayong udto",
@@ -1921,7 +1921,7 @@
         "stress_index": 3,
         "meaning": "Good noon",
         "tier": 4,
-        "category": "Verbs"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Komusta ka?",
@@ -1934,7 +1934,7 @@
         "stress_index": 2,
         "meaning": "How are you?",
         "tier": 4,
-        "category": "Greetings & Basics"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Maayo man",
@@ -1947,7 +1947,7 @@
         "stress_index": 1,
         "meaning": "I'm good/fine",
         "tier": 4,
-        "category": "Verbs"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Abi-abi",
@@ -1960,7 +1960,7 @@
         "stress_index": 3,
         "meaning": "Greetings/Welcome",
         "tier": 4,
-        "category": "Verbs"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Agi anay",
@@ -1973,7 +1973,7 @@
         "stress_index": 1,
         "meaning": "Excuse me (Passing through)",
         "tier": 4,
-        "category": "Verbs"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Babay",
@@ -1984,7 +1984,7 @@
         "stress_index": 1,
         "meaning": "Goodbye",
         "tier": 4,
-        "category": "Verbs"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Ako",
@@ -1995,7 +1995,7 @@
         "stress_index": 1,
         "meaning": "I",
         "tier": 4,
-        "category": "Other"
+        "category": "Pronouns"
     },
     {
         "word": "Ikaw",
@@ -2016,7 +2016,7 @@
         "stress_index": 0,
         "meaning": "He/She/It",
         "tier": 4,
-        "category": "Other"
+        "category": "Pronouns"
     },
     {
         "word": "Kami",
@@ -2027,7 +2027,7 @@
         "stress_index": 1,
         "meaning": "We (exclusive)",
         "tier": 4,
-        "category": "Other"
+        "category": "Pronouns"
     },
     {
         "word": "Kita",
@@ -2038,7 +2038,7 @@
         "stress_index": 1,
         "meaning": "We (inclusive)",
         "tier": 4,
-        "category": "Other"
+        "category": "Pronouns"
     },
     {
         "word": "Kamo",
@@ -2049,7 +2049,7 @@
         "stress_index": 1,
         "meaning": "You (plural)",
         "tier": 4,
-        "category": "Other"
+        "category": "Pronouns"
     },
     {
         "word": "Sila",
@@ -2060,7 +2060,7 @@
         "stress_index": 1,
         "meaning": "They",
         "tier": 4,
-        "category": "Other"
+        "category": "Pronouns"
     },
     {
         "word": "Ini",
@@ -2071,7 +2071,7 @@
         "stress_index": 1,
         "meaning": "This",
         "tier": 4,
-        "category": "Other"
+        "category": "Pronouns"
     },
     {
         "word": "Ina",
@@ -2082,7 +2082,7 @@
         "stress_index": 1,
         "meaning": "That",
         "tier": 4,
-        "category": "Food & Things"
+        "category": "Pronouns"
     },
     {
         "word": "Ato",
@@ -2093,7 +2093,7 @@
         "stress_index": 1,
         "meaning": "That (far)",
         "tier": 4,
-        "category": "Adjectives"
+        "category": "Pronouns"
     },
     {
         "word": "Isa",
@@ -2104,7 +2104,7 @@
         "stress_index": 1,
         "meaning": "One (H)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Duha",
@@ -2115,7 +2115,7 @@
         "stress_index": 1,
         "meaning": "Two (H)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Tatlo",
@@ -2126,7 +2126,7 @@
         "stress_index": 1,
         "meaning": "Three (H)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Apat",
@@ -2137,7 +2137,7 @@
         "stress_index": 1,
         "meaning": "Four (H)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Lima",
@@ -2148,7 +2148,7 @@
         "stress_index": 1,
         "meaning": "Five (H)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Anum",
@@ -2159,7 +2159,7 @@
         "stress_index": 1,
         "meaning": "Six (H)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Pito",
@@ -2170,7 +2170,7 @@
         "stress_index": 1,
         "meaning": "Seven (H)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Walo",
@@ -2181,7 +2181,7 @@
         "stress_index": 1,
         "meaning": "Eight (H)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Siyam",
@@ -2192,7 +2192,7 @@
         "stress_index": 1,
         "meaning": "Nine (H)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Napulo",
@@ -2204,7 +2204,7 @@
         "stress_index": 2,
         "meaning": "Ten (H)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Uno",
@@ -2215,7 +2215,7 @@
         "stress_index": 0,
         "meaning": "One (S)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Dos",
@@ -2225,7 +2225,7 @@
         "stress_index": 0,
         "meaning": "Two (S)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Tres",
@@ -2235,7 +2235,7 @@
         "stress_index": 0,
         "meaning": "Three (S)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Kuatro",
@@ -2246,7 +2246,7 @@
         "stress_index": 0,
         "meaning": "Four (S)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Sinko",
@@ -2257,7 +2257,7 @@
         "stress_index": 0,
         "meaning": "Five (S)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Seis",
@@ -2267,7 +2267,7 @@
         "stress_index": 0,
         "meaning": "Six (S)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Siete",
@@ -2278,7 +2278,7 @@
         "stress_index": 0,
         "meaning": "Seven (S)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Otso",
@@ -2289,7 +2289,7 @@
         "stress_index": 0,
         "meaning": "Eight (S)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Nueve",
@@ -2300,7 +2300,7 @@
         "stress_index": 0,
         "meaning": "Nine (S)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Diez",
@@ -2310,7 +2310,7 @@
         "stress_index": 0,
         "meaning": "Ten (S)",
         "tier": 5,
-        "category": "Other"
+        "category": "Numbers & Time"
     },
     {
         "word": "Gwapo",
@@ -2321,7 +2321,7 @@
         "stress_index": 1,
         "meaning": "Handsome",
         "tier": 5,
-        "category": "Body Parts"
+        "category": "Nouns"
     },
     {
         "word": "Ma-init",
@@ -2356,7 +2356,7 @@
         "stress_index": 1,
         "meaning": "Lacking",
         "tier": 5,
-        "category": "Other"
+        "category": "Adjectives"
     },
     {
         "word": "Mataas",
@@ -2424,7 +2424,7 @@
         "stress_index": 1,
         "meaning": "To arrive",
         "tier": 6,
-        "category": "Other"
+        "category": "Verbs"
     },
     {
         "word": "Alalay",
@@ -2436,7 +2436,7 @@
         "stress_index": 2,
         "meaning": "To assist",
         "tier": 6,
-        "category": "Other"
+        "category": "Verbs"
     },
     {
         "word": "Abonar",
@@ -2448,7 +2448,7 @@
         "stress_index": 2,
         "meaning": "To advance/loan",
         "tier": 6,
-        "category": "Other"
+        "category": "Verbs"
     },
     {
         "word": "Abat",
@@ -2459,7 +2459,7 @@
         "stress_index": 1,
         "meaning": "To follow",
         "tier": 6,
-        "category": "Adjectives"
+        "category": "Verbs"
     },
     {
         "word": "Saad",
@@ -2470,7 +2470,7 @@
         "stress_index": 1,
         "meaning": "To promise",
         "tier": 6,
-        "category": "Other"
+        "category": "Verbs"
     },
     {
         "word": "Wakal",
@@ -2481,7 +2481,7 @@
         "stress_index": 1,
         "meaning": "To talk/chatter",
         "tier": 6,
-        "category": "Food & Things"
+        "category": "Verbs"
     },
     {
         "word": "Tigaylo",
@@ -2493,7 +2493,7 @@
         "stress_index": 2,
         "meaning": "To replace/exchange",
         "tier": 6,
-        "category": "Other"
+        "category": "Verbs"
     },
     {
         "word": "Abaw",
@@ -2504,7 +2504,7 @@
         "stress_index": 1,
         "meaning": "Wow! / Oh!",
         "tier": 4,
-        "category": "Other"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Aragoy",
@@ -2516,7 +2516,7 @@
         "stress_index": 2,
         "meaning": "Ouch!",
         "tier": 4,
-        "category": "Other"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Siguro",
@@ -2528,7 +2528,7 @@
         "stress_index": 1,
         "meaning": "Maybe / Probably",
         "tier": 4,
-        "category": "Greetings & Basics"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Ari",
@@ -2539,7 +2539,7 @@
         "stress_index": 0,
         "meaning": "Here it is",
         "tier": 4,
-        "category": "Other"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Hapit",
@@ -2561,7 +2561,7 @@
         "stress_index": 1,
         "meaning": "Smile",
         "tier": 5,
-        "category": "Other"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Abtik",
@@ -2572,7 +2572,7 @@
         "stress_index": 0,
         "meaning": "Quick-witted / Smart",
         "tier": 5,
-        "category": "Other"
+        "category": "Adjectives"
     },
     {
         "word": "Agubay",
@@ -2595,7 +2595,7 @@
         "stress_index": 1,
         "meaning": "To progress / advance",
         "tier": 6,
-        "category": "Other"
+        "category": "Verbs"
     },
     {
         "word": "Saylo",
@@ -2617,7 +2617,7 @@
         "stress_index": 1,
         "meaning": "Trouble / Confusion",
         "tier": 6,
-        "category": "Other"
+        "category": "Nouns"
     },
     {
         "word": "Talang",
@@ -2628,7 +2628,7 @@
         "stress_index": 1,
         "meaning": "Lost / Astray",
         "tier": 6,
-        "category": "Other"
+        "category": "Adjectives"
     },
     {
         "word": "Amlig",
@@ -2639,7 +2639,7 @@
         "stress_index": 0,
         "meaning": "To take care / protect",
         "tier": 6,
-        "category": "Verbs"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Angan-angan",
@@ -2663,7 +2663,7 @@
         "stress_index": 1,
         "meaning": "Endurance / Fortitude",
         "tier": 6,
-        "category": "Other"
+        "category": "Nouns"
     },
     {
         "word": "Pulus",
