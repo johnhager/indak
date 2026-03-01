@@ -51,6 +51,16 @@ export class ParticlePulse {
                         <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 5px;">Master Negation & Flow (Tier 4+)</p>
                     </div>
 
+                    <div style="background: rgba(0,0,0,0.2); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 15px; text-align: left; font-size: 0.85rem; line-height: 1.5;">
+                        <h3 style="color: #00ffaa; margin: 0 0 10px 0; font-size: 1rem;">How to Play:</h3>
+                        <ol style="margin: 0; padding-left: 20px; color: rgba(255,255,255,0.8);">
+                            <li style="margin-bottom: 8px;">Read the English prompt in the center.</li>
+                            <li style="margin-bottom: 8px;">Identify the correct Ilonggo particle (Wala, Indi, etc.).</li>
+                            <li style="margin-bottom: 8px;"><strong>Drag the card</strong> towards the correct answer!</li>
+                            <li>You only have <strong>5 seconds</strong>, react quickly!</li>
+                        </ol>
+                    </div>
+
                     <button id="start-pp-btn" class="btn-primary" style="padding: 1rem; border-radius: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">ACTIVATE PULSE</button>
                     <button id="exit-pp-btn" class="btn-secondary" style="background: transparent; border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem; border-radius: 12px; color: rgba(255,255,255,0.5); font-size: 0.8rem;">BACK TO MENU</button>
                 </div>
