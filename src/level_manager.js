@@ -54,52 +54,59 @@ class LevelManager {
 
     getFilteredVocabulary(gameType = 'rhythm', excludeWords = [], hardMode = false) {
         const tier = this.tiers[this.currentTier];
-        let validWords = this.vocabulary.filter(word => word.syllables.length <= tier.maxSyllables);
 
-        // Hard Mode: Filter to bottom 50% success rate
-        if (hardMode) {
-            const wordStats = validWords.map(word => {
-                const stats = this.masteryData[word.word] || {
-                    rhythm: { c: 0, t: 0 },
-                    meaning: { c: 0, t: 0 }
-                };
-                const skill = stats[gameType] || { c: 0, t: 0 };
-                const sr = skill.t === 0 ? 0 : skill.c / skill.t;
-                return { word, sr };
-            });
+        // 1. Identify valid candidates based on tier syllable limits
+        let candidates = this.vocabulary.filter(word =>
+            word.syllables.length <= tier.maxSyllables && !excludeWords.includes(word.word)
+        );
 
-            // Sort by SR (asc)
-            wordStats.sort((a, b) => a.sr - b.sr);
-            const cutoff = Math.max(4, Math.ceil(wordStats.length / 2));
-            validWords = wordStats.slice(0, cutoff).map(s => s.word);
-        }
+        if (candidates.length === 0) return [];
 
-        const nonDuplicateWords = validWords.filter(w => !excludeWords.includes(w.word));
-        if (nonDuplicateWords.length > 0) {
-            validWords = nonDuplicateWords;
-        }
-
-        let pool = [];
-        validWords.forEach(word => {
+        // 2. Score candidates based on the '2-Part Strategy': 
+        // Part A: Mastery/Weakness (Low SR = High weight)
+        // Part B: Complexity/Syllables (More syllables = High weight)
+        const scoredCandidates = candidates.map(word => {
             const stats = this.masteryData[word.word] || {
                 rhythm: { c: 0, t: 0 },
                 meaning: { c: 0, t: 0 }
             };
             const skill = stats[gameType] || { c: 0, t: 0 };
-
-            // Inverse Proportional Spawning:
-            // Successfully mastered words (sr=1) get weight 1
-            // Words with 0 tries (t=0) get weight 15
-            // Partial success scales between 1-10
             const sr = skill.t === 0 ? 0 : skill.c / skill.t;
-            let weight = Math.max(1, Math.round(10 - (9 * sr)));
 
-            if (skill.t === 0) weight = 15;
+            // Mastery Score (0-50): Priority to failing or new words
+            let masteryScore = skill.t === 0 ? 40 : Math.round(50 * (1 - sr));
 
+            // Complexity Score (0-50): Exponentially favor longer words to prevent them being drowned out
+            // Tier 3 words (4+ syllables) get significant boosts
+            const syllableCount = word.syllables.length;
+            const complexityScore = Math.pow(syllableCount, 1.8);
+
+            // Freshness Score (0-10): Slightly favor words with very few attempts
+            const freshnessScore = skill.t < 3 ? 10 : 0;
+
+            const totalScore = Math.max(1, masteryScore + complexityScore + freshnessScore);
+
+            return { word, score: totalScore };
+        });
+
+        // 3. Construct weighted pool
+        let finalCandidates = scoredCandidates;
+
+        // Hard Mode: Filter to top 30% of 'problem' words (most challenging/weakest)
+        if (hardMode) {
+            scoredCandidates.sort((a, b) => b.score - a.score);
+            const poolSize = Math.max(12, Math.ceil(scoredCandidates.length * 0.3));
+            finalCandidates = scoredCandidates.slice(0, poolSize);
+        }
+
+        const pool = [];
+        finalCandidates.forEach(cand => {
+            const weight = Math.round(cand.score);
             for (let i = 0; i < weight; i++) {
-                pool.push(word);
+                pool.push(cand.word);
             }
         });
+
         return pool;
     }
 
