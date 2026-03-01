@@ -8,7 +8,34 @@ const app = document.getElementById('app');
 const startBtn = document.getElementById('start-btn');
 const startSwipeBtn = document.getElementById('start-swipe-btn');
 const startSentenceBtn = document.getElementById('start-sentence-btn');
+const exitBtn = document.getElementById('exit-btn');
 const gameCanvas = document.getElementById('game-canvas');
+
+let activeGame = null;
+
+function showExitButton() {
+    exitBtn?.classList.remove('hidden');
+}
+
+function hideExitButton() {
+    exitBtn?.classList.add('hidden');
+}
+
+exitBtn?.addEventListener('click', () => {
+    // Force stop all potential engines
+    if (activeGame && typeof activeGame.stop === 'function') activeGame.stop();
+    if (conductor && typeof conductor.stop === 'function') conductor.stop();
+
+    // Clear the stage
+    gameCanvas.innerHTML = '';
+    const summaryScreen = document.getElementById('summary-screen');
+    if (summaryScreen) summaryScreen.classList.add('hidden');
+
+    // Return to Menu
+    document.querySelector('.hero-section')?.classList.remove('hidden');
+    hideExitButton();
+    activeGame = null;
+});
 
 startBtn?.addEventListener('click', async () => {
     console.log('Indak: Initializing Engine...');
@@ -20,6 +47,7 @@ startBtn?.addEventListener('click', async () => {
 
     // Keep UI responsive immediately
     document.querySelector('.hero-section').classList.add('hidden');
+    showExitButton();
 
     try {
         const speedMode = document.querySelector('input[name="game-speed"]:checked').value;
@@ -37,13 +65,14 @@ startBtn?.addEventListener('click', async () => {
 startSwipeBtn?.addEventListener('click', async () => {
     console.log('Swipe Sorter: Initializing...');
     document.querySelector('.hero-section').classList.add('hidden');
+    showExitButton();
 
     try {
         const response = await fetch('./data/vocabulary.json');
         const vocabularyData = await response.json();
 
-        const swipeSorter = new SwipeSorter(gameCanvas, vocabularyData);
-        swipeSorter.startRound();
+        activeGame = new SwipeSorter(gameCanvas, vocabularyData);
+        activeGame.startRound();
     } catch (e) {
         console.error('Failed to fetch vocabulary:', e);
     }
@@ -52,13 +81,14 @@ startSwipeBtn?.addEventListener('click', async () => {
 startSentenceBtn?.addEventListener('click', async () => {
     console.log('Sentence Builder: Initializing...');
     document.querySelector('.hero-section').classList.add('hidden');
+    showExitButton();
 
     try {
         const response = await fetch('./data/sentences.json');
         const sentencesData = await response.json();
 
-        const sentenceBuilder = new SentenceBuilder(gameCanvas, sentencesData);
-        sentenceBuilder.startRound();
+        activeGame = new SentenceBuilder(gameCanvas, sentencesData);
+        activeGame.startRound();
     } catch (e) {
         console.error('Failed to fetch sentences:', e);
     }

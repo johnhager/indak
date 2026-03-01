@@ -15,6 +15,10 @@ export class SentenceBuilder {
         this.init();
     }
 
+    stop() {
+        this.container.innerHTML = '';
+    }
+
     init() {
         this.container.innerHTML = `
             <div class="sentence-builder-ui" style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 2rem;">

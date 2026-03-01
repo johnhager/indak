@@ -189,6 +189,11 @@ export class SwipeSorter {
         this.currentY = 0;
     }
 
+    stop() {
+        this.gameActive = false;
+        this.container.innerHTML = '';
+    }
+
     commitSwipe(direction) {
         if (!this.currentCard) return;
         const isCorrect = direction === this.correctDirection;

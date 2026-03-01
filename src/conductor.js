@@ -13,6 +13,7 @@ class Conductor {
         this.activeSyllables = [];
         this.pendingFirstSyllables = [];
         this.combo = 0;
+        this.sessionHighFlow = 0;
         this.multiplier = 1;
         this.totalHits = 0;
         this.totalPossible = 0;
@@ -46,7 +47,10 @@ class Conductor {
         if (this.topScores.length === 0 && oldHigh > 0) {
             this.topScores.push(oldHigh);
         }
-        while (this.topScores.length < 3) this.topScores.push(0);
+        while (this.topScores.length < 3) {
+            if (this.topScores.length >= 3) break;
+            this.topScores.push(0);
+        }
     }
 
     createDebugOverlay() {
@@ -56,7 +60,7 @@ class Conductor {
         this.debugOverlay.style.cssText = `
             position: absolute; top: 10px; right: 10px; 
             background: rgba(0,0,0,0.5); color: #0f0; 
-            font-family: monospace; padding: 5px; font-size: 12px;
+            font-family: monospace; padding: 5px; font-size: 10px;
             pointer-events: none; z-index: 1000;
         `;
         document.body.appendChild(this.debugOverlay);
@@ -67,6 +71,7 @@ class Conductor {
         this.lastFrameTime = performance.now();
         this.isPlaying = true;
         this.combo = 0;
+        this.sessionHighFlow = 0;
         this.multiplier = 1;
         this.totalHits = 0;
         this.totalPossible = 0;
@@ -75,6 +80,17 @@ class Conductor {
         this.queuedSyllables = [];
         this.update();
         this.spawnWord();
+        if (this.debugOverlay) this.debugOverlay.style.display = 'block';
+    }
+
+    stop() {
+        this.isPlaying = false;
+        if (this.currentWordContainer) this.currentWordContainer.remove();
+        if (this.debugOverlay) this.debugOverlay.style.display = 'none';
+        const status = document.getElementById('status-display');
+        if (status) status.innerHTML = '';
+        const summaryEl = document.getElementById('summary-screen');
+        if (summaryEl) summaryEl.classList.add('hidden');
     }
 
     update() {
@@ -146,6 +162,7 @@ class Conductor {
     }
 
     spawnWord() {
+        if (!this.isPlaying) return;
         if (this.songPosition >= this.gameDuration) {
             this.endGame();
             return;
@@ -271,6 +288,8 @@ class Conductor {
     handleHit(rating, offset, syllableObj) {
         levelManager.handleRating(rating);
         this.combo++;
+        if (this.combo > this.sessionHighFlow) this.sessionHighFlow = this.combo;
+
         this.totalHits += (rating === 'PERFECT' ? 1 : 0.5);
 
         if (this.combo >= 20) this.multiplier = 4;
@@ -291,7 +310,7 @@ class Conductor {
                 levelManager.markWordMastered(syllableObj.wordData.word);
             }
             delete this.wordTracking[syllableObj.wordId];
-            setTimeout(() => this.spawnWord(), 1500);
+            setTimeout(() => { if (this.isPlaying) this.spawnWord(); }, 1500);
         }
 
         const feedback = document.createElement('div');
@@ -314,23 +333,22 @@ class Conductor {
         this.spawnParticles(syllableObj.element.getBoundingClientRect());
 
         if (syllableObj.isLastSyllable) {
-            // Technically impossible under current rules, but safe guarding
             this.showTranslation(syllableObj.wordData, true);
-            setTimeout(() => this.spawnWord(), 1500);
+            setTimeout(() => { if (this.isPlaying) this.spawnWord(); }, 1500);
         }
     }
 
     handleMiss(syllableObj) {
         if (syllableObj && syllableObj.isLastSyllable) {
             this.showTranslation(syllableObj.wordData, false);
-            setTimeout(() => this.spawnWord(), 1500);
+            setTimeout(() => { if (this.isPlaying) this.spawnWord(); }, 1500);
         }
 
         if (syllableObj && syllableObj.wordId) {
             delete this.wordTracking[syllableObj.wordId];
         }
         levelManager.handleRating('MISS');
-        this.checkTopScore(this.combo);
+        this.updateTopScores(this.combo);
         this.combo = 0;
         this.multiplier = 1;
         indakAudio.playFail();
@@ -339,19 +357,16 @@ class Conductor {
     }
 
     showTranslation(wordData, isPerfect) {
+        if (!this.isPlaying) return;
         const trans = document.createElement('div');
         trans.className = 'translation-reveal';
-
-        // Definition
         let content = `<div>${wordData.word} = ${wordData.meaning}</div>`;
-
         if (!isPerfect) {
             const pron = wordData.syllables.map((s, i) =>
                 i === wordData.stress_index ? s.toUpperCase() : s.toLowerCase()
             ).join('-');
             content += `<div class="pronunciation-guide">Stress: ${pron}</div>`;
         }
-
         trans.innerHTML = content;
         this.canvas.appendChild(trans);
         setTimeout(() => trans.remove(), 2000);
@@ -372,7 +387,7 @@ class Conductor {
         }
     }
 
-    checkTopScore(score) {
+    updateTopScores(score) {
         if (score === 0) return;
         this.topScores.push(score);
         this.topScores.sort((a, b) => b - a);
@@ -382,7 +397,7 @@ class Conductor {
 
     endGame() {
         this.isPlaying = false;
-        this.checkTopScore(this.combo);
+        this.updateTopScores(this.sessionHighFlow); // Use session max for top scores
         const accuracy = ((this.totalHits / this.totalPossible) * 100).toFixed(1);
         const summary = levelManager.getSummary();
 
@@ -392,20 +407,32 @@ class Conductor {
                 <h2>Session Complete!</h2>
                 <div class="stats-grid">
                     <div class="stat-item"><span>Accuracy</span><strong>${accuracy}%</strong></div>
-                    <div class="stat-item"><span>Top Flow</span><strong>${this.topScores[0] || 0}</strong></div>
+                    <div class="stat-item"><span>Session Best</span><strong>${this.sessionHighFlow}</strong></div>
                     <div class="stat-item"><span>End Tier</span><strong>${summary.tier}</strong></div>
                 </div>
-                <h3>All-Time Best Flows</h3>
-                <div class="word-list">1st: ${this.topScores[0] || 0} | 2nd: ${this.topScores[1] || 0} | 3rd: ${this.topScores[2] || 0}</div>
+                <h3>All-Time Top 3 Flows</h3>
+                <div class="word-list">
+                    1st: ${this.topScores[0] || 0} hits<br>
+                    2nd: ${this.topScores[1] || 0} hits<br>
+                    3rd: ${this.topScores[2] || 0} hits
+                </div>
                 <h3>Words Mastered</h3>
                 <div class="word-list">${summary.mastered.slice(0, 10).join(', ')}...</div>
-                <button id="restart-btn" class="btn-primary">TEKOT ULI (Play Again)</button>
-                <button id="share-btn" class="btn-primary" style="background: var(--accent-bamboo)">SHARE TO MANAPLA</button>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <button id="restart-btn" class="btn-primary">TEKOT ULI (Play Again)</button>
+                    <button id="share-btn" class="btn-primary" style="background: var(--accent-bamboo)">SHARE RESULTS</button>
+                    <button id="exit-summary-btn" class="btn-secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 10px; border-radius: 12px; color: white;">BACK TO MENU</button>
+                </div>
             </div>
         `;
         summaryEl.classList.remove('hidden');
 
         document.getElementById('restart-btn').addEventListener('click', () => {
+            summaryEl.classList.add('hidden');
+            this.start();
+        });
+
+        document.getElementById('exit-summary-btn').addEventListener('click', () => {
             location.reload();
         });
 
@@ -413,7 +440,7 @@ class Conductor {
             if (navigator.share) {
                 navigator.share({
                     title: 'Indak - Ilonggo Rhythm Game',
-                    text: `I hit a Top Flow of ${this.topScores[0] || 0} and mastered ${summary.mastered.length} Hiligaynon words on Indak!`,
+                    text: `I hit a Session Best Flow of ${this.sessionHighFlow} and mastered ${summary.mastered.length} Hiligaynon words on Indak!`,
                     url: window.location.href
                 });
             }
