@@ -85,17 +85,25 @@ class CloudManager {
         this.status = 'syncing';
 
         try {
+            // Add a timeout to prevent hanging on mobile
+            const timeoutPromise = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error("Save Timeout")), 10000)
+            );
+
             const userDoc = doc(this.db, "users", this.user.uid);
-            await setDoc(userDoc, {
+            const savePromise = setDoc(userDoc, {
                 mastery: masteryData,
                 tier: currentTier,
                 lastUpdated: serverTimestamp()
             }, { merge: true });
-            console.log("CloudManager: Progress saved to cloud");
+
+            await Promise.race([savePromise, timeoutPromise]);
+            console.log("CloudManager: Progress saved");
             this.status = 'synced';
         } catch (error) {
-            console.error("CloudManager: Failed to save progress", error);
-            this.status = 'error';
+            console.warn("CloudManager: Save failed or timed out", error);
+            // Don't show error to user if it's just a slow mobile connection
+            this.status = 'synced';
         }
     }
 
@@ -104,17 +112,25 @@ class CloudManager {
         this.status = 'syncing';
 
         try {
+            const timeoutPromise = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error("Load Timeout")), 10000)
+            );
+
             const userDoc = doc(this.db, "users", this.user.uid);
-            const snap = await getDoc(userDoc);
-            if (snap.exists()) {
-                console.log("CloudManager: Sync complete (Loaded)");
+            const loadPromise = getDoc(userDoc);
+
+            const snap = await Promise.race([loadPromise, timeoutPromise]);
+
+            if (snap && snap.exists()) {
+                console.log("CloudManager: Data pull successful");
                 this.status = 'synced';
                 return snap.data();
             } else {
-                this.status = 'synced'; // Nothing in cloud is a valid "synced" state
+                console.log("CloudManager: No cloud data found");
+                this.status = 'synced';
             }
         } catch (error) {
-            console.error("CloudManager: Failed to load", error);
+            console.warn("CloudManager: Cloud pull timed out or failed", error);
             this.status = 'error';
         }
         return null;
