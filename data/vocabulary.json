@@ -1558,5 +1558,135 @@
         ],
         "stress_index": 3,
         "meaning": "Successful"
+    },
+    {
+        "word": "Indi",
+        "syllables": [
+            "In",
+            "di"
+        ],
+        "stress_index": 0,
+        "meaning": "No / Not (Future/General)",
+        "tier": 4
+    },
+    {
+        "word": "Wala",
+        "syllables": [
+            "Wa",
+            "la"
+        ],
+        "stress_index": 1,
+        "meaning": "No / Not (Past/Existential)",
+        "tier": 4
+    },
+    {
+        "word": "Waay",
+        "syllables": [
+            "Wa",
+            "ay"
+        ],
+        "stress_index": 0,
+        "meaning": "None / Absent",
+        "tier": 4
+    },
+    {
+        "word": "May",
+        "syllables": [
+            "May"
+        ],
+        "stress_index": 0,
+        "meaning": "There is / To have",
+        "tier": 4
+    },
+    {
+        "word": "Ano",
+        "syllables": [
+            "A",
+            "no"
+        ],
+        "stress_index": 1,
+        "meaning": "What",
+        "tier": 5
+    },
+    {
+        "word": "Diin",
+        "syllables": [
+            "Di",
+            "in"
+        ],
+        "stress_index": 1,
+        "meaning": "Where",
+        "tier": 5
+    },
+    {
+        "word": "Sin-o",
+        "syllables": [
+            "Sin",
+            "o"
+        ],
+        "stress_index": 1,
+        "meaning": "Who",
+        "tier": 5
+    },
+    {
+        "word": "San-o",
+        "syllables": [
+            "San",
+            "o"
+        ],
+        "stress_index": 1,
+        "meaning": "When",
+        "tier": 5
+    },
+    {
+        "word": "Nga-a",
+        "syllables": [
+            "Nga",
+            "a"
+        ],
+        "stress_index": 1,
+        "meaning": "Why",
+        "tier": 5
+    },
+    {
+        "word": "Paano",
+        "syllables": [
+            "Pa",
+            "a",
+            "no"
+        ],
+        "stress_index": 1,
+        "meaning": "How",
+        "tier": 5
+    },
+    {
+        "word": "Pila",
+        "syllables": [
+            "Pi",
+            "la"
+        ],
+        "stress_index": 1,
+        "meaning": "How much / many",
+        "tier": 5
+    },
+    {
+        "word": "Anay",
+        "syllables": [
+            "A",
+            "nay"
+        ],
+        "stress_index": 1,
+        "meaning": "First / For a while",
+        "tier": 5
+    },
+    {
+        "word": "Antis",
+        "syllables": [
+            "An",
+            "tis"
+        ],
+        "stress_index": 0,
+        "meaning": "Before",
+        "tier": 5
     }
 ]

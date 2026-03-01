@@ -66,5 +66,69 @@
             "gamay",
             "imo"
         ]
+    },
+    {
+        "english": "The child is not happy.",
+        "ilonggo_chunks": [
+            "Indi",
+            "malipay",
+            "ang",
+            "bata"
+        ],
+        "trap_words": [
+            "nalipay",
+            "nagakadto"
+        ],
+        "tier": 4
+    },
+    {
+        "english": "He did not go.",
+        "ilonggo_chunks": [
+            "Wala",
+            "sia",
+            "nagkadto"
+        ],
+        "trap_words": [
+            "nagakadto",
+            "ako"
+        ],
+        "tier": 4
+    },
+    {
+        "english": "You enter the house first before I do.",
+        "ilonggo_chunks": [
+            "Ikaw",
+            "anay",
+            "magsulod",
+            "sa",
+            "balay",
+            "antis",
+            "ako"
+        ],
+        "trap_words": [
+            "siya",
+            "naglakat"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Before going to Molo, please pass by the house first.",
+        "ilonggo_chunks": [
+            "Antis",
+            "ka",
+            "magkadto",
+            "sa",
+            "Molo,",
+            "agi",
+            "ka",
+            "anay",
+            "sa",
+            "balay."
+        ],
+        "trap_words": [
+            "palengke",
+            "indi"
+        ],
+        "tier": 5
     }
 ]

@@ -38,7 +38,10 @@ class LevelManager {
         return {
             1: { name: 'Bugtaw', maxSyllables: 2 },
             2: { name: 'Lakat', maxSyllables: 3 },
-            3: { name: 'Indak', maxSyllables: 10 }
+            3: { name: 'Indak', maxSyllables: 10 },
+            4: { name: 'Gisantes', description: 'Particles & Negation' },
+            5: { name: 'Pakiana', description: 'Interrogatives' },
+            6: { name: 'Kinaandan', description: 'Common Phrases' }
         };
     }
 
@@ -55,10 +58,18 @@ class LevelManager {
     getFilteredVocabulary(gameType = 'rhythm', excludeWords = [], hardMode = false) {
         const tier = this.tiers[this.currentTier];
 
-        // 1. Identify valid candidates based on tier syllable limits
-        let candidates = this.vocabulary.filter(word =>
-            word.syllables.length <= tier.maxSyllables && !excludeWords.includes(word.word)
-        );
+        // 1. Identify valid candidates based on tier logic
+        let candidates = this.vocabulary.filter(word => {
+            if (excludeWords.includes(word.word)) return false;
+
+            // Tier 4+ uses explicit tier tagging
+            if (this.currentTier >= 4) {
+                return word.tier === this.currentTier;
+            }
+
+            // Tiers 1-3 use syllable-based progression
+            return word.syllables.length <= (tier.maxSyllables || 10);
+        });
 
         if (candidates.length === 0) return [];
 
@@ -111,7 +122,7 @@ class LevelManager {
     }
 
     advanceTier() {
-        if (this.currentTier < 3) {
+        if (this.currentTier < 6) {
             this.currentTier++;
             localStorage.setItem('indak_tier', this.currentTier);
             this.syncWithCloud();
@@ -139,7 +150,7 @@ class LevelManager {
     }
 
     checkTierUpgrade() {
-        if (this.currentTier < 3) {
+        if (this.currentTier < 6) {
             this.currentTier++;
             localStorage.setItem('indak_tier', this.currentTier);
             this.syncWithCloud();
