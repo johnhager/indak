@@ -13,6 +13,7 @@ export class ParticlePulse {
         this.currentRound = 0;
         this.score = 0;
         this.totalAttempts = 0;
+        this.timerEnabled = true;
         this.timerInterval = null;
         this.timeLeft = 5.0; // Seconds per question
 
@@ -61,6 +62,17 @@ export class ParticlePulse {
                         </ol>
                     </div>
 
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0;">
+                        <!-- Timer Toggle -->
+                        <div class="toggle-group" style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2); padding: 10px 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                            <label style="font-size: 0.9rem; font-weight: bold;">5s Timer</label>
+                            <label class="switch">
+                                <input type="checkbox" id="pp-timer-toggle" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
                     <button id="start-pp-btn" class="btn-primary" style="padding: 1rem; border-radius: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">ACTIVATE PULSE</button>
                     <button id="exit-pp-btn" class="btn-secondary" style="background: transparent; border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem; border-radius: 12px; color: rgba(255,255,255,0.5); font-size: 0.8rem;">BACK TO MENU</button>
                 </div>
@@ -68,6 +80,7 @@ export class ParticlePulse {
         `;
 
         document.getElementById('start-pp-btn').addEventListener('click', () => {
+            this.timerEnabled = document.getElementById('pp-timer-toggle').checked;
             this.setupGameUI();
             this.startNextQuestion();
         });
@@ -148,15 +161,19 @@ export class ParticlePulse {
 
         this.spawnCard(data.context);
 
-        this.timeLeft = 5.0;
-        this.timeDisplay.innerText = this.timeLeft.toFixed(1);
-        this.timerInterval = setInterval(() => {
-            this.timeLeft -= 0.1;
-            this.timeDisplay.innerText = Math.max(0, this.timeLeft).toFixed(1);
-            if (this.timeLeft <= 0) {
-                this.handleTimeout();
-            }
-        }, 100);
+        this.timeDisplay.parentElement.style.display = this.timerEnabled ? 'block' : 'none';
+
+        if (this.timerEnabled) {
+            this.timeLeft = 5.0;
+            this.timeDisplay.innerText = this.timeLeft.toFixed(1);
+            this.timerInterval = setInterval(() => {
+                this.timeLeft -= 0.1;
+                this.timeDisplay.innerText = Math.max(0, this.timeLeft).toFixed(1);
+                if (this.timeLeft <= 0) {
+                    this.handleTimeout();
+                }
+            }, 100);
+        }
     }
 
     spawnCard(contextText) {

@@ -22,6 +22,11 @@ export class SwipeSorter {
         this.currentY = 0;
         this.isDragging = false;
 
+        // Timer State
+        this.timerEnabled = true;
+        this.timerInterval = null;
+        this.timeLeft = 5.0;
+
         this.init();
     }
 
@@ -60,6 +65,15 @@ export class SwipeSorter {
                                 <span class="slider round"></span>
                             </label>
                         </div>
+                        
+                        <!-- Timer Toggle -->
+                        <div class="toggle-group" style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2); padding: 5px 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                            <label style="font-size: 0.9rem; font-weight: bold;">5s Timer</label>
+                            <label class="switch">
+                                <input type="checkbox" id="swipe-timer-toggle" checked>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
                     </div>
 
                     <button id="start-swipe-btn" class="btn-primary" style="padding: 1rem; border-radius: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">START SESSION</button>
@@ -71,6 +85,7 @@ export class SwipeSorter {
         document.getElementById('start-swipe-btn').addEventListener('click', () => {
             this.gameDirection = document.getElementById('direction-toggle').checked ? 'en-to-il' : 'il-to-en';
             this.hardMode = document.getElementById('difficulty-toggle').checked;
+            this.timerEnabled = document.getElementById('swipe-timer-toggle').checked;
             this.setupGameUI();
             this.startRound();
         });
@@ -83,6 +98,11 @@ export class SwipeSorter {
     setupGameUI() {
         this.container.innerHTML = `
             <div class="swipe-sorter-ui" style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; user-select: none; touch-action: none;">
+                
+                <div id="swipe-time-container" style="position: absolute; top: 5vh; left: 0; right: 0; display: flex; justify-content: flex-end; padding: 0 2rem; z-index: 10; display: none;">
+                    <div style="color: white; font-weight: bold; font-size: 1.2rem;">Time: <span id="swipe-time" style="color: #ffcc00;">5.0</span>s</div>
+                </div>
+
                 <!-- Directional Definitions -->
                 <div class="def-label def-top" style="position: absolute; top: 12vh; width: 85%; text-align: center; opacity: 0; transition: all 0.2s; font-weight: bold; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 12px; border-radius: 12px; color: white; border: 1px solid rgba(255,255,255,0.2); z-index: 5; font-size: 0.9rem;"></div>
                 <div class="def-label def-bottom" style="position: absolute; bottom: 12vh; width: 85%; text-align: center; opacity: 0; transition: all 0.2s; font-weight: bold; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); padding: 12px; border-radius: 12px; color: white; border: 1px solid rgba(255,255,255,0.2); z-index: 5; font-size: 0.9rem;"></div>
@@ -94,6 +114,8 @@ export class SwipeSorter {
         `;
 
         this.cardStack = this.container.querySelector('.card-stack');
+        this.timeContainer = this.container.querySelector('#swipe-time-container');
+        this.timeDisplay = this.container.querySelector('#swipe-time');
         this.defTop = this.container.querySelector('.def-top');
         this.defBottom = this.container.querySelector('.def-bottom');
         this.defLeft = this.container.querySelector('.def-left');
@@ -186,6 +208,47 @@ export class SwipeSorter {
         `;
         this.cardStack.innerHTML = cardHTML;
         this.currentCard = this.cardStack.querySelector('.swipe-card');
+
+        this.clearTimer();
+        if (this.timerEnabled && this.timeContainer && this.timeDisplay) {
+            this.timeContainer.style.display = 'flex';
+            this.timeLeft = 5.0;
+            this.timeDisplay.innerText = this.timeLeft.toFixed(1);
+            this.timerInterval = setInterval(() => {
+                this.timeLeft -= 0.1;
+                this.timeDisplay.innerText = Math.max(0, this.timeLeft).toFixed(1);
+                if (this.timeLeft <= 0) {
+                    this.handleTimeout();
+                }
+            }, 100);
+        } else if (this.timeContainer) {
+            this.timeContainer.style.display = 'none';
+        }
+    }
+
+    clearTimer() {
+        if (this.timerInterval) {
+            clearInterval(this.timerInterval);
+            this.timerInterval = null;
+        }
+    }
+
+    handleTimeout() {
+        this.clearTimer();
+        if (!this.currentCard) return;
+
+        this.totalAttempts++;
+        if (this.roundAttempts === 0) {
+            this.roundAttempts = 1;
+            levelManager.markWordMastered(this.targetWordData.word, 'meaning', false);
+            this.missedWords.add(this.targetWordData);
+        }
+
+        this.currentCard.style.transition = 'all 0.3s';
+        this.currentCard.style.transform = 'scale(0.5)';
+        this.currentCard.style.opacity = '0';
+
+        setTimeout(() => this.loadNextCard(), 500);
     }
 
     onPointerDown(e) {
@@ -272,6 +335,7 @@ export class SwipeSorter {
     }
 
     stop() {
+        this.clearTimer();
         this.gameActive = false;
         this.container.innerHTML = '';
         const summary = document.getElementById('summary-screen');
@@ -303,6 +367,7 @@ export class SwipeSorter {
 
             this.currentCard.style.transform = `translate(${tx}px, ${ty}px) rotate(${this.currentX * 0.1}deg)`;
             this.currentCard.style.opacity = '0';
+            this.clearTimer();
             setTimeout(() => this.loadNextCard(), 300);
         } else {
             // First time missing this word in this round
@@ -330,6 +395,7 @@ export class SwipeSorter {
     }
 
     endGame() {
+        this.clearTimer();
         this.gameActive = false;
         this.container.innerHTML = '';
         const accuracy = this.totalRounds === 0 ? 0 : Math.round((this.score / this.totalRounds) * 100);
