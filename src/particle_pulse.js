@@ -205,8 +205,15 @@ export class ParticlePulse {
 
         // Add resistance/rubber-band effect if they drag too far
         const maxDrag = 150;
-        const limitedDx = Math.sign(dx) * Math.min(Math.abs(dx), maxDrag + Math.pow(Math.abs(dx) - maxDrag, 0.5));
-        const limitedDy = Math.sign(dy) * Math.min(Math.abs(dy), maxDrag + Math.pow(Math.abs(dy) - maxDrag, 0.5));
+        let limitedDx = dx;
+        let limitedDy = dy;
+
+        if (Math.abs(dx) > maxDrag) {
+            limitedDx = Math.sign(dx) * (maxDrag + Math.pow(Math.abs(dx) - maxDrag, 0.5));
+        }
+        if (Math.abs(dy) > maxDrag) {
+            limitedDy = Math.sign(dy) * (maxDrag + Math.pow(Math.abs(dy) - maxDrag, 0.5));
+        }
 
         this.activeCard.style.transform = `translate(${limitedDx}px, ${limitedDy}px) rotate(${limitedDx * 0.05}deg)`;
 
