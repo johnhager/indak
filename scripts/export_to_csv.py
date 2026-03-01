@@ -54,7 +54,9 @@ with open(morph_csv, 'w', newline='', encoding='utf-8') as f:
     writer = csv.writer(f)
     writer.writerow(['Root Word', 'English Meaning', 'Valid Conjugations (Bar Separated)', 'Nonsense/Invalid Forms (Bar Separated)'])
     for item in morph_data:
-        valids_str = ' | '.join(item['valid_forms'])
+        # Extract just the word from the valid_forms object for the CSV list
+        valids_list = [v['word'] if isinstance(v, dict) else v for v in item['valid_forms']]
+        valids_str = ' | '.join(valids_list)
         nonsenses_str = ' | '.join(item['nonsense_forms'])
         writer.writerow([item['root'], item['meaning'], valids_str, nonsenses_str])
 

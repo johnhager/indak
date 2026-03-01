@@ -61,6 +61,7 @@ export class RootRunner {
                     <!-- Central Orb -->
                     <div class="central-orb-container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; text-align: center;">
                         <div class="orb" style="width: 140px; height: 140px; border-radius: 50%; background: radial-gradient(circle, rgba(255,217,61,0.3) 0%, rgba(255,217,61,0) 70%); border: 2px solid rgba(255,217,61,0.5); display: flex; flex-direction: column; align-items:center; justify-content:center; box-shadow: 0 0 30px rgba(255,217,61,0.2); animation: pulse 3s infinite ease-in-out;">
+                            <div id="orb-translation" style="position: absolute; top: -55px; width: 140px; text-align: center; font-size: 0.9rem; color: #FF9F1C; opacity: 0; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); text-transform: uppercase; font-weight: 800; text-shadow: 0 0 10px rgba(0,0,0,0.5);"></div>
                             <div id="orb-symbol" style="position: absolute; top: -20px; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900; color: white; opacity: 0; transform: scale(0.5); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 20;"></div>
                             <strong id="root-display" style="color: var(--accent-gold); font-size: 1.4rem; letter-spacing: 2px; text-transform: uppercase;">ROOT</strong>
                         </div>
@@ -188,8 +189,16 @@ export class RootRunner {
 
     spawnWord() {
         const isCorrect = Math.random() > 0.5;
-        const textPool = isCorrect ? this.currentDrill.valid_forms : this.currentDrill.nonsense_forms;
-        const text = textPool[Math.floor(Math.random() * textPool.length)];
+        let text = "";
+        let english = "";
+
+        if (isCorrect) {
+            const item = this.currentDrill.valid_forms[Math.floor(Math.random() * this.currentDrill.valid_forms.length)];
+            text = item.word;
+            english = item.english;
+        } else {
+            text = this.currentDrill.nonsense_forms[Math.floor(Math.random() * this.currentDrill.nonsense_forms.length)];
+        }
 
         const wordEl = document.createElement('div');
         wordEl.className = 'runner-word';
@@ -207,6 +216,7 @@ export class RootRunner {
             x: startX,
             y: -50,
             text: text,
+            english: english,
             isCorrect: isCorrect,
             isProcessed: false,
             startX: 0,
@@ -278,6 +288,7 @@ export class RootRunner {
         const success = (direction === 'right' && wordObj.isCorrect) || (direction === 'left' && !wordObj.isCorrect);
         const orb = this.container.querySelector('.orb');
         const symbol = this.container.querySelector('#orb-symbol');
+        const transDisplay = this.container.querySelector('#orb-translation');
 
         if (success) {
             this.score++;
@@ -293,6 +304,12 @@ export class RootRunner {
                 symbol.style.boxShadow = '0 0 20px #FF9F1C';
                 symbol.style.opacity = '1';
                 symbol.style.transform = 'scale(1) translateY(-10px)';
+            }
+
+            if (wordObj.isCorrect && transDisplay) {
+                transDisplay.textContent = wordObj.english;
+                transDisplay.style.opacity = '1';
+                transDisplay.style.transform = 'translateY(-5px)';
             }
 
             if (direction === 'right') {
@@ -330,7 +347,11 @@ export class RootRunner {
                 symbol.style.opacity = '0';
                 symbol.style.transform = 'scale(0.5) translateY(0)';
             }
-        }, 500);
+            if (transDisplay) {
+                transDisplay.style.opacity = '0';
+                transDisplay.style.transform = 'translateY(0)';
+            }
+        }, 800);
 
         setTimeout(() => {
             wordObj.el.remove();

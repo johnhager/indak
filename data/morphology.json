@@ -3,11 +3,26 @@
         "root": "Kaon",
         "meaning": "Eat",
         "valid_forms": [
-            "Nagakaon",
-            "Ginkaon",
-            "Makaon",
-            "Kaunon",
-            "Nagkaon"
+            {
+                "word": "Nagakaon",
+                "english": "Eating"
+            },
+            {
+                "word": "Ginkaon",
+                "english": "Ate"
+            },
+            {
+                "word": "Makaon",
+                "english": "Will eat"
+            },
+            {
+                "word": "Kaunon",
+                "english": "To be eaten"
+            },
+            {
+                "word": "Nagkaon",
+                "english": "Ate"
+            }
         ],
         "nonsense_forms": [
             "Makaonog",
@@ -20,11 +35,26 @@
         "root": "Hambal",
         "meaning": "Speak",
         "valid_forms": [
-            "Nagahambal",
-            "Ginhambal",
-            "Mahambal",
-            "Hambalon",
-            "Hambal-hambal"
+            {
+                "word": "Nagahambal",
+                "english": "Speaking"
+            },
+            {
+                "word": "Ginhambal",
+                "english": "Spoke"
+            },
+            {
+                "word": "Mahambal",
+                "english": "Will speak"
+            },
+            {
+                "word": "Hambalon",
+                "english": "To be spoken"
+            },
+            {
+                "word": "Hambal-hambal",
+                "english": "Keep speaking"
+            }
         ],
         "nonsense_forms": [
             "Nagahambals",
@@ -36,10 +66,22 @@
         "root": "Lakat",
         "meaning": "Walk",
         "valid_forms": [
-            "Nagalakat",
-            "Ginlakat",
-            "Malakat",
-            "Lakatan"
+            {
+                "word": "Nagalakat",
+                "english": "Walking"
+            },
+            {
+                "word": "Ginlakat",
+                "english": "Walked over"
+            },
+            {
+                "word": "Malakat",
+                "english": "Will walk"
+            },
+            {
+                "word": "Lakatan",
+                "english": "Place to walk"
+            }
         ],
         "nonsense_forms": [
             "Nagalakat-ka",
@@ -51,11 +93,26 @@
         "root": "Sulat",
         "meaning": "Write",
         "valid_forms": [
-            "Nagasulat",
-            "Ginsulat",
-            "Masulat",
-            "Sulatan",
-            "Ikasulat"
+            {
+                "word": "Nagasulat",
+                "english": "Writing"
+            },
+            {
+                "word": "Ginsulat",
+                "english": "Wrote"
+            },
+            {
+                "word": "Masulat",
+                "english": "Will write"
+            },
+            {
+                "word": "Sulatan",
+                "english": "To write on"
+            },
+            {
+                "word": "Ikasulat",
+                "english": "Able to write"
+            }
         ],
         "nonsense_forms": [
             "Nagasulats",
@@ -67,10 +124,22 @@
         "root": "Dagan",
         "meaning": "Run",
         "valid_forms": [
-            "Nagadagan",
-            "Gindagan",
-            "Madagan",
-            "Daganon"
+            {
+                "word": "Nagadagan",
+                "english": "Running"
+            },
+            {
+                "word": "Gindagan",
+                "english": "Ran through"
+            },
+            {
+                "word": "Madagan",
+                "english": "Will run"
+            },
+            {
+                "word": "Daganon",
+                "english": "To be run"
+            }
         ],
         "nonsense_forms": [
             "Nagadagans",
@@ -82,10 +151,22 @@
         "root": "Inum",
         "meaning": "Drink",
         "valid_forms": [
-            "Nagainum",
-            "Gininum",
-            "Mainum",
-            "Inumon"
+            {
+                "word": "Nagainum",
+                "english": "Drinking"
+            },
+            {
+                "word": "Gininum",
+                "english": "Drank"
+            },
+            {
+                "word": "Mainum",
+                "english": "Will drink"
+            },
+            {
+                "word": "Inumon",
+                "english": "To be drunk"
+            }
         ],
         "nonsense_forms": [
             "Nagainums",
@@ -97,10 +178,22 @@
         "root": "Hampang",
         "meaning": "Play",
         "valid_forms": [
-            "Nagahampang",
-            "Ginhampang",
-            "Mahampang",
-            "Hampangan"
+            {
+                "word": "Nagahampang",
+                "english": "Playing"
+            },
+            {
+                "word": "Ginhampang",
+                "english": "Played"
+            },
+            {
+                "word": "Mahampang",
+                "english": "Will play"
+            },
+            {
+                "word": "Hampangan",
+                "english": "Playground"
+            }
         ],
         "nonsense_forms": [
             "Nagahampangs",
@@ -112,10 +205,22 @@
         "root": "Luto",
         "meaning": "Cook",
         "valid_forms": [
-            "Nagaluto",
-            "Ginluto",
-            "Maluto",
-            "Lutoon"
+            {
+                "word": "Nagaluto",
+                "english": "Cooking"
+            },
+            {
+                "word": "Ginluto",
+                "english": "Cooked"
+            },
+            {
+                "word": "Maluto",
+                "english": "Will cook"
+            },
+            {
+                "word": "Lutoon",
+                "english": "To be cooked"
+            }
         ],
         "nonsense_forms": [
             "Nagalutos",
