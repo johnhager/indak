@@ -57,6 +57,7 @@ export class SwipeSorter {
         this.currentRound = 0;
         this.score = 0; // This will now track "First Try" corrects
         this.totalAttempts = 0;
+        this.missedWords = new Set();
         this.resetLabelHighlight();
         [this.defTop, this.defBottom, this.defLeft, this.defRight].forEach(el => el.style.opacity = '0');
         this.loadNextCard();
@@ -240,6 +241,11 @@ export class SwipeSorter {
             this.currentCard.style.opacity = '0';
             setTimeout(() => this.loadNextCard(), 300);
         } else {
+            // First time missing this word in this round
+            if (this.roundAttempts === 1) {
+                this.missedWords.add(this.targetWordData);
+            }
+
             this.currentCard.style.transition = 'transform 0.1s linear';
             this.currentCard.style.boxShadow = '0 0 30px rgba(255, 0, 0, 0.6)';
 
@@ -262,20 +268,43 @@ export class SwipeSorter {
     endGame() {
         this.gameActive = false;
         this.container.innerHTML = '';
-        const accuracy = Math.round((this.totalRounds / this.totalAttempts) * 100);
-        const masterySummary = levelManager.getSummary();
+        const accuracy = Math.round((this.score / this.totalRounds) * 100);
+        const masteryStats = levelManager.getMasteryStats();
+
+        let reviewHtml = '';
+        if (this.missedWords.size > 0) {
+            reviewHtml = `
+                <h3 style="margin-top: 1.5rem; color: #ff4d4d; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Review Missed Words</h3>
+                <div class="review-list" style="max-height: 200px; overflow-y: auto; text-align: left; margin-top: 0.5rem; padding-right: 5px; display: flex; flex-direction: column; gap: 8px;">
+                    ${Array.from(this.missedWords).map(w => {
+                const stats = masteryStats.details[w.word] || { meaning: { c: 0, t: 0 } };
+                const sr = stats.meaning.t === 0 ? 0 : Math.round((stats.meaning.c / stats.meaning.t) * 100);
+                return `
+                            <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 12px; border-left: 3px solid #ff4d4d;">
+                                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                                    <strong style="color: white; font-size: 1rem;">${w.word}</strong>
+                                    <span style="font-size: 0.7rem; color: #ff4d4d;">(${sr}%)</span>
+                                </div>
+                                <div style="font-size: 0.8rem; color: rgba(255,255,255,0.7); font-style: italic;">${w.meaning}</div>
+                            </div>
+                        `;
+            }).join('')}
+                </div>
+            `;
+        }
 
         const summaryEl = document.getElementById('summary-screen');
         summaryEl.innerHTML = `
-            <div class="glass-card">
-                <h2>Swipe Sorter Complete!</h2>
-                <div class="stats-grid">
+            <div class="glass-card" style="width: 90%; max-width: 450px; display: flex; flex-direction: column;">
+                <h2 style="margin-bottom: 1.5rem;">Session Complete</h2>
+                <div class="stats-grid" style="margin-bottom: 1.5rem;">
                     <div class="stat-item"><span>Accuracy</span><strong>${accuracy}%</strong></div>
                     <div class="stat-item"><span>Correct</span><strong>${this.score}/${this.totalRounds}</strong></div>
                 </div>
-                <h3>Words Mastered</h3>
-                <div class="word-list">${(masterySummary.mastered || []).slice(0, 10).join(', ')}...</div>
-                <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
+                
+                ${reviewHtml}
+
+                <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 0.8rem;">
                     <button id="swipe-restart-btn" class="btn-primary">TEKOT ULI (Play Again)</button>
                     <button id="swipe-exit-btn" class="btn-secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 12px; border-radius: 12px; color: white;">BACK TO MENU</button>
                 </div>
