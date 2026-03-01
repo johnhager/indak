@@ -1688,5 +1688,578 @@
         "stress_index": 0,
         "meaning": "Before",
         "tier": 5
+    },
+    {
+        "word": "Maayong aga",
+        "syllables": [
+            "Ma",
+            "a",
+            "yong",
+            "a",
+            "ga"
+        ],
+        "stress_index": 3,
+        "meaning": "Good morning",
+        "tier": 4
+    },
+    {
+        "word": "Maayong hapon",
+        "syllables": [
+            "Ma",
+            "a",
+            "yong",
+            "ha",
+            "pon"
+        ],
+        "stress_index": 3,
+        "meaning": "Good afternoon",
+        "tier": 4
+    },
+    {
+        "word": "Maayong gab-i",
+        "syllables": [
+            "Ma",
+            "a",
+            "yong",
+            "gab",
+            "i"
+        ],
+        "stress_index": 3,
+        "meaning": "Good evening",
+        "tier": 4
+    },
+    {
+        "word": "Maayong udto",
+        "syllables": [
+            "Ma",
+            "a",
+            "yong",
+            "ud",
+            "to"
+        ],
+        "stress_index": 3,
+        "meaning": "Good noon",
+        "tier": 4
+    },
+    {
+        "word": "Komusta ka?",
+        "syllables": [
+            "Ko",
+            "mus",
+            "ta",
+            "ka"
+        ],
+        "stress_index": 2,
+        "meaning": "How are you?",
+        "tier": 4
+    },
+    {
+        "word": "Maayo man",
+        "syllables": [
+            "Ma",
+            "a",
+            "yo",
+            "man"
+        ],
+        "stress_index": 1,
+        "meaning": "I'm good/fine",
+        "tier": 4
+    },
+    {
+        "word": "Abi-abi",
+        "syllables": [
+            "A",
+            "bi",
+            "a",
+            "bi"
+        ],
+        "stress_index": 3,
+        "meaning": "Greetings/Welcome",
+        "tier": 4
+    },
+    {
+        "word": "Agi anay",
+        "syllables": [
+            "A",
+            "gi",
+            "a",
+            "nay"
+        ],
+        "stress_index": 1,
+        "meaning": "Excuse me (Passing through)",
+        "tier": 4
+    },
+    {
+        "word": "Babay",
+        "syllables": [
+            "Ba",
+            "bay"
+        ],
+        "stress_index": 1,
+        "meaning": "Goodbye",
+        "tier": 4
+    },
+    {
+        "word": "Ako",
+        "syllables": [
+            "A",
+            "ko"
+        ],
+        "stress_index": 1,
+        "meaning": "I",
+        "tier": 4
+    },
+    {
+        "word": "Ikaw",
+        "syllables": [
+            "I",
+            "kaw"
+        ],
+        "stress_index": 1,
+        "meaning": "You (singular)",
+        "tier": 4
+    },
+    {
+        "word": "Sia",
+        "syllables": [
+            "Sia"
+        ],
+        "stress_index": 0,
+        "meaning": "He/She/It",
+        "tier": 4
+    },
+    {
+        "word": "Kami",
+        "syllables": [
+            "Ka",
+            "mi"
+        ],
+        "stress_index": 1,
+        "meaning": "We (exclusive)",
+        "tier": 4
+    },
+    {
+        "word": "Kita",
+        "syllables": [
+            "Ki",
+            "ta"
+        ],
+        "stress_index": 1,
+        "meaning": "We (inclusive)",
+        "tier": 4
+    },
+    {
+        "word": "Kamo",
+        "syllables": [
+            "Ka",
+            "mo"
+        ],
+        "stress_index": 1,
+        "meaning": "You (plural)",
+        "tier": 4
+    },
+    {
+        "word": "Sila",
+        "syllables": [
+            "Si",
+            "la"
+        ],
+        "stress_index": 1,
+        "meaning": "They",
+        "tier": 4
+    },
+    {
+        "word": "Ini",
+        "syllables": [
+            "I",
+            "ni"
+        ],
+        "stress_index": 1,
+        "meaning": "This",
+        "tier": 4
+    },
+    {
+        "word": "Ina",
+        "syllables": [
+            "I",
+            "na"
+        ],
+        "stress_index": 1,
+        "meaning": "That",
+        "tier": 4
+    },
+    {
+        "word": "Ato",
+        "syllables": [
+            "A",
+            "to"
+        ],
+        "stress_index": 1,
+        "meaning": "That (far)",
+        "tier": 4
+    },
+    {
+        "word": "Isa",
+        "syllables": [
+            "I",
+            "sa"
+        ],
+        "stress_index": 1,
+        "meaning": "One (H)",
+        "tier": 5
+    },
+    {
+        "word": "Duha",
+        "syllables": [
+            "Du",
+            "ha"
+        ],
+        "stress_index": 1,
+        "meaning": "Two (H)",
+        "tier": 5
+    },
+    {
+        "word": "Tatlo",
+        "syllables": [
+            "Tat",
+            "lo"
+        ],
+        "stress_index": 1,
+        "meaning": "Three (H)",
+        "tier": 5
+    },
+    {
+        "word": "Apat",
+        "syllables": [
+            "A",
+            "pat"
+        ],
+        "stress_index": 1,
+        "meaning": "Four (H)",
+        "tier": 5
+    },
+    {
+        "word": "Lima",
+        "syllables": [
+            "Li",
+            "ma"
+        ],
+        "stress_index": 1,
+        "meaning": "Five (H)",
+        "tier": 5
+    },
+    {
+        "word": "Anum",
+        "syllables": [
+            "A",
+            "num"
+        ],
+        "stress_index": 1,
+        "meaning": "Six (H)",
+        "tier": 5
+    },
+    {
+        "word": "Pito",
+        "syllables": [
+            "Pi",
+            "to"
+        ],
+        "stress_index": 1,
+        "meaning": "Seven (H)",
+        "tier": 5
+    },
+    {
+        "word": "Walo",
+        "syllables": [
+            "Wa",
+            "lo"
+        ],
+        "stress_index": 1,
+        "meaning": "Eight (H)",
+        "tier": 5
+    },
+    {
+        "word": "Siyam",
+        "syllables": [
+            "Si",
+            "yam"
+        ],
+        "stress_index": 1,
+        "meaning": "Nine (H)",
+        "tier": 5
+    },
+    {
+        "word": "Napulo",
+        "syllables": [
+            "Na",
+            "pu",
+            "lo"
+        ],
+        "stress_index": 2,
+        "meaning": "Ten (H)",
+        "tier": 5
+    },
+    {
+        "word": "Uno",
+        "syllables": [
+            "U",
+            "no"
+        ],
+        "stress_index": 0,
+        "meaning": "One (S)",
+        "tier": 5
+    },
+    {
+        "word": "Dos",
+        "syllables": [
+            "Dos"
+        ],
+        "stress_index": 0,
+        "meaning": "Two (S)",
+        "tier": 5
+    },
+    {
+        "word": "Tres",
+        "syllables": [
+            "Tres"
+        ],
+        "stress_index": 0,
+        "meaning": "Three (S)",
+        "tier": 5
+    },
+    {
+        "word": "Kuatro",
+        "syllables": [
+            "Kua",
+            "tro"
+        ],
+        "stress_index": 0,
+        "meaning": "Four (S)",
+        "tier": 5
+    },
+    {
+        "word": "Sinko",
+        "syllables": [
+            "Sin",
+            "ko"
+        ],
+        "stress_index": 0,
+        "meaning": "Five (S)",
+        "tier": 5
+    },
+    {
+        "word": "Seis",
+        "syllables": [
+            "Seis"
+        ],
+        "stress_index": 0,
+        "meaning": "Six (S)",
+        "tier": 5
+    },
+    {
+        "word": "Siete",
+        "syllables": [
+            "Sie",
+            "te"
+        ],
+        "stress_index": 0,
+        "meaning": "Seven (S)",
+        "tier": 5
+    },
+    {
+        "word": "Otso",
+        "syllables": [
+            "Ot",
+            "so"
+        ],
+        "stress_index": 0,
+        "meaning": "Eight (S)",
+        "tier": 5
+    },
+    {
+        "word": "Nueve",
+        "syllables": [
+            "Nue",
+            "ve"
+        ],
+        "stress_index": 0,
+        "meaning": "Nine (S)",
+        "tier": 5
+    },
+    {
+        "word": "Diez",
+        "syllables": [
+            "Diez"
+        ],
+        "stress_index": 0,
+        "meaning": "Ten (S)",
+        "tier": 5
+    },
+    {
+        "word": "Gwapo",
+        "syllables": [
+            "Gwa",
+            "po"
+        ],
+        "stress_index": 1,
+        "meaning": "Handsome",
+        "tier": 5
+    },
+    {
+        "word": "Ma-init",
+        "syllables": [
+            "Ma",
+            "i",
+            "nit"
+        ],
+        "stress_index": 2,
+        "meaning": "Hot",
+        "tier": 5
+    },
+    {
+        "word": "Matugnaw",
+        "syllables": [
+            "Ma",
+            "tug",
+            "naw"
+        ],
+        "stress_index": 2,
+        "meaning": "Cold",
+        "tier": 5
+    },
+    {
+        "word": "Kulang",
+        "syllables": [
+            "Ku",
+            "lang"
+        ],
+        "stress_index": 1,
+        "meaning": "Lacking",
+        "tier": 5
+    },
+    {
+        "word": "Mataas",
+        "syllables": [
+            "Ma",
+            "ta",
+            "as"
+        ],
+        "stress_index": 2,
+        "meaning": "Tall/High",
+        "tier": 5
+    },
+    {
+        "word": "Manubo",
+        "syllables": [
+            "Ma",
+            "nu",
+            "bo"
+        ],
+        "stress_index": 2,
+        "meaning": "Short/Low",
+        "tier": 5
+    },
+    {
+        "word": "Luyag",
+        "syllables": [
+            "Lu",
+            "yag"
+        ],
+        "stress_index": 1,
+        "meaning": "Like/Want",
+        "tier": 5
+    },
+    {
+        "word": "Kadto",
+        "syllables": [
+            "Kad",
+            "to"
+        ],
+        "stress_index": 1,
+        "meaning": "To go",
+        "tier": 6
+    },
+    {
+        "word": "Inum",
+        "syllables": [
+            "I",
+            "num"
+        ],
+        "stress_index": 1,
+        "meaning": "To drink",
+        "tier": 6
+    },
+    {
+        "word": "Abut",
+        "syllables": [
+            "A",
+            "but"
+        ],
+        "stress_index": 1,
+        "meaning": "To arrive",
+        "tier": 6
+    },
+    {
+        "word": "Alalay",
+        "syllables": [
+            "A",
+            "la",
+            "lay"
+        ],
+        "stress_index": 2,
+        "meaning": "To assist",
+        "tier": 6
+    },
+    {
+        "word": "Abonar",
+        "syllables": [
+            "A",
+            "bo",
+            "nar"
+        ],
+        "stress_index": 2,
+        "meaning": "To advance/loan",
+        "tier": 6
+    },
+    {
+        "word": "Abat",
+        "syllables": [
+            "A",
+            "bat"
+        ],
+        "stress_index": 1,
+        "meaning": "To follow",
+        "tier": 6
+    },
+    {
+        "word": "Saad",
+        "syllables": [
+            "Sa",
+            "ad"
+        ],
+        "stress_index": 1,
+        "meaning": "To promise",
+        "tier": 6
+    },
+    {
+        "word": "Wakal",
+        "syllables": [
+            "Wa",
+            "kal"
+        ],
+        "stress_index": 1,
+        "meaning": "To talk/chatter",
+        "tier": 6
+    },
+    {
+        "word": "Tigaylo",
+        "syllables": [
+            "Ti",
+            "gay",
+            "lo"
+        ],
+        "stress_index": 2,
+        "meaning": "To replace/exchange",
+        "tier": 6
     }
 ]

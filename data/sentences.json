@@ -130,5 +130,159 @@
             "indi"
         ],
         "tier": 5
+    },
+    {
+        "english": "Good morning, my name is Ana.",
+        "ilonggo_chunks": [
+            "Maayong",
+            "aga,",
+            "ang",
+            "ngalan",
+            "ko",
+            "si",
+            "Ana."
+        ],
+        "trap_words": [
+            "gab-i",
+            "hapon"
+        ],
+        "tier": 4
+    },
+    {
+        "english": "How are you? I am good.",
+        "ilonggo_chunks": [
+            "Komusta",
+            "ka?",
+            "Maayo",
+            "man",
+            "ako."
+        ],
+        "trap_words": [
+            "sia",
+            "sila"
+        ],
+        "tier": 4
+    },
+    {
+        "english": "They are going to the house.",
+        "ilonggo_chunks": [
+            "Sila",
+            "makadto",
+            "sa",
+            "balay."
+        ],
+        "trap_words": [
+            "kita",
+            "kami"
+        ],
+        "tier": 4
+    },
+    {
+        "english": "I have three beautiful houses.",
+        "ilonggo_chunks": [
+            "May",
+            "tatlo",
+            "ako",
+            "nga",
+            "gwapa",
+            "nga",
+            "balay."
+        ],
+        "trap_words": [
+            "duha",
+            "apat"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "The weather is very hot today.",
+        "ilonggo_chunks": [
+            "Ma-init",
+            "katama",
+            "ang",
+            "panag-on",
+            "subong."
+        ],
+        "trap_words": [
+            "matugnaw",
+            "maayo"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Five mangoes for twenty pesos.",
+        "ilonggo_chunks": [
+            "Sinko",
+            "nga",
+            "paho",
+            "sa",
+            "veinte",
+            "pesos."
+        ],
+        "trap_words": [
+            "tres",
+            "apat"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Wait for me, I am running.",
+        "ilonggo_chunks": [
+            "Hulat",
+            "ka",
+            "sa",
+            "akon,",
+            "nagadalagan",
+            "ako."
+        ],
+        "trap_words": [
+            "nagalakat",
+            "nagakaon"
+        ],
+        "tier": 6
+    },
+    {
+        "english": "Please help me with this.",
+        "ilonggo_chunks": [
+            "Bulig",
+            "ka",
+            "sa",
+            "akon",
+            "sini."
+        ],
+        "trap_words": [
+            "hampang",
+            "inum"
+        ],
+        "tier": 6
+    },
+    {
+        "english": "I promise to arrive tomorrow.",
+        "ilonggo_chunks": [
+            "Nagasaad",
+            "ako",
+            "nga",
+            "maabut",
+            "buwas."
+        ],
+        "trap_words": [
+            "kahapon",
+            "subong"
+        ],
+        "tier": 6
+    },
+    {
+        "english": "We are playing in the house.",
+        "ilonggo_chunks": [
+            "Nagahampang",
+            "kami",
+            "sa",
+            "balay."
+        ],
+        "trap_words": [
+            "nagapahuway",
+            "naga-alalay"
+        ],
+        "tier": 6
     }
 ]

@@ -328,5 +328,225 @@
         ],
         "english": "Sleep on the bed.",
         "category": "Direction Markers"
+    },
+    {
+        "id": 31,
+        "sentence": "Ma-init ___ tubig.",
+        "correct": "ang",
+        "distractors": [
+            "sa",
+            "sang"
+        ],
+        "english": "The water is hot.",
+        "category": "Adjectives"
+    },
+    {
+        "id": 32,
+        "sentence": "Matugnaw ___ kape.",
+        "correct": "ang",
+        "distractors": [
+            "sa",
+            "sang"
+        ],
+        "english": "The coffee is cold.",
+        "category": "Adjectives"
+    },
+    {
+        "id": 33,
+        "sentence": "Gwapa ___ Ana.",
+        "correct": "si",
+        "distractors": [
+            "ang",
+            "ni"
+        ],
+        "english": "Ana is beautiful.",
+        "category": "Personal Markers"
+    },
+    {
+        "id": 34,
+        "sentence": "Gwapo ___ Pedro.",
+        "correct": "si",
+        "distractors": [
+            "ang",
+            "ni"
+        ],
+        "english": "Pedro is handsome.",
+        "category": "Personal Markers"
+    },
+    {
+        "id": 35,
+        "sentence": "Ngalan ___ Juan.",
+        "correct": "ni",
+        "distractors": [
+            "si",
+            "sang"
+        ],
+        "english": "Juan's name.",
+        "category": "Possessive Markers"
+    },
+    {
+        "id": 36,
+        "sentence": "Dalagan ___ bata.",
+        "correct": "ang",
+        "distractors": [
+            "sa",
+            "si"
+        ],
+        "english": "The child is running.",
+        "category": "Verbs"
+    },
+    {
+        "id": 37,
+        "sentence": "Kaon Kita ___ balay.",
+        "correct": "sa",
+        "distractors": [
+            "ang",
+            "si"
+        ],
+        "english": "Let's eat in the house.",
+        "category": "Direction Markers"
+    },
+    {
+        "id": 38,
+        "sentence": "Inum ___ gatas.",
+        "correct": "sang",
+        "distractors": [
+            "ang",
+            "sa"
+        ],
+        "english": "Drink some milk.",
+        "category": "Object Markers"
+    },
+    {
+        "id": 39,
+        "sentence": "Bulig ___ akon.",
+        "correct": "sa",
+        "distractors": [
+            "ang",
+            "si"
+        ],
+        "english": "Help me.",
+        "category": "Direction Markers"
+    },
+    {
+        "id": 40,
+        "sentence": "Hampang Kita ___ larsada.",
+        "correct": "sa",
+        "distractors": [
+            "ang",
+            "si"
+        ],
+        "english": "Let's play in the street.",
+        "category": "Direction Markers"
+    },
+    {
+        "id": 41,
+        "sentence": "Damo ___ tawo.",
+        "correct": "nga",
+        "distractors": [
+            "ang",
+            "sa"
+        ],
+        "english": "Many people.",
+        "category": "Connectors"
+    },
+    {
+        "id": 42,
+        "sentence": "Gamay ___ balay.",
+        "correct": "nga",
+        "distractors": [
+            "ang",
+            "sa"
+        ],
+        "english": "Small house.",
+        "category": "Connectors"
+    },
+    {
+        "id": 43,
+        "sentence": "Mataas ___ pader.",
+        "correct": "ang",
+        "distractors": [
+            "sa",
+            "sang"
+        ],
+        "english": "The wall is high.",
+        "category": "Adjectives"
+    },
+    {
+        "id": 44,
+        "sentence": "Manobo ___ silya.",
+        "correct": "ang",
+        "distractors": [
+            "sa",
+            "sang"
+        ],
+        "english": "The chair is low.",
+        "category": "Adjectives"
+    },
+    {
+        "id": 45,
+        "sentence": "Luyag ko ___ paho.",
+        "correct": "sang",
+        "distractors": [
+            "ang",
+            "si"
+        ],
+        "english": "I want some mango.",
+        "category": "Object Markers"
+    },
+    {
+        "id": 46,
+        "sentence": "Abut ___ kamo?",
+        "correct": "na",
+        "distractors": [
+            "ang",
+            "sa"
+        ],
+        "english": "Have you arrived?",
+        "category": "Particles"
+    },
+    {
+        "id": 47,
+        "sentence": "Pahuway ___ gamay.",
+        "correct": "sang",
+        "distractors": [
+            "ang",
+            "sa"
+        ],
+        "english": "Rest a little.",
+        "category": "Object Markers"
+    },
+    {
+        "id": 48,
+        "sentence": "Wakal ___ Juan.",
+        "correct": "ni",
+        "distractors": [
+            "si",
+            "sang"
+        ],
+        "english": "Juan is chattering.",
+        "category": "Possessive Markers"
+    },
+    {
+        "id": 49,
+        "sentence": "Tigaylo ___ sapatos.",
+        "correct": "sang",
+        "distractors": [
+            "ang",
+            "sa"
+        ],
+        "english": "Replace the shoes.",
+        "category": "Object Markers"
+    },
+    {
+        "id": 50,
+        "sentence": "Agi ___ anay.",
+        "correct": "ka",
+        "distractors": [
+            "ang",
+            "si"
+        ],
+        "english": "Pass through first.",
+        "category": "Particles"
     }
 ]
