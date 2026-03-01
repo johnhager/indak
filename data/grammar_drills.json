@@ -163,5 +163,170 @@
         ],
         "english": "Thank you for the help.",
         "category": "Direction Markers"
+    },
+    {
+        "id": 16,
+        "sentence": "Mabug-at ___ sapatos.",
+        "correct": "ang",
+        "distractors": [
+            "sa",
+            "sang"
+        ],
+        "english": "The shoes are heavy.",
+        "category": "Subject Markers"
+    },
+    {
+        "id": 17,
+        "sentence": "Lakat kita ___ bukid.",
+        "correct": "sa",
+        "distractors": [
+            "ang",
+            "si"
+        ],
+        "english": "Let's walk to the mountain.",
+        "category": "Direction Markers"
+    },
+    {
+        "id": 18,
+        "sentence": "Sud-an ___ Juan.",
+        "correct": "ni",
+        "distractors": [
+            "si",
+            "sa"
+        ],
+        "english": "Juan's viand.",
+        "category": "Possessive Markers"
+    },
+    {
+        "id": 19,
+        "sentence": "Gugma ___ nanay.",
+        "correct": "sang",
+        "distractors": [
+            "ang",
+            "sa"
+        ],
+        "english": "Mother's love.",
+        "category": "Possessive Markers"
+    },
+    {
+        "id": 20,
+        "sentence": "Gwapo ___ bata.",
+        "correct": "ang",
+        "distractors": [
+            "sa",
+            "sang"
+        ],
+        "english": "The child is handsome.",
+        "category": "Subject Markers"
+    },
+    {
+        "id": 21,
+        "sentence": "Baso ___ tubig.",
+        "correct": "sang",
+        "distractors": [
+            "ang",
+            "sa"
+        ],
+        "english": "A glass of water.",
+        "category": "Object Markers"
+    },
+    {
+        "id": 22,
+        "sentence": "Tindog ___ idalum.",
+        "correct": "sa",
+        "distractors": [
+            "ang",
+            "si"
+        ],
+        "english": "Stand underneath.",
+        "category": "Direction Markers"
+    },
+    {
+        "id": 23,
+        "sentence": "Hampang ___ karsada.",
+        "correct": "sa",
+        "distractors": [
+            "ang",
+            "si"
+        ],
+        "english": "Play in the street.",
+        "category": "Direction Markers"
+    },
+    {
+        "id": 24,
+        "sentence": "Namit ___ tinapay.",
+        "correct": "ang",
+        "distractors": [
+            "sa",
+            "sang"
+        ],
+        "english": "The bread is delicious.",
+        "category": "Subject Markers"
+    },
+    {
+        "id": 25,
+        "sentence": "Sulat ___ Maria.",
+        "correct": "ni",
+        "distractors": [
+            "si",
+            "sa"
+        ],
+        "english": "Maria's writing.",
+        "category": "Possessive Markers"
+    },
+    {
+        "id": 26,
+        "sentence": "Dako ___ mga balay.",
+        "correct": "ang",
+        "distractors": [
+            "sa",
+            "sang"
+        ],
+        "english": "The houses are big.",
+        "category": "Subject Markers"
+    },
+    {
+        "id": 27,
+        "sentence": "Kaon ___ prutas.",
+        "correct": "sang",
+        "distractors": [
+            "ang",
+            "sa"
+        ],
+        "english": "Eat some fruit.",
+        "category": "Object Markers"
+    },
+    {
+        "id": 28,
+        "sentence": "Abyan ___ Pedro.",
+        "correct": "ni",
+        "distractors": [
+            "si",
+            "sa"
+        ],
+        "english": "Pedro's friend.",
+        "category": "Possessive Markers"
+    },
+    {
+        "id": 29,
+        "sentence": "Mainit ___ kape.",
+        "correct": "ang",
+        "distractors": [
+            "sa",
+            "sang"
+        ],
+        "english": "The coffee is hot.",
+        "category": "Subject Markers"
+    },
+    {
+        "id": 30,
+        "sentence": "Tulog ___ katre.",
+        "correct": "sa",
+        "distractors": [
+            "ang",
+            "si"
+        ],
+        "english": "Sleep on the bed.",
+        "category": "Direction Markers"
     }
 ]

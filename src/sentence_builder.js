@@ -23,19 +23,25 @@ export class SentenceBuilder {
 
     init() {
         this.container.innerHTML = `
-            <div class="sentence-builder-ui" style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 2rem;">
+            <div class="sentence-builder-ui" style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; padding-top: 1rem;">
                 <!-- Target English Sentence -->
-                <div class="target-english" style="text-align: center; font-size: clamp(1.2rem, 4vw, 2rem); font-weight: bold; color: var(--text-main, white);"></div>
+                <div class="target-english" style="text-align: center; font-size: clamp(1.2rem, 4vw, 1.8rem); font-weight: 800; color: white; text-shadow: 0 4px 10px rgba(0,0,0,0.3); padding: 0 1rem;"></div>
                 
-                <!-- Drop Zone -->
-                <div class="drop-zone" style="min-height: 80px; width: 90%; max-width: 500px; border: 2px dashed rgba(255,255,255,0.3); border-radius: 12px; display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 1rem; align-items: center; justify-content: center;">
+                <!-- Feedback Clue Panel -->
+                <div class="clue-panel" style="display: flex; gap: 1rem; opacity: 0; transition: opacity 0.3s; background: rgba(0,0,0,0.2); padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">
+                    <div style="color: #00ffaa;"><span class="perfect-count">0</span> PERFECT</div>
+                    <div style="color: #ffcc00;"><span class="misplaced-count">0</span> MISPLACED</div>
+                </div>
+
+                <!-- Drop Zone (Slots) -->
+                <div class="drop-zone" style="min-height: 100px; width: 95%; max-width: 600px; display: flex; flex-wrap: wrap; gap: 0.8rem; padding: 1.5rem; align-items: center; justify-content: center; background: rgba(255,255,255,0.03); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);">
                 </div>
 
                 <!-- Word Bank -->
-                <div class="word-bank" style="width: 90%; max-width: 500px; display: flex; flex-wrap: wrap; gap: clamp(0.5rem, 2vw, 1rem); justify-content: center; padding: 1rem;">
+                <div class="word-bank" style="width: 95%; max-width: 600px; display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; padding: 1rem; background: rgba(0,0,0,0.1); border-radius: 20px;">
                 </div>
                 
-                <button class="check-button" style="padding: 1rem 3rem; border-radius: 50px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); color: white; border: 1px solid rgba(255,255,255,0.2); font-size: 1.2rem; display: none;">Check</button>
+                <button class="check-button btn-primary" style="padding: 1rem 4rem; border-radius: 50px; font-size: 1.2rem; display: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">CHECK SENTENCE</button>
             </div>
         `;
 
@@ -43,6 +49,9 @@ export class SentenceBuilder {
         this.wordBank = this.container.querySelector('.word-bank');
         this.targetEnglish = this.container.querySelector('.target-english');
         this.checkBtn = this.container.querySelector('.check-button');
+        this.cluePanel = this.container.querySelector('.clue-panel');
+        this.perfectEl = this.container.querySelector('.perfect-count');
+        this.misplacedEl = this.container.querySelector('.misplaced-count');
 
         this.bindEvents();
     }
@@ -92,6 +101,21 @@ export class SentenceBuilder {
         this.dropZone.innerHTML = '';
         this.wordBank.innerHTML = '';
         this.targetEnglish.textContent = this.currentSentence.english;
+        this.cluePanel.style.opacity = '0';
+
+        // Create Slots
+        this.currentSentence.ilonggo_chunks.forEach(() => {
+            const slot = document.createElement('div');
+            slot.className = 'drop-slot';
+            slot.style.width = '100px';
+            slot.style.minHeight = '45px';
+            slot.style.border = '2px dashed rgba(255,255,255,0.2)';
+            slot.style.borderRadius = '12px';
+            slot.style.display = 'flex';
+            slot.style.alignItems = 'center';
+            slot.style.justifyContent = 'center';
+            this.dropZone.appendChild(slot);
+        });
 
         // 3. Mix valid Ilonggo chunks with trap words
         const correctChunks = this.currentSentence.ilonggo_chunks.map(chunk => ({ text: chunk, isCorrect: true }));
@@ -141,28 +165,36 @@ export class SentenceBuilder {
     }
 
     onPointerDown(e) {
-        // Logic to pick up a word chunk and move it to the drop-zone
         const target = e.target.closest('.word-chunk');
         if (!target) return;
 
-        // Simple Tap-to-move logic (highly effective on mobile vs complex drag polyfills)
-        // If in bank -> move to drop zone
-        // If in drop zone -> move to bank
-
         if (target.parentElement === this.wordBank) {
-            this.dropZone.appendChild(target);
-            // Play Audio snap
-        } else if (target.parentElement === this.dropZone) {
+            // Find first empty slot
+            const slots = Array.from(this.dropZone.querySelectorAll('.drop-slot'));
+            const emptySlot = slots.find(s => s.children.length === 0);
+            if (emptySlot) {
+                emptySlot.appendChild(target);
+                target.style.width = '100%';
+                target.style.height = '100%';
+                emptySlot.style.borderStyle = 'solid';
+                emptySlot.style.borderColor = 'rgba(255,255,255,0.4)';
+            }
+        } else if (target.parentElement.classList.contains('drop-slot')) {
+            const slot = target.parentElement;
             this.wordBank.appendChild(target);
-            // Play Audio reverse snap
+            target.style.width = 'auto';
+            target.style.height = 'auto';
+            slot.style.borderStyle = 'dashed';
+            slot.style.borderColor = 'rgba(255,255,255,0.2)';
         }
 
         this.checkIfReady();
     }
 
     checkIfReady() {
-        // Reveal 'Check' button if Drop Zone has chunks
-        if (this.dropZone.children.length > 0) {
+        const slots = Array.from(this.dropZone.querySelectorAll('.drop-slot'));
+        const fullSlots = slots.filter(s => s.children.length > 0);
+        if (fullSlots.length === slots.length) {
             this.checkBtn.style.display = 'block';
         } else {
             this.checkBtn.style.display = 'none';
@@ -172,23 +204,39 @@ export class SentenceBuilder {
     evaluateSyntax() {
         this.totalAttempts++;
         this.roundAttempts++;
-        // Read DOM order of chunks in this.dropZone
-        const dropZoneChunks = Array.from(this.dropZone.querySelectorAll('.word-chunk'));
-        const currentAnswer = dropZoneChunks.map(div => div.textContent);
+
+        const slots = Array.from(this.dropZone.querySelectorAll('.drop-slot'));
+        const currentAnswer = slots.map(s => s.children[0]?.textContent || "");
         const correctAnswer = this.currentSentence.ilonggo_chunks;
 
-        // Compare against correct VSO string
-        let isCorrect = true;
-        if (currentAnswer.length !== correctAnswer.length) {
-            isCorrect = false;
-        } else {
-            for (let i = 0; i < correctAnswer.length; i++) {
-                if (currentAnswer[i] !== correctAnswer[i]) {
-                    isCorrect = false;
-                    break;
+        // Mastermind Logic
+        let perfectMatches = 0;
+        let misplacedMatches = 0;
+
+        const tempCorrect = [...correctAnswer];
+        const tempAnswer = [...currentAnswer];
+
+        // 1. Check for perfect matches (correct word, correct spot)
+        for (let i = 0; i < tempAnswer.length; i++) {
+            if (tempAnswer[i] === tempCorrect[i]) {
+                perfectMatches++;
+                tempAnswer[i] = null; // Mark as handled
+                tempCorrect[i] = null;
+            }
+        }
+
+        // 2. Check for misplaced matches (correct word, wrong spot)
+        for (let i = 0; i < tempAnswer.length; i++) {
+            if (tempAnswer[i] !== null) {
+                const foundIdx = tempCorrect.indexOf(tempAnswer[i]);
+                if (foundIdx !== -1) {
+                    misplacedMatches++;
+                    tempCorrect[foundIdx] = null; // Consume the word from pool
                 }
             }
         }
+
+        const isCorrect = perfectMatches === correctAnswer.length;
 
         // Record accuracy for all words in the sentence on first attempt
         if (this.roundAttempts === 1) {
@@ -202,30 +250,27 @@ export class SentenceBuilder {
                 this.score++;
             }
             // Glow green, proceed
-            this.dropZone.style.border = '2px solid rgba(0, 255, 100, 0.8)';
-            this.dropZone.style.boxShadow = '0 0 20px rgba(0, 255, 100, 0.5)';
-            // play 'perfect' synth (AudioManager call would go here)
+            this.dropZone.style.borderColor = '#00ffaa';
+            this.dropZone.style.background = 'rgba(0, 255, 170, 0.1)';
 
             setTimeout(() => {
-                this.dropZone.style.border = '2px dashed rgba(255,255,255,0.3)';
-                this.dropZone.style.boxShadow = 'none';
+                this.dropZone.style.borderColor = 'rgba(255,255,255,0.1)';
+                this.dropZone.style.background = 'rgba(255,255,255,0.03)';
                 this.loadSentence();
-            }, 1000);
+            }, 1200);
         } else {
-            // Apply CSS shake class, red tint, and reset
-            this.dropZone.style.border = '2px solid rgba(255, 0, 0, 0.8)';
-            this.dropZone.style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
-            // play 'error' synth (AudioManager call would go here)
+            // Update Clue Panel
+            this.perfectEl.textContent = perfectMatches;
+            this.misplacedEl.textContent = misplacedMatches;
+            this.cluePanel.style.opacity = '1';
+
+            // Error Shake and Feedback
+            this.dropZone.classList.add('shake');
+            this.dropZone.style.borderColor = '#ff4d4d';
 
             setTimeout(() => {
-                this.dropZone.style.border = '2px dashed rgba(255,255,255,0.3)';
-                this.dropZone.style.backgroundColor = 'transparent';
-
-                // Reset pieces back to bank
-                dropZoneChunks.forEach(chunk => {
-                    this.wordBank.appendChild(chunk);
-                });
-                this.checkIfReady();
+                this.dropZone.classList.remove('shake');
+                this.dropZone.style.borderColor = 'rgba(255,255,255,0.1)';
             }, 600);
         }
     }
