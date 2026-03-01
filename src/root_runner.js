@@ -60,8 +60,8 @@ export class RootRunner {
                 <div class="game-layer" style="width:100%; height:100%; position:relative;">
                     <!-- Central Orb -->
                     <div class="central-orb-container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; text-align: center;">
-                        <div class="orb" style="width: 120px; height: 120px; border-radius: 50%; background: radial-gradient(circle, rgba(255,217,61,0.3) 0%, rgba(255,217,61,0) 70%); border: 2px solid rgba(255,217,61,0.5); display: flex; flex-direction: column; align-items:center; justify-content:center; box-shadow: 0 0 30px rgba(255,217,61,0.2); animation: pulse 3s infinite ease-in-out;">
-                            <span id="orb-symbol" style="position: absolute; top: 10px; font-size: 1.2rem; opacity: 0; transition: all 0.3s;"></span>
+                        <div class="orb" style="width: 140px; height: 140px; border-radius: 50%; background: radial-gradient(circle, rgba(255,217,61,0.3) 0%, rgba(255,217,61,0) 70%); border: 2px solid rgba(255,217,61,0.5); display: flex; flex-direction: column; align-items:center; justify-content:center; box-shadow: 0 0 30px rgba(255,217,61,0.2); animation: pulse 3s infinite ease-in-out;">
+                            <div id="orb-symbol" style="position: absolute; top: -20px; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 900; color: white; opacity: 0; transform: scale(0.5); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 20;"></div>
                             <strong id="root-display" style="color: var(--accent-gold); font-size: 1.4rem; letter-spacing: 2px; text-transform: uppercase;">ROOT</strong>
                         </div>
                         <div id="root-meaning" style="color: white; opacity: 0.6; font-size: 0.8rem; margin-top: 10px;">(meaning)</div>
@@ -271,17 +271,18 @@ export class RootRunner {
 
         if (success) {
             this.score++;
-            // Feedback Glow (Cyan for better colorblind contrast)
+            // Feedback Glow (Vibrant Orange)
             orb.style.transition = 'all 0.2s';
-            orb.style.boxShadow = '0 0 50px #00FFFF';
-            orb.style.borderColor = '#00FFFF';
+            orb.style.boxShadow = '0 0 60px #FF9F1C';
+            orb.style.borderColor = '#FF9F1C';
             orb.style.transform = 'scale(1.1)';
 
             if (symbol) {
                 symbol.textContent = '✔';
-                symbol.style.color = '#00FFFF';
+                symbol.style.backgroundColor = '#FF9F1C';
+                symbol.style.boxShadow = '0 0 20px #FF9F1C';
                 symbol.style.opacity = '1';
-                symbol.style.transform = 'translateY(-5px)';
+                symbol.style.transform = 'scale(1) translateY(-10px)';
             }
 
             if (direction === 'right') {
@@ -292,15 +293,16 @@ export class RootRunner {
         } else {
             // Failure Feedback (Magenta)
             orb.style.transition = 'all 0.2s';
-            orb.style.boxShadow = '0 0 50px #FF00FF';
+            orb.style.boxShadow = '0 0 60px #FF00FF';
             orb.style.borderColor = '#FF00FF';
             orb.style.transform = 'scale(0.9)';
 
             if (symbol) {
                 symbol.textContent = '✖';
-                symbol.style.color = '#FF00FF';
+                symbol.style.backgroundColor = '#FF00FF';
+                symbol.style.boxShadow = '0 0 20px #FF00FF';
                 symbol.style.opacity = '1';
-                symbol.style.transform = 'translateY(5px)';
+                symbol.style.transform = 'scale(1) translateY(10px)';
             }
 
             wordObj.el.style.background = '#FF00FF';
@@ -316,9 +318,9 @@ export class RootRunner {
             orb.style.borderColor = 'rgba(255,217,61,0.5)';
             if (symbol) {
                 symbol.style.opacity = '0';
-                symbol.style.transform = 'translateY(0)';
+                symbol.style.transform = 'scale(0.5) translateY(0)';
             }
-        }, 400);
+        }, 500);
 
         setTimeout(() => {
             wordObj.el.remove();
