@@ -123,7 +123,7 @@ export class SwipeSorter {
         this.startY = e.clientY;
         this.currentCard.style.transition = 'none';
 
-        [this.defTop, this.defBottom, this.defLeft, this.defRight].forEach(el => el.style.opacity = '0.4');
+        this.resetLabelHighlight();
     }
 
     onPointerMove(e) {
