@@ -17,30 +17,37 @@ class CloudManager {
         this.auth = getAuth(this.app);
         this.db = getFirestore(this.app);
         this.user = null;
-        this.isInitialized = false;
-        this.status = 'disconnected'; // 'disconnected', 'syncing', 'synced', 'error'
+        this.status = 'disconnected';
 
-        this.init();
+        // Create a singleton promise for initialization
+        this.ready = this.init();
     }
 
     async init() {
+        if (this.isInitialized) return this.user;
+
         return new Promise((resolve) => {
-            onAuthStateChanged(this.auth, async (user) => {
+            const unsubscribe = onAuthStateChanged(this.auth, async (user) => {
                 if (user) {
                     this.user = user;
-                    console.log("CloudManager: User authenticated", user.uid);
                     this.isInitialized = true;
+                    // Trigger a sync check immediately when auth changes
+                    this.status = 'syncing';
+                    console.log("CloudManager: Active User", user.uid);
+                    unsubscribe();
                     resolve(user);
                 } else {
-                    console.log("CloudManager: No user, signing in anonymously...");
+                    console.log("CloudManager: Signing in anonymously...");
                     try {
                         const cred = await signInAnonymously(this.auth);
                         this.user = cred.user;
                         this.isInitialized = true;
+                        unsubscribe();
                         resolve(this.user);
                     } catch (error) {
-                        console.error("CloudManager: Anonymous sign-in failed", error);
+                        console.error("CloudManager: Auth failed", error);
                         this.status = 'error';
+                        unsubscribe();
                         resolve(null);
                     }
                 }
@@ -51,11 +58,14 @@ class CloudManager {
     async loginWithGoogle() {
         const provider = new GoogleAuthProvider();
         try {
+            this.status = 'syncing';
             const result = await signInWithPopup(this.auth, provider);
             this.user = result.user;
+            this.isInitialized = true;
             return this.user;
         } catch (error) {
             console.error("CloudManager: Google login failed", error);
+            this.status = 'error';
             return null;
         }
     }
@@ -81,16 +91,21 @@ class CloudManager {
 
     async loadProgress() {
         if (!this.user) return null;
+        this.status = 'syncing';
 
         try {
             const userDoc = doc(this.db, "users", this.user.uid);
             const snap = await getDoc(userDoc);
             if (snap.exists()) {
-                console.log("CloudManager: Progress loaded from cloud");
+                console.log("CloudManager: Sync complete (Loaded)");
+                this.status = 'synced';
                 return snap.data();
+            } else {
+                this.status = 'synced'; // Nothing in cloud is a valid "synced" state
             }
         } catch (error) {
-            console.error("CloudManager: Failed to load progress", error);
+            console.error("CloudManager: Failed to load", error);
+            this.status = 'error';
         }
         return null;
     }
