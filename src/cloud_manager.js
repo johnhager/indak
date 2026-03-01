@@ -37,11 +37,18 @@ class CloudManager {
         if (this.isInitialized) return this.user;
 
         return new Promise((resolve) => {
+            // Self-resolve if auth takes too long
+            const timeout = setTimeout(() => {
+                console.warn("CloudManager: Auth initialization timed out");
+                this.status = 'error';
+                resolve(null);
+            }, 5000);
+
             const unsubscribe = onAuthStateChanged(this.auth, async (user) => {
+                clearTimeout(timeout);
                 if (user) {
                     this.user = user;
                     this.isInitialized = true;
-                    // Trigger a sync check immediately when auth changes
                     this.status = 'syncing';
                     console.log("CloudManager: Active User", user.uid);
                     unsubscribe();
@@ -87,7 +94,7 @@ class CloudManager {
         try {
             // Add a timeout to prevent hanging on mobile
             const timeoutPromise = new Promise((_, reject) =>
-                setTimeout(() => reject(new Error("Save Timeout")), 10000)
+                setTimeout(() => reject(new Error("Save Timeout")), 5000)
             );
 
             const userDoc = doc(this.db, "users", this.user.uid);
@@ -113,7 +120,7 @@ class CloudManager {
 
         try {
             const timeoutPromise = new Promise((_, reject) =>
-                setTimeout(() => reject(new Error("Load Timeout")), 10000)
+                setTimeout(() => reject(new Error("Load Timeout")), 5000)
             );
 
             const userDoc = doc(this.db, "users", this.user.uid);
