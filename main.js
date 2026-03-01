@@ -136,7 +136,10 @@ function showMasteryDashboard() {
                 ${wordItems}
             </div>
 
-            <button id="close-dash-btn" class="btn-primary" style="flex-shrink: 0; margin-top: 1.5rem; width: 100%;">BALIK (Return)</button>
+            <button id="close-dash-btn" class="btn-primary" style="flex-shrink: 0; margin-top: 1rem; width: 100%;">BALIK (Return)</button>
+            <div style="text-align: center; margin-top: 0.8rem;">
+                <button id="hard-reset-btn" style="background: none; border: none; font-size: 0.5rem; color: #ff4d4d; opacity: 0.4; text-decoration: underline; cursor: pointer;">RESET SYNC ENGINE (Emergency Only)</button>
+            </div>
         </div>
     `;
 
@@ -167,6 +170,12 @@ function showMasteryDashboard() {
         btn.style.animation = 'spin 1s linear infinite';
         await levelManager.syncWithCloud();
         showMasteryDashboard();
+    });
+
+    document.getElementById('hard-reset-btn')?.addEventListener('click', async () => {
+        if (confirm("This will clear the sync cache and reload the app. Continue?")) {
+            await cloudManager.forceReset();
+        }
     });
 
     updateCloudStatusUI();
