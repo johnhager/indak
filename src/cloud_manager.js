@@ -17,10 +17,20 @@ class CloudManager {
         this.auth = getAuth(this.app);
         this.db = getFirestore(this.app);
         this.user = null;
-        this.status = 'disconnected';
+        this._status = 'disconnected';
 
         // Create a singleton promise for initialization
         this.ready = this.init();
+    }
+
+    set status(val) {
+        this._status = val;
+        // Broadcast the change so UI can update
+        window.dispatchEvent(new CustomEvent('cloud-status-change', { detail: val }));
+    }
+
+    get status() {
+        return this._status;
     }
 
     async init() {

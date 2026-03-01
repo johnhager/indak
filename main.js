@@ -157,14 +157,21 @@ function showMasteryDashboard() {
             loginBtn.textContent = '☁️ SYNC ACCOUNT';
         }
     });
+}
 
-    // Update cloud status dot/text
+function updateCloudStatusUI() {
     const dot = document.getElementById('cloud-status-dot');
     const txt = document.getElementById('cloud-status-text');
+    const loginBtn = document.getElementById('cloud-login-btn');
+
     if (dot && txt) {
         if (cloudManager.status === 'synced') {
             dot.style.background = '#00ffaa';
             txt.textContent = 'CLOUD SYNCED';
+            if (loginBtn && cloudManager.user && !cloudManager.user.isAnonymous) {
+                loginBtn.textContent = '✅ ACCOUNT SYNCED';
+                loginBtn.style.opacity = '0.5';
+            }
         } else if (cloudManager.status === 'syncing') {
             dot.style.background = '#ffcc00';
             txt.textContent = 'SYNCING...';
@@ -175,8 +182,15 @@ function showMasteryDashboard() {
     }
 }
 
+// Global listener for cloud status changes
+window.addEventListener('cloud-status-change', () => {
+    updateCloudStatusUI();
+});
+
 masteryBtn?.addEventListener('click', () => {
     showMasteryDashboard();
+    // Initial UI update after rendering
+    setTimeout(updateCloudStatusUI, 50);
 });
 
 function showMenu() {
