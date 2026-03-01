@@ -56,6 +56,7 @@ export class SwipeSorter {
         this.totalRounds = 15;
         this.currentRound = 0;
         this.score = 0;
+        this.totalAttempts = 0;
         this.resetLabelHighlight();
         [this.defTop, this.defBottom, this.defLeft, this.defRight].forEach(el => el.style.opacity = '0');
         this.loadNextCard();
@@ -71,7 +72,7 @@ export class SwipeSorter {
         [this.defTop, this.defBottom, this.defLeft, this.defRight].forEach(el => el.style.opacity = '0');
 
         // Get pool from LevelManager (handles 20% reduction for mastered words)
-        const pool = levelManager.getFilteredVocabulary();
+        const pool = levelManager.getFilteredVocabulary('meaning');
         if (!pool || pool.length < 4) {
             console.warn('Insufficient vocabulary for Swipe Sorter');
             return;
@@ -213,6 +214,7 @@ export class SwipeSorter {
 
     commitSwipe(direction) {
         if (!this.currentCard) return;
+        this.totalAttempts++;
         const isCorrect = direction === this.correctDirection;
 
         if (isCorrect) {
@@ -252,7 +254,7 @@ export class SwipeSorter {
     endGame() {
         this.gameActive = false;
         this.container.innerHTML = '';
-        const accuracy = Math.round((this.score / this.totalRounds) * 100);
+        const accuracy = Math.round((this.totalRounds / this.totalAttempts) * 100);
         const masterySummary = levelManager.getSummary();
 
         const summaryEl = document.getElementById('summary-screen');

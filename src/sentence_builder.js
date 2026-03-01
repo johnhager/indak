@@ -62,6 +62,7 @@ export class SentenceBuilder {
         this.totalRounds = 5;
         this.currentRound = 0;
         this.score = 0;
+        this.totalAttempts = 0;
         this.loadSentence();
     }
 
@@ -160,6 +161,7 @@ export class SentenceBuilder {
     }
 
     evaluateSyntax() {
+        this.totalAttempts++;
         // Read DOM order of chunks in this.dropZone
         const dropZoneChunks = Array.from(this.dropZone.querySelectorAll('.word-chunk'));
         const currentAnswer = dropZoneChunks.map(div => div.textContent);
@@ -211,7 +213,7 @@ export class SentenceBuilder {
 
     endGame() {
         this.container.innerHTML = '';
-        const accuracy = Math.round((this.score / this.totalRounds) * 100);
+        const accuracy = Math.round((this.totalRounds / this.totalAttempts) * 100);
 
         const summaryEl = document.getElementById('summary-screen');
         summaryEl.innerHTML = `

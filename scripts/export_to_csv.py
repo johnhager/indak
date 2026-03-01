@@ -1,0 +1,35 @@
+import json
+import csv
+import os
+
+base_path = r'c:\Users\johnh\OneDrive\Documents\indak\data'
+vocab_path = os.path.join(base_path, 'vocabulary.json')
+sentences_path = os.path.join(base_path, 'sentences.json')
+
+# Export Vocabulary
+with open(vocab_path, 'r', encoding='utf-8') as f:
+    vocab_data = json.load(f)
+
+vocab_csv = os.path.join(base_path, 'vocabulary_master.csv')
+with open(vocab_csv, 'w', newline='', encoding='utf-8') as f:
+    writer = csv.writer(f)
+    writer.writerow(['Hiligaynon Word', 'English Meaning', 'Syllables (Dash Separated)', 'Stress Index (0-based)'])
+    for item in vocab_data:
+        syllables_str = '-'.join(item['syllables'])
+        writer.writerow([item['word'], item['meaning'], syllables_str, item['stress_index']])
+
+# Export Sentences
+with open(sentences_path, 'r', encoding='utf-8') as f:
+    sentences_data = json.load(f)
+
+sentences_csv = os.path.join(base_path, 'sentences_master.csv')
+with open(sentences_csv, 'w', newline='', encoding='utf-8') as f:
+    writer = csv.writer(f)
+    writer.writerow(['English Sentence', 'Hiligaynon Chunks (Correct Order)', 'Trap Words (Distractors)'])
+    for item in sentences_data:
+        chunks_str = ' | '.join(item['ilonggo_chunks'])
+        traps_str = ' | '.join(item['trap_words'])
+        writer.writerow([item['english'], chunks_str, traps_str])
+
+print(f"Exported: {vocab_csv}")
+print(f"Exported: {sentences_csv}")
