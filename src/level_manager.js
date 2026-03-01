@@ -66,7 +66,11 @@ class LevelManager {
             if (excludeWords.includes(word.word)) return false;
 
             // NEW: Complex Mode constraint - force at least 3 syllables
-            if (this.speedMode === 'complex' && word.syllables.length < 3) return false;
+            if (this.speedMode === 'complex') {
+                if (word.syllables.length < 3) return false;
+                // In complex mode, we ignore the 'maxSyllables' ceiling of early tiers
+                return true;
+            }
 
             // Tier 4+ uses explicit tier tagging
             if (this.currentTier >= 4) {
