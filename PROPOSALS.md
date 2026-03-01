@@ -146,3 +146,32 @@ We will need a new JSON structure (`morphology.json`) mapping roots to their val
 - **Collision Logic:** When words enter the central "Orb Zone," a global swipe listener will validate the choice. 
 - **Shatter Effect:** Nonsense words will use a CSS `clip-path` animation to simulate shattering when correctly dismissed.
 - **Root Synergy:** This engine will look "deeply integrated" with our existing LevelManager to reward root-level mastery.
+
+---
+
+### Title: Particle Pulse (Speed Negation & Flow)
+**Status:** 🟢 APPROVED
+**Date:** 2026-03-01
+**Proposed By:** Agent A
+
+#### 1. Curriculum Goal
+To deeply ingrain Tier 4 (Particles & Negation like *Wala* vs *Indi*). Beginners often struggle with situational negation (e.g., using "Wala" for past/existential vs. "Indi" for future/general). This game forces rapid-fire contextual choices to build instinct.
+
+#### 2. Proposed Mechanics (For Agent B)
+A 4-way Swipe/Directional flashcard system (similar to Swipe Sorter but expanded). A short English phrasing or context appears in the center (e.g., "Will he eat?"). The player has 4 floating glass options (e.g., *Wala, Indi, Ayhan, Siguro*) corresponding to Up, Down, Left, Right swipes. They must swipe the card toward the correct contextual particle before the timer expires. 
+
+#### 3. Data Schema Requirements
+We will need a new JSON structure (`particle_pulse.json`):
+```json
+{
+    "context": "Did he eat yesterday?",
+    "correct": "Wala",
+    "options": ["Wala", "Indi", "May", "Waay"],
+    "category": "Negation (Past)"
+}
+```
+
+#### 4. Engineering & UI Notes (Agent B's Section)
+- **4-Way Drag System:** Implementing smooth X/Y pointer listeners that calculate angle and distance to snap the central card to the nearest orbital node (Up, Down, Left, Right).
+- **Dynamic Orbital Nodes:** 4 glass-morphism nodes around the center that glow when the user drags the card towards them.
+- **Data Hookup:** Fetching data from `particle_pulse.json` and logging mastery in `levelManager`, specifically targeting Tier 4 contextual rules.

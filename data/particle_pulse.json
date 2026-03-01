@@ -1,0 +1,112 @@
+[
+    {
+        "context": "Did he eat yesterday?",
+        "correct": "Wala",
+        "options": [
+            "Wala",
+            "Indi",
+            "May",
+            "Waay"
+        ],
+        "category": "Negation (Past)"
+    },
+    {
+        "context": "Will he eat later?",
+        "correct": "Indi",
+        "options": [
+            "Wala",
+            "Indi",
+            "May",
+            "Ayhan"
+        ],
+        "category": "Negation (Future)"
+    },
+    {
+        "context": "I don't have money.",
+        "correct": "Wala",
+        "options": [
+            "Indi",
+            "Wala",
+            "Damo",
+            "Gawa"
+        ],
+        "category": "Existential Negation"
+    },
+    {
+        "context": "I do not want to go.",
+        "correct": "Indi",
+        "options": [
+            "Wala",
+            "Indi",
+            "Anay",
+            "Gid"
+        ],
+        "category": "Negation (Preference)"
+    },
+    {
+        "context": "There is a dog outside.",
+        "correct": "May",
+        "options": [
+            "Wala",
+            "Indi",
+            "May",
+            "Ara"
+        ],
+        "category": "Existential"
+    },
+    {
+        "context": "Wait a minute.",
+        "correct": "Anay",
+        "options": [
+            "Gid",
+            "Lang",
+            "Anay",
+            "Man"
+        ],
+        "category": "Time Particle"
+    },
+    {
+        "context": "Just a little bit.",
+        "correct": "Lang",
+        "options": [
+            "Gid",
+            "Anay",
+            "Nga",
+            "Lang"
+        ],
+        "category": "Limiting Particle"
+    },
+    {
+        "context": "Really beautiful!",
+        "correct": "Gid",
+        "options": [
+            "Man",
+            "Gid",
+            "Lang",
+            "Abi"
+        ],
+        "category": "Emphatic Particle"
+    },
+    {
+        "context": "I am good too.",
+        "correct": "Man",
+        "options": [
+            "Gid",
+            "Man",
+            "Anay",
+            "Lang"
+        ],
+        "category": "Additive Particle"
+    },
+    {
+        "context": "Maybe it will rain.",
+        "correct": "Siguro",
+        "options": [
+            "Wala",
+            "Siguro",
+            "Gid",
+            "Man"
+        ],
+        "category": "Possibility Particle"
+    }
+]

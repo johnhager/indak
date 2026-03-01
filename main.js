@@ -6,6 +6,7 @@ import { SwipeSorter } from './src/swipe_sorter.js';
 import { SentenceBuilder } from './src/sentence_builder.js';
 import { MarkerMission } from './src/marker_mission.js';
 import { RootRunner } from './src/root_runner.js';
+import { ParticlePulse } from './src/particle_pulse.js';
 
 const app = document.getElementById('app');
 const startBtn = document.getElementById('start-btn');
@@ -13,6 +14,7 @@ const startSwipeBtn = document.getElementById('start-swipe-btn');
 const startSentenceBtn = document.getElementById('start-sentence-btn');
 const startMarkerBtn = document.getElementById('start-marker-btn');
 const startRunnerBtn = document.getElementById('start-runner-btn');
+const startParticleBtn = document.getElementById('start-particle-btn');
 const exitBtn = document.getElementById('exit-btn');
 const gameStage = document.getElementById('game-stage');
 const menuOverlay = document.getElementById('menu-overlay');
@@ -329,6 +331,19 @@ startRunnerBtn?.addEventListener('click', async () => {
         activeGame.startRound();
     } catch (e) {
         console.error('Failed to fetch morphology data:', e);
+    }
+});
+
+startParticleBtn?.addEventListener('click', async () => {
+    hideMenu();
+    showExitButton();
+    try {
+        const response = await fetch('./data/particle_pulse.json');
+        const particleData = await response.json();
+        activeGame = new ParticlePulse(gameStage, particleData);
+        // It shows its start screen on init
+    } catch (e) {
+        console.error('Failed to fetch particle data:', e);
     }
 });
 
