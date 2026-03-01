@@ -63,8 +63,6 @@ class LevelManager {
 
         // 1. Identify valid candidates based on tier logic
         let candidates = this.vocabulary.filter(word => {
-            if (excludeWords.includes(word.word)) return false;
-
             // 1. Complex Mode constraint - force at least 3 syllables
             if (this.speedMode === 'complex' && word.syllables.length < 3) return false;
 
@@ -79,6 +77,12 @@ class LevelManager {
 
             return word.syllables.length <= (tier.maxSyllables || 10);
         });
+
+        // 1.5 Avoid repeating words if possible, but fallback if pool is too small
+        let filteredCandidates = candidates.filter(word => !excludeWords.includes(word.word));
+        if (filteredCandidates.length > 0) {
+            candidates = filteredCandidates;
+        }
 
         if (candidates.length === 0) return [];
 

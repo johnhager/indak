@@ -275,16 +275,10 @@ class Conductor {
                         // We estimate syllable boundaries based on the string parts
                         const syllableBeforeDash = first.wordData.syllables.slice(0, q.index).join('').length;
                         if (syllableBeforeDash === charPos) {
-                            skipOffset += 65; // The "Hiligaynon Bounce" gap
+                            skipOffset += 35; // Fine-tuned "Urban Hiligaynon" bounce
                             break;
                         }
                     }
-                }
-
-                // 3. Stress Anticipation (Punch)
-                // Stressed syllables often feel more natural if hit slightly 'ahead' of a perfect grid
-                if (q.isStress) {
-                    skipOffset -= 15;
                 }
 
                 cumulativeOffset += skipOffset;
