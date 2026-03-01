@@ -17,6 +17,8 @@ export class SentenceBuilder {
 
     stop() {
         this.container.innerHTML = '';
+        const summary = document.getElementById('summary-screen');
+        if (summary) summary.classList.add('hidden');
     }
 
     init() {
@@ -57,11 +59,20 @@ export class SentenceBuilder {
     }
 
     startRound() {
+        this.totalRounds = 5;
+        this.currentRound = 0;
+        this.score = 0;
         this.loadSentence();
     }
 
     loadSentence() {
+        if (this.currentRound >= this.totalRounds) {
+            this.endGame();
+            return;
+        }
+
         if (!this.sentences || this.sentences.length === 0) return;
+        this.currentRound++;
 
         // 1. Pick a random sentence
         const targetIndex = Math.floor(Math.random() * this.sentences.length);
@@ -168,6 +179,7 @@ export class SentenceBuilder {
         }
 
         if (isCorrect) {
+            this.score++;
             // Glow green, proceed
             this.dropZone.style.border = '2px solid rgba(0, 255, 100, 0.8)';
             this.dropZone.style.boxShadow = '0 0 20px rgba(0, 255, 100, 0.5)';
@@ -195,5 +207,36 @@ export class SentenceBuilder {
                 this.checkIfReady();
             }, 600);
         }
+    }
+
+    endGame() {
+        this.container.innerHTML = '';
+        const accuracy = Math.round((this.score / this.totalRounds) * 100);
+
+        const summaryEl = document.getElementById('summary-screen');
+        summaryEl.innerHTML = `
+            <div class="glass-card">
+                <h2>Builder Complete!</h2>
+                <div class="stats-grid">
+                    <div class="stat-item"><span>Success Rate</span><strong>${accuracy}%</strong></div>
+                    <div class="stat-item"><span>Solved</span><strong>${this.score}/${this.totalRounds}</strong></div>
+                </div>
+                <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
+                    <button id="builder-restart-btn" class="btn-primary">TEKOT ULI (Play Again)</button>
+                    <button id="builder-exit-btn" class="btn-secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 12px; border-radius: 12px; color: white;">BACK TO MENU</button>
+                </div>
+            </div>
+        `;
+        summaryEl.classList.remove('hidden');
+
+        document.getElementById('builder-restart-btn').addEventListener('click', () => {
+            summaryEl.classList.add('hidden');
+            this.init();
+            this.startRound();
+        });
+
+        document.getElementById('builder-exit-btn').addEventListener('click', () => {
+            location.reload();
+        });
     }
 }

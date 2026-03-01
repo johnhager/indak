@@ -53,11 +53,20 @@ export class SwipeSorter {
 
     startRound() {
         this.gameActive = true;
+        this.totalRounds = 15;
+        this.currentRound = 0;
+        this.score = 0;
         this.loadNextCard();
     }
 
     loadNextCard() {
+        if (this.currentRound >= this.totalRounds) {
+            this.endGame();
+            return;
+        }
+
         if (!this.vocabulary || this.vocabulary.length < 4) return;
+        this.currentRound++;
 
         // 1. Pick a random word
         const targetIndex = Math.floor(Math.random() * this.vocabulary.length);
@@ -67,17 +76,15 @@ export class SwipeSorter {
         let traps = [];
         while (traps.length < 3) {
             let trapIdx = Math.floor(Math.random() * this.vocabulary.length);
-            // Check for meaning duplicates to avoid confusing the user
             if (trapIdx !== targetIndex && !traps.some(t => t.meaning === this.vocabulary[trapIdx].meaning)) {
                 traps.push(this.vocabulary[trapIdx]);
             }
         }
 
-        // 3. Assign 4 directions (Top, Bottom, Left, Right)
+        // 3. Assign 4 directions
         const directions = ['top', 'bottom', 'left', 'right'];
         const options = [this.targetWordData, ...traps];
 
-        // Shuffle options
         for (let i = options.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [options[i], options[j]] = [options[j], options[i]];
@@ -89,13 +96,11 @@ export class SwipeSorter {
             if (options[i] === this.targetWordData) this.correctDirection = dir;
         });
 
-        // 4. Update Labels
         this.defTop.textContent = this.directionMap.top.meaning;
         this.defBottom.textContent = this.directionMap.bottom.meaning;
         this.defLeft.textContent = this.directionMap.left.meaning;
         this.defRight.textContent = this.directionMap.right.meaning;
 
-        // 5. Render Card
         const cardHTML = `
             <div class="swipe-card" style="width: 180px; height: 260px; background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.3); transform-origin: center center; transition: transform 0.1s linear;">
                 <h1 style="font-size: clamp(0.9rem, 5vw, 1.3rem); color: white; margin: 0; pointer-events: none; text-align: center; padding: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">${this.targetWordData.word}</h1>
@@ -112,7 +117,6 @@ export class SwipeSorter {
         this.startY = e.clientY;
         this.currentCard.style.transition = 'none';
 
-        // Show all labels slightly
         [this.defTop, this.defBottom, this.defLeft, this.defRight].forEach(el => el.style.opacity = '0.4');
     }
 
@@ -127,7 +131,6 @@ export class SwipeSorter {
         const rotation = deltaX * 0.05;
         this.currentCard.style.transform = `translate(${deltaX}px, ${deltaY}px) rotate(${rotation}deg)`;
 
-        // Visual Feedback for primary direction
         this.resetLabelHighlight();
         const absX = Math.abs(deltaX);
         const absY = Math.abs(deltaY);
@@ -192,6 +195,8 @@ export class SwipeSorter {
     stop() {
         this.gameActive = false;
         this.container.innerHTML = '';
+        const summary = document.getElementById('summary-screen');
+        if (summary) summary.classList.add('hidden');
     }
 
     commitSwipe(direction) {
@@ -199,6 +204,7 @@ export class SwipeSorter {
         const isCorrect = direction === this.correctDirection;
 
         if (isCorrect) {
+            this.score++;
             this.currentCard.style.transition = 'transform 0.5s ease-out, opacity 0.5s ease-out';
             let tx = 0, ty = 0;
             if (direction === 'left') tx = -window.innerWidth;
@@ -210,7 +216,6 @@ export class SwipeSorter {
             this.currentCard.style.opacity = '0';
             setTimeout(() => this.loadNextCard(), 300);
         } else {
-            // Shake/Reset
             this.currentCard.style.transition = 'transform 0.1s linear';
             this.currentCard.style.boxShadow = '0 0 30px rgba(255, 0, 0, 0.6)';
 
@@ -229,4 +234,37 @@ export class SwipeSorter {
             }, 200);
         }
     }
+
+    endGame() {
+        this.gameActive = false;
+        this.container.innerHTML = '';
+        const accuracy = Math.round((this.score / this.totalRounds) * 100);
+
+        const summaryEl = document.getElementById('summary-screen');
+        summaryEl.innerHTML = `
+            <div class="glass-card">
+                <h2>Swipe Sorter Complete!</h2>
+                <div class="stats-grid">
+                    <div class="stat-item"><span>Accuracy</span><strong>${accuracy}%</strong></div>
+                    <div class="stat-item"><span>Correct</span><strong>${this.score}/${this.totalRounds}</strong></div>
+                </div>
+                <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
+                    <button id="swipe-restart-btn" class="btn-primary">TEKOT ULI (Play Again)</button>
+                    <button id="swipe-exit-btn" class="btn-secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 12px; border-radius: 12px; color: white;">BACK TO MENU</button>
+                </div>
+            </div>
+        `;
+        summaryEl.classList.remove('hidden');
+
+        document.getElementById('swipe-restart-btn').addEventListener('click', () => {
+            summaryEl.classList.add('hidden');
+            this.init();
+            this.startRound();
+        });
+
+        document.getElementById('swipe-exit-btn').addEventListener('click', () => {
+            location.reload();
+        });
+    }
+
 }
