@@ -96,15 +96,19 @@ function showMasteryDashboard() {
         <div class="glass-card" style="width: 95%; max-width: 550px; max-height: 85vh; display: flex; flex-direction: column; overflow: hidden;">
             <div style="flex-shrink: 0; padding-bottom: 1rem;">
                 <h2 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Vocab Mastery</h2>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                    <p style="font-size: 0.7rem; opacity: 0.7;">Threshold: <b>90% Success (5+ Tries)</b></p>
-                    <p style="font-size: 0.7rem; color: var(--accent-gold);">Mastered: <b>${stats.full}/${stats.total}</b></p>
-                </div>
+                <p style="font-size: 0.7rem; opacity: 0.7; margin-bottom: 1rem;">90% Success (5+ Tries)</p>
                 
-                <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); gap: 10px;">
-                    <div class="stat-item" style="padding: 12px;"><span style="font-size: 0.65rem; text-transform: uppercase;">Rhythm</span><strong>${stats.rhythmPercent}%</strong></div>
-                    <div class="stat-item" style="padding: 12px;"><span style="font-size: 0.65rem; text-transform: uppercase;">Meaning</span><strong>${stats.meaningPercent}%</strong></div>
-                    <div class="stat-item" style="padding: 12px;"><span style="font-size: 0.65rem; text-transform: uppercase;">Total</span><strong>${stats.fullPercent}%</strong></div>
+                <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 10px;">
+                    <div class="stat-item" style="padding: 12px;">
+                        <span style="font-size: 0.65rem; text-transform: uppercase;">Rhythm (Drum)</span>
+                        <strong>${stats.rhythmPercent}%</strong>
+                        <span style="font-size: 0.6rem; opacity: 0.6;">${stats.rhythm}/${stats.total}</span>
+                    </div>
+                    <div class="stat-item" style="padding: 12px;">
+                        <span style="font-size: 0.65rem; text-transform: uppercase;">Meaning (Book)</span>
+                        <strong>${stats.meaningPercent}%</strong>
+                        <span style="font-size: 0.6rem; opacity: 0.6;">${stats.meaning}/${stats.total}</span>
+                    </div>
                 </div>
             </div>
 

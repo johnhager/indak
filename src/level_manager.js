@@ -143,19 +143,20 @@ class LevelManager {
             total: totalWords,
             rhythm: rhythmCount,
             meaning: meaningCount,
-            full: bothCount,
             rhythmPercent: Math.round((rhythmCount / totalWords) * 100),
             meaningPercent: Math.round((meaningCount / totalWords) * 100),
-            fullPercent: Math.round((bothCount / totalWords) * 100),
             details: this.masteryData
         };
     }
 
     getSummary() {
+        const stats = this.getMasteryStats();
         return {
             tier: this.tiers[this.currentTier].name,
             bpm: this.currentBpm,
-            masteredCount: this.getMasteryStats().full,
+            rhythmMastered: stats.rhythm,
+            meaningMastered: stats.meaning,
+            totalWords: stats.total,
             mastered: Object.keys(this.masteryData)
         };
     }
