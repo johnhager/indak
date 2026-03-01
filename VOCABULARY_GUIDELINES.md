@@ -62,3 +62,18 @@ While the game uses a `stress_index` for engine logic, the display text should i
 
 ### 4. Modern Loanwords
 Respelle foreign words phonetically unless they are technical (e.g., `Jabon` -> `Habon`, `Calle` -> `Kalye`).
+
+---
+
+## 📚 Vital Project Resources
+
+If you are considering adding new language material to the app, always cross-reference your findings against the primary source materials stored inside the `/resources` directory of this repository:
+
+1. **The Giant Ilonggo Phrasebook (3rd Edition)**  
+   *Location:* `/resources/Giant_Ilonggo_Phrasebook.pdf`  
+   *Use For:* Understanding grammar structures (DAS/VAOL), standardizing complex sentence interactions, and learning about subtle phonetic features (like the glottal dash). This is a primary source for Tier 4, 5, and 6 sentence logic.
+
+2. **Speakin' Digital Visayan/Hiligaynon Dictionary**  
+   *Location:* `/resources/Speakin_Visayan_Dictionary.html`  
+   *Use For:* Verifying the syllable breakdown and exact definitions of root words, particularly checking "Molo/Urban" dialect variations against traditional phrasing.
+
