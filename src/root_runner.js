@@ -308,6 +308,7 @@ export class RootRunner {
 
             if (wordObj.isCorrect && transDisplay) {
                 transDisplay.textContent = wordObj.english;
+                transDisplay.style.color = '#FF9F1C';
                 transDisplay.style.opacity = '1';
                 transDisplay.style.transform = 'translateY(-5px)';
             }
@@ -330,6 +331,14 @@ export class RootRunner {
                 symbol.style.boxShadow = '0 0 20px #FF00FF';
                 symbol.style.opacity = '1';
                 symbol.style.transform = 'scale(1) translateY(10px)';
+            }
+
+            // Still show translation for correct words even if swiped wrong
+            if (wordObj.isCorrect && transDisplay) {
+                transDisplay.textContent = wordObj.english;
+                transDisplay.style.color = '#FF00FF';
+                transDisplay.style.opacity = '1';
+                transDisplay.style.transform = 'translateY(-5px)';
             }
 
             wordObj.el.style.background = '#FF00FF';
