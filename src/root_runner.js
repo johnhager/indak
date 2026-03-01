@@ -28,14 +28,14 @@ export class RootRunner {
                 examples: "Roots are the heart of the language."
             },
             {
-                title: "The Affix List",
-                content: "These are the valid parts you'll see in the game:<br><b>Prefixes:</b> Naga-, Gin-, Ma-, Nag-, Ika-<br><b>Suffixes:</b> -on, -an, -onon",
-                examples: "<i>Nagakaon</i> (Eating)<br><i>Daganon</i> (To be run)"
+                title: "The Affix Guide",
+                content: "These parts change the word's meaning:<br><b>Naga-</b>: Currently doing (Is eating)<br><b>Gin-</b>: Already did (Ate)<br><b>Ma-</b>: Will do (Will eat)<br><b>-on / -an</b>: The object of the action",
+                examples: "<i>Nagakaon</i> (Eating) vs <i>Kaunon</i> (To be eaten)"
             },
             {
                 title: "Root Runner",
-                content: "Swipe <b>RIGHT</b> for valid conjugations, or <b>LEFT</b> for nonsense.",
-                examples: "Success = Blue/Glow ✔ | Miss = Purple/Shake ✖"
+                content: "Swipe <b>RIGHT</b> for real words, or <b>LEFT</b> for nonsense.",
+                examples: "Success = Orange ✔ | Miss = Magenta ✖"
             }
         ];
 
