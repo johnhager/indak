@@ -313,7 +313,7 @@ h1 {
 }
 
 /* Summary Screen Overlay */
-#summary-screen {
+.summary-screen {
     position: fixed;
     top: 0;
     left: 0;

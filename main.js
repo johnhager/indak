@@ -73,8 +73,11 @@ function showMasteryDashboard() {
     `;
 
     dash.classList.remove('hidden');
+    hideMenu();
+
     document.getElementById('close-dash-btn').addEventListener('click', () => {
         dash.classList.add('hidden');
+        showMenu();
     });
 }
 

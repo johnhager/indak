@@ -112,7 +112,8 @@ class LevelManager {
         return {
             tier: this.tiers[this.currentTier].name,
             bpm: this.currentBpm,
-            masteredCount: Object.keys(this.masteryData).length
+            masteredCount: Object.keys(this.masteryData).length,
+            mastered: Object.keys(this.masteryData)
         };
     }
 }

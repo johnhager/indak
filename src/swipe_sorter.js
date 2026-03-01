@@ -258,7 +258,7 @@ export class SwipeSorter {
                     <div class="stat-item"><span>Correct</span><strong>${this.score}/${this.totalRounds}</strong></div>
                 </div>
                 <h3>Words Mastered</h3>
-                <div class="word-list">${masterySummary.mastered.slice(0, 10).join(', ')}...</div>
+                <div class="word-list">${(masterySummary.mastered || []).slice(0, 10).join(', ')}...</div>
                 <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem;">
                     <button id="swipe-restart-btn" class="btn-primary">TEKOT ULI (Play Again)</button>
                     <button id="swipe-exit-btn" class="btn-secondary" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 12px; border-radius: 12px; color: white;">BACK TO MENU</button>
