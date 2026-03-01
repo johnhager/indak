@@ -11,6 +11,10 @@ export class SwipeSorter {
         this.currentCard = null;
         this.gameActive = false;
 
+        // Game Settings
+        this.gameDirection = 'il-to-en'; // 'il-to-en' or 'en-to-il'
+        this.hardMode = false;
+
         // Swiping State
         this.startX = 0;
         this.startY = 0;
@@ -22,7 +26,61 @@ export class SwipeSorter {
     }
 
     init() {
-        // Setup initial UI layout
+        this.showStartScreen();
+    }
+
+    showStartScreen() {
+        this.gameActive = false;
+        this.container.innerHTML = `
+            <div class="swipe-sorter-start" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);">
+                <div class="glass-card" style="width: 90%; max-width: 400px; padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; text-align: center;">
+                    <div style="margin-bottom: 0.5rem;">
+                        <h2 style="margin: 0; font-size: 1.8rem; letter-spacing: 1px;">Swipe Sorter</h2>
+                        <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 5px;">Master Hiligaynon Vocabulary</p>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0;">
+                        <!-- Direction Toggle -->
+                        <div class="toggle-group">
+                            <label>EN ➔ IL Mode</label>
+                            <label class="switch">
+                                <input type="checkbox" id="direction-toggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                        <!-- Difficulty Toggle -->
+                        <div class="toggle-group">
+                            <div style="text-align: left;">
+                                <label style="display: block;">Hard Mode</label>
+                                <span style="font-size: 0.65rem; color: var(--accent-gold); opacity: 0.8;">Target 50% Weakest Words</span>
+                            </div>
+                            <label class="switch">
+                                <input type="checkbox" id="difficulty-toggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button id="start-swipe-btn" class="btn-primary" style="padding: 1rem; border-radius: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">START SESSION</button>
+                    <button id="exit-swipe-btn" class="btn-secondary" style="background: transparent; border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem; border-radius: 12px; color: rgba(255,255,255,0.5); font-size: 0.8rem;">BACK TO MENU</button>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('start-swipe-btn').addEventListener('click', () => {
+            this.gameDirection = document.getElementById('direction-toggle').checked ? 'en-to-il' : 'il-to-en';
+            this.hardMode = document.getElementById('difficulty-toggle').checked;
+            this.setupGameUI();
+            this.startRound();
+        });
+
+        document.getElementById('exit-swipe-btn').addEventListener('click', () => {
+            location.reload();
+        });
+    }
+
+    setupGameUI() {
         this.container.innerHTML = `
             <div class="swipe-sorter-ui" style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; user-select: none; touch-action: none;">
                 <!-- Directional Definitions -->
@@ -74,8 +132,8 @@ export class SwipeSorter {
         this.resetLabelHighlight();
         [this.defTop, this.defBottom, this.defLeft, this.defRight].forEach(el => el.style.opacity = '0');
 
-        // Get pool from LevelManager (handles 20% reduction for mastered words)
-        const pool = levelManager.getFilteredVocabulary('meaning', this.roundUsedWords);
+        // Get pool from LevelManager
+        const pool = levelManager.getFilteredVocabulary('meaning', this.roundUsedWords, this.hardMode);
         if (!pool || pool.length < 4) {
             console.warn('Insufficient vocabulary for Swipe Sorter');
             return;
@@ -112,14 +170,18 @@ export class SwipeSorter {
             if (options[i] === this.targetWordData) this.correctDirection = dir;
         });
 
-        this.defTop.textContent = this.directionMap.top.meaning;
-        this.defBottom.textContent = this.directionMap.bottom.meaning;
-        this.defLeft.textContent = this.directionMap.left.meaning;
-        this.defRight.textContent = this.directionMap.right.meaning;
+        // Directional labels based on game mode
+        const labelKey = this.gameDirection === 'il-to-en' ? 'meaning' : 'word';
+        const cardKey = this.gameDirection === 'il-to-en' ? 'word' : 'meaning';
+
+        this.defTop.textContent = this.directionMap.top[labelKey];
+        this.defBottom.textContent = this.directionMap.bottom[labelKey];
+        this.defLeft.textContent = this.directionMap.left[labelKey];
+        this.defRight.textContent = this.directionMap.right[labelKey];
 
         const cardHTML = `
             <div class="swipe-card" style="width: 180px; height: 260px; background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.3); transform-origin: center center; transition: transform 0.1s linear;">
-                <h1 style="font-size: clamp(0.9rem, 5vw, 1.3rem); color: white; margin: 0; pointer-events: none; text-align: center; padding: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">${this.targetWordData.word}</h1>
+                <h1 style="font-size: clamp(0.9rem, 5vw, 1.3rem); color: white; margin: 0; pointer-events: none; text-align: center; padding: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;">${this.targetWordData[cardKey]}</h1>
             </div>
         `;
         this.cardStack.innerHTML = cardHTML;
@@ -327,8 +389,7 @@ export class SwipeSorter {
 
         document.getElementById('swipe-restart-btn').addEventListener('click', () => {
             summaryEl.classList.add('hidden');
-            this.init();
-            this.startRound();
+            this.showStartScreen();
         });
 
         document.getElementById('swipe-exit-btn').addEventListener('click', () => {

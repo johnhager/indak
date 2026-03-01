@@ -47,9 +47,27 @@ class LevelManager {
         this.vocabulary = vocab;
     }
 
-    getFilteredVocabulary(gameType = 'rhythm', excludeWords = []) {
+    getFilteredVocabulary(gameType = 'rhythm', excludeWords = [], hardMode = false) {
         const tier = this.tiers[this.currentTier];
         let validWords = this.vocabulary.filter(word => word.syllables.length <= tier.maxSyllables);
+
+        // Hard Mode: Filter to bottom 50% success rate
+        if (hardMode) {
+            const wordStats = validWords.map(word => {
+                const stats = this.masteryData[word.word] || {
+                    rhythm: { c: 0, t: 0 },
+                    meaning: { c: 0, t: 0 }
+                };
+                const skill = stats[gameType] || { c: 0, t: 0 };
+                const sr = skill.t === 0 ? 0 : skill.c / skill.t;
+                return { word, sr };
+            });
+
+            // Sort by SR (asc)
+            wordStats.sort((a, b) => a.sr - b.sr);
+            const cutoff = Math.max(4, Math.ceil(wordStats.length / 2));
+            validWords = wordStats.slice(0, cutoff).map(s => s.word);
+        }
 
         const nonDuplicateWords = validWords.filter(w => !excludeWords.includes(w.word));
         if (nonDuplicateWords.length > 0) {
