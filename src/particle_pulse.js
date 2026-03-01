@@ -73,7 +73,11 @@ export class ParticlePulse {
                         </div>
                     </div>
 
-                    <button id="start-pp-btn" class="btn-primary" style="padding: 1rem; border-radius: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">ACTIVATE PULSE</button>
+                    <div style="display: flex; gap: 10px;">
+                        <button id="start-pp-btn" class="btn-primary" style="flex: 2; padding: 1rem; border-radius: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">ACTIVATE</button>
+                        <button id="lesson-btn" class="btn-secondary" style="flex: 1; padding: 1rem; border-radius: 16px; font-weight: 800; background: rgba(255, 204, 0, 0.1); border: 1px solid var(--accent-gold); color: var(--accent-gold);">📖 HELP</button>
+                    </div>
+
                     <button id="exit-pp-btn" class="btn-secondary" style="background: transparent; border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem; border-radius: 12px; color: rgba(255,255,255,0.5); font-size: 0.8rem;">BACK TO MENU</button>
                 </div>
             </div>
@@ -85,8 +89,56 @@ export class ParticlePulse {
             this.startNextQuestion();
         });
 
+        document.getElementById('lesson-btn').addEventListener('click', () => {
+            this.showLessonScreen();
+        });
+
         document.getElementById('exit-pp-btn').addEventListener('click', () => {
             location.reload();
+        });
+    }
+
+    showLessonScreen() {
+        this.container.innerHTML = `
+            <div class="particle-pulse-start" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%); padding: 1rem;">
+                <div class="glass-card" style="width: 100%; max-width: 450px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; text-align: left; max-height: 85vh; overflow-y: auto;">
+                    <h2 style="margin: 0; font-size: 1.5rem; color: var(--accent-gold); text-align: center;">📖 Crash Course</h2>
+                    
+                    <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                        <strong style="color: #00ffaa; font-size: 1.1rem;">1. WALA vs INDI</strong>
+                        <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.5;">
+                            <li style="margin-bottom: 5px;"><strong>WALA:</strong> "None" or Past Negation.<br><i style="opacity: 0.7;">Example: "I didn't eat" or "No money".</i></li>
+                            <li><strong>INDI:</strong> "No" (Refusal) or Future Negation.<br><i style="opacity: 0.7;">Example: "I won't eat" or "I don't want to".</i></li>
+                        </ul>
+                    </div>
+
+                    <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                        <strong style="color: #ffcc00; font-size: 1.1rem;">2. Time (PA vs NA)</strong>
+                        <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.5;">
+                            <li style="margin-bottom: 5px;"><strong>PA:</strong> "Still" / "Yet" (Continuing).</li>
+                            <li><strong>NA:</strong> "Now" / "Already" (Completed).</li>
+                        </ul>
+                    </div>
+
+                    <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                        <strong style="color: #ff6b6b; font-size: 1.1rem;">3. Essential Particles</strong>
+                        <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.5;">
+                            <li><strong>MAN:</strong> Also / Too</li>
+                            <li><strong>GID:</strong> Really / Very (Intensifier)</li>
+                            <li><strong>LANG:</strong> Only / Just</li>
+                            <li><strong>ANAY:</strong> Wait (For a while)</li>
+                            <li><strong>SIGURO / AYHAN:</strong> Maybe</li>
+                            <li><strong>AMBOT:</strong> I don't know</li>
+                        </ul>
+                    </div>
+
+                    <button id="back-to-pp-btn" class="btn-primary" style="margin-top: 5px; padding: 1rem; border-radius: 16px; font-weight: 800;">GOT IT, LET'S PLAY</button>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('back-to-pp-btn').addEventListener('click', () => {
+            this.showStartScreen();
         });
     }
 
