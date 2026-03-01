@@ -189,6 +189,10 @@ function updateCloudStatusUI() {
         } else if (cloudManager.status === 'error') {
             dot.style.background = '#ff4d4d';
             txt.textContent = 'SYNC ERROR';
+            if (cloudManager.lastError) {
+                txt.textContent = `ERROR: ${cloudManager.lastError.split(' ')[0]}`;
+                txt.title = cloudManager.lastError;
+            }
         }
 
         const lastSync = localStorage.getItem('indak_last_sync');

@@ -17,6 +17,7 @@ class CloudManager {
         this.auth = getAuth(this.app);
         this.db = getFirestore(this.app);
         this.user = null;
+        this.lastError = null;
         this._status = 'disconnected';
 
         // Create a singleton promise for initialization
@@ -26,7 +27,9 @@ class CloudManager {
     set status(val) {
         this._status = val;
         // Broadcast the change so UI can update
-        window.dispatchEvent(new CustomEvent('cloud-status-change', { detail: val }));
+        window.dispatchEvent(new CustomEvent('cloud-status-change', {
+            detail: { status: val, error: this.lastError }
+        }));
     }
 
     get status() {
@@ -34,15 +37,16 @@ class CloudManager {
     }
 
     async init() {
-        if (this.isInitialized) return this.user;
+        if (this.isInitialized && this.user) return this.user;
 
         return new Promise((resolve) => {
-            // Self-resolve if auth takes too long
+            // Increase to 20s for mobile cold-starts
             const timeout = setTimeout(() => {
                 console.warn("CloudManager: Auth initialization timed out");
+                this.lastError = "Connection Timeout (20s)";
                 this.status = 'error';
                 resolve(null);
-            }, 5000);
+            }, 20000);
 
             const unsubscribe = onAuthStateChanged(this.auth, async (user) => {
                 clearTimeout(timeout);
@@ -113,6 +117,7 @@ class CloudManager {
             this.status = 'synced';
         } catch (error) {
             console.error("CloudManager: Save failed - ", error);
+            this.lastError = error.message;
             this.status = 'error';
         }
     }
@@ -145,6 +150,7 @@ class CloudManager {
             }
         } catch (error) {
             console.error("CloudManager: Load failed - ", error);
+            this.lastError = error.message;
             this.status = 'error';
         }
         return null;
