@@ -21,9 +21,10 @@ class CloudManager {
         this.app = initializeApp(firebaseConfig);
         this.auth = getAuth(this.app);
 
-        // Force long-polling for better mobile reliability
+        // "Safari Force-Pass" settings for better iPhone reliability
         this.db = initializeFirestore(this.app, {
-            experimentalAutoDetectLongPolling: true
+            forceLongPolling: true,
+            useFetchStreams: false
         });
 
         this.user = null;
@@ -60,6 +61,15 @@ class CloudManager {
 
             const unsubscribe = onAuthStateChanged(this.auth, async (user) => {
                 clearTimeout(timeout);
+
+                // Debug alert if keys are missing (only if they are actually missing)
+                if (!import.meta.env.VITE_FIREBASE_API_KEY) {
+                    this.lastError = "Missing Env Variables";
+                    this.status = 'error';
+                    resolve(null);
+                    return;
+                }
+
                 if (user) {
                     this.user = user;
                     this.isInitialized = true;
