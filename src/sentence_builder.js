@@ -11,6 +11,11 @@ export class SentenceBuilder {
         this.currentSentence = null;
 
         this.draggedChunk = null;
+        this.isDragging = false;
+        this.dragStartX = 0;
+        this.dragStartY = 0;
+        this.ghostChunk = null;
+        this.originalParent = null;
 
         this.init();
     }
@@ -60,6 +65,9 @@ export class SentenceBuilder {
 
     bindEvents() {
         this.container.addEventListener('pointerdown', this.onPointerDown.bind(this));
+        window.addEventListener('pointermove', this.onPointerMove.bind(this));
+        window.addEventListener('pointerup', this.onPointerUp.bind(this));
+
         this.checkBtn.addEventListener('click', this.evaluateSyntax.bind(this));
         this.continueBtn.addEventListener('click', () => {
             this.loadSentence();
@@ -176,32 +184,175 @@ export class SentenceBuilder {
     }
 
     onPointerDown(e) {
-        if (this.continueBtn.style.display === 'block') return; // Lock pieces after success
+        if (this.continueBtn.style.display === 'block') return;
         const target = e.target.closest('.word-chunk');
         if (!target) return;
 
+        this.draggedChunk = target;
+        this.isDragging = false; // Start as a potential tap
+        this.dragStartX = e.clientX;
+        this.dragStartY = e.clientY;
+        this.originalParent = target.parentElement;
+
+        // Prevent default touch behaviors
+        if (e.pointerType === 'touch') {
+            e.preventDefault();
+        }
+    }
+
+    onPointerMove(e) {
+        if (!this.draggedChunk) return;
+
+        const deltaX = e.clientX - this.dragStartX;
+        const deltaY = e.clientY - this.dragStartY;
+
+        // Threshold to differentiate tap from drag
+        if (!this.isDragging && (Math.abs(deltaX) > 10 || Math.abs(deltaY) > 10)) {
+            this.isDragging = true;
+            this.startDrag(e);
+        }
+
+        if (this.isDragging) {
+            this.updateDrag(e);
+        }
+    }
+
+    startDrag(e) {
+        // Visual feedback when starting drag
+        this.draggedChunk.style.zIndex = '1000';
+        this.draggedChunk.style.pointerEvents = 'none';
+        this.draggedChunk.style.position = 'fixed';
+        this.draggedChunk.style.transform = 'scale(1.1) rotate(2deg)';
+        this.draggedChunk.style.opacity = '0.8';
+        this.updateDrag(e);
+    }
+
+    updateDrag(e) {
+        const rect = this.draggedChunk.getBoundingClientRect();
+        this.draggedChunk.style.left = `${e.clientX - rect.width / 2}px`;
+        this.draggedChunk.style.top = `${e.clientY - rect.height / 2}px`;
+
+        // Highlight potential drop targets
+        this.clearHighlights();
+        const hoveredSlot = this.getHoveredElement(e, '.drop-slot');
+        if (hoveredSlot) {
+            hoveredSlot.style.borderColor = 'var(--accent-gold)';
+            hoveredSlot.style.background = 'rgba(255, 217, 61, 0.1)';
+        }
+    }
+
+    onPointerUp(e) {
+        if (!this.draggedChunk) return;
+
+        if (!this.isDragging) {
+            // It was a tap
+            this.handleTap();
+        } else {
+            // It was a drag
+            this.handleDrop(e);
+        }
+
+        // Clean up
+        if (this.draggedChunk) {
+            this.draggedChunk.style.zIndex = '';
+            this.draggedChunk.style.pointerEvents = '';
+            this.draggedChunk.style.position = '';
+            this.draggedChunk.style.left = '';
+            this.draggedChunk.style.top = '';
+            this.draggedChunk.style.transform = '';
+            this.draggedChunk.style.opacity = '';
+        }
+
+        this.draggedChunk = null;
+        this.isDragging = false;
+        this.clearHighlights();
+        this.refreshCapitalization();
+        this.checkIfReady();
+    }
+
+    handleTap() {
+        const target = this.draggedChunk;
         if (target.parentElement === this.wordBank) {
-            // Find first empty slot
             const slots = Array.from(this.dropZone.querySelectorAll('.drop-slot'));
             const emptySlot = slots.find(s => s.children.length === 0);
             if (emptySlot) {
                 emptySlot.appendChild(target);
-                target.style.width = '100%';
-                target.style.height = '100%';
-                emptySlot.style.borderStyle = 'solid';
-                emptySlot.style.borderColor = 'rgba(255,255,255,0.4)';
+                this.styleChunkInSlot(target, emptySlot);
             }
         } else if (target.parentElement.classList.contains('drop-slot')) {
             const slot = target.parentElement;
             this.wordBank.appendChild(target);
-            target.style.width = 'auto';
-            target.style.height = 'auto';
-            slot.style.borderStyle = 'dashed';
-            slot.style.borderColor = 'rgba(255,255,255,0.2)';
+            this.styleChunkInBank(target, slot);
+        }
+    }
+
+    handleDrop(e) {
+        const dropTarget = this.getHoveredElement(e, '.drop-slot, .word-bank');
+        const chunk = this.draggedChunk;
+
+        if (!dropTarget) {
+            // Return to original parent
+            this.originalParent.appendChild(chunk);
+            return;
         }
 
-        this.refreshCapitalization();
-        this.checkIfReady();
+        if (dropTarget.classList.contains('drop-slot')) {
+            const existingChunk = dropTarget.querySelector('.word-chunk');
+            if (existingChunk) {
+                // SWAP
+                this.originalParent.appendChild(existingChunk);
+                dropTarget.appendChild(chunk);
+
+                // Refresh styles for both
+                this.styleChunkInSlot(chunk, dropTarget);
+                if (this.originalParent.classList.contains('drop-slot')) {
+                    this.styleChunkInSlot(existingChunk, this.originalParent);
+                } else {
+                    this.styleChunkInBank(existingChunk, this.originalParent);
+                }
+            } else {
+                // Move to empty slot
+                dropTarget.appendChild(chunk);
+                this.styleChunkInSlot(chunk, dropTarget);
+            }
+        } else {
+            // Move back to bank
+            this.wordBank.appendChild(chunk);
+            this.styleChunkInBank(chunk, dropTarget);
+        }
+    }
+
+    styleChunkInSlot(chunk, slot) {
+        chunk.style.width = '100%';
+        chunk.style.height = '100%';
+        slot.style.borderStyle = 'solid';
+        slot.style.borderColor = 'rgba(255,255,255,0.4)';
+    }
+
+    styleChunkInBank(chunk, slotOrBank) {
+        chunk.style.width = 'auto';
+        chunk.style.height = 'auto';
+        if (slotOrBank.classList.contains('drop-slot')) {
+            slotOrBank.style.borderStyle = 'dashed';
+            slotOrBank.style.borderColor = 'rgba(255,255,255,0.2)';
+        }
+    }
+
+    getHoveredElement(e, selectors) {
+        const elements = document.elementsFromPoint(e.clientX, e.clientY);
+        return elements.find(el => el.matches(selectors));
+    }
+
+    clearHighlights() {
+        this.dropZone.querySelectorAll('.drop-slot').forEach(s => {
+            if (s.children.length === 0) {
+                s.style.borderColor = 'rgba(255,255,255,0.2)';
+                s.style.background = 'transparent';
+            } else {
+                s.style.borderColor = 'rgba(255,255,255,0.4)';
+                s.style.background = 'transparent';
+            }
+        });
     }
 
     refreshCapitalization() {
