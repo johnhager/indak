@@ -71,10 +71,47 @@
                                 style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 1rem; border-radius: 12px; color: white; font-weight: bold; font-size: 1.1rem;">Indak
                                 (Rhythm)</button>
 
+                            <button id="open-translator-btn" class="btn-secondary"
+                                style="background: rgba(0, 255, 170, 0.1); border: 1px solid #00ffaa; color: #00ffaa; padding: 1rem; border-radius: 12px; font-weight: 800; font-size: 1.1rem;">🌐
+                                QUICK TRANSLATOR</button>
+
                             <button id="mastery-btn" class="btn-secondary"
                                 style="background: linear-gradient(45deg, rgba(255, 217, 61, 0.2), rgba(255, 107, 107, 0.2)); border: 1px solid var(--accent-gold); padding: 0.8rem; border-radius: 12px; color: var(--accent-gold); font-weight: 800; font-size: 0.9rem; margin-top: 0.5rem;">📊
                                 MASTERY DASHBOARD</button>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Translator Pane -->
+                <div id="translator-pane" class="hidden" style="width: 90%; max-width: 450px;">
+                    <div class="glass-card"
+                        style="padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; text-align: center;">
+                        <div>
+                            <h2 style="margin: 0; font-size: 1.8rem; color: #00ffaa;">Quick Translator</h2>
+                            <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 5px;">English to
+                                Ilonggo</p>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 10px; text-align: left;">
+                            <label style="font-size: 0.8rem; font-weight: bold; opacity: 0.7;">ENTER ENGLISH:</label>
+                            <textarea id="translator-input" placeholder="e.g. I am going to the market"
+                                style="width: 100%; height: 100px; padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: white; resize: none; font-family: inherit; font-size: 1rem;"></textarea>
+                        </div>
+
+                        <button id="translate-btn" class="btn-primary"
+                            style="padding: 1rem; border-radius: 12px; background: #00ffaa; color: #004433; font-weight: 800;">TRANSLATE</button>
+
+                        <div
+                            style="display: flex; flex-direction: column; gap: 10px; text-align: left; background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                            <label style="font-size: 0.8rem; font-weight: bold; opacity: 0.7;">RESULT:</label>
+                            <div id="translator-result"
+                                style="color: white; font-size: 1.2rem; min-height: 1.5rem; font-weight: 700; line-height: 1.4;">
+                                ---</div>
+                        </div>
+
+                        <button id="close-translator-btn" class="btn-secondary"
+                            style="border: none; background: transparent; color: rgba(255,255,255,0.5); font-size: 0.8rem; text-decoration: underline;">BACK
+                            TO MENU</button>
                     </div>
                 </div>
 

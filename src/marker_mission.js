@@ -52,12 +52,15 @@ export class MarkerMission {
 
     stop() {
         this.gameActive = false;
+        if (this.timerEnabled) this.stopTimer();
         this.container.innerHTML = '';
         const summary = document.getElementById('summary-screen');
         if (summary) summary.classList.add('hidden');
     }
 
     showStartScreen() {
+        const savedTimer = localStorage.getItem('indak_marker_timer') !== 'false';
+
         this.container.innerHTML = `
             <div class="marker-mission-start" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);">
                 <div class="glass-card" style="width: 90%; max-width: 400px; padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; text-align: center;">
@@ -67,7 +70,18 @@ export class MarkerMission {
                         <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 5px;">Master Grammar Gap-Fills</p>
                     </div>
 
-                    <div style="display: flex; gap: 10px; margin-top: 1rem;">
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0;">
+                        <!-- Timer Toggle -->
+                        <div class="toggle-group" style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2); padding: 10px 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                            <label style="font-size: 0.9rem; font-weight: bold;">5s Timer</label>
+                            <label class="switch">
+                                <input type="checkbox" id="mm-timer-toggle" ${savedTimer ? 'checked' : ''}>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 10px;">
                         <button id="start-mm-btn" class="btn-primary" style="flex: 2; padding: 1rem; border-radius: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">START</button>
                         <button id="lesson-btn" class="btn-secondary" style="flex: 1; padding: 1rem; border-radius: 16px; font-weight: 800; background: rgba(255, 204, 0, 0.1); border: 1px solid var(--accent-gold); color: var(--accent-gold);">📖 HELP</button>
                     </div>
@@ -78,6 +92,10 @@ export class MarkerMission {
         `;
 
         document.getElementById('start-mm-btn').addEventListener('click', () => {
+            const isTimerChecked = document.getElementById('mm-timer-toggle').checked;
+            this.timerEnabled = isTimerChecked;
+            localStorage.setItem('indak_marker_timer', isTimerChecked);
+
             this.setupGameUI();
             this.startRound();
         });
@@ -119,7 +137,12 @@ export class MarkerMission {
 
     setupGameUI() {
         this.container.innerHTML = `
-            <div class="marker-mission-ui" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: space-around; padding: 2rem; overflow: hidden; user-select: none;">
+            <div class="marker-mission-ui" style="width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: space-around; padding: 2rem; overflow: hidden; user-select: none; position: relative;">
+                
+                <div id="mm-time-container" style="position: absolute; top: 1rem; right: 2rem; display: none; z-index: 10;">
+                    <div style="font-size: 2rem; font-weight: 800; color: white; text-shadow: 0 0 10px rgba(0,0,0,0.5);"><span id="mm-time">5.0</span>s</div>
+                </div>
+
                 <!-- Drill Info -->
                 <div class="drill-category" style="font-size: 0.8rem; color: var(--accent-gold); opacity: 0.7; letter-spacing: 2px; text-transform: uppercase;"></div>
                 
@@ -206,10 +229,89 @@ export class MarkerMission {
             btn.addEventListener('pointerdown', () => this.evaluateChoice(text, btn));
             this.choicesEl.appendChild(btn);
         });
+
+        if (this.timerEnabled) {
+            this.startTimer();
+        }
+    }
+
+    startTimer() {
+        this.stopTimer();
+        const timeContainer = this.container.querySelector('#mm-time-container');
+        const timeDisplay = this.container.querySelector('#mm-time');
+
+        if (!timeContainer || !timeDisplay) return;
+
+        let timeLeft = 5.0;
+        timeContainer.style.display = 'block';
+        timeDisplay.textContent = timeLeft.toFixed(1);
+        timeDisplay.style.color = 'white';
+
+        this.pulseTimer = setInterval(() => {
+            if (!this.gameActive) return;
+            timeLeft -= 0.1;
+
+            if (timeLeft <= 0) {
+                this.stopTimer();
+                timeDisplay.textContent = '0.0';
+                this.handleTimeout();
+            } else {
+                timeDisplay.textContent = timeLeft.toFixed(1);
+                if (timeLeft <= 2) {
+                    timeDisplay.style.color = '#ff4d4d'; // Red warning
+                }
+            }
+        }, 100);
+    }
+
+    stopTimer() {
+        if (this.pulseTimer) {
+            clearInterval(this.pulseTimer);
+            this.pulseTimer = null;
+        }
+    }
+
+    handleTimeout() {
+        if (!this.gameActive) return;
+        this.totalAttempts++;
+        this.roundAttempts++;
+
+        const gap = this.container.querySelector('.gap-target');
+
+        // Find the correct choice bubble visually
+        const correctChoice = Array.from(this.choicesEl.children).find(b => b.textContent === this.currentDrill.correct);
+
+        if (correctChoice) {
+            // Animate it flying into the slot (similar to evaluateChoice success)
+            const gapRect = gap.getBoundingClientRect();
+            const elRect = correctChoice.getBoundingClientRect();
+
+            const deltaX = gapRect.left - elRect.left;
+            const deltaY = gapRect.top - elRect.top;
+
+            correctChoice.style.zIndex = '100';
+            correctChoice.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(0.9)`;
+            correctChoice.style.background = 'rgba(255, 107, 107, 0.3)'; // Redish background to show timeout
+            correctChoice.style.borderColor = 'rgba(255, 107, 107, 0.6)';
+
+            // Gap Feedback
+            gap.textContent = this.currentDrill.correct;
+            gap.style.borderBottomColor = '#ff4d4d';
+            gap.style.color = '#ff4d4d';
+        }
+
+        this.translationEl.style.opacity = '1';
+        this.translationEl.style.transform = 'translateY(0)';
+        this.translationEl.textContent = 'TIMEOUT! ' + `"${this.currentDrill.english}"`;
+        this.translationEl.style.color = '#ff4d4d';
+
+        setTimeout(() => this.loadDrill(), 1500);
     }
 
     evaluateChoice(choice, element) {
         if (!this.gameActive) return;
+        this.stopTimer();
+
         this.totalAttempts++;
         this.roundAttempts++;
 

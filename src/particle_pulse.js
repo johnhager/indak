@@ -43,6 +43,8 @@ export class ParticlePulse {
     }
 
     showStartScreen() {
+        const savedTimer = localStorage.getItem('indak_pulse_timer') !== 'false'; // default true
+
         this.container.innerHTML = `
             <div class="particle-pulse-start" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);">
                 <div class="glass-card" style="width: 90%; max-width: 400px; padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; text-align: center;">
@@ -67,7 +69,7 @@ export class ParticlePulse {
                         <div class="toggle-group" style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2); padding: 10px 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
                             <label style="font-size: 0.9rem; font-weight: bold;">5s Timer</label>
                             <label class="switch">
-                                <input type="checkbox" id="pp-timer-toggle" checked>
+                                <input type="checkbox" id="pp-timer-toggle" ${savedTimer ? 'checked' : ''}>
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -84,7 +86,10 @@ export class ParticlePulse {
         `;
 
         document.getElementById('start-pp-btn').addEventListener('click', () => {
-            this.timerEnabled = document.getElementById('pp-timer-toggle').checked;
+            const isTimerChecked = document.getElementById('pp-timer-toggle').checked;
+            this.timerEnabled = isTimerChecked;
+            localStorage.setItem('indak_pulse_timer', isTimerChecked);
+
             this.setupGameUI();
             this.startNextQuestion();
         });

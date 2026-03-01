@@ -7,6 +7,7 @@ import { SentenceBuilder } from './src/sentence_builder.js';
 import { MarkerMission } from './src/marker_mission.js';
 import { RootRunner } from './src/root_runner.js';
 import { ParticlePulse } from './src/particle_pulse.js';
+import { Translator } from './src/translator.js';
 
 const app = document.getElementById('app');
 const startBtn = document.getElementById('start-btn');
@@ -23,19 +24,34 @@ const heroSection = document.querySelector('.hero-section');
 const confirmStartBtn = document.getElementById('confirm-start-btn');
 const cancelPrepBtn = document.getElementById('cancel-prep-btn');
 const masteryBtn = document.getElementById('mastery-btn');
+const openTranslatorBtn = document.getElementById('open-translator-btn');
+const translatorPane = document.getElementById('translator-pane');
+const closeTranslatorBtn = document.getElementById('close-translator-btn');
+const translateBtn = document.getElementById('translate-btn');
+const translatorInput = document.getElementById('translator-input');
+const translatorResult = document.getElementById('translator-result');
 
 let activeGame = null;
 let globalVocabulary = [];
+let globalSentences = [];
+let translator = null;
 
 // Pre-fetch vocabulary on app load
 async function preFetchData() {
     try {
-        const vocabResp = await fetch('./data/vocabulary.json');
+        const [vocabResp, sentenceResp] = await Promise.all([
+            fetch('./data/vocabulary.json'),
+            fetch('./data/sentences.json')
+        ]);
         globalVocabulary = await vocabResp.json();
+        globalSentences = await sentenceResp.json();
+
         levelManager.setVocabulary(globalVocabulary);
-        console.log("Indak: Dictionary Loaded.");
+        translator = new Translator(globalVocabulary, globalSentences);
+
+        console.log("Indak: Data Systems Loaded.");
     } catch (e) {
-        console.error("Critical: Failed to load dictionary", e);
+        console.error("Critical: Failed to load data", e);
     }
 }
 preFetchData();
@@ -300,9 +316,38 @@ exitBtn?.addEventListener('click', () => {
     activeGame = null;
 });
 
+openTranslatorBtn?.addEventListener('click', () => {
+    heroSection.classList.add('hidden');
+    translatorPane.classList.remove('hidden');
+    translatorInput.value = '';
+    translatorResult.textContent = '---';
+});
+
+closeTranslatorBtn?.addEventListener('click', () => {
+    translatorPane.classList.add('hidden');
+    showMenu();
+});
+
+translateBtn?.addEventListener('click', () => {
+    if (!translator) return;
+    const text = translatorInput.value;
+    const result = translator.translate(text);
+    translatorResult.textContent = result.translatedText;
+
+    // Add a little feedback animation
+    translatorResult.style.transform = 'scale(1.05)';
+    setTimeout(() => translatorResult.style.transform = 'scale(1)', 200);
+});
+
 startBtn?.addEventListener('click', () => {
     heroSection.classList.add('hidden');
     rhythmPrep.classList.remove('hidden');
+
+    const savedSpeed = localStorage.getItem('indak_game_speed');
+    if (savedSpeed) {
+        const option = document.querySelector(`input[name="game-speed"][value="${savedSpeed}"]`);
+        if (option) option.checked = true;
+    }
 });
 
 cancelPrepBtn?.addEventListener('click', () => {
@@ -317,6 +362,7 @@ confirmStartBtn?.addEventListener('click', async () => {
     showExitButton();
     try {
         const speedMode = document.querySelector('input[name="game-speed"]:checked').value;
+        localStorage.setItem('indak_game_speed', speedMode);
         levelManager.setSpeedMode(speedMode);
         await indakAudio.init();
         await conductor.init();

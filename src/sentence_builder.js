@@ -23,12 +23,16 @@ export class SentenceBuilder {
     }
 
     stop() {
+        if (this.timerEnabled) this.stopTimer();
         this.container.innerHTML = '';
         const summary = document.getElementById('summary-screen');
         if (summary) summary.classList.add('hidden');
     }
 
     showStartScreen() {
+        const savedDirection = localStorage.getItem('indak_sentence_direction') !== 'false';
+        const savedTimer = localStorage.getItem('indak_sentence_timer') !== 'false'; // default true
+
         this.container.innerHTML = `
             <div class="sentence-builder-start" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at top, rgba(255,255,255,0.05) 0%, transparent 60%);">
                 <div class="glass-card" style="width: 90%; max-width: 400px; padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; text-align: center;">
@@ -42,7 +46,16 @@ export class SentenceBuilder {
                         <div class="toggle-group" style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2); padding: 10px 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
                             <label style="font-size: 0.9rem; font-weight: bold;">EN ➔ IL Mode</label>
                             <label class="switch">
-                                <input type="checkbox" id="sb-direction-toggle" checked>
+                                <input type="checkbox" id="sb-direction-toggle" ${savedDirection ? 'checked' : ''}>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        
+                        <!-- Timer Toggle -->
+                        <div class="toggle-group" style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2); padding: 10px 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                            <label style="font-size: 0.9rem; font-weight: bold;">5s Timer</label>
+                            <label class="switch">
+                                <input type="checkbox" id="sb-timer-toggle" ${savedTimer ? 'checked' : ''}>
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -61,7 +74,15 @@ export class SentenceBuilder {
         const startBtn = document.getElementById('start-sb-btn');
         if (startBtn) {
             startBtn.addEventListener('click', () => {
-                this.gameDirection = document.getElementById('sb-direction-toggle').checked ? 'en-to-il' : 'il-to-en';
+                const isDirectionChecked = document.getElementById('sb-direction-toggle').checked;
+                const isTimerChecked = document.getElementById('sb-timer-toggle').checked;
+
+                this.gameDirection = isDirectionChecked ? 'en-to-il' : 'il-to-en';
+                this.timerEnabled = isTimerChecked;
+
+                localStorage.setItem('indak_sentence_direction', isDirectionChecked);
+                localStorage.setItem('indak_sentence_timer', isTimerChecked);
+
                 this.setupGameUI();
                 this.startRound();
             });
@@ -125,9 +146,14 @@ export class SentenceBuilder {
     setupGameUI() {
 
         this.container.innerHTML = `
-            <div class="sentence-builder-ui" style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; padding-top: 1rem;">
+            <div class="sentence-builder-ui" style="position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 1.5rem; padding-top: 1rem;">
+                
+                <div id="sb-time-container" style="position: absolute; top: 1rem; right: 2rem; display: none; z-index: 10;">
+                    <div style="font-size: 2rem; font-weight: 800; color: white; text-shadow: 0 0 10px rgba(0,0,0,0.5);"><span id="sb-time">5.0</span>s</div>
+                </div>
+
                 <!-- Target English Sentence -->
-                <div class="target-english" style="text-align: center; font-size: clamp(1.2rem, 4vw, 1.8rem); font-weight: 800; color: white; text-shadow: 0 4px 10px rgba(0,0,0,0.3); padding: 0 1rem;"></div>
+                <div class="target-english" style="text-align: center; font-size: clamp(1.2rem, 4vw, 1.8rem); font-weight: 800; color: white; text-shadow: 0 4px 10px rgba(0,0,0,0.3); padding: 0 1rem; margin-top: 1.5rem;"></div>
                 
                 <!-- Feedback Clue Panel -->
                 <div class="clue-panel" style="display: flex; gap: 1rem; opacity: 0; transition: opacity 0.3s; background: rgba(0,0,0,0.2); padding: 0.5rem 1.5rem; border-radius: 50px; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase;">
@@ -308,6 +334,10 @@ export class SentenceBuilder {
         });
 
         this.checkIfReady();
+
+        if (this.timerEnabled) {
+            this.startTimer();
+        }
     }
 
     onPointerDown(e) {
@@ -527,7 +557,75 @@ export class SentenceBuilder {
         }
     }
 
+    startTimer() {
+        this.stopTimer();
+        const timeContainer = this.container.querySelector('#sb-time-container');
+        const timeDisplay = this.container.querySelector('#sb-time');
+
+        if (!timeContainer || !timeDisplay) return;
+
+        let timeLeft = 5.0;
+        timeContainer.style.display = 'block';
+        timeDisplay.textContent = timeLeft.toFixed(1);
+        timeDisplay.style.color = 'white';
+
+        this.pulseTimer = setInterval(() => {
+            timeLeft -= 0.1;
+
+            if (timeLeft <= 0) {
+                this.stopTimer();
+                timeDisplay.textContent = '0.0';
+                this.handleTimeout();
+            } else {
+                timeDisplay.textContent = timeLeft.toFixed(1);
+                if (timeLeft <= 2) {
+                    timeDisplay.style.color = '#ff4d4d'; // Red warning
+                }
+            }
+        }, 100);
+    }
+
+    stopTimer() {
+        if (this.pulseTimer) {
+            clearInterval(this.pulseTimer);
+            this.pulseTimer = null;
+        }
+    }
+
+    handleTimeout() {
+        this.totalAttempts++;
+        this.roundAttempts++;
+
+        this.cluePanel.style.opacity = '1';
+        this.cluePanel.innerHTML = '<div style="color: #ff4d4d; font-weight: bold; font-size: 1.2rem;">TIMEOUT!</div>';
+
+        this.checkBtn.style.display = 'none';
+        this.continueBtn.style.display = 'block';
+        this.continueBtn.style.background = '#ff4d4d';
+
+        this.wordBank.style.opacity = '0.5';
+        this.wordBank.style.pointerEvents = 'none';
+        this.dropZone.style.pointerEvents = 'none';
+
+        const isILToEN = this.gameDirection === 'il-to-en';
+        const slots = Array.from(this.dropZone.querySelectorAll('.drop-slot'));
+        const correctAnswer = isILToEN
+            ? this.currentSentence.english.replace(/[^a-zA-Z\s]/g, '').toLowerCase().split(' ')
+            : this.currentSentence.ilonggo_chunks.map(c => c.toLowerCase());
+
+        // Flash correct answers in the slots visually
+        slots.forEach((slot, i) => {
+            slot.textContent = correctAnswer[i];
+            slot.style.border = '2px solid rgba(255, 107, 107, 0.5)';
+            slot.style.background = 'rgba(255, 107, 107, 0.2)';
+            slot.style.color = '#ff4d4d';
+            slot.style.fontWeight = 'bold';
+        });
+    }
+
     evaluateSyntax() {
+        this.stopTimer();
+
         this.totalAttempts++;
         this.roundAttempts++;
 

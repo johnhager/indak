@@ -76,6 +76,10 @@ export class SwipeSorter {
             `;
         }).join('');
 
+        const savedDirection = localStorage.getItem('indak_swipe_direction') === 'true';
+        const savedHardMode = localStorage.getItem('indak_swipe_hard') === 'true';
+        const savedTimer = localStorage.getItem('indak_swipe_timer') !== 'false'; // default true
+
         this.container.innerHTML = `
             <div class="swipe-sorter-start" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);">
                 <div class="glass-card" style="width: 90%; max-width: 400px; padding: 2rem; display: flex; flex-direction: column; gap: 1rem; text-align: center; max-height: 90vh; overflow-y: auto;">
@@ -89,7 +93,7 @@ export class SwipeSorter {
                         <div class="toggle-group">
                             <label>EN ➔ IL Mode</label>
                             <label class="switch">
-                                <input type="checkbox" id="direction-toggle">
+                                <input type="checkbox" id="direction-toggle" ${savedDirection ? 'checked' : ''}>
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -101,7 +105,7 @@ export class SwipeSorter {
                                 <span style="font-size: 0.65rem; color: var(--accent-gold); opacity: 0.8;">Target 30% Most Challenging</span>
                             </div>
                             <label class="switch">
-                                <input type="checkbox" id="difficulty-toggle">
+                                <input type="checkbox" id="difficulty-toggle" ${savedHardMode ? 'checked' : ''}>
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -110,7 +114,7 @@ export class SwipeSorter {
                         <div class="toggle-group" style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2); padding: 5px 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
                             <label style="font-size: 0.9rem; font-weight: bold;">5s Timer</label>
                             <label class="switch">
-                                <input type="checkbox" id="swipe-timer-toggle" checked>
+                                <input type="checkbox" id="swipe-timer-toggle" ${savedTimer ? 'checked' : ''}>
                                 <span class="slider round"></span>
                             </label>
                         </div>
@@ -129,9 +133,17 @@ export class SwipeSorter {
         `;
 
         document.getElementById('start-swipe-btn').addEventListener('click', () => {
-            this.gameDirection = document.getElementById('direction-toggle').checked ? 'en-to-il' : 'il-to-en';
-            this.hardMode = document.getElementById('difficulty-toggle').checked;
-            this.timerEnabled = document.getElementById('swipe-timer-toggle').checked;
+            const isDirectionChecked = document.getElementById('direction-toggle').checked;
+            const isHardModeChecked = document.getElementById('difficulty-toggle').checked;
+            const isTimerChecked = document.getElementById('swipe-timer-toggle').checked;
+
+            this.gameDirection = isDirectionChecked ? 'en-to-il' : 'il-to-en';
+            this.hardMode = isHardModeChecked;
+            this.timerEnabled = isTimerChecked;
+
+            localStorage.setItem('indak_swipe_direction', isDirectionChecked);
+            localStorage.setItem('indak_swipe_hard', isHardModeChecked);
+            localStorage.setItem('indak_swipe_timer', isTimerChecked);
 
             // Get selected categories
             const checkedBoxes = document.querySelectorAll('.category-toggle:checked');
@@ -229,12 +241,32 @@ export class SwipeSorter {
         this.targetWordData = pool[targetIndex];
         this.roundUsedWords.push(this.targetWordData.word);
 
-        // 2. Pick 3 unique trap definitions from the full vocabulary
+        // 2. Pick 3 unique trap definitions from the full vocabulary or selected categories
+        let trapPool = this.vocabulary;
+        if (this.selectedCategories && this.selectedCategories.length > 0) {
+            const filteredTraps = this.vocabulary.filter(v => this.selectedCategories.includes(v.category || 'Other'));
+            if (filteredTraps.length >= 4) {
+                trapPool = filteredTraps;
+            }
+        }
+
         let traps = [];
+        let attempts = 0;
+        while (traps.length < 3 && attempts < 100) {
+            attempts++;
+            let trapIdx = Math.floor(Math.random() * trapPool.length);
+            let trapWord = trapPool[trapIdx];
+            if (trapWord.word !== this.targetWordData.word && !traps.some(t => t.meaning === trapWord.meaning)) {
+                traps.push(trapWord);
+            }
+        }
+
+        // Failsafe strictly if not enough traps from category:
         while (traps.length < 3) {
             let trapIdx = Math.floor(Math.random() * this.vocabulary.length);
-            if (this.vocabulary[trapIdx].word !== this.targetWordData.word && !traps.some(t => t.meaning === this.vocabulary[trapIdx].meaning)) {
-                traps.push(this.vocabulary[trapIdx]);
+            let trapWord = this.vocabulary[trapIdx];
+            if (trapWord.word !== this.targetWordData.word && !traps.some(t => t.meaning === trapWord.meaning)) {
+                traps.push(trapWord);
             }
         }
 
