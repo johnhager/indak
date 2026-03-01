@@ -2261,5 +2261,170 @@
         "stress_index": 2,
         "meaning": "To replace/exchange",
         "tier": 6
+    },
+    {
+        "word": "Abaw",
+        "syllables": [
+            "A",
+            "baw"
+        ],
+        "stress_index": 1,
+        "meaning": "Wow! / Oh!",
+        "tier": 4
+    },
+    {
+        "word": "Aragoy",
+        "syllables": [
+            "A",
+            "ra",
+            "goy"
+        ],
+        "stress_index": 2,
+        "meaning": "Ouch!",
+        "tier": 4
+    },
+    {
+        "word": "Siguro",
+        "syllables": [
+            "Si",
+            "gu",
+            "ro"
+        ],
+        "stress_index": 1,
+        "meaning": "Maybe / Probably",
+        "tier": 4
+    },
+    {
+        "word": "Ari",
+        "syllables": [
+            "A",
+            "ri"
+        ],
+        "stress_index": 0,
+        "meaning": "Here it is",
+        "tier": 4
+    },
+    {
+        "word": "Hapit",
+        "syllables": [
+            "Ha",
+            "pit"
+        ],
+        "stress_index": 1,
+        "meaning": "To stop by / visit",
+        "tier": 4
+    },
+    {
+        "word": "Yuhum",
+        "syllables": [
+            "Yu",
+            "hum"
+        ],
+        "stress_index": 1,
+        "meaning": "Smile",
+        "tier": 5
+    },
+    {
+        "word": "Abtik",
+        "syllables": [
+            "Ab",
+            "tik"
+        ],
+        "stress_index": 0,
+        "meaning": "Quick-witted / Smart",
+        "tier": 5
+    },
+    {
+        "word": "Agubay",
+        "syllables": [
+            "A",
+            "gu",
+            "bay"
+        ],
+        "stress_index": 2,
+        "meaning": "To support (while walking)",
+        "tier": 6
+    },
+    {
+        "word": "Uswag",
+        "syllables": [
+            "Us",
+            "wag"
+        ],
+        "stress_index": 1,
+        "meaning": "To progress / advance",
+        "tier": 6
+    },
+    {
+        "word": "Saylo",
+        "syllables": [
+            "Say",
+            "lo"
+        ],
+        "stress_index": 0,
+        "meaning": "To move / change position",
+        "tier": 6
+    },
+    {
+        "word": "Gubot",
+        "syllables": [
+            "Gu",
+            "bot"
+        ],
+        "stress_index": 1,
+        "meaning": "Trouble / Confusion",
+        "tier": 6
+    },
+    {
+        "word": "Talang",
+        "syllables": [
+            "Ta",
+            "lang"
+        ],
+        "stress_index": 1,
+        "meaning": "Lost / Astray",
+        "tier": 6
+    },
+    {
+        "word": "Amlig",
+        "syllables": [
+            "Am",
+            "lig"
+        ],
+        "stress_index": 0,
+        "meaning": "To take care / protect",
+        "tier": 6
+    },
+    {
+        "word": "Angan-angan",
+        "syllables": [
+            "A",
+            "ngan",
+            "a",
+            "ngan"
+        ],
+        "stress_index": 3,
+        "meaning": "To delay / wait a bit",
+        "tier": 6
+    },
+    {
+        "word": "Batas",
+        "syllables": [
+            "Ba",
+            "tas"
+        ],
+        "stress_index": 1,
+        "meaning": "Endurance / Fortitude",
+        "tier": 6
+    },
+    {
+        "word": "Pulus",
+        "syllables": [
+            "Pu",
+            "lus"
+        ],
+        "stress_index": 1,
+        "meaning": "Use / Worth / Utility",
+        "tier": 6
     }
 ]

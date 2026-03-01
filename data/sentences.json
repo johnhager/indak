@@ -284,5 +284,69 @@
             "naga-alalay"
         ],
         "tier": 6
+    },
+    {
+        "english": "Slowly / Little by little.",
+        "ilonggo_chunks": [
+            "Amat-amat",
+            "lang."
+        ],
+        "trap_words": [
+            "madasig",
+            "gid"
+        ],
+        "tier": 4
+    },
+    {
+        "english": "I am going now.",
+        "ilonggo_chunks": [
+            "Lakat",
+            "na",
+            "ako."
+        ],
+        "trap_words": [
+            "pahuway",
+            "sia"
+        ],
+        "tier": 4
+    },
+    {
+        "english": "Where are you going?",
+        "ilonggo_chunks": [
+            "Diin",
+            "ka",
+            "makadto?"
+        ],
+        "trap_words": [
+            "ngaa",
+            "kamo"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "It might rain today.",
+        "ilonggo_chunks": [
+            "Basi",
+            "maulan",
+            "subong."
+        ],
+        "trap_words": [
+            "kahapon",
+            "buwas"
+        ],
+        "tier": 6
+    },
+    {
+        "english": "Take good care of yourself.",
+        "ilonggo_chunks": [
+            "Amlig",
+            "gid",
+            "ikaw."
+        ],
+        "trap_words": [
+            "hampang",
+            "indi"
+        ],
+        "tier": 6
     }
 ]
