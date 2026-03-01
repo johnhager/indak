@@ -100,24 +100,27 @@ class CloudManager {
         this.status = 'syncing';
 
         try {
-            // Add a timeout to prevent hanging on mobile
+            // Sanitize data to ensure no undefined values reach Firestore
+            const cleanMastery = JSON.parse(JSON.stringify(masteryData));
+
+            // Add a timeout
             const timeoutPromise = new Promise((_, reject) =>
                 setTimeout(() => reject(new Error("Save Timeout")), 15000)
             );
 
             const userDoc = doc(this.db, "users", this.user.uid);
             const savePromise = setDoc(userDoc, {
-                mastery: masteryData,
+                mastery: cleanMastery,
                 tier: currentTier,
                 lastUpdated: serverTimestamp()
             }, { merge: true });
 
             await Promise.race([savePromise, timeoutPromise]);
-            console.log("CloudManager: Cloud Save Successful for UID:", this.user.uid);
+            console.log("CloudManager: Cloud Save Successful");
             this.status = 'synced';
         } catch (error) {
-            console.error("CloudManager: Save failed - ", error);
-            this.lastError = error.message;
+            console.error("CloudManager: Save failed detail -", error);
+            this.lastError = error.code || error.message;
             this.status = 'error';
         }
     }
