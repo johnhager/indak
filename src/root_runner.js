@@ -28,14 +28,14 @@ export class RootRunner {
                 examples: "Roots are the heart of the language."
             },
             {
-                title: "Affixes (Conjugations)",
-                content: "We add prefixes and suffixes to the root to change the tense or focus.",
-                examples: "KAON + NAGA = <b>Nagakaon</b> (is eating)<br>KAON + GIN = <b>Ginkaon</b> (ate)"
+                title: "The Affix List",
+                content: "These are the valid parts you'll see in the game:<br><b>Prefixes:</b> Naga-, Gin-, Ma-, Nag-, Ika-<br><b>Suffixes:</b> -on, -an, -onon",
+                examples: "<i>Nagakaon</i> (Eating)<br><i>Daganon</i> (To be run)"
             },
             {
                 title: "Root Runner",
-                content: "Words will drift toward the central Orb. Swipe them <b>RIGHT</b> if they are real conjugations, or <b>LEFT</b> if they are nonsense.",
-                examples: "Real = 🟢 Right | Nonsense = 🔴 Left"
+                content: "Swipe <b>RIGHT</b> for valid conjugations, or <b>LEFT</b> for nonsense.",
+                examples: "Success = Blue/Glow ✔ | Miss = Purple/Shake ✖"
             }
         ];
 
@@ -60,7 +60,8 @@ export class RootRunner {
                 <div class="game-layer" style="width:100%; height:100%; position:relative;">
                     <!-- Central Orb -->
                     <div class="central-orb-container" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; text-align: center;">
-                        <div class="orb" style="width: 120px; height: 120px; border-radius: 50%; background: radial-gradient(circle, rgba(255,217,61,0.3) 0%, rgba(255,217,61,0) 70%); border: 2px solid rgba(255,217,61,0.5); display: flex; align-items:center; justify-content:center; box-shadow: 0 0 30px rgba(255,217,61,0.2); animation: pulse 3s infinite ease-in-out;">
+                        <div class="orb" style="width: 120px; height: 120px; border-radius: 50%; background: radial-gradient(circle, rgba(255,217,61,0.3) 0%, rgba(255,217,61,0) 70%); border: 2px solid rgba(255,217,61,0.5); display: flex; flex-direction: column; align-items:center; justify-content:center; box-shadow: 0 0 30px rgba(255,217,61,0.2); animation: pulse 3s infinite ease-in-out;">
+                            <span id="orb-symbol" style="position: absolute; top: 10px; font-size: 1.2rem; opacity: 0; transition: all 0.3s;"></span>
                             <strong id="root-display" style="color: var(--accent-gold); font-size: 1.4rem; letter-spacing: 2px; text-transform: uppercase;">ROOT</strong>
                         </div>
                         <div id="root-meaning" style="color: white; opacity: 0.6; font-size: 0.8rem; margin-top: 10px;">(meaning)</div>
@@ -266,14 +267,22 @@ export class RootRunner {
 
         const success = (direction === 'right' && wordObj.isCorrect) || (direction === 'left' && !wordObj.isCorrect);
         const orb = this.container.querySelector('.orb');
+        const symbol = this.container.querySelector('#orb-symbol');
 
         if (success) {
             this.score++;
-            // Feedback Glow
+            // Feedback Glow (Cyan for better colorblind contrast)
             orb.style.transition = 'all 0.2s';
-            orb.style.boxShadow = '0 0 50px var(--accent-bamboo)';
-            orb.style.borderColor = 'var(--accent-bamboo)';
+            orb.style.boxShadow = '0 0 50px #00FFFF';
+            orb.style.borderColor = '#00FFFF';
             orb.style.transform = 'scale(1.1)';
+
+            if (symbol) {
+                symbol.textContent = '✔';
+                symbol.style.color = '#00FFFF';
+                symbol.style.opacity = '1';
+                symbol.style.transform = 'translateY(-5px)';
+            }
 
             if (direction === 'right') {
                 wordObj.el.classList.add('correct-merge');
@@ -281,13 +290,20 @@ export class RootRunner {
                 wordObj.el.classList.add('shatter');
             }
         } else {
-            // Failure Feedback
+            // Failure Feedback (Magenta)
             orb.style.transition = 'all 0.2s';
-            orb.style.boxShadow = '0 0 50px rgba(255, 107, 107, 0.8)';
-            orb.style.borderColor = 'rgba(255, 107, 107, 0.8)';
+            orb.style.boxShadow = '0 0 50px #FF00FF';
+            orb.style.borderColor = '#FF00FF';
             orb.style.transform = 'scale(0.9)';
 
-            wordObj.el.style.background = 'rgba(255, 107, 107, 0.8)';
+            if (symbol) {
+                symbol.textContent = '✖';
+                symbol.style.color = '#FF00FF';
+                symbol.style.opacity = '1';
+                symbol.style.transform = 'translateY(5px)';
+            }
+
+            wordObj.el.style.background = '#FF00FF';
             wordObj.el.style.transition = 'all 0.4s ease-out';
             wordObj.el.style.transform = `translate(${direction === 'right' ? 300 : -300}px, 200px) rotate(90deg) scale(0)`;
             wordObj.el.style.opacity = '0';
@@ -298,6 +314,10 @@ export class RootRunner {
             orb.style.transform = 'scale(1)';
             orb.style.boxShadow = '0 0 30px rgba(255,217,61,0.2)';
             orb.style.borderColor = 'rgba(255,217,61,0.5)';
+            if (symbol) {
+                symbol.style.opacity = '0';
+                symbol.style.transform = 'translateY(0)';
+            }
         }, 400);
 
         setTimeout(() => {
