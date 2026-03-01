@@ -124,7 +124,8 @@ export class SentenceBuilder {
         this.currentSentence.ilonggo_chunks.forEach(() => {
             const slot = document.createElement('div');
             slot.className = 'drop-slot';
-            slot.style.width = '100px';
+            slot.style.minWidth = '80px';
+            slot.style.width = 'auto'; // Dynamic width based on content
             slot.style.minHeight = '45px';
             slot.style.border = '2px dashed rgba(255,255,255,0.2)';
             slot.style.borderRadius = '12px';
@@ -166,6 +167,7 @@ export class SentenceBuilder {
             chunkDiv.style.cursor = 'pointer';
             chunkDiv.style.userSelect = 'none';
             chunkDiv.style.touchAction = 'none';
+            chunkDiv.style.whiteSpace = 'nowrap'; // Prevent text wrapping
             chunkDiv.style.transition = 'all 0.2s';
             chunkDiv.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
 
@@ -333,8 +335,8 @@ export class SentenceBuilder {
     }
 
     styleChunkInSlot(chunk, slot) {
-        chunk.style.width = '100%';
-        chunk.style.height = '100%';
+        chunk.style.width = 'auto'; // Don't force full width, let it center naturally
+        chunk.style.height = 'auto';
         // Hide the slot's border/background when it is occupied
         slot.style.borderStyle = 'none';
         slot.style.background = 'transparent';
