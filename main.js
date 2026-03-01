@@ -10,6 +10,9 @@ const startSwipeBtn = document.getElementById('start-swipe-btn');
 const startSentenceBtn = document.getElementById('start-sentence-btn');
 const exitBtn = document.getElementById('exit-btn');
 const gameCanvas = document.getElementById('game-canvas');
+const rhythmPrep = document.getElementById('rhythm-prep');
+const confirmStartBtn = document.getElementById('confirm-start-btn');
+const cancelPrepBtn = document.getElementById('cancel-prep-btn');
 
 let activeGame = null;
 
@@ -32,12 +35,23 @@ exitBtn?.addEventListener('click', () => {
     if (summaryScreen) summaryScreen.classList.add('hidden');
 
     // Return to Menu
+    rhythmPrep?.classList.add('hidden');
     document.querySelector('.hero-section')?.classList.remove('hidden');
     hideExitButton();
     activeGame = null;
 });
 
-startBtn?.addEventListener('click', async () => {
+startBtn?.addEventListener('click', () => {
+    document.querySelector('.hero-section').classList.add('hidden');
+    rhythmPrep?.classList.remove('hidden');
+});
+
+cancelPrepBtn?.addEventListener('click', () => {
+    rhythmPrep?.classList.add('hidden');
+    document.querySelector('.hero-section').classList.remove('hidden');
+});
+
+confirmStartBtn?.addEventListener('click', async () => {
     console.log('Indak: Initializing Engine...');
 
     // 1. Synchronously Unlock Audio Context (Crucial for iOS)
@@ -46,7 +60,7 @@ startBtn?.addEventListener('click', async () => {
     }
 
     // Keep UI responsive immediately
-    document.querySelector('.hero-section').classList.add('hidden');
+    rhythmPrep.classList.add('hidden');
     showExitButton();
 
     try {

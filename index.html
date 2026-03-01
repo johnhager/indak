@@ -36,19 +36,11 @@
         </header>
 
         <main id="game-canvas">
-            <!-- Rhythm game elements will be injected here -->
+            <!-- Hero Selection -->
             <div class="hero-section">
                 <div class="glass-card">
                     <h2>Sugod na kita!</h2>
                     <p class="hero-desc">Master Hiligaynon heart and soul.</p>
-
-                    <div class="instructions">
-                        <ul>
-                            <li><strong>Tap</strong> when the shrinking ring exactly hits the syllable card.</li>
-                            <li>Read the word left-to-right as you tap to learn the pronunciation!</li>
-                            <li>Get a <strong>PERFECT</strong> flow to reveal the English meaning!</li>
-                        </ul>
-                    </div>
 
                     <div class="speed-selector">
                         <label class="speed-option">
@@ -59,18 +51,37 @@
                             <input type="radio" name="game-speed" value="fast">
                             <span>Native (Fast)</span>
                         </label>
-                        <div class="game-modes"
-                            style="display: flex; flex-direction: column; gap: 1rem; width: 100%; margin-top: 1rem;">
-                            <button id="start-btn" class="btn-primary">START INDAK (Rhythm)</button>
-                            <button id="start-swipe-btn" class="btn-secondary"
-                                style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 1rem; border-radius: 12px; color: white; font-weight: bold; font-size: 1.1rem;">Swipe
-                                Sorter</button>
-                            <button id="start-sentence-btn" class="btn-secondary"
-                                style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 1rem; border-radius: 12px; color: white; font-weight: bold; font-size: 1.1rem;">Sentence
-                                Builder</button>
-                        </div>
+                    </div>
+
+                    <div class="game-modes"
+                        style="display: flex; flex-direction: column; gap: 1rem; width: 100%; margin-top: 1rem;">
+                        <button id="start-btn" class="btn-primary">START INDAK (Rhythm)</button>
+                        <button id="start-swipe-btn" class="btn-secondary"
+                            style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 1rem; border-radius: 12px; color: white; font-weight: bold; font-size: 1.1rem;">Swipe
+                            Sorter</button>
+                        <button id="start-sentence-btn" class="btn-secondary"
+                            style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 1rem; border-radius: 12px; color: white; font-weight: bold; font-size: 1.1rem;">Sentence
+                            Builder</button>
                     </div>
                 </div>
+            </div>
+
+            <!-- Rhythm Prep Screen (Instructions) -->
+            <div id="rhythm-prep" class="hidden" style="width: 90%; max-width: 400px; text-align: center;">
+                <div class="glass-card">
+                    <h2>How to Play</h2>
+                    <div class="instructions">
+                        <ul>
+                            <li><strong>Tap</strong> when the shrinking ring exactly hits the syllable card.</li>
+                            <li>Read the word left-to-right as you tap to learn the pronunciation!</li>
+                            <li>Get a <strong>PERFECT</strong> flow to reveal the English meaning!</li>
+                        </ul>
+                    </div>
+                    <button id="confirm-start-btn" class="btn-primary">ON NA! (Start)</button>
+                    <button id="cancel-prep-btn" class="btn-secondary"
+                        style="margin-top: 1rem; background: rgba(255,255,255,0.1); width: 100%; padding: 10px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); color: white;">BACK</button>
+                </div>
+            </div>
         </main>
 
         <!-- Summary Screen -->
