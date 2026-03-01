@@ -9,8 +9,10 @@ const startBtn = document.getElementById('start-btn');
 const startSwipeBtn = document.getElementById('start-swipe-btn');
 const startSentenceBtn = document.getElementById('start-sentence-btn');
 const exitBtn = document.getElementById('exit-btn');
-const gameCanvas = document.getElementById('game-canvas');
+const gameStage = document.getElementById('game-stage');
+const menuOverlay = document.getElementById('menu-overlay');
 const rhythmPrep = document.getElementById('rhythm-prep');
+const heroSection = document.querySelector('.hero-section');
 const confirmStartBtn = document.getElementById('confirm-start-btn');
 const cancelPrepBtn = document.getElementById('cancel-prep-btn');
 
@@ -24,50 +26,57 @@ function hideExitButton() {
     exitBtn?.classList.add('hidden');
 }
 
+function showMenu() {
+    menuOverlay.classList.remove('hidden');
+    heroSection.classList.remove('hidden');
+    rhythmPrep.classList.add('hidden');
+}
+
+function hideMenu() {
+    menuOverlay.classList.add('hidden');
+}
+
 exitBtn?.addEventListener('click', () => {
     // Force stop all potential engines
     if (activeGame && typeof activeGame.stop === 'function') activeGame.stop();
     if (conductor && typeof conductor.stop === 'function') conductor.stop();
 
-    // Clear the stage
-    gameCanvas.innerHTML = '';
+    // Clear the dynamic stage
+    gameStage.innerHTML = '';
+
+    // Reset Overlays
     const summaryScreen = document.getElementById('summary-screen');
     if (summaryScreen) summaryScreen.classList.add('hidden');
 
     // Return to Menu
-    rhythmPrep?.classList.add('hidden');
-    document.querySelector('.hero-section')?.classList.remove('hidden');
+    showMenu();
     hideExitButton();
     activeGame = null;
 });
 
 startBtn?.addEventListener('click', () => {
-    document.querySelector('.hero-section').classList.add('hidden');
-    rhythmPrep?.classList.remove('hidden');
+    heroSection.classList.add('hidden');
+    rhythmPrep.classList.remove('hidden');
 });
 
 cancelPrepBtn?.addEventListener('click', () => {
-    rhythmPrep?.classList.add('hidden');
-    document.querySelector('.hero-section').classList.remove('hidden');
+    showMenu();
 });
 
 confirmStartBtn?.addEventListener('click', async () => {
     console.log('Indak: Initializing Engine...');
 
-    // 1. Synchronously Unlock Audio Context (Crucial for iOS)
     if (indakAudio.ctx.state === 'suspended') {
         indakAudio.ctx.resume();
     }
 
-    // Keep UI responsive immediately
-    rhythmPrep.classList.add('hidden');
+    hideMenu();
     showExitButton();
 
     try {
         const speedMode = document.querySelector('input[name="game-speed"]:checked').value;
         levelManager.setSpeedMode(speedMode);
 
-        // Init Systems
         await indakAudio.init();
         await conductor.init();
         conductor.start();
@@ -78,14 +87,14 @@ confirmStartBtn?.addEventListener('click', async () => {
 
 startSwipeBtn?.addEventListener('click', async () => {
     console.log('Swipe Sorter: Initializing...');
-    document.querySelector('.hero-section').classList.add('hidden');
+    hideMenu();
     showExitButton();
 
     try {
         const response = await fetch('./data/vocabulary.json');
         const vocabularyData = await response.json();
 
-        activeGame = new SwipeSorter(gameCanvas, vocabularyData);
+        activeGame = new SwipeSorter(gameStage, vocabularyData);
         activeGame.startRound();
     } catch (e) {
         console.error('Failed to fetch vocabulary:', e);
@@ -94,14 +103,14 @@ startSwipeBtn?.addEventListener('click', async () => {
 
 startSentenceBtn?.addEventListener('click', async () => {
     console.log('Sentence Builder: Initializing...');
-    document.querySelector('.hero-section').classList.add('hidden');
+    hideMenu();
     showExitButton();
 
     try {
         const response = await fetch('./data/sentences.json');
         const sentencesData = await response.json();
 
-        activeGame = new SentenceBuilder(gameCanvas, sentencesData);
+        activeGame = new SentenceBuilder(gameStage, sentencesData);
         activeGame.startRound();
     } catch (e) {
         console.error('Failed to fetch sentences:', e);
@@ -110,13 +119,8 @@ startSentenceBtn?.addEventListener('click', async () => {
 
 // PWA High-Performance Input
 app.addEventListener('pointerdown', (e) => {
-    // Prevent accidental triggers on buttons
     if (e.target.tagName === 'BUTTON') return;
-
-    // Trigger timing check
     conductor.checkInput();
-
-    // Optional: Visual tap feedback
     createTapCircle(e.clientX, e.clientY);
 });
 

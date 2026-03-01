@@ -20,7 +20,7 @@ class Conductor {
         this.gameDuration = 120000; // 2 minutes
 
         this.windows = { PERFECT: 50, GOOD: 100 };
-        this.canvas = document.getElementById('game-canvas');
+        this.canvas = document.getElementById('game-stage');
         this.debugOverlay = null;
 
         this.wordSequence = [];
