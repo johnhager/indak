@@ -79,7 +79,7 @@ export class MarkerMission {
         this.sentenceEl.innerHTML = `
             <span>${parts[0]}</span>
             <span class="gap-target" style="display: inline-block; width: 80px; border-bottom: 3px solid rgba(255,255,255,0.3); margin: 0 10px; transition: all 0.3s;">&nbsp;</span>
-            <span>${parts[part.length - 1] === parts[0] ? '' : parts[parts.length - 1]}</span>
+            <span>${parts[1] || ''}</span>
         `;
 
         this.categoryEl.textContent = randomDrill.category;

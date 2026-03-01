@@ -31,5 +31,19 @@ with open(sentences_csv, 'w', newline='', encoding='utf-8') as f:
         traps_str = ' | '.join(item['trap_words'])
         writer.writerow([item['english'], chunks_str, traps_str])
 
+# Export Grammar Drills
+drills_path = os.path.join(base_path, 'grammar_drills.json')
+with open(drills_path, 'r', encoding='utf-8') as f:
+    drills_data = json.load(f)
+
+drills_csv = os.path.join(base_path, 'grammar_drills_master.csv')
+with open(drills_csv, 'w', newline='', encoding='utf-8') as f:
+    writer = csv.writer(f)
+    writer.writerow(['Hiligaynon Pattern (with ___)','Correct Marker','Distractors (Bar Separated)','English Meaning','Category'])
+    for item in drills_data:
+        distractors_str = ' | '.join(item['distractors'])
+        writer.writerow([item['sentence'], item['correct'], distractors_str, item['english'], item['category']])
+
 print(f"Exported: {vocab_csv}")
 print(f"Exported: {sentences_csv}")
+print(f"Exported: {drills_csv}")
