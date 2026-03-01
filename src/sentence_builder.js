@@ -218,6 +218,11 @@ export class SentenceBuilder {
     }
 
     startDrag(e) {
+        // Capture initial dimensions to prevent 'exploding' to 100% screen width when position fixed
+        const rect = this.draggedChunk.getBoundingClientRect();
+        this.draggedChunk.style.width = `${rect.width}px`;
+        this.draggedChunk.style.height = `${rect.height}px`;
+
         // Visual feedback when starting drag
         this.draggedChunk.style.zIndex = '1000';
         this.draggedChunk.style.pointerEvents = 'none';
@@ -259,6 +264,8 @@ export class SentenceBuilder {
             this.draggedChunk.style.position = '';
             this.draggedChunk.style.left = '';
             this.draggedChunk.style.top = '';
+            this.draggedChunk.style.width = '';
+            this.draggedChunk.style.height = '';
             this.draggedChunk.style.transform = '';
             this.draggedChunk.style.opacity = '';
         }
