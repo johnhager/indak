@@ -69,7 +69,14 @@ function showMasteryDashboard() {
         return;
     }
 
-    const wordItems = globalVocabulary.map(w => {
+    // Group words by category
+    const categoriesMap = {};
+    globalVocabulary.forEach(w => {
+        const cat = w.category || 'Other';
+        if (!categoriesMap[cat]) {
+            categoriesMap[cat] = { words: [], totalWords: 0, rhythmMastered: 0, meaningMastered: 0 };
+        }
+
         const m = stats.details[w.word] || {
             rhythm: { c: 0, t: 0 },
             meaning: { c: 0, t: 0 }
@@ -81,17 +88,43 @@ function showMasteryDashboard() {
         const rMastered = rSR >= threshold && m.rhythm.t >= minAttempts;
         const mMastered = mSR >= threshold && m.meaning.t >= minAttempts;
 
-        return `
+        if (rMastered) categoriesMap[cat].rhythmMastered++;
+        if (mMastered) categoriesMap[cat].meaningMastered++;
+        categoriesMap[cat].totalWords++;
+
+        categoriesMap[cat].words.push({ wordItem: w, m, rMastered, mMastered, rSR, mSR });
+    });
+
+    const categoryHTML = Object.entries(categoriesMap).map(([cat, data]) => {
+        const wordItemsHTML = data.words.map(item => `
             <div class="word-status-item" style="background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.1);">
                 <div style="display: flex; flex-direction: column;">
-                    <span style="font-weight: 600; font-size: 0.9rem;">${w.word}</span>
-                    <span style="font-size: 0.6rem; opacity: 0.4;">${m.meaning.t} tries</span>
+                    <span style="font-weight: 600; font-size: 0.9rem;">${item.wordItem.word}</span>
+                    <span style="font-size: 0.6rem; opacity: 0.4;">${item.m.meaning.t} tries</span>
                 </div>
                 <div style="display: flex; gap: 4px;">
-                    <span title="Rhythm: ${Math.round(rSR * 100)}%" style="opacity: ${rMastered ? 1 : 0.2}; filter: ${rMastered ? 'none' : 'grayscale(1)'}">🥁</span>
-                    <span title="Meaning: ${Math.round(mSR * 100)}%" style="opacity: ${mMastered ? 1 : 0.2}; filter: ${mMastered ? 'none' : 'grayscale(1)'}">📖</span>
+                    <span title="Rhythm: ${Math.round(item.rSR * 100)}%" style="opacity: ${item.rMastered ? 1 : 0.2}; filter: ${item.rMastered ? 'none' : 'grayscale(1)'}">🥁</span>
+                    <span title="Meaning: ${Math.round(item.mSR * 100)}%" style="opacity: ${item.mMastered ? 1 : 0.2}; filter: ${item.mMastered ? 'none' : 'grayscale(1)'}">📖</span>
                 </div>
             </div>
+        `).join('');
+
+        const rPercent = Math.round((data.rhythmMastered / data.totalWords) * 100) || 0;
+        const mPercent = Math.round((data.meaningMastered / data.totalWords) * 100) || 0;
+
+        return `
+            <details class="category-details" style="background: rgba(0,0,0,0.2); padding: 10px; border-radius: 12px; margin-bottom: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                <summary style="cursor: pointer; font-weight: bold; color: var(--accent-gold); display: flex; justify-content: space-between; align-items: center; list-style: none;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 0.8rem; opacity: 0.7;">▶</span>
+                        ${cat}
+                    </div>
+                    <span style="font-size: 0.7rem; color: white; opacity: 0.8; font-weight: normal;">🥁 ${rPercent}% | 📖 ${mPercent}%</span>
+                </summary>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; margin-top: 15px;">
+                    ${wordItemsHTML}
+                </div>
+            </details>
         `;
     }).join('');
 
@@ -134,8 +167,13 @@ function showMasteryDashboard() {
                 </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; text-align: left; margin-top: 0.5rem; overflow-y: auto; padding-right: 8px; flex-grow: 1;">
-                ${wordItems}
+            <div style="text-align: left; margin-top: 0.5rem; overflow-y: auto; padding-right: 8px; flex-grow: 1;">
+                <style>
+                    details.category-details summary::-webkit-details-marker { display: none; }
+                    details.category-details[open] summary span:first-child { transform: rotate(90deg); transition: transform 0.2s; }
+                    details.category-details:not([open]) summary span:first-child { transition: transform 0.2s; }
+                </style>
+                ${categoryHTML}
             </div>
 
             <button id="close-dash-btn" class="btn-primary" style="flex-shrink: 0; margin-top: 1rem; width: 100%;">BALIK (Return)</button>

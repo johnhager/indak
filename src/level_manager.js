@@ -58,11 +58,13 @@ class LevelManager {
         this.vocabulary = vocab;
     }
 
-    getFilteredVocabulary(gameType = 'rhythm', excludeWords = [], hardMode = false) {
+    getFilteredVocabulary(gameType = 'rhythm', excludeWords = [], hardMode = false, categories = []) {
         const tier = this.tiers[this.currentTier];
 
-        // 1. Identify valid candidates based on tier logic
+        // 1. Identify valid candidates based on tier logic and optionally categories
         let candidates = this.vocabulary.filter(word => {
+            if (categories.length > 0 && !categories.includes(word.category)) return false;
+
             // 1. Complex Mode constraint - force at least 3 syllables
             if (this.speedMode === 'complex') {
                 if (word.syllables.length < 3) return false;

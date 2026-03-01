@@ -36,15 +36,48 @@ export class SwipeSorter {
 
     showStartScreen() {
         this.gameActive = false;
+
+        const categoriesMap = {};
+        this.vocabulary.forEach(v => {
+            const cat = v.category || 'Other';
+            if (!categoriesMap[cat]) {
+                categoriesMap[cat] = { c: 0, t: 0, total: 0 };
+            }
+            categoriesMap[cat].total++;
+            const stats = levelManager.masteryData[v.word]?.meaning;
+            if (stats && stats.t > 0) {
+                categoriesMap[cat].c += stats.c;
+                categoriesMap[cat].t += stats.t;
+            }
+        });
+
+        const categoryOptionsHTML = Object.entries(categoriesMap).map(([cat, counts]) => {
+            const sr = counts.t > 0 ? Math.round((counts.c / counts.t) * 100) : 0;
+            const srDisplay = counts.t > 0 ? `${sr}% Success` : 'New';
+
+            return `
+                <div class="toggle-group" style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2); padding: 5px 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); margin-top: 5px;">
+                    <div style="text-align: left;">
+                        <label style="font-size: 0.85rem; font-weight: bold; display: block;">${cat} ${srDisplay === 'New' ? '<span style="color:var(--accent-gold);font-size:0.6rem;text-transform:uppercase;">[NEW]</span>' : ''}</label>
+                        <span style="font-size: 0.65rem; color: ${sr > 80 ? '#00ffaa' : (sr > 50 ? '#ffcc00' : '#ff6b6b')}; opacity: 0.8;">${srDisplay} (${counts.total} items)</span>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" class="category-toggle" value="${cat}" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            `;
+        }).join('');
+
         this.container.innerHTML = `
             <div class="swipe-sorter-start" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);">
-                <div class="glass-card" style="width: 90%; max-width: 400px; padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; text-align: center;">
-                    <div style="margin-bottom: 0.5rem;">
+                <div class="glass-card" style="width: 90%; max-width: 400px; padding: 2rem; display: flex; flex-direction: column; gap: 1rem; text-align: center; max-height: 90vh; overflow-y: auto;">
+                    <div style="margin-bottom: 0;">
                         <h2 style="margin: 0; font-size: 1.8rem; letter-spacing: 1px;">Swipe Sorter</h2>
                         <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 5px;">Master Hiligaynon Vocabulary</p>
                     </div>
 
-                    <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0;">
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin: 0.5rem 0;">
                         <!-- Direction Toggle -->
                         <div class="toggle-group">
                             <label>EN ➔ IL Mode</label>
@@ -74,6 +107,12 @@ export class SwipeSorter {
                                 <span class="slider round"></span>
                             </label>
                         </div>
+
+                        <!-- Category Selector -->
+                        <div style="margin-top: 1rem; text-align: left;">
+                            <h3 style="font-size: 1rem; color: var(--accent-gold); margin-bottom: 0.5rem;">Categories</h3>
+                            ${categoryOptionsHTML}
+                        </div>
                     </div>
 
                     <button id="start-swipe-btn" class="btn-primary" style="padding: 1rem; border-radius: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">START SESSION</button>
@@ -86,6 +125,11 @@ export class SwipeSorter {
             this.gameDirection = document.getElementById('direction-toggle').checked ? 'en-to-il' : 'il-to-en';
             this.hardMode = document.getElementById('difficulty-toggle').checked;
             this.timerEnabled = document.getElementById('swipe-timer-toggle').checked;
+
+            // Get selected categories
+            const checkedBoxes = document.querySelectorAll('.category-toggle:checked');
+            this.selectedCategories = Array.from(checkedBoxes).map(cb => cb.value);
+
             this.setupGameUI();
             this.startRound();
         });
@@ -155,9 +199,16 @@ export class SwipeSorter {
         [this.defTop, this.defBottom, this.defLeft, this.defRight].forEach(el => el.style.opacity = '0');
 
         // Get pool from LevelManager
-        const pool = levelManager.getFilteredVocabulary('meaning', this.roundUsedWords, this.hardMode);
+        let pool = levelManager.getFilteredVocabulary('meaning', this.roundUsedWords, this.hardMode, this.selectedCategories);
+
+        // If not enough words, try falling back by removing the exclude list or hard mode constraint
         if (!pool || pool.length < 4) {
-            console.warn('Insufficient vocabulary for Swipe Sorter');
+            pool = levelManager.getFilteredVocabulary('meaning', [], false, this.selectedCategories);
+        }
+
+        if (!pool || pool.length < 4) {
+            console.warn('Insufficient vocabulary for Swipe Sorter with these categories');
+            this.endGame();
             return;
         }
 
