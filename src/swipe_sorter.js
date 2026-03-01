@@ -240,7 +240,9 @@ export class SwipeSorter {
         this.totalAttempts++;
         if (this.roundAttempts === 0) {
             this.roundAttempts = 1;
-            levelManager.markWordMastered(this.targetWordData.word, 'meaning', false);
+            if (!this.timerEnabled) {
+                levelManager.markWordMastered(this.targetWordData.word, 'meaning', false);
+            }
             this.missedWords.add(this.targetWordData);
         }
 
@@ -350,7 +352,9 @@ export class SwipeSorter {
 
         // Record mastery data on first attempt only
         if (this.roundAttempts === 1) {
-            levelManager.markWordMastered(this.targetWordData.word, 'meaning', isCorrect);
+            if (isCorrect || !this.timerEnabled) {
+                levelManager.markWordMastered(this.targetWordData.word, 'meaning', isCorrect);
+            }
         }
 
         if (isCorrect) {

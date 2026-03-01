@@ -356,7 +356,9 @@ export class ParticlePulse {
         this.totalAttempts++;
         this.showFeedback(false, "TIMEOUT!");
 
-        levelManager.handleRating('MISS');
+        if (!this.timerEnabled) {
+            levelManager.handleRating('MISS');
+        }
         if (this.activeCard) {
             this.activeCard.style.transition = 'all 0.3s';
             this.activeCard.style.transform = 'scale(0.5)';
@@ -377,7 +379,9 @@ export class ParticlePulse {
         const isCorrect = selectedWord === this.currentData.correct;
 
         // Log mastery for the correct particle word (we mark success/fail)
-        levelManager.markWordMastered(this.currentData.correct, 'meaning', isCorrect);
+        if (isCorrect || !this.timerEnabled) {
+            levelManager.markWordMastered(this.currentData.correct, 'meaning', isCorrect);
+        }
 
         if (isCorrect) {
             this.score++;
@@ -393,7 +397,9 @@ export class ParticlePulse {
             this.activeCard.style.opacity = '0';
 
         } else {
-            levelManager.handleRating('MISS');
+            if (!this.timerEnabled) {
+                levelManager.handleRating('MISS');
+            }
             this.showFeedback(false, "MISS");
 
             // Error shake
