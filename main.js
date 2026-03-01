@@ -1,4 +1,5 @@
 import indakAudio from './src/audio_manager.js';
+import cloudManager from './src/cloud_manager.js';
 import conductor from './src/conductor.js';
 import levelManager from './src/level_manager.js';
 import { SwipeSorter } from './src/swipe_sorter.js';
@@ -100,6 +101,16 @@ function showMasteryDashboard() {
                         <h2 style="color: var(--accent-gold); margin-bottom: 0.2rem;">Vocab Mastery</h2>
                         <div style="background: var(--accent-gold); color: black; display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.65rem; font-weight: 800; margin-bottom: 0.5rem;">LEVEL ${levelManager.currentTier}: ${levelManager.getSummary().tier}</div>
                     </div>
+                    <!-- Cloud Sync Status -->
+                    <div id="cloud-status-container" style="text-align: right;">
+                        <div style="font-size: 0.6rem; opacity: 0.6; display: flex; align-items: center; gap: 4px; justify-content: flex-end;">
+                            <span id="cloud-status-dot" style="width: 6px; height: 6px; border-radius: 50%; background: #aaa;"></span>
+                            <span id="cloud-status-text">DISCONNECTED</span>
+                        </div>
+                        <button id="cloud-login-btn" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 30px; color: white; font-size: 0.6rem; margin-top: 4px; cursor: pointer;">
+                            ${cloudManager.user?.isAnonymous !== false ? '☁️ SYNC ACCOUNT' : '✅ ACCOUNT SYNCED'}
+                        </button>
+                    </div>
                 </div>
                 <p style="font-size: 0.6rem; opacity: 0.7; margin-bottom: 1rem;">90% Success (5+ Tries)</p>
                 
@@ -132,6 +143,36 @@ function showMasteryDashboard() {
         dash.classList.add('hidden');
         showMenu();
     });
+
+    const loginBtn = document.getElementById('cloud-login-btn');
+    loginBtn?.addEventListener('click', async () => {
+        if (cloudManager.user && !cloudManager.user.isAnonymous) return;
+
+        loginBtn.textContent = 'AUTHENTICATING...';
+        const user = await cloudManager.loginWithGoogle();
+        if (user) {
+            await levelManager.syncWithCloud();
+            showMasteryDashboard(); // Re-render
+        } else {
+            loginBtn.textContent = '☁️ SYNC ACCOUNT';
+        }
+    });
+
+    // Update cloud status dot/text
+    const dot = document.getElementById('cloud-status-dot');
+    const txt = document.getElementById('cloud-status-text');
+    if (dot && txt) {
+        if (cloudManager.status === 'synced') {
+            dot.style.background = '#00ffaa';
+            txt.textContent = 'CLOUD SYNCED';
+        } else if (cloudManager.status === 'syncing') {
+            dot.style.background = '#ffcc00';
+            txt.textContent = 'SYNCING...';
+        } else if (cloudManager.status === 'error') {
+            dot.style.background = '#ff4d4d';
+            txt.textContent = 'SYNC ERROR';
+        }
+    }
 }
 
 masteryBtn?.addEventListener('click', () => {

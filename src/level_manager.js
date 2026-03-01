@@ -1,3 +1,5 @@
+import cloudManager from './cloud_manager.js';
+
 class LevelManager {
     constructor() {
         this.currentBpm = 80;
@@ -21,6 +23,9 @@ class LevelManager {
         }
 
         this.currentTier = parseInt(localStorage.getItem('indak_tier')) || 1;
+
+        // Initialize cloud sync
+        this.syncWithCloud();
     }
 
     migrateStat(val) {
@@ -102,6 +107,7 @@ class LevelManager {
         if (this.currentTier < 3) {
             this.currentTier++;
             localStorage.setItem('indak_tier', this.currentTier);
+            this.syncWithCloud();
             return true;
         }
         return false;
@@ -129,6 +135,7 @@ class LevelManager {
         if (this.currentTier < 3) {
             this.currentTier++;
             localStorage.setItem('indak_tier', this.currentTier);
+            this.syncWithCloud();
         }
     }
 
@@ -136,6 +143,7 @@ class LevelManager {
         if (this.currentTier > 1) {
             this.currentTier--;
             localStorage.setItem('indak_tier', this.currentTier);
+            this.syncWithCloud();
         }
     }
 
@@ -153,6 +161,47 @@ class LevelManager {
 
         this.masteryData[word][type] = stats;
         localStorage.setItem('indak_mastery_v3', JSON.stringify(this.masteryData));
+        this.syncWithCloud();
+    }
+
+    async syncWithCloud() {
+        await cloudManager.init();
+
+        // 1. Load from cloud
+        const cloudData = await cloudManager.loadProgress();
+        if (cloudData) {
+            // Merge logic: Prefer the data with the highest total attempts (t) per word
+            let merged = false;
+
+            // Prefer higher tier
+            if (cloudData.tier > this.currentTier) {
+                this.currentTier = cloudData.tier;
+                localStorage.setItem('indak_tier', this.currentTier);
+                merged = true;
+            }
+
+            for (const [word, cloudStats] of Object.entries(cloudData.mastery)) {
+                if (!this.masteryData[word]) {
+                    this.masteryData[word] = cloudStats;
+                    merged = true;
+                } else {
+                    ['rhythm', 'meaning'].forEach(type => {
+                        if (cloudStats[type].t > this.masteryData[word][type].t) {
+                            this.masteryData[word][type] = cloudStats[type];
+                            merged = true;
+                        }
+                    });
+                }
+            }
+
+            if (merged) {
+                localStorage.setItem('indak_mastery_v3', JSON.stringify(this.masteryData));
+                console.log("LevelManager: Merged cloud data into local");
+            }
+        }
+
+        // 2. Save current state to cloud
+        await cloudManager.saveProgress(this.masteryData, this.currentTier);
     }
 
     getMasteryStats() {
