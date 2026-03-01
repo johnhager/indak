@@ -211,7 +211,7 @@ export class SwipeSorter {
 
         if (isCorrect) {
             this.score++;
-            levelManager.markWordMastered(this.targetWordData.word);
+            levelManager.markWordMastered(this.targetWordData.word, 'meaning');
 
             this.currentCard.style.transition = 'transform 0.5s ease-out, opacity 0.5s ease-out';
             let tx = 0, ty = 0;

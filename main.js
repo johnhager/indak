@@ -15,6 +15,7 @@ const rhythmPrep = document.getElementById('rhythm-prep');
 const heroSection = document.querySelector('.hero-section');
 const confirmStartBtn = document.getElementById('confirm-start-btn');
 const cancelPrepBtn = document.getElementById('cancel-prep-btn');
+const masteryBtn = document.getElementById('mastery-btn');
 
 let activeGame = null;
 
@@ -25,6 +26,61 @@ function showExitButton() {
 function hideExitButton() {
     exitBtn?.classList.add('hidden');
 }
+
+function showMasteryDashboard() {
+    const stats = levelManager.getMasteryStats();
+
+    // Create or find container
+    let dash = document.getElementById('mastery-dashboard');
+    if (!dash) {
+        dash = document.createElement('div');
+        dash.id = 'mastery-dashboard';
+        dash.className = 'summary-screen'; // Reuse base styling
+        document.getElementById('app').appendChild(dash);
+    }
+
+    const words = levelManager.vocabulary;
+    const wordItems = words.map(w => {
+        const m = stats.details[w.word] || { rhythm: false, meaning: false };
+        return `
+            <div class="word-status-item" style="background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.1);">
+                <span style="font-weight: 600; font-size: 0.9rem;">${w.word}</span>
+                <div style="display: flex; gap: 4px;">
+                    <span title="Rhythm Mastery" style="opacity: ${m.rhythm ? 1 : 0.2}; filter: ${m.rhythm ? 'none' : 'grayscale(1)'}">🥁</span>
+                    <span title="Meaning Mastery" style="opacity: ${m.meaning ? 1 : 0.2}; filter: ${m.meaning ? 'none' : 'grayscale(1)'}">📖</span>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    dash.innerHTML = `
+        <div class="glass-card" style="width: 90%; max-width: 500px; max-height: 80vh; overflow-y: auto;">
+            <h2 style="color: var(--accent-gold);">Mastery Status</h2>
+            <p style="font-size: 0.8rem; opacity: 0.7; margin-bottom: 1rem;">🥁 = Rhythm Perfected | 📖 = Meaning Known</p>
+            
+            <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 1.5rem;">
+                <div class="stat-item" style="padding: 10px;"><span style="font-size: 0.7rem;">Rhythm</span><strong>${stats.rhythmPercent}%</strong></div>
+                <div class="stat-item" style="padding: 10px;"><span style="font-size: 0.7rem;">Meaning</span><strong>${stats.meaningPercent}%</strong></div>
+                <div class="stat-item" style="padding: 10px;"><span style="font-size: 0.7rem;">Goal</span><strong>${stats.fullPercent}%</strong></div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; text-align: left; margin-bottom: 1.5rem;">
+                ${wordItems}
+            </div>
+
+            <button id="close-dash-btn" class="btn-primary">BALIK (Return)</button>
+        </div>
+    `;
+
+    dash.classList.remove('hidden');
+    document.getElementById('close-dash-btn').addEventListener('click', () => {
+        dash.classList.add('hidden');
+    });
+}
+
+masteryBtn?.addEventListener('click', () => {
+    showMasteryDashboard();
+});
 
 function showMenu() {
     menuOverlay.classList.remove('hidden');

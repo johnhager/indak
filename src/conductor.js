@@ -168,7 +168,7 @@ class Conductor {
             return;
         }
 
-        const pool = levelManager.getFilteredVocabulary();
+        const pool = levelManager.getFilteredVocabulary('rhythm');
         if (!pool || pool.length === 0) {
             console.warn('No vocabulary loaded yet.');
             return;
@@ -307,7 +307,7 @@ class Conductor {
             this.showTranslation(syllableObj.wordData, isPerfect);
 
             if (isPerfect) {
-                levelManager.markWordMastered(syllableObj.wordData.word);
+                levelManager.markWordMastered(syllableObj.wordData.word, 'rhythm');
             }
             delete this.wordTracking[syllableObj.wordId];
             setTimeout(() => { if (this.isPlaying) this.spawnWord(); }, 1500);

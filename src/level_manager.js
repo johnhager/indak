@@ -6,7 +6,9 @@ class LevelManager {
         this.consecutivePerfects = 0;
         this.consecutiveMisses = 0;
         this.vocabulary = [];
-        this.masteredWords = new Set(JSON.parse(localStorage.getItem('indak_mastered_words')) || []);
+
+        // Granular Mastery: { [word]: { rhythm: bool, meaning: bool } }
+        this.masteryData = JSON.parse(localStorage.getItem('indak_mastery_v2')) || {};
     }
 
     getTeirsForSpeed() {
@@ -23,20 +25,27 @@ class LevelManager {
         this.currentTier = 1;
     }
 
-
     setVocabulary(vocab) {
         this.vocabulary = vocab;
     }
 
-    getFilteredVocabulary() {
+    getFilteredVocabulary(gameType = 'rhythm') {
         const tier = this.tiers[this.currentTier];
         const validWords = this.vocabulary.filter(word => word.syllables.length <= tier.maxSyllables);
 
-        // Spaced Repetition weighting: unmastered = 5 copies, mastered = 4 copies (20% less frequent)
         let pool = [];
         validWords.forEach(word => {
-            const copies = this.masteredWords.has(word.word) ? 4 : 5;
-            for (let i = 0; i < copies; i++) {
+            const status = this.masteryData[word.word] || { rhythm: false, meaning: false };
+
+            // Spaced Repetition: 20% reduction per specific mastery type
+            // If the specific skill for this game is mastered, reduce weighting
+            let weight = 5;
+            if (gameType === 'rhythm' && status.rhythm) weight = 4;
+            if (gameType === 'meaning' && status.meaning) weight = 4;
+            // Bonus reduction if BOTH are mastered
+            if (status.rhythm && status.meaning) weight = 3;
+
+            for (let i = 0; i < weight; i++) {
                 pool.push(word);
             }
         });
@@ -47,7 +56,7 @@ class LevelManager {
         if (rating === 'PERFECT') {
             this.consecutivePerfects++;
             this.consecutiveMisses = 0;
-            if (this.consecutivePerfects >= 4) { // Upgrade tier every 4 consecutive perfects
+            if (this.consecutivePerfects >= 4) {
                 this.consecutivePerfects = 0;
                 this.checkTierUpgrade();
             }
@@ -64,27 +73,46 @@ class LevelManager {
     checkTierUpgrade() {
         if (this.currentTier < 3) {
             this.currentTier++;
-            console.log(`Tier Up: ${this.tiers[this.currentTier].name}`);
         }
     }
 
     checkTierDowngrade() {
         if (this.currentTier > 1) {
             this.currentTier--;
-            console.log(`Tier Down: ${this.tiers[this.currentTier].name}`);
         }
     }
 
-    markWordMastered(word) {
-        this.masteredWords.add(word);
-        localStorage.setItem('indak_mastered_words', JSON.stringify(Array.from(this.masteredWords)));
+    markWordMastered(word, type) {
+        if (!this.masteryData[word]) {
+            this.masteryData[word] = { rhythm: false, meaning: false };
+        }
+        this.masteryData[word][type] = true;
+        localStorage.setItem('indak_mastery_v2', JSON.stringify(this.masteryData));
+    }
+
+    getMasteryStats() {
+        const totalWords = this.vocabulary.length || 1;
+        const rhythmCount = Object.values(this.masteryData).filter(m => m.rhythm).length;
+        const meaningCount = Object.values(this.masteryData).filter(m => m.meaning).length;
+        const bothCount = Object.values(this.masteryData).filter(m => m.rhythm && m.meaning).length;
+
+        return {
+            total: totalWords,
+            rhythm: rhythmCount,
+            meaning: meaningCount,
+            full: bothCount,
+            rhythmPercent: Math.round((rhythmCount / totalWords) * 100),
+            meaningPercent: Math.round((meaningCount / totalWords) * 100),
+            fullPercent: Math.round((bothCount / totalWords) * 100),
+            details: this.masteryData
+        };
     }
 
     getSummary() {
         return {
             tier: this.tiers[this.currentTier].name,
             bpm: this.currentBpm,
-            mastered: Array.from(this.masteredWords)
+            masteredCount: Object.keys(this.masteryData).length
         };
     }
 }
