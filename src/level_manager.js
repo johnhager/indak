@@ -45,9 +45,15 @@ class LevelManager {
         this.vocabulary = vocab;
     }
 
-    getFilteredVocabulary(gameType = 'rhythm') {
+    getFilteredVocabulary(gameType = 'rhythm', excludeWords = []) {
         const tier = this.tiers[this.currentTier];
-        const validWords = this.vocabulary.filter(word => word.syllables.length <= tier.maxSyllables);
+        let validWords = this.vocabulary.filter(word => word.syllables.length <= tier.maxSyllables);
+
+        // Try to exclude recently used words, but don't if it leaves us empty
+        const nonDuplicateWords = validWords.filter(w => !excludeWords.includes(w.word));
+        if (nonDuplicateWords.length > 0) {
+            validWords = nonDuplicateWords;
+        }
 
         let pool = [];
         validWords.forEach(word => {

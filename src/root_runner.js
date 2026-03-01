@@ -129,9 +129,9 @@ export class RootRunner {
 
     startRound() {
         this.container.style.touchAction = 'none';
-        this.currentRound = 0;
         this.score = 0;
         this.totalAttempts = 0;
+        this.recentWords = []; // Recent spawns to avoid duplicates
         this.showLesson(0);
     }
 
@@ -212,12 +212,19 @@ export class RootRunner {
         let english = "";
 
         if (isCorrect) {
-            const item = this.currentDrill.valid_forms[Math.floor(Math.random() * this.currentDrill.valid_forms.length)];
+            let options = this.currentDrill.valid_forms.filter(f => !this.recentWords.includes(f.word));
+            if (options.length === 0) options = this.currentDrill.valid_forms;
+            const item = options[Math.floor(Math.random() * options.length)];
             text = item.word;
             english = item.english;
         } else {
-            text = this.currentDrill.nonsense_forms[Math.floor(Math.random() * this.currentDrill.nonsense_forms.length)];
+            let options = this.currentDrill.nonsense_forms.filter(f => !this.recentWords.includes(f));
+            if (options.length === 0) options = this.currentDrill.nonsense_forms;
+            text = options[Math.floor(Math.random() * options.length)];
         }
+
+        this.recentWords.push(text);
+        if (this.recentWords.length > 5) this.recentWords.shift();
 
         const wordEl = document.createElement('div');
         wordEl.className = 'runner-word';

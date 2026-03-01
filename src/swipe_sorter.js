@@ -55,9 +55,9 @@ export class SwipeSorter {
         this.gameActive = true;
         this.totalRounds = 15;
         this.currentRound = 0;
-        this.score = 0; // This will now track "First Try" corrects
         this.totalAttempts = 0;
         this.missedWords = new Set();
+        this.roundUsedWords = [];
         this.resetLabelHighlight();
         [this.defTop, this.defBottom, this.defLeft, this.defRight].forEach(el => el.style.opacity = '0');
         this.loadNextCard();
@@ -74,7 +74,7 @@ export class SwipeSorter {
         [this.defTop, this.defBottom, this.defLeft, this.defRight].forEach(el => el.style.opacity = '0');
 
         // Get pool from LevelManager (handles 20% reduction for mastered words)
-        const pool = levelManager.getFilteredVocabulary('meaning');
+        const pool = levelManager.getFilteredVocabulary('meaning', this.roundUsedWords);
         if (!pool || pool.length < 4) {
             console.warn('Insufficient vocabulary for Swipe Sorter');
             return;
@@ -85,6 +85,7 @@ export class SwipeSorter {
         // 1. Pick a random word from the weighted pool
         const targetIndex = Math.floor(Math.random() * pool.length);
         this.targetWordData = pool[targetIndex];
+        this.roundUsedWords.push(this.targetWordData.word);
 
         // 2. Pick 3 unique trap definitions from the full vocabulary
         let traps = [];

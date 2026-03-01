@@ -59,10 +59,11 @@ export class SentenceBuilder {
     }
 
     startRound() {
-        this.totalRounds = 5;
         this.currentRound = 0;
+        this.totalRounds = 10;
         this.score = 0;
         this.totalAttempts = 0;
+        this.roundUsedSentences = new Set();
         this.loadSentence();
     }
 
@@ -76,9 +77,16 @@ export class SentenceBuilder {
         this.currentRound++;
         this.roundAttempts = 0; // Reset for the new sentence
 
-        // 1. Pick a random sentence
-        const targetIndex = Math.floor(Math.random() * this.sentences.length);
-        this.currentSentence = this.sentences[targetIndex];
+        // 1. Pick a unique sentence
+        let options = this.sentences.filter(s => !this.roundUsedSentences.has(s.ilonggo));
+        if (options.length === 0) {
+            options = this.sentences; // Fallback if all used
+            this.roundUsedSentences.clear();
+        }
+
+        const targetIndex = Math.floor(Math.random() * options.length);
+        this.currentSentence = options[targetIndex];
+        this.roundUsedSentences.add(this.currentSentence.ilonggo);
 
         // 2. Clear current UI
         this.dropZone.innerHTML = '';

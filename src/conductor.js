@@ -78,6 +78,7 @@ class Conductor {
         this.activeSyllables = [];
         this.pendingFirstSyllables = [];
         this.queuedSyllables = [];
+        this.recentWords = []; // Recent word history for spawn filter
         this.update();
         this.spawnWord();
         if (this.debugOverlay) this.debugOverlay.style.display = 'block';
@@ -168,7 +169,7 @@ class Conductor {
             return;
         }
 
-        const pool = levelManager.getFilteredVocabulary('rhythm');
+        const pool = levelManager.getFilteredVocabulary('rhythm', this.recentWords);
         if (!pool || pool.length === 0) {
             console.warn('No vocabulary loaded yet.');
             return;
@@ -179,6 +180,10 @@ class Conductor {
         }
 
         const wordData = pool[Math.floor(Math.random() * pool.length)];
+
+        // Mantain a rolling history of 10 words to avoid duplicates
+        this.recentWords.push(wordData.word);
+        if (this.recentWords.length > 10) this.recentWords.shift();
         const baseTime = this.songPosition + 1500;
 
         const wordId = Math.random().toString(36).substr(2, 9);
