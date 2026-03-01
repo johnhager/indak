@@ -182,6 +182,13 @@ export class SentenceBuilder {
             }
         }
 
+        // Record accuracy for all words in the sentence on first attempt
+        if (this.roundAttempts === 1) {
+            correctAnswer.forEach(word => {
+                levelManager.markWordMastered(word, 'meaning', isCorrect);
+            });
+        }
+
         if (isCorrect) {
             if (this.roundAttempts === 1) {
                 this.score++;

@@ -219,10 +219,14 @@ export class SwipeSorter {
         this.roundAttempts++;
         const isCorrect = direction === this.correctDirection;
 
+        // Record mastery data on first attempt only
+        if (this.roundAttempts === 1) {
+            levelManager.markWordMastered(this.targetWordData.word, 'meaning', isCorrect);
+        }
+
         if (isCorrect) {
             if (this.roundAttempts === 1) {
                 this.score++;
-                levelManager.markWordMastered(this.targetWordData.word, 'meaning');
             }
 
             this.currentCard.style.transition = 'transform 0.5s ease-out, opacity 0.5s ease-out';

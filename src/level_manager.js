@@ -7,8 +7,24 @@ class LevelManager {
         this.consecutiveMisses = 0;
         this.vocabulary = [];
 
-        // Granular Mastery: { [word]: { rhythm: bool, meaning: bool } }
-        this.masteryData = JSON.parse(localStorage.getItem('indak_mastery_v2')) || {};
+        // Mastery V3: { [word]: { rhythm: { c: N, t: M }, meaning: { c: N, t: M } } }
+        // Migration from V2 (bool) to V3 (stats)
+        const rawData = JSON.parse(localStorage.getItem('indak_mastery_v3')) ||
+            JSON.parse(localStorage.getItem('indak_mastery_v2')) || {};
+
+        this.masteryData = {};
+        for (const [word, stats] of Object.entries(rawData)) {
+            this.masteryData[word] = {
+                rhythm: this.migrateStat(stats.rhythm),
+                meaning: this.migrateStat(stats.meaning)
+            };
+        }
+    }
+
+    migrateStat(val) {
+        if (val === true) return { c: 5, t: 5 }; // Assume stable
+        if (typeof val === 'object' && val !== null) return val; // Already v3
+        return { c: 0, t: 0 };
     }
 
     getTeirsForSpeed() {
@@ -35,15 +51,18 @@ class LevelManager {
 
         let pool = [];
         validWords.forEach(word => {
-            const status = this.masteryData[word.word] || { rhythm: false, meaning: false };
+            const stats = this.masteryData[word.word] || {
+                rhythm: { c: 0, t: 0 },
+                meaning: { c: 0, t: 0 }
+            };
+            const skill = stats[gameType] || { c: 0, t: 0 };
 
-            // Spaced Repetition: 20% reduction per specific mastery type
-            // If the specific skill for this game is mastered, reduce weighting
-            let weight = 5;
-            if (gameType === 'rhythm' && status.rhythm) weight = 4;
-            if (gameType === 'meaning' && status.meaning) weight = 4;
-            // Bonus reduction if BOTH are mastered
-            if (status.rhythm && status.meaning) weight = 3;
+            // Inverse Proportional Spawning:
+            // Success Rate (sr) = correct / total (or 0 if t=0)
+            // Weight = 10 - (9 * successRate)
+            // New words (sr=0) are 10x more likely than mastered words (sr=1)
+            const sr = skill.t === 0 ? 0 : skill.c / skill.t;
+            const weight = Math.max(1, Math.round(10 - (9 * sr)));
 
             for (let i = 0; i < weight; i++) {
                 pool.push(word);
@@ -82,12 +101,20 @@ class LevelManager {
         }
     }
 
-    markWordMastered(word, type) {
+    markWordMastered(word, type, success = true) {
         if (!this.masteryData[word]) {
-            this.masteryData[word] = { rhythm: false, meaning: false };
+            this.masteryData[word] = {
+                rhythm: { c: 0, t: 0 },
+                meaning: { c: 0, t: 0 }
+            };
         }
-        this.masteryData[word][type] = true;
-        localStorage.setItem('indak_mastery_v2', JSON.stringify(this.masteryData));
+
+        const stats = this.masteryData[word][type] || { c: 0, t: 0 };
+        stats.t++;
+        if (success) stats.c++;
+
+        this.masteryData[word][type] = stats;
+        localStorage.setItem('indak_mastery_v3', JSON.stringify(this.masteryData));
     }
 
     getMasteryStats() {
@@ -100,9 +127,16 @@ class LevelManager {
             };
         }
 
-        const rhythmCount = Object.values(this.masteryData).filter(m => m.rhythm).length;
-        const meaningCount = Object.values(this.masteryData).filter(m => m.meaning).length;
-        const bothCount = Object.values(this.masteryData).filter(m => m.rhythm && m.meaning).length;
+        const threshold = 0.9;
+        const rhythmCount = Object.values(this.masteryData).filter(m =>
+            m.rhythm.t > 0 && (m.rhythm.c / m.rhythm.t) >= threshold).length;
+        const meaningCount = Object.values(this.masteryData).filter(m =>
+            m.meaning.t > 0 && (m.meaning.c / m.meaning.t) >= threshold).length;
+
+        const bothCount = Object.values(this.masteryData).filter(m =>
+            (m.rhythm.t > 0 && (m.rhythm.c / m.rhythm.t) >= threshold) &&
+            (m.meaning.t > 0 && (m.meaning.c / m.meaning.t) >= threshold)
+        ).length;
 
         return {
             total: totalWords,
@@ -120,7 +154,7 @@ class LevelManager {
         return {
             tier: this.tiers[this.currentTier].name,
             bpm: this.currentBpm,
-            masteredCount: Object.keys(this.masteryData).length,
+            masteredCount: this.getMasteryStats().full,
             mastered: Object.keys(this.masteryData)
         };
     }

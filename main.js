@@ -47,6 +47,8 @@ function hideExitButton() {
 
 function showMasteryDashboard() {
     const stats = levelManager.getMasteryStats();
+    const threshold = 0.9;
+    const minAttempts = 1; // Show as "mastered" immediately if they hit the target on first try
 
     // Create or find container
     let dash = document.getElementById('mastery-dashboard');
@@ -65,34 +67,52 @@ function showMasteryDashboard() {
     }
 
     const wordItems = globalVocabulary.map(w => {
-        const m = stats.details[w.word] || { rhythm: false, meaning: false };
+        const m = stats.details[w.word] || {
+            rhythm: { c: 0, t: 0 },
+            meaning: { c: 0, t: 0 }
+        };
+
+        const rSR = m.rhythm.t === 0 ? 0 : m.rhythm.c / m.rhythm.t;
+        const mSR = m.meaning.t === 0 ? 0 : m.meaning.c / m.meaning.t;
+
+        const rMastered = rSR >= threshold && m.rhythm.t >= minAttempts;
+        const mMastered = mSR >= threshold && m.meaning.t >= minAttempts;
+
         return `
             <div class="word-status-item" style="background: rgba(255,255,255,0.05); padding: 8px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.1);">
-                <span style="font-weight: 600; font-size: 0.9rem;">${w.word}</span>
+                <div style="display: flex; flex-direction: column;">
+                    <span style="font-weight: 600; font-size: 0.9rem;">${w.word}</span>
+                    <span style="font-size: 0.6rem; opacity: 0.4;">${m.meaning.t} tries</span>
+                </div>
                 <div style="display: flex; gap: 4px;">
-                    <span title="Rhythm Mastery" style="opacity: ${m.rhythm ? 1 : 0.2}; filter: ${m.rhythm ? 'none' : 'grayscale(1)'}">🥁</span>
-                    <span title="Meaning Mastery" style="opacity: ${m.meaning ? 1 : 0.2}; filter: ${m.meaning ? 'none' : 'grayscale(1)'}">📖</span>
+                    <span title="Rhythm: ${Math.round(rSR * 100)}%" style="opacity: ${rMastered ? 1 : 0.2}; filter: ${rMastered ? 'none' : 'grayscale(1)'}">🥁</span>
+                    <span title="Meaning: ${Math.round(mSR * 100)}%" style="opacity: ${mMastered ? 1 : 0.2}; filter: ${mMastered ? 'none' : 'grayscale(1)'}">📖</span>
                 </div>
             </div>
         `;
     }).join('');
 
     dash.innerHTML = `
-        <div class="glass-card" style="width: 90%; max-width: 500px; max-height: 80vh; display: flex; flex-direction: column;">
-            <h2 style="color: var(--accent-gold); flex-shrink: 0;">Mastery Status</h2>
-            <p style="font-size: 0.8rem; opacity: 0.7; margin-bottom: 1rem; flex-shrink: 0;">🥁 = Rhythm Perfected | 📖 = Meaning Known</p>
-            
-            <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 1.5rem; flex-shrink: 0;">
-                <div class="stat-item" style="padding: 10px;"><span style="font-size: 0.7rem;">Rhythm</span><strong>${stats.rhythmPercent}%</strong></div>
-                <div class="stat-item" style="padding: 10px;"><span style="font-size: 0.7rem;">Meaning</span><strong>${stats.meaningPercent}%</strong></div>
-                <div class="stat-item" style="padding: 10px;"><span style="font-size: 0.7rem;">Goal</span><strong>${stats.fullPercent}%</strong></div>
+        <div class="glass-card" style="width: 95%; max-width: 550px; max-height: 85vh; display: flex; flex-direction: column; overflow: hidden;">
+            <div style="flex-shrink: 0; padding-bottom: 1rem;">
+                <h2 style="color: var(--accent-gold); margin-bottom: 0.5rem;">Vocab Mastery</h2>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                    <p style="font-size: 0.7rem; opacity: 0.7;">Threshold: <b>90% Efficiency</b></p>
+                    <p style="font-size: 0.7rem; color: var(--accent-gold);">Mastered: <b>${stats.full}/${stats.total}</b></p>
+                </div>
+                
+                <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr); gap: 10px;">
+                    <div class="stat-item" style="padding: 12px;"><span style="font-size: 0.65rem; text-transform: uppercase;">Rhythm</span><strong>${stats.rhythmPercent}%</strong></div>
+                    <div class="stat-item" style="padding: 12px;"><span style="font-size: 0.65rem; text-transform: uppercase;">Meaning</span><strong>${stats.meaningPercent}%</strong></div>
+                    <div class="stat-item" style="padding: 12px;"><span style="font-size: 0.65rem; text-transform: uppercase;">Total</span><strong>${stats.fullPercent}%</strong></div>
+                </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; text-align: left; margin-bottom: 1.5rem; overflow-y: auto; padding-right: 5px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; text-align: left; margin-top: 0.5rem; overflow-y: auto; padding-right: 8px; flex-grow: 1;">
                 ${wordItems}
             </div>
 
-            <button id="close-dash-btn" class="btn-primary" style="flex-shrink: 0; margin-top: auto;">BALIK (Return)</button>
+            <button id="close-dash-btn" class="btn-primary" style="flex-shrink: 0; margin-top: 1.5rem; width: 100%;">BALIK (Return)</button>
         </div>
     `;
 
