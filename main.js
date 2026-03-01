@@ -4,12 +4,14 @@ import levelManager from './src/level_manager.js';
 import { SwipeSorter } from './src/swipe_sorter.js';
 import { SentenceBuilder } from './src/sentence_builder.js';
 import { MarkerMission } from './src/marker_mission.js';
+import { RootRunner } from './src/root_runner.js';
 
 const app = document.getElementById('app');
 const startBtn = document.getElementById('start-btn');
 const startSwipeBtn = document.getElementById('start-swipe-btn');
 const startSentenceBtn = document.getElementById('start-sentence-btn');
 const startMarkerBtn = document.getElementById('start-marker-btn');
+const startRunnerBtn = document.getElementById('start-runner-btn');
 const exitBtn = document.getElementById('exit-btn');
 const gameStage = document.getElementById('game-stage');
 const menuOverlay = document.getElementById('menu-overlay');
@@ -184,6 +186,19 @@ startMarkerBtn?.addEventListener('click', async () => {
         activeGame.startRound();
     } catch (e) {
         console.error('Failed to fetch drills:', e);
+    }
+});
+
+startRunnerBtn?.addEventListener('click', async () => {
+    hideMenu();
+    showExitButton();
+    try {
+        const response = await fetch('./data/morphology.json');
+        const morphologyData = await response.json();
+        activeGame = new RootRunner(gameStage, morphologyData);
+        activeGame.startRound();
+    } catch (e) {
+        console.error('Failed to fetch morphology data:', e);
     }
 });
 

@@ -44,6 +44,21 @@ with open(drills_csv, 'w', newline='', encoding='utf-8') as f:
         distractors_str = ' | '.join(item['distractors'])
         writer.writerow([item['sentence'], item['correct'], distractors_str, item['english'], item['category']])
 
+# Export Morphology
+morph_path = os.path.join(base_path, 'morphology.json')
+with open(morph_path, 'r', encoding='utf-8') as f:
+    morph_data = json.load(f)
+
+morph_csv = os.path.join(base_path, 'morphology_master.csv')
+with open(morph_csv, 'w', newline='', encoding='utf-8') as f:
+    writer = csv.writer(f)
+    writer.writerow(['Root Word', 'English Meaning', 'Valid Conjugations (Bar Separated)', 'Nonsense/Invalid Forms (Bar Separated)'])
+    for item in morph_data:
+        valids_str = ' | '.join(item['valid_forms'])
+        nonsenses_str = ' | '.join(item['nonsense_forms'])
+        writer.writerow([item['root'], item['meaning'], valids_str, nonsenses_str])
+
 print(f"Exported: {vocab_csv}")
 print(f"Exported: {sentences_csv}")
 print(f"Exported: {drills_csv}")
+print(f"Exported: {morph_csv}")

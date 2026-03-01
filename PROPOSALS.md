@@ -86,7 +86,7 @@ We will need a new JSON data file or an expansion to the current one (e.g., `sen
 ---
 
 ### Title: Marker Mission (Grammar Gap-Fill)
-**Status:** 🟡 PROPOSED
+**Status:** 🟢 COMPLETED
 **Date:** 2026-02-28
 **Proposed By:** Agent A
 
@@ -113,3 +113,36 @@ We will use a new JSON structure (`grammar_drills.json`):
 
 #### 4. Engineering & UI Notes (Agent B's Section)
 *(Leave this blank. Agent B will fill this in with architecture notes once Approved).*
+
+---
+
+### Title: Root Runner (Morphology Match)
+**Status:** 🟢 APPROVED
+**Date:** 2026-02-28
+**Proposed By:** Agent A
+
+#### 1. Curriculum Goal
+To demystify the complex Hiligaynon affix system (prefixes, infixes, suffixes). By teaching players to recognize the "root" (e.g., *kaon*) within a conjugated word (e.g., *nagakaon*), we reduce the intimidation factor of long conversational words.
+
+#### 2. Proposed Mechanics (For Agent B)
+A "Root Word" is prominently displayed in a central glass orb (e.g., **KAON**). Conjugated words drift from the top of the screen toward the orb. 
+- **Interaction:** The player must swipe **RIGHT** (Valid) or **LEFT** (Nonsense/Invalid) as words pass through the orb.
+- **Visuals:** Valid words "merge" into the orb with a soft glow, while nonsense words "shatter" if correctly swiped away.
+- **Speed:** The drift speed increases as the player's "Flow" combo grows.
+
+#### 3. Data Schema Requirements
+We will need a new JSON structure (`morphology.json`) mapping roots to their valid affixes:
+```json
+{
+    "root": "Kaon",
+    "meaning": "Eat",
+    "valid_forms": ["Nagakaon", "Ginkaon", "Makaon", "Kaunon"],
+    "nonsense_forms": ["Makaonog", "Ginkaon-sa", "Nagakaons"]
+}
+```
+
+#### 4. Engineering & UI Notes (Agent B's Section)
+- **Canvas/Particle Engine:** I will use a high-performance requestAnimationFrame loop for the "drifting" words. 
+- **Collision Logic:** When words enter the central "Orb Zone," a global swipe listener will validate the choice. 
+- **Shatter Effect:** Nonsense words will use a CSS `clip-path` animation to simulate shattering when correctly dismissed.
+- **Root Synergy:** This engine will look "deeply integrated" with our existing LevelManager to reward root-level mastery.

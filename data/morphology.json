@@ -1,0 +1,126 @@
+[
+    {
+        "root": "Kaon",
+        "meaning": "Eat",
+        "valid_forms": [
+            "Nagakaon",
+            "Ginkaon",
+            "Makaon",
+            "Kaunon",
+            "Nagkaon"
+        ],
+        "nonsense_forms": [
+            "Makaonog",
+            "Ginkaon-sa",
+            "Nagakaons",
+            "Kaonon-man"
+        ]
+    },
+    {
+        "root": "Hambal",
+        "meaning": "Speak",
+        "valid_forms": [
+            "Nagahambal",
+            "Ginhambal",
+            "Mahambal",
+            "Hambalon",
+            "Hambal-hambal"
+        ],
+        "nonsense_forms": [
+            "Nagahambals",
+            "Mihambal",
+            "Ginhambal-og"
+        ]
+    },
+    {
+        "root": "Lakat",
+        "meaning": "Walk",
+        "valid_forms": [
+            "Nagalakat",
+            "Ginlakat",
+            "Malakat",
+            "Lakatan"
+        ],
+        "nonsense_forms": [
+            "Nagalakat-ka",
+            "Milakat",
+            "Lakat-sa"
+        ]
+    },
+    {
+        "root": "Sulat",
+        "meaning": "Write",
+        "valid_forms": [
+            "Nagasulat",
+            "Ginsulat",
+            "Masulat",
+            "Sulatan",
+            "Ikasulat"
+        ],
+        "nonsense_forms": [
+            "Nagasulats",
+            "Masulatan-og",
+            "Ginsulati"
+        ]
+    },
+    {
+        "root": "Dagan",
+        "meaning": "Run",
+        "valid_forms": [
+            "Nagadagan",
+            "Gindagan",
+            "Madagan",
+            "Daganon"
+        ],
+        "nonsense_forms": [
+            "Nagadagans",
+            "Midagan",
+            "Gindagansa"
+        ]
+    },
+    {
+        "root": "Inum",
+        "meaning": "Drink",
+        "valid_forms": [
+            "Nagainum",
+            "Gininum",
+            "Mainum",
+            "Inumon"
+        ],
+        "nonsense_forms": [
+            "Nagainums",
+            "Miinum",
+            "Inum-man"
+        ]
+    },
+    {
+        "root": "Hampang",
+        "meaning": "Play",
+        "valid_forms": [
+            "Nagahampang",
+            "Ginhampang",
+            "Mahampang",
+            "Hampangan"
+        ],
+        "nonsense_forms": [
+            "Nagahampangs",
+            "Mihampang",
+            "Hampang-og"
+        ]
+    },
+    {
+        "root": "Luto",
+        "meaning": "Cook",
+        "valid_forms": [
+            "Nagaluto",
+            "Ginluto",
+            "Maluto",
+            "Lutoon"
+        ],
+        "nonsense_forms": [
+            "Nagalutos",
+            "Miluto",
+            "Luto-sa"
+        ]
+    }
+]
