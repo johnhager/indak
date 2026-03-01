@@ -171,6 +171,7 @@ export class SwipeSorter {
         if (!this.isDragging) return;
         this.isDragging = false;
 
+        this.resetLabelHighlight();
         [this.defTop, this.defBottom, this.defLeft, this.defRight].forEach(el => el.style.opacity = '0');
 
         const threshold = 60;
