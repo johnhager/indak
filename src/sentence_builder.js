@@ -226,6 +226,7 @@ export class SentenceBuilder {
         // Visual feedback when starting drag
         this.draggedChunk.style.zIndex = '1000';
         this.draggedChunk.style.pointerEvents = 'none';
+        this.draggedChunk.style.transition = 'none'; // CRITICAL: Stop 'ghosting' fly-away effects
         this.draggedChunk.style.position = 'fixed';
         this.draggedChunk.style.transform = 'scale(1.1) rotate(2deg)';
         this.draggedChunk.style.opacity = '0.8';
@@ -262,6 +263,7 @@ export class SentenceBuilder {
         if (this.draggedChunk) {
             this.draggedChunk.style.zIndex = '';
             this.draggedChunk.style.pointerEvents = '';
+            this.draggedChunk.style.transition = 'all 0.2s'; // Restore for standard UI motion
             this.draggedChunk.style.position = '';
             this.draggedChunk.style.left = '';
             this.draggedChunk.style.top = '';
