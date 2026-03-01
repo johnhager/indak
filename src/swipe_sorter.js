@@ -51,9 +51,16 @@ export class SwipeSorter {
             }
         });
 
+        const savedCategoriesStr = localStorage.getItem('indak_swipe_categories');
+        const savedCategories = savedCategoriesStr ? JSON.parse(savedCategoriesStr) : null;
+
         const categoryOptionsHTML = Object.entries(categoriesMap).map(([cat, counts]) => {
             const sr = counts.t > 0 ? Math.round((counts.c / counts.t) * 100) : 0;
             const srDisplay = counts.t > 0 ? `${sr}% Success` : 'New';
+
+            // If we have saved categories, only check those. Otherwise, check all by default.
+            const isChecked = savedCategories ? savedCategories.includes(cat) : true;
+            const checkedAttr = isChecked ? 'checked' : '';
 
             return `
                 <div class="toggle-group" style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2); padding: 5px 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); margin-top: 5px;">
@@ -62,7 +69,7 @@ export class SwipeSorter {
                         <span style="font-size: 0.65rem; color: ${sr > 80 ? '#00ffaa' : (sr > 50 ? '#ffcc00' : '#ff6b6b')}; opacity: 0.8;">${srDisplay} (${counts.total} items)</span>
                     </div>
                     <label class="switch">
-                        <input type="checkbox" class="category-toggle" value="${cat}" checked>
+                        <input type="checkbox" class="category-toggle" value="${cat}" ${checkedAttr}>
                         <span class="slider round"></span>
                     </label>
                 </div>
@@ -129,6 +136,9 @@ export class SwipeSorter {
             // Get selected categories
             const checkedBoxes = document.querySelectorAll('.category-toggle:checked');
             this.selectedCategories = Array.from(checkedBoxes).map(cb => cb.value);
+
+            // Save preferences
+            localStorage.setItem('indak_swipe_categories', JSON.stringify(this.selectedCategories));
 
             this.setupGameUI();
             this.startRound();
