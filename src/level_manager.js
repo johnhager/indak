@@ -63,8 +63,19 @@ class LevelManager {
 
         // 1. Identify valid candidates based on tier logic and optionally categories
         let candidates = this.vocabulary.filter(word => {
-            if (categories.length > 0 && !categories.includes(word.category)) return false;
+            if (categories.length > 0) {
+                if (!categories.includes(word.category)) return false;
 
+                // When specific categories are selected, we want to allow practicing ANY word 
+                // from that category that the user has unlocked, not just the active tier.
+                if (word.tier) {
+                    return word.tier <= this.currentTier;
+                } else {
+                    return this.currentTier >= 4 || word.syllables.length <= (tier.maxSyllables || 10);
+                }
+            }
+
+            // Normal overall progression logic:
             // 1. Complex Mode constraint - force at least 3 syllables
             if (this.speedMode === 'complex') {
                 if (word.syllables.length < 3) return false;
