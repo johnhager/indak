@@ -241,6 +241,7 @@ export class SentenceBuilder {
         this.clearHighlights();
         const hoveredSlot = this.getHoveredElement(e, '.drop-slot');
         if (hoveredSlot) {
+            hoveredSlot.style.borderStyle = 'solid';
             hoveredSlot.style.borderColor = 'var(--accent-gold)';
             hoveredSlot.style.background = 'rgba(255, 217, 61, 0.1)';
         }
@@ -332,8 +333,9 @@ export class SentenceBuilder {
     styleChunkInSlot(chunk, slot) {
         chunk.style.width = '100%';
         chunk.style.height = '100%';
-        slot.style.borderStyle = 'solid';
-        slot.style.borderColor = 'rgba(255,255,255,0.4)';
+        // Hide the slot's border/background when it is occupied
+        slot.style.borderStyle = 'none';
+        slot.style.background = 'transparent';
     }
 
     styleChunkInBank(chunk, slotOrBank) {
@@ -353,10 +355,13 @@ export class SentenceBuilder {
     clearHighlights() {
         this.dropZone.querySelectorAll('.drop-slot').forEach(s => {
             if (s.children.length === 0) {
+                // Return to original dashed look when empty
+                s.style.borderStyle = 'dashed';
                 s.style.borderColor = 'rgba(255,255,255,0.2)';
                 s.style.background = 'transparent';
             } else {
-                s.style.borderColor = 'rgba(255,255,255,0.4)';
+                // Invisible when occupied
+                s.style.borderStyle = 'none';
                 s.style.background = 'transparent';
             }
         });
