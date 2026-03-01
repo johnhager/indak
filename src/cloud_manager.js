@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signInAnonymously, onAuthStateChanged, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
-import { getFirestore, doc, setDoc, getDoc, serverTimestamp } from "firebase/firestore";
+import { getFirestore, doc, setDoc, getDoc, serverTimestamp, initializeFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -15,7 +15,12 @@ class CloudManager {
     constructor() {
         this.app = initializeApp(firebaseConfig);
         this.auth = getAuth(this.app);
-        this.db = getFirestore(this.app);
+
+        // Force long-polling for better mobile reliability
+        this.db = initializeFirestore(this.app, {
+            experimentalAutoDetectLongPolling: true
+        });
+
         this.user = null;
         this.lastError = null;
         this._status = 'disconnected';

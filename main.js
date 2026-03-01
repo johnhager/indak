@@ -114,6 +114,8 @@ function showMasteryDashboard() {
                         </button>
                     </div>
                 </div>
+                <!-- Mini Log for debugging -->
+                <div id="sync-log" style="font-size: 0.5rem; opacity: 0.3; margin-bottom: 0.5rem; text-align: left;">READY</div>
                 <p style="font-size: 0.6rem; opacity: 0.7; margin-bottom: 1rem;">90% Success (5+ Tries)</p>
                 
                 <div class="stats-grid" style="grid-template-columns: 1fr 1fr; gap: 10px;">
@@ -190,9 +192,16 @@ function updateCloudStatusUI() {
             dot.style.background = '#ff4d4d';
             txt.textContent = 'SYNC ERROR';
             if (cloudManager.lastError) {
-                txt.textContent = `ERROR: ${cloudManager.lastError.split(' ')[0]}`;
+                txt.textContent = cloudManager.lastError.includes('Timeout') ? 'TIMEOUT' : 'FAIL';
                 txt.title = cloudManager.lastError;
             }
+        }
+
+        // Update mini log
+        const syncLog = document.getElementById('sync-log');
+        if (syncLog) {
+            syncLog.textContent = `STATUS: ${cloudManager.status.toUpperCase()}`;
+            if (cloudManager.lastError) syncLog.textContent += ` (${cloudManager.lastError})`;
         }
 
         const lastSync = localStorage.getItem('indak_last_sync');
