@@ -188,21 +188,3 @@ function createTapCircle(x, y) {
 }
 
 console.log('Indak Core Initialized.');
-
-// PWA High-Performance Input
-app.addEventListener('pointerdown', (e) => {
-    if (e.target.tagName === 'BUTTON') return;
-    conductor.checkInput();
-    createTapCircle(e.clientX, e.clientY);
-});
-
-function createTapCircle(x, y) {
-    const circle = document.createElement('div');
-    circle.className = 'tap-circle';
-    circle.style.left = `${x}px`;
-    circle.style.top = `${y}px`;
-    document.body.appendChild(circle);
-    setTimeout(() => circle.remove(), 400);
-}
-
-console.log('Indak Core Initialized.');
