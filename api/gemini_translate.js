@@ -17,14 +17,27 @@ export default async function handler(req) {
 
         apiKey = apiKey.trim().replace(/^["']|["']$/g, '');
 
-        const systemInstruction = `You are a high-precision Hiligaynon (Ilonggo) translation engine. 
-        RULES:
-        1. NO 'ILONGGLIS': Use root words like 'Luto' instead of 'Nag-cook'.
-        2. Grammar: Use native VSO structure.
-        3. Output ONLY the translation.`;
+        // RE-INJECTING THE STRICT LINGUISTIC TEXTBOOK
+        const systemInstruction = `You are a professional native Hiligaynon (Ilonggo) translation engine. 
+        
+        STRICT RULES:
+        1. NO 'ILONGGLIS': Do not mix English verbs with Hiligaynon prefixes. (ROOTS: Luto, Tan-aw, Obra).
+        2. NATURAL VSO: Use Verb-Subject-Object order. (e.g., "Nagaluto ako..." instead of "Ako nagaluto...").
+        3. VOCABULARY CORRECTIONS:
+           - Cook = LUTO
+           - Dinner = PANYAPON
+           - Lunch = PANYAGA
+           - Prepare/Pack Baon = PREPARAR or BALON
+        4. BIDIRECTIONAL: English <-> Hiligaynon.
+        
+        FEW-SHOT EXAMPLES:
+        English: "I'm cooking dinner." -> Hiligaynon: "Nagaluto ako sang panyapon."
+        English: "I'm watching TV." -> Hiligaynon: "Nagatan-aw ako sang TV."
+        English: "I'm going to make my lunch for tomorrow." -> Hiligaynon: "Mag-preparar ako sang balon ko para buwas."
+        
+        Output ONLY the final translation result.`;
 
         // PHASE 1: DISCOVERY
-        // We ask Google exactly what models this key has access to.
         let availableModels = [];
         try {
             const listResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
@@ -34,14 +47,13 @@ export default async function handler(req) {
                     .filter(m => m.supportedGenerationMethods.includes('generateContent'))
                     .map(m => ({
                         id: m.name.split('/').pop(),
-                        name: m.name // full path like models/gemini-1.5-pro
+                        name: m.name
                     }));
             }
         } catch (e) {
             console.error("Discovery failed", e);
         }
 
-        // Add standard defaults if discovery failed or was empty
         if (availableModels.length === 0) {
             availableModels = [
                 { id: 'gemini-1.5-pro', name: 'models/gemini-1.5-pro' },
@@ -50,16 +62,14 @@ export default async function handler(req) {
             ];
         }
 
-        // Sort to prioritize Pro models
         availableModels.sort((a, b) => b.id.includes('pro') ? 1 : -1);
 
         let lastError = "No models responded successfully.";
 
         // PHASE 2: ATTEMPT TRANSLATION
         for (const model of availableModels) {
-            // Determine if the model is modern (1.5+) or legacy (1.0)
             const isModern = model.id.includes('1.5') || model.id.includes('2.0');
-            const endpoints = isModern ? ['v1beta', 'v1'] : ['v1beta']; // Modern models love v1beta for System Instructions
+            const endpoints = isModern ? ['v1beta', 'v1'] : ['v1beta'];
 
             for (const endpoint of endpoints) {
                 try {
@@ -86,19 +96,14 @@ export default async function handler(req) {
                         const translation = data.candidates[0].content.parts[0].text.trim();
                         return new Response(JSON.stringify({ translation, method: model.id }), { status: 200 });
                     }
-
-                    if (data.error) {
-                        lastError = `[${model.id}/${endpoint}]: ${data.error.message}`;
-                    }
+                    if (data.error) lastError = `[${model.id}/${endpoint}]: ${data.error.message}`;
                 } catch (e) {
                     lastError = `Fetch error: ${e.message}`;
                 }
             }
         }
 
-        return new Response(JSON.stringify({
-            error: `Discovery failed to find a working model. Last attempt said: ${lastError}`
-        }), { status: 500 });
+        return new Response(JSON.stringify({ error: lastError }), { status: 500 });
 
     } catch (error) {
         return new Response(JSON.stringify({ error: `Server exception: ${error.message}` }), { status: 500 });
