@@ -54,196 +54,33 @@ export class Translator {
      * @param {string} text - The English text to translate.
      * @returns {Object} { translatedText: string, method: string }
      */
-    translate(text) {
-        if (!text || text.trim() === "") return { translatedText: "", method: "none" };
-
-        const input = text.trim().toLowerCase();
-        const cleanInput = input.replace(/[.,?!]/g, "");
-
-        // 1. Precise Phrasebook Match (sentences.json or full_phrasebook.json)
-        const phraseMatch = this.findPhraseMatch(cleanInput);
-        if (phraseMatch) {
-            return { translatedText: phraseMatch, method: "phrasebook" };
-        }
-
-        // 2. Syntactic Translation with Grammar logic
-        const wordMatch = this.translateAdvanced(input);
-        if (wordMatch) {
-            return { translatedText: wordMatch, method: "dictionary" };
-        }
-
-        return { translatedText: "Patawad (Sorry), N/A", method: "none" };
-    }
-
     /**
-     * Async translation that can use Gemini AI if enabled.
+     * Translates a string bidirectionally between English and Hiligaynon using AI.
+     * @param {string} text - The input text.
+     * @returns {Object} { translatedText: string, method: string }
      */
-    async translateAsync(text, useAI = false) {
+    async translateAsync(text) {
         if (!text || text.trim() === "") return { translatedText: "", method: "none" };
 
-        if (useAI) {
-            try {
-                const response = await fetch('/api/gemini_translate', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ english: text.trim() })
-                });
-                const data = await response.json();
-                if (data.ilonggo) {
-                    return { translatedText: data.ilonggo, method: "gemini" };
-                }
-                if (data.error) {
-                    console.warn("AI Server Error:", data.error);
-                    return { translatedText: `AI Error: ${data.error}`, method: "none" };
-                }
-            } catch (err) {
-                console.error("Gemini API Connection failed:", err);
-                return { translatedText: `Connection failed: ${err.message}`, method: "none" };
+        try {
+            const response = await fetch('/api/gemini_translate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: text.trim() })
+            });
+
+            const data = await response.json();
+            if (data.translation) {
+                return { translatedText: data.translation, method: data.method || "gemini" };
             }
+            if (data.error) {
+                return { translatedText: `AI Error: ${data.error}`, method: "none" };
+            }
+        } catch (err) {
+            console.error("Gemini API Connection failed:", err);
+            return { translatedText: `Connection failed: ${err.message}`, method: "none" };
         }
 
-        // Fallback to local synchronous logic
-        return this.translate(text);
-    }
-
-    findPhraseMatch(input) {
-        if (!input) return null;
-        const searchPhrase = input.toLowerCase().replace(/[^\w\s']/g, '').trim();
-        const curatedMatch = this.sentences.find(s =>
-            s.english.toLowerCase().replace(/[^\w\s']/g, '') === searchPhrase
-        );
-        if (curatedMatch) return Array.isArray(curatedMatch.ilonggo_chunks) ? curatedMatch.ilonggo_chunks.join(" ") : (curatedMatch.ilonggo || "");
-        if (this.fullPhrasebook[searchPhrase]) return this.fullPhrasebook[searchPhrase];
-        return null;
-    }
-
-    translateAdvanced(input) {
-        const originalTokens = input.toLowerCase().match(/\w+|[^\w\s]/g) || [];
-
-        let translated = [];
-        let anyFound = false;
-
-        let i = 0;
-        while (i < originalTokens.length) {
-            const token = originalTokens[i];
-
-            // Punctuation
-            if (/^[^\w\s]$/.test(token)) {
-                translated.push(token);
-                i++;
-                continue;
-            }
-
-            // Skip common English stopwords unless they serve as logic triggers
-            if (this.englishStopWords.has(token)) {
-                // Heuristic: "The [Noun]" -> "Ang [Noun]"
-                if (token === 'the' || token === 'a' || token === 'an') {
-                    translated.push("ang");
-                }
-                i++;
-                continue;
-            }
-
-            // Pattern: "to [Verb]" -> "mag-[Verb]"
-            if (token === 'to' && originalTokens[i + 1]) {
-                const next = originalTokens[i + 1];
-                let res = this.lookupWord(next) || this.tryStem(next, false);
-                if (res) {
-                    translated.push("mag" + res.toLowerCase());
-                    anyFound = true;
-                    i += 2;
-                    continue;
-                }
-            }
-
-            // Pattern: "at/in/to [Noun]" -> "sa [Noun]"
-            if ((token === 'at' || token === 'in' || token === 'to') && originalTokens[i + 1]) {
-                translated.push("sa");
-                i++;
-                continue;
-            }
-
-            // Pattern: Subject + Want/Like -> Gusto/Luyag + Enclitic
-            if (this.pronouns[token] && originalTokens[i + 1] && this.overrides[originalTokens[i + 1]]) {
-                const subject = this.pronouns[token];
-                const aux = this.overrides[originalTokens[i + 1]];
-                translated.push(aux);
-                translated.push(subject.enclitic);
-                anyFound = true;
-                i += 2;
-                continue;
-            }
-
-            // Pattern: Adjective + Noun -> Adj + nga + Noun
-            let current = this.lookupWord(token) || this.overrides[token];
-            if (current && originalTokens[i + 1]) {
-                let nextToken = originalTokens[i + 1];
-                if (!this.englishStopWords.has(nextToken) && !/^[^\w\s]$/.test(nextToken)) {
-                    let nextMatch = this.lookupWord(nextToken);
-                    if (nextMatch) {
-                        translated.push(current);
-                        translated.push("nga");
-                        translated.push(nextMatch);
-                        anyFound = true;
-                        i += 2;
-                        continue;
-                    }
-                }
-            }
-
-            // Fallback: Pronouns
-            if (this.pronouns[token]) {
-                translated.push(this.pronouns[token].indep);
-                anyFound = true;
-                i++;
-                continue;
-            }
-
-            // Fallback: Dictionary
-            let res = this.overrides[token] || this.lookupWord(token) || this.tryStem(token, true);
-            if (res) {
-                translated.push(res);
-                anyFound = true;
-            } else {
-                translated.push(`[${token}?]`);
-            }
-            i++;
-        }
-
-        let result = translated.join(" ").replace(/\s+([.,?!])/g, '$1');
-        if (result.length > 0) result = result.charAt(0).toUpperCase() + result.slice(1);
-        return anyFound ? result : null;
-    }
-
-    tryStem(word, pf) {
-        if (word.endsWith('ing')) {
-            const res = this.lookupWord(word.slice(0, -3));
-            if (res) return pf ? 'naga' + res.toLowerCase() : res;
-        }
-        if (word.endsWith('ed') && word.length > 4) {
-            const res = this.lookupWord(word.slice(0, -2));
-            if (res) return pf ? 'nag' + res.toLowerCase() : res;
-        }
-        return null;
-    }
-
-    lookupWord(word) {
-        if (!word || word.length <= 2) return null;
-
-        // Find ALL matches for the meaning
-        const matches = this.vocabulary.filter(v => {
-            if (!v.meaning) return false;
-            const m = v.meaning.toLowerCase();
-            return m === word || m.split(/[\/,\s]+/).map(d => d.replace(/[.,?!]/g, "")).includes(word);
-        });
-
-        if (matches.length > 0) {
-            // Sort by word length (prefer longer/formal words like "Dalagan" over "Dagan")
-            matches.sort((a, b) => b.word.length - a.word.length);
-            return matches[0].word;
-        }
-
-        if (this.fullDictionary[word]) return this.fullDictionary[word];
-        return null;
+        return { translatedText: "N/A (AI failed to respond)", method: "none" };
     }
 }

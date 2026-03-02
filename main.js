@@ -337,20 +337,16 @@ closeTranslatorBtn?.addEventListener('click', () => {
 translateBtn?.addEventListener('click', async () => {
     if (!translator) return;
     const text = translatorInput.value;
-    const useAI = document.getElementById('translate-ai-toggle')?.checked;
-    const loadingRing = document.getElementById('ai-loading');
+    if (!text.trim()) return;
 
-    if (useAI) {
-        loadingRing?.classList.remove('hidden');
-        translateBtn.disabled = true;
-    }
+    translateBtn.disabled = true;
+    const originalText = translateBtn.innerHTML;
+    translateBtn.innerHTML = `<span>TRANSLATING...</span>`;
 
-    const result = await translator.translateAsync(text, useAI);
+    const result = await translator.translateAsync(text);
 
-    if (useAI) {
-        loadingRing?.classList.add('hidden');
-        translateBtn.disabled = false;
-    }
+    translateBtn.disabled = false;
+    translateBtn.innerHTML = originalText;
 
     translatorResult.textContent = result.translatedText;
 
@@ -358,20 +354,9 @@ translateBtn?.addEventListener('click', async () => {
     const sourceBadge = document.getElementById('translation-source');
     if (sourceBadge && result.method !== 'none') {
         sourceBadge.classList.remove('hidden');
-        sourceBadge.textContent = result.method === 'gemini' ? 'GEMINI AI' :
-            result.method === 'phrasebook' ? 'PHRASEBOOK' : 'DICTIONARY';
-
-        // Color coding
-        if (result.method === 'gemini') {
-            sourceBadge.style.background = '#00ffaa';
-            sourceBadge.style.color = '#004433';
-        } else if (result.method === 'phrasebook') {
-            sourceBadge.style.background = '#FFD93D';
-            sourceBadge.style.color = '#443300';
-        } else {
-            sourceBadge.style.background = 'rgba(255,255,255,0.2)';
-            sourceBadge.style.color = 'white';
-        }
+        sourceBadge.textContent = "AI POWERED";
+        sourceBadge.style.background = '#00ffaa';
+        sourceBadge.style.color = '#004433';
     } else {
         sourceBadge?.classList.add('hidden');
     }

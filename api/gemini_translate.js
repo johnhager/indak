@@ -8,7 +8,7 @@ export default async function handler(req) {
     }
 
     try {
-        const { english } = await req.json();
+        const { text } = await req.json();
         let apiKey = process.env.GEMINI_API_KEY;
 
         if (!apiKey) {
@@ -17,41 +17,42 @@ export default async function handler(req) {
 
         apiKey = apiKey.trim().replace(/^["']|["']$/g, '');
 
-        const prompt = `Translate this English phrase to natural, conversational Hiligaynon (Ilonggo). Only return the final translation, no explanation. English: "${english}"`;
+        // System prompt to handle bidirectional translation and natural Hiligaynon
+        const prompt = `You are an expert Hiligaynon (Ilonggo) and English translator. 
+        If the input text is in English, translate it to natural, conversational Hiligaynon. 
+        If the input text is in Hiligaynon, translate it to clear, natural English.
+        Provide only the translation, no extra text or explanations.
+        
+        Input: "${text}"`;
 
-        // 1. Try the most likely modern models first
-        const primaryModels = ['gemini-1.5-flash', 'gemini-1.5-pro', 'gemini-1.0-pro'];
+        const primaryModels = ['gemini-1.5-flash', 'gemini-1.5-flash-latest', 'gemini-1.5-pro', 'gemini-1.0-pro'];
         for (const modelId of primaryModels) {
             const res = await tryTranslate(modelId, apiKey, prompt);
             if (res) return res;
         }
 
-        // 2. Discovery Phase: If primary models fail, ask Google what models are actually available
+        // Discovery Phase if defaults fail
         try {
             const listResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
             const listData = await listResponse.json();
-
-            if (listData.models && listData.models.length > 0) {
-                // Filter for models that support "generateContent"
+            if (listData.models) {
                 const supportedModels = listData.models
                     .filter(m => m.supportedGenerationMethods.includes('generateContent'))
-                    .map(m => m.name.split('/').pop()); // Extract the ID portion
+                    .map(m => m.name.split('/').pop());
 
                 for (const modelId of supportedModels) {
                     const res = await tryTranslate(modelId, apiKey, prompt);
                     if (res) return res;
                 }
             }
-        } catch (e) {
-            console.error("Discovery failed:", e.message);
-        }
+        } catch (e) { }
 
         return new Response(JSON.stringify({
-            error: `All models (and discovery) failed. This usually means the API Key does not have the 'Generative Language API' enabled in Google Cloud Console.`
+            error: `Could not translate. Please verify your API Key.`
         }), { status: 500 });
 
     } catch (error) {
-        return new Response(JSON.stringify({ error: `Critical Exception: ${error.message}` }), { status: 500 });
+        return new Response(JSON.stringify({ error: `Server error: ${error.message}` }), { status: 500 });
     }
 }
 
@@ -64,15 +65,12 @@ async function tryTranslate(modelId, apiKey, prompt) {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
             });
-
             const data = await response.json();
             if (response.ok && data.candidates?.[0]?.content?.parts?.[0]?.text) {
-                const ilonggo = data.candidates[0].content.parts[0].text.trim();
-                return new Response(JSON.stringify({ ilonggo, method: `gemini (${modelId})` }), { status: 200 });
+                const translation = data.candidates[0].content.parts[0].text.trim();
+                return new Response(JSON.stringify({ translation, method: `gemini (${modelId})` }), { status: 200 });
             }
-        } catch (e) {
-            continue;
-        }
+        } catch (e) { continue; }
     }
     return null;
 }
