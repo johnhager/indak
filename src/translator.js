@@ -135,8 +135,6 @@ export class Translator {
             }
 
             // Pattern: Adjective + Noun -> Adj + nga + Noun
-            // (Simple detection: if token is an adj and next is a noun)
-            // We use a heuristic: if we have two words in a row and first is an override/lookup
             let current = this.lookupWord(token) || this.overrides[token];
             if (current && originalTokens[i + 1]) {
                 let nextToken = originalTokens[i + 1];
@@ -191,10 +189,20 @@ export class Translator {
 
     lookupWord(word) {
         if (!word || word.length <= 2) return null;
-        let m = this.vocabulary.find(v => v.meaning && v.meaning.toLowerCase() === word);
-        if (m) return m.word;
-        m = this.vocabulary.find(v => v.meaning && v.meaning.toLowerCase().split(/[\/,\s]+/).includes(word));
-        if (m) return m.word;
+
+        // Find ALL matches for the meaning
+        const matches = this.vocabulary.filter(v => {
+            if (!v.meaning) return false;
+            const m = v.meaning.toLowerCase();
+            return m === word || m.split(/[\/,\s]+/).map(d => d.replace(/[.,?!]/g, "")).includes(word);
+        });
+
+        if (matches.length > 0) {
+            // Sort by word length (prefer longer/formal words like "Dalagan" over "Dagan")
+            matches.sort((a, b) => b.word.length - a.word.length);
+            return matches[0].word;
+        }
+
         if (this.fullDictionary[word]) return this.fullDictionary[word];
         return null;
     }
