@@ -17,27 +17,34 @@ export default async function handler(req) {
 
         apiKey = apiKey.trim().replace(/^["']|["']$/g, '');
 
-        // RE-INJECTING THE STRICT LINGUISTIC TEXTBOOK
-        const systemInstruction = `You are a professional native Hiligaynon (Ilonggo) translation engine. 
-        
-        STRICT RULES:
-        1. NO 'ILONGGLIS': Do not mix English verbs with Hiligaynon prefixes. (ROOTS: Luto, Tan-aw, Obra).
-        2. NATURAL VSO: Use Verb-Subject-Object order. (e.g., "Nagaluto ako..." instead of "Ako nagaluto...").
-        3. VOCABULARY CORRECTIONS:
-           - Cook = LUTO
-           - Dinner = PANYAPON
-           - Lunch = PANYAGA
-           - Prepare/Pack Baon = PREPARAR or BALON
-        4. BIDIRECTIONAL: English <-> Hiligaynon.
-        
-        FEW-SHOT EXAMPLES:
-        English: "I'm cooking dinner." -> Hiligaynon: "Nagaluto ako sang panyapon."
-        English: "I'm watching TV." -> Hiligaynon: "Nagatan-aw ako sang TV."
-        English: "I'm going to make my lunch for tomorrow." -> Hiligaynon: "Mag-preparar ako sang balon ko para buwas."
-        
-        Output ONLY the final translation result.`;
+        // PERMANENT LINGUISTIC ANCHOR (Extracted from project data)
+        const systemInstruction = `You are a professional Hiligaynon (Ilonggo) translation engine anchored to the 'Indak' project standards. 
 
-        // PHASE 1: DISCOVERY
+        CORE VOCABULARY ANCHORS (Mandatory):
+        - Cook = LUTO
+        - Watch/Look = LANTAW or TAN-AW
+        - Lunch = PANYAGA
+        - Dinner = PANYAPON
+        - Breakfast = PAMAHAW
+        - Tomorrow = BUWAS
+        - Work/Job = OBRA or TRABAHO
+        - Packed Meal (Baon) = BALON
+
+        LINGUISTIC PROTOCOL:
+        1. **STRICT NO ILONGGLIS**: You are forbidden from using English verbs with Hiligaynon prefixes (e.g., NEVER use "Nag-cook" or "Nag-watching"). You must use the Hiligaynon roots (Luto, Lantaw).
+        2. **GRAMMAR**: Use native VSO (Verb-Subject-Object) structure. Focus on enclitic pronouns (ko, mo, ya) appropriately.
+           - Example: "Cooking dinner" -> "Nagaluto ako sang panyapon."
+        3. **BIDIRECTIONAL**: If English input -> Ilonggo output. If Ilonggo input -> English output.
+        
+        GOLD STANDARD MAPPINGS:
+        - "I'm cooking dinner." -> "Nagaluto ako sang panyapon."
+        - "I'm watching TV." -> "Nagatan-aw ako sang TV." (or "Nagalantaw")
+        - "I have to go to work tomorrow." -> "Kinahanglan ko mag-obra buwas."
+        - "I'm going to make my lunch for tomorrow." -> "Mag-preparar ako sang balon ko para buwas."
+
+        Output ONLY the translation. Zero preamble.`;
+
+        // Discovery Phase
         let availableModels = [];
         try {
             const listResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
@@ -45,28 +52,15 @@ export default async function handler(req) {
             if (listData.models) {
                 availableModels = listData.models
                     .filter(m => m.supportedGenerationMethods.includes('generateContent'))
-                    .map(m => ({
-                        id: m.name.split('/').pop(),
-                        name: m.name
-                    }));
+                    .map(m => ({ id: m.name.split('/').pop(), name: m.name }));
             }
-        } catch (e) {
-            console.error("Discovery failed", e);
-        }
+        } catch (e) { }
 
         if (availableModels.length === 0) {
-            availableModels = [
-                { id: 'gemini-1.5-pro', name: 'models/gemini-1.5-pro' },
-                { id: 'gemini-1.5-flash', name: 'models/gemini-1.5-flash' },
-                { id: 'gemini-pro', name: 'models/gemini-pro' }
-            ];
+            availableModels = [{ id: 'gemini-1.5-pro', name: 'models/gemini-1.5-pro' }, { id: 'gemini-1.5-flash', name: 'models/gemini-1.5-flash' }];
         }
-
         availableModels.sort((a, b) => b.id.includes('pro') ? 1 : -1);
 
-        let lastError = "No models responded successfully.";
-
-        // PHASE 2: ATTEMPT TRANSLATION
         for (const model of availableModels) {
             const isModern = model.id.includes('1.5') || model.id.includes('2.0');
             const endpoints = isModern ? ['v1beta', 'v1'] : ['v1beta'];
@@ -91,19 +85,14 @@ export default async function handler(req) {
                     });
 
                     const data = await response.json();
-
                     if (response.ok && data.candidates?.[0]?.content?.parts?.[0]?.text) {
-                        const translation = data.candidates[0].content.parts[0].text.trim();
-                        return new Response(JSON.stringify({ translation, method: model.id }), { status: 200 });
+                        return new Response(JSON.stringify({ translation: data.candidates[0].content.parts[0].text.trim(), method: model.id }), { status: 200 });
                     }
-                    if (data.error) lastError = `[${model.id}/${endpoint}]: ${data.error.message}`;
-                } catch (e) {
-                    lastError = `Fetch error: ${e.message}`;
-                }
+                } catch (e) { }
             }
         }
 
-        return new Response(JSON.stringify({ error: lastError }), { status: 500 });
+        return new Response(JSON.stringify({ error: "All models failed to anchor." }), { status: 500 });
 
     } catch (error) {
         return new Response(JSON.stringify({ error: `Server exception: ${error.message}` }), { status: 500 });
