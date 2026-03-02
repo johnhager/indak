@@ -17,32 +17,29 @@ export default async function handler(req) {
 
         apiKey = apiKey.trim().replace(/^["']|["']$/g, '');
 
-        // System prompt enhanced with professional native-speaker instruction
-        const prompt = `You are an expert native Hiligaynon (Ilonggo) translator. 
+        // System prompt with strict native grounding and few-shot examples
+        const prompt = `You are a professional native Hiligaynon (Ilonggo) translator. 
         
         MISSION:
-        Translate the input text between English and Hiligaynon.
-        - If Input is English -> Output is natural, conversational Hiligaynon.
-        - If Input is Hiligaynon/Ilonggo -> Output is clear, natural English.
+        Translate the input text between English and Hiligaynon (Ilonggo).
+        
+        STRICT LINGUISTIC RULES:
+        1. **NO "ILONGGLIS" (Taglish equivalent)**: Never combine Hiligaynon prefixes with English verbs (e.g., NEVER use "Nag-watching" or "Nagtwatching"). You MUST find the Hiligaynon root (Tan-aw).
+        2. **Pure Vocabulary**: Use authentic Hiligaynon words. (e.g. "Obra" or "Trabaho" for work, "Tan-aw" for watch, "Kaon" for eat).
+        3. **VSO Structure**: Use natural word order (Verb-Subject-Object). 
+           - Good: "Nagatan-aw ako sang TV."
+           - Bad: "Ako nagatan-aw TV."
+        4. **Marker Usage**: Use 'ang', 'sang', and 'sa' correctly.
+        5. **Conciseness**: Return ONLY the final translation. No explanation.
 
-        CRITICAL LINGUISTIC RULES:
-        1. Priority: Use idiomatic Hiligaynon as spoken in Panay/Negros. 
-        2. Grammar: Use VSO structure where appropriate (e.g. "Kinahanglan ko..." instead of "Ako kinahanglan...").
-        3. No "Spanglish/Ilongglis": Avoid mixing English words unless they are standard loan words in Ilonggo (like "computer").
-        4. Conciseness: Provide ONLY the translation. No conversational filler or explanations.
-
-        EXAMPLES:
-        English: I have to go to work tomorrow.
-        Hiligaynon: Kinahanglan ko mag-obra buwas.
-
-        English: How are you?
-        Hiligaynon: Kamusta ka?
-
-        Hiligaynon: Diin ka makadto?
-        English: Where are you going?
+        FEW-SHOT EXAMPLES:
+        - English: "I'm watching TV." -> Hiligaynon: "Nagatan-aw ako sang TV."
+        - English: "I have to go to work tomorrow." -> Hiligaynon: "Kinahanglan ko mag-obra buwas."
+        - English: "I am eating lunch." -> Hiligaynon: "Nagapanyapon ako."
+        - Hiligaynon: "Diin ka makadto?" -> English: "Where are you going?"
 
         INPUT: "${text}"
-        TRANSLATION:`;
+        OUTPUT TRANSLATION:`;
 
         const primaryModels = ['gemini-1.5-flash', 'gemini-1.5-flash-latest', 'gemini-1.5-pro', 'gemini-1.0-pro'];
         for (const modelId of primaryModels) {
@@ -82,7 +79,13 @@ async function tryTranslate(modelId, apiKey, prompt) {
             const response = await fetch(`https://generativelanguage.googleapis.com/${version}/models/${modelId}:generateContent?key=${apiKey}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                body: JSON.stringify({
+                    contents: [{ parts: [{ text: prompt }] }],
+                    generationConfig: {
+                        temperature: 0.1, // Low temperature for consistent, formal translation
+                        topP: 0.95
+                    }
+                })
             });
             const data = await response.json();
             if (response.ok && data.candidates?.[0]?.content?.parts?.[0]?.text) {
