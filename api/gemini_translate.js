@@ -17,37 +17,49 @@ export default async function handler(req) {
 
         apiKey = apiKey.trim().replace(/^["']|["']$/g, '');
 
-        // System prompt with strict native grounding and few-shot examples
-        const prompt = `You are a professional native Hiligaynon (Ilonggo) translator. 
+        // System prompt with corrected vocabulary and more grounding examples
+        const prompt = `You are a professional native-speaker Hiligaynon (Ilonggo) translator with expertise in Panay/Negros terminology. 
         
         MISSION:
-        Translate the input text between English and Hiligaynon (Ilonggo).
-        
-        STRICT LINGUISTIC RULES:
-        1. **NO "ILONGGLIS" (Taglish equivalent)**: Never combine Hiligaynon prefixes with English verbs (e.g., NEVER use "Nag-watching" or "Nagtwatching"). You MUST find the Hiligaynon root (Tan-aw).
-        2. **Pure Vocabulary**: Use authentic Hiligaynon words. (e.g. "Obra" or "Trabaho" for work, "Tan-aw" for watch, "Kaon" for eat).
-        3. **VSO Structure**: Use natural word order (Verb-Subject-Object). 
-           - Good: "Nagatan-aw ako sang TV."
-           - Bad: "Ako nagatan-aw TV."
-        4. **Marker Usage**: Use 'ang', 'sang', and 'sa' correctly.
-        5. **Conciseness**: Return ONLY the final translation. No explanation.
+        Translate between English and Hiligaynon (Ilonggo). Avoid literal or machine-like translations.
 
-        FEW-SHOT EXAMPLES:
-        - English: "I'm watching TV." -> Hiligaynon: "Nagatan-aw ako sang TV."
-        - English: "I have to go to work tomorrow." -> Hiligaynon: "Kinahanglan ko mag-obra buwas."
-        - English: "I am eating lunch." -> Hiligaynon: "Nagapanyapon ako."
-        - Hiligaynon: "Diin ka makadto?" -> English: "Where are you going?"
+        VOCABULARY RULES (Crucial):
+        - Lunch = Panyaga (NEVER Panyapon)
+        - Dinner = Panyapon
+        - Breakfast = Pamahaw
+        - Making/Preparing food = Preparar or Luto
+        - Packed meal (to-go lunch/baon) = Balon
+
+        STRICT LINGUISTIC RULES:
+        1. **NO "ILONGGLIS"**: Never prefix English verbs (e.g., No "Nag-watching"). 
+        2. **Word Order**: Use natural Hiligaynon syntax (VSO).
+        3. **Tone**: Natural, conversational, and culturally accurate.
+        4. **Conciseness**: Provide ONLY the translation.
+
+        GOLD STANDARD EXAMPLES:
+        - English: "I'm going to make my lunch for tomorrow." 
+          Hiligaynon: "Mag-preparar ako sang balon ko para buwas."
+
+        - English: "I'm watching TV." 
+          Hiligaynon: "Nagatan-aw ako sang TV."
+
+        - English: "I have to go to work tomorrow." 
+          Hiligaynon: "Kinahanglan ko mag-obra buwas."
+
+        - English: "I am eating lunch." 
+          Hiligaynon: "Nagapanyaga ako."
 
         INPUT: "${text}"
-        OUTPUT TRANSLATION:`;
+        OUTPUT:`;
 
-        const primaryModels = ['gemini-1.5-flash', 'gemini-1.5-flash-latest', 'gemini-1.5-pro', 'gemini-1.0-pro'];
+        // We try to use the most intelligent models first
+        const primaryModels = ['gemini-1.5-flash-latest', 'gemini-1.5-flash', 'gemini-1.5-pro', 'gemini-1.0-pro'];
         for (const modelId of primaryModels) {
             const res = await tryTranslate(modelId, apiKey, prompt);
             if (res) return res;
         }
 
-        // Discovery Phase if defaults fail
+        // Discovery Phase
         try {
             const listResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
             const listData = await listResponse.json();
@@ -64,7 +76,7 @@ export default async function handler(req) {
         } catch (e) { }
 
         return new Response(JSON.stringify({
-            error: `Could not translate. Please verify your API Key.`
+            error: `All models failed to translate. Key: ${apiKey.substring(0, 5)}...`
         }), { status: 500 });
 
     } catch (error) {
@@ -82,7 +94,7 @@ async function tryTranslate(modelId, apiKey, prompt) {
                 body: JSON.stringify({
                     contents: [{ parts: [{ text: prompt }] }],
                     generationConfig: {
-                        temperature: 0.1, // Low temperature for consistent, formal translation
+                        temperature: 0.1, // Locked at 0.1 for high fidelity
                         topP: 0.95
                     }
                 })
