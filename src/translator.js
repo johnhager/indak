@@ -92,9 +92,13 @@ export class Translator {
                 if (data.ilonggo) {
                     return { translatedText: data.ilonggo, method: "gemini" };
                 }
-                if (data.error) console.warn("Gemini Server Error:", data.error);
+                if (data.error) {
+                    console.warn("AI Server Error:", data.error);
+                    return { translatedText: `AI Error: ${data.error}`, method: "none" };
+                }
             } catch (err) {
-                console.error("Gemini API Connection failed, falling back to local logic:", err);
+                console.error("Gemini API Connection failed:", err);
+                return { translatedText: `Connection failed: ${err.message}`, method: "none" };
             }
         }
 
