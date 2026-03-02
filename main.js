@@ -39,17 +39,23 @@ let translator = null;
 // Pre-fetch vocabulary on app load
 async function preFetchData() {
     try {
-        const [vocabResp, sentenceResp] = await Promise.all([
+        const [vocabResp, sentenceResp, dictResp, pbResp] = await Promise.all([
             fetch('./data/vocabulary.json'),
-            fetch('./data/sentences.json')
+            fetch('./data/sentences.json'),
+            fetch('./data/full_dictionary.json').catch(() => null),
+            fetch('./data/full_phrasebook.json').catch(() => null)
         ]);
+
         globalVocabulary = await vocabResp.json();
         globalSentences = await sentenceResp.json();
 
-        levelManager.setVocabulary(globalVocabulary);
-        translator = new Translator(globalVocabulary, globalSentences);
+        const fullDict = dictResp ? await dictResp.json() : {};
+        const fullPb = pbResp ? await pbResp.json() : {};
 
-        console.log("Indak: Data Systems Loaded.");
+        levelManager.setVocabulary(globalVocabulary);
+        translator = new Translator(globalVocabulary, globalSentences, fullDict, fullPb);
+
+        console.log("Indak: Data Systems Loaded (Extended Translator Ready).");
     } catch (e) {
         console.error("Critical: Failed to load data", e);
     }

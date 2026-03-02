@@ -63,7 +63,18 @@ export class RootRunner {
                         <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 5px;">Master Hiligaynon Morphology</p>
                     </div>
 
-                    <div style="display: flex; gap: 10px; margin-top: 1rem;">
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin: 1rem 0;">
+                        <!-- Timer Toggle -->
+                        <div class="toggle-group" style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.2); padding: 10px 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                            <label style="font-size: 0.9rem; font-weight: bold;">5s Timer</label>
+                            <label class="switch">
+                                <input type="checkbox" id="rr-timer-toggle" ${localStorage.getItem('indak_runner_timer') !== 'false' ? 'checked' : ''}>
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; gap: 10px;">
                         <button id="start-rr-btn" class="btn-primary" style="flex: 2; padding: 1rem; border-radius: 16px; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">START</button>
                         <button id="lesson-btn" class="btn-secondary" style="flex: 1; padding: 1rem; border-radius: 16px; font-weight: 800; background: rgba(255, 204, 0, 0.1); border: 1px solid var(--accent-gold); color: var(--accent-gold);">📖 HELP</button>
                     </div>
@@ -74,6 +85,10 @@ export class RootRunner {
         `;
 
         document.getElementById('start-rr-btn').addEventListener('click', () => {
+            const isTimerChecked = document.getElementById('rr-timer-toggle').checked;
+            this.timerEnabled = isTimerChecked;
+            localStorage.setItem('indak_runner_timer', isTimerChecked);
+
             this.setupGameUI();
             this.startGame();
         });

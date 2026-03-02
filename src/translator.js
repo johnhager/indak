@@ -5,9 +5,19 @@
  */
 
 export class Translator {
-    constructor(vocabulary, sentences) {
+    constructor(vocabulary, sentences, fullDictionary, fullPhrasebook) {
         this.vocabulary = vocabulary || [];
         this.sentences = sentences || [];
+        this.fullDictionary = fullDictionary || {};
+        this.fullPhrasebook = fullPhrasebook || {};
+    }
+
+    setFullDictionary(dict) {
+        this.fullDictionary = dict;
+    }
+
+    setFullPhrasebook(pb) {
+        this.fullPhrasebook = pb;
     }
 
     /**
@@ -41,13 +51,31 @@ export class Translator {
      * Searches for a matching sentence in the phrasebook.
      */
     findPhraseMatch(input) {
-        // Try exact match first
-        const exact = this.sentences.find(s => s.english.toLowerCase().replace(/[.,?!]/g, "") === input);
-        if (exact) return exact.ilonggo_chunks.join(" ");
+        if (!input) return null;
+        const searchPhrase = input.toLowerCase().replace(/[^\w\s']/g, '').trim();
 
-        // Try partial match (if input is contained in a larger phrase)
-        const partial = this.sentences.find(s => s.english.toLowerCase().includes(input));
-        if (partial) return partial.ilonggo_chunks.join(" ");
+        // 1. Precise Curated Phrase Match (sentences.json)
+        const curatedMatch = this.sentences.find(s =>
+            s.english.toLowerCase().replace(/[^\w\s']/g, '') === searchPhrase
+        );
+        if (curatedMatch) return Array.isArray(curatedMatch.ilonggo_chunks) ? curatedMatch.ilonggo_chunks.join(" ") : curatedMatch.ilonggo;
+
+        // 2. Large Phrasebook Match (full_phrasebook.json)
+        if (this.fullPhrasebook[searchPhrase]) {
+            return this.fullPhrasebook[searchPhrase];
+        }
+
+        // 3. Simple fuzzy/partial search in full phrasebook
+        // If input is contained in a phrasebook key (like "doing?" in "how are you doing?")
+        const pbKeys = Object.keys(this.fullPhrasebook);
+        const partialKey = pbKeys.find(k => k.includes(searchPhrase) || searchPhrase.includes(k));
+        if (partialKey && (partialKey.length > 5 || searchPhrase.length > 5)) {
+            return this.fullPhrasebook[partialKey];
+        }
+
+        // 4. Substring match in curated phrases
+        const partial = this.sentences.find(s => s.english.toLowerCase().includes(searchPhrase));
+        if (partial && partial.english.length > 3) return Array.isArray(partial.ilonggo_chunks) ? partial.ilonggo_chunks.join(" ") : (partial.ilonggo || "");
 
         return null;
     }
@@ -56,28 +84,45 @@ export class Translator {
      * Attempts to translate each word individually.
      */
     translateWordByWord(input) {
-        const words = input.split(/\s+/);
+        // Tokenize words but try to identify common markers/particles
+        const words = input.toLowerCase().match(/\w+|[^\w\s]/g) || [];
         const translated = [];
         let anyFound = false;
 
         for (const word of words) {
-            // Find in vocabulary meanings (which are English)
-            const entry = this.vocabulary.find(v => {
+            // Handle punctuation
+            if (/^[^\w\s]$/.test(word)) {
+                translated.push(word);
+                continue;
+            }
+
+            // 1. Search in curated vocabulary (most reliable meanings)
+            let foundEntry = this.vocabulary.find(v => {
                 if (!v.meaning) return false;
-                // Split definitions by /, or space and clean them up
                 const defs = v.meaning.toLowerCase().split(/[\/,\s]+/).map(d => d.replace(/[.,?!]/g, ""));
                 return defs.includes(word);
             });
 
-            if (entry) {
-                translated.push(entry.word);
+            if (foundEntry) {
+                translated.push(foundEntry.word);
                 anyFound = true;
-            } else {
-                // Keep the original word in brackets if not found
-                translated.push(`[${word}]`);
+                continue;
             }
+
+            // 2. Fallback to large English->Ilonggo reverse dictionary
+            if (this.fullDictionary[word]) {
+                const results = this.fullDictionary[word];
+                // Select first translation if multiple (assuming it's a list)
+                translated.push(Array.isArray(results) ? results[0] : results);
+                anyFound = true;
+                continue;
+            }
+
+            // 3. Keep original word in brackets as hint
+            translated.push(`[${word}?]`);
         }
 
-        return anyFound ? translated.join(" ") : null;
+        // Rejoin and clean up spacing around punctuation
+        return anyFound ? translated.join(" ").replace(/\s+([.,?!])/g, '$1') : null;
     }
 }

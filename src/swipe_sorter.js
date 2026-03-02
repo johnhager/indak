@@ -243,9 +243,12 @@ export class SwipeSorter {
 
         // 2. Pick 3 unique trap definitions from the full vocabulary or selected categories
         let trapPool = this.vocabulary;
-        if (this.selectedCategories && this.selectedCategories.length > 0) {
+        const hasSelectedCategories = this.selectedCategories && this.selectedCategories.length > 0;
+
+        if (hasSelectedCategories) {
             const filteredTraps = this.vocabulary.filter(v => this.selectedCategories.includes(v.category || 'Other'));
-            if (filteredTraps.length >= 4) {
+            // Use filtered traps if we have at least some variety
+            if (filteredTraps.length > 1) {
                 trapPool = filteredTraps;
             }
         }
@@ -256,17 +259,22 @@ export class SwipeSorter {
             attempts++;
             let trapIdx = Math.floor(Math.random() * trapPool.length);
             let trapWord = trapPool[trapIdx];
+            // Ensure trap is not the target and not already a trap
             if (trapWord.word !== this.targetWordData.word && !traps.some(t => t.meaning === trapWord.meaning)) {
                 traps.push(trapWord);
             }
         }
 
-        // Failsafe strictly if not enough traps from category:
-        while (traps.length < 3) {
-            let trapIdx = Math.floor(Math.random() * this.vocabulary.length);
-            let trapWord = this.vocabulary[trapIdx];
-            if (trapWord.word !== this.targetWordData.word && !traps.some(t => t.meaning === trapWord.meaning)) {
-                traps.push(trapWord);
+        // Failsafe: if we still don't have enough traps (very small category), only then pull from global
+        if (traps.length < 3) {
+            attempts = 0;
+            while (traps.length < 3 && attempts < 100) {
+                attempts++;
+                let globalIdx = Math.floor(Math.random() * this.vocabulary.length);
+                let globalWord = this.vocabulary[globalIdx];
+                if (globalWord.word !== this.targetWordData.word && !traps.some(t => t.meaning === globalWord.meaning)) {
+                    traps.push(globalWord);
+                }
             }
         }
 
