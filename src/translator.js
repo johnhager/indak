@@ -1,7 +1,7 @@
 /**
  * @file translator.js
- * @description Provides English-to-Ilonggo translation with basic grammar handling,
- * lemmatization, and resource-heavy fallback mapping.
+ * @description Provides English-to-Ilonggo translation with grammatical intelligence,
+ * clitic reordering (VSO structure), and morphology (mag- prefixes).
  */
 
 export class Translator {
@@ -11,24 +11,34 @@ export class Translator {
         this.fullDictionary = fullDictionary || {};
         this.fullPhrasebook = fullPhrasebook || {};
 
-        // Words to ignore in English during word-for-word translation
+        // Words to ignore as independent words (they usually serve grammatical roles)
         this.englishStopWords = new Set([
             'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being',
             'a', 'an', 'the', 'do', 'does', 'did', 'done',
-            'has', 'have', 'had', 'getting', 'become'
+            'has', 'have', 'had', 'getting', 'become',
+            'of', 'at', 'with', 'by', 'as'
         ]);
 
-        // Priority manual mappings for the translator
+        // Pronoun mappings with enclitic variants
+        this.pronouns = {
+            'i': { indep: 'ako', enclitic: 'ko' },
+            'you': { indep: 'ikaw', enclitic: 'mo' },
+            'we': { indep: 'kita', enclitic: 'naton' },
+            'they': { indep: 'sila', enclitic: 'nila' },
+            'he': { indep: 'siya', enclitic: 'niya' },
+            'she': { indep: 'siya', enclitic: 'niya' },
+            'it': { indep: 'ini', enclitic: 'sini' }
+        };
+
+        // High priority verb/auxiliary mapping
         this.overrides = {
-            'i': 'ako',
-            'me': 'akon',
-            'my': 'akon',
-            'you': 'ikaw',
-            'your': 'imo',
-            'we': 'kita',
-            'they': 'sila',
-            'he': 'siya',
-            'she': 'siya',
+            'want': 'gusto',
+            'like': 'luyag',
+            'need': 'kinahanglan',
+            'can': 'sarang',
+            'go': 'kadto',
+            'eat': 'kaon',
+            'drink': 'inum',
             'hello': 'kamusta',
             'hi': 'kamusta',
             'ilonggo': 'Ilonggo',
@@ -39,28 +49,19 @@ export class Translator {
     setFullDictionary(dict) { this.fullDictionary = dict; }
     setFullPhrasebook(pb) { this.fullPhrasebook = pb; }
 
-    /**
-     * Translates a string from English to Ilonggo.
-     * @param {string} text - The English text to translate.
-     * @returns {Object} { translatedText: string, method: string }
-     */
     translate(text) {
         if (!text || text.trim() === "") return { translatedText: "", method: "none" };
 
         const input = text.trim().toLowerCase();
         const cleanInput = input.replace(/[.,?!]/g, "");
 
-        // 1. Precise Phrasebook Match (sentences.json or full_phrasebook.json)
+        // 1. Phrasebook Match (Exact or Fuzzy)
         const phraseMatch = this.findPhraseMatch(cleanInput);
-        if (phraseMatch) {
-            return { translatedText: phraseMatch, method: "phrasebook" };
-        }
+        if (phraseMatch) return { translatedText: phraseMatch, method: "phrasebook" };
 
-        // 2. Word-for-Word Logic with Grammar & Lemmatization
+        // 2. Advanced Grammatical Translation
         const wordMatch = this.translateAdvanced(input);
-        if (wordMatch) {
-            return { translatedText: wordMatch, method: "dictionary" };
-        }
+        if (wordMatch) return { translatedText: wordMatch, method: "dictionary" };
 
         return { translatedText: "Patawad (Sorry), N/A", method: "none" };
     }
@@ -69,124 +70,127 @@ export class Translator {
         if (!input) return null;
         const searchPhrase = input.toLowerCase().replace(/[^\w\s']/g, '').trim();
 
-        // High Quality Curated Match
         const curatedMatch = this.sentences.find(s =>
             s.english.toLowerCase().replace(/[^\w\s']/g, '') === searchPhrase
         );
         if (curatedMatch) return Array.isArray(curatedMatch.ilonggo_chunks) ? curatedMatch.ilonggo_chunks.join(" ") : (curatedMatch.ilonggo || "");
-
-        // Large Dictionary Match
         if (this.fullPhrasebook[searchPhrase]) return this.fullPhrasebook[searchPhrase];
-
-        // Fuzzy Match (Longer sentences only)
-        if (searchPhrase.length > 5) {
-            const pbKeys = Object.keys(this.fullPhrasebook);
-            const partialKey = pbKeys.find(k =>
-                k.includes(` ${searchPhrase} `) ||
-                k.startsWith(`${searchPhrase} `) ||
-                k.endsWith(` ${searchPhrase}`)
-            );
-            if (partialKey && partialKey.length > 8) return this.fullPhrasebook[partialKey];
-        }
-
         return null;
     }
 
-    /**
-     * Advanced word-by-word translation with stemming and morphology
-     */
     translateAdvanced(input) {
-        const words = input.toLowerCase().match(/\w+|[^\w\s]/g) || [];
-        const translated = [];
+        const originalTokens = input.toLowerCase().match(/\w+|[^\w\s]/g) || [];
+        // Keep 'to' for infinitive detection
+        const tokens = originalTokens.filter(t => !this.englishStopWords.has(t));
+
+        let translated = [];
         let anyFound = false;
 
-        for (let i = 0; i < words.length; i++) {
-            const word = words[i];
+        let i = 0;
+        while (i < tokens.length) {
+            const token = tokens[i];
 
-            // Punctuation
-            if (/^[^\w\s]$/.test(word)) {
-                translated.push(word);
+            if (/^[^\w\s]$/.test(token)) {
+                translated.push(token);
+                i++;
                 continue;
             }
 
-            // Skip common English service words (am, is, the)
-            if (this.englishStopWords.has(word)) continue;
-
-            // Priority 1: Overrides
-            if (this.overrides[word]) {
-                translated.push(this.overrides[word]);
+            // A. Check for Subject + Auxiliary pattern (Subject Reordering)
+            // e.g., "I want"
+            if (this.pronouns[token] && tokens[i + 1] && this.overrides[tokens[i + 1]]) {
+                const subject = this.pronouns[token];
+                const aux = this.overrides[tokens[i + 1]];
+                translated.push(aux);
+                translated.push(subject.enclitic);
                 anyFound = true;
+                i += 2;
                 continue;
             }
 
-            // Priority 2: Try Exact Dictionary/Vocab Match
-            let result = this.lookupWord(word);
-            if (result) {
-                translated.push(result);
-                anyFound = true;
-                continue;
-            }
+            // B. Handle infinitive marker "to [Verb]"
+            if (token === 'to' && tokens[i + 1]) {
+                const verbToken = tokens[i + 1];
+                let verbResult = this.lookupWord(verbToken);
+                if (!verbResult) verbResult = this.tryStem(verbToken, false);
 
-            // Priority 3: Stemming (Handle -ing, -s, -ed)
-            let stem = null;
-            let morphology = null;
-
-            if (word.endsWith('ing')) {
-                stem = word.slice(0, -3);
-                morphology = 'naga'; // present progressive
-            } else if (word.endsWith('ed') && word.length > 4) {
-                stem = word.slice(0, -2);
-                morphology = 'nag'; // past
-            } else if (word.endsWith('s') && word.length > 3) {
-                stem = word.slice(0, -1);
-            }
-
-            if (stem) {
-                let stemResult = this.lookupWord(stem);
-                if (stemResult) {
-                    // Apply morphology if it looks like we need it
-                    if (morphology && !stemResult.startsWith('nag')) {
-                        // Very basic prefixing
-                        translated.push(morphology + stemResult.toLowerCase());
-                    } else {
-                        translated.push(stemResult);
-                    }
+                if (verbResult) {
+                    // Remove existing naga/nag if STEMMING produced it, as we want MAG
+                    const cleanRoot = verbResult.replace(/^(naga|nag)/, '');
+                    translated.push("mag" + cleanRoot.toLowerCase());
                     anyFound = true;
-                    continue;
+                    i += 2;
+                } else {
+                    i++; // Skip 'to' if verb not found
+                }
+                continue;
+            }
+
+            // C. Pronoun handling (independent form)
+            if (this.pronouns[token]) {
+                translated.push(this.pronouns[token].indep);
+                anyFound = true;
+                i++;
+                continue;
+            }
+
+            // D. Verb/Override handling
+            if (this.overrides[token]) {
+                translated.push(this.overrides[token]);
+                anyFound = true;
+            } else {
+                let result = this.lookupWord(token);
+                if (result) {
+                    translated.push(result);
+                    anyFound = true;
+                } else {
+                    let stemmed = this.tryStem(token, true);
+                    if (stemmed) {
+                        translated.push(stemmed);
+                        anyFound = true;
+                    } else {
+                        translated.push(`[${token}?]`);
+                    }
                 }
             }
-
-            // Not found
-            translated.push(`[${word}?]`);
+            i++;
         }
 
-        // Formatting: capitalize first letter, fix spacing
         let result = translated.join(" ").replace(/\s+([.,?!])/g, '$1');
         if (result.length > 0) {
             result = result.charAt(0).toUpperCase() + result.slice(1);
         }
-
         return anyFound ? result : null;
     }
 
-    lookupWord(word) {
-        // A. Curated Vocabulary (Exact meaning)
-        let vMatch = this.vocabulary.find(v => v.meaning && v.meaning.toLowerCase() === word);
-        if (vMatch) return vMatch.word;
+    tryStem(word, applyPrefix = true) {
+        if (word.endsWith('ing')) {
+            const stem = word.slice(0, -3);
+            const res = this.lookupWord(stem);
+            if (res) return applyPrefix ? 'naga' + res.toLowerCase() : res;
+        }
+        if (word.endsWith('ed') && word.length > 4) {
+            const stem = word.slice(0, -2);
+            const res = this.lookupWord(stem);
+            if (res) return applyPrefix ? 'nag' + res.toLowerCase() : res;
+        }
+        return null;
+    }
 
-        // B. Curated Vocabulary (Keyword in definition)
-        vMatch = this.vocabulary.find(v => {
+    lookupWord(word) {
+        if (word.length <= 2) return null;
+
+        let match = this.vocabulary.find(v => v.meaning && v.meaning.toLowerCase() === word);
+        if (match) return match.word;
+
+        match = this.vocabulary.find(v => {
             if (!v.meaning) return false;
             const defs = v.meaning.toLowerCase().split(/[\/,\s]+/).map(d => d.replace(/[.,?!]/g, ""));
             return defs.includes(word);
         });
-        if (vMatch) return vMatch.word;
+        if (match) return match.word;
 
-        // C. Full Dictionary
-        if (this.fullDictionary[word]) {
-            const res = this.fullDictionary[word];
-            return Array.isArray(res) ? res[0] : res;
-        }
+        if (this.fullDictionary[word]) return this.fullDictionary[word];
 
         return null;
     }
