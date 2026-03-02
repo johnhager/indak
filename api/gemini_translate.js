@@ -9,24 +9,30 @@ export default async function handler(req) {
 
     try {
         const { english } = await req.json();
-        const apiKey = process.env.GEMINI_API_KEY;
+        let apiKey = process.env.GEMINI_API_KEY;
 
         if (!apiKey) {
             return new Response(JSON.stringify({ error: 'API Key missing on server.' }), { status: 500 });
         }
 
-        const prompt = `Translate this English phrase to natural, conversational Hiligaynon (Ilonggo). 
-        Only return the final translation, no explanation.
-        English: "${english}"
-        Ilonggo:`;
+        // Auto-clean API Key (removes potential quotes from copy-paste)
+        apiKey = apiKey.trim().replace(/^["']|["']$/g, '');
 
-        // Priority list of models to try in order of quality/availability
-        const models = ['gemini-1.5-flash-latest', 'gemini-1.5-flash', 'gemini-pro'];
-        let lastError = null;
+        const prompt = `Translate this English phrase to natural, conversational Hiligaynon (Ilonggo). Only return the final translation, no explanation. English: "${english}"`;
 
-        for (const modelId of models) {
+        // The "Kitchen Sink" approach: try standard and beta names in both v1 and v1beta
+        const targets = [
+            { version: 'v1', model: 'gemini-1.5-flash' },
+            { version: 'v1beta', model: 'gemini-1.5-flash' },
+            { version: 'v1', model: 'gemini-1.0-pro' },
+            { version: 'v1beta', model: 'gemini-pro' }
+        ];
+
+        let lastFullError = null;
+
+        for (const target of targets) {
             try {
-                const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${modelId}:generateContent?key=${apiKey}`, {
+                const response = await fetch(`https://generativelanguage.googleapis.com/${target.version}/models/${target.model}:generateContent?key=${apiKey}`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -38,20 +44,20 @@ export default async function handler(req) {
 
                 if (response.ok && data.candidates?.[0]?.content?.parts?.[0]?.text) {
                     const ilonggo = data.candidates[0].content.parts[0].text.trim();
-                    return new Response(JSON.stringify({ ilonggo, model: modelId }), { status: 200 });
+                    return new Response(JSON.stringify({ ilonggo, method: `gemini (${target.model})` }), { status: 200 });
                 }
 
-                lastError = data.error?.message || 'Unknown model error';
+                lastFullError = data.error?.message || response.statusText;
             } catch (e) {
-                lastError = e.message;
+                lastFullError = e.message;
             }
         }
 
         return new Response(JSON.stringify({
-            error: `All models failed. Last error: ${lastError}`
+            error: `All translation pathways failed. Last attempt (${targets[3].model}) said: ${lastFullError}`
         }), { status: 500 });
 
     } catch (error) {
-        return new Response(JSON.stringify({ error: `Server Exception: ${error.message}` }), { status: 500 });
+        return new Response(JSON.stringify({ error: `Critical Failure: ${error.message}` }), { status: 500 });
     }
 }
