@@ -1,7 +1,7 @@
 /**
  * @file translator.js
- * @description Provides English-to-Ilonggo translation with grammatical intelligence,
- * clitic reordering (VSO structure), and morphology (mag- prefixes).
+ * @description Advanced English-to-Ilonggo translation with VSO reordering,
+ * marker placement (ang/sang/sa), and syntactic linkers (nga).
  */
 
 export class Translator {
@@ -11,12 +11,12 @@ export class Translator {
         this.fullDictionary = fullDictionary || {};
         this.fullPhrasebook = fullPhrasebook || {};
 
-        // Words to ignore as independent words (they usually serve grammatical roles)
+        // Words to ignore as independent words, but use as markers
         this.englishStopWords = new Set([
             'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being',
             'a', 'an', 'the', 'do', 'does', 'did', 'done',
             'has', 'have', 'had', 'getting', 'become',
-            'of', 'at', 'with', 'by', 'as'
+            'of', 'with', 'by', 'as'
         ]);
 
         // Pronoun mappings with enclitic variants
@@ -55,11 +55,11 @@ export class Translator {
         const input = text.trim().toLowerCase();
         const cleanInput = input.replace(/[.,?!]/g, "");
 
-        // 1. Phrasebook Match (Exact or Fuzzy)
+        // 1. Precise Phrasebook Match
         const phraseMatch = this.findPhraseMatch(cleanInput);
         if (phraseMatch) return { translatedText: phraseMatch, method: "phrasebook" };
 
-        // 2. Advanced Grammatical Translation
+        // 2. Syntactic Translation
         const wordMatch = this.translateAdvanced(input);
         if (wordMatch) return { translatedText: wordMatch, method: "dictionary" };
 
@@ -69,7 +69,6 @@ export class Translator {
     findPhraseMatch(input) {
         if (!input) return null;
         const searchPhrase = input.toLowerCase().replace(/[^\w\s']/g, '').trim();
-
         const curatedMatch = this.sentences.find(s =>
             s.english.toLowerCase().replace(/[^\w\s']/g, '') === searchPhrase
         );
@@ -80,27 +79,54 @@ export class Translator {
 
     translateAdvanced(input) {
         const originalTokens = input.toLowerCase().match(/\w+|[^\w\s]/g) || [];
-        // Keep 'to' for infinitive detection
-        const tokens = originalTokens.filter(t => !this.englishStopWords.has(t));
 
         let translated = [];
         let anyFound = false;
 
         let i = 0;
-        while (i < tokens.length) {
-            const token = tokens[i];
+        while (i < originalTokens.length) {
+            const token = originalTokens[i];
 
+            // Punctuation
             if (/^[^\w\s]$/.test(token)) {
                 translated.push(token);
                 i++;
                 continue;
             }
 
-            // A. Check for Subject + Auxiliary pattern (Subject Reordering)
-            // e.g., "I want"
-            if (this.pronouns[token] && tokens[i + 1] && this.overrides[tokens[i + 1]]) {
+            // Skip common English stopwords unless they serve as logic triggers
+            if (this.englishStopWords.has(token)) {
+                // Heuristic: "The [Noun]" -> "Ang [Noun]"
+                if (token === 'the' || token === 'a' || token === 'an') {
+                    translated.push("ang");
+                }
+                i++;
+                continue;
+            }
+
+            // Pattern: "to [Verb]" -> "mag-[Verb]"
+            if (token === 'to' && originalTokens[i + 1]) {
+                const next = originalTokens[i + 1];
+                let res = this.lookupWord(next) || this.tryStem(next, false);
+                if (res) {
+                    translated.push("mag" + res.toLowerCase());
+                    anyFound = true;
+                    i += 2;
+                    continue;
+                }
+            }
+
+            // Pattern: "at/in/to [Noun]" -> "sa [Noun]"
+            if ((token === 'at' || token === 'in' || token === 'to') && originalTokens[i + 1]) {
+                translated.push("sa");
+                i++;
+                continue;
+            }
+
+            // Pattern: Subject + Want/Like -> Gusto/Luyag + Enclitic
+            if (this.pronouns[token] && originalTokens[i + 1] && this.overrides[originalTokens[i + 1]]) {
                 const subject = this.pronouns[token];
-                const aux = this.overrides[tokens[i + 1]];
+                const aux = this.overrides[originalTokens[i + 1]];
                 translated.push(aux);
                 translated.push(subject.enclitic);
                 anyFound = true;
@@ -108,25 +134,26 @@ export class Translator {
                 continue;
             }
 
-            // B. Handle infinitive marker "to [Verb]"
-            if (token === 'to' && tokens[i + 1]) {
-                const verbToken = tokens[i + 1];
-                let verbResult = this.lookupWord(verbToken);
-                if (!verbResult) verbResult = this.tryStem(verbToken, false);
-
-                if (verbResult) {
-                    // Remove existing naga/nag if STEMMING produced it, as we want MAG
-                    const cleanRoot = verbResult.replace(/^(naga|nag)/, '');
-                    translated.push("mag" + cleanRoot.toLowerCase());
-                    anyFound = true;
-                    i += 2;
-                } else {
-                    i++; // Skip 'to' if verb not found
+            // Pattern: Adjective + Noun -> Adj + nga + Noun
+            // (Simple detection: if token is an adj and next is a noun)
+            // We use a heuristic: if we have two words in a row and first is an override/lookup
+            let current = this.lookupWord(token) || this.overrides[token];
+            if (current && originalTokens[i + 1]) {
+                let nextToken = originalTokens[i + 1];
+                if (!this.englishStopWords.has(nextToken) && !/^[^\w\s]$/.test(nextToken)) {
+                    let nextMatch = this.lookupWord(nextToken);
+                    if (nextMatch) {
+                        translated.push(current);
+                        translated.push("nga");
+                        translated.push(nextMatch);
+                        anyFound = true;
+                        i += 2;
+                        continue;
+                    }
                 }
-                continue;
             }
 
-            // C. Pronoun handling (independent form)
+            // Fallback: Pronouns
             if (this.pronouns[token]) {
                 translated.push(this.pronouns[token].indep);
                 anyFound = true;
@@ -134,64 +161,41 @@ export class Translator {
                 continue;
             }
 
-            // D. Verb/Override handling
-            if (this.overrides[token]) {
-                translated.push(this.overrides[token]);
+            // Fallback: Dictionary
+            let res = this.overrides[token] || this.lookupWord(token) || this.tryStem(token, true);
+            if (res) {
+                translated.push(res);
                 anyFound = true;
             } else {
-                let result = this.lookupWord(token);
-                if (result) {
-                    translated.push(result);
-                    anyFound = true;
-                } else {
-                    let stemmed = this.tryStem(token, true);
-                    if (stemmed) {
-                        translated.push(stemmed);
-                        anyFound = true;
-                    } else {
-                        translated.push(`[${token}?]`);
-                    }
-                }
+                translated.push(`[${token}?]`);
             }
             i++;
         }
 
         let result = translated.join(" ").replace(/\s+([.,?!])/g, '$1');
-        if (result.length > 0) {
-            result = result.charAt(0).toUpperCase() + result.slice(1);
-        }
+        if (result.length > 0) result = result.charAt(0).toUpperCase() + result.slice(1);
         return anyFound ? result : null;
     }
 
-    tryStem(word, applyPrefix = true) {
+    tryStem(word, pf) {
         if (word.endsWith('ing')) {
-            const stem = word.slice(0, -3);
-            const res = this.lookupWord(stem);
-            if (res) return applyPrefix ? 'naga' + res.toLowerCase() : res;
+            const res = this.lookupWord(word.slice(0, -3));
+            if (res) return pf ? 'naga' + res.toLowerCase() : res;
         }
         if (word.endsWith('ed') && word.length > 4) {
-            const stem = word.slice(0, -2);
-            const res = this.lookupWord(stem);
-            if (res) return applyPrefix ? 'nag' + res.toLowerCase() : res;
+            const res = this.lookupWord(word.slice(0, -2));
+            if (res) return pf ? 'nag' + res.toLowerCase() : res;
         }
         return null;
     }
 
     lookupWord(word) {
-        if (word.length <= 2) return null;
-
-        let match = this.vocabulary.find(v => v.meaning && v.meaning.toLowerCase() === word);
-        if (match) return match.word;
-
-        match = this.vocabulary.find(v => {
-            if (!v.meaning) return false;
-            const defs = v.meaning.toLowerCase().split(/[\/,\s]+/).map(d => d.replace(/[.,?!]/g, ""));
-            return defs.includes(word);
-        });
-        if (match) return match.word;
-
+        if (!word || word.length <= 2) return null;
+        let m = this.vocabulary.find(v => v.meaning && v.meaning.toLowerCase() === word);
+        if (m) return m.word;
+        m = this.vocabulary.find(v => v.meaning && v.meaning.toLowerCase().split(/[\/,\s]+/).includes(word));
+        if (m) return m.word;
         if (this.fullDictionary[word]) return this.fullDictionary[word];
-
         return null;
     }
 }
