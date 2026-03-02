@@ -7,6 +7,8 @@ export default async function handler(req) {
         return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405 });
     }
 
+    let lastErrorMessage = "No specific error captured.";
+
     try {
         const { text } = await req.json();
         let apiKey = process.env.GEMINI_API_KEY;
@@ -17,55 +19,77 @@ export default async function handler(req) {
 
         apiKey = apiKey.trim().replace(/^["']|["']$/g, '');
 
-        // System prompt with high-precision vocabulary
         const prompt = `You are a professional native-speaker Hiligaynon (Ilonggo) translator. 
 
         MISSION:
         Translate between English and Hiligaynon (Ilonggo). 
 
         STRICT VOCABULARY DIFFERENTIATION:
-        - Cook = Luto (Specifically for creating heat-based dishes)
-        - Prepare = Preparar (For general preparation or assembly)
-        - Cook Rice = Tig-on
+        - Cook = Luto
+        - Prepare = Preparar
         - Lunch = Panyaga
         - Dinner = Panyapon
         - Breakfast = Pamahaw
-        - Packed meal/Baon = Balon
 
         STRICT LINGUISTIC RULES:
         1. **NO "ILONGGLIS"**: Never use English verbs with Hiligaynon prefixes.
         2. **Word Order**: Use natural VSO (Verb-Subject-Object).
-        3. **Tone**: Native, natural, mature Hiligaynon.
-
-        GOLD STANDARD EXAMPLES:
-        - English: "I'm cooking dinner." 
-          Hiligaynon: "Nagaluto ako sang panyapon."
-
-        - English: "I'm going to make my lunch for tomorrow." 
-          Hiligaynon: "Mag-preparar ako sang balon ko para buwas."
-
-        - English: "I'm watching TV." 
-          Hiligaynon: "Nagatan-aw ako sang TV."
 
         INPUT: "${text}"
         OUTPUT:`;
 
-        const primaryModels = ['gemini-1.5-pro', 'gemini-1.5-flash-latest', 'gemini-1.0-pro'];
+        // 1. Try a wide range of models in order of quality
+        const primaryModels = [
+            'gemini-1.5-pro',
+            'gemini-1.5-flash-latest',
+            'gemini-1.5-flash',
+            'gemini-1.0-pro'
+        ];
 
         for (const modelId of primaryModels) {
-            const res = await tryTranslate(modelId, apiKey, prompt);
-            if (res) return res;
+            const result = await tryTranslate(modelId, apiKey, prompt);
+            if (result.success) {
+                return new Response(JSON.stringify({ translation: result.translation, method: modelId }), { status: 200 });
+            }
+            lastErrorMessage = result.error;
         }
 
-        return new Response(JSON.stringify({ error: `Could not reach AI.` }), { status: 500 });
+        // 2. Emergency Discovery Phase
+        try {
+            const listResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
+            const listData = await listResponse.json();
+            if (listData.models) {
+                const supportedModels = listData.models
+                    .filter(m => m.supportedGenerationMethods.includes('generateContent'))
+                    .map(m => m.name.split('/').pop());
+
+                for (const modelId of supportedModels) {
+                    if (primaryModels.includes(modelId)) continue; // Skip what we already tried
+                    const result = await tryTranslate(modelId, apiKey, prompt);
+                    if (result.success) {
+                        return new Response(JSON.stringify({ translation: result.translation, method: modelId }), { status: 200 });
+                    }
+                    lastErrorMessage = result.error;
+                }
+            }
+        } catch (e) {
+            console.error("Discovery error:", e.message);
+        }
+
+        return new Response(JSON.stringify({
+            error: `All models failed. Last API response: ${lastErrorMessage}`
+        }), { status: 500 });
 
     } catch (error) {
-        return new Response(JSON.stringify({ error: `Server error: ${error.message}` }), { status: 500 });
+        return new Response(JSON.stringify({ error: `Server exception: ${error.message}` }), { status: 500 });
     }
 }
 
 async function tryTranslate(modelId, apiKey, prompt) {
+    // Try both v1 and v1beta as some keys are region-locked to one
     const versions = ['v1', 'v1beta'];
+    let lastErr = "Model not found";
+
     for (const version of versions) {
         try {
             const response = await fetch(`https://generativelanguage.googleapis.com/${version}/models/${modelId}:generateContent?key=${apiKey}`, {
@@ -79,12 +103,17 @@ async function tryTranslate(modelId, apiKey, prompt) {
                     }
                 })
             });
+
             const data = await response.json();
             if (response.ok && data.candidates?.[0]?.content?.parts?.[0]?.text) {
-                const translation = data.candidates[0].content.parts[0].text.trim();
-                return new Response(JSON.stringify({ translation, method: modelId }), { status: 200 });
+                return { success: true, translation: data.candidates[0].content.parts[0].text.trim() };
             }
-        } catch (e) { continue; }
+
+            lastErr = data.error?.message || response.statusText || "Unknown API Error";
+        } catch (e) {
+            lastErr = e.message;
+            continue;
+        }
     }
-    return null;
+    return { success: false, error: lastErr };
 }
