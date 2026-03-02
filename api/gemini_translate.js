@@ -17,24 +17,30 @@ export default async function handler(req) {
 
         apiKey = apiKey.trim().replace(/^["']|["']$/g, '');
 
-        // System prompt for Gemini 1.5 Pro
-        const prompt = `You are a professional native-speaker Hiligaynon (Ilonggo) translator with expertise in Panay/Negros terminology. 
-        
-        MISSION:
-        Translate the input text between English and Hiligaynon (Ilonggo). 
+        // System prompt with high-precision vocabulary
+        const prompt = `You are a professional native-speaker Hiligaynon (Ilonggo) translator. 
 
-        VOCABULARY RULES:
+        MISSION:
+        Translate between English and Hiligaynon (Ilonggo). 
+
+        STRICT VOCABULARY DIFFERENTIATION:
+        - Cook = Luto (Specifically for creating heat-based dishes)
+        - Prepare = Preparar (For general preparation or assembly)
+        - Cook Rice = Tig-on
         - Lunch = Panyaga
         - Dinner = Panyapon
-        - Making/Preparing food = Preparar or Luto
-        - Packed meal (to-go lunch/baon) = Balon
+        - Breakfast = Pamahaw
+        - Packed meal/Baon = Balon
 
         STRICT LINGUISTIC RULES:
-        1. **NO "ILONGGLIS"**: Never prefix English verbs (e.g., No "Nag-watching"). 
-        2. **Word Order**: Use natural Hiligaynon syntax (VSO).
-        3. **Tone**: Use mature, natural conversational Hiligaynon.
+        1. **NO "ILONGGLIS"**: Never use English verbs with Hiligaynon prefixes.
+        2. **Word Order**: Use natural VSO (Verb-Subject-Object).
+        3. **Tone**: Native, natural, mature Hiligaynon.
 
         GOLD STANDARD EXAMPLES:
+        - English: "I'm cooking dinner." 
+          Hiligaynon: "Nagaluto ako sang panyapon."
+
         - English: "I'm going to make my lunch for tomorrow." 
           Hiligaynon: "Mag-preparar ako sang balon ko para buwas."
 
@@ -44,30 +50,12 @@ export default async function handler(req) {
         INPUT: "${text}"
         OUTPUT:`;
 
-        // PRIORITIZING 1.5 PRO
         const primaryModels = ['gemini-1.5-pro', 'gemini-1.5-flash-latest', 'gemini-1.0-pro'];
 
         for (const modelId of primaryModels) {
             const res = await tryTranslate(modelId, apiKey, prompt);
             if (res) return res;
         }
-
-        // Discovery Phase remains as backstop
-        try {
-            const listResponse = await fetch(`https://generativelanguage.googleapis.com/v1/models?key=${apiKey}`);
-            const listData = await listResponse.json();
-            if (listData.models) {
-                const supportedModels = listData.models
-                    .filter(m => m.supportedGenerationMethods.includes('generateContent'))
-                    .map(m => m.name.split('/').pop())
-                    .sort((a, b) => b.includes('pro') ? 1 : -1); // Sort Pro to top
-
-                for (const modelId of supportedModels) {
-                    const res = await tryTranslate(modelId, apiKey, prompt);
-                    if (res) return res;
-                }
-            }
-        } catch (e) { }
 
         return new Response(JSON.stringify({ error: `Could not reach AI.` }), { status: 500 });
 
