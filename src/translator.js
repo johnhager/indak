@@ -49,21 +49,57 @@ export class Translator {
     setFullDictionary(dict) { this.fullDictionary = dict; }
     setFullPhrasebook(pb) { this.fullPhrasebook = pb; }
 
+    /**
+     * Translates a string from English to Ilonggo.
+     * @param {string} text - The English text to translate.
+     * @returns {Object} { translatedText: string, method: string }
+     */
     translate(text) {
         if (!text || text.trim() === "") return { translatedText: "", method: "none" };
 
         const input = text.trim().toLowerCase();
         const cleanInput = input.replace(/[.,?!]/g, "");
 
-        // 1. Precise Phrasebook Match
+        // 1. Precise Phrasebook Match (sentences.json or full_phrasebook.json)
         const phraseMatch = this.findPhraseMatch(cleanInput);
-        if (phraseMatch) return { translatedText: phraseMatch, method: "phrasebook" };
+        if (phraseMatch) {
+            return { translatedText: phraseMatch, method: "phrasebook" };
+        }
 
-        // 2. Syntactic Translation
+        // 2. Syntactic Translation with Grammar logic
         const wordMatch = this.translateAdvanced(input);
-        if (wordMatch) return { translatedText: wordMatch, method: "dictionary" };
+        if (wordMatch) {
+            return { translatedText: wordMatch, method: "dictionary" };
+        }
 
         return { translatedText: "Patawad (Sorry), N/A", method: "none" };
+    }
+
+    /**
+     * Async translation that can use Gemini AI if enabled.
+     */
+    async translateAsync(text, useAI = false) {
+        if (!text || text.trim() === "") return { translatedText: "", method: "none" };
+
+        if (useAI) {
+            try {
+                const response = await fetch('/api/gemini_translate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ english: text.trim() })
+                });
+                const data = await response.json();
+                if (data.ilonggo) {
+                    return { translatedText: data.ilonggo, method: "gemini" };
+                }
+                if (data.error) console.warn("Gemini Server Error:", data.error);
+            } catch (err) {
+                console.error("Gemini API Connection failed, falling back to local logic:", err);
+            }
+        }
+
+        // Fallback to local synchronous logic
+        return this.translate(text);
     }
 
     findPhraseMatch(input) {

@@ -334,10 +334,24 @@ closeTranslatorBtn?.addEventListener('click', () => {
     showMenu();
 });
 
-translateBtn?.addEventListener('click', () => {
+translateBtn?.addEventListener('click', async () => {
     if (!translator) return;
     const text = translatorInput.value;
-    const result = translator.translate(text);
+    const useAI = document.getElementById('translate-ai-toggle')?.checked;
+    const loadingRing = document.getElementById('ai-loading');
+
+    if (useAI) {
+        loadingRing?.classList.remove('hidden');
+        translateBtn.disabled = true;
+    }
+
+    const result = await translator.translateAsync(text, useAI);
+
+    if (useAI) {
+        loadingRing?.classList.add('hidden');
+        translateBtn.disabled = false;
+    }
+
     translatorResult.textContent = result.translatedText;
 
     // Add a little feedback animation
