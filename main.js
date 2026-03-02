@@ -354,6 +354,28 @@ translateBtn?.addEventListener('click', async () => {
 
     translatorResult.textContent = result.translatedText;
 
+    // Update Source Badge
+    const sourceBadge = document.getElementById('translation-source');
+    if (sourceBadge && result.method !== 'none') {
+        sourceBadge.classList.remove('hidden');
+        sourceBadge.textContent = result.method === 'gemini' ? 'GEMINI AI' :
+            result.method === 'phrasebook' ? 'PHRASEBOOK' : 'DICTIONARY';
+
+        // Color coding
+        if (result.method === 'gemini') {
+            sourceBadge.style.background = '#00ffaa';
+            sourceBadge.style.color = '#004433';
+        } else if (result.method === 'phrasebook') {
+            sourceBadge.style.background = '#FFD93D';
+            sourceBadge.style.color = '#443300';
+        } else {
+            sourceBadge.style.background = 'rgba(255,255,255,0.2)';
+            sourceBadge.style.color = 'white';
+        }
+    } else {
+        sourceBadge?.classList.add('hidden');
+    }
+
     // Add a little feedback animation
     translatorResult.style.transform = 'scale(1.05)';
     setTimeout(() => translatorResult.style.transform = 'scale(1)', 200);
