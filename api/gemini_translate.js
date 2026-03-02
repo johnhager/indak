@@ -17,13 +17,32 @@ export default async function handler(req) {
 
         apiKey = apiKey.trim().replace(/^["']|["']$/g, '');
 
-        // System prompt to handle bidirectional translation and natural Hiligaynon
-        const prompt = `You are an expert Hiligaynon (Ilonggo) and English translator. 
-        If the input text is in English, translate it to natural, conversational Hiligaynon. 
-        If the input text is in Hiligaynon, translate it to clear, natural English.
-        Provide only the translation, no extra text or explanations.
+        // System prompt enhanced with professional native-speaker instruction
+        const prompt = `You are an expert native Hiligaynon (Ilonggo) translator. 
         
-        Input: "${text}"`;
+        MISSION:
+        Translate the input text between English and Hiligaynon.
+        - If Input is English -> Output is natural, conversational Hiligaynon.
+        - If Input is Hiligaynon/Ilonggo -> Output is clear, natural English.
+
+        CRITICAL LINGUISTIC RULES:
+        1. Priority: Use idiomatic Hiligaynon as spoken in Panay/Negros. 
+        2. Grammar: Use VSO structure where appropriate (e.g. "Kinahanglan ko..." instead of "Ako kinahanglan...").
+        3. No "Spanglish/Ilongglis": Avoid mixing English words unless they are standard loan words in Ilonggo (like "computer").
+        4. Conciseness: Provide ONLY the translation. No conversational filler or explanations.
+
+        EXAMPLES:
+        English: I have to go to work tomorrow.
+        Hiligaynon: Kinahanglan ko mag-obra buwas.
+
+        English: How are you?
+        Hiligaynon: Kamusta ka?
+
+        Hiligaynon: Diin ka makadto?
+        English: Where are you going?
+
+        INPUT: "${text}"
+        TRANSLATION:`;
 
         const primaryModels = ['gemini-1.5-flash', 'gemini-1.5-flash-latest', 'gemini-1.5-pro', 'gemini-1.0-pro'];
         for (const modelId of primaryModels) {
