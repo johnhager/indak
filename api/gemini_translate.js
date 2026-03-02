@@ -7,8 +7,6 @@ export default async function handler(req) {
         return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405 });
     }
 
-    let lastErrorMessage = "No specific error captured.";
-
     try {
         const { text } = await req.json();
         let apiKey = process.env.GEMINI_API_KEY;
@@ -19,76 +17,44 @@ export default async function handler(req) {
 
         apiKey = apiKey.trim().replace(/^["']|["']$/g, '');
 
-        const prompt = `You are a professional native-speaker Hiligaynon (Ilonggo) translator. 
-
-        MISSION:
-        Translate between English and Hiligaynon (Ilonggo). 
-
-        STRICT VOCABULARY DIFFERENTIATION:
+        // This is the "God-Mode" instruction set that Gemini 1.5 Pro prioritizes.
+        const systemInstruction = `You are a high-precision Hiligaynon (Ilonggo) translation engine. 
+        
+        STRICT OPERATING RULES:
+        1. **NO 'ILONGGLIS'**: You are FORBIDDEN from mixing English verbs with Hiligaynon prefixes. (e.g. NEVER say "Nang-cook" or "Nag-watching"). You MUST find the Hiligaynon root (Luto, Tan-aw, Obra).
+        2. **GRAMMAR**: Use native VSO (Verb-Subject-Object) structure. Focus on enclitic pronouns (ko, mo, ya) in their proper places.
+        3. **VOCABULARY**: Use pure, deep Hiligaynon words over English or Tagalog borrowings where possible.
+        4. **BIDIRECTIONAL**: If input is English, output is Hiligaynon. If input is Hiligaynon, output is English.
+        5. **CONCISENESS**: Output ONLY the translation. No preamble. No explanations.
+        
+        VOCAB REFERENCE:
         - Cook = Luto
-        - Prepare = Preparar
         - Lunch = Panyaga
         - Dinner = Panyapon
-        - Breakfast = Pamahaw
+        - Work = Obra or Trabaho`;
 
-        STRICT LINGUISTIC RULES:
-        1. **NO "ILONGGLIS"**: Never use English verbs with Hiligaynon prefixes.
-        2. **Word Order**: Use natural VSO (Verb-Subject-Object).
+        const primaryModels = ['gemini-1.5-pro', 'gemini-1.5-flash-latest', 'gemini-1.0-pro'];
 
-        INPUT: "${text}"
-        OUTPUT:`;
-
-        // 1. Try a wide range of models in order of quality
-        const primaryModels = [
-            'gemini-1.5-pro',
-            'gemini-1.5-flash-latest',
-            'gemini-1.5-flash',
-            'gemini-1.0-pro'
-        ];
+        let lastErr = "No response";
 
         for (const modelId of primaryModels) {
-            const result = await tryTranslate(modelId, apiKey, prompt);
+            const result = await tryTranslate(modelId, apiKey, systemInstruction, text);
             if (result.success) {
                 return new Response(JSON.stringify({ translation: result.translation, method: modelId }), { status: 200 });
             }
-            lastErrorMessage = result.error;
+            lastErr = result.error;
         }
 
-        // 2. Emergency Discovery Phase
-        try {
-            const listResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
-            const listData = await listResponse.json();
-            if (listData.models) {
-                const supportedModels = listData.models
-                    .filter(m => m.supportedGenerationMethods.includes('generateContent'))
-                    .map(m => m.name.split('/').pop());
-
-                for (const modelId of supportedModels) {
-                    if (primaryModels.includes(modelId)) continue; // Skip what we already tried
-                    const result = await tryTranslate(modelId, apiKey, prompt);
-                    if (result.success) {
-                        return new Response(JSON.stringify({ translation: result.translation, method: modelId }), { status: 200 });
-                    }
-                    lastErrorMessage = result.error;
-                }
-            }
-        } catch (e) {
-            console.error("Discovery error:", e.message);
-        }
-
-        return new Response(JSON.stringify({
-            error: `All models failed. Last API response: ${lastErrorMessage}`
-        }), { status: 500 });
+        return new Response(JSON.stringify({ error: `AI Failed: ${lastErr}` }), { status: 500 });
 
     } catch (error) {
-        return new Response(JSON.stringify({ error: `Server exception: ${error.message}` }), { status: 500 });
+        return new Response(JSON.stringify({ error: `Critical Exception: ${error.message}` }), { status: 500 });
     }
 }
 
-async function tryTranslate(modelId, apiKey, prompt) {
-    // Try both v1 and v1beta as some keys are region-locked to one
+async function tryTranslate(modelId, apiKey, systemInstruction, userText) {
     const versions = ['v1', 'v1beta'];
-    let lastErr = "Model not found";
+    let lastErr = "Unknown failure";
 
     for (const version of versions) {
         try {
@@ -96,10 +62,17 @@ async function tryTranslate(modelId, apiKey, prompt) {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    contents: [{ parts: [{ text: prompt }] }],
+                    // System instructions are passed separately to ensure strict adherence
+                    system_instruction: {
+                        parts: [{ text: systemInstruction }]
+                    },
+                    contents: [{
+                        parts: [{ text: userText }]
+                    }],
                     generationConfig: {
-                        temperature: 0.1,
-                        topP: 0.95
+                        temperature: 0.0, // Set to 0.0 for absolute zero creativity/slang
+                        topP: 1.0,
+                        maxOutputTokens: 256
                     }
                 })
             });
@@ -108,8 +81,7 @@ async function tryTranslate(modelId, apiKey, prompt) {
             if (response.ok && data.candidates?.[0]?.content?.parts?.[0]?.text) {
                 return { success: true, translation: data.candidates[0].content.parts[0].text.trim() };
             }
-
-            lastErr = data.error?.message || response.statusText || "Unknown API Error";
+            lastErr = data.error?.message || response.statusText;
         } catch (e) {
             lastErr = e.message;
             continue;
