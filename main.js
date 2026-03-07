@@ -144,6 +144,12 @@ async function openLessonPreview(lesson) {
     try {
         const resp = await fetch(`./data/lessons/${lesson.file}`);
         const data = await resp.json();
+
+        // Merge curriculum-level settings into the data payload
+        if (lesson.settings) {
+            data.settings = lesson.settings;
+        }
+
         selectedLesson.data = data;
 
         lessonVocabList.innerHTML = data.vocabulary.slice(0, 8).map(v => `
