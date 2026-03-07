@@ -64,79 +64,44 @@
     ],
     "sentences": [
         {
-            "english": "He ate some cake",
-            "chunks": "Nagkaon | sia | sang | keyk",
-            "distractors": "nagakadto | indi | sia"
+            "english": "Where are you going?",
+            "chunks": "Diin | ka | mapan?",
+            "distractors": "sila | kami"
         },
         {
-            "english": "To the market",
-            "chunks": "Sa | tindahan",
-            "distractors": "nagakadto | indi | sia"
+            "english": "I am getting off here.",
+            "chunks": "Manaog | 'ko | diri.",
+            "distractors": "kadto | sakay"
         },
         {
-            "english": "Do you guys like it here in the philippines",
-            "chunks": "Nanami-an | kamo | di | sa | Pilipinas?",
-            "distractors": "nagakadto | indi | sia"
+            "english": "Get on the jeepney.",
+            "chunks": "Sakay | sa | jeep.",
+            "distractors": "manaog | tricycle"
         },
         {
-            "english": "How would you say it in ilonggo",
-            "chunks": "Paano | mo | ihambal | sa | Ilonggo?",
-            "distractors": "nagakadto | indi | sia"
+            "english": "How much is the fare?",
+            "chunks": "Magkano | ang | plete?",
+            "distractors": "diin | sakay"
         },
         {
-            "english": "Wow",
-            "chunks": "Baw, | sagad | s’imo | mag-inglis!",
-            "distractors": "nagakadto | indi | sia"
+            "english": "I will ride the tricycle.",
+            "chunks": "Magsakay | 'ko | sa | tricycle.",
+            "distractors": "jeep | manaog"
         },
         {
-            "english": "Tell her that ill just come back later",
-            "chunks": "Hambala | sia | nga | mabalik | lang | ‘ko | karon",
-            "distractors": "nagakadto | indi | sia"
+            "english": "Where is the jeepney stop?",
+            "chunks": "Diin | ang | humpayan | sang | jeep?",
+            "distractors": "plete | tricycle"
         },
         {
-            "english": "Well talk about that next time",
-            "chunks": "Istoriahan | naton | ‘na | sa | dason",
-            "distractors": "nagakadto | indi | sia"
+            "english": "I cannot read.",
+            "chunks": "Indi | 'ko | 'kabasa.",
+            "distractors": "diin | sakay"
         },
         {
-            "english": "Have you been able to talk with him yet",
-            "chunks": "Nakaistoria | ka | na | sa | iya?",
-            "distractors": "nagakadto | indi | sia"
-        },
-        {
-            "english": "We were given bodies",
-            "chunks": "Gintagaan | kita | sang | mga | lawas, | dapat | ta | (sila) | halungan",
-            "distractors": "nagakadto | indi | sia"
-        },
-        {
-            "english": "What do you know about",
-            "chunks": "Ano | ang | nabal-an | mo | parte | sa…?",
-            "distractors": "nagakadto | indi | sia"
-        },
-        {
-            "english": "You can",
-            "chunks": "Mabal-an | mo | ang | kamatuoran | sining | mensahe | paagi | sa | prayer",
-            "distractors": "nagakadto | indi | sia"
-        },
-        {
-            "english": "Have you ever been to the states",
-            "chunks": "‘Kakadto | ka | na | sa | States?",
-            "distractors": "nagakadto | indi | sia"
-        },
-        {
-            "english": "I cant read",
-            "chunks": "Indi | ‘ko | ‘kabasa",
-            "distractors": "nagakadto | indi | sia"
-        },
-        {
-            "english": "We studied taglog in the states omit sang if you so",
-            "chunks": "Nagtuon | kami | (sang) | Tagalog | sa | States",
-            "distractors": "nagakadto | indi | sia"
-        },
-        {
-            "english": "We were taught taglog in the states",
-            "chunks": "Gintudluan | kami | Tagalog | sa | States",
-            "distractors": "nagakadto | indi | sia"
+            "english": "Please stop here.",
+            "chunks": "Paabird | diri | lang.",
+            "distractors": "manaog | kadto"
         }
     ],
     "drills": [
