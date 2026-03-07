@@ -240,8 +240,14 @@ export class SentenceBuilder {
         window.addEventListener('pointermove', this.onPointerMove.bind(this));
         window.addEventListener('pointerup', this.onPointerUp.bind(this));
 
-        this.checkBtn.addEventListener('click', this.evaluateSyntax.bind(this));
-        this.continueBtn.addEventListener('click', () => {
+        this.checkBtn.addEventListener('pointerdown', (e) => {
+            e.stopPropagation();
+            if (this.isEvaluating) return;
+            this.isEvaluating = true;
+            this.evaluateSyntax();
+        });
+        this.continueBtn.addEventListener('pointerdown', (e) => {
+            e.stopPropagation();
             this.loadSentence();
         });
     }
@@ -679,6 +685,11 @@ export class SentenceBuilder {
     }
 
     evaluateSyntax() {
+        if (!this.checkBtn || this.checkBtn.style.display === 'none') {
+            this.isEvaluating = false;
+            return; // Prevent phantom executions
+        }
+
         this.stopTimer();
 
         this.totalAttempts++;
@@ -745,11 +756,13 @@ export class SentenceBuilder {
             // Swap buttons
             this.checkBtn.style.display = 'none';
             this.continueBtn.style.display = 'block';
+            setTimeout(() => { this.isEvaluating = false; }, 100);
         } else {
             // Update Clue Panel
             this.perfectEl.textContent = perfectMatches;
             this.misplacedEl.textContent = misplacedMatches;
             this.cluePanel.style.opacity = '1';
+            setTimeout(() => { this.isEvaluating = false; }, 100);
 
             // Error Shake and Feedback
             this.dropZone.classList.add('shake');

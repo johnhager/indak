@@ -197,38 +197,60 @@ function runSessionGame(type, lesson) {
         const originalEndGame = activeGame.endGame.bind(activeGame);
         activeGame.endGame = () => {
             originalEndGame();
-            // Inject our "Next" button into the summary screen
-            const summaryEl = document.getElementById('summary-screen');
-            const nextBtn = document.createElement('button');
-            nextBtn.className = 'btn-primary';
-            nextBtn.style.marginTop = '1rem';
-            nextBtn.style.width = '100%';
-            nextBtn.textContent = 'NEXT: SENTENCE BUILDING';
-            nextBtn.onclick = () => {
-                summaryEl.classList.add('hidden');
-                runSessionGame('sentence', lesson);
-            };
-            summaryEl.querySelector('.glass-card').appendChild(nextBtn);
 
-            // Save sub-lesson state so they can resume if they close the app or go back to menu
-            localStorage.setItem(`indak_lesson_${lesson.id}_stage`, 'sentence');
+            const accuracy = activeGame.totalRounds === 0 ? 0 : Math.round((activeGame.score / activeGame.totalRounds) * 100);
+            const summaryEl = document.getElementById('summary-screen');
+            const actionBtn = document.createElement('button');
+            actionBtn.className = 'btn-primary';
+            actionBtn.style.marginTop = '1rem';
+            actionBtn.style.width = '100%';
+
+            if (accuracy >= 90) {
+                actionBtn.textContent = 'NEXT: SENTENCE BUILDING';
+                actionBtn.onclick = () => {
+                    summaryEl.classList.add('hidden');
+                    runSessionGame('sentence', lesson);
+                };
+                // Save sub-lesson state so they can resume
+                localStorage.setItem(`indak_lesson_${lesson.id}_stage`, 'sentence');
+            } else {
+                actionBtn.textContent = 'RETRY REQUIRED (<90%)';
+                actionBtn.style.background = '#ff4d4d';
+                actionBtn.onclick = () => {
+                    summaryEl.classList.add('hidden');
+                    runSessionGame('swipe', lesson);
+                };
+            }
+            summaryEl.querySelector('.glass-card').appendChild(actionBtn);
         };
     } else if (type === 'sentence') {
         activeGame = new SentenceBuilder(gameStage, globalSentences, lesson.data);
         const originalEndGame = activeGame.endGame.bind(activeGame);
         activeGame.endGame = () => {
             originalEndGame();
+
+            const accuracy = activeGame.totalRounds === 0 ? 0 : Math.round((activeGame.score / activeGame.totalRounds) * 100);
             const summaryEl = document.getElementById('summary-screen');
-            const finishBtn = document.createElement('button');
-            finishBtn.className = 'btn-primary';
-            finishBtn.style.marginTop = '1rem';
-            finishBtn.style.width = '100%';
-            finishBtn.textContent = 'COMPLETE LESSON';
-            finishBtn.onclick = () => {
-                summaryEl.classList.add('hidden');
-                completeLesson(lesson);
-            };
-            summaryEl.querySelector('.glass-card').appendChild(finishBtn);
+            const actionBtn = document.createElement('button');
+            actionBtn.className = 'btn-primary';
+            actionBtn.style.marginTop = '1rem';
+            actionBtn.style.width = '100%';
+
+            if (accuracy >= 90) {
+                actionBtn.textContent = 'COMPLETE LESSON';
+                actionBtn.onclick = () => {
+                    summaryEl.classList.add('hidden');
+                    completeLesson(lesson);
+                };
+            } else {
+                actionBtn.textContent = 'RETRY REQUIRED (<90%)';
+                actionBtn.style.background = '#ff4d4d';
+                actionBtn.onclick = () => {
+                    summaryEl.classList.add('hidden');
+                    runSessionGame('sentence', lesson);
+                };
+            }
+            summaryEl.querySelector('.glass-card').appendChild(actionBtn);
         };
     }
 }
