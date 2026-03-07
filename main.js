@@ -34,20 +34,34 @@ const translatorResult = document.getElementById('translator-result');
 let activeGame = null;
 let globalVocabulary = [];
 let globalSentences = [];
+let curriculum = null;
 let translator = null;
+
+// Curriculum Components
+const curriculumContainer = document.getElementById('curriculum-container');
+const lessonModal = document.getElementById('lesson-modal');
+const lessonModalTitle = document.getElementById('lesson-modal-title');
+const lessonModalIcon = document.getElementById('lesson-modal-icon');
+const lessonVocabList = document.getElementById('lesson-vocab-list');
+const startLessonBtn = document.getElementById('start-lesson-btn');
+const closeLessonModalBtn = document.getElementById('close-lesson-modal');
+
+let selectedLesson = null;
 
 // Pre-fetch vocabulary on app load
 async function preFetchData() {
     try {
-        const [vocabResp, sentenceResp, dictResp, pbResp] = await Promise.all([
+        const [vocabResp, sentenceResp, dictResp, pbResp, currResp] = await Promise.all([
             fetch('./data/vocabulary.json'),
             fetch('./data/sentences.json'),
             fetch('./data/full_dictionary.json').catch(() => null),
-            fetch('./data/full_phrasebook.json').catch(() => null)
+            fetch('./data/full_phrasebook.json').catch(() => null),
+            fetch('./data/curriculum.json')
         ]);
 
         globalVocabulary = await vocabResp.json();
         globalSentences = await sentenceResp.json();
+        curriculum = await currResp.json();
 
         const fullDict = dictResp ? await dictResp.json() : {};
         const fullPb = pbResp ? await pbResp.json() : {};
@@ -55,12 +69,172 @@ async function preFetchData() {
         levelManager.setVocabulary(globalVocabulary);
         translator = new Translator(globalVocabulary, globalSentences, fullDict, fullPb);
 
+        renderCurriculum();
         console.log("Indak: Data Systems Loaded (Extended Translator Ready).");
     } catch (e) {
         console.error("Critical: Failed to load data", e);
     }
 }
 preFetchData();
+
+function renderCurriculum() {
+    if (!curriculum) return;
+
+    curriculumContainer.innerHTML = curriculum.units.map(unit => {
+        const lessonsHTML = unit.lessons.map(lesson => {
+            const isCompleted = levelManager.completedLessons.includes(lesson.id);
+            const isUnlocked = levelManager.unlockedLessons.includes(lesson.id);
+            const statusIcon = isCompleted ? '✅' : (isUnlocked ? lesson.icon : '🔒');
+            const opacity = isUnlocked ? '1' : '0.4';
+
+            return `
+                <div class="lesson-item" data-id="${lesson.id}" style="display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.05); padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); cursor: ${isUnlocked ? 'pointer' : 'default'}; opacity: ${opacity}; transition: transform 0.2s;">
+                    <div style="font-size: 1.5rem; width: 40px; text-align: center;">${statusIcon}</div>
+                    <div style="flex-grow: 1;">
+                        <div style="font-weight: 800; font-size: 1rem; color: white;">${lesson.title}</div>
+                        <div style="font-size: 0.7rem; opacity: 0.6; color: var(--accent-gold);">${isCompleted ? 'COMPLETED' : (isUnlocked ? 'AVAILABLE' : 'LOCKED')}</div>
+                    </div>
+                    ${isUnlocked ? '<span style="opacity: 0.3;">▶</span>' : ''}
+                </div>
+            `;
+        }).join('');
+
+        return `
+            <div class="unit-section">
+                <div style="margin-bottom: 0.8rem;">
+                    <h3 style="color: var(--accent-gold); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px;">${unit.title}</h3>
+                    <p style="font-size: 0.7rem; opacity: 0.5;">${unit.description}</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.6rem;">
+                    ${lessonsHTML}
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    // Attach listeners
+    document.querySelectorAll('.lesson-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const lessonId = item.dataset.id;
+            const lesson = findLessonById(lessonId);
+            if (lesson && levelManager.unlockedLessons.includes(lessonId)) {
+                openLessonPreview(lesson);
+            }
+        });
+    });
+}
+
+function findLessonById(id) {
+    for (const unit of curriculum.units) {
+        const found = unit.lessons.find(l => l.id === id);
+        if (found) return found;
+    }
+    return null;
+}
+
+async function openLessonPreview(lesson) {
+    selectedLesson = lesson;
+    lessonModalTitle.textContent = lesson.title;
+    lessonModalIcon.textContent = lesson.icon;
+    lessonVocabList.innerHTML = '<div style="grid-column: span 2; opacity: 0.5;">Loading details...</div>';
+
+    lessonModal.classList.remove('hidden');
+    heroSection.classList.add('hidden');
+
+    try {
+        const resp = await fetch(`./data/lessons/${lesson.file}`);
+        const data = await resp.json();
+        selectedLesson.data = data;
+
+        lessonVocabList.innerHTML = data.vocabulary.slice(0, 8).map(v => `
+            <div style="background: rgba(0,0,0,0.2); padding: 5px 10px; border-radius: 8px; font-size: 11px;">
+                <div style="font-weight: bold; color: #00ffaa;">${v.word}</div>
+                <div style="opacity: 0.6; font-size: 10px;">${v.meaning}</div>
+            </div>
+        `).join('');
+    } catch (e) {
+        console.error("Failed to load lesson data", e);
+    }
+}
+
+closeLessonModalBtn.addEventListener('click', () => {
+    lessonModal.classList.add('hidden');
+    heroSection.classList.remove('hidden');
+});
+
+startLessonBtn.addEventListener('click', () => {
+    if (!selectedLesson || !selectedLesson.data) return;
+
+    lessonModal.classList.add('hidden');
+    startCurriculumSession(selectedLesson);
+});
+
+function startCurriculumSession(lesson) {
+    // 1. First, we play Swipe Sorter (Vocab)
+    // 2. Then Sentence Builder (Grammar/Syntax)
+    // 3. (Optional) Marker Mission or Indak
+
+    runSessionGame('swipe', lesson);
+}
+
+function runSessionGame(type, lesson) {
+    hideMenu();
+    showExitButton();
+    gameStage.innerHTML = '';
+
+    if (type === 'swipe') {
+        activeGame = new SwipeSorter(gameStage, globalVocabulary, lesson.data);
+        // We need to override the endGame to proceed to the next game
+        const originalEndGame = activeGame.endGame.bind(activeGame);
+        activeGame.endGame = () => {
+            originalEndGame();
+            // Inject our "Next" button into the summary screen
+            const summaryEl = document.getElementById('summary-screen');
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'btn-primary';
+            nextBtn.style.marginTop = '1rem';
+            nextBtn.style.width = '100%';
+            nextBtn.textContent = 'NEXT: SENTENCE BUILDING';
+            nextBtn.onclick = () => {
+                summaryEl.classList.add('hidden');
+                runSessionGame('sentence', lesson);
+            };
+            summaryEl.querySelector('.glass-card').appendChild(nextBtn);
+        };
+    } else if (type === 'sentence') {
+        activeGame = new SentenceBuilder(gameStage, globalSentences, lesson.data);
+        const originalEndGame = activeGame.endGame.bind(activeGame);
+        activeGame.endGame = () => {
+            originalEndGame();
+            const summaryEl = document.getElementById('summary-screen');
+            const finishBtn = document.createElement('button');
+            finishBtn.className = 'btn-primary';
+            finishBtn.style.marginTop = '1rem';
+            finishBtn.style.width = '100%';
+            finishBtn.textContent = 'COMPLETE LESSON';
+            finishBtn.onclick = () => {
+                summaryEl.classList.add('hidden');
+                completeLesson(lesson);
+            };
+            summaryEl.querySelector('.glass-card').appendChild(finishBtn);
+        };
+    }
+}
+
+function completeLesson(lesson) {
+    levelManager.markLessonComplete(lesson.id);
+
+    // Unlock next lesson if available
+    const allLessons = curriculum.units.flatMap(u => u.lessons);
+    const idx = allLessons.findIndex(l => l.id === lesson.id);
+    if (idx !== -1 && idx < allLessons.length - 1) {
+        levelManager.unlockLesson(allLessons[idx + 1].id);
+    }
+
+    showMenu();
+    renderCurriculum();
+    hideExitButton();
+}
 
 function showExitButton() {
     exitBtn?.classList.remove('hidden');
@@ -377,6 +551,10 @@ startBtn?.addEventListener('click', () => {
     }
 });
 
+// Since we removed individual game buttons from the HERO section, 
+// they can now be accessed via some other sub-menu if needed, 
+// but for now let's keep the logic for rhythm game start.
+
 cancelPrepBtn?.addEventListener('click', () => {
     showMenu();
 });
@@ -396,65 +574,6 @@ confirmStartBtn?.addEventListener('click', async () => {
         conductor.start();
     } catch (e) {
         console.error('Failed to start game loop:', e);
-    }
-});
-
-startSwipeBtn?.addEventListener('click', async () => {
-    hideMenu();
-    showExitButton();
-    activeGame = new SwipeSorter(gameStage, globalVocabulary);
-    activeGame.startRound();
-});
-
-startSentenceBtn?.addEventListener('click', async () => {
-    hideMenu();
-    showExitButton();
-    try {
-        const response = await fetch('./data/sentences.json');
-        const sentencesData = await response.json();
-        activeGame = new SentenceBuilder(gameStage, sentencesData);
-        activeGame.startRound();
-    } catch (e) {
-        console.error('Failed to fetch sentences:', e);
-    }
-});
-
-startMarkerBtn?.addEventListener('click', async () => {
-    hideMenu();
-    showExitButton();
-    try {
-        const response = await fetch('./data/grammar_drills.json');
-        const drillsData = await response.json();
-        activeGame = new MarkerMission(gameStage, drillsData);
-        activeGame.startRound();
-    } catch (e) {
-        console.error('Failed to fetch drills:', e);
-    }
-});
-
-startRunnerBtn?.addEventListener('click', async () => {
-    hideMenu();
-    showExitButton();
-    try {
-        const response = await fetch('./data/morphology.json');
-        const morphologyData = await response.json();
-        activeGame = new RootRunner(gameStage, morphologyData);
-        activeGame.startRound();
-    } catch (e) {
-        console.error('Failed to fetch morphology data:', e);
-    }
-});
-
-startParticleBtn?.addEventListener('click', async () => {
-    hideMenu();
-    showExitButton();
-    try {
-        const response = await fetch('./data/particle_pulse.json');
-        const particleData = await response.json();
-        activeGame = new ParticlePulse(gameStage, particleData);
-        // It shows its start screen on init
-    } catch (e) {
-        console.error('Failed to fetch particle data:', e);
     }
 });
 

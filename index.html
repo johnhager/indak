@@ -44,40 +44,63 @@
             <div id="menu-overlay"
                 style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: 100;">
 
-                <!-- Hero Selection -->
-                <div class="hero-section" style="width: 90%; max-width: 400px; text-align: center;">
-                    <div class="glass-card">
-                        <h2>Sugod na kita!</h2>
-                        <p class="hero-desc">Master Hiligaynon heart and soul.</p>
+                <!-- Hero Selection (Now Curriculum Map) -->
+                <div class="hero-section" style="width: 95%; max-width: 500px; text-align: center;">
+                    <div class="glass-card" style="padding: 1.5rem;">
+                        <div style="margin-bottom: 1.5rem;">
+                            <h2 style="font-size: 2rem; color: var(--accent-gold); margin-bottom: 5px;">Indak Path</h2>
+                            <p class="hero-desc" style="opacity: 0.7;">Master Hiligaynon, step by step.</p>
+                        </div>
 
-                        <div class="game-modes"
-                            style="display: flex; flex-direction: column; gap: 1rem; width: 100%; margin-top: 1rem;">
-                            <button id="start-swipe-btn" class="btn-secondary"
-                                style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 1rem; border-radius: 12px; color: white; font-weight: bold; font-size: 1.1rem;">Swipe
-                                Sorter</button>
-                            <button id="start-sentence-btn" class="btn-secondary"
-                                style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 1rem; border-radius: 12px; color: white; font-weight: bold; font-size: 1.1rem;">Sentence
-                                Builder</button>
-                            <button id="start-marker-btn" class="btn-secondary"
-                                style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 1rem; border-radius: 12px; color: white; font-weight: bold; font-size: 1.1rem;">Marker
-                                Mission</button>
-                            <button id="start-runner-btn" class="btn-secondary"
-                                style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 1rem; border-radius: 12px; color: white; font-weight: bold; font-size: 1.1rem;">Root
-                                Runner</button>
-                            <button id="start-particle-btn" class="btn-secondary"
-                                style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 1rem; border-radius: 12px; color: white; font-weight: bold; font-size: 1.1rem;">Particle
-                                Pulse</button>
-                            <button id="start-btn" class="btn-secondary"
-                                style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 1rem; border-radius: 12px; color: white; font-weight: bold; font-size: 1.1rem;">Indak
-                                (Rhythm)</button>
+                        <!-- Curriculum Container -->
+                        <div id="curriculum-container"
+                            style="display: flex; flex-direction: column; gap: 1.5rem; width: 100%; text-align: left;">
+                            <!-- Dynamically filled by main.js -->
+                            <div style="padding: 2rem; text-align: center; opacity: 0.5;">Loading curriculum...</div>
+                        </div>
 
+                        <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 0.8rem;">
                             <button id="open-translator-btn" class="btn-secondary"
-                                style="background: rgba(0, 255, 170, 0.1); border: 1px solid #00ffaa; color: #00ffaa; padding: 1rem; border-radius: 12px; font-weight: 800; font-size: 1.1rem;">🌐
+                                style="background: rgba(0, 255, 170, 0.1); border: 1px solid #00ffaa; color: #00ffaa; padding: 0.8rem; border-radius: 12px; font-weight: 800; font-size: 0.9rem;">🌐
                                 QUICK TRANSLATOR</button>
 
                             <button id="mastery-btn" class="btn-secondary"
-                                style="background: linear-gradient(45deg, rgba(255, 217, 61, 0.2), rgba(255, 107, 107, 0.2)); border: 1px solid var(--accent-gold); padding: 0.8rem; border-radius: 12px; color: var(--accent-gold); font-weight: 800; font-size: 0.9rem; margin-top: 0.5rem;">📊
+                                style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.1); padding: 0.8rem; border-radius: 12px; color: white; font-weight: 600; font-size: 0.8rem; opacity: 0.6;">📊
                                 MASTERY DASHBOARD</button>
+
+                            <button id="start-btn" class="btn-secondary"
+                                style="background: transparent; border: 1px solid rgba(255,255,255,0.1); padding: 0.5rem; border-radius: 12px; color: rgba(255,255,255,0.4); font-size: 0.7rem;">Free
+                                Play (Drills)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lesson Detail Modal -->
+                <div id="lesson-modal" class="hidden" style="width: 90%; max-width: 450px; z-index: 200;">
+                    <div class="glass-card"
+                        style="padding: 2rem; display: flex; flex-direction: column; gap: 1.5rem; text-align: left;">
+                        <div id="lesson-modal-header" style="text-align: center;">
+                            <span id="lesson-modal-icon"
+                                style="font-size: 3rem; display: block; margin-bottom: 0.5rem;">🏠</span>
+                            <h2 id="lesson-modal-title" style="color: var(--accent-gold);">Lesson Title</h2>
+                        </div>
+
+                        <div id="lesson-modal-content" style="max-height: 40vh; overflow-y: auto; padding-right: 10px;">
+                            <h4
+                                style="font-size: 0.8rem; text-transform: uppercase; color: #00ffaa; margin-bottom: 10px;">
+                                Vocabulary Overview</h4>
+                            <div id="lesson-vocab-list"
+                                style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                                <!-- Dynamic items -->
+                            </div>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                            <button id="start-lesson-btn" class="btn-primary"
+                                style="padding: 1rem; border-radius: 50px; font-weight: 800; font-size: 1.2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">START
+                                SESSION</button>
+                            <button id="close-lesson-modal" class="btn-secondary"
+                                style="background: transparent; border: none; font-size: 0.8rem; text-decoration: underline; color: rgba(255,255,255,0.5);">CLOSE</button>
                         </div>
                     </div>
                 </div>

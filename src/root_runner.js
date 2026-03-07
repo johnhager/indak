@@ -6,9 +6,10 @@ import levelManager from './level_manager.js';
  * Players classify words as "Valid" or "Nonsense" based on a central Root word.
  */
 export class RootRunner {
-    constructor(containerElement, morphologyData) {
+    constructor(containerElement, morphologyData, lessonData = null) {
         this.container = containerElement;
         this.data = morphologyData;
+        this.lessonData = lessonData;
 
         this.gameActive = false;
         this.score = 0;
@@ -43,7 +44,12 @@ export class RootRunner {
     }
 
     init() {
-        this.showStartScreen();
+        if (this.lessonData) {
+            this.setupGameUI();
+            this.startGame();
+        } else {
+            this.showStartScreen();
+        }
     }
 
     stop() {

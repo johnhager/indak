@@ -7,9 +7,10 @@
 import { Translator } from './translator.js';
 
 export class SentenceBuilder {
-    constructor(containerElement, sentencesData) {
+    constructor(containerElement, sentencesData, lessonData = null) {
         this.container = containerElement;
-        this.sentences = sentencesData;
+        this.sentences = lessonData ? lessonData.sentences : sentencesData;
+        this.lessonData = lessonData;
         this.currentSentence = null;
 
         this.draggedChunk = null;
@@ -21,7 +22,12 @@ export class SentenceBuilder {
 
         this.gameDirection = 'en-to-il';
 
-        this.showStartScreen();
+        if (this.lessonData) {
+            this.setupGameUI();
+            this.startRound();
+        } else {
+            this.showStartScreen();
+        }
     }
 
     stop() {

@@ -1,12 +1,16 @@
 import levelManager from './level_manager.js';
 
 export class SwipeSorter {
-    constructor(containerElement, vocabularyData) {
+    constructor(containerElement, vocabularyData, lessonData = null) {
         this.container = containerElement;
         this.vocabulary = vocabularyData;
+        this.lessonData = lessonData;
+
+        // If we have lesson-specific vocab, use that, otherwise use global
+        const activeVocab = lessonData ? lessonData.vocabulary : vocabularyData;
 
         // Ensure LevelManager has the latest vocab
-        levelManager.setVocabulary(vocabularyData);
+        levelManager.setVocabulary(activeVocab);
 
         this.currentCard = null;
         this.gameActive = false;
@@ -31,7 +35,12 @@ export class SwipeSorter {
     }
 
     init() {
-        this.showStartScreen();
+        if (this.lessonData) {
+            this.setupGameUI();
+            this.startRound();
+        } else {
+            this.showStartScreen();
+        }
     }
 
     showStartScreen() {

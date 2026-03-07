@@ -26,8 +26,27 @@ class LevelManager {
 
         this.currentTier = parseInt(localStorage.getItem('indak_tier')) || 1;
 
+        // Curriculum V1: Track lesson progress
+        this.completedLessons = JSON.parse(localStorage.getItem('indak_completed_lessons')) || [];
+        this.unlockedLessons = JSON.parse(localStorage.getItem('indak_unlocked_lessons')) || ['greetings-101'];
+
         // Initialize cloud sync
         this.syncWithCloud();
+    }
+
+    markLessonComplete(lessonId) {
+        if (!this.completedLessons.includes(lessonId)) {
+            this.completedLessons.push(lessonId);
+            localStorage.setItem('indak_completed_lessons', JSON.stringify(this.completedLessons));
+            this.syncWithCloud();
+        }
+    }
+
+    unlockLesson(lessonId) {
+        if (!this.unlockedLessons.includes(lessonId)) {
+            this.unlockedLessons.push(lessonId);
+            localStorage.setItem('indak_unlocked_lessons', JSON.stringify(this.unlockedLessons));
+        }
     }
 
     migrateStat(val) {

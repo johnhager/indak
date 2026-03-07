@@ -7,9 +7,10 @@ import { Translator } from './translator.js';
  * Features magnetic snap animations and glassy choice bubbles.
  */
 export class MarkerMission {
-    constructor(containerElement, drillsData) {
+    constructor(containerElement, drillsData, lessonData = null) {
         this.container = containerElement;
-        this.drills = drillsData;
+        this.drills = lessonData ? lessonData.drills : drillsData;
+        this.lessonData = lessonData;
 
         this.currentRound = 0;
         this.totalRounds = 10;
@@ -48,7 +49,12 @@ export class MarkerMission {
     }
 
     init() {
-        this.showStartScreen();
+        if (this.lessonData) {
+            this.setupGameUI();
+            this.startRound();
+        } else {
+            this.showStartScreen();
+        }
     }
 
     stop() {
