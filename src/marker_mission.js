@@ -45,6 +45,7 @@ export class MarkerMission {
         ];
         this.currentLessonIndex = 0;
 
+        this.timerEnabled = lessonData?.settings?.timer !== false;
         this.init();
     }
 

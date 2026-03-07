@@ -27,7 +27,7 @@ export class SwipeSorter {
         this.isDragging = false;
 
         // Timer State
-        this.timerEnabled = true;
+        this.timerEnabled = lessonData?.settings?.timer !== false;
         this.timerInterval = null;
         this.timeLeft = 5.0;
 

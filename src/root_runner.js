@@ -10,6 +10,7 @@ export class RootRunner {
         this.container = containerElement;
         this.data = morphologyData;
         this.lessonData = lessonData;
+        this.timerEnabled = lessonData?.settings?.timer !== false;
 
         this.gameActive = false;
         this.score = 0;

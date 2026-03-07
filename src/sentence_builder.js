@@ -21,6 +21,7 @@ export class SentenceBuilder {
         this.originalParent = null;
 
         this.gameDirection = 'en-to-il';
+        this.timerEnabled = lessonData?.settings?.timer !== false;
 
         if (this.lessonData) {
             this.setupGameUI();

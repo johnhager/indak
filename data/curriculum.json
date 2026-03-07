@@ -9,13 +9,19 @@
                     "id": "greetings-101",
                     "title": "Greetings 101",
                     "file": "greetings_101.json",
-                    "icon": "👋"
+                    "icon": "👋",
+                    "settings": {
+                        "timer": false
+                    }
                 },
                 {
                     "id": "commuting-starter",
                     "title": "Commuting Starter",
                     "file": "commuting_starter.json",
-                    "icon": "🚲"
+                    "icon": "🚲",
+                    "settings": {
+                        "timer": false
+                    }
                 }
             ]
         },
@@ -28,7 +34,10 @@
                     "id": "household-essentials",
                     "title": "Household Essentials",
                     "file": "household_essentials.json",
-                    "icon": "🏠"
+                    "icon": "🏠",
+                    "settings": {
+                        "timer": false
+                    }
                 }
             ]
         }
