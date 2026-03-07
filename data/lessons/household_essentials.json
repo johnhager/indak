@@ -1,0 +1,203 @@
+{
+    "vocabulary": [
+        {
+            "word": "Baláy",
+            "syllables": [
+                "Ba",
+                "láy"
+            ],
+            "stress_index": 1,
+            "meaning": "House / Home",
+            "category": "Nouns"
+        },
+        {
+            "word": "Kusina",
+            "syllables": [
+                "Ku",
+                "si",
+                "na"
+            ],
+            "stress_index": 1,
+            "meaning": "Kitchen",
+            "category": "Nouns"
+        },
+        {
+            "word": "Katre",
+            "syllables": [
+                "Kat",
+                "re"
+            ],
+            "stress_index": 1,
+            "meaning": "Bed",
+            "category": "Nouns"
+        },
+        {
+            "word": "Lamésa",
+            "syllables": [
+                "La",
+                "mé",
+                "sa"
+            ],
+            "stress_index": 1,
+            "meaning": "Table",
+            "category": "Nouns"
+        },
+        {
+            "word": "Latú",
+            "syllables": [
+                "La",
+                "tú"
+            ],
+            "stress_index": 1,
+            "meaning": "Chair",
+            "category": "Nouns"
+        },
+        {
+            "word": "Pirtahan",
+            "syllables": [
+                "Pir",
+                "ta",
+                "han"
+            ],
+            "stress_index": 1,
+            "meaning": "Door",
+            "category": "Nouns"
+        },
+        {
+            "word": "Bintana",
+            "syllables": [
+                "Bin",
+                "ta",
+                "na"
+            ],
+            "stress_index": 1,
+            "meaning": "Window",
+            "category": "Nouns"
+        },
+        {
+            "word": "Suga",
+            "syllables": [
+                "Su",
+                "ga"
+            ],
+            "stress_index": 0,
+            "meaning": "Light / Lamp",
+            "category": "Nouns"
+        },
+        {
+            "word": "Tubig",
+            "syllables": [
+                "Tu",
+                "big"
+            ],
+            "stress_index": 0,
+            "meaning": "Water",
+            "category": "Nouns"
+        },
+        {
+            "word": "Kan-on",
+            "syllables": [
+                "Kan",
+                "on"
+            ],
+            "stress_index": 0,
+            "meaning": "Cooked Rice / Food",
+            "category": "Nouns"
+        },
+        {
+            "word": "Sud-an",
+            "syllables": [
+                "Sud",
+                "an"
+            ],
+            "stress_index": 0,
+            "meaning": "Viand / Dish to eat with rice",
+            "category": "Nouns"
+        },
+        {
+            "word": "Kaón",
+            "syllables": [
+                "Ka",
+                "ón"
+            ],
+            "stress_index": 1,
+            "meaning": "To eat",
+            "category": "Verbs"
+        },
+        {
+            "word": "Inóm",
+            "syllables": [
+                "I",
+                "nóm"
+            ],
+            "stress_index": 1,
+            "meaning": "To drink",
+            "category": "Verbs"
+        },
+        {
+            "word": "Tulog",
+            "syllables": [
+                "Tu",
+                "log"
+            ],
+            "stress_index": 0,
+            "meaning": "To sleep",
+            "category": "Verbs"
+        }
+    ],
+    "sentences": [
+        {
+            "english": "They are eating rice.",
+            "chunks": "Nagakaon | sila | kan-on.",
+            "distractors": "tindahan | katre"
+        },
+        {
+            "english": "What are you eating?",
+            "chunks": "Ano | ang | ginakaon | mo?",
+            "distractors": "hambal | lakat"
+        },
+        {
+            "english": "I'll look for it at the house.",
+            "chunks": "Pangitaon | ko | sa | balay.",
+            "distractors": "eskwealahan | karsada"
+        },
+        {
+            "english": "I'm gonna drink water.",
+            "chunks": "Mainom | ko | tubig.",
+            "distractors": "kaon | tulog"
+        },
+        {
+            "english": "Please help me.",
+            "chunks": "Buligi | ko | bi.",
+            "distractors": "hambal | lakat"
+        },
+        {
+            "english": "The kitchen is clean.",
+            "chunks": "Matinlo | ang | kusina.",
+            "distractors": "madulom | mahigko"
+        }
+    ],
+    "drills": [
+        {
+            "pattern": "Ano ang ___ mo?",
+            "correct": "ginakaon",
+            "distractors": "balay | tubig",
+            "meaning": "What are you eating?",
+            "category": "Everyday Phrases"
+        },
+        {
+            "pattern": "Pangitaon ko sa ___.",
+            "correct": "balay",
+            "distractors": "kaon | inom",
+            "meaning": "I'll look for it at the house.",
+            "category": "Places"
+        },
+        {
+            "pattern": "Mainom ko ___.",
+            "correct": "tubig",
+            "distractors": "kan-on | sud-an",
+            "meaning": "I'm gonna drink water.",
+            "category": "Household"
+        }
+    ]
+}
