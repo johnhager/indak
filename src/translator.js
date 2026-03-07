@@ -12,7 +12,7 @@ export class Translator {
      */
     static normalize(text) {
         if (!text) return "";
-        return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+        return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[.,!?]/g, "").toLowerCase().trim();
     }
 
     constructor(vocabulary, sentences, fullDictionary, fullPhrasebook) {

@@ -364,8 +364,8 @@ export class SentenceBuilder {
         allChunks.forEach(chunkData => {
             const chunkDiv = document.createElement('div');
             chunkDiv.className = 'word-chunk';
-            // Show all bank words in lowercase to remove capitalization clues
-            chunkDiv.textContent = chunkData.text.toLowerCase();
+            // Show all bank words in lowercase and without punctuation to remove visual clues
+            chunkDiv.textContent = chunkData.text.replace(/[.,!?]/g, '').toLowerCase();
             chunkDiv.dataset.originalText = chunkData.text; // Store original for comparison
             chunkDiv.dataset.isCorrect = chunkData.isCorrect;
 
@@ -673,7 +673,7 @@ export class SentenceBuilder {
         const slots = Array.from(this.dropZone.querySelectorAll('.drop-slot'));
         const correctAnswer = isILToEN
             ? this.currentSentence.english.replace(/[^a-zA-Z\s]/g, '').toLowerCase().split(' ')
-            : this.currentSentence.ilonggo_chunks.map(c => c.toLowerCase());
+            : this.currentSentence.ilonggo_chunks.map(c => Translator.normalize(c));
 
         // Flash correct answers in the slots visually
         slots.forEach((slot, i) => {
