@@ -549,34 +549,42 @@ export class SwipeSorter {
         let reviewHtml = '';
         if (this.missedWords.size > 0) {
             reviewHtml = `
-                <h3 style="margin-top: 1.5rem; color: #ff4d4d; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">Review Missed Words</h3>
-                <div class="review-list" style="max-height: 200px; overflow-y: auto; text-align: left; margin-top: 0.5rem; padding-right: 5px; display: flex; flex-direction: column; gap: 8px;">
-                    ${Array.from(this.missedWords).map(w => {
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="color: #ff4d4d; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Review Missed Words</h3>
+                    <div class="review-list" style="max-height: 200px; overflow-y: auto; text-align: left; padding-right: 5px; display: flex; flex-direction: column; gap: 8px;">
+                        ${Array.from(this.missedWords).map(w => {
                 const stats = masteryStats.details[w.word] || { meaning: { c: 0, t: 0 } };
                 const sr = stats.meaning.t === 0 ? 0 : Math.round((stats.meaning.c / stats.meaning.t) * 100);
                 return `
-                            <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 12px; border-left: 3px solid #ff4d4d;">
-                                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
-                                    <strong style="color: white; font-size: 1rem;">${w.word}</strong>
-                                    <span style="font-size: 0.7rem; color: #ff4d4d;">(${sr}%)</span>
+                                <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 12px; border-left: 3px solid #ff4d4d;">
+                                    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px;">
+                                        <strong style="color: white; font-size: 1rem;">${w.word}</strong>
+                                        <span style="font-size: 0.7rem; color: #ff4d4d;">(${sr}%)</span>
+                                    </div>
+                                    <div style="font-size: 0.8rem; color: rgba(255,255,255,0.7); font-style: italic;">${w.meaning}</div>
                                 </div>
-                                <div style="font-size: 0.8rem; color: rgba(255,255,255,0.7); font-style: italic;">${w.meaning}</div>
-                            </div>
-                        `;
+                            `;
             }).join('')}
+                    </div>
+                </div>
+            `;
+        } else {
+            reviewHtml = `
+                <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="color: #00ffaa; font-size: 0.9rem; text-transform: uppercase;">Flawless! No words missed.</h3>
                 </div>
             `;
         }
 
         const summaryEl = document.getElementById('summary-screen');
         summaryEl.innerHTML = `
-            <div class="glass-card" style="width: 90%; max-width: 450px; display: flex; flex-direction: column;">
-                <h2 style="margin-bottom: 1.5rem;">Session Complete</h2>
+            <div class="glass-card" style="width: 90%; max-width: 450px; display: flex; flex-direction: column; overflow-y: auto; max-height: 85vh;">
+                <h2 style="margin-bottom: 1.5rem; color: var(--accent-gold);">Session Complete</h2>
                 
                 ${levelUpMessage}
 
                 <div class="stats-grid" style="margin-bottom: 1.5rem;">
-                    <div class="stat-item"><span>Accuracy</span><strong>${accuracy}%</strong></div>
+                    <div class="stat-item"><span>Accuracy</span><strong style="color: ${accuracy >= 80 ? '#00ffaa' : 'white'};">${accuracy}%</strong></div>
                     <div class="stat-item"><span>Correct</span><strong>${this.score}/${this.totalRounds}</strong></div>
                 </div>
                 
