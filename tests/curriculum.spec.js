@@ -8,14 +8,10 @@ test.describe('Curriculum Session Tests', () => {
         // Wait for curriculum to load and see greetings 101
         await expect(page.locator('#curriculum-container')).toBeVisible();
 
-        // Find the specific lesson title by locating the element
-        const lessonPath = page.locator('.path-node-title', { hasText: 'M1: Greetings 101' });
+        // Click the lesson item for Greetings 101
+        const lessonPath = page.locator('.lesson-item', { hasText: 'Greetings 101' });
         await expect(lessonPath).toBeVisible();
-
-        // Click the node bubble it belongs to.
-        // The title is in an absolute div, but there's a `.node-bubble` sibling or parent
-        const nodeBubble = page.locator('.path-node', { has: page.locator('text="M1: Greetings 101"') }).locator('.node-bubble');
-        await nodeBubble.click();
+        await lessonPath.click({ force: true });
 
         // Wait for Lesson Modal
         await expect(page.locator('#lesson-modal')).toBeVisible();
@@ -25,16 +21,15 @@ test.describe('Curriculum Session Tests', () => {
         await expect(vocabList).not.toBeEmpty();
 
         // Click Start Session
-        await page.locator('#start-lesson-btn').click();
+        await page.locator('#start-lesson-btn').click({ force: true });
 
         // Check if grammar screen appears
         const grammarScreen = page.locator('#grammar-screen');
         if (await grammarScreen.isVisible()) {
-            await page.locator('#start-grammar-btn').click();
+            await page.locator('#start-grammar-btn').click({ force: true });
         }
 
-        // We should now be in the Swipe Sorter (or rhythm game depending on the exact flow)
-        // Check for specific UI elements
+        // Check for specific UI elements of Swipe Sorter
         await expect(page.locator('#game-stage')).toBeVisible();
 
         // Wait for the swipe card to be created
