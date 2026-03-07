@@ -208,7 +208,14 @@ export class SwipeSorter {
 
     startRound() {
         this.gameActive = true;
-        this.totalRounds = 15;
+
+        // If playing a lesson, cap rounds at vocabulary size, otherwise default to 15
+        if (this.lessonData && this.lessonData.vocabulary) {
+            this.totalRounds = this.lessonData.vocabulary.length;
+        } else {
+            this.totalRounds = 15;
+        }
+
         this.currentRound = 0;
         this.score = 0;
         this.totalAttempts = 0;
@@ -232,13 +239,13 @@ export class SwipeSorter {
         // Get pool from LevelManager
         let pool = levelManager.getFilteredVocabulary('meaning', this.roundUsedWords, this.hardMode, this.selectedCategories);
 
-        // If not enough words, try falling back by removing the exclude list or hard mode constraint
+        // If not enough words because of used-list, allow reuse
         if (!pool || pool.length < 4) {
-            pool = levelManager.getFilteredVocabulary('meaning', [], false, this.selectedCategories);
+            pool = levelManager.getFilteredVocabulary('meaning', [], this.hardMode, this.selectedCategories);
         }
 
-        if (!pool || pool.length < 4) {
-            console.warn('Insufficient vocabulary for Swipe Sorter with these categories');
+        if (!pool || pool.length < 2) { // Minimum 2 for a game to even work (top/bottom)
+            console.warn('Insufficient vocabulary for Swipe Sorter');
             this.endGame();
             return;
         }
