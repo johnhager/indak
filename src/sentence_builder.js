@@ -5,6 +5,7 @@
  */
 
 import { Translator } from './translator.js';
+import levelManager from './level_manager.js';
 
 export class SentenceBuilder {
     constructor(containerElement, sentencesData, lessonData = null) {
