@@ -8,7 +8,7 @@
         ],
         "stress_index": 1,
         "meaning": "Salmat",
-        "category": "Expressions",
+        "category": "Greetings & Phrases",
         "gt_word": "Salámat",
         "gt_meaning": "Thank you"
     },
@@ -21,7 +21,7 @@
         ],
         "stress_index": 1,
         "meaning": "We both know youd be better off without me",
-        "category": "Adjective",
+        "category": "Adjectives",
         "gt_word": "Maáyo",
         "gt_meaning": "Good"
     },
@@ -33,7 +33,7 @@
         ],
         "stress_index": 1,
         "meaning": "Eat",
-        "category": "Verb",
+        "category": "Verbs",
         "gt_word": null,
         "gt_meaning": null
     },
@@ -45,7 +45,7 @@
         ],
         "stress_index": 1,
         "meaning": "Speak",
-        "category": "Verb",
+        "category": "Verbs",
         "gt_word": null,
         "gt_meaning": null
     },
@@ -58,7 +58,7 @@
         ],
         "stress_index": 2,
         "meaning": "Love / Beloved",
-        "category": "Verb",
+        "category": "Verbs",
         "gt_word": "Palángga",
         "gt_meaning": "Love / Beloved"
     },
@@ -70,7 +70,7 @@
         ],
         "stress_index": 1,
         "meaning": "Be careful there",
-        "category": "Verb",
+        "category": "Verbs",
         "gt_word": "Hálong",
         "gt_meaning": "Be careful"
     },
@@ -82,7 +82,7 @@
         ],
         "stress_index": 1,
         "meaning": "Many",
-        "category": "Adjective",
+        "category": "Adjectives",
         "gt_word": "damò",
         "gt_meaning": "Many"
     },
@@ -94,7 +94,7 @@
         ],
         "stress_index": 1,
         "meaning": "Do you know how to get to presidents house",
-        "category": "Noun",
+        "category": "Nouns",
         "gt_word": "baláy",
         "gt_meaning": "House"
     },
@@ -147,7 +147,7 @@
         ],
         "stress_index": 2,
         "meaning": "How are you?",
-        "category": "Grammar & Particles"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Hápon",
@@ -399,7 +399,7 @@
         ],
         "stress_index": 0,
         "meaning": "Noon",
-        "category": "Greetings & Phrases"
+        "category": "Numbers & Time"
     },
     {
         "word": "dakó",
@@ -531,7 +531,7 @@
         ],
         "stress_index": 1,
         "meaning": "Drunk",
-        "category": "Verbs"
+        "category": "Adjectives"
     },
     {
         "word": "Bugnaw",
@@ -551,7 +551,7 @@
         ],
         "stress_index": 0,
         "meaning": "Tree/Source",
-        "category": "Adjectives"
+        "category": "Nouns"
     },
     {
         "word": "Kahoy",
@@ -561,7 +561,7 @@
         ],
         "stress_index": 0,
         "meaning": "Wood",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Bulak",
@@ -571,7 +571,7 @@
         ],
         "stress_index": 0,
         "meaning": "Flower",
-        "category": "Adjectives"
+        "category": "Nouns"
     },
     {
         "word": "Tuna",
@@ -591,7 +591,7 @@
         ],
         "stress_index": 0,
         "meaning": "Light",
-        "category": "Adjectives"
+        "category": "Nouns"
     },
     {
         "word": "Panganod",
@@ -602,7 +602,7 @@
         ],
         "stress_index": 2,
         "meaning": "Cloud",
-        "category": "Adjectives"
+        "category": "Nouns"
     },
     {
         "word": "Hangin",
@@ -612,7 +612,7 @@
         ],
         "stress_index": 0,
         "meaning": "Wind",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Kilat",
@@ -622,7 +622,7 @@
         ],
         "stress_index": 0,
         "meaning": "Lightning",
-        "category": "Adjectives"
+        "category": "Nouns"
     },
     {
         "word": "Kuno",
@@ -641,7 +641,7 @@
         ],
         "stress_index": 0,
         "meaning": "Well...",
-        "category": "Greetings & Phrases"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Na",
@@ -650,7 +650,7 @@
         ],
         "stress_index": 0,
         "meaning": "Already",
-        "category": "Verbs"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Kape",
@@ -671,7 +671,7 @@
         ],
         "stress_index": 2,
         "meaning": "Bread",
-        "category": "Verbs"
+        "category": "Nouns"
     },
     {
         "word": "Sud-an",
@@ -691,7 +691,7 @@
         ],
         "stress_index": 0,
         "meaning": "Fish",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Karne",
@@ -701,7 +701,7 @@
         ],
         "stress_index": 1,
         "meaning": "Meat",
-        "category": "Verbs"
+        "category": "Nouns"
     },
     {
         "word": "Prutas",
@@ -793,7 +793,7 @@
         ],
         "stress_index": 2,
         "meaning": "Star",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Bulan",
@@ -813,7 +813,7 @@
         ],
         "stress_index": 0,
         "meaning": "Sky/Heaven",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Bwas",
@@ -1009,7 +1009,7 @@
         ],
         "stress_index": 1,
         "meaning": "No/Cannot",
-        "category": "Greetings & Phrases"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Huo",
@@ -1019,7 +1019,7 @@
         ],
         "stress_index": 0,
         "meaning": "Yes",
-        "category": "Greetings & Phrases"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Ambot",
@@ -1123,7 +1123,7 @@
         ],
         "stress_index": 1,
         "meaning": "Market",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Simbahan",
@@ -1134,7 +1134,7 @@
         ],
         "stress_index": 1,
         "meaning": "Church",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Eskwelahan",
@@ -1146,7 +1146,7 @@
         ],
         "stress_index": 3,
         "meaning": "School",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Gabay",
@@ -1185,7 +1185,7 @@
         ],
         "stress_index": 0,
         "meaning": "Outside",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Sulod",
@@ -1195,7 +1195,7 @@
         ],
         "stress_index": 1,
         "meaning": "Inside",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Tu-on",
@@ -1237,7 +1237,7 @@
         ],
         "stress_index": 3,
         "meaning": "Breakfast",
-        "category": "Adjectives"
+        "category": "Nouns"
     },
     {
         "word": "Panyapon",
@@ -1392,7 +1392,7 @@
         ],
         "stress_index": 1,
         "meaning": "Window",
-        "category": "Verbs"
+        "category": "Nouns"
     },
     {
         "word": "Hagdanan",
@@ -1403,7 +1403,7 @@
         ],
         "stress_index": 1,
         "meaning": "Stairs",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Pirtahan",
@@ -1414,7 +1414,7 @@
         ],
         "stress_index": 1,
         "meaning": "Door",
-        "category": "Verbs"
+        "category": "Nouns"
     },
     {
         "word": "Karsada",
@@ -1425,7 +1425,7 @@
         ],
         "stress_index": 1,
         "meaning": "Street / Road",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Tindahan",
@@ -1436,7 +1436,7 @@
         ],
         "stress_index": 1,
         "meaning": "Store / Market",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Eskwelahan",
@@ -1448,7 +1448,7 @@
         ],
         "stress_index": 2,
         "meaning": "School",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Simbahan",
@@ -1459,7 +1459,7 @@
         ],
         "stress_index": 1,
         "meaning": "Church",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Ospital",
@@ -1470,7 +1470,7 @@
         ],
         "stress_index": 2,
         "meaning": "Hospital",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Pulisya",
@@ -1481,7 +1481,7 @@
         ],
         "stress_index": 1,
         "meaning": "Police",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Bombero",
@@ -1492,7 +1492,7 @@
         ],
         "stress_index": 1,
         "meaning": "Firefighter",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Maestro",
@@ -1503,7 +1503,7 @@
         ],
         "stress_index": 1,
         "meaning": "Male Teacher",
-        "category": "Verbs"
+        "category": "Nouns"
     },
     {
         "word": "Maestra",
@@ -1514,7 +1514,7 @@
         ],
         "stress_index": 1,
         "meaning": "Female Teacher",
-        "category": "Verbs"
+        "category": "Nouns"
     },
     {
         "word": "Estudyante",
@@ -1549,7 +1549,7 @@
         ],
         "stress_index": 2,
         "meaning": "Fisherman",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Mangunguma",
@@ -1561,7 +1561,7 @@
         ],
         "stress_index": 2,
         "meaning": "Farmer",
-        "category": "Adjectives"
+        "category": "Nouns"
     },
     {
         "word": "Manugbaligya",
@@ -1574,7 +1574,7 @@
         ],
         "stress_index": 3,
         "meaning": "Seller / Vendor",
-        "category": "Verbs"
+        "category": "Nouns"
     },
     {
         "word": "Manugbakal",
@@ -1632,7 +1632,7 @@
         ],
         "stress_index": 1,
         "meaning": "Beach / Shore",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Talampas",
@@ -1655,7 +1655,7 @@
         ],
         "stress_index": 2,
         "meaning": "Plains",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Kagulangan",
@@ -1679,7 +1679,7 @@
         ],
         "stress_index": 2,
         "meaning": "Animals",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Kalibutan",
@@ -1691,7 +1691,7 @@
         ],
         "stress_index": 2,
         "meaning": "World",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Kasanag",
@@ -1749,7 +1749,7 @@
         "stress_index": 0,
         "meaning": "No / Not (Future/General)",
         "tier": 4,
-        "category": "Greetings & Phrases"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Wala",
@@ -1760,7 +1760,7 @@
         "stress_index": 1,
         "meaning": "No / Not (Past/Existential)",
         "tier": 4,
-        "category": "Greetings & Phrases"
+        "category": "Grammar & Particles"
     },
     {
         "word": "Waay",
@@ -1895,7 +1895,7 @@
         "stress_index": 3,
         "meaning": "Good morning",
         "tier": 4,
-        "category": "Numbers & Time"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Maayong hapon",
@@ -1909,7 +1909,7 @@
         "stress_index": 3,
         "meaning": "Good afternoon",
         "tier": 4,
-        "category": "Numbers & Time"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Maayong gab-i",
@@ -2022,7 +2022,7 @@
         "stress_index": 1,
         "meaning": "You (singular)",
         "tier": 4,
-        "category": "Verbs"
+        "category": "Pronouns"
     },
     {
         "word": "Sia",
@@ -2337,7 +2337,7 @@
         "stress_index": 1,
         "meaning": "Handsome",
         "tier": 5,
-        "category": "Nouns"
+        "category": "Adjectives"
     },
     {
         "word": "Ma-init",
