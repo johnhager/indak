@@ -123,6 +123,26 @@
                 "Manaog diri. (Get off here.)",
                 "Sakay didto. (Get on there.)"
             ]
+        },
+        {
+            "title": "Verb Tenses: The Prefix System",
+            "description": "Ilonggo doesn't use separate words for tense like 'was' or 'will'. Instead, you change the PREFIX at the start of the verb. There are three main ones to learn:",
+            "examples": [
+                "IMPERATIVE (command / base form): Sakay! (Get on!)",
+                "PAST (nag-): Nagsakay ako. (I got on / I rode.)",
+                "PRESENT (naga-): Nagasakay ako. (I am riding.)",
+                "FUTURE (mag-): Magsakay ako. (I will ride.)"
+            ]
+        },
+        {
+            "title": "Verb Tenses: Practice with Manaog",
+            "description": "Let's apply the same prefix pattern to another verb you just learned — Manaog (get off).",
+            "examples": [
+                "IMPERATIVE: Manaog! (Get off!)",
+                "PAST (nag-): Nagmanaog ako. (I got off.)",
+                "PRESENT (naga-): Nagamanaog ako. (I am getting off.)",
+                "FUTURE (mag-): Magmanaog ako. (I will get off.)"
+            ]
         }
     ],
     "sentences": [
