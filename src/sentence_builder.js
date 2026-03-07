@@ -4,6 +4,8 @@
  * Handles dragging puzzle chunks to form complete Ilonggo sentences correctly (VSO structure).
  */
 
+import { Translator } from './translator.js';
+
 export class SentenceBuilder {
     constructor(containerElement, sentencesData) {
         this.container = containerElement;
@@ -633,10 +635,10 @@ export class SentenceBuilder {
 
         const slots = Array.from(this.dropZone.querySelectorAll('.drop-slot'));
         // Use dataset.originalText to sidestep any UI capitalization variations
-        const currentAnswer = slots.map(s => s.children[0]?.dataset.originalText.toLowerCase() || "");
+        const currentAnswer = slots.map(s => Translator.normalize(s.children[0]?.dataset.originalText || ""));
         const correctAnswer = isILToEN
             ? this.currentSentence.english.replace(/[^a-zA-Z\s]/g, '').toLowerCase().split(' ')
-            : this.currentSentence.ilonggo_chunks.map(c => c.toLowerCase());
+            : this.currentSentence.ilonggo_chunks.map(c => Translator.normalize(c));
 
         // Mastermind Logic
         let perfectMatches = 0;
@@ -669,7 +671,7 @@ export class SentenceBuilder {
 
         // Record accuracy for all Ilonggo words in the sentence on first attempt
         if (this.roundAttempts === 1) {
-            const ilonggoWords = this.currentSentence.ilonggo_chunks.map(c => c.toLowerCase());
+            const ilonggoWords = this.currentSentence.ilonggo_chunks.map(c => Translator.normalize(c));
             ilonggoWords.forEach(word => {
                 levelManager.markWordMastered(word, 'meaning', isCorrect);
             });

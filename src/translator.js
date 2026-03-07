@@ -5,6 +5,16 @@
  */
 
 export class Translator {
+    /**
+     * Normalizes Hiligaynon text by removing accents for logic/comparison.
+     * @param {string} text 
+     * @returns {string}
+     */
+    static normalize(text) {
+        if (!text) return "";
+        return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
+    }
+
     constructor(vocabulary, sentences, fullDictionary, fullPhrasebook) {
         this.vocabulary = vocabulary || [];
         this.sentences = sentences || [];

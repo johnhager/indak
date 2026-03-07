@@ -1,0 +1,158 @@
+{
+    "vocabulary": [
+        {
+            "word": "Sakay",
+            "syllables": [
+                "Sa",
+                "kay"
+            ],
+            "stress_index": 1,
+            "meaning": "Ride / Get on",
+            "category": "Verbs"
+        },
+        {
+            "word": "Manaog",
+            "syllables": [
+                "Ma",
+                "na",
+                "og"
+            ],
+            "stress_index": 2,
+            "meaning": "Get off",
+            "category": "Verbs"
+        },
+        {
+            "word": "Plete",
+            "syllables": [
+                "Ple",
+                "te"
+            ],
+            "stress_index": 1,
+            "meaning": "Fare",
+            "category": "Nouns"
+        },
+        {
+            "word": "Jeep",
+            "syllables": [
+                "Jeep"
+            ],
+            "stress_index": 0,
+            "meaning": "Jeepney",
+            "category": "Nouns"
+        },
+        {
+            "word": "Tricycle",
+            "syllables": [
+                "Tri",
+                "cy",
+                "cle"
+            ],
+            "stress_index": 0,
+            "meaning": "Tricycle",
+            "category": "Nouns"
+        },
+        {
+            "word": "Diin",
+            "syllables": [
+                "Di",
+                "in"
+            ],
+            "stress_index": 1,
+            "meaning": "Where",
+            "category": "Grammar & Particles"
+        }
+    ],
+    "sentences": [
+        {
+            "english": "He ate some cake",
+            "chunks": "Nagkaon | sia | sang | keyk",
+            "distractors": "nagakadto | indi | sia"
+        },
+        {
+            "english": "To the market",
+            "chunks": "Sa | tindahan",
+            "distractors": "nagakadto | indi | sia"
+        },
+        {
+            "english": "Do you guys like it here in the philippines",
+            "chunks": "Nanami-an | kamo | di | sa | Pilipinas?",
+            "distractors": "nagakadto | indi | sia"
+        },
+        {
+            "english": "How would you say it in ilonggo",
+            "chunks": "Paano | mo | ihambal | sa | Ilonggo?",
+            "distractors": "nagakadto | indi | sia"
+        },
+        {
+            "english": "Wow",
+            "chunks": "Baw, | sagad | s’imo | mag-inglis!",
+            "distractors": "nagakadto | indi | sia"
+        },
+        {
+            "english": "Tell her that ill just come back later",
+            "chunks": "Hambala | sia | nga | mabalik | lang | ‘ko | karon",
+            "distractors": "nagakadto | indi | sia"
+        },
+        {
+            "english": "Well talk about that next time",
+            "chunks": "Istoriahan | naton | ‘na | sa | dason",
+            "distractors": "nagakadto | indi | sia"
+        },
+        {
+            "english": "Have you been able to talk with him yet",
+            "chunks": "Nakaistoria | ka | na | sa | iya?",
+            "distractors": "nagakadto | indi | sia"
+        },
+        {
+            "english": "We were given bodies",
+            "chunks": "Gintagaan | kita | sang | mga | lawas, | dapat | ta | (sila) | halungan",
+            "distractors": "nagakadto | indi | sia"
+        },
+        {
+            "english": "What do you know about",
+            "chunks": "Ano | ang | nabal-an | mo | parte | sa…?",
+            "distractors": "nagakadto | indi | sia"
+        },
+        {
+            "english": "You can",
+            "chunks": "Mabal-an | mo | ang | kamatuoran | sining | mensahe | paagi | sa | prayer",
+            "distractors": "nagakadto | indi | sia"
+        },
+        {
+            "english": "Have you ever been to the states",
+            "chunks": "‘Kakadto | ka | na | sa | States?",
+            "distractors": "nagakadto | indi | sia"
+        },
+        {
+            "english": "I cant read",
+            "chunks": "Indi | ‘ko | ‘kabasa",
+            "distractors": "nagakadto | indi | sia"
+        },
+        {
+            "english": "We studied taglog in the states omit sang if you so",
+            "chunks": "Nagtuon | kami | (sang) | Tagalog | sa | States",
+            "distractors": "nagakadto | indi | sia"
+        },
+        {
+            "english": "We were taught taglog in the states",
+            "chunks": "Gintudluan | kami | Tagalog | sa | States",
+            "distractors": "nagakadto | indi | sia"
+        }
+    ],
+    "drills": [
+        {
+            "pattern": "Mapulì na ___.",
+            "correct": "ko",
+            "distractors": "akon | sang",
+            "meaning": "I am going home now.",
+            "category": "Pronouns"
+        },
+        {
+            "pattern": "Diín ‘ta ___?",
+            "correct": "magkíta-ay",
+            "distractors": "makadto | lakat",
+            "meaning": "Where will we meet?",
+            "category": "Verbs"
+        }
+    ]
+}

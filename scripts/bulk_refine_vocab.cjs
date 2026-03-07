@@ -7,6 +7,7 @@ const SYSTEM_INSTRUCTION = `You are a professional Hiligaynon Linguistic Archite
 Audit the following dictionary segments. 
 - Correct Categories (Nouns, Verbs, Adjectives, Pronouns, Grammar & Particles).
 - Verify Meanings (Natural English).
+- Native Stress Marks (Tuldik): Preserve or ADD native Hiligaynon stress marks (á, í, ó, ú, ì) to indicate correct word stress.
 - Return ONLY the JSON array.`;
 
 async function callGemini(entries) {

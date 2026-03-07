@@ -1,4 +1,5 @@
 import cloudManager from './cloud_manager.js';
+import { Translator } from './translator.js';
 
 class LevelManager {
     constructor() {
@@ -105,7 +106,8 @@ class LevelManager {
         // Part A: Mastery/Weakness (Low SR = High weight)
         // Part B: Complexity/Syllables (More syllables = High weight)
         const scoredCandidates = candidates.map(word => {
-            const stats = this.masteryData[word.word] || {
+            const cleanKey = Translator.normalize(word.word);
+            const stats = this.masteryData[cleanKey] || {
                 rhythm: { c: 0, t: 0 },
                 meaning: { c: 0, t: 0 }
             };
@@ -194,18 +196,19 @@ class LevelManager {
     }
 
     markWordMastered(word, type, success = true) {
-        if (!this.masteryData[word]) {
-            this.masteryData[word] = {
+        const cleanWord = Translator.normalize(word);
+        if (!this.masteryData[cleanWord]) {
+            this.masteryData[cleanWord] = {
                 rhythm: { c: 0, t: 0 },
                 meaning: { c: 0, t: 0 }
             };
         }
 
-        const stats = this.masteryData[word][type] || { c: 0, t: 0 };
+        const stats = this.masteryData[cleanWord][type] || { c: 0, t: 0 };
         stats.t++;
         if (success) stats.c++;
 
-        this.masteryData[word][type] = stats;
+        this.masteryData[cleanWord][type] = stats;
         localStorage.setItem('indak_mastery_v3', JSON.stringify(this.masteryData));
         this.syncWithCloud();
     }

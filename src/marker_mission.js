@@ -1,4 +1,5 @@
 import levelManager from './level_manager.js';
+import { Translator } from './translator.js';
 
 /**
  * @file marker_mission.js
@@ -315,7 +316,7 @@ export class MarkerMission {
         this.totalAttempts++;
         this.roundAttempts++;
 
-        const isCorrect = choice === this.currentDrill.correct;
+        const isCorrect = Translator.normalize(choice) === Translator.normalize(this.currentDrill.correct);
         const gap = this.container.querySelector('.gap-target');
 
         if (isCorrect) {

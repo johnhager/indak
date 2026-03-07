@@ -35,12 +35,13 @@ export default async function handler(req) {
         2. **GRAMMAR**: Use native VSO (Verb-Subject-Object) structure. Focus on enclitic pronouns (ko, mo, ya) appropriately.
            - Example: "Cooking dinner" -> "Nagaluto ako sang panyapon."
         3. **BIDIRECTIONAL**: If English input -> Ilonggo output. If Ilonggo input -> English output.
+        4. **NATIVE STRESS MARKS (Tuldik)**: Use native Hiligaynon stress marks (á, í, ó, ú, ì) consistently to indicate correct word stress and pronunciation, matching the standard found in native religious and linguistic archives.
         
         GOLD STANDARD MAPPINGS:
-        - "I'm cooking dinner." -> "Nagaluto ako sang panyapon."
-        - "I'm watching TV." -> "Nagatan-aw ako sang TV." (or "Nagalantaw")
-        - "I have to go to work tomorrow." -> "Kinahanglan ko mag-obra buwas."
-        - "I'm going to make my lunch for tomorrow." -> "Mag-preparar ako sang balon ko para buwas."
+        - "I'm cooking dinner." -> "Nagalutò akó sang panyápon."
+        - "I'm watching TV." -> "Nagatan-aw akó sang TV."
+        - "I have to go to work tomorrow." -> "Kinahánglan ko mag-óbra búwas."
+        - "I'm going to make my lunch for tomorrow." -> "Mag-preparár akó sang bálon ko pára búwas."
 
         Output ONLY the translation. Zero preamble.`;
 

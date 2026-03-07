@@ -8,7 +8,7 @@ const sentenceFormat = phrases.map(p => {
     return {
         english: p.english,
         ilonggo_chunks: chunks,
-        trap_words: ["indi", "nagakadto"], // Generic traps for now
+        trap_words: ["indì", "nagakádto"], // Accented traps
         tier: 5
     };
 });

@@ -1,86 +1,102 @@
 [
     {
-        "word": "Salamat",
+        "word": "Salámat",
         "syllables": [
             "Sa",
-            "la",
+            "lá",
             "mat"
         ],
-        "stress_index": 2,
-        "meaning": "Thank you",
-        "category": "Greetings & Phrases"
+        "stress_index": 1,
+        "meaning": "Salmat",
+        "category": "Expressions",
+        "gt_word": "Salámat",
+        "gt_meaning": "Thank you"
     },
     {
-        "word": "Maayo",
+        "word": "maáyo",
         "syllables": [
             "Ma",
-            "a",
+            "á",
             "yo"
         ],
         "stress_index": 1,
-        "meaning": "Good/Fine",
-        "category": "Greetings & Phrases"
+        "meaning": "We both know youd be better off without me",
+        "category": "Adjective",
+        "gt_word": "Maáyo",
+        "gt_meaning": "Good"
     },
     {
-        "word": "Kaon",
+        "word": "Kaón",
         "syllables": [
             "Ka",
-            "on"
+            "ón"
         ],
-        "stress_index": 0,
+        "stress_index": 1,
         "meaning": "Eat",
-        "category": "Verbs"
+        "category": "Verb",
+        "gt_word": null,
+        "gt_meaning": null
     },
     {
-        "word": "Hambal",
+        "word": "Hambál",
         "syllables": [
             "Ham",
-            "bal"
+            "bál"
         ],
         "stress_index": 1,
         "meaning": "Speak",
-        "category": "Verbs"
+        "category": "Verb",
+        "gt_word": null,
+        "gt_meaning": null
     },
     {
-        "word": "Palangga",
+        "word": "Palángga",
         "syllables": [
             "Pa",
             "lang",
             "ga"
         ],
         "stress_index": 2,
-        "meaning": "Love",
-        "category": "Verbs"
+        "meaning": "Love / Beloved",
+        "category": "Verb",
+        "gt_word": "Palángga",
+        "gt_meaning": "Love / Beloved"
     },
     {
-        "word": "Halong",
+        "word": "Hálong",
         "syllables": [
             "Ha",
             "long"
         ],
         "stress_index": 1,
-        "meaning": "Take care",
-        "category": "Greetings & Phrases"
+        "meaning": "Be careful there",
+        "category": "Verb",
+        "gt_word": "Hálong",
+        "gt_meaning": "Be careful"
     },
     {
-        "word": "Damo",
+        "word": "Damò",
         "syllables": [
             "Da",
-            "mo"
+            "mò"
         ],
         "stress_index": 1,
         "meaning": "Many",
-        "category": "Adjectives"
+        "category": "Adjective",
+        "gt_word": "damò",
+        "gt_meaning": "Many"
     },
     {
-        "word": "Balay",
+        "word": "baláy",
         "syllables": [
             "Ba",
-            "lay"
+            "láy"
         ],
         "stress_index": 1,
-        "meaning": "House",
-        "category": "Verbs"
+        "meaning": "Do you know how to get to presidents house",
+        "category": "Noun",
+        "gt_word": "baláy",
+        "gt_meaning": "House"
     },
     {
         "word": "Tubig",
@@ -90,7 +106,7 @@
         ],
         "stress_index": 0,
         "meaning": "Water",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
         "word": "Tawo",
@@ -103,151 +119,151 @@
         "category": "Nouns"
     },
     {
-        "word": "Bata",
+        "word": "Batà",
         "syllables": [
             "Ba",
-            "ta"
+            "tà"
         ],
         "stress_index": 1,
         "meaning": "Child",
         "category": "Nouns"
     },
     {
-        "word": "Abyan",
+        "word": "Ábyan",
         "syllables": [
-            "Ab",
+            "Áb",
             "yan"
         ],
-        "stress_index": 1,
+        "stress_index": 0,
         "meaning": "Friend",
         "category": "Nouns"
     },
     {
-        "word": "Kumusta",
+        "word": "Kumustá",
         "syllables": [
             "Ku",
             "mus",
-            "ta"
+            "tá"
         ],
         "stress_index": 2,
-        "meaning": "How are you",
-        "category": "Greetings & Phrases"
+        "meaning": "How are you?",
+        "category": "Grammar & Particles"
     },
     {
-        "word": "Hapon",
+        "word": "Hápon",
         "syllables": [
-            "Ha",
+            "Há",
             "pon"
         ],
-        "stress_index": 1,
+        "stress_index": 0,
         "meaning": "Afternoon",
-        "category": "Numbers & Time"
+        "category": "Nouns"
     },
     {
-        "word": "Gab-i",
+        "word": "Gáb-i",
         "syllables": [
-            "Gab",
+            "Gáb",
             "i"
         ],
-        "stress_index": 1,
+        "stress_index": 0,
         "meaning": "Evening",
-        "category": "Numbers & Time"
+        "category": "Nouns"
     },
     {
-        "word": "Adlaw",
+        "word": "Ádlaw",
         "syllables": [
-            "Ad",
+            "Ád",
             "law"
         ],
         "stress_index": 0,
         "meaning": "Day",
-        "category": "Numbers & Time"
+        "category": "Nouns"
     },
     {
-        "word": "Gugma",
+        "word": "Gúgma",
         "syllables": [
-            "Gug",
+            "Gúg",
             "ma"
         ],
         "stress_index": 0,
-        "meaning": "Love (Noun)",
-        "category": "Greetings & Phrases"
+        "meaning": "Love",
+        "category": "Nouns"
     },
     {
-        "word": "Lakat",
+        "word": "Lakát",
         "syllables": [
             "La",
-            "kat"
+            "kát"
         ],
         "stress_index": 1,
         "meaning": "Walk",
         "category": "Verbs"
     },
     {
-        "word": "Dagan",
+        "word": "Dagán",
         "syllables": [
             "Da",
-            "gan"
+            "gán"
         ],
         "stress_index": 1,
         "meaning": "Run",
         "category": "Verbs"
     },
     {
-        "word": "Inom",
+        "word": "Inóm",
         "syllables": [
             "I",
-            "nom"
+            "nóm"
         ],
         "stress_index": 1,
         "meaning": "Drink",
         "category": "Verbs"
     },
     {
-        "word": "Namit",
+        "word": "Namít",
         "syllables": [
             "Na",
-            "mit"
+            "mít"
         ],
         "stress_index": 1,
         "meaning": "Delicious",
         "category": "Adjectives"
     },
     {
-        "word": "Inasal",
+        "word": "Inasál",
         "syllables": [
             "I",
             "na",
-            "sal"
+            "sál"
         ],
         "stress_index": 2,
         "meaning": "Grilled meat",
-        "category": "Verbs"
+        "category": "Nouns"
     },
     {
-        "word": "Laswa",
+        "word": "Laswá",
         "syllables": [
             "Las",
-            "wa"
+            "wá"
         ],
         "stress_index": 1,
         "meaning": "Vegetable stew",
         "category": "Nouns"
     },
     {
-        "word": "Kan-on",
+        "word": "Kán-on",
         "syllables": [
-            "Kan",
+            "Kán",
             "on"
         ],
         "stress_index": 0,
         "meaning": "Cooked rice",
-        "category": "Verbs"
+        "category": "Nouns"
     },
     {
-        "word": "Gwapa",
+        "word": "Gwápa",
         "syllables": [
-            "Gwa",
+            "Gwá",
             "pa"
         ],
         "stress_index": 0,
@@ -255,7 +271,7 @@
         "category": "Adjectives"
     },
     {
-        "word": "Mabug-at",
+        "word": "Mabug-át",
         "syllables": [
             "Ma",
             "bug",
@@ -266,7 +282,7 @@
         "category": "Adjectives"
     },
     {
-        "word": "Mainit",
+        "word": "Maínit",
         "syllables": [
             "Ma",
             "i",
@@ -277,7 +293,7 @@
         "category": "Adjectives"
     },
     {
-        "word": "Masadya",
+        "word": "Masadyá",
         "syllables": [
             "Ma",
             "sa",
@@ -288,56 +304,56 @@
         "category": "Adjectives"
     },
     {
-        "word": "Bukid",
+        "word": "Búkid",
         "syllables": [
             "Bu",
             "kid"
         ],
         "stress_index": 0,
         "meaning": "Mountain",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
-        "word": "Dagat",
+        "word": "Dágat",
         "syllables": [
             "Da",
             "gat"
         ],
         "stress_index": 0,
         "meaning": "Sea",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
-        "word": "Balud",
+        "word": "Balúd",
         "syllables": [
             "Ba",
             "lud"
         ],
         "stress_index": 1,
         "meaning": "Wave",
-        "category": "Verbs"
+        "category": "Nouns"
     },
     {
-        "word": "Ulan",
+        "word": "Ulán",
         "syllables": [
             "U",
             "lan"
         ],
         "stress_index": 1,
         "meaning": "Rain",
-        "category": "Places & Nature"
+        "category": "Nouns"
     },
     {
-        "word": "Gid",
+        "word": "Gíd",
         "syllables": [
             "Gid"
         ],
         "stress_index": 0,
-        "meaning": "Indeed/Really",
+        "meaning": "Indeed",
         "category": "Grammar & Particles"
     },
     {
-        "word": "Lang",
+        "word": "Láng",
         "syllables": [
             "Lang"
         ],
@@ -346,113 +362,113 @@
         "category": "Grammar & Particles"
     },
     {
-        "word": "Anay",
+        "word": "Anáy",
         "syllables": [
             "A",
             "nay"
         ],
         "stress_index": 1,
-        "meaning": "Wait/First",
-        "category": "Verbs"
-    },
-    {
-        "word": "Bala",
-        "syllables": [
-            "Ba",
-            "la"
-        ],
-        "stress_index": 1,
-        "meaning": "Question particle",
+        "meaning": "First",
         "category": "Grammar & Particles"
     },
     {
-        "word": "Aga",
+        "word": "balá",
         "syllables": [
-            "A",
-            "ga"
+            "ba",
+            "lá"
         ],
         "stress_index": 1,
-        "meaning": "Morning",
+        "meaning": "Have you heard the national anthem",
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "ága",
+        "syllables": [
+            "á",
+            "ga"
+        ],
+        "stress_index": 0,
+        "meaning": "30",
         "category": "Numbers & Time"
     },
     {
-        "word": "Udto",
+        "word": "údto",
         "syllables": [
-            "Ud",
+            "úd",
             "to"
         ],
-        "stress_index": 1,
+        "stress_index": 0,
         "meaning": "Noon",
         "category": "Greetings & Phrases"
     },
     {
-        "word": "Dako",
+        "word": "dakó",
         "syllables": [
-            "Da",
-            "ko"
+            "da",
+            "kó"
         ],
         "stress_index": 1,
         "meaning": "Big",
         "category": "Adjectives"
     },
     {
-        "word": "Gamay",
+        "word": "gamáy",
         "syllables": [
-            "Ga",
-            "may"
+            "ga",
+            "máy"
         ],
         "stress_index": 1,
         "meaning": "Small",
         "category": "Adjectives"
     },
     {
-        "word": "Tambok",
+        "word": "támbok",
         "syllables": [
-            "Tam",
+            "tám",
             "bok"
         ],
-        "stress_index": 1,
+        "stress_index": 0,
         "meaning": "Fat",
         "category": "Adjectives"
     },
     {
-        "word": "Payat",
+        "word": "payát",
         "syllables": [
-            "Pa",
-            "yat"
+            "pa",
+            "yát"
         ],
         "stress_index": 1,
         "meaning": "Thin",
         "category": "Adjectives"
     },
     {
-        "word": "Taas",
+        "word": "Táas",
         "syllables": [
-            "Ta",
+            "Tá",
             "as"
         ],
-        "stress_index": 1,
-        "meaning": "Tall/High",
+        "stress_index": 0,
+        "meaning": "Hes tall  and big literally hes already tall",
         "category": "Adjectives"
     },
     {
-        "word": "Nubo",
+        "word": "nubó",
         "syllables": [
-            "Nu",
-            "bo"
+            "nu",
+            "bó"
         ],
         "stress_index": 1,
         "meaning": "Short",
         "category": "Adjectives"
     },
     {
-        "word": "Laba",
+        "word": "labá",
         "syllables": [
-            "La",
-            "ba"
+            "la",
+            "bá"
         ],
-        "stress_index": 0,
-        "meaning": "Long",
+        "stress_index": 1,
+        "meaning": "lábhan",
         "category": "Adjectives"
     },
     {

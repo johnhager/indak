@@ -9,17 +9,20 @@ for (const [key, value] of Object.entries(raw)) {
     // Basic filter: if value has Hiligaynon accents or is clearly a translation
     // and key is natural English
     if (value.includes('á') || value.includes('é') || value.includes('í') || value.includes('ó') || value.includes('ú') || value.includes('‑')) {
-        // Strip accents for the 'app' version but keep them for 'display' if needed
-        const unaccented = value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace('‑', '-').split(' - ')[0].trim();
+        // We keep the accented version for the primary display
+        const native = value.replace('‑', '-').split(' - ')[0].trim();
+        // And create a 'clean' version for background matching logic
+        const logical = native.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
         const english = key.charAt(0).toUpperCase() + key.slice(1);
 
-        if (!seen.has(unaccented)) {
+        if (!seen.has(logical.toLowerCase())) {
             clean.push({
                 english: english,
-                hiligaynon: unaccented,
+                hiligaynon: native,
+                hiligaynon_clean: logical,
                 original: value
             });
-            seen.add(unaccented);
+            seen.add(logical.toLowerCase());
         }
     }
 }

@@ -1,0 +1,142 @@
+{
+    "vocabulary": [
+        {
+            "word": "Maayo",
+            "syllables": [
+                "Ma",
+                "a",
+                "yo"
+            ],
+            "stress_index": 1,
+            "meaning": "Good / Fine",
+            "category": "Adjectives"
+        },
+        {
+            "word": "Aga",
+            "syllables": [
+                "A",
+                "ga"
+            ],
+            "stress_index": 1,
+            "meaning": "Morning",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Hapon",
+            "syllables": [
+                "Ha",
+                "pon"
+            ],
+            "stress_index": 1,
+            "meaning": "Afternoon",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Gab-i",
+            "syllables": [
+                "Gab",
+                "i"
+            ],
+            "stress_index": 1,
+            "meaning": "Evening / Night",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Ngalan",
+            "syllables": [
+                "Nga",
+                "lan"
+            ],
+            "stress_index": 1,
+            "meaning": "Name",
+            "category": "Nouns"
+        },
+        {
+            "word": "Kumusta",
+            "syllables": [
+                "Ku",
+                "mus",
+                "ta"
+            ],
+            "stress_index": 2,
+            "meaning": "How are you",
+            "category": "Greetings & Phrases"
+        },
+        {
+            "word": "Salamat",
+            "syllables": [
+                "Sa",
+                "la",
+                "mat"
+            ],
+            "stress_index": 2,
+            "meaning": "Thank you",
+            "category": "Greetings & Phrases"
+        },
+        {
+            "word": "Halong",
+            "syllables": [
+                "Ha",
+                "long"
+            ],
+            "stress_index": 1,
+            "meaning": "Take care",
+            "category": "Greetings & Phrases"
+        }
+    ],
+    "sentences": [
+        {
+            "english": "Good morning.",
+            "chunks": "Maayong | aga.",
+            "distractors": "hapon | gab-i"
+        },
+        {
+            "english": "What is your name?",
+            "chunks": "Ano | ang | ngalan | mo?",
+            "distractors": "ko | sia"
+        },
+        {
+            "english": "How are you?",
+            "chunks": "Kumusta | ka?",
+            "distractors": "sila | kami"
+        },
+        {
+            "english": "I am good too.",
+            "chunks": "Maayo | man | ako.",
+            "distractors": "ikaw | sila"
+        },
+        {
+            "english": "Thank you very much.",
+            "chunks": "Salamat | gid.",
+            "distractors": "lang | anay"
+        },
+        {
+            "english": "Take care.",
+            "chunks": "Halong | ka.",
+            "distractors": "lakat | kaon"
+        }
+    ],
+    "drills": [
+        {
+            "pattern": "Maayong ___.",
+            "correct": "aga",
+            "distractors": "namit | dako",
+            "meaning": "Good morning.",
+            "category": "Greetings"
+        },
+        {
+            "pattern": "Ano ___ ngalan mo?",
+            "correct": "ang",
+            "distractors": "sang | sa",
+            "meaning": "What is your name?",
+            "category": "Subject Markers"
+        },
+        {
+            "pattern": "Kumusta ___?",
+            "correct": "ka",
+            "distractors": "ko | si",
+            "meaning": "How are you?",
+            "category": "Pronouns"
+        }
+    ]
+}

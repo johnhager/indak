@@ -1,2462 +1,2954 @@
 [
     {
         "english": "30",
-        "hiligaynon": "Kada aga, alas quatro i medya bugtaw na sia",
+        "hiligaynon": "Káda ága, álas quátro i médya búgtaw na siá",
+        "hiligaynon_clean": "Kada aga, alas quatro i medya bugtaw na sia",
         "original": "Káda ága, álas quátro i médya búgtaw na siá ‑ Every morning he was awake by 4"
     },
     {
         "english": "It wont rain",
-        "hiligaynon": "Indi magulan",
+        "hiligaynon": "Indì magulán",
+        "hiligaynon_clean": "Indi magulan",
         "original": "Indì magulán"
     },
     {
         "english": "He ate",
-        "hiligaynon": "Nagkaon sia",
+        "hiligaynon": "Nagkáon siá",
+        "hiligaynon_clean": "Nagkaon sia",
         "original": "Nagkáon siá"
     },
     {
         "english": "He ate it",
-        "hiligaynon": "Ginkaon nia",
+        "hiligaynon": "Ginkáon niá",
+        "hiligaynon_clean": "Ginkaon nia",
         "original": "Ginkáon niá"
     },
     {
         "english": "He ate some cake",
-        "hiligaynon": "Nagkaon sia sang keyk",
+        "hiligaynon": "Nagkáon siá sang keyk",
+        "hiligaynon_clean": "Nagkaon sia sang keyk",
         "original": "Nagkáon siá sang keyk"
     },
     {
         "english": "He ate the cake",
-        "hiligaynon": "Ginkaon nia ang keyk",
+        "hiligaynon": "Ginkáon niá ang keyk",
+        "hiligaynon_clean": "Ginkaon nia ang keyk",
         "original": "Ginkáon niá ang keyk"
     },
     {
         "english": "She came back",
-        "hiligaynon": "Nagbalik sia",
+        "hiligaynon": "Nagbálik siá",
+        "hiligaynon_clean": "Nagbalik sia",
         "original": "Nagbálik siá"
     },
     {
         "english": "She gave it back",
-        "hiligaynon": "Ginbalik nia",
+        "hiligaynon": "Ginbálik niá",
+        "hiligaynon_clean": "Ginbalik nia",
         "original": "Ginbálik niá"
     },
     {
         "english": "We waited",
-        "hiligaynon": "Naghulat kami",
+        "hiligaynon": "Naghulát kamí",
+        "hiligaynon_clean": "Naghulat kami",
         "original": "Naghulát kamí"
     },
     {
         "english": "We are waiting",
-        "hiligaynon": "Nagahulat kami",
+        "hiligaynon": "Nagahulát kamí",
+        "hiligaynon_clean": "Nagahulat kami",
         "original": "Nagahulát kamí"
     },
     {
         "english": "We will wait",
-        "hiligaynon": "Maghulat kami",
+        "hiligaynon": "Maghulát kamí",
+        "hiligaynon_clean": "Maghulat kami",
         "original": "Maghulát kamí"
     },
     {
         "english": "They ate",
-        "hiligaynon": "Nagkaon sila",
+        "hiligaynon": "Nagkáon silá",
+        "hiligaynon_clean": "Nagkaon sila",
         "original": "Nagkáon silá"
     },
     {
         "english": "They are eating",
-        "hiligaynon": "Nagakaon sila",
+        "hiligaynon": "Nagakáon silá",
+        "hiligaynon_clean": "Nagakaon sila",
         "original": "Nagakáon silá"
     },
     {
         "english": "They will eat",
-        "hiligaynon": "Magkaon sila",
+        "hiligaynon": "Magkáon silá",
+        "hiligaynon_clean": "Magkaon sila",
         "original": "Magkáon silá"
     },
     {
         "english": "He is eating it",
-        "hiligaynon": "Ginakaon nia",
+        "hiligaynon": "Ginakáon niá",
+        "hiligaynon_clean": "Ginakaon nia",
         "original": "Ginakáon niá"
     },
     {
         "english": "He will eat it",
-        "hiligaynon": "Kaunon nia",
+        "hiligaynon": "Kaúnon niá",
+        "hiligaynon_clean": "Kaunon nia",
         "original": "Kaúnon niá"
     },
     {
         "english": "I bought it",
-        "hiligaynon": "Ginbakal ko",
+        "hiligaynon": "Ginbakál ko",
+        "hiligaynon_clean": "Ginbakal ko",
         "original": "Ginbakál ko"
     },
     {
         "english": "I buy it",
-        "hiligaynon": "Ginabakal ko",
+        "hiligaynon": "Ginabakál ko",
+        "hiligaynon_clean": "Ginabakal ko",
         "original": "Ginabakál ko"
     },
     {
         "english": "I will buy it",
-        "hiligaynon": "Baklon ko",
+        "hiligaynon": "Báklon ko",
+        "hiligaynon_clean": "Baklon ko",
         "original": "Báklon ko"
     },
     {
         "english": "She helped us",
-        "hiligaynon": "Ginbuligan nia kami",
+        "hiligaynon": "Ginbulígan niá kamí",
+        "hiligaynon_clean": "Ginbuligan nia kami",
         "original": "Ginbulígan niá kamí"
     },
     {
         "english": "She helps us",
-        "hiligaynon": "Ginabuligan nia kami",
+        "hiligaynon": "Ginabulígan niá kamí",
+        "hiligaynon_clean": "Ginabuligan nia kami",
         "original": "Ginabulígan niá kamí"
     },
     {
         "english": "She will help us",
-        "hiligaynon": "Buligan nia kami",
+        "hiligaynon": "Bulígan niá kamí",
+        "hiligaynon_clean": "Buligan nia kami",
         "original": "Bulígan niá kamí"
     },
     {
         "english": "Did you give them some",
-        "hiligaynon": "Ginhatagan mo sila?",
+        "hiligaynon": "Ginhatágan mo silá?",
+        "hiligaynon_clean": "Ginhatagan mo sila?",
         "original": "Ginhatágan mo silá?"
     },
     {
         "english": "Do you give them some",
-        "hiligaynon": "Ginahatagan mo sila?",
+        "hiligaynon": "Ginahatágan mo silá?",
+        "hiligaynon_clean": "Ginahatagan mo sila?",
         "original": "Ginahatágan mo silá?"
     },
     {
         "english": "Will you give them some",
-        "hiligaynon": "Hatagan mo sila?",
+        "hiligaynon": "Hatágan mo silá?",
+        "hiligaynon_clean": "Hatagan mo sila?",
         "original": "Hatágan mo silá?"
     },
     {
         "english": "Din",
-        "hiligaynon": "Diin kamo naghalin?",
+        "hiligaynon": "Diín kamó naghalín?",
+        "hiligaynon_clean": "Diin kamo naghalin?",
         "original": "Diín kamó naghalín? ‑ Where’d you guys come from? / Where have you guys been? (Shortcut"
     },
     {
         "english": "To the market",
-        "hiligaynon": "Sa tindahan",
+        "hiligaynon": "Sa tindáhan",
+        "hiligaynon_clean": "Sa tindahan",
         "original": "Sa tindáhan"
     },
     {
         "english": "Just over there",
-        "hiligaynon": "Didto lang",
+        "hiligaynon": "Dídto lang",
+        "hiligaynon_clean": "Didto lang",
         "original": "Dídto lang"
     },
     {
         "english": "None",
-        "hiligaynon": "Wala / Waay",
+        "hiligaynon": "Walâ / Waáy",
+        "hiligaynon_clean": "Wala / Waay",
         "original": "Walâ / Waáy"
     },
     {
         "english": "Were from here",
-        "hiligaynon": "Tagadiri kami",
+        "hiligaynon": "Tágadirí kamí",
+        "hiligaynon_clean": "Tagadiri kami",
         "original": "Tágadirí kamí"
     },
     {
         "english": "Lahg lang",
         "hiligaynon": "Joke lang!",
+        "hiligaynon_clean": "Joke lang!",
         "original": "Joke lang! ‑ Just kidding! (In pure Ilonggo"
     },
     {
         "english": "Do you guys like it here in the philippines",
-        "hiligaynon": "Nanami-an kamo di sa Pilipinas?",
+        "hiligaynon": "Nanamí-an kamó di sa Pilipínas?",
+        "hiligaynon_clean": "Nanami-an kamo di sa Pilipinas?",
         "original": "Nanamí‑an kamó di sa Pilipínas?"
     },
     {
         "english": "Do you know elder ferris",
-        "hiligaynon": "Kilala mo bala si Elder Ferris?",
+        "hiligaynon": "Kilála mo bala si Elder Ferris?",
+        "hiligaynon_clean": "Kilala mo bala si Elder Ferris?",
         "original": "Kilála mo bala si Elder Ferris?"
     },
     {
         "english": "Hows he doing now",
-        "hiligaynon": "Kumusta na sia?",
+        "hiligaynon": "Kumústa na sia?",
+        "hiligaynon_clean": "Kumusta na sia?",
         "original": "Kumústa na sia?"
     },
     {
         "english": "Fourth",
-        "hiligaynon": "Ika-apat",
+        "hiligaynon": "Ika-ápat",
+        "hiligaynon_clean": "Ika-apat",
         "original": "Ika‑ápat"
     },
     {
         "english": "Me too",
-        "hiligaynon": "Ako man",
+        "hiligaynon": "Akó man",
+        "hiligaynon_clean": "Ako man",
         "original": "Akó man"
     },
     {
         "english": "Do you still have a long time to be here",
-        "hiligaynon": "Dugay ka pa diri?",
+        "hiligaynon": "Dúgay ka pa dirí?",
+        "hiligaynon_clean": "Dugay ka pa diri?",
         "original": "Dúgay ka pa dirí?"
     },
     {
         "english": "No",
-        "hiligaynon": "Sige lang",
+        "hiligaynon": "Sigé lang",
+        "hiligaynon_clean": "Sige lang",
         "original": "Sigé lang"
     },
     {
         "english": "Im kind of hungry now",
-        "hiligaynon": "Medyo gutom na ako",
+        "hiligaynon": "Medyo gutóm na akó",
+        "hiligaynon_clean": "Medyo gutom na ako",
         "original": "Medyo gutóm na akó"
     },
     {
         "english": "How would you say it in ilonggo",
-        "hiligaynon": "Paano mo ihambal sa Ilonggo?",
+        "hiligaynon": "Paanó mo ihámbal sa Ilónggo?",
+        "hiligaynon_clean": "Paano mo ihambal sa Ilonggo?",
         "original": "Paanó mo ihámbal sa Ilónggo?"
     },
     {
         "english": "What is that",
-        "hiligaynon": "Ano ‘na?",
+        "hiligaynon": "Anó ‘nâ?",
+        "hiligaynon_clean": "Ano ‘na?",
         "original": "Anó ‘nâ?"
     },
     {
         "english": "What is this",
-        "hiligaynon": "Ano ‘ni?",
+        "hiligaynon": "Anó ‘ni?",
+        "hiligaynon_clean": "Ano ‘ni?",
         "original": "Anó ‘ni?"
     },
     {
         "english": "What was that",
-        "hiligaynon": "Ano ‘to?",
+        "hiligaynon": "Anó ‘to?",
+        "hiligaynon_clean": "Ano ‘to?",
         "original": "Anó ‘to?"
     },
     {
         "english": "What do you call this",
-        "hiligaynon": "Ano ang tawag sini?",
+        "hiligaynon": "Anó ang tawág siní?",
+        "hiligaynon_clean": "Ano ang tawag sini?",
         "original": "Anó ang tawág siní?"
     },
     {
         "english": "What do you call that",
-        "hiligaynon": "Ano ang tawag sina?",
+        "hiligaynon": "Anó ang tawág sinâ?",
+        "hiligaynon_clean": "Ano ang tawag sina?",
         "original": "Anó ang tawág sinâ?"
     },
     {
         "english": "Like that",
-        "hiligaynon": "Amo ‘na!",
+        "hiligaynon": "Amó ‘nâ!",
+        "hiligaynon_clean": "Amo ‘na!",
         "original": "Amó ‘nâ!"
     },
     {
         "english": "Whose is this",
-        "hiligaynon": "Kay sin-o ‘ni?",
+        "hiligaynon": "Kay sín-o ‘ní?",
+        "hiligaynon_clean": "Kay sin-o ‘ni?",
         "original": "Kay sín‑o ‘ní?"
     },
     {
         "english": "Is this yours",
-        "hiligaynon": "Imo ‘ni?",
+        "hiligaynon": "Ímo ‘ní?",
+        "hiligaynon_clean": "Imo ‘ni?",
         "original": "Ímo ‘ní?"
     },
     {
         "english": "Wow",
-        "hiligaynon": "Baw, sagad s’imo mag-inglis!",
+        "hiligaynon": "Baw, sagád s’ímo mag-ínglis!",
+        "hiligaynon_clean": "Baw, sagad s’imo mag-inglis!",
         "original": "Baw, sagád s’ímo mag‑ínglis!"
     },
     {
         "english": "Well be leaving now",
-        "hiligaynon": "Malakat na kami",
+        "hiligaynon": "Malakát na kamí",
+        "hiligaynon_clean": "Malakat na kami",
         "original": "Malakát na kamí"
     },
     {
         "english": "Youre leaving already",
-        "hiligaynon": "Malakat na kamo?",
+        "hiligaynon": "Malakát na kamó?",
+        "hiligaynon_clean": "Malakat na kamo?",
         "original": "Malakát na kamó?"
     },
     {
         "english": "I love you guys",
-        "hiligaynon": "Palangga ta kamo",
+        "hiligaynon": "Palanggà ta kamó",
+        "hiligaynon_clean": "Palangga ta kamo",
         "original": "Palanggà ta kamó"
     },
     {
         "english": "We love you",
-        "hiligaynon": "Palangga ka namon",
+        "hiligaynon": "Palanggà ka námon",
+        "hiligaynon_clean": "Palangga ka namon",
         "original": "Palanggà ka námon"
     },
     {
         "english": "We love you guys",
-        "hiligaynon": "Palangga namon kamo",
+        "hiligaynon": "Palanggà námon kamó",
+        "hiligaynon_clean": "Palangga namon kamo",
         "original": "Palanggà námon kamó"
     },
     {
         "english": "I really miss you guys",
-        "hiligaynon": "Nahidlaw gid ‘ko s’inyo",
+        "hiligaynon": "Nahídlaw gid ‘ko s’ínyo",
+        "hiligaynon_clean": "Nahidlaw gid ‘ko s’inyo",
         "original": "Nahídlaw gid ‘ko s’ínyo"
     },
     {
         "english": "I understand because this is an abilitative actor focus conjugation",
-        "hiligaynon": "‘Kaintsindi ‘ko",
+        "hiligaynon": "‘Kaintsíndi ‘ko",
+        "hiligaynon_clean": "‘Kaintsindi ‘ko",
         "original": "‘Kaintsíndi ‘ko"
     },
     {
         "english": "I understand",
-        "hiligaynon": "Maintsindihan ko",
+        "hiligaynon": "Maintsíndihan ko",
+        "hiligaynon_clean": "Maintsindihan ko",
         "original": "Maintsíndihan ko"
     },
     {
         "english": "I dont understand",
-        "hiligaynon": "Waay ‘ko kaintsindi",
+        "hiligaynon": "Waáy ‘ko kaintsíndi",
+        "hiligaynon_clean": "Waay ‘ko kaintsindi",
         "original": "Waáy ‘ko kaintsíndi"
     },
     {
         "english": "We cant understand it keep in mind",
-        "hiligaynon": "Indi namon maintsindihan",
+        "hiligaynon": "Indì námon maintsíndihan",
+        "hiligaynon_clean": "Indi namon maintsindihan",
         "original": "Indì námon maintsíndihan"
     },
     {
         "english": "We cant be understood this isnt a common phrase",
-        "hiligaynon": "Indi kami maintsindihan",
+        "hiligaynon": "Indì kamí maintsíndihan",
+        "hiligaynon_clean": "Indi kami maintsindihan",
         "original": "Indì kamí maintsíndihan"
     },
     {
         "english": "We cant understand",
-        "hiligaynon": "Indi kami kaintsindi",
+        "hiligaynon": "Indì kamí kaintsíndi",
+        "hiligaynon_clean": "Indi kami kaintsindi",
         "original": "Indì kamí kaintsíndi"
     },
     {
         "english": "We couldnt understand",
-        "hiligaynon": "Waay kami kaintsindi",
+        "hiligaynon": "Waáy kamí kaintsíndi",
+        "hiligaynon_clean": "Waay kami kaintsindi",
         "original": "Waáy kamí kaintsíndi"
     },
     {
         "english": "Ill turn you into an aswang",
-        "hiligaynon": "Himu-on ta ka aswang",
+        "hiligaynon": "Himú-on ta ká áswang",
+        "hiligaynon_clean": "Himu-on ta ka aswang",
         "original": "Himú‑on ta ká áswang"
     },
     {
         "english": "Tell her",
-        "hiligaynon": "Hambala sia!",
+        "hiligaynon": "Hambalá siá!",
+        "hiligaynon_clean": "Hambala sia!",
         "original": "Hambalá siá!"
     },
     {
         "english": "You will tell her",
-        "hiligaynon": "Hambalon mo sia",
+        "hiligaynon": "Hambalón mo siá",
+        "hiligaynon_clean": "Hambalon mo sia",
         "original": "Hambalón mo siá"
     },
     {
         "english": "Tell her that",
-        "hiligaynon": "Hambala sia nga…",
+        "hiligaynon": "Hambalá siá nga…",
+        "hiligaynon_clean": "Hambala sia nga…",
         "original": "Hambalá siá nga…"
     },
     {
         "english": "Tell her that ill just come back later",
-        "hiligaynon": "Hambala sia nga mabalik lang ‘ko karon",
+        "hiligaynon": "Hambalá siá nga mabálik lang ‘kó karón",
+        "hiligaynon_clean": "Hambala sia nga mabalik lang ‘ko karon",
         "original": "Hambalá siá nga mabálik lang ‘kó karón"
     },
     {
         "english": "Tell mom we dropped by",
-        "hiligaynon": "Hambala si Mama nga naghapit kami",
+        "hiligaynon": "Hambalá si Máma nga naghápit kamí",
+        "hiligaynon_clean": "Hambala si Mama nga naghapit kami",
         "original": "Hambalá si Máma nga naghápit kamí"
     },
     {
         "english": "I have something to say",
-        "hiligaynon": "May ihambal ‘ko",
+        "hiligaynon": "May ihámbal ‘ko",
+        "hiligaynon_clean": "May ihambal ‘ko",
         "original": "May ihámbal ‘ko"
     },
     {
         "english": "Talk to him",
-        "hiligaynon": "Istoriaha sia!",
+        "hiligaynon": "Istóriahá siá!",
+        "hiligaynon_clean": "Istoriaha sia!",
         "original": "Istóriahá siá!"
     },
     {
         "english": "Tomorrow well talk with president i have changed the spelling",
-        "hiligaynon": "Bwas, istoriahon naton si President",
+        "hiligaynon": "Bwás, istóriahon náton si President",
+        "hiligaynon_clean": "Bwas, istoriahon naton si President",
         "original": "Bwás, istóriahon náton si President"
     },
     {
         "english": "I talked with him yesterday",
-        "hiligaynon": "Ginistoria ko sia kahapon",
+        "hiligaynon": "Ginistória ko siá kahápon",
+        "hiligaynon_clean": "Ginistoria ko sia kahapon",
         "original": "Ginistória ko siá kahápon"
     },
     {
         "english": "Who are you talking to",
-        "hiligaynon": "Sin-o ang ginaistoria mo?",
+        "hiligaynon": "Sín-o ang ginaistória mo?",
+        "hiligaynon_clean": "Sin-o ang ginaistoria mo?",
         "original": "Sín‑o ang ginaistória mo?"
     },
     {
         "english": "Who are you talking about notice the difference in meaning when it",
-        "hiligaynon": "Sin-o ang ginaistoriahan mo?",
+        "hiligaynon": "Sín-o ang ginaistóriahán mo?",
+        "hiligaynon_clean": "Sin-o ang ginaistoriahan mo?",
         "original": "Sín‑o ang ginaistóriahán mo?"
     },
     {
         "english": "What are you talking about",
-        "hiligaynon": "Ano ang ginaistoriahan mo?",
+        "hiligaynon": "Anó ang ginaistóriahán mo?",
+        "hiligaynon_clean": "Ano ang ginaistoriahan mo?",
         "original": "Anó ang ginaistóriahán mo?"
     },
     {
         "english": "What are you guys talking about",
-        "hiligaynon": "Ano ang ginaistoriahan nyo?",
+        "hiligaynon": "Anó ang ginaistóriahán nyo?",
+        "hiligaynon_clean": "Ano ang ginaistoriahan nyo?",
         "original": "Anó ang ginaistóriahán nyo?"
     },
     {
         "english": "Well talk about that next time",
-        "hiligaynon": "Istoriahan naton ‘na sa dason",
+        "hiligaynon": "Istóriahán náton ‘nâ sa dasón",
+        "hiligaynon_clean": "Istoriahan naton ‘na sa dason",
         "original": "Istóriahán náton ‘nâ sa dasón"
     },
     {
         "english": "Lets talk with president",
-        "hiligaynon": "Istoriahon ta si President",
+        "hiligaynon": "Istóriahón ta si President",
+        "hiligaynon_clean": "Istoriahon ta si President",
         "original": "Istóriahón ta si President"
     },
     {
         "english": "I want to  talk with president",
-        "hiligaynon": "Gusto ko maistoria si President (abilitative object focus)",
+        "hiligaynon": "Gústo ko maistória si President (abilitative object focus)",
+        "hiligaynon_clean": "Gusto ko maistoria si President (abilitative object focus)",
         "original": "Gústo ko maistória si President (abilitative object focus)"
     },
     {
         "english": "I want to talk with president",
-        "hiligaynon": "Gusto ko istoriahon si President (regular object focus)",
+        "hiligaynon": "Gústo ko istóriahón si President (regular object focus)",
+        "hiligaynon_clean": "Gusto ko istoriahon si President (regular object focus)",
         "original": "Gústo ko istóriahón si President (regular object focus)"
     },
     {
         "english": "I want to talk with him",
-        "hiligaynon": "Gusto ko sia maistoria/istoriahon",
+        "hiligaynon": "Gústo ko siá maistória/istóriahón",
+        "hiligaynon_clean": "Gusto ko sia maistoria/istoriahon",
         "original": "Gústo ko siá maistória/istóriahón"
     },
     {
         "english": "Have you been able to talk with him yet",
-        "hiligaynon": "Nakaistoria ka na sa iya?",
+        "hiligaynon": "Nakáistória ka na sa íya?",
+        "hiligaynon_clean": "Nakaistoria ka na sa iya?",
         "original": "Nakáistória ka na sa íya?"
     },
     {
         "english": "We were given bodies",
-        "hiligaynon": "Gintagaan kita sang mga lawas, dapat ta (sila) halungan",
+        "hiligaynon": "Gintagáan kitá sang mga láwas, dápat ta (silá) halúngan",
+        "hiligaynon_clean": "Gintagaan kita sang mga lawas, dapat ta (sila) halungan",
         "original": "Gintagáan kitá sang mga láwas, dápat ta (silá) halúngan"
     },
     {
         "english": "Ill give you a copy",
-        "hiligaynon": "Tagaan ta ka kopya",
+        "hiligaynon": "Tagáan ta ka kopya",
+        "hiligaynon_clean": "Tagaan ta ka kopya",
         "original": "Tagáan ta ka kopya"
     },
     {
         "english": "Well give you one",
-        "hiligaynon": "Tagaan ka namon",
+        "hiligaynon": "Tagáan ka namon",
+        "hiligaynon_clean": "Tagaan ka namon",
         "original": "Tagáan ka namon"
     },
     {
         "english": "They were given authority",
-        "hiligaynon": "Gintaga-an sila autoridad",
+        "hiligaynon": "Gintagá-an silá autóridad",
+        "hiligaynon_clean": "Gintaga-an sila autoridad",
         "original": "Gintagá‑an silá autóridad"
     },
     {
         "english": "We have something to give you",
-        "hiligaynon": "May ihatag kami s’imo",
+        "hiligaynon": "May ihátag kamí s’ímo",
+        "hiligaynon_clean": "May ihatag kami s’imo",
         "original": "May ihátag kamí s’ímo"
     },
     {
         "english": "What are you eating",
-        "hiligaynon": "Ano ang ginakaon mo?",
+        "hiligaynon": "Anó ang ginakáon mo?",
+        "hiligaynon_clean": "Ano ang ginakaon mo?",
         "original": "Anó ang ginakáon mo?"
     },
     {
         "english": "What did you eat",
-        "hiligaynon": "Ano ang ginkaon mo?",
+        "hiligaynon": "Anó ang ginkáon mo?",
+        "hiligaynon_clean": "Ano ang ginkaon mo?",
         "original": "Anó ang ginkáon mo?"
     },
     {
         "english": "Do you guys eat rice",
-        "hiligaynon": "‘Gakaon kamo kan-on?",
+        "hiligaynon": "‘Gakáon kamó kán-on?",
+        "hiligaynon_clean": "‘Gakaon kamo kan-on?",
         "original": "‘Gakáon kamó kán‑on?"
     },
     {
         "english": "I thought all you guys ate was bread",
-        "hiligaynon": "Abi ko tinapay lang (ang) ginakaon nyo",
+        "hiligaynon": "Ábi ko tinápay lang (ang) ginakáon nyo",
+        "hiligaynon_clean": "Abi ko tinapay lang (ang) ginakaon nyo",
         "original": "Ábi ko tinápay lang (ang) ginakáon nyo"
     },
     {
         "english": "How did you know my name short for nahibloan or",
-        "hiligaynon": "Paano mo nabal-an akon ngalan?",
+        "hiligaynon": "Paanó mo nabál-an ákon ngálan?",
+        "hiligaynon_clean": "Paano mo nabal-an akon ngalan?",
         "original": "Paanó mo nabál‑an ákon ngálan?"
     },
     {
         "english": "What do you know about",
-        "hiligaynon": "Ano ang nabal-an mo parte sa…?",
+        "hiligaynon": "Anó ang nabál-an mo párte sa…?",
+        "hiligaynon_clean": "Ano ang nabal-an mo parte sa…?",
         "original": "Anó ang nabál‑an mo párte sa…?"
     },
     {
         "english": "I want to know the truth",
-        "hiligaynon": "Gusto ko mabal-an ang kamatuoran",
+        "hiligaynon": "Gústo ko mabál-an ang kamatúoran",
+        "hiligaynon_clean": "Gusto ko mabal-an ang kamatuoran",
         "original": "Gústo ko mabál‑an ang kamatúoran"
     },
     {
         "english": "You can",
-        "hiligaynon": "Mabal-an mo ang kamatuoran sining mensahe paagi sa prayer",
+        "hiligaynon": "Mabál-an mo ang kamatúorán siníng mensáhe paági sa prayer",
+        "hiligaynon_clean": "Mabal-an mo ang kamatuoran sining mensahe paagi sa prayer",
         "original": "Mabál‑an mo ang kamatúorán siníng mensáhe paági sa prayer"
     },
     {
         "english": "I know that",
-        "hiligaynon": "‘Kabalo ‘ko nga…",
+        "hiligaynon": "‘Kabaló ‘ko nga…",
+        "hiligaynon_clean": "‘Kabalo ‘ko nga…",
         "original": "‘Kabaló ‘ko nga…"
     },
     {
         "english": "I really know that this is actor focus",
-        "hiligaynon": "‘Kabalo gid ‘ko nga…",
+        "hiligaynon": "‘Kabaló gid ‘ko nga…",
+        "hiligaynon_clean": "‘Kabalo gid ‘ko nga…",
         "original": "‘Kabaló gid ‘ko nga…"
     },
     {
         "english": "I dont know",
-        "hiligaynon": "Waay ‘ko ‘kabalo",
+        "hiligaynon": "Waáy ‘ko ‘kabaló",
+        "hiligaynon_clean": "Waay ‘ko ‘kabalo",
         "original": "Waáy ‘ko ‘kabaló"
     },
     {
         "english": "Do you know",
-        "hiligaynon": "‘Kabalo ka?",
+        "hiligaynon": "‘Kabaló ka?",
+        "hiligaynon_clean": "‘Kabalo ka?",
         "original": "‘Kabaló ka?"
     },
     {
         "english": "Have you ever been to the states",
-        "hiligaynon": "‘Kakadto ka na sa States?",
+        "hiligaynon": "‘Kakádto ka na sa States?",
+        "hiligaynon_clean": "‘Kakadto ka na sa States?",
         "original": "‘Kakádto ka na sa States?"
     },
     {
         "english": "Lets ask bishop",
-        "hiligaynon": "Pamangkuton ta si Bishop",
+        "hiligaynon": "Pamángkuton ta si Bishop",
+        "hiligaynon_clean": "Pamangkuton ta si Bishop",
         "original": "Pamángkuton ta si Bishop"
     },
     {
         "english": "Ask him",
-        "hiligaynon": "Pamangkuta sia",
+        "hiligaynon": "Pamángkuta siá",
+        "hiligaynon_clean": "Pamangkuta sia",
         "original": "Pamángkuta siá"
     },
     {
         "english": "I cant read",
-        "hiligaynon": "Indi ‘ko ‘kabasa",
+        "hiligaynon": "Indì ‘ko ‘kabása",
+        "hiligaynon_clean": "Indi ‘ko ‘kabasa",
         "original": "Indì ‘ko ‘kabása"
     },
     {
         "english": "We studied taglog in the states omit sang if you so",
-        "hiligaynon": "Nagtuon kami (sang) Tagalog sa States",
+        "hiligaynon": "Nagtuón kamí (sang) Tagalog sa States",
+        "hiligaynon_clean": "Nagtuon kami (sang) Tagalog sa States",
         "original": "Nagtuón kamí (sang) Tagalog sa States"
     },
     {
         "english": "We learned that",
-        "hiligaynon": "Natun-an namon nga…",
+        "hiligaynon": "Natún-an námon nga…",
+        "hiligaynon_clean": "Natun-an namon nga…",
         "original": "Natún‑an námon nga…"
     },
     {
         "english": "What have you learned",
-        "hiligaynon": "Ano ang natun-an mo?",
+        "hiligaynon": "Anó ang natún-an mo?",
+        "hiligaynon_clean": "Ano ang natun-an mo?",
         "original": "Anó ang natún‑an mo?"
     },
     {
         "english": "We were taught taglog in the states",
-        "hiligaynon": "Gintudluan kami Tagalog sa States",
+        "hiligaynon": "Gintúdluan kamí Tagálog sa States",
+        "hiligaynon_clean": "Gintudluan kami Tagalog sa States",
         "original": "Gintúdluan kamí Tagálog sa States"
     },
     {
         "english": "Call bishop",
-        "hiligaynon": "Tawgi si Bishop",
+        "hiligaynon": "Táwgi si Bishop",
+        "hiligaynon_clean": "Tawgi si Bishop",
         "original": "Táwgi si Bishop"
     },
     {
         "english": "Lets call bishop",
-        "hiligaynon": "Tawgan ta si Bishop",
+        "hiligaynon": "Táwgan ta si Bishop",
+        "hiligaynon_clean": "Tawgan ta si Bishop",
         "original": "Táwgan ta si Bishop"
     },
     {
         "english": "We were called of god",
-        "hiligaynon": "Gintawag kami sang Diyos",
+        "hiligaynon": "Gintawág kami sang Diyos",
+        "hiligaynon_clean": "Gintawag kami sang Diyos",
         "original": "Gintawág kami sang Diyos"
     },
     {
         "english": "I didnt hear",
-        "hiligaynon": "Waay ‘ko ‘kabati",
+        "hiligaynon": "Waáy ‘ko ‘kabatî",
+        "hiligaynon_clean": "Waay ‘ko ‘kabati",
         "original": "Waáy ‘ko ‘kabatî"
     },
     {
         "english": "I didnt hear it",
-        "hiligaynon": "Waay ko nabatian",
+        "hiligaynon": "Waáy ko nabátian",
+        "hiligaynon_clean": "Waay ko nabatian",
         "original": "Waáy ko nabátian"
     },
     {
         "english": "I didnt hear you",
-        "hiligaynon": "Waay ko nabatian ikaw",
+        "hiligaynon": "Waáy ko nabátian ikaw",
+        "hiligaynon_clean": "Waay ko nabatian ikaw",
         "original": "Waáy ko nabátian ikaw"
     },
     {
         "english": "I heard you",
-        "hiligaynon": "Nabatian ta ka",
+        "hiligaynon": "Nabátian ta ka",
+        "hiligaynon_clean": "Nabatian ta ka",
         "original": "Nabátian ta ka"
     },
     {
         "english": "Gakabtian is short for nagakabtian  well go",
-        "hiligaynon": "‘Gakabatian mo?",
+        "hiligaynon": "‘Gakabátian mo?",
+        "hiligaynon_clean": "‘Gakabatian mo?",
         "original": "‘Gakabátian mo? ‑ Do you hear it? (present tense"
     },
     {
         "english": "I can hear you",
-        "hiligaynon": "Mabatian ta ka",
+        "hiligaynon": "Mabátian ta ka",
+        "hiligaynon_clean": "Mabatian ta ka",
         "original": "Mabátian ta ka"
     },
     {
         "english": "Listen to this",
-        "hiligaynon": "Pamatii ‘ni",
+        "hiligaynon": "Pamatíi ‘ní",
+        "hiligaynon_clean": "Pamatii ‘ni",
         "original": "Pamatíi ‘ní"
     },
     {
         "english": "I hope they really listen",
-        "hiligaynon": "Tani, mamati gid sila",
+        "hiligaynon": "Tanì, mamatì gid silá",
+        "hiligaynon_clean": "Tani, mamati gid sila",
         "original": "Tanì, mamatì gid silá"
     },
     {
         "english": "Have you seen thor yet",
-        "hiligaynon": "Kalantaw ka na “Thor”?",
+        "hiligaynon": "Kalántaw ka na “Thor”?",
+        "hiligaynon_clean": "Kalantaw ka na “Thor”?",
         "original": "Kalántaw ka na “Thor”?"
     },
     {
         "english": "Were you able to watch general conference you may notice a",
-        "hiligaynon": "Kalantaw ka General Conference?",
+        "hiligaynon": "Kalántaw ka General Conference?",
+        "hiligaynon_clean": "Kalantaw ka General Conference?",
         "original": "Kalántaw ka General Conference?"
     },
     {
         "english": "Did you watch general conference",
-        "hiligaynon": "Naglantaw ka General Conference?",
+        "hiligaynon": "Naglántaw ka General Conference?",
+        "hiligaynon_clean": "Naglantaw ka General Conference?",
         "original": "Naglántaw ka General Conference?"
     },
     {
         "english": "What are you watching",
-        "hiligaynon": "Ano ang ginalantaw mo?",
+        "hiligaynon": "Anó ang ginalántaw mo?",
+        "hiligaynon_clean": "Ano ang ginalantaw mo?",
         "original": "Anó ang ginalántaw mo?"
     },
     {
         "english": "What did you see",
-        "hiligaynon": "Ano ang nakita mo?",
+        "hiligaynon": "Anó ang nakità mo?",
+        "hiligaynon_clean": "Ano ang nakita mo?",
         "original": "Anó ang nakità mo?"
     },
     {
         "english": "Where will we meet here ta is short for kit",
-        "hiligaynon": "Diin ‘ta magkita-ay?",
+        "hiligaynon": "Diín ‘ta magkíta-ay?",
+        "hiligaynon_clean": "Diin ‘ta magkita-ay?",
         "original": "Diín ‘ta magkíta‑ay?"
     },
     {
         "english": "Where will we meet",
-        "hiligaynon": "Diin ‘ta makit-anay?",
+        "hiligaynon": "Diín ‘ta makít-ánay?",
+        "hiligaynon_clean": "Diin ‘ta makit-anay?",
         "original": "Diín ‘ta makít‑ánay?"
     },
     {
         "english": "What are you looking for",
-        "hiligaynon": "Ano ang ginapangita mo?",
+        "hiligaynon": "Anó ang ginapangità mo?",
+        "hiligaynon_clean": "Ano ang ginapangita mo?",
         "original": "Anó ang ginapangità mo?"
     },
     {
         "english": "Ill look for a wife after the mission",
-        "hiligaynon": "Mangita ‘ko asawa pagkatapos mission",
+        "hiligaynon": "Mangità ‘ko asáwa pagkatápos mission",
+        "hiligaynon_clean": "Mangita ‘ko asawa pagkatapos mission",
         "original": "Mangità ‘ko asáwa pagkatápos mission"
     },
     {
         "english": "Ill look for it at the house",
-        "hiligaynon": "Pangitaon ko sa balay",
+        "hiligaynon": "Pangitáon kó sa baláy",
+        "hiligaynon_clean": "Pangitaon ko sa balay",
         "original": "Pangitáon kó sa baláy"
     },
     {
         "english": "To go with",
-        "hiligaynon": "upod",
+        "hiligaynon": "upód",
+        "hiligaynon_clean": "upod",
         "original": "upód"
     },
     {
         "english": "Are you coming with",
-        "hiligaynon": "Mag-upod ka?",
+        "hiligaynon": "Mag-upód ka?",
+        "hiligaynon_clean": "Mag-upod ka?",
         "original": "Mag‑upód ka?"
     },
     {
         "english": "Are you gonna go with them",
-        "hiligaynon": "Mag-upod ka sa ila?",
+        "hiligaynon": "Mag-upód ka sa íla?",
+        "hiligaynon_clean": "Mag-upod ka sa ila?",
         "original": "Mag‑upód ka sa íla?"
     },
     {
         "english": "Sister grace went with",
-        "hiligaynon": "Nag-upod si Sister Grace",
+        "hiligaynon": "Nag-upód si Sister Grace",
+        "hiligaynon_clean": "Nag-upod si Sister Grace",
         "original": "Nag‑upód si Sister Grace"
     },
     {
         "english": "I went with him",
-        "hiligaynon": "Ginupdan ko sia",
+        "hiligaynon": "Ginúpdan ko siá",
+        "hiligaynon_clean": "Ginupdan ko sia",
         "original": "Ginúpdan ko siá"
     },
     {
         "english": "Just trust me",
-        "hiligaynon": "Basta magsalig lang kamo sa akon",
+        "hiligaynon": "Básta magsálig lang kamó sa ákon",
+        "hiligaynon_clean": "Basta magsalig lang kamo sa akon",
         "original": "Básta magsálig lang kamó sa ákon"
     },
     {
         "english": "He doesnt trust me",
-        "hiligaynon": "Wala sia ‘gasalig sa akon",
+        "hiligaynon": "Walâ siá ‘gasálig sa ákon",
+        "hiligaynon_clean": "Wala sia ‘gasalig sa akon",
         "original": "Walâ siá ‘gasálig sa ákon"
     },
     {
         "english": "I dont know if i can trust him anymore",
-        "hiligaynon": "Daw indi na ‘ko ‘kasalig sa iya",
+        "hiligaynon": "Daw indì na ‘ko ‘kasálig sa íya",
+        "hiligaynon_clean": "Daw indi na ‘ko ‘kasalig sa iya",
         "original": "Daw indì na ‘ko ‘kasálig sa íya"
     },
     {
         "english": "Shes got confidence in herself",
-        "hiligaynon": "May salig sia sa self nia",
+        "hiligaynon": "May sálig siá sa self niá",
+        "hiligaynon_clean": "May salig sia sa self nia",
         "original": "May sálig siá sa self niá"
     },
     {
         "english": "To lie",
-        "hiligaynon": "butig",
+        "hiligaynon": "bútig",
+        "hiligaynon_clean": "butig",
         "original": "bútig"
     },
     {
         "english": "Dont lie",
-        "hiligaynon": "Indi ka magbutig, ha?",
+        "hiligaynon": "Indì ka magbútig, ha?",
+        "hiligaynon_clean": "Indi ka magbutig, ha?",
         "original": "Indì ka magbútig, ha?"
     },
     {
         "english": "I think theyre lying",
-        "hiligaynon": "Daw ‘gabutig sila",
+        "hiligaynon": "Daw ‘gabútig silá",
+        "hiligaynon_clean": "Daw ‘gabutig sila",
         "original": "Daw ‘gabútig silá"
     },
     {
         "english": "They might just be lying",
-        "hiligaynon": "Basi ‘gabutig lang sila",
+        "hiligaynon": "Basì ‘gabútig lang silá",
+        "hiligaynon_clean": "Basi ‘gabutig lang sila",
         "original": "Basì ‘gabútig lang silá"
     },
     {
         "english": "Shes been baptized already",
-        "hiligaynon": "Nabunyagan na sia",
+        "hiligaynon": "Nabúnyagan na siá",
+        "hiligaynon_clean": "Nabunyagan na sia",
         "original": "Nabúnyagan na siá"
     },
     {
         "english": "She got baptized actor focus denotes she did it intentionally",
-        "hiligaynon": "Nagpabunyag sia",
+        "hiligaynon": "Nagpabúnyag siá",
+        "hiligaynon_clean": "Nagpabunyag sia",
         "original": "Nagpabúnyag siá"
     },
     {
         "english": "I have something to tell you",
-        "hiligaynon": "May isugid ‘ko s’imo",
+        "hiligaynon": "May isúgid ‘ko s’ímo",
+        "hiligaynon_clean": "May isugid ‘ko s’imo",
         "original": "May isúgid ‘ko s’ímo"
     },
     {
         "english": "When youre gone im gonna cry for you",
-        "hiligaynon": "Kon wala ka na, hibi-an ta ka",
+        "hiligaynon": "Kon walâ ka na, híbi-an ta ka",
+        "hiligaynon_clean": "Kon wala ka na, hibi-an ta ka",
         "original": "Kon walâ ka na, híbi‑an ta ka"
     },
     {
         "english": "This might make you cry",
-        "hiligaynon": "Basi mahibi ka sini",
+        "hiligaynon": "Basì mahibì ka siní",
+        "hiligaynon_clean": "Basi mahibi ka sini",
         "original": "Basì mahibì ka siní"
     },
     {
         "english": "How did you guys meet",
-        "hiligaynon": "Paano kamo nakilalahay?",
+        "hiligaynon": "Paanó kamó nakilálahay?",
+        "hiligaynon_clean": "Paano kamo nakilalahay?",
         "original": "Paanó kamó nakilálahay?"
     },
     {
         "english": "Dont forget",
-        "hiligaynon": "Indi ka malipat!",
+        "hiligaynon": "Indì ka malipát!",
+        "hiligaynon_clean": "Indi ka malipat!",
         "original": "Indì ka malipát!"
     },
     {
         "english": "Dont forget it",
-        "hiligaynon": "Indi mo pagkalipatan!",
+        "hiligaynon": "Indì mo pagkalipatán!",
+        "hiligaynon_clean": "Indi mo pagkalipatan!",
         "original": "Indì mo pagkalipatán!"
     },
     {
         "english": "She hid",
-        "hiligaynon": "Nanago sia",
+        "hiligaynon": "Nanagò siá",
+        "hiligaynon_clean": "Nanago sia",
         "original": "Nanagò siá"
     },
     {
         "english": "She hid it",
-        "hiligaynon": "Gintago nia",
+        "hiligaynon": "Gintagò niá",
+        "hiligaynon_clean": "Gintago nia",
         "original": "Gintagò niá"
     },
     {
         "english": "It looked like they were fighting so went outside",
-        "hiligaynon": "Daw naga-away sila, ti nag‑gwa kami",
+        "hiligaynon": "Daw naga-áway silá, tî nag‑gwâ kamí",
+        "hiligaynon_clean": "Daw naga-away sila, ti nag‑gwa kami",
         "original": "Daw naga‑áway silá, tî nag‑gwâ kamí"
     },
     {
         "english": "The dog was taken outside cuz it was so noisy",
-        "hiligaynon": "Ginpagwa ang ido, kagahod abi",
+        "hiligaynon": "Ginpagwâ ang idô, kagáhod ábi",
+        "hiligaynon_clean": "Ginpagwa ang ido, kagahod abi",
         "original": "Ginpagwâ ang idô, kagáhod ábi"
     },
     {
         "english": "To stand up",
-        "hiligaynon": "tindog",
+        "hiligaynon": "tíndog",
+        "hiligaynon_clean": "tindog",
         "original": "tíndog"
     },
     {
         "english": "Stand up guys",
-        "hiligaynon": "Tindog kamo!",
+        "hiligaynon": "Tíndog kamó!",
+        "hiligaynon_clean": "Tindog kamo!",
         "original": "Tíndog kamó!"
     },
     {
         "english": "Theyre standing outside",
-        "hiligaynon": "Nagatindog sila sa gwa",
+        "hiligaynon": "Nagatíndog silá sa gwâ",
+        "hiligaynon_clean": "Nagatindog sila sa gwa",
         "original": "Nagatíndog silá sa gwâ"
     },
     {
         "english": "Christ had his church built in",
-        "hiligaynon": "Ginpatindog ni Jesukristo ang Iya Simbahan para buligan kita",
+        "hiligaynon": "Ginpatíndog ni Jesukrísto ang Íya Simbáhan pára bulígan kitá",
+        "hiligaynon_clean": "Ginpatindog ni Jesukristo ang Iya Simbahan para buligan kita",
         "original": "Ginpatíndog ni Jesukrísto ang Íya Simbáhan pára bulígan kitá"
     },
     {
         "english": "May i ask for one",
-        "hiligaynon": "Pwede ‘kapangayo?",
+        "hiligaynon": "Pwéde ‘kapangayò?",
+        "hiligaynon_clean": "Pwede ‘kapangayo?",
         "original": "Pwéde ‘kapangayò?"
     },
     {
         "english": "Jun has a lot",
-        "hiligaynon": "Si Jun, damo sia, mangayo ka lang sa iya",
+        "hiligaynon": "Si Jun, damò sia, mangayò ka lang sa íya",
+        "hiligaynon_clean": "Si Jun, damo sia, mangayo ka lang sa iya",
         "original": "Si Jun, damò sia, mangayò ka lang sa íya"
     },
     {
         "english": "What did he ask for",
-        "hiligaynon": "Ano and pangayo nia?",
+        "hiligaynon": "Anó and pangayò niá?",
+        "hiligaynon_clean": "Ano and pangayo nia?",
         "original": "Anó and pangayò niá?"
     },
     {
         "english": "Get down  youll fall",
-        "hiligaynon": "Manaog!  Mahulog ka!",
+        "hiligaynon": "Manáog!  Mahúlog ka!",
+        "hiligaynon_clean": "Manaog!  Mahulog ka!",
         "original": "Manáog!  Mahúlog ka!"
     },
     {
         "english": "He went upstairs",
-        "hiligaynon": "Nagsaka sia",
+        "hiligaynon": "Nagsakà siá",
+        "hiligaynon_clean": "Nagsaka sia",
         "original": "Nagsakà siá"
     },
     {
         "english": "Hes really good at climbing coconut trees",
-        "hiligaynon": "Sagad sia magsaka lubi",
+        "hiligaynon": "Sagád siá magsakà lubí",
+        "hiligaynon_clean": "Sagad sia magsaka lubi",
         "original": "Sagád siá magsakà lubí"
     },
     {
         "english": "To die",
-        "hiligaynon": "patay",
+        "hiligaynon": "patáy",
+        "hiligaynon_clean": "patay",
         "original": "patáy"
     },
     {
         "english": "She died",
-        "hiligaynon": "Napatay sia",
+        "hiligaynon": "Napatáy siá",
+        "hiligaynon_clean": "Napatay sia",
         "original": "Napatáy siá"
     },
     {
         "english": "Hes dead",
-        "hiligaynon": "Patay na sia",
+        "hiligaynon": "Patáy na siá",
+        "hiligaynon_clean": "Patay na sia",
         "original": "Patáy na siá"
     },
     {
         "english": "He killed goliath",
-        "hiligaynon": "Ginpatay nia si Goliath",
+        "hiligaynon": "Ginpatáy nia si Goliath",
+        "hiligaynon_clean": "Ginpatay nia si Goliath",
         "original": "Ginpatáy nia si Goliath"
     },
     {
         "english": "Who killed goliath",
-        "hiligaynon": "Sin-o ang nagpatay kay Goliath?",
+        "hiligaynon": "Sin-o ang nagpatáy kay Goliath?",
+        "hiligaynon_clean": "Sin-o ang nagpatay kay Goliath?",
         "original": "Sin‑o ang nagpatáy kay Goliath?"
     },
     {
         "english": "Be careful there",
-        "hiligaynon": "Halong ka da, basi maguba!",
+        "hiligaynon": "Hálong ka dâ, basì magubâ!",
+        "hiligaynon_clean": "Halong ka da, basi maguba!",
         "original": "Hálong ka dâ, basì magubâ!"
     },
     {
         "english": "We werent able to watch the",
-        "hiligaynon": "Waay kami ‘kalantaw “Restoration DVD” kay guba iya “TV”",
+        "hiligaynon": "Waáy kamí ‘kalántaw “Restoration DVD” kay gubâ íya “TV”",
+        "hiligaynon_clean": "Waay kami ‘kalantaw “Restoration DVD” kay guba iya “TV”",
         "original": "Waáy kamí ‘kalántaw “Restoration DVD” kay gubâ íya “TV”"
     },
     {
         "english": "Just deal with it",
-        "hiligaynon": "Agwantaha lang",
+        "hiligaynon": "Agwántaha lang",
+        "hiligaynon_clean": "Agwantaha lang",
         "original": "Agwántaha lang"
     },
     {
         "english": "Get well soon",
-        "hiligaynon": "Tani mag-ayo ka na ‑ (similar to",
+        "hiligaynon": "Tanì mag-áyo ka na ‑ (similar to",
+        "hiligaynon_clean": "Tani mag-ayo ka na ‑ (similar to",
         "original": "Tanì mag‑áyo ka na ‑ (similar to"
     },
     {
         "english": "Im about to throw up",
-        "hiligaynon": "Daw masuka ‘ko",
+        "hiligaynon": "Daw masúka ‘ko",
+        "hiligaynon_clean": "Daw masuka ‘ko",
         "original": "Daw masúka ‘ko"
     },
     {
         "english": "What are you doing here",
-        "hiligaynon": "‘Gaano ka di?",
+        "hiligaynon": "‘Gaanó ka di?",
+        "hiligaynon_clean": "‘Gaano ka di?",
         "original": "‘Gaanó ka di?"
     },
     {
         "english": "Are you getting off now",
-        "hiligaynon": "Manaog ka na?",
+        "hiligaynon": "Manáog ka na?",
+        "hiligaynon_clean": "Manaog ka na?",
         "original": "Manáog ka na?"
     },
     {
         "english": "Where will you guys get off",
-        "hiligaynon": "Diin kamo manaog?",
+        "hiligaynon": "Diín kamó manáog?",
+        "hiligaynon_clean": "Diin kamo manaog?",
         "original": "Diín kamó manáog?"
     },
     {
         "english": "When is stake conference",
         "hiligaynon": "San-o ang Stake Conference?",
+        "hiligaynon_clean": "San-o ang Stake Conference?",
         "original": "San‑o ang Stake Conference?"
     },
     {
         "english": "Immediately",
-        "hiligaynon": "Dayon",
+        "hiligaynon": "Dáyon",
+        "hiligaynon_clean": "Dayon",
         "original": "Dáyon"
     },
     {
         "english": "What do you think  means with",
-        "hiligaynon": "Ano ayhan ang buot-silingon sang…? (or “buot‑hambalon\")",
+        "hiligaynon": "Anó áyhan ang buót-silingón sang…? (or “buót‑hambalón\")",
+        "hiligaynon_clean": "Ano ayhan ang buot-silingon sang…? (or “buot‑hambalon\")",
         "original": "Anó áyhan ang buót‑silingón sang…? (or “buót‑hambalón\")"
     },
     {
         "english": "Why do you think there are so many churches",
-        "hiligaynon": "Ngaa ayhan damo-damo simbahan?",
+        "hiligaynon": "Ngáa áyhan damô-damò simbáhan?",
+        "hiligaynon_clean": "Ngaa ayhan damo-damo simbahan?",
         "original": "Ngáa áyhan damô‑damò simbáhan?"
     },
     {
         "english": "The someone else said it",
-        "hiligaynon": "Kono",
+        "hiligaynon": "Konó",
+        "hiligaynon_clean": "Kono",
         "original": "Konó"
     },
     {
         "english": "When did he say it was",
-        "hiligaynon": "● San-o kono?",
+        "hiligaynon": "● Sán-o konó?",
+        "hiligaynon_clean": "● San-o kono?",
         "original": "● Sán‑o konó?"
     },
     {
         "english": "Where did she say it was",
-        "hiligaynon": "● Diin kono?",
+        "hiligaynon": "● Diín konó?",
+        "hiligaynon_clean": "● Diin kono?",
         "original": "● Diín konó?"
     },
     {
         "english": "How did they say to do it",
-        "hiligaynon": "● Paano kono?",
+        "hiligaynon": "● Paanó konó?",
+        "hiligaynon_clean": "● Paano kono?",
         "original": "● Paanó konó?"
     },
     {
         "english": "You guys didnt come to church yesterday",
-        "hiligaynon": "Wala kamo nagsimba kagapon, ngaa haw?",
+        "hiligaynon": "Walâ kamó nagsimba kagápon, ngáa haw?",
+        "hiligaynon_clean": "Wala kamo nagsimba kagapon, ngaa haw?",
         "original": "Walâ kamó nagsimba kagápon, ngáa haw?"
     },
     {
         "english": "Why didnt you guys come to church literally you guys didnt come",
-        "hiligaynon": "Wala kamo nagsimba haw?",
+        "hiligaynon": "Walâ kamó nagsímba haw?",
+        "hiligaynon_clean": "Wala kamo nagsimba haw?",
         "original": "Walâ kamó nagsímba haw?"
     },
     {
         "english": "Elder said he was sick so we didnt",
-        "hiligaynon": "May sakit kono si Elder, ti wala kami nag-gwa sa apartment.",
+        "hiligaynon": "May sakít konó si Elder, tî walâ kamí nag-gwâ sa apartment.",
+        "hiligaynon_clean": "May sakit kono si Elder, ti wala kami nag-gwa sa apartment.",
         "original": "May sakít konó si Elder, tî walâ kamí nag‑gwâ sa apartment."
     },
     {
         "english": "Oh yeah",
-        "hiligaynon": "O, huo gali, no?",
+        "hiligaynon": "O, húo galî, no?",
+        "hiligaynon_clean": "O, huo gali, no?",
         "original": "O, húo galî, no?"
     },
     {
         "english": "Ah",
-        "hiligaynon": "Ay, amo ‘na, gali!",
+        "hiligaynon": "Ay, amó ‘nâ, galî!",
+        "hiligaynon_clean": "Ay, amo ‘na, gali!",
         "original": "Ay, amó ‘nâ, galî!"
     },
     {
         "english": "Its late",
-        "hiligaynon": "Ay, gab-i na gali! Malakat na kami!",
+        "hiligaynon": "Ay, gáb-i na galî! Malakát na kamí!",
+        "hiligaynon_clean": "Ay, gab-i na gali! Malakat na kami!",
         "original": "Ay, gáb‑i na galî! Malakát na kamí!"
     },
     {
         "english": "Were going home now",
-        "hiligaynon": "Mapuli na kami",
+        "hiligaynon": "Mapulì na kamí",
+        "hiligaynon_clean": "Mapuli na kami",
         "original": "Mapulì na kamí"
     },
     {
         "english": "Well go first",
-        "hiligaynon": "Sige, mauna na kami",
+        "hiligaynon": "Sigé, maúna na kamí",
+        "hiligaynon_clean": "Sige, mauna na kami",
         "original": "Sigé, maúna na kamí ‑ We’ll be leaving you now (Literally"
     },
     {
         "english": "It got dark on us",
-        "hiligaynon": "Ay, nagab-ian ‘ta gali!",
+        "hiligaynon": "Ay, nagab-ían ‘ta galî!",
+        "hiligaynon_clean": "Ay, nagab-ian ‘ta gali!",
         "original": "Ay, nagab‑ían ‘ta galî!"
     },
     {
         "english": "Wait",
-        "hiligaynon": "TagaCavite ka gali! May kilala ‘ko tagadidto!",
+        "hiligaynon": "TagaCavíte ka galí! May kilála ‘ko tagadídto!",
+        "hiligaynon_clean": "TagaCavite ka gali! May kilala ‘ko tagadidto!",
         "original": "TagaCavíte ka galí! May kilála ‘ko tagadídto!"
     },
     {
         "english": "Sorry",
-        "hiligaynon": "Ako gali si Elder Soderquist",
+        "hiligaynon": "Akó galî si Elder Soderquist",
+        "hiligaynon_clean": "Ako gali si Elder Soderquist",
         "original": "Akó galî si Elder Soderquist"
     },
     {
         "english": "I already said it",
-        "hiligaynon": "Hambal ko na gani!",
+        "hiligaynon": "Hámbal ko na ganì!",
+        "hiligaynon_clean": "Hambal ko na gani!",
         "original": "Hámbal ko na ganì!"
     },
     {
         "english": "Thats what i said",
-        "hiligaynon": "Hambal ko gani!",
+        "hiligaynon": "Hámbal ko ganì!",
+        "hiligaynon_clean": "Hambal ko gani!",
         "original": "Hámbal ko ganì!"
     },
     {
         "english": "She used to live there before",
-        "hiligaynon": "Nagestar sia ‘to sang una",
+        "hiligaynon": "Nagestár siá ‘to sang úna",
+        "hiligaynon_clean": "Nagestar sia ‘to sang una",
         "original": "Nagestár siá ‘to sang úna"
     },
     {
         "english": "Where does she live now",
-        "hiligaynon": "Diin sia gani ‘gaestar subong?",
+        "hiligaynon": "Diín siá ganì ‘gaestár subóng?",
+        "hiligaynon_clean": "Diin sia gani ‘gaestar subong?",
         "original": "Diín siá ganì ‘gaestár subóng?"
     },
     {
         "english": "I didnt notice",
-        "hiligaynon": "Waay ko na\"notice\"",
+        "hiligaynon": "Waáy ko na\"notice\"",
+        "hiligaynon_clean": "Waay ko na\"notice\"",
         "original": "Waáy ko na\"notice\""
     },
     {
         "english": "I didnt even notice",
-        "hiligaynon": "Waay ko gid gani na\"notice\"!",
+        "hiligaynon": "Waáy ko gid ganì na\"notice\"!",
+        "hiligaynon_clean": "Waay ko gid gani na\"notice\"!",
         "original": "Waáy ko gid ganì na\"notice\"!"
     },
     {
         "english": "Sorry whats your name",
-        "hiligaynon": "Ano gani ang imo ngalan?",
+        "hiligaynon": "Ano ganì ang ímo ngálan?",
+        "hiligaynon_clean": "Ano gani ang imo ngalan?",
         "original": "Ano ganì ang ímo ngálan?"
     },
     {
         "english": "You cant preach the gospel on an empty stomach",
-        "hiligaynon": "Hambal gani ni Brigham Young",
+        "hiligaynon": "Hámbal ganì ni Brigham Young",
+        "hiligaynon_clean": "Hambal gani ni Brigham Young",
         "original": "Hámbal ganì ni Brigham Young"
     },
     {
         "english": "Once again",
-        "hiligaynon": "Na naman",
+        "hiligaynon": "Na namán",
+        "hiligaynon_clean": "Na naman",
         "original": "Na namán"
     },
     {
         "english": "There you go again",
-        "hiligaynon": "Ara ka na naman!",
+        "hiligaynon": "Arà ka na namán!",
+        "hiligaynon_clean": "Ara ka na naman!",
         "original": "Arà ka na namán!"
     },
     {
         "english": "Im gonna get a drink",
-        "hiligaynon": "Maginom ‘ko tubig, nauhaw ‘ko bi",
+        "hiligaynon": "Maginóm ‘ko túbig, naúhaw ‘ko bi",
+        "hiligaynon_clean": "Maginom ‘ko tubig, nauhaw ‘ko bi",
         "original": "Maginóm ‘ko túbig, naúhaw ‘ko bi"
     },
     {
         "english": "We werent able to pay  cuz we didnt have any money",
-        "hiligaynon": "Wala kami ‘kabayad.  Wala bi kwarta.",
+        "hiligaynon": "Walâ kami ‘kabáyad.  Walâ bi kwárta.",
+        "hiligaynon_clean": "Wala kami ‘kabayad.  Wala bi kwarta.",
         "original": "Walâ kami ‘kabáyad.  Walâ bi kwárta."
     },
     {
         "english": "Cuz weve still got a lot more to do",
-        "hiligaynon": "…kay damo pa kami bi obrahon",
+        "hiligaynon": "…kay damò pa kamí bi obrahón",
+        "hiligaynon_clean": "…kay damo pa kami bi obrahon",
         "original": "…kay damò pa kamí bi obrahón"
     },
     {
         "english": "Well no one said i shouldnt",
-        "hiligaynon": "Wala bi may naghambal nga indi pwede",
+        "hiligaynon": "Walâ bi may naghámbal nga indì pwéde",
+        "hiligaynon_clean": "Wala bi may naghambal nga indi pwede",
         "original": "Walâ bi may naghámbal nga indì pwéde"
     },
     {
         "english": "Well then why",
-        "hiligaynon": "Te",
+        "hiligaynon": "Tê",
+        "hiligaynon_clean": "Te",
         "original": "Tê ‑ ngáa ábi?"
     },
     {
         "english": "What about on thursday",
-        "hiligaynon": "Sa Thursday abi?",
+        "hiligaynon": "Sa Thursday ábi?",
+        "hiligaynon_clean": "Sa Thursday abi?",
         "original": "Sa Thursday ábi?"
     },
     {
         "english": "What if hes not there",
-        "hiligaynon": "● Kon wala sia abi?",
+        "hiligaynon": "● Kon walâ siá ábi?",
+        "hiligaynon_clean": "● Kon wala sia abi?",
         "original": "● Kon walâ siá ábi?"
     },
     {
         "english": "Its the same god",
-        "hiligaynon": "Diyos man gihapon",
+        "hiligaynon": "Diyós man gihápon",
+        "hiligaynon_clean": "Diyos man gihapon",
         "original": "Diyós man gihápon"
     },
     {
         "english": "Im from america  they",
-        "hiligaynon": "Taga-America ‘ko; Sila ya taga‑Davao",
+        "hiligaynon": "Tága-America ‘kó; Silá ya tága‑Dávao",
+        "hiligaynon_clean": "Taga-America ‘ko; Sila ya taga‑Davao",
         "original": "Tága‑America ‘kó; Silá ya tága‑Dávao"
     },
     {
         "english": "This food is so delicious",
-        "hiligaynon": "Kanamit-namit sini nga pagkaon!",
+        "hiligaynon": "Kanamít-námit siní nga pagkáon!",
+        "hiligaynon_clean": "Kanamit-namit sini nga pagkaon!",
         "original": "Kanamít‑námit siní nga pagkáon!"
     },
     {
         "english": "Abilitative adjectives",
         "hiligaynon": "“L”-Infixed Adjectives",
+        "hiligaynon_clean": "“L”-Infixed Adjectives",
         "original": "“L”‑Infixed Adjectives"
     },
     {
         "english": "This food makes me throw up",
-        "hiligaynon": "Kasuluka sini nga pagkaon",
+        "hiligaynon": "Kasulúka siní nga pagkáon",
+        "hiligaynon_clean": "Kasuluka sini nga pagkaon",
         "original": "Kasulúka siní nga pagkáon"
     },
     {
         "english": "Talking about this makes me hungry",
-        "hiligaynon": "Kagulutom sini nga istoriahan",
+        "hiligaynon": "Kagulútom siní nga istóriahán",
+        "hiligaynon_clean": "Kagulutom sini nga istoriahan",
         "original": "Kagulútom siní nga istóriahán"
     },
     {
         "english": "The rain makes me not want to work",
-        "hiligaynon": "Katalamad sa ulan",
+        "hiligaynon": "Katalámad sa ulán",
+        "hiligaynon_clean": "Katalamad sa ulan",
         "original": "Katalámad sa ulán"
     },
     {
         "english": "Funny",
-        "hiligaynon": "Kaladlawan",
+        "hiligaynon": "Kaladláwan",
+        "hiligaynon_clean": "Kaladlawan",
         "original": "Kaladláwan"
     },
     {
         "english": "Intimidating",
-        "hiligaynon": "Kakululbaan",
+        "hiligaynon": "Kakúlulbáan",
+        "hiligaynon_clean": "Kakululbaan",
         "original": "Kakúlulbáan"
     },
     {
         "english": "Scary",
-        "hiligaynon": "Kahaladlukan",
+        "hiligaynon": "Kahaládlukan",
+        "hiligaynon_clean": "Kahaladlukan",
         "original": "Kahaládlukan"
     },
     {
         "english": "Watching movies makes me tired",
-        "hiligaynon": "Katuluyo lantaw sine",
+        "hiligaynon": "Katulúyo lántaw sine",
+        "hiligaynon_clean": "Katuluyo lantaw sine",
         "original": "Katulúyo lántaw sine"
     },
     {
         "english": "Makes one gassy",
-        "hiligaynon": "Kaulutot",
+        "hiligaynon": "Kaulútot",
+        "hiligaynon_clean": "Kaulutot",
         "original": "Kaulútot"
     },
     {
         "english": "So tiresome",
-        "hiligaynon": "Ay, Katalaka!",
+        "hiligaynon": "Ay, Kataláka!",
+        "hiligaynon_clean": "Ay, Katalaka!",
         "original": "Ay, Kataláka!"
     },
     {
         "english": "Youre driving me crazy",
-        "hiligaynon": "Kailinit s’imo!",
+        "hiligaynon": "Kailínit s’ímo!",
+        "hiligaynon_clean": "Kailinit s’imo!",
         "original": "Kailínit s’ímo!"
     },
     {
         "english": "Irresistible",
-        "hiligaynon": "Kaulumol",
+        "hiligaynon": "Kaulúmol",
+        "hiligaynon_clean": "Kaulumol",
         "original": "Kaulúmol"
     },
     {
         "english": "I cant resist",
-        "hiligaynon": "Kaulumol s’imo, kusi-on ta ka",
+        "hiligaynon": "Kaulúmol s’ímo, kúsi-on ta ka",
+        "hiligaynon_clean": "Kaulumol s’imo, kusi-on ta ka",
         "original": "Kaulúmol s’ímo, kúsi‑on ta ka"
     },
     {
         "english": "I cant help it",
-        "hiligaynon": "Naumol-umol na ‘ko",
+        "hiligaynon": "Naumól-umól na ‘ko",
+        "hiligaynon_clean": "Naumol-umol na ‘ko",
         "original": "Naumól‑umól na ‘ko"
     },
     {
         "english": "Can make one sing",
-        "hiligaynon": "Makapakanta",
+        "hiligaynon": "Makapakánta",
+        "hiligaynon_clean": "Makapakanta",
         "original": "Makapakánta"
     },
     {
         "english": "Makes you want to dance",
-        "hiligaynon": "Makapasaot",
+        "hiligaynon": "Makapasáot",
+        "hiligaynon_clean": "Makapasaot",
         "original": "Makapasáot"
     },
     {
         "english": "Makes you fat",
-        "hiligaynon": "Makapatambok",
+        "hiligaynon": "Makapatámbok",
+        "hiligaynon_clean": "Makapatambok",
         "original": "Makapatámbok"
     },
     {
         "english": "This is so tiring",
-        "hiligaynon": "Ay, kakapoy",
+        "hiligaynon": "Ay, kakápoy",
+        "hiligaynon_clean": "Ay, kakapoy",
         "original": "Ay, kakápoy"
     },
     {
         "english": "Dnay lang",
-        "hiligaynon": "Janay lang!",
+        "hiligaynon": "Jánay lang!",
+        "hiligaynon_clean": "Janay lang!",
         "original": "Jánay lang! ‑ Wait a minute! / Hold on a second! (also"
     },
     {
         "english": "Magi lang",
-        "hiligaynon": "Paagi!",
+        "hiligaynon": "Paági!",
+        "hiligaynon_clean": "Paagi!",
         "original": "Paági! ‑ Make way! / Comin’ through! (a polite way to pass through others is to say"
     },
     {
         "english": "No way youre kidding",
-        "hiligaynon": "Nugay!",
+        "hiligaynon": "Núgay!",
+        "hiligaynon_clean": "Nugay!",
         "original": "Núgay! ‑ Stop that! / (also used as an expression"
     },
     {
         "english": "Could you please give me some",
-        "hiligaynon": "‘Gai ‘ko bi?",
+        "hiligaynon": "‘Gái ‘ko bi?",
+        "hiligaynon_clean": "‘Gai ‘ko bi?",
         "original": "‘Gái ‘ko bi?"
     },
     {
         "english": "Close the door",
-        "hiligaynon": "Siraduha ang puertahan",
+        "hiligaynon": "Siradúha ang puertáhan",
+        "hiligaynon_clean": "Siraduha ang puertahan",
         "original": "Siradúha ang puertáhan"
     },
     {
         "english": "Try it",
-        "hiligaynon": "Tilawi",
+        "hiligaynon": "Tilawí",
+        "hiligaynon_clean": "Tilawi",
         "original": "Tilawí"
     },
     {
         "english": "Go look for it",
-        "hiligaynon": "Pangitaa",
+        "hiligaynon": "Pangitáa",
+        "hiligaynon_clean": "Pangitaa",
         "original": "Pangitáa"
     },
     {
         "english": "Will you forgive me  by the way",
-        "hiligaynon": "Patawara ‘ko bi?",
+        "hiligaynon": "Patawára ‘ko bi?",
+        "hiligaynon_clean": "Patawara ‘ko bi?",
         "original": "Patawára ‘ko bi?"
     },
     {
         "english": "Inm",
         "hiligaynon": "Imni",
+        "hiligaynon_clean": "Imni",
         "original": "Imni ‑ Drink some of it (root"
     },
     {
         "english": "Eat it",
-        "hiligaynon": "Kauna",
+        "hiligaynon": "Kaúna",
+        "hiligaynon_clean": "Kauna",
         "original": "Kaúna"
     },
     {
         "english": "Go get it",
-        "hiligaynon": "Kwa-a",
+        "hiligaynon": "Kwá-a",
+        "hiligaynon_clean": "Kwa-a",
         "original": "Kwá‑a"
     },
     {
         "english": "Kick it",
-        "hiligaynon": "Sipa-a",
+        "hiligaynon": "Sipá-a",
+        "hiligaynon_clean": "Sipa-a",
         "original": "Sipá‑a"
     },
     {
         "english": "Kill it",
-        "hiligaynon": "Patya!",
+        "hiligaynon": "Pátya!",
+        "hiligaynon_clean": "Patya!",
         "original": "Pátya!"
     },
     {
         "english": "Punch it",
-        "hiligaynon": "Sumbaga!",
+        "hiligaynon": "Súmbagá!",
+        "hiligaynon_clean": "Sumbaga!",
         "original": "Súmbagá!"
     },
     {
         "english": "Tpak",
-        "hiligaynon": "Tapaki",
+        "hiligaynon": "Tapáki",
+        "hiligaynon_clean": "Tapaki",
         "original": "Tapáki ‑ Step on it! (root"
     },
     {
         "english": "Open it",
-        "hiligaynon": "Buksi!",
+        "hiligaynon": "Búksi!",
+        "hiligaynon_clean": "Buksi!",
         "original": "Búksi!"
     },
     {
         "english": "Open the door",
-        "hiligaynon": "Buksi ang puertahan",
+        "hiligaynon": "Búksi ang puertáhan",
+        "hiligaynon_clean": "Buksi ang puertahan",
         "original": "Búksi ang puertáhan"
     },
     {
         "english": "Could you please read it",
-        "hiligaynon": "Basaha bi?",
+        "hiligaynon": "Basáha bi?",
+        "hiligaynon_clean": "Basaha bi?",
         "original": "Basáha bi?"
     },
     {
         "english": "Could you please take my picture",
-        "hiligaynon": "Piktsuri ‘ko bi?",
+        "hiligaynon": "Píktsuri ‘ko bi?",
+        "hiligaynon_clean": "Piktsuri ‘ko bi?",
         "original": "Píktsuri ‘ko bi?"
     },
     {
         "english": "Hold",
-        "hiligaynon": "Uyat-i",
+        "hiligaynon": "Uyát-i",
+        "hiligaynon_clean": "Uyat-i",
         "original": "Uyát‑i"
     },
     {
         "english": "Kapt  you may imply what object is to be acted",
-        "hiligaynon": "Kapti",
+        "hiligaynon": "Kápti",
+        "hiligaynon_clean": "Kapti",
         "original": "Kápti ‑ Hold (this) / Hold it (same as above. Root"
     },
     {
         "english": "Tbon",
-        "hiligaynon": "Tabuni",
+        "hiligaynon": "Tabúni",
+        "hiligaynon_clean": "Tabuni",
         "original": "Tabúni ‑ Cover it up / Hide it (root"
     },
     {
         "english": "Text him",
-        "hiligaynon": "Texi sia",
+        "hiligaynon": "Téxi siá",
+        "hiligaynon_clean": "Texi sia",
         "original": "Téxi siá"
     },
     {
         "english": "Poke it",
-        "hiligaynon": "Tusloka",
+        "hiligaynon": "Tusloká",
+        "hiligaynon_clean": "Tusloka",
         "original": "Tusloká"
     },
     {
         "english": "Blow on it",
-        "hiligaynon": "Huypi",
+        "hiligaynon": "Húypi",
+        "hiligaynon_clean": "Huypi",
         "original": "Húypi"
     },
     {
         "english": "Slurp",
-        "hiligaynon": "Suyupa",
+        "hiligaynon": "Suyúpa",
+        "hiligaynon_clean": "Suyupa",
         "original": "Suyúpa"
     },
     {
         "english": "Bite me",
-        "hiligaynon": "Kagta ‘ko",
+        "hiligaynon": "Kágta ‘ko",
+        "hiligaynon_clean": "Kagta ‘ko",
         "original": "Kágta ‘ko"
     },
     {
         "english": "Dont bite it  suck on it",
-        "hiligaynon": "Indi pagkagta",
+        "hiligaynon": "Indì pagkágta",
+        "hiligaynon_clean": "Indi pagkagta",
         "original": "Indì pagkágta ‑ supsupá"
     },
     {
         "english": "Stab it",
-        "hiligaynon": "Bun-a!",
+        "hiligaynon": "Bún-a!",
+        "hiligaynon_clean": "Bun-a!",
         "original": "Bún‑a!"
     },
     {
         "english": "Sing it",
-        "hiligaynon": "Kantaha bi!",
+        "hiligaynon": "Kántahá bi!",
+        "hiligaynon_clean": "Kantaha bi!",
         "original": "Kántahá bi!"
     },
     {
         "english": "Sing to me",
-        "hiligaynon": "Kantahi ‘ko bi!",
+        "hiligaynon": "Kántahí ‘ko bi!",
+        "hiligaynon_clean": "Kantahi ‘ko bi!",
         "original": "Kántahí ‘ko bi!"
     },
     {
         "english": "Guard it",
-        "hiligaynon": "Bantayi!",
+        "hiligaynon": "Bantayí!",
+        "hiligaynon_clean": "Bantayi!",
         "original": "Bantayí!"
     },
     {
         "english": "Check this out",
-        "hiligaynon": "Tan-awa ‘ni",
+        "hiligaynon": "Tan-awá ‘ní",
+        "hiligaynon_clean": "Tan-awa ‘ni",
         "original": "Tan‑awá ‘ní"
     },
     {
         "english": "Look",
-        "hiligaynon": "Tan-awa!",
+        "hiligaynon": "Tan-awá!",
+        "hiligaynon_clean": "Tan-awa!",
         "original": "Tan‑awá!"
     },
     {
         "english": "Could you check for me if we still have rice",
-        "hiligaynon": "Tan-awi ‘ko kon may \"rice\" pa ‘ta?",
+        "hiligaynon": "Tan-awí ‘ko kon may \"rice\" pa ‘ta?",
+        "hiligaynon_clean": "Tan-awi ‘ko kon may \"rice\" pa ‘ta?",
         "original": "Tan‑awí ‘ko kon may \"rice\" pa ‘ta?"
     },
     {
         "english": "Cook me some adobo",
-        "hiligaynon": "Lutui ‘ko adobo",
+        "hiligaynon": "Lutuí ‘ko adóbo",
+        "hiligaynon_clean": "Lutui ‘ko adobo",
         "original": "Lutuí ‘ko adóbo"
     },
     {
         "english": "Take the cap off",
-        "hiligaynon": "Huksa ang takop bi",
+        "hiligaynon": "Húksa ang takóp bi",
+        "hiligaynon_clean": "Huksa ang takop bi",
         "original": "Húksa ang takóp bi"
     },
     {
         "english": "Dmdum",
-        "hiligaynon": "Dumduma permi nga …",
+        "hiligaynon": "Dumdumá pérmi nga …",
+        "hiligaynon_clean": "Dumduma permi nga …",
         "original": "Dumdumá pérmi nga … ‑ Always remember that … (root"
     },
     {
         "english": "Write him",
-        "hiligaynon": "Sulati sia",
+        "hiligaynon": "Sulatí siá",
+        "hiligaynon_clean": "Sulati sia",
         "original": "Sulatí siá"
     },
     {
         "english": "Touch it",
-        "hiligaynon": "Tandoga",
+        "hiligaynon": "Tandogá",
+        "hiligaynon_clean": "Tandoga",
         "original": "Tandogá"
     },
     {
         "english": "Squeeze it",
-        "hiligaynon": "Pugaa",
+        "hiligaynon": "Pugáa",
+        "hiligaynon_clean": "Pugaa",
         "original": "Pugáa"
     },
     {
         "english": "Stop them restrain them dont let em do that",
-        "hiligaynon": "Punggi sila!",
+        "hiligaynon": "Púnggi silá!",
+        "hiligaynon_clean": "Punggi sila!",
         "original": "Púnggi silá!"
     },
     {
         "english": "Press it",
-        "hiligaynon": "Tum-oka!",
+        "hiligaynon": "Túm-oká!",
+        "hiligaynon_clean": "Tum-oka!",
         "original": "Túm‑oká!"
     },
     {
         "english": "Tie him up",
-        "hiligaynon": "Higti sia",
+        "hiligaynon": "Hígti siá",
+        "hiligaynon_clean": "Higti sia",
         "original": "Hígti siá"
     },
     {
         "english": "Tudl",
-        "hiligaynon": "Tudlui sia",
+        "hiligaynon": "Tudluí siá",
+        "hiligaynon_clean": "Tudlui sia",
         "original": "Tudluí siá ‑ Teach him / Show him the way / Show him how (root"
     },
     {
         "english": "Pahbal",
-        "hiligaynon": "Pabal-a ‘ko kon … Let me know if… (root",
+        "hiligaynon": "Pabál-a ‘ko kon … Let me know if… (root",
+        "hiligaynon_clean": "Pabal-a ‘ko kon … Let me know if… (root",
         "original": "Pabál‑a ‘ko kon … Let me know if… (root"
     },
     {
         "english": "Wash the dishes",
-        "hiligaynon": "Hugasi ang mga pinggan",
+        "hiligaynon": "Hugási ang mga pínggan",
+        "hiligaynon_clean": "Hugasi ang mga pinggan",
         "original": "Hugási ang mga pínggan"
     },
     {
         "english": "Can you do my laundry for me",
-        "hiligaynon": "Labhi/Labahi ‘ko bi?",
+        "hiligaynon": "Lábhi/Labahí ‘ko bi?",
+        "hiligaynon_clean": "Labhi/Labahi ‘ko bi?",
         "original": "Lábhi/Labahí ‘ko bi?"
     },
     {
         "english": "Lick it",
-        "hiligaynon": "Dilapi",
+        "hiligaynon": "Dilápi",
+        "hiligaynon_clean": "Dilapi",
         "original": "Dilápi"
     },
     {
         "english": "Finish it",
-        "hiligaynon": "Tapusa",
+        "hiligaynon": "Tapúsa",
+        "hiligaynon_clean": "Tapusa",
         "original": "Tapúsa"
     },
     {
         "english": "Turn it down  also slow it down",
-        "hiligaynon": "Pahinaya",
+        "hiligaynon": "Pahináya",
+        "hiligaynon_clean": "Pahinaya",
         "original": "Pahináya"
     },
     {
         "english": "Turn it up",
-        "hiligaynon": "Patunuga",
+        "hiligaynon": "Patunúga",
+        "hiligaynon_clean": "Patunuga",
         "original": "Patunúga"
     },
     {
         "english": "Speak up",
-        "hiligaynon": "Tunuga",
+        "hiligaynon": "Tunúga",
+        "hiligaynon_clean": "Tunuga",
         "original": "Tunúga"
     },
     {
         "english": "Sbak",
-        "hiligaynon": "Sabaka",
+        "hiligaynon": "Sabáka",
+        "hiligaynon_clean": "Sabaka",
         "original": "Sabáka ‑ Put it on your lap (root"
     },
     {
         "english": "Hugt",
-        "hiligaynon": "Hugta",
+        "hiligaynon": "Húgta",
+        "hiligaynon_clean": "Hugta",
         "original": "Húgta ‑ Tighten it (root"
     },
     {
         "english": "Make it faster",
-        "hiligaynon": "Padasiga!",
+        "hiligaynon": "Padasíga!",
+        "hiligaynon_clean": "Padasiga!",
         "original": "Padasíga!"
     },
     {
         "english": "Add more",
-        "hiligaynon": "Dugangi",
+        "hiligaynon": "Dugángi",
+        "hiligaynon_clean": "Dugangi",
         "original": "Dugángi"
     },
     {
         "english": "Chase him",
-        "hiligaynon": "Lagsa sia!",
+        "hiligaynon": "Lágsa siá!",
+        "hiligaynon_clean": "Lagsa sia!",
         "original": "Lágsa siá!"
     },
     {
         "english": "Smell it",
-        "hiligaynon": "Simhuta",
+        "hiligaynon": "Simhutá",
+        "hiligaynon_clean": "Simhuta",
         "original": "Simhutá"
     },
     {
         "english": "Tell him",
-        "hiligaynon": "Hambala sia",
+        "hiligaynon": "Hambalá siá",
+        "hiligaynon_clean": "Hambala sia",
         "original": "Hambalá siá"
     },
     {
         "english": "Rip it",
-        "hiligaynon": "Gisi-a!",
+        "hiligaynon": "Gisi-á!",
+        "hiligaynon_clean": "Gisi-a!",
         "original": "Gisi‑á!"
     },
     {
         "english": "Just wake me up",
-        "hiligaynon": "Pukawa lang ‘ko",
+        "hiligaynon": "Pukáwa lang ‘ko",
+        "hiligaynon_clean": "Pukawa lang ‘ko",
         "original": "Pukáwa lang ‘ko"
     },
     {
         "english": "Go to him",
-        "hiligaynon": "Kadtoi sia!",
+        "hiligaynon": "Kadtoí siá!",
+        "hiligaynon_clean": "Kadtoi sia!",
         "original": "Kadtoí siá!"
     },
     {
         "english": "Finish it off",
-        "hiligaynon": "Ubusa",
+        "hiligaynon": "Ubúsa",
+        "hiligaynon_clean": "Ubusa",
         "original": "Ubúsa"
     },
     {
         "english": "Could you please pay for me",
-        "hiligaynon": "Bayari ‘ko bi?",
+        "hiligaynon": "Bayári ‘ko bi?",
+        "hiligaynon_clean": "Bayari ‘ko bi?",
         "original": "Bayári ‘ko bi?"
     },
     {
         "english": "Pay him",
-        "hiligaynon": "Bayari sia",
+        "hiligaynon": "Bayári siá",
+        "hiligaynon_clean": "Bayari sia",
         "original": "Bayári siá"
     },
     {
         "english": "Guess",
-        "hiligaynon": "Pakta!",
+        "hiligaynon": "Pákta!",
+        "hiligaynon_clean": "Pakta!",
         "original": "Pákta!"
     },
     {
         "english": "Guess who i ran into",
-        "hiligaynon": "Pakta kon sin-o ang naabtan ko!",
+        "hiligaynon": "Pákta kon sín-o ang naábtan ko!",
+        "hiligaynon_clean": "Pakta kon sin-o ang naabtan ko!",
         "original": "Pákta kon sín‑o ang naábtan ko!"
     },
     {
         "english": "Guess who i met",
-        "hiligaynon": "Pakta kon sin-o ang nakilala ko!",
+        "hiligaynon": "Pákta kon sín-o ang nakilála ko!",
+        "hiligaynon_clean": "Pakta kon sin-o ang nakilala ko!",
         "original": "Pákta kon sín‑o ang nakilála ko!"
     },
     {
         "english": "Choose",
-        "hiligaynon": "Pili-a!",
+        "hiligaynon": "Píli-a!",
+        "hiligaynon_clean": "Pili-a!",
         "original": "Píli‑a!"
     },
     {
         "english": "Feed me",
-        "hiligaynon": "Pakauna ‘ko bi? / Pakan-a ‘ko bi?",
+        "hiligaynon": "Pakaúna ‘ko bi? / Pakán-a ‘ko bi?",
+        "hiligaynon_clean": "Pakauna ‘ko bi? / Pakan-a ‘ko bi?",
         "original": "Pakaúna ‘ko bi? / Pakán‑a ‘ko bi?"
     },
     {
         "english": "Make your talk longer",
-        "hiligaynon": "Palawiga imo talk",
+        "hiligaynon": "Palawíga ímo talk",
+        "hiligaynon_clean": "Palawiga imo talk",
         "original": "Palawíga ímo talk"
     },
     {
         "english": "Make it longer",
-        "hiligaynon": "Palaba-a",
+        "hiligaynon": "Palabá-a",
+        "hiligaynon_clean": "Palaba-a",
         "original": "Palabá‑a"
     },
     {
         "english": "Help me",
-        "hiligaynon": "Buligi ‘ko",
+        "hiligaynon": "Bulígi ‘ko",
+        "hiligaynon_clean": "Buligi ‘ko",
         "original": "Bulígi ‘ko"
     },
     {
         "english": "Pick it up",
-        "hiligaynon": "Puluta",
+        "hiligaynon": "Pulúta",
+        "hiligaynon_clean": "Puluta",
         "original": "Pulúta"
     },
     {
         "english": "Bring me some snacks",
-        "hiligaynon": "Dal-i ‘ko snacks bi",
+        "hiligaynon": "Dál-i ‘ko snacks bi",
+        "hiligaynon_clean": "Dal-i ‘ko snacks bi",
         "original": "Dál‑i ‘ko snacks bi"
     },
     {
         "english": "Bring home some food for us",
-        "hiligaynon": "Pulii kami pagkaon bi",
+        "hiligaynon": "Pulíi kamí pagkáon bi",
+        "hiligaynon_clean": "Pulii kami pagkaon bi",
         "original": "Pulíi kamí pagkáon bi"
     },
     {
         "english": "Wipe it up",
-        "hiligaynon": "Trapuhi",
+        "hiligaynon": "Trapúhi",
+        "hiligaynon_clean": "Trapuhi",
         "original": "Trapúhi"
     },
     {
         "english": "Put your sandals on",
-        "hiligaynon": "Suksuka imo tsinelas",
+        "hiligaynon": "Suksuká ímo tsinélas",
+        "hiligaynon_clean": "Suksuka imo tsinelas",
         "original": "Suksuká ímo tsinélas"
     },
     {
         "english": "Take your sandals off",
-        "hiligaynon": "Hubara imo tsinelas",
+        "hiligaynon": "Hubára ímo tsinélas",
+        "hiligaynon_clean": "Hubara imo tsinelas",
         "original": "Hubára ímo tsinélas"
     },
     {
         "english": "Father",
-        "hiligaynon": "Amay",
+        "hiligaynon": "Amáy",
+        "hiligaynon_clean": "Amay",
         "original": "Amáy"
     },
     {
         "english": "Grandfather",
-        "hiligaynon": "Lolo",
+        "hiligaynon": "Lólo",
+        "hiligaynon_clean": "Lolo",
         "original": "Lólo"
     },
     {
         "english": "Grandmother",
-        "hiligaynon": "Lola",
+        "hiligaynon": "Lóla",
+        "hiligaynon_clean": "Lola",
         "original": "Lóla"
     },
     {
         "english": "Often used to name an older male stranger you see in the",
         "hiligaynon": "Tsoy",
+        "hiligaynon_clean": "Tsoy",
         "original": "Tsoy ‑ Uncle (comes from Chinese"
     },
     {
         "english": "Watch out for that guy over there",
-        "hiligaynon": "Halungi si Tsoy",
+        "hiligaynon": "Halúngi si Tsoy",
+        "hiligaynon_clean": "Halungi si Tsoy",
         "original": "Halúngi si Tsoy"
     },
     {
         "english": "Have you heard the national anthem",
-        "hiligaynon": "Nabatian mo na bala ang National Anthem?",
+        "hiligaynon": "Nabátian mo na balá ang National Anthem?",
+        "hiligaynon_clean": "Nabatian mo na bala ang National Anthem?",
         "original": "Nabátian mo na balá ang National Anthem?"
     },
     {
         "english": "I hear it right now",
-        "hiligaynon": "‘Gakabatian ko subong!",
+        "hiligaynon": "‘Gakabátian ko subóng!",
+        "hiligaynon_clean": "‘Gakabatian ko subong!",
         "original": "‘Gakabátian ko subóng!"
     },
     {
         "english": "You might hear a loud noise pretty soon",
-        "hiligaynon": "Basi may mabatian ka dugay-dugay nga mabaskog",
+        "hiligaynon": "Basì may mabátian ka dugáy-dugáy nga mabáskog",
+        "hiligaynon_clean": "Basi may mabatian ka dugay-dugay nga mabaskog",
         "original": "Basì may mabátian ka dugáy‑dugáy nga mabáskog"
     },
     {
         "english": "I dont know  you are frustrated or irritated",
-        "hiligaynon": "Ay, ambot!",
+        "hiligaynon": "Ay, ambót!",
+        "hiligaynon_clean": "Ay, ambot!",
         "original": "Ay, ambót! ‑ (literally"
     },
     {
         "english": "No one showed up for the service project",
-        "hiligaynon": "Ay, palagpat!",
+        "hiligaynon": "Ay, palágpat!",
+        "hiligaynon_clean": "Ay, palagpat!",
         "original": "Ay, palágpat! ‑ (something isn’t going your way"
     },
     {
         "english": "Who all do you live with",
-        "hiligaynon": "Sin-o ‑ sin‑o kamo sa balay?",
+        "hiligaynon": "Sín-o ‑ sín‑o kamó sa baláy?",
+        "hiligaynon_clean": "Sin-o ‑ sin‑o kamo sa balay?",
         "original": "Sín‑o ‑ sín‑o kamó sa baláy?"
     },
     {
         "english": "Elder and me",
-        "hiligaynon": "Kami ni Elder",
+        "hiligaynon": "Kamí ni Elder",
+        "hiligaynon_clean": "Kami ni Elder",
         "original": "Kamí ni Elder"
     },
     {
         "english": "Just us two",
-        "hiligaynon": "Kami lang nga duha",
+        "hiligaynon": "Kamí lang nga dúha",
+        "hiligaynon_clean": "Kami lang nga duha",
         "original": "Kamí lang nga dúha"
     },
     {
         "english": "Just elder and me",
-        "hiligaynon": "Kami lang ni Elder",
+        "hiligaynon": "Kamí lang ni Elder",
+        "hiligaynon_clean": "Kami lang ni Elder",
         "original": "Kamí lang ni Elder"
     },
     {
         "english": "There are just two of us",
-        "hiligaynon": "Duha lang kami",
+        "hiligaynon": "Dúha lang kamí",
+        "hiligaynon_clean": "Duha lang kami",
         "original": "Dúha lang kamí"
     },
     {
         "english": "Suggesting that someone does something frequently",
         "hiligaynon": "Pala- prefix",
+        "hiligaynon_clean": "Pala- prefix",
         "original": "Pala‑ prefix"
     },
     {
         "english": "That guys always drunk",
-        "hiligaynon": "Palahubog ‘na sia",
+        "hiligaynon": "Pálahubóg ‘nâ siá",
+        "hiligaynon_clean": "Palahubog ‘na sia",
         "original": "Pálahubóg ‘nâ siá"
     },
     {
         "english": "That guys always drinking",
-        "hiligaynon": "Palainom ‘na sia",
+        "hiligaynon": "Pálainom ‘nâ siá",
+        "hiligaynon_clean": "Palainom ‘na sia",
         "original": "Pálainom ‘nâ siá"
     },
     {
         "english": "That guys always eating",
-        "hiligaynon": "Palakaon ‘na sia",
+        "hiligaynon": "Pálakaon ‘nâ siá",
+        "hiligaynon_clean": "Palakaon ‘na sia",
         "original": "Pálakaon ‘nâ siá"
     },
     {
         "english": "That guys always gambling",
-        "hiligaynon": "Palasugal ‘na sia",
+        "hiligaynon": "Pálasugál ‘nâ siá",
+        "hiligaynon_clean": "Palasugal ‘na sia",
         "original": "Pálasugál ‘nâ siá"
     },
     {
         "english": "In the general location of",
-        "hiligaynon": "Dampi / Nayon",
+        "hiligaynon": "Dámpi / Náyon",
+        "hiligaynon_clean": "Dampi / Nayon",
         "original": "Dámpi / Náyon"
     },
     {
         "english": "Dmpi and nyon both suggest a general location",
-        "hiligaynon": "Diin nayon inyo simbahan?",
+        "hiligaynon": "Diín náyon ínyo simbáhan?",
+        "hiligaynon_clean": "Diin nayon inyo simbahan?",
         "original": "Diín náyon ínyo simbáhan? ‑ (same as above"
     },
     {
         "english": "I didnt mean to  i didnt do it on purpose",
-        "hiligaynon": "Wala ko ginhungod",
+        "hiligaynon": "Walâ ko ginhungód",
+        "hiligaynon_clean": "Wala ko ginhungod",
         "original": "Walâ ko ginhungód"
     },
     {
         "english": "Simultaneously",
-        "hiligaynon": "Dungan",
+        "hiligaynon": "Dúngan",
+        "hiligaynon_clean": "Dungan",
         "original": "Dúngan"
     },
     {
         "english": "We both know youd be better off without me",
-        "hiligaynon": "Mas maayo ka pa gani kon wala ako",
+        "hiligaynon": "Mas maáyo ka pa ganì kon walâ akó",
+        "hiligaynon_clean": "Mas maayo ka pa gani kon wala ako",
         "original": "Mas maáyo ka pa ganì kon walâ akó"
     },
     {
         "english": "Oh here it is",
-        "hiligaynon": "Ay, ari gali o!",
+        "hiligaynon": "Ay, ári galî o!",
+        "hiligaynon_clean": "Ay, ari gali o!",
         "original": "Ay, ári galî o!"
     },
     {
         "english": "How much is this",
-        "hiligaynon": "Tagpila o?",
+        "hiligaynon": "Tagpilá o?",
+        "hiligaynon_clean": "Tagpila o?",
         "original": "Tagpilá o?"
     },
     {
         "english": "Heres some more juice",
-        "hiligaynon": "Dyus pa o!",
+        "hiligaynon": "Dyús pa o!",
+        "hiligaynon_clean": "Dyus pa o!",
         "original": "Dyús pa o!"
     },
     {
         "english": "Theres such a thing as that ususally",
-        "hiligaynon": "Ay, may amo ‘na?",
+        "hiligaynon": "Ay, may amó ‘nâ?",
+        "hiligaynon_clean": "Ay, may amo ‘na?",
         "original": "Ay, may amó ‘nâ? ‑ (expression) Well that’s new. (literally"
     },
     {
         "english": "An old person",
-        "hiligaynon": "Tigulang na akon sapatos",
+        "hiligaynon": "Tigúlang na ákon sapátos",
+        "hiligaynon_clean": "Tigulang na akon sapatos",
         "original": "Tigúlang na ákon sapátos ‑ My shoes are old (As in"
     },
     {
         "english": "Isnt he cool",
-        "hiligaynon": "Sia na, ingglishero!",
+        "hiligaynon": "Siá na, ingglishéro!",
+        "hiligaynon_clean": "Sia na, ingglishero!",
         "original": "Siá na, ingglishéro!"
     },
     {
         "english": "Youre asking me",
-        "hiligaynon": "Ako pa ang ginapamangkot mo?",
+        "hiligaynon": "Akó pa ang ginapamángkot mo?",
+        "hiligaynon_clean": "Ako pa ang ginapamangkot mo?",
         "original": "Akó pa ang ginapamángkot mo?"
     },
     {
         "english": "Whos miguel",
-        "hiligaynon": "Miguel man?",
+        "hiligaynon": "Miguél man?",
+        "hiligaynon_clean": "Miguel man?",
         "original": "Miguél man?"
     },
     {
         "english": "Wow youre so tall",
-        "hiligaynon": "Abaw! Kataas s’imo!",
+        "hiligaynon": "Abáw! Katáas s’ímo!",
+        "hiligaynon_clean": "Abaw! Kataas s’imo!",
         "original": "Abáw! Katáas s’ímo!"
     },
     {
         "english": "Hes tall  and big literally hes already tall",
-        "hiligaynon": "Taas na sia, dako pa!",
+        "hiligaynon": "Táas na siá, dakô pa!",
+        "hiligaynon_clean": "Taas na sia, dako pa!",
         "original": "Táas na siá, dakô pa!"
     },
     {
         "english": "Do you know joice campos",
-        "hiligaynon": "Kilala mo si Joice Campos?",
+        "hiligaynon": "Kilála mo si Joice Campos?",
+        "hiligaynon_clean": "Kilala mo si Joice Campos?",
         "original": "Kilála mo si Joice Campos?"
     },
     {
         "english": "Do you know anyone named joice campos this is more",
-        "hiligaynon": "May kilala ka nga si Joice Campos?",
+        "hiligaynon": "May kilála ka nga si Joice Campos?",
+        "hiligaynon_clean": "May kilala ka nga si Joice Campos?",
         "original": "May kilála ka nga si Joice Campos?"
     },
     {
         "english": "Whats that youve got there",
-        "hiligaynon": "Ano ‘na dala mo?",
+        "hiligaynon": "Anó ‘nâ dalá mo?",
+        "hiligaynon_clean": "Ano ‘na dala mo?",
         "original": "Anó ‘nâ dalá mo?"
     },
     {
         "english": "Youre so kind",
-        "hiligaynon": "Kabuot gid s’imo ya!",
+        "hiligaynon": "Kabúot gid s’ímo ya!",
+        "hiligaynon_clean": "Kabuot gid s’imo ya!",
         "original": "Kabúot gid s’ímo ya!"
     },
     {
         "english": "Ive got this",
-        "hiligaynon": "Ako bahala",
+        "hiligaynon": "Akó bahalà",
+        "hiligaynon_clean": "Ako bahala",
         "original": "Akó bahalà"
     },
     {
         "english": "Can you take it from here",
-        "hiligaynon": "Ikaw na bahala?",
+        "hiligaynon": "Ikáw na bahalà?",
+        "hiligaynon_clean": "Ikaw na bahala?",
         "original": "Ikáw na bahalà?"
     },
     {
         "english": "I left my nametag at your place",
-        "hiligaynon": "Nabilin ko akon nametag sa inyo.",
+        "hiligaynon": "Nabilín ko ákon nametag sa ínyo.",
+        "hiligaynon_clean": "Nabilin ko akon nametag sa inyo.",
         "original": "Nabilín ko ákon nametag sa ínyo."
     },
     {
         "english": "Whyd you leave your shoes outside",
-        "hiligaynon": "Ngaa ginbilin mo imo sapatos sa gwa?",
+        "hiligaynon": "Ngáa ginbílin mo ímo sapátos sa gwâ?",
+        "hiligaynon_clean": "Ngaa ginbilin mo imo sapatos sa gwa?",
         "original": "Ngáa ginbílin mo ímo sapátos sa gwâ?"
     },
     {
         "english": "No matter what",
-        "hiligaynon": "Bisan ano matabo, friends man ‘ta gihapon!",
+        "hiligaynon": "Bisán anó matabô, friends man ‘ta gihápon!",
+        "hiligaynon_clean": "Bisan ano matabo, friends man ‘ta gihapon!",
         "original": "Bisán anó matabô, friends man ‘ta gihápon!"
     },
     {
         "english": "Lets go before others eat all the food literally maybe well",
-        "hiligaynon": "Ta! Basi maunahan ‘ta sa pagkaon!",
+        "hiligaynon": "Ta! Basì maunáhan ‘ta sa pagkáon!",
+        "hiligaynon_clean": "Ta! Basi maunahan ‘ta sa pagkaon!",
         "original": "Ta! Basì maunáhan ‘ta sa pagkáon!"
     },
     {
         "english": "Wal ko ginhungd  sorry",
-        "hiligaynon": "Sori, ha?",
+        "hiligaynon": "Sóri, ha?",
+        "hiligaynon_clean": "Sori, ha?",
         "original": "Sóri, ha?"
     },
     {
         "english": "You go first",
-        "hiligaynon": "Sige, ikaw anay",
+        "hiligaynon": "Sigé, ikáw ánay",
+        "hiligaynon_clean": "Sige, ikaw anay",
         "original": "Sigé, ikáw ánay"
     },
     {
         "english": "Just make sure we dont in trouble",
-        "hiligaynon": "Siguraduhon mo lang nga indi kami maakigan, ha?",
+        "hiligaynon": "Siguradúhon mo lang nga indì kamí maakígan, ha?",
+        "hiligaynon_clean": "Siguraduhon mo lang nga indi kami maakigan, ha?",
         "original": "Siguradúhon mo lang nga indì kamí maakígan, ha?"
     },
     {
         "english": "Later",
-        "hiligaynon": "Karon na lang",
+        "hiligaynon": "Karón na lang",
+        "hiligaynon_clean": "Karon na lang",
         "original": "Karón na lang"
     },
     {
         "english": "Hurry up",
-        "hiligaynon": "Dasig-ah!",
+        "hiligaynon": "Dásig-ah!",
+        "hiligaynon_clean": "Dasig-ah!",
         "original": "Dásig‑ah!"
     },
     {
         "english": "Ive lost my appetite",
-        "hiligaynon": "Nadulaan na ‘ko gana",
+        "hiligaynon": "Naduláan na ‘ko gána",
+        "hiligaynon_clean": "Nadulaan na ‘ko gana",
         "original": "Naduláan na ‘ko gána"
     },
     {
         "english": "Dont worry about it",
-        "hiligaynon": "Pabay-i lang!",
+        "hiligaynon": "Pabáy-i lang!",
+        "hiligaynon_clean": "Pabay-i lang!",
         "original": "Pabáy‑i lang!"
     },
     {
         "english": "Dont worry",
-        "hiligaynon": "Indi ka magkabalaka!",
+        "hiligaynon": "Indì ka magkabaláka!",
+        "hiligaynon_clean": "Indi ka magkabalaka!",
         "original": "Indì ka magkabaláka!"
     },
     {
         "english": "I get nervous about transfers",
-        "hiligaynon": "Ginakulbaan ‘ko sa transfers",
+        "hiligaynon": "Ginakúlbaán ‘ko sa transfers",
+        "hiligaynon_clean": "Ginakulbaan ‘ko sa transfers",
         "original": "Ginakúlbaán ‘ko sa transfers"
     },
     {
         "english": "Why are you so early",
-        "hiligaynon": "Temprano ka gid haw?",
+        "hiligaynon": "Tempráno ka gid haw?",
+        "hiligaynon_clean": "Temprano ka gid haw?",
         "original": "Tempráno ka gid haw?"
     },
     {
         "english": "When did you arrive from the states",
-        "hiligaynon": "Sang san-o ka nag‑abot halin sa States?",
+        "hiligaynon": "Sang sán-o ka nag‑abot halín sa States?",
+        "hiligaynon_clean": "Sang san-o ka nag‑abot halin sa States?",
         "original": "Sang sán‑o ka nag‑abot halín sa States?"
     },
     {
         "english": "I was surprised",
-        "hiligaynon": "Nakibot ‘ko",
+        "hiligaynon": "Nakibót ‘ko",
+        "hiligaynon_clean": "Nakibot ‘ko",
         "original": "Nakibót ‘ko"
     },
     {
         "english": "Sister",
-        "hiligaynon": "Sister, natingala ka na kon ngaa damo simbahan?",
+        "hiligaynon": "Sister, natingála ka na kon ngáa damò simbáhan?",
+        "hiligaynon_clean": "Sister, natingala ka na kon ngaa damo simbahan?",
         "original": "Sister, natingála ka na kon ngáa damò simbáhan?"
     },
     {
         "english": "At first it was hard for us to speak ilonggo",
-        "hiligaynon": "Sang una, nabudlayan kami mag-ilonggo",
+        "hiligaynon": "Sang úna, nabúdlayán kamí mag-ilónggo",
+        "hiligaynon_clean": "Sang una, nabudlayan kami mag-ilonggo",
         "original": "Sang úna, nabúdlayán kamí mag‑ilónggo"
     },
     {
         "english": "I used to really struggle with ilonggo",
-        "hiligaynon": "Nabudlayan ‘ko sadto mag-ilonggo",
+        "hiligaynon": "Nabúdlayán ‘ko sádto mag-ilónggo",
+        "hiligaynon_clean": "Nabudlayan ‘ko sadto mag-ilonggo",
         "original": "Nabúdlayán ‘ko sádto mag‑ilónggo"
     },
     {
         "english": "But now im used to it",
-        "hiligaynon": "Subong ya, naanad na ‘ko",
+        "hiligaynon": "Subóng ya, naánad na ‘ko",
+        "hiligaynon_clean": "Subong ya, naanad na ‘ko",
         "original": "Subóng ya, naánad na ‘ko"
     },
     {
         "english": "Im way good now",
-        "hiligaynon": "Sagad na ‘ko!",
+        "hiligaynon": "Sagád na ‘kó!",
+        "hiligaynon_clean": "Sagad na ‘ko!",
         "original": "Sagád na ‘kó!"
     },
     {
         "english": "Usually shes not there in the afternoon",
-        "hiligaynon": "Kalabanan wala sia ‘to sa hapon",
+        "hiligaynon": "Kalabánan walâ siá ‘to sa hápon",
+        "hiligaynon_clean": "Kalabanan wala sia ‘to sa hapon",
         "original": "Kalabánan walâ siá ‘to sa hápon"
     },
     {
         "english": "Kumsta",
-        "hiligaynon": "Nagkumustahanay sila",
+        "hiligaynon": "Nagkumustahánay silá",
+        "hiligaynon_clean": "Nagkumustahanay sila",
         "original": "Nagkumustahánay silá ‑ They shook hands (root"
     },
     {
         "english": "Can i ask a question",
-        "hiligaynon": "Pwede ‘kapamangkot?",
+        "hiligaynon": "Pwéde ‘kapamángkot?",
+        "hiligaynon_clean": "Pwede ‘kapamangkot?",
         "original": "Pwéde ‘kapamángkot?"
     },
     {
         "english": "Can i borrow this can we borrow this",
-        "hiligaynon": "Pwede ‘kahulam? (or pahulam)",
+        "hiligaynon": "Pwéde ‘kahulám? (or pahulám)",
+        "hiligaynon_clean": "Pwede ‘kahulam? (or pahulam)",
         "original": "Pwéde ‘kahulám? (or pahulám)"
     },
     {
         "english": "Can i watch is it okay to watch",
-        "hiligaynon": "Pwede ‘kalantaw?",
+        "hiligaynon": "Pwéde ‘kalántaw?",
+        "hiligaynon_clean": "Pwede ‘kalantaw?",
         "original": "Pwéde ‘kalántaw?"
     },
     {
         "english": "Can i see",
-        "hiligaynon": "Lantaw bi?",
+        "hiligaynon": "Lántaw bi?",
+        "hiligaynon_clean": "Lantaw bi?",
         "original": "Lántaw bi?"
     },
     {
         "english": "Payment",
-        "hiligaynon": "Bayad, ‘Nong",
+        "hiligaynon": "Báyad, ‘Nong",
+        "hiligaynon_clean": "Bayad, ‘Nong",
         "original": "Báyad, ‘Nong"
     },
     {
         "english": "Heres my payment",
-        "hiligaynon": "Bayad, palihog",
+        "hiligaynon": "Báyad, palíhog",
+        "hiligaynon_clean": "Bayad, palihog",
         "original": "Báyad, palíhog"
     },
     {
         "english": "I would come to church",
-        "hiligaynon": "Magsimba ‘ko tani, galing sako ‘ko permi.",
+        "hiligaynon": "Magsímba ‘ko tanì, gáling sakò ‘ko pérmi.",
+        "hiligaynon_clean": "Magsimba ‘ko tani, galing sako ‘ko permi.",
         "original": "Magsímba ‘ko tanì, gáling sakò ‘ko pérmi."
     },
     {
         "english": "He always comes to church",
-        "hiligaynon": "Permi sia ‘gasimba",
+        "hiligaynon": "Pérmi siá ‘gasímba",
+        "hiligaynon_clean": "Permi sia ‘gasimba",
         "original": "Pérmi siá ‘gasímba"
     },
     {
         "english": "Were always walking",
-        "hiligaynon": "Permi kami ‘galakat",
+        "hiligaynon": "Pérmi kamí ‘galakát",
+        "hiligaynon_clean": "Permi kami ‘galakat",
         "original": "Pérmi kamí ‘galakát"
     },
     {
         "english": "We rarely ever catch a ride",
-        "hiligaynon": "Laka lang kami ‘gasakay",
+        "hiligaynon": "Lakâ lang kamí ‘gasakáy",
+        "hiligaynon_clean": "Laka lang kami ‘gasakay",
         "original": "Lakâ lang kamí ‘gasakáy"
     },
     {
         "english": "Theres an activity on october fifth",
-        "hiligaynon": "May aktibiti sa October 5.",
+        "hiligaynon": "May aktíbiti sa October 5.",
+        "hiligaynon_clean": "May aktibiti sa October 5.",
         "original": "May aktíbiti sa October 5."
     },
     {
         "english": "Well can you make it",
-        "hiligaynon": "Te? Pwede ka?",
+        "hiligaynon": "Tê? Pwéde ka?",
+        "hiligaynon_clean": "Te? Pwede ka?",
         "original": "Tê? Pwéde ka?"
     },
     {
         "english": "What day is that",
-        "hiligaynon": "Ano ‘tong adlaw?",
+        "hiligaynon": "Anó ‘tong ádlaw?",
+        "hiligaynon_clean": "Ano ‘tong adlaw?",
         "original": "Anó ‘tong ádlaw?"
     },
     {
         "english": "All right  well come",
-        "hiligaynon": "O, sige makadto kami!",
+        "hiligaynon": "O, sigé makádto kamí!",
+        "hiligaynon_clean": "O, sige makadto kami!",
         "original": "O, sigé makádto kamí!"
     },
     {
         "english": "Id like some adobo",
-        "hiligaynon": "Gusto ko sang adobo",
+        "hiligaynon": "Gústo ko sang adóbo",
+        "hiligaynon_clean": "Gusto ko sang adobo",
         "original": "Gústo ko sang adóbo"
     },
     {
         "english": "Same as above wal and way are synonymous as are mahim and",
-        "hiligaynon": "Wala na ‘ta maobra!",
+        "hiligaynon": "Walâ na ‘ta maóbra!",
+        "hiligaynon_clean": "Wala na ‘ta maobra!",
         "original": "Walâ na ‘ta maóbra!"
     },
     {
         "english": "I have nothing else to say",
-        "hiligaynon": "Wala na ‘ko hambalon",
+        "hiligaynon": "Walâ na ‘ko hambalón",
+        "hiligaynon_clean": "Wala na ‘ko hambalon",
         "original": "Walâ na ‘ko hambalón"
     },
     {
         "english": "Maybe",
-        "hiligaynon": "Siguro, Waay pa kami ‘kabalo",
+        "hiligaynon": "Sigúro, Waáy pa kamí ‘kabaló",
+        "hiligaynon_clean": "Siguro, Waay pa kami ‘kabalo",
         "original": "Sigúro, Waáy pa kamí ‘kabaló"
     },
     {
         "english": "Were not sure",
-        "hiligaynon": "Indi kami sigurado",
+        "hiligaynon": "Indi kamí sigurádo",
+        "hiligaynon_clean": "Indi kami sigurado",
         "original": "Indi kamí sigurádo"
     },
     {
         "english": "Uhoh oh no look what youve done now youve done it",
-        "hiligaynon": "Hala!",
+        "hiligaynon": "Halá!",
+        "hiligaynon_clean": "Hala!",
         "original": "Halá!"
     },
     {
         "english": "Can i ask favor",
-        "hiligaynon": "Pwede ‘ko ‘kapalihog?",
+        "hiligaynon": "Pwéde ‘ko ‘kapalíhog?",
+        "hiligaynon_clean": "Pwede ‘ko ‘kapalihog?",
         "original": "Pwéde ‘ko ‘kapalíhog?"
     },
     {
         "english": "What can i do for you  what is it you want",
-        "hiligaynon": "Ano tani?",
+        "hiligaynon": "Anó tanì?",
+        "hiligaynon_clean": "Ano tani?",
         "original": "Anó tanì?"
     },
     {
         "english": "Sure",
-        "hiligaynon": "Huo eh! Bisan ano, basta ikaw!",
+        "hiligaynon": "Húo eh! Bisán anó, básta ikáw!",
+        "hiligaynon_clean": "Huo eh! Bisan ano, basta ikaw!",
         "original": "Húo eh! Bisán anó, básta ikáw!"
     },
     {
         "english": "What can i do for you",
-        "hiligaynon": "Ano ang aton?",
+        "hiligaynon": "Anó ang áton?",
+        "hiligaynon_clean": "Ano ang aton?",
         "original": "Anó ang áton?"
     },
     {
         "english": "Oh you poor thing",
-        "hiligaynon": "Kalu-oy s’imo!",
+        "hiligaynon": "Kalú-oy s’ímo!",
+        "hiligaynon_clean": "Kalu-oy s’imo!",
         "original": "Kalú‑oy s’ímo!"
     },
     {
         "english": "What can you do",
-        "hiligaynon": "Ano ang mahimo mo?",
+        "hiligaynon": "Anó ang mahimò mo?",
+        "hiligaynon_clean": "Ano ang mahimo mo?",
         "original": "Anó ang mahimò mo?"
     },
     {
         "english": "What should you do",
-        "hiligaynon": "Ano ang dapat mo himuon?",
+        "hiligaynon": "Anó ang dápat mo himúon?",
+        "hiligaynon_clean": "Ano ang dapat mo himuon?",
         "original": "Anó ang dápat mo himúon?"
     },
     {
         "english": "Do you like playing basketball",
-        "hiligaynon": "Mahilig ka magbasket?",
+        "hiligaynon": "Mahílig ka magbásket?",
+        "hiligaynon_clean": "Mahilig ka magbasket?",
         "original": "Mahílig ka magbásket?"
     },
     {
         "english": "Do you want to play basketball",
-        "hiligaynon": "Gusto mo magbasket?",
+        "hiligaynon": "Gústo mo magbásket?",
+        "hiligaynon_clean": "Gusto mo magbasket?",
         "original": "Gústo mo magbásket?"
     },
     {
         "english": "I like the philippines ko is the location",
-        "hiligaynon": "Nanami-an ‘ko sa Philippines",
+        "hiligaynon": "Nanamí-an ‘ko sa Philippines",
+        "hiligaynon_clean": "Nanami-an ‘ko sa Philippines",
         "original": "Nanamí‑an ‘ko sa Philippines"
     },
     {
         "english": "I like this food",
-        "hiligaynon": "Nanamitan ‘ko sining pagkaon",
+        "hiligaynon": "Nanamítan ‘ko siníng pagkáon",
+        "hiligaynon_clean": "Nanamitan ‘ko sining pagkaon",
         "original": "Nanamítan ‘ko siníng pagkáon"
     },
     {
         "english": "We can show our love",
-        "hiligaynon": "Mapakita ‘ta aton love sa Diyos paagi sa pagsunod sa Iya nga mga kasuguan",
+        "hiligaynon": "Mapakità ‘ta áton love sa Diyos paági sa pagsunód sa Íya nga mga kasúguan",
+        "hiligaynon_clean": "Mapakita ‘ta aton love sa Diyos paagi sa pagsunod sa Iya nga mga kasuguan",
         "original": "Mapakità ‘ta áton love sa Diyos paági sa pagsunód sa Íya nga mga kasúguan"
     },
     {
         "english": "Do you want more",
-        "hiligaynon": "Gusto mo pa?",
+        "hiligaynon": "Gústo mo pa?",
+        "hiligaynon_clean": "Gusto mo pa?",
         "original": "Gústo mo pa?"
     },
     {
         "english": "Just a little more",
-        "hiligaynon": "Sige pa",
+        "hiligaynon": "Sigé pa",
+        "hiligaynon_clean": "Sige pa",
         "original": "Sigé pa"
     },
     {
         "english": "Somethings missing",
-        "hiligaynon": "May kulang",
+        "hiligaynon": "May kúlang",
+        "hiligaynon_clean": "May kulang",
         "original": "May kúlang"
     },
     {
         "english": "Youre good at ilonggo",
-        "hiligaynon": "Sagad ka mag-ilonggo",
+        "hiligaynon": "Sagád ka mag-ilónggo",
+        "hiligaynon_clean": "Sagad ka mag-ilonggo",
         "original": "Sagád ka mag‑ilónggo"
     },
     {
         "english": "Wow youre way good notice the accents",
-        "hiligaynon": "Baw! Sagad-sagad s’imo!",
+        "hiligaynon": "Baw! Sagád-ságad s’ímo!",
+        "hiligaynon_clean": "Baw! Sagad-sagad s’imo!",
         "original": "Baw! Sagád‑ságad s’ímo!"
     },
     {
         "english": "Theres nothing like this where im from",
-        "hiligaynon": "Waay amo ‘ni sa amon",
+        "hiligaynon": "Waáy amó ‘ni sa ámon",
+        "hiligaynon_clean": "Waay amo ‘ni sa amon",
         "original": "Waáy amó ‘ni sa ámon"
     },
     {
         "english": "Im sick of that",
-        "hiligaynon": "Natak-an na ‘ko sina",
+        "hiligaynon": "Naták-an na ‘ko sinâ",
+        "hiligaynon_clean": "Natak-an na ‘ko sina",
         "original": "Naták‑an na ‘ko sinâ"
     },
     {
         "english": "I dont care",
-        "hiligaynon": "Wa-ay ‘ko labot",
+        "hiligaynon": "Wa-áy ‘ko lábot",
+        "hiligaynon_clean": "Wa-ay ‘ko labot",
         "original": "Wa‑áy ‘ko lábot"
     },
     {
         "english": "I dont care anymore",
-        "hiligaynon": "Wa-ay na ‘ko labot",
+        "hiligaynon": "Wa-áy na ‘ko lábot",
+        "hiligaynon_clean": "Wa-ay na ‘ko labot",
         "original": "Wa‑áy na ‘ko lábot"
     },
     {
         "english": "Just leave it outside",
-        "hiligaynon": "Ibilin mo lang sa gwa, ha?",
+        "hiligaynon": "Ibílin mo lang sa gwâ, ha?",
+        "hiligaynon_clean": "Ibilin mo lang sa gwa, ha?",
         "original": "Ibílin mo lang sa gwâ, ha?"
     },
     {
         "english": "Now you two are gonna share it",
         "hiligaynon": "I“share-share” nyo lang, ha?",
+        "hiligaynon_clean": "I“share-share” nyo lang, ha?",
         "original": "I“share‑share” nyo lang, ha?"
     },
     {
         "english": "The law enforcement here is a joke",
-        "hiligaynon": "Daw lango-lango ang law‑enforcement diri",
+        "hiligaynon": "Daw langó-lángo ang law‑enforcement dirí",
+        "hiligaynon_clean": "Daw lango-lango ang law‑enforcement diri",
         "original": "Daw langó‑lángo ang law‑enforcement dirí"
     },
     {
         "english": "You dont seem too serious about anything",
-        "hiligaynon": "Daw lango-lango ka guro, ay!",
+        "hiligaynon": "Daw langó-lángo ka gúro, ay!",
+        "hiligaynon_clean": "Daw lango-lango ka guro, ay!",
         "original": "Daw langó‑lángo ka gúro, ay!"
     },
     {
         "english": "Duh dont be silly of course really dont be ridiculous literally its",
-        "hiligaynon": "Grabe ka!",
+        "hiligaynon": "Grábe ka!",
+        "hiligaynon_clean": "Grabe ka!",
         "original": "Grábe ka!"
     },
     {
         "english": "Thats fine too",
-        "hiligaynon": "Puede man",
+        "hiligaynon": "Puéde man",
+        "hiligaynon_clean": "Puede man",
         "original": "Puéde man"
     },
     {
         "english": "How many were at church",
-        "hiligaynon": "Pila ang nagsimba?",
+        "hiligaynon": "Pilá ang nagsímba?",
+        "hiligaynon_clean": "Pila ang nagsimba?",
         "original": "Pilá ang nagsímba?"
     },
     {
         "english": "Like 50",
-        "hiligaynon": "Mga 50, guro",
+        "hiligaynon": "Mga 50, gúro",
+        "hiligaynon_clean": "Mga 50, guro",
         "original": "Mga 50, gúro"
     },
     {
         "english": "Whatever makes you happy",
-        "hiligaynon": "Pagusto ka lang",
+        "hiligaynon": "Pagústo ka lang",
+        "hiligaynon_clean": "Pagusto ka lang",
         "original": "Pagústo ka lang"
     },
     {
         "english": "Im gonna do whatever i want",
-        "hiligaynon": "Pagusto lang ‘ko",
+        "hiligaynon": "Pagústo lang ‘ko",
+        "hiligaynon_clean": "Pagusto lang ‘ko",
         "original": "Pagústo lang ‘ko"
     },
     {
         "english": "Gab digital",
-        "hiligaynon": "Gaba hi-tech! ‑ (said about karma that struck quite promptly)(also",
+        "hiligaynon": "Gabà hi-tech! ‑ (said about karma that struck quite promptly)(also",
+        "hiligaynon_clean": "Gaba hi-tech! ‑ (said about karma that struck quite promptly)(also",
         "original": "Gabà hi‑tech! ‑ (said about karma that struck quite promptly)(also"
     },
     {
         "english": "When is the branch activity",
-        "hiligaynon": "San-o ang branch activity?",
+        "hiligaynon": "Sán-o ang branch activity?",
+        "hiligaynon_clean": "San-o ang branch activity?",
         "original": "Sán‑o ang branch activity?"
     },
     {
         "english": "On april 16th",
-        "hiligaynon": "Sa April ...16?  Bala mu?",
+        "hiligaynon": "Sa April ...16?  Balá mu?",
+        "hiligaynon_clean": "Sa April ...16?  Bala mu?",
         "original": "Sa April ...16?  Balá mu?"
     },
     {
         "english": "He pretended to be asleep",
-        "hiligaynon": "Nagkuno-kono sia nga tulog na",
+        "hiligaynon": "Nagkunó-kóno siá nga tulóg na",
+        "hiligaynon_clean": "Nagkuno-kono sia nga tulog na",
         "original": "Nagkunó‑kóno siá nga tulóg na"
     },
     {
         "english": "He pretends to have authority",
-        "hiligaynon": "‘Gakuno-kono sia nga may autoridad",
+        "hiligaynon": "‘Gakunó-kóno siá nga may autoridad",
+        "hiligaynon_clean": "‘Gakuno-kono sia nga may autoridad",
         "original": "‘Gakunó‑kóno siá nga may autoridad"
     },
     {
         "english": "They study",
-        "hiligaynon": "‘Ga\"study\" sila, gabasa Biblia, ‘ga\"preach-preach\" para kono abi may authority sila",
+        "hiligaynon": "‘Ga\"study\" silá, gabása Bíblia, ‘ga\"preach-preach\" pára kono ábi may authority silá",
+        "hiligaynon_clean": "‘Ga\"study\" sila, gabasa Biblia, ‘ga\"preach-preach\" para kono abi may authority sila",
         "original": "‘Ga\"study\" silá, gabása Bíblia, ‘ga\"preach‑preach\" pára kono ábi may authority silá"
     },
     {
         "english": "Elder saw it and called the police",
-        "hiligaynon": "Nakita ni Elder kag gintawag ang pulis",
+        "hiligaynon": "Nakità ni Elder kag gintawág ang pulís",
+        "hiligaynon_clean": "Nakita ni Elder kag gintawag ang pulis",
         "original": "Nakità ni Elder kag gintawág ang pulís"
     },
     {
         "english": "Well see",
-        "hiligaynon": "Lantawon ta lang",
+        "hiligaynon": "Lantawón ta lang",
+        "hiligaynon_clean": "Lantawon ta lang",
         "original": "Lantawón ta lang"
     },
     {
         "english": "The view is beautiful",
-        "hiligaynon": "Kanami sa lalantawon",
+        "hiligaynon": "Kanamì sa lalantáwon",
+        "hiligaynon_clean": "Kanami sa lalantawon",
         "original": "Kanamì sa lalantáwon"
     },
     {
         "english": "Ayw niy  he",
-        "hiligaynon": "Indi sia (Tagalog",
+        "hiligaynon": "Indì siá (Tagalog",
+        "hiligaynon_clean": "Indi sia (Tagalog",
         "original": "Indì siá (Tagalog"
     },
     {
         "english": "She doesnt like to",
-        "hiligaynon": "Indi sia gusto",
+        "hiligaynon": "Indì siá gústo",
+        "hiligaynon_clean": "Indi sia gusto",
         "original": "Indì siá gústo"
     },
     {
         "english": "Your house your",
-        "hiligaynon": "Balay mo? Balay mo?",
+        "hiligaynon": "Baláy mo? Baláy mo?",
+        "hiligaynon_clean": "Balay mo? Balay mo?",
         "original": "Baláy mo? Baláy mo? ‑ What, do you think you live here or something? (literally"
     },
     {
         "english": "I didnt say it",
-        "hiligaynon": "Wala ko ginhambal",
+        "hiligaynon": "Walâ ko ginhámbal",
+        "hiligaynon_clean": "Wala ko ginhambal",
         "original": "Walâ ko ginhámbal"
     },
     {
         "english": "I didnt say anything",
-        "hiligaynon": "Wala ‘ko may ginhambal",
+        "hiligaynon": "Walâ ‘ko may ginhámbal",
+        "hiligaynon_clean": "Wala ‘ko may ginhambal",
         "original": "Walâ ‘ko may ginhámbal"
     },
     {
         "english": "I didnt know",
-        "hiligaynon": "Wala ko nabal-an",
+        "hiligaynon": "Walâ ko nabál-an",
+        "hiligaynon_clean": "Wala ko nabal-an",
         "original": "Walâ ko nabál‑an"
     },
     {
         "english": "I dont know anything",
-        "hiligaynon": "Wala ‘ko may nabal-an",
+        "hiligaynon": "Walâ ‘ko may nabál-an",
+        "hiligaynon_clean": "Wala ‘ko may nabal-an",
         "original": "Walâ ‘ko may nabál‑an"
     },
     {
         "english": "I didnt learn anything",
-        "hiligaynon": "Wala ‘ko may natun-an",
+        "hiligaynon": "Walâ ‘ko may natún-an",
+        "hiligaynon_clean": "Wala ‘ko may natun-an",
         "original": "Walâ ‘ko may natún‑an"
     },
     {
         "english": "Could you please turn off the t",
-        "hiligaynon": "Patya anay ang T.B. bi?",
+        "hiligaynon": "Pátya ánay ang T.B. bi?",
+        "hiligaynon_clean": "Patya anay ang T.B. bi?",
         "original": "Pátya ánay ang T.B. bi?"
     },
     {
         "english": "Do you know how to get there",
-        "hiligaynon": "Tultulan mo?",
+        "hiligaynon": "Túltulan mo?",
+        "hiligaynon_clean": "Tultulan mo?",
         "original": "Túltulan mo?"
     },
     {
         "english": "Do you know how to get to presidents house",
-        "hiligaynon": "Tultulan mo ang balay ni President?",
+        "hiligaynon": "Túltulan mo ang baláy ni President?",
+        "hiligaynon_clean": "Tultulan mo ang balay ni President?",
         "original": "Túltulan mo ang baláy ni President?"
     },
     {
         "english": "No other church has a prophet",
-        "hiligaynon": "Wala na iban pa nga simbahan nga may propeta",
+        "hiligaynon": "Walâ na ibán pa nga simbáhan nga may propéta",
+        "hiligaynon_clean": "Wala na iban pa nga simbahan nga may propeta",
         "original": "Walâ na ibán pa nga simbáhan nga may propéta"
     },
     {
         "english": "Hes got no money",
-        "hiligaynon": "Waay sia kwarta, pero nagsimba man gihapon",
+        "hiligaynon": "Waáy siá kwárta, pero nagsímba man gihápon",
+        "hiligaynon_clean": "Waay sia kwarta, pero nagsimba man gihapon",
         "original": "Waáy siá kwárta, pero nagsímba man gihápon"
     },
     {
         "english": "Thats just fine",
-        "hiligaynon": "Okey lang ‘na ya!",
+        "hiligaynon": "Okéy lang ‘nâ ya!",
+        "hiligaynon_clean": "Okey lang ‘na ya!",
         "original": "Okéy lang ‘nâ ya!"
     },
     {
         "english": "Youre so fat",
-        "hiligaynon": "Kababoy s’imo",
+        "hiligaynon": "Kabáboy s’ímo",
+        "hiligaynon_clean": "Kababoy s’imo",
         "original": "Kabáboy s’ímo"
     },
     {
         "english": "Fatty",
-        "hiligaynon": "Tamburuko",
+        "hiligaynon": "Támburukò",
+        "hiligaynon_clean": "Tamburuko",
         "original": "Támburukò"
     },
     {
         "english": "They can smell the chicken",
-        "hiligaynon": "‘Gakasimhutan nila ang manok",
+        "hiligaynon": "‘Gakasímhután níla ang manók",
+        "hiligaynon_clean": "‘Gakasimhutan nila ang manok",
         "original": "‘Gakasímhután níla ang manók"
     },
     {
         "english": "Before moving on to something",
-        "hiligaynon": "Pwede ‘ko ‘ka\"CR\" anay?",
+        "hiligaynon": "Pwede ‘ko ‘ka\"CR\" ánay?",
+        "hiligaynon_clean": "Pwede ‘ko ‘ka\"CR\" anay?",
         "original": "Pwede ‘ko ‘ka\"CR\" ánay? ‑ Can I use the bathroom first? (first as in"
     },
     {
         "english": "You believe that",
-        "hiligaynon": "Pati ka da!",
+        "hiligaynon": "Páti ka dâ!",
+        "hiligaynon_clean": "Pati ka da!",
         "original": "Páti ka dâ! ‑ Don’t believe that! (literally"
     },
     {
         "english": "Magspak ka sin sa iya  dont worry about him",
-        "hiligaynon": "Sapak ka ‘na s’iya! (expression short for",
+        "hiligaynon": "Sápak ka ‘nâ s’íya! (expression short for",
+        "hiligaynon_clean": "Sapak ka ‘na s’iya! (expression short for",
         "original": "Sápak ka ‘nâ s’íya! (expression short for"
     },
     {
         "english": "You know what i mean you know what im",
-        "hiligaynon": "Pang-\"shave\", bala? ‑ You know, for shaving? (“bala”",
+        "hiligaynon": "Pang-\"shave\", balá? ‑ You know, for shaving? (“balá”",
+        "hiligaynon_clean": "Pang-\"shave\", bala? ‑ You know, for shaving? (“bala”",
         "original": "Pang‑\"shave\", balá? ‑ You know, for shaving? (“balá”"
     },
     {
         "english": "One more",
-        "hiligaynon": "Isa pa! / Isa pa gid!",
+        "hiligaynon": "Isá pa! / Isá pa gid!",
+        "hiligaynon_clean": "Isa pa! / Isa pa gid!",
         "original": "Isá pa! / Isá pa gid!"
     },
     {
         "english": "You can keep it",
-        "hiligaynon": "Dal-on mo lang ‑ Just bring it (sometimes this could imply",
+        "hiligaynon": "Dál-on mo lang ‑ Just bring it (sometimes this could imply",
+        "hiligaynon_clean": "Dal-on mo lang ‑ Just bring it (sometimes this could imply",
         "original": "Dál‑on mo lang ‑ Just bring it (sometimes this could imply"
     },
     {
         "english": "Lets have it quiet",
-        "hiligaynon": "Hipos bala!",
+        "hiligaynon": "Hípos balá!",
+        "hiligaynon_clean": "Hipos bala!",
         "original": "Hípos balá!"
     },
     {
         "english": "Yon yeah",
         "hiligaynon": "Nan!",
+        "hiligaynon_clean": "Nan!",
         "original": "Nan! ‑ (expression ‑ Tagalog"
     },
     {
         "english": "Syang",
-        "hiligaynon": "Kanugon!",
+        "hiligaynon": "Kanúgon!",
+        "hiligaynon_clean": "Kanugon!",
         "original": "Kanúgon! ‑ What a waste! (Tagalog"
     },
     {
         "english": "Dont fall for this joke",
-        "hiligaynon": "Busong ka?",
+        "hiligaynon": "Búsong ka?",
+        "hiligaynon_clean": "Busong ka?",
         "original": "Búsong ka? ‑ Are you pregnant? (new missionaries"
     },
     {
         "english": "Most likely",
-        "hiligaynon": "Malamang!",
+        "hiligaynon": "Malamáng!",
+        "hiligaynon_clean": "Malamang!",
         "original": "Malamáng! ‑ (sarcastic Tagalog expression) No way! / Duh! (literally"
     },
     {
         "english": "They went the wrong way",
-        "hiligaynon": "Nagtalang sila",
+        "hiligaynon": "Nagtálang silá",
+        "hiligaynon_clean": "Nagtalang sila",
         "original": "Nagtálang silá"
     },
     {
         "english": "Makes sense",
-        "hiligaynon": "Sa bagay",
+        "hiligaynon": "Sa bágay",
+        "hiligaynon_clean": "Sa bagay",
         "original": "Sa bágay"
     },
     {
         "english": "I was traumatized",
-        "hiligaynon": "Natroma ako",
+        "hiligaynon": "Natróma ako",
+        "hiligaynon_clean": "Natroma ako",
         "original": "Natróma ako"
     },
     {
         "english": "Dip it in the dipping sauce",
-        "hiligaynon": "Isawsaw mo sa sabaw",
+        "hiligaynon": "Isáwsaw mo sa sabáw",
+        "hiligaynon_clean": "Isawsaw mo sa sabaw",
         "original": "Isáwsaw mo sa sabáw"
     },
     {
         "english": "Hows the food",
-        "hiligaynon": "Kamusta ang pagkaon?",
+        "hiligaynon": "Kamústa ang pagkáon?",
+        "hiligaynon_clean": "Kamusta ang pagkaon?",
         "original": "Kamústa ang pagkáon?"
     },
     {
         "english": "Too dry",
-        "hiligaynon": "Kulang sa sabaw",
+        "hiligaynon": "Kúlang sa sabáw",
+        "hiligaynon_clean": "Kulang sa sabaw",
         "original": "Kúlang sa sabáw"
     },
     {
         "english": "After he died",
-        "hiligaynon": "Pagpatay nia...",
+        "hiligaynon": "Pagpatáy niá...",
+        "hiligaynon_clean": "Pagpatay nia...",
         "original": "Pagpatáy niá..."
     },
     {
         "english": "After we die",
-        "hiligaynon": "Pagpatay naton...",
+        "hiligaynon": "Pagpatáy náton...",
+        "hiligaynon_clean": "Pagpatay naton...",
         "original": "Pagpatáy náton..."
     },
     {
         "english": "Someones excited",
-        "hiligaynon": "Eksayted? Eksayted?",
+        "hiligaynon": "Eksáyted? Eksáyted?",
+        "hiligaynon_clean": "Eksayted? Eksayted?",
         "original": "Eksáyted? Eksáyted?"
     },
     {
         "english": "Salmat",
-        "hiligaynon": "Salamat",
+        "hiligaynon": "Salámat",
+        "hiligaynon_clean": "Salamat",
         "original": "Salámat"
     },
     {
         "english": "Bban si",
-        "hiligaynon": "Madaldal siya",
+        "hiligaynon": "Madáldal siyá",
+        "hiligaynon_clean": "Madaldal siya",
         "original": "Madáldal siyá"
     },
     {
         "english": "Kabban sa ya",
-        "hiligaynon": "Ang daldal niya",
+        "hiligaynon": "Ang dáldal niyá",
+        "hiligaynon_clean": "Ang daldal niya",
         "original": "Ang dáldal niyá"
     },
     {
         "english": "Ho",
-        "hiligaynon": "oo",
+        "hiligaynon": "óo",
+        "hiligaynon_clean": "oo",
         "original": "óo"
     },
     {
         "english": "Nga",
-        "hiligaynon": "bakit",
+        "hiligaynon": "bákit",
+        "hiligaynon_clean": "bakit",
         "original": "bákit"
     },
     {
         "english": "Tagpil",
-        "hiligaynon": "magkano",
+        "hiligaynon": "magkáno",
+        "hiligaynon_clean": "magkano",
         "original": "magkáno"
     },
     {
         "english": "Pil",
-        "hiligaynon": "ilan",
+        "hiligaynon": "ilán",
+        "hiligaynon_clean": "ilan",
         "original": "ilán"
     },
     {
         "english": "Ikapil",
-        "hiligaynon": "pangilan",
+        "hiligaynon": "pangilán",
+        "hiligaynon_clean": "pangilan",
         "original": "pangilán"
     },
     {
         "english": "Nay",
-        "hiligaynon": "muna",
+        "hiligaynon": "muná",
+        "hiligaynon_clean": "muna",
         "original": "muná"
     },
     {
         "english": "Gal  please see part 3",
-        "hiligaynon": "pala",
+        "hiligaynon": "palá",
+        "hiligaynon_clean": "pala",
         "original": "palá"
     },
     {
         "english": "Tan  please see part 3",
-        "hiligaynon": "sana",
+        "hiligaynon": "sána",
+        "hiligaynon_clean": "sana",
         "original": "sána"
     },
     {
         "english": "Dyon",
-        "hiligaynon": "agad / kaagad",
+        "hiligaynon": "ágad / kaagád",
+        "hiligaynon_clean": "agad / kaagad",
         "original": "ágad / kaagád"
     },
     {
         "english": "Dyon  this particle was explained in part",
-        "hiligaynon": "tuloy",
+        "hiligaynon": "tulóy",
+        "hiligaynon_clean": "tuloy",
         "original": "tulóy"
     },
     {
         "english": "Bas",
-        "hiligaynon": "baka",
+        "hiligaynon": "baká",
+        "hiligaynon_clean": "baka",
         "original": "baká"
     },
     {
         "english": "Gan",
-        "hiligaynon": "oo nga",
+        "hiligaynon": "óo ngâ",
+        "hiligaynon_clean": "oo nga",
         "original": "óo ngâ"
     },
     {
         "english": "Liwt",
-        "hiligaynon": "ulit",
+        "hiligaynon": "úlit",
+        "hiligaynon_clean": "ulit",
         "original": "úlit"
     },
     {
         "english": "Sabt",
         "hiligaynon": "conjugations. Example",
+        "hiligaynon_clean": "conjugations. Example",
         "original": "conjugations. Example ‑ root"
     },
     {
         "english": "Ja  btig btig",
-        "hiligaynon": "ini/’ni dya  (pronounced",
+        "hiligaynon": "iní/’ni dyá  (pronounced",
+        "hiligaynon_clean": "ini/’ni dya  (pronounced",
         "original": "iní/’ni dyá  (pronounced"
     }
 ]
