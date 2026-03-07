@@ -10,6 +10,21 @@ export class SentenceBuilder {
     constructor(containerElement, sentencesData, lessonData = null) {
         this.container = containerElement;
         this.sentences = lessonData ? lessonData.sentences : sentencesData;
+
+        // Normalize curriculum sentence format (strings separated by '|') to SentenceBuilder format (arrays)
+        if (this.sentences) {
+            this.sentences.forEach(s => {
+                if (s.chunks && !s.ilonggo_chunks) {
+                    s.ilonggo_chunks = s.chunks.split('|').map(x => x.trim());
+                }
+                if (s.distractors && !s.trap_words) {
+                    s.trap_words = typeof s.distractors === 'string'
+                        ? s.distractors.split('|').map(x => x.trim())
+                        : s.distractors;
+                }
+            });
+        }
+
         this.lessonData = lessonData;
         this.currentSentence = null;
 
