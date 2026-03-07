@@ -28,7 +28,7 @@
                 "te"
             ],
             "stress_index": 1,
-            "meaning": "Fare",
+            "meaning": "Fare / Fee",
             "category": "Nouns"
         },
         {
@@ -59,65 +59,128 @@
             ],
             "stress_index": 1,
             "meaning": "Where",
-            "category": "Grammar & Particles"
+            "category": "Interrogatives"
+        },
+        {
+            "word": "Sa",
+            "syllables": [
+                "Sa"
+            ],
+            "stress_index": 0,
+            "meaning": "To / At / In (location marker)",
+            "category": "Markers"
+        },
+        {
+            "word": "Sang",
+            "syllables": [
+                "Sang"
+            ],
+            "stress_index": 0,
+            "meaning": "The / Of (object marker)",
+            "category": "Markers"
+        },
+        {
+            "word": "Diri",
+            "syllables": [
+                "Di",
+                "ri"
+            ],
+            "stress_index": 1,
+            "meaning": "Here",
+            "category": "Location Words"
+        },
+        {
+            "word": "Didto",
+            "syllables": [
+                "Did",
+                "to"
+            ],
+            "stress_index": 1,
+            "meaning": "There",
+            "category": "Location Words"
+        }
+    ],
+    "grammar": [
+        {
+            "title": "Location Marker: 'Sa'",
+            "description": "'Sa' works like 'to', 'at', or 'in' for places. Use it before a destination or location.",
+            "examples": [
+                "Sakay sa jeep. (Get on the jeepney.)",
+                "Manaog sa diri. (Get off here.)"
+            ]
+        },
+        {
+            "title": "Object Marker: 'Sang'",
+            "description": "'Sang' is used before a noun to mark it as the object of the action. Similar to 'the' in English, but specifically for things being acted upon.",
+            "examples": [
+                "Ano ang plete sang jeep? (What is the jeepney fare?)"
+            ]
+        },
+        {
+            "title": "Location Words: Diri / Didto",
+            "description": "'Diri' means 'here' (close to you). 'Didto' means 'there' (far away).",
+            "examples": [
+                "Manaog diri. (Get off here.)",
+                "Sakay didto. (Get on there.)"
+            ]
         }
     ],
     "sentences": [
-        {
-            "english": "Where are you going?",
-            "chunks": "Diin | ka | mapan?",
-            "distractors": "sila | kami"
-        },
-        {
-            "english": "I am getting off here.",
-            "chunks": "Manaog | 'ko | diri.",
-            "distractors": "kadto | sakay"
-        },
         {
             "english": "Get on the jeepney.",
             "chunks": "Sakay | sa | jeep.",
             "distractors": "manaog | tricycle"
         },
         {
-            "english": "How much is the fare?",
-            "chunks": "Magkano | ang | plete?",
-            "distractors": "diin | sakay"
+            "english": "Get off here.",
+            "chunks": "Manaog | diri.",
+            "distractors": "sakay | didto"
         },
         {
-            "english": "I will ride the tricycle.",
-            "chunks": "Magsakay | 'ko | sa | tricycle.",
-            "distractors": "jeep | manaog"
+            "english": "Where are you?",
+            "chunks": "Diin | ka?",
+            "distractors": "ako | mo"
         },
         {
-            "english": "Where is the jeepney stop?",
-            "chunks": "Diin | ang | humpayan | sang | jeep?",
+            "english": "What is the fare?",
+            "chunks": "Ano | ang | plete?",
+            "distractors": "diin | sang"
+        },
+        {
+            "english": "Get on the tricycle.",
+            "chunks": "Sakay | sa | tricycle.",
+            "distractors": "manaog | jeep"
+        },
+        {
+            "english": "What is the jeepney fare?",
+            "chunks": "Ano | ang | plete | sang | jeep?",
+            "distractors": "tricycle | diri"
+        },
+        {
+            "english": "I am getting off here.",
+            "chunks": "Manaog | ako | diri.",
+            "distractors": "sakay | didto"
+        },
+        {
+            "english": "Where is the jeepney?",
+            "chunks": "Diin | ang | jeep?",
             "distractors": "plete | tricycle"
-        },
-        {
-            "english": "I cannot read.",
-            "chunks": "Indi | 'ko | 'kabasa.",
-            "distractors": "diin | sakay"
-        },
-        {
-            "english": "Please stop here.",
-            "chunks": "Paabird | diri | lang.",
-            "distractors": "manaog | kadto"
         }
     ],
     "drills": [
         {
-            "pattern": "Mapulì na ___.",
-            "correct": "ko",
-            "distractors": "akon | sang",
-            "meaning": "I am going home now.",
-            "category": "Pronouns"
+            "pattern": "Sakay sa ___.",
+            "correct": "jeep",
+            "distractors": "plete | diri",
+            "meaning": "Get on the jeepney.",
+            "category": "Nouns"
         },
         {
-            "pattern": "Diín ‘ta ___?",
-            "correct": "magkíta-ay",
-            "distractors": "makadto | lakat",
-            "meaning": "Where will we meet?",
-            "category": "Verbs"
+            "pattern": "Manaog ___ .",
+            "correct": "diri",
+            "distractors": "sakay | didto",
+            "meaning": "Get off here.",
+            "category": "Location Words"
         }
     ]
 }
