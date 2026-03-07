@@ -82,6 +82,96 @@
             "stress_index": 1,
             "meaning": "Take care",
             "category": "Greetings & Phrases"
+        },
+        {
+            "word": "Ano",
+            "syllables": [
+                "A",
+                "no"
+            ],
+            "stress_index": 1,
+            "meaning": "What",
+            "category": "Interrogatives"
+        },
+        {
+            "word": "Ang",
+            "syllables": [
+                "Ang"
+            ],
+            "stress_index": 0,
+            "meaning": "The (Focus Marker)",
+            "category": "Markers"
+        },
+        {
+            "word": "Mo",
+            "syllables": [
+                "Mo"
+            ],
+            "stress_index": 0,
+            "meaning": "Your",
+            "category": "Pronouns"
+        },
+        {
+            "word": "Ka",
+            "syllables": [
+                "Ka"
+            ],
+            "stress_index": 0,
+            "meaning": "You",
+            "category": "Pronouns"
+        },
+        {
+            "word": "Man",
+            "syllables": [
+                "Man"
+            ],
+            "stress_index": 0,
+            "meaning": "Too / Also",
+            "category": "Particles"
+        },
+        {
+            "word": "Ako",
+            "syllables": [
+                "A",
+                "ko"
+            ],
+            "stress_index": 1,
+            "meaning": "I / Me",
+            "category": "Pronouns"
+        },
+        {
+            "word": "Gid",
+            "syllables": [
+                "Gid"
+            ],
+            "stress_index": 0,
+            "meaning": "Very / Really",
+            "category": "Particles"
+        }
+    ],
+    "grammar": [
+        {
+            "title": "Basic Particles ('Ang')",
+            "description": "'Ang' is a subject marker used to point out the focus of the sentence. Think of it like 'the' in English.",
+            "examples": [
+                "Ano ang ngalan mo? (What is your name?)"
+            ]
+        },
+        {
+            "title": "Pronouns",
+            "description": "'Ako' means 'I' or 'Me'. 'Ka' means 'You'. 'Mo' means 'Your'. They declare a state or possession.",
+            "examples": [
+                "Maayo ako. (I am good.)",
+                "Halong ka. (You take care.)"
+            ]
+        },
+        {
+            "title": "Emphasis & Agreement",
+            "description": "'Gid' adds emphasis (very/really), and 'Man' expresses agreement (also/too).",
+            "examples": [
+                "Salamat gid. (Thank you very much.)",
+                "Maayo man ako. (I am good too.)"
+            ]
         }
     ],
     "sentences": [

@@ -39,8 +39,12 @@ export class SentenceBuilder {
         this.timerEnabled = lessonData?.settings?.timer !== false;
 
         if (this.lessonData) {
-            this.setupGameUI();
-            this.startRound();
+            if (this.lessonData.grammar) {
+                this.showLessonScreen(true);
+            } else {
+                this.setupGameUI();
+                this.startRound();
+            }
         } else {
             this.showStartScreen();
         }
@@ -127,43 +131,64 @@ export class SentenceBuilder {
         }
     }
 
-    showLessonScreen() {
+    showLessonScreen(isCurriculum = false) {
+        let grammarHTML = '';
+
+        if (isCurriculum && this.lessonData?.grammar) {
+            grammarHTML = this.lessonData.grammar.map((g, i) => `
+                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                    <strong style="color: #00ffaa; font-size: 1.1rem;">${i + 1}. ${g.title}</strong>
+                    <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.5;">
+                        <li style="margin-bottom: 5px;">${g.description}</li>
+                        ${g.examples.map(ex => `<li><i style="color: #ffcc00;">${ex}</i></li>`).join('')}
+                    </ul>
+                </div>
+            `).join('');
+        } else {
+            grammarHTML = `
+                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                    <strong style="color: #00ffaa; font-size: 1.1rem;">1. Verb-Subject-Object (VSO)</strong>
+                    <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.5;">
+                        <li style="margin-bottom: 5px;">Unlike English (Subject-Verb-Object), Ilonggo usually starts with the <strong>Action</strong>, followed by the <strong>Doer</strong>, and then the <strong>Object</strong>.</li>
+                        <li><i style="color: #ffcc00;">Eng: "I ate dinner."</i><br><i style="color: #00ffaa;">Hil: "(Ate) (I) (dinner)." ➔ "Nagkaon ako sang panyapon."</i></li>
+                    </ul>
+                </div>
+
+                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                    <strong style="color: #ffcc00; font-size: 1.1rem;">2. The Linker "Nga"</strong>
+                    <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.5;">
+                        <li style="margin-bottom: 5px;">When connecting an Adjective to a Noun, use the linker <strong>nga</strong>.</li>
+                        <li><i style="color: #ffcc00;">Eng: "Big dog"</i><br><i style="color: #00ffaa;">Hil: "Daku nga ido"</i></li>
+                    </ul>
+                </div>
+
+                <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                    <strong style="color: #ff6b6b; font-size: 1.1rem;">3. Ang vs Sang</strong>
+                    <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.5;">
+                        <li><strong>Ang:</strong> Marks the main focus or subject of the sentence.</li>
+                        <li><strong>Sang:</strong> Marks the object receiving the action.</li>
+                    </ul>
+                </div>
+            `;
+        }
+
         this.container.innerHTML = `
             <div class="sentence-builder-start" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at top, rgba(255,255,255,0.05) 0%, transparent 60%); padding: 1rem;">
                 <div class="glass-card" style="width: 100%; max-width: 450px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; text-align: left; max-height: 85vh; overflow-y: auto;">
-                    <h2 style="margin: 0; font-size: 1.5rem; color: var(--accent-gold); text-align: center;">📖 Crash Course</h2>
-                    
-                    <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
-                        <strong style="color: #00ffaa; font-size: 1.1rem;">1. Verb-Subject-Object (VSO)</strong>
-                        <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.5;">
-                            <li style="margin-bottom: 5px;">Unlike English (Subject-Verb-Object), Ilonggo usually starts with the <strong>Action</strong>, followed by the <strong>Doer</strong>, and then the <strong>Object</strong>.</li>
-                            <li><i style="color: #ffcc00;">Eng: "I ate dinner."</i><br><i style="color: #00ffaa;">Hil: "(Ate) (I) (dinner)." ➔ "Nagkaon ako sang panyapon."</i></li>
-                        </ul>
-                    </div>
-
-                    <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
-                        <strong style="color: #ffcc00; font-size: 1.1rem;">2. The Linker "Nga"</strong>
-                        <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.5;">
-                            <li style="margin-bottom: 5px;">When connecting an Adjective to a Noun, use the linker <strong>nga</strong>.</li>
-                            <li><i style="color: #ffcc00;">Eng: "Big dog"</i><br><i style="color: #00ffaa;">Hil: "Daku nga ido"</i></li>
-                        </ul>
-                    </div>
-
-                    <div style="background: rgba(0,0,0,0.2); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
-                        <strong style="color: #ff6b6b; font-size: 1.1rem;">3. Ang vs Sang</strong>
-                        <ul style="margin: 8px 0 0 0; padding-left: 20px; font-size: 0.85rem; color: rgba(255,255,255,0.8); line-height: 1.5;">
-                            <li><strong>Ang:</strong> Marks the main focus or subject of the sentence.</li>
-                            <li><strong>Sang:</strong> Marks the object receiving the action.</li>
-                        </ul>
-                    </div>
-
+                    <h2 style="margin: 0; font-size: 1.5rem; color: var(--accent-gold); text-align: center;">${isCurriculum ? '📖 Grammar Basics' : '📖 Crash Course'}</h2>
+                    ${grammarHTML}
                     <button id="back-to-sb-btn" class="btn-primary" style="margin-top: 5px; padding: 1rem; border-radius: 16px; font-weight: 800;">GOT IT, LET'S BUILD</button>
                 </div>
             </div>
         `;
 
         document.getElementById('back-to-sb-btn').addEventListener('click', () => {
-            this.showStartScreen();
+            if (isCurriculum) {
+                this.setupGameUI();
+                this.startRound();
+            } else {
+                this.showStartScreen();
+            }
         });
     }
 
