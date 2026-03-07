@@ -3,14 +3,12 @@ import levelManager from './level_manager.js';
 export class SwipeSorter {
     constructor(containerElement, vocabularyData, lessonData = null) {
         this.container = containerElement;
-        this.vocabulary = vocabularyData;
+        this.globalVocabulary = vocabularyData;
+        this.vocabulary = lessonData ? lessonData.vocabulary : vocabularyData;
         this.lessonData = lessonData;
 
-        // If we have lesson-specific vocab, use that, otherwise use global
-        const activeVocab = lessonData ? lessonData.vocabulary : vocabularyData;
-
         // Ensure LevelManager has the latest vocab
-        levelManager.setVocabulary(activeVocab);
+        levelManager.setVocabulary(this.vocabulary);
 
         this.currentCard = null;
         this.gameActive = false;
@@ -294,23 +292,24 @@ export class SwipeSorter {
             }
         }
 
-        // Failsafe: if we still don't have enough traps (very small category), only then pull from global
-        if (traps.length < 3) {
+        // Failsafe: if we still don't have enough traps and we are in FREE PLAY, pull from global
+        if (traps.length < 3 && !this.lessonData) {
             attempts = 0;
             while (traps.length < 3 && attempts < 100) {
                 attempts++;
-                let globalIdx = Math.floor(Math.random() * this.vocabulary.length);
-                let globalWord = this.vocabulary[globalIdx];
+                let globalIdx = Math.floor(Math.random() * this.globalVocabulary.length);
+                let globalWord = this.globalVocabulary[globalIdx];
                 if (globalWord.word !== this.targetWordData.word && !traps.some(t => t.meaning === globalWord.meaning)) {
                     traps.push(globalWord);
                 }
             }
         }
 
-        // 3. Assign 4 directions
+        // 3. Assign up to 4 directions
         const directions = ['top', 'bottom', 'left', 'right'];
         const options = [this.targetWordData, ...traps];
 
+        // Shuffle the options array
         for (let i = options.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [options[i], options[j]] = [options[j], options[i]];
@@ -318,18 +317,22 @@ export class SwipeSorter {
 
         this.directionMap = {};
         directions.forEach((dir, i) => {
-            this.directionMap[dir] = options[i];
-            if (options[i] === this.targetWordData) this.correctDirection = dir;
+            if (options[i]) {
+                this.directionMap[dir] = options[i];
+                if (options[i] === this.targetWordData) this.correctDirection = dir;
+            } else {
+                this.directionMap[dir] = null; // Blank direction
+            }
         });
 
         // Directional labels based on game mode
         const labelKey = this.gameDirection === 'il-to-en' ? 'meaning' : 'word';
         const cardKey = this.gameDirection === 'il-to-en' ? 'word' : 'meaning';
 
-        this.defTop.textContent = this.directionMap.top[labelKey];
-        this.defBottom.textContent = this.directionMap.bottom[labelKey];
-        this.defLeft.textContent = this.directionMap.left[labelKey];
-        this.defRight.textContent = this.directionMap.right[labelKey];
+        this.defTop.textContent = this.directionMap.top ? this.directionMap.top[labelKey] : '';
+        this.defBottom.textContent = this.directionMap.bottom ? this.directionMap.bottom[labelKey] : '';
+        this.defLeft.textContent = this.directionMap.left ? this.directionMap.left[labelKey] : '';
+        this.defRight.textContent = this.directionMap.right ? this.directionMap.right[labelKey] : '';
 
         const cardHTML = `
             <div class="swipe-card" style="width: 150px; height: 220px; background: rgba(255,255,255,0.1); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 32px rgba(0,0,0,0.3); transform-origin: center center; transition: transform 0.1s linear;">
