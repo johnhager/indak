@@ -1,0 +1,6580 @@
+[
+    {
+        "english": "30",
+        "ilonggo_chunks": [
+            "Kada",
+            "aga,",
+            "alas",
+            "quatro",
+            "i",
+            "medya",
+            "bugtaw",
+            "na",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "It wont rain",
+        "ilonggo_chunks": [
+            "Indi",
+            "magulan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "He ate",
+        "ilonggo_chunks": [
+            "Nagkaon",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "He ate it",
+        "ilonggo_chunks": [
+            "Ginkaon",
+            "nia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "He ate some cake",
+        "ilonggo_chunks": [
+            "Nagkaon",
+            "sia",
+            "sang",
+            "keyk"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "He ate the cake",
+        "ilonggo_chunks": [
+            "Ginkaon",
+            "nia",
+            "ang",
+            "keyk"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "She came back",
+        "ilonggo_chunks": [
+            "Nagbalik",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "She gave it back",
+        "ilonggo_chunks": [
+            "Ginbalik",
+            "nia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We waited",
+        "ilonggo_chunks": [
+            "Naghulat",
+            "kami"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We are waiting",
+        "ilonggo_chunks": [
+            "Nagahulat",
+            "kami"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We will wait",
+        "ilonggo_chunks": [
+            "Maghulat",
+            "kami"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "They ate",
+        "ilonggo_chunks": [
+            "Nagkaon",
+            "sila"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "They are eating",
+        "ilonggo_chunks": [
+            "Nagakaon",
+            "sila"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "They will eat",
+        "ilonggo_chunks": [
+            "Magkaon",
+            "sila"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "He is eating it",
+        "ilonggo_chunks": [
+            "Ginakaon",
+            "nia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "He will eat it",
+        "ilonggo_chunks": [
+            "Kaunon",
+            "nia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I bought it",
+        "ilonggo_chunks": [
+            "Ginbakal",
+            "ko"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I buy it",
+        "ilonggo_chunks": [
+            "Ginabakal",
+            "ko"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I will buy it",
+        "ilonggo_chunks": [
+            "Baklon",
+            "ko"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "She helped us",
+        "ilonggo_chunks": [
+            "Ginbuligan",
+            "nia",
+            "kami"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "She helps us",
+        "ilonggo_chunks": [
+            "Ginabuligan",
+            "nia",
+            "kami"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "She will help us",
+        "ilonggo_chunks": [
+            "Buligan",
+            "nia",
+            "kami"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Did you give them some",
+        "ilonggo_chunks": [
+            "Ginhatagan",
+            "mo",
+            "sila?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Do you give them some",
+        "ilonggo_chunks": [
+            "Ginahatagan",
+            "mo",
+            "sila?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Will you give them some",
+        "ilonggo_chunks": [
+            "Hatagan",
+            "mo",
+            "sila?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Din",
+        "ilonggo_chunks": [
+            "Diin",
+            "kamo",
+            "naghalin?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "To the market",
+        "ilonggo_chunks": [
+            "Sa",
+            "tindahan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Just over there",
+        "ilonggo_chunks": [
+            "Didto",
+            "lang"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "None",
+        "ilonggo_chunks": [
+            "Wala",
+            "/",
+            "Waay"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Were from here",
+        "ilonggo_chunks": [
+            "Tagadiri",
+            "kami"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Lahg lang",
+        "ilonggo_chunks": [
+            "Joke",
+            "lang!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Do you guys like it here in the philippines",
+        "ilonggo_chunks": [
+            "Nanami-an",
+            "kamo",
+            "di",
+            "sa",
+            "Pilipinas?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Do you know elder ferris",
+        "ilonggo_chunks": [
+            "Kilala",
+            "mo",
+            "bala",
+            "si",
+            "Elder",
+            "Ferris?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Hows he doing now",
+        "ilonggo_chunks": [
+            "Kumusta",
+            "na",
+            "sia?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Fourth",
+        "ilonggo_chunks": [
+            "Ika-apat"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Me too",
+        "ilonggo_chunks": [
+            "Ako",
+            "man"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Do you still have a long time to be here",
+        "ilonggo_chunks": [
+            "Dugay",
+            "ka",
+            "pa",
+            "diri?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "No",
+        "ilonggo_chunks": [
+            "Sige",
+            "lang"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Im kind of hungry now",
+        "ilonggo_chunks": [
+            "Medyo",
+            "gutom",
+            "na",
+            "ako"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "How would you say it in ilonggo",
+        "ilonggo_chunks": [
+            "Paano",
+            "mo",
+            "ihambal",
+            "sa",
+            "Ilonggo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What is that",
+        "ilonggo_chunks": [
+            "Ano",
+            "‘na?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What is this",
+        "ilonggo_chunks": [
+            "Ano",
+            "‘ni?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What was that",
+        "ilonggo_chunks": [
+            "Ano",
+            "‘to?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What do you call this",
+        "ilonggo_chunks": [
+            "Ano",
+            "ang",
+            "tawag",
+            "sini?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What do you call that",
+        "ilonggo_chunks": [
+            "Ano",
+            "ang",
+            "tawag",
+            "sina?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Like that",
+        "ilonggo_chunks": [
+            "Amo",
+            "‘na!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Whose is this",
+        "ilonggo_chunks": [
+            "Kay",
+            "sin-o",
+            "‘ni?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Is this yours",
+        "ilonggo_chunks": [
+            "Imo",
+            "‘ni?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Wow",
+        "ilonggo_chunks": [
+            "Baw,",
+            "sagad",
+            "s’imo",
+            "mag-inglis!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Well be leaving now",
+        "ilonggo_chunks": [
+            "Malakat",
+            "na",
+            "kami"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Youre leaving already",
+        "ilonggo_chunks": [
+            "Malakat",
+            "na",
+            "kamo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I love you guys",
+        "ilonggo_chunks": [
+            "Palangga",
+            "ta",
+            "kamo"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We love you",
+        "ilonggo_chunks": [
+            "Palangga",
+            "ka",
+            "namon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We love you guys",
+        "ilonggo_chunks": [
+            "Palangga",
+            "namon",
+            "kamo"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I really miss you guys",
+        "ilonggo_chunks": [
+            "Nahidlaw",
+            "gid",
+            "‘ko",
+            "s’inyo"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I understand because this is an abilitative actor focus conjugation",
+        "ilonggo_chunks": [
+            "‘Kaintsindi",
+            "‘ko"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I understand",
+        "ilonggo_chunks": [
+            "Maintsindihan",
+            "ko"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I dont understand",
+        "ilonggo_chunks": [
+            "Waay",
+            "‘ko",
+            "kaintsindi"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We cant understand it keep in mind",
+        "ilonggo_chunks": [
+            "Indi",
+            "namon",
+            "maintsindihan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We cant be understood this isnt a common phrase",
+        "ilonggo_chunks": [
+            "Indi",
+            "kami",
+            "maintsindihan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We cant understand",
+        "ilonggo_chunks": [
+            "Indi",
+            "kami",
+            "kaintsindi"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We couldnt understand",
+        "ilonggo_chunks": [
+            "Waay",
+            "kami",
+            "kaintsindi"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Ill turn you into an aswang",
+        "ilonggo_chunks": [
+            "Himu-on",
+            "ta",
+            "ka",
+            "aswang"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Tell her",
+        "ilonggo_chunks": [
+            "Hambala",
+            "sia!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "You will tell her",
+        "ilonggo_chunks": [
+            "Hambalon",
+            "mo",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Tell her that",
+        "ilonggo_chunks": [
+            "Hambala",
+            "sia",
+            "nga…"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Tell her that ill just come back later",
+        "ilonggo_chunks": [
+            "Hambala",
+            "sia",
+            "nga",
+            "mabalik",
+            "lang",
+            "‘ko",
+            "karon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Tell mom we dropped by",
+        "ilonggo_chunks": [
+            "Hambala",
+            "si",
+            "Mama",
+            "nga",
+            "naghapit",
+            "kami"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I have something to say",
+        "ilonggo_chunks": [
+            "May",
+            "ihambal",
+            "‘ko"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Talk to him",
+        "ilonggo_chunks": [
+            "Istoriaha",
+            "sia!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Tomorrow well talk with president i have changed the spelling",
+        "ilonggo_chunks": [
+            "Bwas,",
+            "istoriahon",
+            "naton",
+            "si",
+            "President"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I talked with him yesterday",
+        "ilonggo_chunks": [
+            "Ginistoria",
+            "ko",
+            "sia",
+            "kahapon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Who are you talking to",
+        "ilonggo_chunks": [
+            "Sin-o",
+            "ang",
+            "ginaistoria",
+            "mo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Who are you talking about notice the difference in meaning when it",
+        "ilonggo_chunks": [
+            "Sin-o",
+            "ang",
+            "ginaistoriahan",
+            "mo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What are you talking about",
+        "ilonggo_chunks": [
+            "Ano",
+            "ang",
+            "ginaistoriahan",
+            "mo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What are you guys talking about",
+        "ilonggo_chunks": [
+            "Ano",
+            "ang",
+            "ginaistoriahan",
+            "nyo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Well talk about that next time",
+        "ilonggo_chunks": [
+            "Istoriahan",
+            "naton",
+            "‘na",
+            "sa",
+            "dason"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Lets talk with president",
+        "ilonggo_chunks": [
+            "Istoriahon",
+            "ta",
+            "si",
+            "President"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I want to  talk with president",
+        "ilonggo_chunks": [
+            "Gusto",
+            "ko",
+            "maistoria",
+            "si",
+            "President",
+            "(abilitative",
+            "object",
+            "focus)"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I want to talk with president",
+        "ilonggo_chunks": [
+            "Gusto",
+            "ko",
+            "istoriahon",
+            "si",
+            "President",
+            "(regular",
+            "object",
+            "focus)"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I want to talk with him",
+        "ilonggo_chunks": [
+            "Gusto",
+            "ko",
+            "sia",
+            "maistoria/istoriahon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Have you been able to talk with him yet",
+        "ilonggo_chunks": [
+            "Nakaistoria",
+            "ka",
+            "na",
+            "sa",
+            "iya?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We were given bodies",
+        "ilonggo_chunks": [
+            "Gintagaan",
+            "kita",
+            "sang",
+            "mga",
+            "lawas,",
+            "dapat",
+            "ta",
+            "(sila)",
+            "halungan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Ill give you a copy",
+        "ilonggo_chunks": [
+            "Tagaan",
+            "ta",
+            "ka",
+            "kopya"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Well give you one",
+        "ilonggo_chunks": [
+            "Tagaan",
+            "ka",
+            "namon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "They were given authority",
+        "ilonggo_chunks": [
+            "Gintaga-an",
+            "sila",
+            "autoridad"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We have something to give you",
+        "ilonggo_chunks": [
+            "May",
+            "ihatag",
+            "kami",
+            "s’imo"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What are you eating",
+        "ilonggo_chunks": [
+            "Ano",
+            "ang",
+            "ginakaon",
+            "mo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What did you eat",
+        "ilonggo_chunks": [
+            "Ano",
+            "ang",
+            "ginkaon",
+            "mo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Do you guys eat rice",
+        "ilonggo_chunks": [
+            "‘Gakaon",
+            "kamo",
+            "kan-on?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I thought all you guys ate was bread",
+        "ilonggo_chunks": [
+            "Abi",
+            "ko",
+            "tinapay",
+            "lang",
+            "(ang)",
+            "ginakaon",
+            "nyo"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "How did you know my name short for nahibloan or",
+        "ilonggo_chunks": [
+            "Paano",
+            "mo",
+            "nabal-an",
+            "akon",
+            "ngalan?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What do you know about",
+        "ilonggo_chunks": [
+            "Ano",
+            "ang",
+            "nabal-an",
+            "mo",
+            "parte",
+            "sa…?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I want to know the truth",
+        "ilonggo_chunks": [
+            "Gusto",
+            "ko",
+            "mabal-an",
+            "ang",
+            "kamatuoran"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "You can",
+        "ilonggo_chunks": [
+            "Mabal-an",
+            "mo",
+            "ang",
+            "kamatuoran",
+            "sining",
+            "mensahe",
+            "paagi",
+            "sa",
+            "prayer"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I know that",
+        "ilonggo_chunks": [
+            "‘Kabalo",
+            "‘ko",
+            "nga…"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I really know that this is actor focus",
+        "ilonggo_chunks": [
+            "‘Kabalo",
+            "gid",
+            "‘ko",
+            "nga…"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I dont know",
+        "ilonggo_chunks": [
+            "Waay",
+            "‘ko",
+            "‘kabalo"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Do you know",
+        "ilonggo_chunks": [
+            "‘Kabalo",
+            "ka?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Have you ever been to the states",
+        "ilonggo_chunks": [
+            "‘Kakadto",
+            "ka",
+            "na",
+            "sa",
+            "States?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Lets ask bishop",
+        "ilonggo_chunks": [
+            "Pamangkuton",
+            "ta",
+            "si",
+            "Bishop"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Ask him",
+        "ilonggo_chunks": [
+            "Pamangkuta",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I cant read",
+        "ilonggo_chunks": [
+            "Indi",
+            "‘ko",
+            "‘kabasa"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We studied taglog in the states omit sang if you so",
+        "ilonggo_chunks": [
+            "Nagtuon",
+            "kami",
+            "(sang)",
+            "Tagalog",
+            "sa",
+            "States"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We learned that",
+        "ilonggo_chunks": [
+            "Natun-an",
+            "namon",
+            "nga…"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What have you learned",
+        "ilonggo_chunks": [
+            "Ano",
+            "ang",
+            "natun-an",
+            "mo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We were taught taglog in the states",
+        "ilonggo_chunks": [
+            "Gintudluan",
+            "kami",
+            "Tagalog",
+            "sa",
+            "States"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Call bishop",
+        "ilonggo_chunks": [
+            "Tawgi",
+            "si",
+            "Bishop"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Lets call bishop",
+        "ilonggo_chunks": [
+            "Tawgan",
+            "ta",
+            "si",
+            "Bishop"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We were called of god",
+        "ilonggo_chunks": [
+            "Gintawag",
+            "kami",
+            "sang",
+            "Diyos"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I didnt hear",
+        "ilonggo_chunks": [
+            "Waay",
+            "‘ko",
+            "‘kabati"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I didnt hear it",
+        "ilonggo_chunks": [
+            "Waay",
+            "ko",
+            "nabatian"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I didnt hear you",
+        "ilonggo_chunks": [
+            "Waay",
+            "ko",
+            "nabatian",
+            "ikaw"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I heard you",
+        "ilonggo_chunks": [
+            "Nabatian",
+            "ta",
+            "ka"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Gakabtian is short for nagakabtian  well go",
+        "ilonggo_chunks": [
+            "‘Gakabatian",
+            "mo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I can hear you",
+        "ilonggo_chunks": [
+            "Mabatian",
+            "ta",
+            "ka"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Listen to this",
+        "ilonggo_chunks": [
+            "Pamatii",
+            "‘ni"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I hope they really listen",
+        "ilonggo_chunks": [
+            "Tani,",
+            "mamati",
+            "gid",
+            "sila"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Have you seen thor yet",
+        "ilonggo_chunks": [
+            "Kalantaw",
+            "ka",
+            "na",
+            "“Thor”?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Were you able to watch general conference you may notice a",
+        "ilonggo_chunks": [
+            "Kalantaw",
+            "ka",
+            "General",
+            "Conference?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Did you watch general conference",
+        "ilonggo_chunks": [
+            "Naglantaw",
+            "ka",
+            "General",
+            "Conference?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What are you watching",
+        "ilonggo_chunks": [
+            "Ano",
+            "ang",
+            "ginalantaw",
+            "mo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What did you see",
+        "ilonggo_chunks": [
+            "Ano",
+            "ang",
+            "nakita",
+            "mo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Where will we meet here ta is short for kit",
+        "ilonggo_chunks": [
+            "Diin",
+            "‘ta",
+            "magkita-ay?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Where will we meet",
+        "ilonggo_chunks": [
+            "Diin",
+            "‘ta",
+            "makit-anay?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What are you looking for",
+        "ilonggo_chunks": [
+            "Ano",
+            "ang",
+            "ginapangita",
+            "mo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Ill look for a wife after the mission",
+        "ilonggo_chunks": [
+            "Mangita",
+            "‘ko",
+            "asawa",
+            "pagkatapos",
+            "mission"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Ill look for it at the house",
+        "ilonggo_chunks": [
+            "Pangitaon",
+            "ko",
+            "sa",
+            "balay"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "To go with",
+        "ilonggo_chunks": [
+            "upod"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Are you coming with",
+        "ilonggo_chunks": [
+            "Mag-upod",
+            "ka?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Are you gonna go with them",
+        "ilonggo_chunks": [
+            "Mag-upod",
+            "ka",
+            "sa",
+            "ila?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Sister grace went with",
+        "ilonggo_chunks": [
+            "Nag-upod",
+            "si",
+            "Sister",
+            "Grace"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I went with him",
+        "ilonggo_chunks": [
+            "Ginupdan",
+            "ko",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Just trust me",
+        "ilonggo_chunks": [
+            "Basta",
+            "magsalig",
+            "lang",
+            "kamo",
+            "sa",
+            "akon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "He doesnt trust me",
+        "ilonggo_chunks": [
+            "Wala",
+            "sia",
+            "‘gasalig",
+            "sa",
+            "akon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I dont know if i can trust him anymore",
+        "ilonggo_chunks": [
+            "Daw",
+            "indi",
+            "na",
+            "‘ko",
+            "‘kasalig",
+            "sa",
+            "iya"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Shes got confidence in herself",
+        "ilonggo_chunks": [
+            "May",
+            "salig",
+            "sia",
+            "sa",
+            "self",
+            "nia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "To lie",
+        "ilonggo_chunks": [
+            "butig"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Dont lie",
+        "ilonggo_chunks": [
+            "Indi",
+            "ka",
+            "magbutig,",
+            "ha?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I think theyre lying",
+        "ilonggo_chunks": [
+            "Daw",
+            "‘gabutig",
+            "sila"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "They might just be lying",
+        "ilonggo_chunks": [
+            "Basi",
+            "‘gabutig",
+            "lang",
+            "sila"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Shes been baptized already",
+        "ilonggo_chunks": [
+            "Nabunyagan",
+            "na",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "She got baptized actor focus denotes she did it intentionally",
+        "ilonggo_chunks": [
+            "Nagpabunyag",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I have something to tell you",
+        "ilonggo_chunks": [
+            "May",
+            "isugid",
+            "‘ko",
+            "s’imo"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "When youre gone im gonna cry for you",
+        "ilonggo_chunks": [
+            "Kon",
+            "wala",
+            "ka",
+            "na,",
+            "hibi-an",
+            "ta",
+            "ka"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "This might make you cry",
+        "ilonggo_chunks": [
+            "Basi",
+            "mahibi",
+            "ka",
+            "sini"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "How did you guys meet",
+        "ilonggo_chunks": [
+            "Paano",
+            "kamo",
+            "nakilalahay?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Dont forget",
+        "ilonggo_chunks": [
+            "Indi",
+            "ka",
+            "malipat!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Dont forget it",
+        "ilonggo_chunks": [
+            "Indi",
+            "mo",
+            "pagkalipatan!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "She hid",
+        "ilonggo_chunks": [
+            "Nanago",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "She hid it",
+        "ilonggo_chunks": [
+            "Gintago",
+            "nia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "It looked like they were fighting so went outside",
+        "ilonggo_chunks": [
+            "Daw",
+            "naga-away",
+            "sila,",
+            "ti",
+            "nag‑gwa",
+            "kami"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "The dog was taken outside cuz it was so noisy",
+        "ilonggo_chunks": [
+            "Ginpagwa",
+            "ang",
+            "ido,",
+            "kagahod",
+            "abi"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "To stand up",
+        "ilonggo_chunks": [
+            "tindog"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Stand up guys",
+        "ilonggo_chunks": [
+            "Tindog",
+            "kamo!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Theyre standing outside",
+        "ilonggo_chunks": [
+            "Nagatindog",
+            "sila",
+            "sa",
+            "gwa"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Christ had his church built in",
+        "ilonggo_chunks": [
+            "Ginpatindog",
+            "ni",
+            "Jesukristo",
+            "ang",
+            "Iya",
+            "Simbahan",
+            "para",
+            "buligan",
+            "kita"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "May i ask for one",
+        "ilonggo_chunks": [
+            "Pwede",
+            "‘kapangayo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Jun has a lot",
+        "ilonggo_chunks": [
+            "Si",
+            "Jun,",
+            "damo",
+            "sia,",
+            "mangayo",
+            "ka",
+            "lang",
+            "sa",
+            "iya"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What did he ask for",
+        "ilonggo_chunks": [
+            "Ano",
+            "and",
+            "pangayo",
+            "nia?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Get down  youll fall",
+        "ilonggo_chunks": [
+            "Manaog!",
+            "",
+            "Mahulog",
+            "ka!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "He went upstairs",
+        "ilonggo_chunks": [
+            "Nagsaka",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Hes really good at climbing coconut trees",
+        "ilonggo_chunks": [
+            "Sagad",
+            "sia",
+            "magsaka",
+            "lubi"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "To die",
+        "ilonggo_chunks": [
+            "patay"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "She died",
+        "ilonggo_chunks": [
+            "Napatay",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Hes dead",
+        "ilonggo_chunks": [
+            "Patay",
+            "na",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "He killed goliath",
+        "ilonggo_chunks": [
+            "Ginpatay",
+            "nia",
+            "si",
+            "Goliath"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Who killed goliath",
+        "ilonggo_chunks": [
+            "Sin-o",
+            "ang",
+            "nagpatay",
+            "kay",
+            "Goliath?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Be careful there",
+        "ilonggo_chunks": [
+            "Halong",
+            "ka",
+            "da,",
+            "basi",
+            "maguba!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We werent able to watch the",
+        "ilonggo_chunks": [
+            "Waay",
+            "kami",
+            "‘kalantaw",
+            "“Restoration",
+            "DVD”",
+            "kay",
+            "guba",
+            "iya",
+            "“TV”"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Just deal with it",
+        "ilonggo_chunks": [
+            "Agwantaha",
+            "lang"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Get well soon",
+        "ilonggo_chunks": [
+            "Tani",
+            "mag-ayo",
+            "ka",
+            "na",
+            "‑",
+            "(similar",
+            "to"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Im about to throw up",
+        "ilonggo_chunks": [
+            "Daw",
+            "masuka",
+            "‘ko"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What are you doing here",
+        "ilonggo_chunks": [
+            "‘Gaano",
+            "ka",
+            "di?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Are you getting off now",
+        "ilonggo_chunks": [
+            "Manaog",
+            "ka",
+            "na?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Where will you guys get off",
+        "ilonggo_chunks": [
+            "Diin",
+            "kamo",
+            "manaog?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "When is stake conference",
+        "ilonggo_chunks": [
+            "San-o",
+            "ang",
+            "Stake",
+            "Conference?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Immediately",
+        "ilonggo_chunks": [
+            "Dayon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What do you think  means with",
+        "ilonggo_chunks": [
+            "Ano",
+            "ayhan",
+            "ang",
+            "buot-silingon",
+            "sang…?",
+            "(or",
+            "“buot‑hambalon\")"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Why do you think there are so many churches",
+        "ilonggo_chunks": [
+            "Ngaa",
+            "ayhan",
+            "damo-damo",
+            "simbahan?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "The someone else said it",
+        "ilonggo_chunks": [
+            "Kono"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "When did he say it was",
+        "ilonggo_chunks": [
+            "●",
+            "San-o",
+            "kono?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Where did she say it was",
+        "ilonggo_chunks": [
+            "●",
+            "Diin",
+            "kono?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "How did they say to do it",
+        "ilonggo_chunks": [
+            "●",
+            "Paano",
+            "kono?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "You guys didnt come to church yesterday",
+        "ilonggo_chunks": [
+            "Wala",
+            "kamo",
+            "nagsimba",
+            "kagapon,",
+            "ngaa",
+            "haw?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Why didnt you guys come to church literally you guys didnt come",
+        "ilonggo_chunks": [
+            "Wala",
+            "kamo",
+            "nagsimba",
+            "haw?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Elder said he was sick so we didnt",
+        "ilonggo_chunks": [
+            "May",
+            "sakit",
+            "kono",
+            "si",
+            "Elder,",
+            "ti",
+            "wala",
+            "kami",
+            "nag-gwa",
+            "sa",
+            "apartment."
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Oh yeah",
+        "ilonggo_chunks": [
+            "O,",
+            "huo",
+            "gali,",
+            "no?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Ah",
+        "ilonggo_chunks": [
+            "Ay,",
+            "amo",
+            "‘na,",
+            "gali!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Its late",
+        "ilonggo_chunks": [
+            "Ay,",
+            "gab-i",
+            "na",
+            "gali!",
+            "Malakat",
+            "na",
+            "kami!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Were going home now",
+        "ilonggo_chunks": [
+            "Mapuli",
+            "na",
+            "kami"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Well go first",
+        "ilonggo_chunks": [
+            "Sige,",
+            "mauna",
+            "na",
+            "kami"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "It got dark on us",
+        "ilonggo_chunks": [
+            "Ay,",
+            "nagab-ian",
+            "‘ta",
+            "gali!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Wait",
+        "ilonggo_chunks": [
+            "TagaCavite",
+            "ka",
+            "gali!",
+            "May",
+            "kilala",
+            "‘ko",
+            "tagadidto!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Sorry",
+        "ilonggo_chunks": [
+            "Ako",
+            "gali",
+            "si",
+            "Elder",
+            "Soderquist"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I already said it",
+        "ilonggo_chunks": [
+            "Hambal",
+            "ko",
+            "na",
+            "gani!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Thats what i said",
+        "ilonggo_chunks": [
+            "Hambal",
+            "ko",
+            "gani!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "She used to live there before",
+        "ilonggo_chunks": [
+            "Nagestar",
+            "sia",
+            "‘to",
+            "sang",
+            "una"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Where does she live now",
+        "ilonggo_chunks": [
+            "Diin",
+            "sia",
+            "gani",
+            "‘gaestar",
+            "subong?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I didnt notice",
+        "ilonggo_chunks": [
+            "Waay",
+            "ko",
+            "na\"notice\""
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I didnt even notice",
+        "ilonggo_chunks": [
+            "Waay",
+            "ko",
+            "gid",
+            "gani",
+            "na\"notice\"!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Sorry whats your name",
+        "ilonggo_chunks": [
+            "Ano",
+            "gani",
+            "ang",
+            "imo",
+            "ngalan?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "You cant preach the gospel on an empty stomach",
+        "ilonggo_chunks": [
+            "Hambal",
+            "gani",
+            "ni",
+            "Brigham",
+            "Young"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Once again",
+        "ilonggo_chunks": [
+            "Na",
+            "naman"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "There you go again",
+        "ilonggo_chunks": [
+            "Ara",
+            "ka",
+            "na",
+            "naman!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Im gonna get a drink",
+        "ilonggo_chunks": [
+            "Maginom",
+            "‘ko",
+            "tubig,",
+            "nauhaw",
+            "‘ko",
+            "bi"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We werent able to pay  cuz we didnt have any money",
+        "ilonggo_chunks": [
+            "Wala",
+            "kami",
+            "‘kabayad.",
+            "",
+            "Wala",
+            "bi",
+            "kwarta."
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Cuz weve still got a lot more to do",
+        "ilonggo_chunks": [
+            "…kay",
+            "damo",
+            "pa",
+            "kami",
+            "bi",
+            "obrahon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Well no one said i shouldnt",
+        "ilonggo_chunks": [
+            "Wala",
+            "bi",
+            "may",
+            "naghambal",
+            "nga",
+            "indi",
+            "pwede"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Well then why",
+        "ilonggo_chunks": [
+            "Te"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What about on thursday",
+        "ilonggo_chunks": [
+            "Sa",
+            "Thursday",
+            "abi?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What if hes not there",
+        "ilonggo_chunks": [
+            "●",
+            "Kon",
+            "wala",
+            "sia",
+            "abi?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Its the same god",
+        "ilonggo_chunks": [
+            "Diyos",
+            "man",
+            "gihapon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Im from america  they",
+        "ilonggo_chunks": [
+            "Taga-America",
+            "‘ko;",
+            "Sila",
+            "ya",
+            "taga‑Davao"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "This food is so delicious",
+        "ilonggo_chunks": [
+            "Kanamit-namit",
+            "sini",
+            "nga",
+            "pagkaon!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Abilitative adjectives",
+        "ilonggo_chunks": [
+            "“L”-Infixed",
+            "Adjectives"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "This food makes me throw up",
+        "ilonggo_chunks": [
+            "Kasuluka",
+            "sini",
+            "nga",
+            "pagkaon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Talking about this makes me hungry",
+        "ilonggo_chunks": [
+            "Kagulutom",
+            "sini",
+            "nga",
+            "istoriahan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "The rain makes me not want to work",
+        "ilonggo_chunks": [
+            "Katalamad",
+            "sa",
+            "ulan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Funny",
+        "ilonggo_chunks": [
+            "Kaladlawan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Intimidating",
+        "ilonggo_chunks": [
+            "Kakululbaan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Scary",
+        "ilonggo_chunks": [
+            "Kahaladlukan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Watching movies makes me tired",
+        "ilonggo_chunks": [
+            "Katuluyo",
+            "lantaw",
+            "sine"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Makes one gassy",
+        "ilonggo_chunks": [
+            "Kaulutot"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "So tiresome",
+        "ilonggo_chunks": [
+            "Ay,",
+            "Katalaka!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Youre driving me crazy",
+        "ilonggo_chunks": [
+            "Kailinit",
+            "s’imo!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Irresistible",
+        "ilonggo_chunks": [
+            "Kaulumol"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I cant resist",
+        "ilonggo_chunks": [
+            "Kaulumol",
+            "s’imo,",
+            "kusi-on",
+            "ta",
+            "ka"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I cant help it",
+        "ilonggo_chunks": [
+            "Naumol-umol",
+            "na",
+            "‘ko"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Can make one sing",
+        "ilonggo_chunks": [
+            "Makapakanta"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Makes you want to dance",
+        "ilonggo_chunks": [
+            "Makapasaot"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Makes you fat",
+        "ilonggo_chunks": [
+            "Makapatambok"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "This is so tiring",
+        "ilonggo_chunks": [
+            "Ay,",
+            "kakapoy"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Dnay lang",
+        "ilonggo_chunks": [
+            "Janay",
+            "lang!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Magi lang",
+        "ilonggo_chunks": [
+            "Paagi!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "No way youre kidding",
+        "ilonggo_chunks": [
+            "Nugay!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Could you please give me some",
+        "ilonggo_chunks": [
+            "‘Gai",
+            "‘ko",
+            "bi?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Close the door",
+        "ilonggo_chunks": [
+            "Siraduha",
+            "ang",
+            "puertahan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Try it",
+        "ilonggo_chunks": [
+            "Tilawi"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Go look for it",
+        "ilonggo_chunks": [
+            "Pangitaa"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Will you forgive me  by the way",
+        "ilonggo_chunks": [
+            "Patawara",
+            "‘ko",
+            "bi?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Inm",
+        "ilonggo_chunks": [
+            "Imni"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Eat it",
+        "ilonggo_chunks": [
+            "Kauna"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Go get it",
+        "ilonggo_chunks": [
+            "Kwa-a"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Kick it",
+        "ilonggo_chunks": [
+            "Sipa-a"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Kill it",
+        "ilonggo_chunks": [
+            "Patya!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Punch it",
+        "ilonggo_chunks": [
+            "Sumbaga!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Tpak",
+        "ilonggo_chunks": [
+            "Tapaki"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Open it",
+        "ilonggo_chunks": [
+            "Buksi!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Open the door",
+        "ilonggo_chunks": [
+            "Buksi",
+            "ang",
+            "puertahan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Could you please read it",
+        "ilonggo_chunks": [
+            "Basaha",
+            "bi?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Could you please take my picture",
+        "ilonggo_chunks": [
+            "Piktsuri",
+            "‘ko",
+            "bi?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Hold",
+        "ilonggo_chunks": [
+            "Uyat-i"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Kapt  you may imply what object is to be acted",
+        "ilonggo_chunks": [
+            "Kapti"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Tbon",
+        "ilonggo_chunks": [
+            "Tabuni"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Text him",
+        "ilonggo_chunks": [
+            "Texi",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Poke it",
+        "ilonggo_chunks": [
+            "Tusloka"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Blow on it",
+        "ilonggo_chunks": [
+            "Huypi"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Slurp",
+        "ilonggo_chunks": [
+            "Suyupa"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Bite me",
+        "ilonggo_chunks": [
+            "Kagta",
+            "‘ko"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Dont bite it  suck on it",
+        "ilonggo_chunks": [
+            "Indi",
+            "pagkagta"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Stab it",
+        "ilonggo_chunks": [
+            "Bun-a!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Sing it",
+        "ilonggo_chunks": [
+            "Kantaha",
+            "bi!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Sing to me",
+        "ilonggo_chunks": [
+            "Kantahi",
+            "‘ko",
+            "bi!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Guard it",
+        "ilonggo_chunks": [
+            "Bantayi!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Check this out",
+        "ilonggo_chunks": [
+            "Tan-awa",
+            "‘ni"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Look",
+        "ilonggo_chunks": [
+            "Tan-awa!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Could you check for me if we still have rice",
+        "ilonggo_chunks": [
+            "Tan-awi",
+            "‘ko",
+            "kon",
+            "may",
+            "\"rice\"",
+            "pa",
+            "‘ta?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Cook me some adobo",
+        "ilonggo_chunks": [
+            "Lutui",
+            "‘ko",
+            "adobo"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Take the cap off",
+        "ilonggo_chunks": [
+            "Huksa",
+            "ang",
+            "takop",
+            "bi"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Dmdum",
+        "ilonggo_chunks": [
+            "Dumduma",
+            "permi",
+            "nga",
+            "…"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Write him",
+        "ilonggo_chunks": [
+            "Sulati",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Touch it",
+        "ilonggo_chunks": [
+            "Tandoga"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Squeeze it",
+        "ilonggo_chunks": [
+            "Pugaa"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Stop them restrain them dont let em do that",
+        "ilonggo_chunks": [
+            "Punggi",
+            "sila!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Press it",
+        "ilonggo_chunks": [
+            "Tum-oka!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Tie him up",
+        "ilonggo_chunks": [
+            "Higti",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Tudl",
+        "ilonggo_chunks": [
+            "Tudlui",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Pahbal",
+        "ilonggo_chunks": [
+            "Pabal-a",
+            "‘ko",
+            "kon",
+            "…",
+            "Let",
+            "me",
+            "know",
+            "if…",
+            "(root"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Wash the dishes",
+        "ilonggo_chunks": [
+            "Hugasi",
+            "ang",
+            "mga",
+            "pinggan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Can you do my laundry for me",
+        "ilonggo_chunks": [
+            "Labhi/Labahi",
+            "‘ko",
+            "bi?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Lick it",
+        "ilonggo_chunks": [
+            "Dilapi"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Finish it",
+        "ilonggo_chunks": [
+            "Tapusa"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Turn it down  also slow it down",
+        "ilonggo_chunks": [
+            "Pahinaya"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Turn it up",
+        "ilonggo_chunks": [
+            "Patunuga"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Speak up",
+        "ilonggo_chunks": [
+            "Tunuga"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Sbak",
+        "ilonggo_chunks": [
+            "Sabaka"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Hugt",
+        "ilonggo_chunks": [
+            "Hugta"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Make it faster",
+        "ilonggo_chunks": [
+            "Padasiga!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Add more",
+        "ilonggo_chunks": [
+            "Dugangi"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Chase him",
+        "ilonggo_chunks": [
+            "Lagsa",
+            "sia!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Smell it",
+        "ilonggo_chunks": [
+            "Simhuta"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Tell him",
+        "ilonggo_chunks": [
+            "Hambala",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Rip it",
+        "ilonggo_chunks": [
+            "Gisi-a!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Just wake me up",
+        "ilonggo_chunks": [
+            "Pukawa",
+            "lang",
+            "‘ko"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Go to him",
+        "ilonggo_chunks": [
+            "Kadtoi",
+            "sia!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Finish it off",
+        "ilonggo_chunks": [
+            "Ubusa"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Could you please pay for me",
+        "ilonggo_chunks": [
+            "Bayari",
+            "‘ko",
+            "bi?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Pay him",
+        "ilonggo_chunks": [
+            "Bayari",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Guess",
+        "ilonggo_chunks": [
+            "Pakta!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Guess who i ran into",
+        "ilonggo_chunks": [
+            "Pakta",
+            "kon",
+            "sin-o",
+            "ang",
+            "naabtan",
+            "ko!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Guess who i met",
+        "ilonggo_chunks": [
+            "Pakta",
+            "kon",
+            "sin-o",
+            "ang",
+            "nakilala",
+            "ko!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Choose",
+        "ilonggo_chunks": [
+            "Pili-a!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Feed me",
+        "ilonggo_chunks": [
+            "Pakauna",
+            "‘ko",
+            "bi?",
+            "/",
+            "Pakan-a",
+            "‘ko",
+            "bi?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Make your talk longer",
+        "ilonggo_chunks": [
+            "Palawiga",
+            "imo",
+            "talk"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Make it longer",
+        "ilonggo_chunks": [
+            "Palaba-a"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Help me",
+        "ilonggo_chunks": [
+            "Buligi",
+            "‘ko"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Pick it up",
+        "ilonggo_chunks": [
+            "Puluta"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Bring me some snacks",
+        "ilonggo_chunks": [
+            "Dal-i",
+            "‘ko",
+            "snacks",
+            "bi"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Bring home some food for us",
+        "ilonggo_chunks": [
+            "Pulii",
+            "kami",
+            "pagkaon",
+            "bi"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Wipe it up",
+        "ilonggo_chunks": [
+            "Trapuhi"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Put your sandals on",
+        "ilonggo_chunks": [
+            "Suksuka",
+            "imo",
+            "tsinelas"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Take your sandals off",
+        "ilonggo_chunks": [
+            "Hubara",
+            "imo",
+            "tsinelas"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Father",
+        "ilonggo_chunks": [
+            "Amay"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Grandfather",
+        "ilonggo_chunks": [
+            "Lolo"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Grandmother",
+        "ilonggo_chunks": [
+            "Lola"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Often used to name an older male stranger you see in the",
+        "ilonggo_chunks": [
+            "Tsoy"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Watch out for that guy over there",
+        "ilonggo_chunks": [
+            "Halungi",
+            "si",
+            "Tsoy"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Have you heard the national anthem",
+        "ilonggo_chunks": [
+            "Nabatian",
+            "mo",
+            "na",
+            "bala",
+            "ang",
+            "National",
+            "Anthem?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I hear it right now",
+        "ilonggo_chunks": [
+            "‘Gakabatian",
+            "ko",
+            "subong!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "You might hear a loud noise pretty soon",
+        "ilonggo_chunks": [
+            "Basi",
+            "may",
+            "mabatian",
+            "ka",
+            "dugay-dugay",
+            "nga",
+            "mabaskog"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I dont know  you are frustrated or irritated",
+        "ilonggo_chunks": [
+            "Ay,",
+            "ambot!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "No one showed up for the service project",
+        "ilonggo_chunks": [
+            "Ay,",
+            "palagpat!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Who all do you live with",
+        "ilonggo_chunks": [
+            "Sin-o",
+            "‑",
+            "sin‑o",
+            "kamo",
+            "sa",
+            "balay?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Elder and me",
+        "ilonggo_chunks": [
+            "Kami",
+            "ni",
+            "Elder"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Just us two",
+        "ilonggo_chunks": [
+            "Kami",
+            "lang",
+            "nga",
+            "duha"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Just elder and me",
+        "ilonggo_chunks": [
+            "Kami",
+            "lang",
+            "ni",
+            "Elder"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "There are just two of us",
+        "ilonggo_chunks": [
+            "Duha",
+            "lang",
+            "kami"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Suggesting that someone does something frequently",
+        "ilonggo_chunks": [
+            "Pala-",
+            "prefix"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "That guys always drunk",
+        "ilonggo_chunks": [
+            "Palahubog",
+            "‘na",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "That guys always drinking",
+        "ilonggo_chunks": [
+            "Palainom",
+            "‘na",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "That guys always eating",
+        "ilonggo_chunks": [
+            "Palakaon",
+            "‘na",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "That guys always gambling",
+        "ilonggo_chunks": [
+            "Palasugal",
+            "‘na",
+            "sia"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "In the general location of",
+        "ilonggo_chunks": [
+            "Dampi",
+            "/",
+            "Nayon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Dmpi and nyon both suggest a general location",
+        "ilonggo_chunks": [
+            "Diin",
+            "nayon",
+            "inyo",
+            "simbahan?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I didnt mean to  i didnt do it on purpose",
+        "ilonggo_chunks": [
+            "Wala",
+            "ko",
+            "ginhungod"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Simultaneously",
+        "ilonggo_chunks": [
+            "Dungan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We both know youd be better off without me",
+        "ilonggo_chunks": [
+            "Mas",
+            "maayo",
+            "ka",
+            "pa",
+            "gani",
+            "kon",
+            "wala",
+            "ako"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Oh here it is",
+        "ilonggo_chunks": [
+            "Ay,",
+            "ari",
+            "gali",
+            "o!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "How much is this",
+        "ilonggo_chunks": [
+            "Tagpila",
+            "o?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Heres some more juice",
+        "ilonggo_chunks": [
+            "Dyus",
+            "pa",
+            "o!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Theres such a thing as that ususally",
+        "ilonggo_chunks": [
+            "Ay,",
+            "may",
+            "amo",
+            "‘na?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "An old person",
+        "ilonggo_chunks": [
+            "Tigulang",
+            "na",
+            "akon",
+            "sapatos"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Isnt he cool",
+        "ilonggo_chunks": [
+            "Sia",
+            "na,",
+            "ingglishero!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Youre asking me",
+        "ilonggo_chunks": [
+            "Ako",
+            "pa",
+            "ang",
+            "ginapamangkot",
+            "mo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Whos miguel",
+        "ilonggo_chunks": [
+            "Miguel",
+            "man?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Wow youre so tall",
+        "ilonggo_chunks": [
+            "Abaw!",
+            "Kataas",
+            "s’imo!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Hes tall  and big literally hes already tall",
+        "ilonggo_chunks": [
+            "Taas",
+            "na",
+            "sia,",
+            "dako",
+            "pa!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Do you know joice campos",
+        "ilonggo_chunks": [
+            "Kilala",
+            "mo",
+            "si",
+            "Joice",
+            "Campos?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Do you know anyone named joice campos this is more",
+        "ilonggo_chunks": [
+            "May",
+            "kilala",
+            "ka",
+            "nga",
+            "si",
+            "Joice",
+            "Campos?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Whats that youve got there",
+        "ilonggo_chunks": [
+            "Ano",
+            "‘na",
+            "dala",
+            "mo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Youre so kind",
+        "ilonggo_chunks": [
+            "Kabuot",
+            "gid",
+            "s’imo",
+            "ya!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Ive got this",
+        "ilonggo_chunks": [
+            "Ako",
+            "bahala"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Can you take it from here",
+        "ilonggo_chunks": [
+            "Ikaw",
+            "na",
+            "bahala?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I left my nametag at your place",
+        "ilonggo_chunks": [
+            "Nabilin",
+            "ko",
+            "akon",
+            "nametag",
+            "sa",
+            "inyo."
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Whyd you leave your shoes outside",
+        "ilonggo_chunks": [
+            "Ngaa",
+            "ginbilin",
+            "mo",
+            "imo",
+            "sapatos",
+            "sa",
+            "gwa?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "No matter what",
+        "ilonggo_chunks": [
+            "Bisan",
+            "ano",
+            "matabo,",
+            "friends",
+            "man",
+            "‘ta",
+            "gihapon!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Lets go before others eat all the food literally maybe well",
+        "ilonggo_chunks": [
+            "Ta!",
+            "Basi",
+            "maunahan",
+            "‘ta",
+            "sa",
+            "pagkaon!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Wal ko ginhungd  sorry",
+        "ilonggo_chunks": [
+            "Sori,",
+            "ha?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "You go first",
+        "ilonggo_chunks": [
+            "Sige,",
+            "ikaw",
+            "anay"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Just make sure we dont in trouble",
+        "ilonggo_chunks": [
+            "Siguraduhon",
+            "mo",
+            "lang",
+            "nga",
+            "indi",
+            "kami",
+            "maakigan,",
+            "ha?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Later",
+        "ilonggo_chunks": [
+            "Karon",
+            "na",
+            "lang"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Hurry up",
+        "ilonggo_chunks": [
+            "Dasig-ah!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Ive lost my appetite",
+        "ilonggo_chunks": [
+            "Nadulaan",
+            "na",
+            "‘ko",
+            "gana"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Dont worry about it",
+        "ilonggo_chunks": [
+            "Pabay-i",
+            "lang!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Dont worry",
+        "ilonggo_chunks": [
+            "Indi",
+            "ka",
+            "magkabalaka!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I get nervous about transfers",
+        "ilonggo_chunks": [
+            "Ginakulbaan",
+            "‘ko",
+            "sa",
+            "transfers"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Why are you so early",
+        "ilonggo_chunks": [
+            "Temprano",
+            "ka",
+            "gid",
+            "haw?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "When did you arrive from the states",
+        "ilonggo_chunks": [
+            "Sang",
+            "san-o",
+            "ka",
+            "nag‑abot",
+            "halin",
+            "sa",
+            "States?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I was surprised",
+        "ilonggo_chunks": [
+            "Nakibot",
+            "‘ko"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Sister",
+        "ilonggo_chunks": [
+            "Sister,",
+            "natingala",
+            "ka",
+            "na",
+            "kon",
+            "ngaa",
+            "damo",
+            "simbahan?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "At first it was hard for us to speak ilonggo",
+        "ilonggo_chunks": [
+            "Sang",
+            "una,",
+            "nabudlayan",
+            "kami",
+            "mag-ilonggo"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I used to really struggle with ilonggo",
+        "ilonggo_chunks": [
+            "Nabudlayan",
+            "‘ko",
+            "sadto",
+            "mag-ilonggo"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "But now im used to it",
+        "ilonggo_chunks": [
+            "Subong",
+            "ya,",
+            "naanad",
+            "na",
+            "‘ko"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Im way good now",
+        "ilonggo_chunks": [
+            "Sagad",
+            "na",
+            "‘ko!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Usually shes not there in the afternoon",
+        "ilonggo_chunks": [
+            "Kalabanan",
+            "wala",
+            "sia",
+            "‘to",
+            "sa",
+            "hapon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Kumsta",
+        "ilonggo_chunks": [
+            "Nagkumustahanay",
+            "sila"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Can i ask a question",
+        "ilonggo_chunks": [
+            "Pwede",
+            "‘kapamangkot?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Can i borrow this can we borrow this",
+        "ilonggo_chunks": [
+            "Pwede",
+            "‘kahulam?",
+            "(or",
+            "pahulam)"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Can i watch is it okay to watch",
+        "ilonggo_chunks": [
+            "Pwede",
+            "‘kalantaw?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Can i see",
+        "ilonggo_chunks": [
+            "Lantaw",
+            "bi?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Payment",
+        "ilonggo_chunks": [
+            "Bayad,",
+            "‘Nong"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Heres my payment",
+        "ilonggo_chunks": [
+            "Bayad,",
+            "palihog"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I would come to church",
+        "ilonggo_chunks": [
+            "Magsimba",
+            "‘ko",
+            "tani,",
+            "galing",
+            "sako",
+            "‘ko",
+            "permi."
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "He always comes to church",
+        "ilonggo_chunks": [
+            "Permi",
+            "sia",
+            "‘gasimba"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Were always walking",
+        "ilonggo_chunks": [
+            "Permi",
+            "kami",
+            "‘galakat"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We rarely ever catch a ride",
+        "ilonggo_chunks": [
+            "Laka",
+            "lang",
+            "kami",
+            "‘gasakay"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Theres an activity on october fifth",
+        "ilonggo_chunks": [
+            "May",
+            "aktibiti",
+            "sa",
+            "October",
+            "5."
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Well can you make it",
+        "ilonggo_chunks": [
+            "Te?",
+            "Pwede",
+            "ka?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What day is that",
+        "ilonggo_chunks": [
+            "Ano",
+            "‘tong",
+            "adlaw?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "All right  well come",
+        "ilonggo_chunks": [
+            "O,",
+            "sige",
+            "makadto",
+            "kami!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Id like some adobo",
+        "ilonggo_chunks": [
+            "Gusto",
+            "ko",
+            "sang",
+            "adobo"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Same as above wal and way are synonymous as are mahim and",
+        "ilonggo_chunks": [
+            "Wala",
+            "na",
+            "‘ta",
+            "maobra!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I have nothing else to say",
+        "ilonggo_chunks": [
+            "Wala",
+            "na",
+            "‘ko",
+            "hambalon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Maybe",
+        "ilonggo_chunks": [
+            "Siguro,",
+            "Waay",
+            "pa",
+            "kami",
+            "‘kabalo"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Were not sure",
+        "ilonggo_chunks": [
+            "Indi",
+            "kami",
+            "sigurado"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Uhoh oh no look what youve done now youve done it",
+        "ilonggo_chunks": [
+            "Hala!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Can i ask favor",
+        "ilonggo_chunks": [
+            "Pwede",
+            "‘ko",
+            "‘kapalihog?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What can i do for you  what is it you want",
+        "ilonggo_chunks": [
+            "Ano",
+            "tani?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Sure",
+        "ilonggo_chunks": [
+            "Huo",
+            "eh!",
+            "Bisan",
+            "ano,",
+            "basta",
+            "ikaw!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What can i do for you",
+        "ilonggo_chunks": [
+            "Ano",
+            "ang",
+            "aton?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Oh you poor thing",
+        "ilonggo_chunks": [
+            "Kalu-oy",
+            "s’imo!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What can you do",
+        "ilonggo_chunks": [
+            "Ano",
+            "ang",
+            "mahimo",
+            "mo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "What should you do",
+        "ilonggo_chunks": [
+            "Ano",
+            "ang",
+            "dapat",
+            "mo",
+            "himuon?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Do you like playing basketball",
+        "ilonggo_chunks": [
+            "Mahilig",
+            "ka",
+            "magbasket?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Do you want to play basketball",
+        "ilonggo_chunks": [
+            "Gusto",
+            "mo",
+            "magbasket?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I like the philippines ko is the location",
+        "ilonggo_chunks": [
+            "Nanami-an",
+            "‘ko",
+            "sa",
+            "Philippines"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I like this food",
+        "ilonggo_chunks": [
+            "Nanamitan",
+            "‘ko",
+            "sining",
+            "pagkaon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "We can show our love",
+        "ilonggo_chunks": [
+            "Mapakita",
+            "‘ta",
+            "aton",
+            "love",
+            "sa",
+            "Diyos",
+            "paagi",
+            "sa",
+            "pagsunod",
+            "sa",
+            "Iya",
+            "nga",
+            "mga",
+            "kasuguan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Do you want more",
+        "ilonggo_chunks": [
+            "Gusto",
+            "mo",
+            "pa?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Just a little more",
+        "ilonggo_chunks": [
+            "Sige",
+            "pa"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Somethings missing",
+        "ilonggo_chunks": [
+            "May",
+            "kulang"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Youre good at ilonggo",
+        "ilonggo_chunks": [
+            "Sagad",
+            "ka",
+            "mag-ilonggo"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Wow youre way good notice the accents",
+        "ilonggo_chunks": [
+            "Baw!",
+            "Sagad-sagad",
+            "s’imo!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Theres nothing like this where im from",
+        "ilonggo_chunks": [
+            "Waay",
+            "amo",
+            "‘ni",
+            "sa",
+            "amon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Im sick of that",
+        "ilonggo_chunks": [
+            "Natak-an",
+            "na",
+            "‘ko",
+            "sina"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I dont care",
+        "ilonggo_chunks": [
+            "Wa-ay",
+            "‘ko",
+            "labot"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I dont care anymore",
+        "ilonggo_chunks": [
+            "Wa-ay",
+            "na",
+            "‘ko",
+            "labot"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Just leave it outside",
+        "ilonggo_chunks": [
+            "Ibilin",
+            "mo",
+            "lang",
+            "sa",
+            "gwa,",
+            "ha?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Now you two are gonna share it",
+        "ilonggo_chunks": [
+            "I“share-share”",
+            "nyo",
+            "lang,",
+            "ha?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "The law enforcement here is a joke",
+        "ilonggo_chunks": [
+            "Daw",
+            "lango-lango",
+            "ang",
+            "law‑enforcement",
+            "diri"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "You dont seem too serious about anything",
+        "ilonggo_chunks": [
+            "Daw",
+            "lango-lango",
+            "ka",
+            "guro,",
+            "ay!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Duh dont be silly of course really dont be ridiculous literally its",
+        "ilonggo_chunks": [
+            "Grabe",
+            "ka!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Thats fine too",
+        "ilonggo_chunks": [
+            "Puede",
+            "man"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "How many were at church",
+        "ilonggo_chunks": [
+            "Pila",
+            "ang",
+            "nagsimba?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Like 50",
+        "ilonggo_chunks": [
+            "Mga",
+            "50,",
+            "guro"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Whatever makes you happy",
+        "ilonggo_chunks": [
+            "Pagusto",
+            "ka",
+            "lang"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Im gonna do whatever i want",
+        "ilonggo_chunks": [
+            "Pagusto",
+            "lang",
+            "‘ko"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Gab digital",
+        "ilonggo_chunks": [
+            "Gaba",
+            "hi-tech!",
+            "‑",
+            "(said",
+            "about",
+            "karma",
+            "that",
+            "struck",
+            "quite",
+            "promptly)(also"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "When is the branch activity",
+        "ilonggo_chunks": [
+            "San-o",
+            "ang",
+            "branch",
+            "activity?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "On april 16th",
+        "ilonggo_chunks": [
+            "Sa",
+            "April",
+            "...16?",
+            "",
+            "Bala",
+            "mu?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "He pretended to be asleep",
+        "ilonggo_chunks": [
+            "Nagkuno-kono",
+            "sia",
+            "nga",
+            "tulog",
+            "na"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "He pretends to have authority",
+        "ilonggo_chunks": [
+            "‘Gakuno-kono",
+            "sia",
+            "nga",
+            "may",
+            "autoridad"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "They study",
+        "ilonggo_chunks": [
+            "‘Ga\"study\"",
+            "sila,",
+            "gabasa",
+            "Biblia,",
+            "‘ga\"preach-preach\"",
+            "para",
+            "kono",
+            "abi",
+            "may",
+            "authority",
+            "sila"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Elder saw it and called the police",
+        "ilonggo_chunks": [
+            "Nakita",
+            "ni",
+            "Elder",
+            "kag",
+            "gintawag",
+            "ang",
+            "pulis"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Well see",
+        "ilonggo_chunks": [
+            "Lantawon",
+            "ta",
+            "lang"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "The view is beautiful",
+        "ilonggo_chunks": [
+            "Kanami",
+            "sa",
+            "lalantawon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Ayw niy  he",
+        "ilonggo_chunks": [
+            "Indi",
+            "sia",
+            "(Tagalog"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "She doesnt like to",
+        "ilonggo_chunks": [
+            "Indi",
+            "sia",
+            "gusto"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Your house your",
+        "ilonggo_chunks": [
+            "Balay",
+            "mo?",
+            "Balay",
+            "mo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I didnt say it",
+        "ilonggo_chunks": [
+            "Wala",
+            "ko",
+            "ginhambal"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I didnt say anything",
+        "ilonggo_chunks": [
+            "Wala",
+            "‘ko",
+            "may",
+            "ginhambal"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I didnt know",
+        "ilonggo_chunks": [
+            "Wala",
+            "ko",
+            "nabal-an"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I dont know anything",
+        "ilonggo_chunks": [
+            "Wala",
+            "‘ko",
+            "may",
+            "nabal-an"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I didnt learn anything",
+        "ilonggo_chunks": [
+            "Wala",
+            "‘ko",
+            "may",
+            "natun-an"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Could you please turn off the t",
+        "ilonggo_chunks": [
+            "Patya",
+            "anay",
+            "ang",
+            "T.B.",
+            "bi?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Do you know how to get there",
+        "ilonggo_chunks": [
+            "Tultulan",
+            "mo?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Do you know how to get to presidents house",
+        "ilonggo_chunks": [
+            "Tultulan",
+            "mo",
+            "ang",
+            "balay",
+            "ni",
+            "President?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "No other church has a prophet",
+        "ilonggo_chunks": [
+            "Wala",
+            "na",
+            "iban",
+            "pa",
+            "nga",
+            "simbahan",
+            "nga",
+            "may",
+            "propeta"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Hes got no money",
+        "ilonggo_chunks": [
+            "Waay",
+            "sia",
+            "kwarta,",
+            "pero",
+            "nagsimba",
+            "man",
+            "gihapon"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Thats just fine",
+        "ilonggo_chunks": [
+            "Okey",
+            "lang",
+            "‘na",
+            "ya!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Youre so fat",
+        "ilonggo_chunks": [
+            "Kababoy",
+            "s’imo"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Fatty",
+        "ilonggo_chunks": [
+            "Tamburuko"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "They can smell the chicken",
+        "ilonggo_chunks": [
+            "‘Gakasimhutan",
+            "nila",
+            "ang",
+            "manok"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Before moving on to something",
+        "ilonggo_chunks": [
+            "Pwede",
+            "‘ko",
+            "‘ka\"CR\"",
+            "anay?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "You believe that",
+        "ilonggo_chunks": [
+            "Pati",
+            "ka",
+            "da!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Magspak ka sin sa iya  dont worry about him",
+        "ilonggo_chunks": [
+            "Sapak",
+            "ka",
+            "‘na",
+            "s’iya!",
+            "(expression",
+            "short",
+            "for"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "You know what i mean you know what im",
+        "ilonggo_chunks": [
+            "Pang-\"shave\",",
+            "bala?",
+            "‑",
+            "You",
+            "know,",
+            "for",
+            "shaving?",
+            "(“bala”"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "One more",
+        "ilonggo_chunks": [
+            "Isa",
+            "pa!",
+            "/",
+            "Isa",
+            "pa",
+            "gid!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "You can keep it",
+        "ilonggo_chunks": [
+            "Dal-on",
+            "mo",
+            "lang",
+            "‑",
+            "Just",
+            "bring",
+            "it",
+            "(sometimes",
+            "this",
+            "could",
+            "imply"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Lets have it quiet",
+        "ilonggo_chunks": [
+            "Hipos",
+            "bala!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Yon yeah",
+        "ilonggo_chunks": [
+            "Nan!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Syang",
+        "ilonggo_chunks": [
+            "Kanugon!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Dont fall for this joke",
+        "ilonggo_chunks": [
+            "Busong",
+            "ka?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Most likely",
+        "ilonggo_chunks": [
+            "Malamang!"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "They went the wrong way",
+        "ilonggo_chunks": [
+            "Nagtalang",
+            "sila"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Makes sense",
+        "ilonggo_chunks": [
+            "Sa",
+            "bagay"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "I was traumatized",
+        "ilonggo_chunks": [
+            "Natroma",
+            "ako"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Dip it in the dipping sauce",
+        "ilonggo_chunks": [
+            "Isawsaw",
+            "mo",
+            "sa",
+            "sabaw"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Hows the food",
+        "ilonggo_chunks": [
+            "Kamusta",
+            "ang",
+            "pagkaon?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Too dry",
+        "ilonggo_chunks": [
+            "Kulang",
+            "sa",
+            "sabaw"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "After he died",
+        "ilonggo_chunks": [
+            "Pagpatay",
+            "nia..."
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "After we die",
+        "ilonggo_chunks": [
+            "Pagpatay",
+            "naton..."
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Someones excited",
+        "ilonggo_chunks": [
+            "Eksayted?",
+            "Eksayted?"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Salmat",
+        "ilonggo_chunks": [
+            "Salamat"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Bban si",
+        "ilonggo_chunks": [
+            "Madaldal",
+            "siya"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Kabban sa ya",
+        "ilonggo_chunks": [
+            "Ang",
+            "daldal",
+            "niya"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Ho",
+        "ilonggo_chunks": [
+            "oo"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Nga",
+        "ilonggo_chunks": [
+            "bakit"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Tagpil",
+        "ilonggo_chunks": [
+            "magkano"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Pil",
+        "ilonggo_chunks": [
+            "ilan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Ikapil",
+        "ilonggo_chunks": [
+            "pangilan"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Nay",
+        "ilonggo_chunks": [
+            "muna"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Gal  please see part 3",
+        "ilonggo_chunks": [
+            "pala"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Tan  please see part 3",
+        "ilonggo_chunks": [
+            "sana"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Dyon",
+        "ilonggo_chunks": [
+            "agad",
+            "/",
+            "kaagad"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Dyon  this particle was explained in part",
+        "ilonggo_chunks": [
+            "tuloy"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Bas",
+        "ilonggo_chunks": [
+            "baka"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Gan",
+        "ilonggo_chunks": [
+            "oo",
+            "nga"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Liwt",
+        "ilonggo_chunks": [
+            "ulit"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Sabt",
+        "ilonggo_chunks": [
+            "conjugations.",
+            "Example"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    },
+    {
+        "english": "Ja  btig btig",
+        "ilonggo_chunks": [
+            "ini/’ni",
+            "dya",
+            "",
+            "(pronounced"
+        ],
+        "trap_words": [
+            "indi",
+            "nagakadto"
+        ],
+        "tier": 5
+    }
+]

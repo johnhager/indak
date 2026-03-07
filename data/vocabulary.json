@@ -8,7 +8,7 @@
         ],
         "stress_index": 2,
         "meaning": "Thank you",
-        "category": "Grammar & Particles"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Maayo",
@@ -19,7 +19,7 @@
         ],
         "stress_index": 1,
         "meaning": "Good/Fine",
-        "category": "Adjectives"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Kaon",
@@ -60,7 +60,7 @@
         ],
         "stress_index": 1,
         "meaning": "Take care",
-        "category": "Grammar & Particles"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Damo",
@@ -80,7 +80,7 @@
         ],
         "stress_index": 1,
         "meaning": "House",
-        "category": "Nouns"
+        "category": "Verbs"
     },
     {
         "word": "Tubig",
@@ -90,7 +90,7 @@
         ],
         "stress_index": 0,
         "meaning": "Water",
-        "category": "Nouns"
+        "category": "Places & Nature"
     },
     {
         "word": "Tawo",
@@ -131,7 +131,7 @@
         ],
         "stress_index": 2,
         "meaning": "How are you",
-        "category": "Grammar & Particles"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Hapon",
@@ -171,7 +171,7 @@
         ],
         "stress_index": 0,
         "meaning": "Love (Noun)",
-        "category": "Nouns"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Lakat",
@@ -222,7 +222,7 @@
         ],
         "stress_index": 2,
         "meaning": "Grilled meat",
-        "category": "Nouns"
+        "category": "Verbs"
     },
     {
         "word": "Laswa",
@@ -242,7 +242,7 @@
         ],
         "stress_index": 0,
         "meaning": "Cooked rice",
-        "category": "Nouns"
+        "category": "Verbs"
     },
     {
         "word": "Gwapa",
@@ -295,7 +295,7 @@
         ],
         "stress_index": 0,
         "meaning": "Mountain",
-        "category": "Nouns"
+        "category": "Places & Nature"
     },
     {
         "word": "Dagat",
@@ -305,7 +305,7 @@
         ],
         "stress_index": 0,
         "meaning": "Sea",
-        "category": "Nouns"
+        "category": "Places & Nature"
     },
     {
         "word": "Balud",
@@ -315,7 +315,7 @@
         ],
         "stress_index": 1,
         "meaning": "Wave",
-        "category": "Nouns"
+        "category": "Verbs"
     },
     {
         "word": "Ulan",
@@ -325,7 +325,7 @@
         ],
         "stress_index": 1,
         "meaning": "Rain",
-        "category": "Nouns"
+        "category": "Places & Nature"
     },
     {
         "word": "Gid",
@@ -353,7 +353,7 @@
         ],
         "stress_index": 1,
         "meaning": "Wait/First",
-        "category": "Grammar & Particles"
+        "category": "Verbs"
     },
     {
         "word": "Bala",
@@ -383,7 +383,7 @@
         ],
         "stress_index": 1,
         "meaning": "Noon",
-        "category": "Numbers & Time"
+        "category": "Greetings & Phrases"
     },
     {
         "word": "Dako",
@@ -404,5 +404,2276 @@
         "stress_index": 1,
         "meaning": "Small",
         "category": "Adjectives"
+    },
+    {
+        "word": "Tambok",
+        "syllables": [
+            "Tam",
+            "bok"
+        ],
+        "stress_index": 1,
+        "meaning": "Fat",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Payat",
+        "syllables": [
+            "Pa",
+            "yat"
+        ],
+        "stress_index": 1,
+        "meaning": "Thin",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Taas",
+        "syllables": [
+            "Ta",
+            "as"
+        ],
+        "stress_index": 1,
+        "meaning": "Tall/High",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Nubo",
+        "syllables": [
+            "Nu",
+            "bo"
+        ],
+        "stress_index": 1,
+        "meaning": "Short",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Laba",
+        "syllables": [
+            "La",
+            "ba"
+        ],
+        "stress_index": 0,
+        "meaning": "Long",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Kitid",
+        "syllables": [
+            "Ki",
+            "tid"
+        ],
+        "stress_index": 1,
+        "meaning": "Narrow",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Halog",
+        "syllables": [
+            "Ha",
+            "log"
+        ],
+        "stress_index": 1,
+        "meaning": "Loose",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Gutok",
+        "syllables": [
+            "Gu",
+            "tok"
+        ],
+        "stress_index": 1,
+        "meaning": "Tight",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Matam-is",
+        "syllables": [
+            "Ma",
+            "tam",
+            "is"
+        ],
+        "stress_index": 2,
+        "meaning": "Sweet",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Maaslum",
+        "syllables": [
+            "Ma",
+            "as",
+            "lum"
+        ],
+        "stress_index": 1,
+        "meaning": "Sour",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Hubog",
+        "syllables": [
+            "Hu",
+            "bog"
+        ],
+        "stress_index": 1,
+        "meaning": "Drunk",
+        "category": "Verbs"
+    },
+    {
+        "word": "Bugnaw",
+        "syllables": [
+            "Bug",
+            "naw"
+        ],
+        "stress_index": 0,
+        "meaning": "Cold",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Puno",
+        "syllables": [
+            "Pu",
+            "no"
+        ],
+        "stress_index": 0,
+        "meaning": "Tree/Source",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Kahoy",
+        "syllables": [
+            "Ka",
+            "hoy"
+        ],
+        "stress_index": 0,
+        "meaning": "Wood",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Bulak",
+        "syllables": [
+            "Bu",
+            "lak"
+        ],
+        "stress_index": 0,
+        "meaning": "Flower",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Tuna",
+        "syllables": [
+            "Tu",
+            "na"
+        ],
+        "stress_index": 0,
+        "meaning": "Land/Earth",
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Suga",
+        "syllables": [
+            "Su",
+            "ga"
+        ],
+        "stress_index": 0,
+        "meaning": "Light",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Panganod",
+        "syllables": [
+            "Pa",
+            "nga",
+            "nod"
+        ],
+        "stress_index": 2,
+        "meaning": "Cloud",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Hangin",
+        "syllables": [
+            "Ha",
+            "ngin"
+        ],
+        "stress_index": 0,
+        "meaning": "Wind",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Kilat",
+        "syllables": [
+            "Ki",
+            "lat"
+        ],
+        "stress_index": 0,
+        "meaning": "Lightning",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Kuno",
+        "syllables": [
+            "Ku",
+            "no"
+        ],
+        "stress_index": 1,
+        "meaning": "Supposedly",
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Ti",
+        "syllables": [
+            "Ti"
+        ],
+        "stress_index": 0,
+        "meaning": "Well...",
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Na",
+        "syllables": [
+            "Na"
+        ],
+        "stress_index": 0,
+        "meaning": "Already",
+        "category": "Verbs"
+    },
+    {
+        "word": "Kape",
+        "syllables": [
+            "Ka",
+            "pe"
+        ],
+        "stress_index": 1,
+        "meaning": "Coffee",
+        "category": "Nouns"
+    },
+    {
+        "word": "Tinapay",
+        "syllables": [
+            "Ti",
+            "na",
+            "pay"
+        ],
+        "stress_index": 2,
+        "meaning": "Bread",
+        "category": "Verbs"
+    },
+    {
+        "word": "Sud-an",
+        "syllables": [
+            "Sud",
+            "an"
+        ],
+        "stress_index": 1,
+        "meaning": "Viand",
+        "category": "Nouns"
+    },
+    {
+        "word": "Isda",
+        "syllables": [
+            "Is",
+            "da"
+        ],
+        "stress_index": 0,
+        "meaning": "Fish",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Karne",
+        "syllables": [
+            "Kar",
+            "ne"
+        ],
+        "stress_index": 1,
+        "meaning": "Meat",
+        "category": "Verbs"
+    },
+    {
+        "word": "Prutas",
+        "syllables": [
+            "Pru",
+            "tas"
+        ],
+        "stress_index": 1,
+        "meaning": "Fruit",
+        "category": "Nouns"
+    },
+    {
+        "word": "Tulog",
+        "syllables": [
+            "Tu",
+            "log"
+        ],
+        "stress_index": 1,
+        "meaning": "Sleep",
+        "category": "Verbs"
+    },
+    {
+        "word": "Bugtaw",
+        "syllables": [
+            "Bug",
+            "taw"
+        ],
+        "stress_index": 1,
+        "meaning": "Wake up",
+        "category": "Verbs"
+    },
+    {
+        "word": "Lingkod",
+        "syllables": [
+            "Ling",
+            "kod"
+        ],
+        "stress_index": 1,
+        "meaning": "Sit",
+        "category": "Verbs"
+    },
+    {
+        "word": "Tindog",
+        "syllables": [
+            "Tin",
+            "dog"
+        ],
+        "stress_index": 1,
+        "meaning": "Stand",
+        "category": "Verbs"
+    },
+    {
+        "word": "Pamati",
+        "syllables": [
+            "Pa",
+            "ma",
+            "ti"
+        ],
+        "stress_index": 2,
+        "meaning": "Listen",
+        "category": "Verbs"
+    },
+    {
+        "word": "Lantaw",
+        "syllables": [
+            "Lan",
+            "taw"
+        ],
+        "stress_index": 1,
+        "meaning": "Look",
+        "category": "Verbs"
+    },
+    {
+        "word": "Pungko",
+        "syllables": [
+            "Pung",
+            "ko"
+        ],
+        "stress_index": 1,
+        "meaning": "Squat/Sit",
+        "category": "Verbs"
+    },
+    {
+        "word": "Bituon",
+        "syllables": [
+            "Bi",
+            "tu",
+            "on"
+        ],
+        "stress_index": 2,
+        "meaning": "Star",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Bulan",
+        "syllables": [
+            "Bu",
+            "lan"
+        ],
+        "stress_index": 0,
+        "meaning": "Moon/Month",
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Langit",
+        "syllables": [
+            "La",
+            "ngit"
+        ],
+        "stress_index": 0,
+        "meaning": "Sky/Heaven",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Bwas",
+        "syllables": [
+            "Bwas"
+        ],
+        "stress_index": 0,
+        "meaning": "Tomorrow",
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Karon",
+        "syllables": [
+            "Ka",
+            "ron"
+        ],
+        "stress_index": 1,
+        "meaning": "Today/Now",
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Kahapon",
+        "syllables": [
+            "Ka",
+            "ha",
+            "pon"
+        ],
+        "stress_index": 1,
+        "meaning": "Yesterday",
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Hin-o",
+        "syllables": [
+            "Hin",
+            "o"
+        ],
+        "stress_index": 1,
+        "meaning": "Who",
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Ano",
+        "syllables": [
+            "A",
+            "no"
+        ],
+        "stress_index": 1,
+        "meaning": "What",
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Diin",
+        "syllables": [
+            "Di",
+            "in"
+        ],
+        "stress_index": 1,
+        "meaning": "Where",
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "San-o",
+        "syllables": [
+            "San",
+            "o"
+        ],
+        "stress_index": 1,
+        "meaning": "When",
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Pa-no",
+        "syllables": [
+            "Pa",
+            "no"
+        ],
+        "stress_index": 1,
+        "meaning": "How",
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Nga-a",
+        "syllables": [
+            "Nga",
+            "a"
+        ],
+        "stress_index": 1,
+        "meaning": "Why",
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Kag",
+        "syllables": [
+            "Kag"
+        ],
+        "stress_index": 0,
+        "meaning": "And",
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Pero",
+        "syllables": [
+            "Pe",
+            "ro"
+        ],
+        "stress_index": 0,
+        "meaning": "But",
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Kay",
+        "syllables": [
+            "Kay"
+        ],
+        "stress_index": 0,
+        "meaning": "Because/For",
+        "category": "Verbs"
+    },
+    {
+        "word": "Kon",
+        "syllables": [
+            "Kon"
+        ],
+        "stress_index": 0,
+        "meaning": "If",
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Bisan",
+        "syllables": [
+            "Bi",
+            "san"
+        ],
+        "stress_index": 1,
+        "meaning": "Even/Although",
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Tungod",
+        "syllables": [
+            "Tu",
+            "ngod"
+        ],
+        "stress_index": 1,
+        "meaning": "Because of",
+        "category": "Verbs"
+    },
+    {
+        "word": "Gali",
+        "syllables": [
+            "Ga",
+            "li"
+        ],
+        "stress_index": 1,
+        "meaning": "Surprise particle",
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Man",
+        "syllables": [
+            "Man"
+        ],
+        "stress_index": 0,
+        "meaning": "Also/Too",
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Naman",
+        "syllables": [
+            "Na",
+            "man"
+        ],
+        "stress_index": 1,
+        "meaning": "Again",
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Pwede",
+        "syllables": [
+            "Pwe",
+            "de"
+        ],
+        "stress_index": 0,
+        "meaning": "Can/Possible",
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Indi",
+        "syllables": [
+            "In",
+            "di"
+        ],
+        "stress_index": 1,
+        "meaning": "No/Cannot",
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Huo",
+        "syllables": [
+            "Hu",
+            "o"
+        ],
+        "stress_index": 0,
+        "meaning": "Yes",
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Ambot",
+        "syllables": [
+            "Am",
+            "bot"
+        ],
+        "stress_index": 1,
+        "meaning": "I don't know",
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Sapatos",
+        "syllables": [
+            "Sa",
+            "pa",
+            "tos"
+        ],
+        "stress_index": 1,
+        "meaning": "Shoes",
+        "category": "Nouns"
+    },
+    {
+        "word": "Katre",
+        "syllables": [
+            "Kat",
+            "re"
+        ],
+        "stress_index": 1,
+        "meaning": "Bed",
+        "category": "Nouns"
+    },
+    {
+        "word": "Kutsara",
+        "syllables": [
+            "Kut",
+            "sa",
+            "ra"
+        ],
+        "stress_index": 1,
+        "meaning": "Spoon",
+        "category": "Nouns"
+    },
+    {
+        "word": "Tinidor",
+        "syllables": [
+            "Ti",
+            "ni",
+            "dor"
+        ],
+        "stress_index": 2,
+        "meaning": "Fork",
+        "category": "Nouns"
+    },
+    {
+        "word": "Plato",
+        "syllables": [
+            "Pla",
+            "to"
+        ],
+        "stress_index": 0,
+        "meaning": "Plate",
+        "category": "Nouns"
+    },
+    {
+        "word": "Baso",
+        "syllables": [
+            "Ba",
+            "so"
+        ],
+        "stress_index": 0,
+        "meaning": "Glass/Cup",
+        "category": "Nouns"
+    },
+    {
+        "word": "Payong",
+        "syllables": [
+            "Pa",
+            "yong"
+        ],
+        "stress_index": 0,
+        "meaning": "Umbrella",
+        "category": "Nouns"
+    },
+    {
+        "word": "Kwarta",
+        "syllables": [
+            "Kwar",
+            "ta"
+        ],
+        "stress_index": 1,
+        "meaning": "Money",
+        "category": "Nouns"
+    },
+    {
+        "word": "Merkado",
+        "syllables": [
+            "Mer",
+            "ka",
+            "do"
+        ],
+        "stress_index": 1,
+        "meaning": "Market",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Simbahan",
+        "syllables": [
+            "Sim",
+            "ba",
+            "han"
+        ],
+        "stress_index": 1,
+        "meaning": "Church",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Eskwelahan",
+        "syllables": [
+            "Es",
+            "kwe",
+            "la",
+            "han"
+        ],
+        "stress_index": 3,
+        "meaning": "School",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Gabay",
+        "syllables": [
+            "Ga",
+            "bay"
+        ],
+        "stress_index": 1,
+        "meaning": "Guide",
+        "category": "Verbs"
+    },
+    {
+        "word": "Bulig",
+        "syllables": [
+            "Bu",
+            "lig"
+        ],
+        "stress_index": 1,
+        "meaning": "Help",
+        "category": "Verbs"
+    },
+    {
+        "word": "Tabang",
+        "syllables": [
+            "Ta",
+            "bang"
+        ],
+        "stress_index": 1,
+        "meaning": "Help (Urgent)",
+        "category": "Verbs"
+    },
+    {
+        "word": "Gwa",
+        "syllables": [
+            "Gwa"
+        ],
+        "stress_index": 0,
+        "meaning": "Outside",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Sulod",
+        "syllables": [
+            "Su",
+            "lod"
+        ],
+        "stress_index": 1,
+        "meaning": "Inside",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Tu-on",
+        "syllables": [
+            "Tu",
+            "on"
+        ],
+        "stress_index": 1,
+        "meaning": "Study/Learn",
+        "category": "Verbs"
+    },
+    {
+        "word": "Basa",
+        "syllables": [
+            "Ba",
+            "sa"
+        ],
+        "stress_index": 0,
+        "meaning": "Read",
+        "category": "Verbs"
+    },
+    {
+        "word": "Hampang",
+        "syllables": [
+            "Ham",
+            "pang"
+        ],
+        "stress_index": 1,
+        "meaning": "Play",
+        "category": "Verbs"
+    },
+    {
+        "word": "Palamahaw",
+        "syllables": [
+            "Pa",
+            "la",
+            "ma",
+            "haw"
+        ],
+        "stress_index": 3,
+        "meaning": "Breakfast",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Panyapon",
+        "syllables": [
+            "Pan",
+            "ya",
+            "pon"
+        ],
+        "stress_index": 1,
+        "meaning": "Dinner",
+        "category": "Nouns"
+    },
+    {
+        "word": "Panyaga",
+        "syllables": [
+            "Pan",
+            "ya",
+            "ga"
+        ],
+        "stress_index": 1,
+        "meaning": "Lunch",
+        "category": "Nouns"
+    },
+    {
+        "word": "Pahuway",
+        "syllables": [
+            "Pa",
+            "hu",
+            "way"
+        ],
+        "stress_index": 2,
+        "meaning": "Rest",
+        "category": "Verbs"
+    },
+    {
+        "word": "Dalagan",
+        "syllables": [
+            "Da",
+            "la",
+            "gan"
+        ],
+        "stress_index": 1,
+        "meaning": "Run",
+        "category": "Verbs"
+    },
+    {
+        "word": "Pamatian",
+        "syllables": [
+            "Pa",
+            "ma",
+            "ti",
+            "an"
+        ],
+        "stress_index": 2,
+        "meaning": "Listen to",
+        "category": "Verbs"
+    },
+    {
+        "word": "Hampangan",
+        "syllables": [
+            "Ham",
+            "pa",
+            "ngan"
+        ],
+        "stress_index": 1,
+        "meaning": "Toy / Playground",
+        "category": "Verbs"
+    },
+    {
+        "word": "Kadlawan",
+        "syllables": [
+            "Kad",
+            "la",
+            "wan"
+        ],
+        "stress_index": 1,
+        "meaning": "Funny / To laugh at",
+        "category": "Verbs"
+    },
+    {
+        "word": "Hibian",
+        "syllables": [
+            "Hi",
+            "bi",
+            "an"
+        ],
+        "stress_index": 1,
+        "meaning": "To cry over",
+        "category": "Verbs"
+    },
+    {
+        "word": "Sapatos",
+        "syllables": [
+            "Sa",
+            "pa",
+            "tos"
+        ],
+        "stress_index": 1,
+        "meaning": "Shoes",
+        "category": "Nouns"
+    },
+    {
+        "word": "Panapton",
+        "syllables": [
+            "Pa",
+            "nap",
+            "ton"
+        ],
+        "stress_index": 1,
+        "meaning": "Clothes",
+        "category": "Nouns"
+    },
+    {
+        "word": "Batalan",
+        "syllables": [
+            "Ba",
+            "ta",
+            "lan"
+        ],
+        "stress_index": 1,
+        "meaning": "Washroom",
+        "category": "Verbs"
+    },
+    {
+        "word": "Kasilyas",
+        "syllables": [
+            "Ka",
+            "sil",
+            "yas"
+        ],
+        "stress_index": 1,
+        "meaning": "Toilet",
+        "category": "Nouns"
+    },
+    {
+        "word": "Kusina",
+        "syllables": [
+            "Ku",
+            "si",
+            "na"
+        ],
+        "stress_index": 1,
+        "meaning": "Kitchen",
+        "category": "Nouns"
+    },
+    {
+        "word": "Bintana",
+        "syllables": [
+            "Bin",
+            "ta",
+            "na"
+        ],
+        "stress_index": 1,
+        "meaning": "Window",
+        "category": "Verbs"
+    },
+    {
+        "word": "Hagdanan",
+        "syllables": [
+            "Hag",
+            "da",
+            "nan"
+        ],
+        "stress_index": 1,
+        "meaning": "Stairs",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Pirtahan",
+        "syllables": [
+            "Pir",
+            "ta",
+            "han"
+        ],
+        "stress_index": 1,
+        "meaning": "Door",
+        "category": "Verbs"
+    },
+    {
+        "word": "Karsada",
+        "syllables": [
+            "Kar",
+            "sa",
+            "da"
+        ],
+        "stress_index": 1,
+        "meaning": "Street / Road",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Tindahan",
+        "syllables": [
+            "Tin",
+            "da",
+            "han"
+        ],
+        "stress_index": 1,
+        "meaning": "Store / Market",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Eskwelahan",
+        "syllables": [
+            "Es",
+            "kwe",
+            "la",
+            "han"
+        ],
+        "stress_index": 2,
+        "meaning": "School",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Simbahan",
+        "syllables": [
+            "Sim",
+            "ba",
+            "han"
+        ],
+        "stress_index": 1,
+        "meaning": "Church",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Ospital",
+        "syllables": [
+            "Os",
+            "pi",
+            "tal"
+        ],
+        "stress_index": 2,
+        "meaning": "Hospital",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Pulisya",
+        "syllables": [
+            "Pu",
+            "lis",
+            "ya"
+        ],
+        "stress_index": 1,
+        "meaning": "Police",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Bombero",
+        "syllables": [
+            "Bom",
+            "be",
+            "ro"
+        ],
+        "stress_index": 1,
+        "meaning": "Firefighter",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Maestro",
+        "syllables": [
+            "Ma",
+            "es",
+            "tro"
+        ],
+        "stress_index": 1,
+        "meaning": "Male Teacher",
+        "category": "Verbs"
+    },
+    {
+        "word": "Maestra",
+        "syllables": [
+            "Ma",
+            "es",
+            "tra"
+        ],
+        "stress_index": 1,
+        "meaning": "Female Teacher",
+        "category": "Verbs"
+    },
+    {
+        "word": "Estudyante",
+        "syllables": [
+            "Es",
+            "tud",
+            "yan",
+            "te"
+        ],
+        "stress_index": 2,
+        "meaning": "Student",
+        "category": "Nouns"
+    },
+    {
+        "word": "Pandayan",
+        "syllables": [
+            "Pan",
+            "da",
+            "yan"
+        ],
+        "stress_index": 1,
+        "meaning": "Blacksmith / Forge",
+        "category": "Nouns"
+    },
+    {
+        "word": "Mangingisda",
+        "syllables": [
+            "Ma",
+            "ngi",
+            "ngis",
+            "da"
+        ],
+        "stress_index": 2,
+        "meaning": "Fisherman",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Mangunguma",
+        "syllables": [
+            "Ma",
+            "ngu",
+            "ngu",
+            "ma"
+        ],
+        "stress_index": 2,
+        "meaning": "Farmer",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Manugbaligya",
+        "syllables": [
+            "Ma",
+            "nug",
+            "ba",
+            "lig",
+            "ya"
+        ],
+        "stress_index": 3,
+        "meaning": "Seller / Vendor",
+        "category": "Verbs"
+    },
+    {
+        "word": "Manugbakal",
+        "syllables": [
+            "Ma",
+            "nug",
+            "ba",
+            "kal"
+        ],
+        "stress_index": 3,
+        "meaning": "Buyer / Shopper",
+        "category": "Verbs"
+    },
+    {
+        "word": "Salakyan",
+        "syllables": [
+            "Sa",
+            "lak",
+            "yan"
+        ],
+        "stress_index": 1,
+        "meaning": "Vehicle",
+        "category": "Nouns"
+    },
+    {
+        "word": "Eroplano",
+        "syllables": [
+            "E",
+            "rop",
+            "la",
+            "no"
+        ],
+        "stress_index": 2,
+        "meaning": "Airplane",
+        "category": "Nouns"
+    },
+    {
+        "word": "Pasahero",
+        "syllables": [
+            "Pa",
+            "sa",
+            "he",
+            "ro"
+        ],
+        "stress_index": 2,
+        "meaning": "Passenger",
+        "category": "Nouns"
+    },
+    {
+        "word": "Baybayon",
+        "syllables": [
+            "Bay",
+            "ba",
+            "yon"
+        ],
+        "stress_index": 1,
+        "meaning": "Beach / Shore",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Talampas",
+        "syllables": [
+            "Ta",
+            "lam",
+            "pas"
+        ],
+        "stress_index": 2,
+        "meaning": "Plateau",
+        "category": "Nouns"
+    },
+    {
+        "word": "Kapatagan",
+        "syllables": [
+            "Ka",
+            "pa",
+            "ta",
+            "gan"
+        ],
+        "stress_index": 2,
+        "meaning": "Plains",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Kagulangan",
+        "syllables": [
+            "Ka",
+            "gu",
+            "la",
+            "ngan"
+        ],
+        "stress_index": 2,
+        "meaning": "Forest",
+        "category": "Verbs"
+    },
+    {
+        "word": "Kasapatan",
+        "syllables": [
+            "Ka",
+            "sa",
+            "pa",
+            "tan"
+        ],
+        "stress_index": 2,
+        "meaning": "Animals",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Kalibutan",
+        "syllables": [
+            "Ka",
+            "li",
+            "bu",
+            "tan"
+        ],
+        "stress_index": 2,
+        "meaning": "World",
+        "category": "Places & Nature"
+    },
+    {
+        "word": "Kasanag",
+        "syllables": [
+            "Ka",
+            "sa",
+            "nag"
+        ],
+        "stress_index": 1,
+        "meaning": "Brightness",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Kadulom",
+        "syllables": [
+            "Ka",
+            "du",
+            "lom"
+        ],
+        "stress_index": 1,
+        "meaning": "Darkness",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Palanggaon",
+        "syllables": [
+            "Pa",
+            "lang",
+            "ga",
+            "on"
+        ],
+        "stress_index": 2,
+        "meaning": "To be loved",
+        "category": "Verbs"
+    },
+    {
+        "word": "Madinalag-on",
+        "syllables": [
+            "Ma",
+            "di",
+            "na",
+            "lag",
+            "on"
+        ],
+        "stress_index": 3,
+        "meaning": "Successful",
+        "category": "Adjectives"
+    },
+    {
+        "word": "Indi",
+        "syllables": [
+            "In",
+            "di"
+        ],
+        "stress_index": 0,
+        "meaning": "No / Not (Future/General)",
+        "tier": 4,
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Wala",
+        "syllables": [
+            "Wa",
+            "la"
+        ],
+        "stress_index": 1,
+        "meaning": "No / Not (Past/Existential)",
+        "tier": 4,
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Waay",
+        "syllables": [
+            "Wa",
+            "ay"
+        ],
+        "stress_index": 0,
+        "meaning": "None / Absent",
+        "tier": 4,
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "May",
+        "syllables": [
+            "May"
+        ],
+        "stress_index": 0,
+        "meaning": "There is / To have",
+        "tier": 4,
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Ano",
+        "syllables": [
+            "A",
+            "no"
+        ],
+        "stress_index": 1,
+        "meaning": "What",
+        "tier": 5,
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Diin",
+        "syllables": [
+            "Di",
+            "in"
+        ],
+        "stress_index": 1,
+        "meaning": "Where",
+        "tier": 5,
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Sin-o",
+        "syllables": [
+            "Sin",
+            "o"
+        ],
+        "stress_index": 1,
+        "meaning": "Who",
+        "tier": 5,
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "San-o",
+        "syllables": [
+            "San",
+            "o"
+        ],
+        "stress_index": 1,
+        "meaning": "When",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Nga-a",
+        "syllables": [
+            "Nga",
+            "a"
+        ],
+        "stress_index": 1,
+        "meaning": "Why",
+        "tier": 5,
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Paano",
+        "syllables": [
+            "Pa",
+            "a",
+            "no"
+        ],
+        "stress_index": 1,
+        "meaning": "How",
+        "tier": 5,
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Pila",
+        "syllables": [
+            "Pi",
+            "la"
+        ],
+        "stress_index": 1,
+        "meaning": "How much / many",
+        "tier": 5,
+        "category": "Grammar & Particles"
+    },
+    {
+        "word": "Anay",
+        "syllables": [
+            "A",
+            "nay"
+        ],
+        "stress_index": 1,
+        "meaning": "First / For a while",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Antis",
+        "syllables": [
+            "An",
+            "tis"
+        ],
+        "stress_index": 0,
+        "meaning": "Before",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Maayong aga",
+        "syllables": [
+            "Ma",
+            "a",
+            "yong",
+            "a",
+            "ga"
+        ],
+        "stress_index": 3,
+        "meaning": "Good morning",
+        "tier": 4,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Maayong hapon",
+        "syllables": [
+            "Ma",
+            "a",
+            "yong",
+            "ha",
+            "pon"
+        ],
+        "stress_index": 3,
+        "meaning": "Good afternoon",
+        "tier": 4,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Maayong gab-i",
+        "syllables": [
+            "Ma",
+            "a",
+            "yong",
+            "gab",
+            "i"
+        ],
+        "stress_index": 3,
+        "meaning": "Good evening",
+        "tier": 4,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Maayong udto",
+        "syllables": [
+            "Ma",
+            "a",
+            "yong",
+            "ud",
+            "to"
+        ],
+        "stress_index": 3,
+        "meaning": "Good noon",
+        "tier": 4,
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Komusta ka?",
+        "syllables": [
+            "Ko",
+            "mus",
+            "ta",
+            "ka"
+        ],
+        "stress_index": 2,
+        "meaning": "How are you?",
+        "tier": 4,
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Maayo man",
+        "syllables": [
+            "Ma",
+            "a",
+            "yo",
+            "man"
+        ],
+        "stress_index": 1,
+        "meaning": "I'm good/fine",
+        "tier": 4,
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Abi-abi",
+        "syllables": [
+            "A",
+            "bi",
+            "a",
+            "bi"
+        ],
+        "stress_index": 3,
+        "meaning": "Greetings/Welcome",
+        "tier": 4,
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Agi anay",
+        "syllables": [
+            "A",
+            "gi",
+            "a",
+            "nay"
+        ],
+        "stress_index": 1,
+        "meaning": "Excuse me (Passing through)",
+        "tier": 4,
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Babay",
+        "syllables": [
+            "Ba",
+            "bay"
+        ],
+        "stress_index": 1,
+        "meaning": "Goodbye",
+        "tier": 4,
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Ako",
+        "syllables": [
+            "A",
+            "ko"
+        ],
+        "stress_index": 1,
+        "meaning": "I",
+        "tier": 4,
+        "category": "Pronouns"
+    },
+    {
+        "word": "Ikaw",
+        "syllables": [
+            "I",
+            "kaw"
+        ],
+        "stress_index": 1,
+        "meaning": "You (singular)",
+        "tier": 4,
+        "category": "Verbs"
+    },
+    {
+        "word": "Sia",
+        "syllables": [
+            "Sia"
+        ],
+        "stress_index": 0,
+        "meaning": "He/She/It",
+        "tier": 4,
+        "category": "Pronouns"
+    },
+    {
+        "word": "Kami",
+        "syllables": [
+            "Ka",
+            "mi"
+        ],
+        "stress_index": 1,
+        "meaning": "We (exclusive)",
+        "tier": 4,
+        "category": "Pronouns"
+    },
+    {
+        "word": "Kita",
+        "syllables": [
+            "Ki",
+            "ta"
+        ],
+        "stress_index": 1,
+        "meaning": "We (inclusive)",
+        "tier": 4,
+        "category": "Pronouns"
+    },
+    {
+        "word": "Kamo",
+        "syllables": [
+            "Ka",
+            "mo"
+        ],
+        "stress_index": 1,
+        "meaning": "You (plural)",
+        "tier": 4,
+        "category": "Pronouns"
+    },
+    {
+        "word": "Sila",
+        "syllables": [
+            "Si",
+            "la"
+        ],
+        "stress_index": 1,
+        "meaning": "They",
+        "tier": 4,
+        "category": "Pronouns"
+    },
+    {
+        "word": "Ini",
+        "syllables": [
+            "I",
+            "ni"
+        ],
+        "stress_index": 1,
+        "meaning": "This",
+        "tier": 4,
+        "category": "Pronouns"
+    },
+    {
+        "word": "Ina",
+        "syllables": [
+            "I",
+            "na"
+        ],
+        "stress_index": 1,
+        "meaning": "That",
+        "tier": 4,
+        "category": "Pronouns"
+    },
+    {
+        "word": "Ato",
+        "syllables": [
+            "A",
+            "to"
+        ],
+        "stress_index": 1,
+        "meaning": "That (far)",
+        "tier": 4,
+        "category": "Pronouns"
+    },
+    {
+        "word": "Isa",
+        "syllables": [
+            "I",
+            "sa"
+        ],
+        "stress_index": 1,
+        "meaning": "One (H)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Duha",
+        "syllables": [
+            "Du",
+            "ha"
+        ],
+        "stress_index": 1,
+        "meaning": "Two (H)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Tatlo",
+        "syllables": [
+            "Tat",
+            "lo"
+        ],
+        "stress_index": 1,
+        "meaning": "Three (H)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Apat",
+        "syllables": [
+            "A",
+            "pat"
+        ],
+        "stress_index": 1,
+        "meaning": "Four (H)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Lima",
+        "syllables": [
+            "Li",
+            "ma"
+        ],
+        "stress_index": 1,
+        "meaning": "Five (H)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Anum",
+        "syllables": [
+            "A",
+            "num"
+        ],
+        "stress_index": 1,
+        "meaning": "Six (H)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Pito",
+        "syllables": [
+            "Pi",
+            "to"
+        ],
+        "stress_index": 1,
+        "meaning": "Seven (H)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Walo",
+        "syllables": [
+            "Wa",
+            "lo"
+        ],
+        "stress_index": 1,
+        "meaning": "Eight (H)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Siyam",
+        "syllables": [
+            "Si",
+            "yam"
+        ],
+        "stress_index": 1,
+        "meaning": "Nine (H)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Napulo",
+        "syllables": [
+            "Na",
+            "pu",
+            "lo"
+        ],
+        "stress_index": 2,
+        "meaning": "Ten (H)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Uno",
+        "syllables": [
+            "U",
+            "no"
+        ],
+        "stress_index": 0,
+        "meaning": "One (S)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Dos",
+        "syllables": [
+            "Dos"
+        ],
+        "stress_index": 0,
+        "meaning": "Two (S)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Tres",
+        "syllables": [
+            "Tres"
+        ],
+        "stress_index": 0,
+        "meaning": "Three (S)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Kuatro",
+        "syllables": [
+            "Kua",
+            "tro"
+        ],
+        "stress_index": 0,
+        "meaning": "Four (S)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Sinko",
+        "syllables": [
+            "Sin",
+            "ko"
+        ],
+        "stress_index": 0,
+        "meaning": "Five (S)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Seis",
+        "syllables": [
+            "Seis"
+        ],
+        "stress_index": 0,
+        "meaning": "Six (S)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Siete",
+        "syllables": [
+            "Sie",
+            "te"
+        ],
+        "stress_index": 0,
+        "meaning": "Seven (S)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Otso",
+        "syllables": [
+            "Ot",
+            "so"
+        ],
+        "stress_index": 0,
+        "meaning": "Eight (S)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Nueve",
+        "syllables": [
+            "Nue",
+            "ve"
+        ],
+        "stress_index": 0,
+        "meaning": "Nine (S)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Diez",
+        "syllables": [
+            "Diez"
+        ],
+        "stress_index": 0,
+        "meaning": "Ten (S)",
+        "tier": 5,
+        "category": "Numbers & Time"
+    },
+    {
+        "word": "Gwapo",
+        "syllables": [
+            "Gwa",
+            "po"
+        ],
+        "stress_index": 1,
+        "meaning": "Handsome",
+        "tier": 5,
+        "category": "Nouns"
+    },
+    {
+        "word": "Ma-init",
+        "syllables": [
+            "Ma",
+            "i",
+            "nit"
+        ],
+        "stress_index": 2,
+        "meaning": "Hot",
+        "tier": 5,
+        "category": "Adjectives"
+    },
+    {
+        "word": "Matugnaw",
+        "syllables": [
+            "Ma",
+            "tug",
+            "naw"
+        ],
+        "stress_index": 2,
+        "meaning": "Cold",
+        "tier": 5,
+        "category": "Adjectives"
+    },
+    {
+        "word": "Kulang",
+        "syllables": [
+            "Ku",
+            "lang"
+        ],
+        "stress_index": 1,
+        "meaning": "Lacking",
+        "tier": 5,
+        "category": "Adjectives"
+    },
+    {
+        "word": "Mataas",
+        "syllables": [
+            "Ma",
+            "ta",
+            "as"
+        ],
+        "stress_index": 2,
+        "meaning": "Tall/High",
+        "tier": 5,
+        "category": "Adjectives"
+    },
+    {
+        "word": "Manubo",
+        "syllables": [
+            "Ma",
+            "nu",
+            "bo"
+        ],
+        "stress_index": 2,
+        "meaning": "Short/Low",
+        "tier": 5,
+        "category": "Adjectives"
+    },
+    {
+        "word": "Luyag",
+        "syllables": [
+            "Lu",
+            "yag"
+        ],
+        "stress_index": 1,
+        "meaning": "Like/Want",
+        "tier": 5,
+        "category": "Verbs"
+    },
+    {
+        "word": "Kadto",
+        "syllables": [
+            "Kad",
+            "to"
+        ],
+        "stress_index": 1,
+        "meaning": "To go",
+        "tier": 6,
+        "category": "Verbs"
+    },
+    {
+        "word": "Inum",
+        "syllables": [
+            "I",
+            "num"
+        ],
+        "stress_index": 1,
+        "meaning": "To drink",
+        "tier": 6,
+        "category": "Verbs"
+    },
+    {
+        "word": "Abut",
+        "syllables": [
+            "A",
+            "but"
+        ],
+        "stress_index": 1,
+        "meaning": "To arrive",
+        "tier": 6,
+        "category": "Verbs"
+    },
+    {
+        "word": "Alalay",
+        "syllables": [
+            "A",
+            "la",
+            "lay"
+        ],
+        "stress_index": 2,
+        "meaning": "To assist",
+        "tier": 6,
+        "category": "Verbs"
+    },
+    {
+        "word": "Abonar",
+        "syllables": [
+            "A",
+            "bo",
+            "nar"
+        ],
+        "stress_index": 2,
+        "meaning": "To advance/loan",
+        "tier": 6,
+        "category": "Verbs"
+    },
+    {
+        "word": "Abat",
+        "syllables": [
+            "A",
+            "bat"
+        ],
+        "stress_index": 1,
+        "meaning": "To follow",
+        "tier": 6,
+        "category": "Verbs"
+    },
+    {
+        "word": "Saad",
+        "syllables": [
+            "Sa",
+            "ad"
+        ],
+        "stress_index": 1,
+        "meaning": "To promise",
+        "tier": 6,
+        "category": "Verbs"
+    },
+    {
+        "word": "Wakal",
+        "syllables": [
+            "Wa",
+            "kal"
+        ],
+        "stress_index": 1,
+        "meaning": "To talk/chatter",
+        "tier": 6,
+        "category": "Verbs"
+    },
+    {
+        "word": "Tigaylo",
+        "syllables": [
+            "Ti",
+            "gay",
+            "lo"
+        ],
+        "stress_index": 2,
+        "meaning": "To replace/exchange",
+        "tier": 6,
+        "category": "Verbs"
+    },
+    {
+        "word": "Abaw",
+        "syllables": [
+            "A",
+            "baw"
+        ],
+        "stress_index": 1,
+        "meaning": "Wow! / Oh!",
+        "tier": 4,
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Aragoy",
+        "syllables": [
+            "A",
+            "ra",
+            "goy"
+        ],
+        "stress_index": 2,
+        "meaning": "Ouch!",
+        "tier": 4,
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Siguro",
+        "syllables": [
+            "Si",
+            "gu",
+            "ro"
+        ],
+        "stress_index": 1,
+        "meaning": "Maybe / Probably",
+        "tier": 4,
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Ari",
+        "syllables": [
+            "A",
+            "ri"
+        ],
+        "stress_index": 0,
+        "meaning": "Here it is",
+        "tier": 4,
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Hapit",
+        "syllables": [
+            "Ha",
+            "pit"
+        ],
+        "stress_index": 1,
+        "meaning": "To stop by / visit",
+        "tier": 4,
+        "category": "Verbs"
+    },
+    {
+        "word": "Yuhum",
+        "syllables": [
+            "Yu",
+            "hum"
+        ],
+        "stress_index": 1,
+        "meaning": "Smile",
+        "tier": 5,
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Abtik",
+        "syllables": [
+            "Ab",
+            "tik"
+        ],
+        "stress_index": 0,
+        "meaning": "Quick-witted / Smart",
+        "tier": 5,
+        "category": "Adjectives"
+    },
+    {
+        "word": "Agubay",
+        "syllables": [
+            "A",
+            "gu",
+            "bay"
+        ],
+        "stress_index": 2,
+        "meaning": "To support (while walking)",
+        "tier": 6,
+        "category": "Verbs"
+    },
+    {
+        "word": "Uswag",
+        "syllables": [
+            "Us",
+            "wag"
+        ],
+        "stress_index": 1,
+        "meaning": "To progress / advance",
+        "tier": 6,
+        "category": "Verbs"
+    },
+    {
+        "word": "Saylo",
+        "syllables": [
+            "Say",
+            "lo"
+        ],
+        "stress_index": 0,
+        "meaning": "To move / change position",
+        "tier": 6,
+        "category": "Verbs"
+    },
+    {
+        "word": "Gubot",
+        "syllables": [
+            "Gu",
+            "bot"
+        ],
+        "stress_index": 1,
+        "meaning": "Trouble / Confusion",
+        "tier": 6,
+        "category": "Nouns"
+    },
+    {
+        "word": "Talang",
+        "syllables": [
+            "Ta",
+            "lang"
+        ],
+        "stress_index": 1,
+        "meaning": "Lost / Astray",
+        "tier": 6,
+        "category": "Adjectives"
+    },
+    {
+        "word": "Amlig",
+        "syllables": [
+            "Am",
+            "lig"
+        ],
+        "stress_index": 0,
+        "meaning": "To take care / protect",
+        "tier": 6,
+        "category": "Greetings & Phrases"
+    },
+    {
+        "word": "Angan-angan",
+        "syllables": [
+            "A",
+            "ngan",
+            "a",
+            "ngan"
+        ],
+        "stress_index": 3,
+        "meaning": "To delay / wait a bit",
+        "tier": 6,
+        "category": "Verbs"
+    },
+    {
+        "word": "Batas",
+        "syllables": [
+            "Ba",
+            "tas"
+        ],
+        "stress_index": 1,
+        "meaning": "Endurance / Fortitude",
+        "tier": 6,
+        "category": "Nouns"
+    },
+    {
+        "word": "Pulus",
+        "syllables": [
+            "Pu",
+            "lus"
+        ],
+        "stress_index": 1,
+        "meaning": "Use / Worth / Utility",
+        "tier": 6,
+        "category": "Verbs"
     }
 ]
