@@ -138,6 +138,9 @@ async function openLessonPreview(lesson) {
     lessonModalIcon.textContent = lesson.icon;
     lessonVocabList.innerHTML = '<div style="grid-column: span 2; opacity: 0.5;">Loading details...</div>';
 
+    const savedStage = localStorage.getItem(`indak_lesson_${lesson.id}_stage`);
+    startLessonBtn.textContent = savedStage ? 'RESUME SESSION' : 'START SESSION';
+
     lessonModal.classList.remove('hidden');
     heroSection.classList.add('hidden');
 
@@ -176,11 +179,11 @@ startLessonBtn.addEventListener('click', () => {
 });
 
 function startCurriculumSession(lesson) {
-    // 1. First, we play Swipe Sorter (Vocab)
-    // 2. Then Sentence Builder (Grammar/Syntax)
-    // 3. (Optional) Marker Mission or Indak
+    // Check if we have saved progress for this lesson
+    const savedStage = localStorage.getItem(`indak_lesson_${lesson.id}_stage`);
+    const stageToRun = savedStage || 'swipe';
 
-    runSessionGame('swipe', lesson);
+    runSessionGame(stageToRun, lesson);
 }
 
 function runSessionGame(type, lesson) {
@@ -206,6 +209,9 @@ function runSessionGame(type, lesson) {
                 runSessionGame('sentence', lesson);
             };
             summaryEl.querySelector('.glass-card').appendChild(nextBtn);
+
+            // Save sub-lesson state so they can resume if they close the app or go back to menu
+            localStorage.setItem(`indak_lesson_${lesson.id}_stage`, 'sentence');
         };
     } else if (type === 'sentence') {
         activeGame = new SentenceBuilder(gameStage, globalSentences, lesson.data);
@@ -229,6 +235,9 @@ function runSessionGame(type, lesson) {
 
 function completeLesson(lesson) {
     levelManager.markLessonComplete(lesson.id);
+
+    // Clear any partially saved progress for this lesson
+    localStorage.removeItem(`indak_lesson_${lesson.id}_stage`);
 
     // Unlock next lesson if available
     const allLessons = curriculum.units.flatMap(u => u.lessons);
