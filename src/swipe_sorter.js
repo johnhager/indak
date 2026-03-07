@@ -236,12 +236,25 @@ export class SwipeSorter {
         this.resetLabelHighlight();
         [this.defTop, this.defBottom, this.defLeft, this.defRight].forEach(el => el.style.opacity = '0');
 
-        // Get pool from LevelManager
-        let pool = levelManager.getFilteredVocabulary('meaning', this.roundUsedWords, this.hardMode, this.selectedCategories);
+        // 1. Get the pool of available words
+        let pool = [];
 
-        // If not enough words because of used-list, allow reuse
-        if (!pool || pool.length < 4) {
-            pool = levelManager.getFilteredVocabulary('meaning', [], this.hardMode, this.selectedCategories);
+        if (this.lessonData) {
+            // Strict lesson boundary: only use lesson vocabulary, filter out ones we've already done
+            pool = this.vocabulary.filter(v => !this.roundUsedWords.includes(v.word));
+
+            // Allow reuse if the remaining lesson pool is too small to complete the round
+            if (!pool || pool.length < 1) {
+                pool = this.vocabulary;
+            }
+        } else {
+            // Free play mode: Get algorithmically weighted pool from LevelManager
+            pool = levelManager.getFilteredVocabulary('meaning', this.roundUsedWords, this.hardMode, this.selectedCategories);
+
+            // If not enough words because of used-list, allow reuse
+            if (!pool || pool.length < 4) {
+                pool = levelManager.getFilteredVocabulary('meaning', [], this.hardMode, this.selectedCategories);
+            }
         }
 
         if (!pool || pool.length < 2) { // Minimum 2 for a game to even work (top/bottom)

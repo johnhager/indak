@@ -155,7 +155,7 @@ async function openLessonPreview(lesson) {
 
         selectedLesson.data = data;
 
-        lessonVocabList.innerHTML = data.vocabulary.slice(0, 8).map(v => `
+        lessonVocabList.innerHTML = data.vocabulary.map(v => `
             <div style="background: rgba(0,0,0,0.2); padding: 5px 10px; border-radius: 8px; font-size: 11px;">
                 <div style="font-weight: bold; color: #00ffaa;">${v.word}</div>
                 <div style="opacity: 0.6; font-size: 10px;">${v.meaning}</div>
