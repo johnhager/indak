@@ -207,8 +207,14 @@ export class SentenceBuilder {
     }
 
     startRound() {
+        // If playing a lesson, cap rounds at sentence count, otherwise default to 10
+        if (this.lessonData && this.lessonData.sentences) {
+            this.totalRounds = this.lessonData.sentences.length;
+        } else {
+            this.totalRounds = 10;
+        }
+
         this.currentRound = 0;
-        this.totalRounds = 10;
         this.score = 0;
         this.totalAttempts = 0;
         this.roundUsedSentences = new Set();
