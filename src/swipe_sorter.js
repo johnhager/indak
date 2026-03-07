@@ -255,7 +255,7 @@ export class SwipeSorter {
             }
         }
 
-        if (!pool || pool.length < 2) { // Minimum 2 for a game to even work (top/bottom)
+        if (!pool || pool.length < 1) { // Minimum 1 word to even run a card
             console.warn('Insufficient vocabulary for Swipe Sorter');
             this.endGame();
             return;
@@ -578,7 +578,7 @@ export class SwipeSorter {
 
         const summaryEl = document.getElementById('summary-screen');
         summaryEl.innerHTML = `
-            <div class="glass-card" style="width: 90%; max-width: 450px; display: flex; flex-direction: column; overflow-y: auto; max-height: 85vh;">
+            <div class="glass-card" style="width: 90%; max-width: 450px; display: flex; flex-direction: column; overflow-y: auto; max-height: 85vh; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;">
                 <h2 style="margin-bottom: 1.5rem; color: var(--accent-gold);">Session Complete</h2>
                 
                 ${levelUpMessage}
