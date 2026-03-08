@@ -1,0 +1,203 @@
+{
+    "vocabulary": [
+        {
+            "word": "Lakat",
+            "syllables": [
+                "La",
+                "kat"
+            ],
+            "stress_index": 1,
+            "meaning": "Walk",
+            "category": "Verbs"
+        },
+        {
+            "word": "Dagan",
+            "syllables": [
+                "Da",
+                "gan"
+            ],
+            "stress_index": 1,
+            "meaning": "Run",
+            "category": "Verbs"
+        },
+        {
+            "word": "Lingkod",
+            "syllables": [
+                "Ling",
+                "kod"
+            ],
+            "stress_index": 1,
+            "meaning": "Sit",
+            "category": "Verbs"
+        },
+        {
+            "word": "Tindog",
+            "syllables": [
+                "Tin",
+                "dog"
+            ],
+            "stress_index": 1,
+            "meaning": "Stand",
+            "category": "Verbs"
+        },
+        {
+            "word": "Tuon",
+            "syllables": [
+                "Tu",
+                "on"
+            ],
+            "stress_index": 1,
+            "meaning": "Study / Learn",
+            "category": "Verbs"
+        },
+        {
+            "word": "Basa",
+            "syllables": [
+                "Ba",
+                "sa"
+            ],
+            "stress_index": 1,
+            "meaning": "Read",
+            "category": "Verbs"
+        },
+        {
+            "word": "Pamati",
+            "syllables": [
+                "Pa",
+                "ma",
+                "ti"
+            ],
+            "stress_index": 2,
+            "meaning": "Listen",
+            "category": "Verbs"
+        },
+        {
+            "word": "Lantaw",
+            "syllables": [
+                "Lan",
+                "taw"
+            ],
+            "stress_index": 1,
+            "meaning": "Look / Watch",
+            "category": "Verbs"
+        },
+        {
+            "word": "Pahuway",
+            "syllables": [
+                "Pa",
+                "hu",
+                "way"
+            ],
+            "stress_index": 2,
+            "meaning": "Rest",
+            "category": "Verbs"
+        },
+        {
+            "word": "Hampang",
+            "syllables": [
+                "Ham",
+                "pang"
+            ],
+            "stress_index": 1,
+            "meaning": "Play",
+            "category": "Verbs"
+        },
+        {
+            "word": "Kadto",
+            "syllables": [
+                "Kad",
+                "to"
+            ],
+            "stress_index": 1,
+            "meaning": "Go (to a place)",
+            "category": "Verbs"
+        }
+    ],
+    "grammar": [
+        {
+            "title": "Action Verbs Review: nag- / naga- / mag-",
+            "description": "By now you know the prefix system. Let's apply it to movement and activity verbs. Remember: nag- = past, naga- = present, mag- = future.",
+            "examples": [
+                "Naglakat ako. (I walked.)",
+                "Nagalakat ako. (I am walking.)",
+                "Maglakat ako. (I will walk.)"
+            ]
+        },
+        {
+            "title": "Giving Commands",
+            "description": "To give a command (imperative), use the root form of the verb alone, or add 'mag-' at the start.",
+            "examples": [
+                "Lakat! (Walk!)",
+                "Lingkod! (Sit!)",
+                "Tindog! (Stand!)",
+                "Pahuway anay. (Rest first.)"
+            ]
+        },
+        {
+            "title": "Going somewhere with Kadto",
+            "description": "'Kadto' is the root for 'to go (to a far place)'. Combined with 'sa', it tells where you're going.",
+            "examples": [
+                "Nagkadto ako sa merkado. (I went to the market.)",
+                "Magkadto kita sa baybayon. (Let's go to the beach.)"
+            ]
+        }
+    ],
+    "sentences": [
+        {
+            "english": "I walked.",
+            "chunks": "Naglakat | ako.",
+            "distractors": "nagdagan | nagtulog"
+        },
+        {
+            "english": "Sit down!",
+            "chunks": "Lingkod!",
+            "distractors": "tindog | lakat"
+        },
+        {
+            "english": "They are playing.",
+            "chunks": "Nagahampang | sila.",
+            "distractors": "nagalakat | nagadagan"
+        },
+        {
+            "english": "I will study.",
+            "chunks": "Magtuon | ako.",
+            "distractors": "nagtuon | nagbasa"
+        },
+        {
+            "english": "Listen!",
+            "chunks": "Pamati!",
+            "distractors": "lantaw | pahuway"
+        },
+        {
+            "english": "She is reading.",
+            "chunks": "Nagabasa | sia.",
+            "distractors": "nagalantaw | nagapahuway"
+        },
+        {
+            "english": "Let's go to the beach.",
+            "chunks": "Magkadto | kita | sa | baybayon.",
+            "distractors": "bukid | dagat"
+        },
+        {
+            "english": "Rest first.",
+            "chunks": "Pahuway | anay.",
+            "distractors": "lakat | naog"
+        }
+    ],
+    "drills": [
+        {
+            "pattern": "Naglakat ___.",
+            "correct": "ako",
+            "distractors": "sila | sia",
+            "meaning": "I walked.",
+            "category": "Verbs"
+        },
+        {
+            "pattern": "Magkadto kita sa ___.",
+            "correct": "baybayon",
+            "distractors": "karon | diri",
+            "meaning": "Let's go to the beach.",
+            "category": "Nouns"
+        }
+    ]
+}

@@ -1,0 +1,195 @@
+{
+    "vocabulary": [
+        {
+            "word": "Bukid",
+            "syllables": [
+                "Bu",
+                "kid"
+            ],
+            "stress_index": 1,
+            "meaning": "Mountain",
+            "category": "Nouns"
+        },
+        {
+            "word": "Dagat",
+            "syllables": [
+                "Da",
+                "gat"
+            ],
+            "stress_index": 1,
+            "meaning": "Sea / Ocean",
+            "category": "Nouns"
+        },
+        {
+            "word": "Baybayon",
+            "syllables": [
+                "Bay",
+                "ba",
+                "yon"
+            ],
+            "stress_index": 2,
+            "meaning": "Beach / Shore",
+            "category": "Nouns"
+        },
+        {
+            "word": "Ulan",
+            "syllables": [
+                "U",
+                "lan"
+            ],
+            "stress_index": 1,
+            "meaning": "Rain",
+            "category": "Nouns"
+        },
+        {
+            "word": "Hangin",
+            "syllables": [
+                "Han",
+                "gin"
+            ],
+            "stress_index": 1,
+            "meaning": "Wind",
+            "category": "Nouns"
+        },
+        {
+            "word": "Suga",
+            "syllables": [
+                "Su",
+                "ga"
+            ],
+            "stress_index": 1,
+            "meaning": "Light / Sun",
+            "category": "Nouns"
+        },
+        {
+            "word": "Bulak",
+            "syllables": [
+                "Bu",
+                "lak"
+            ],
+            "stress_index": 1,
+            "meaning": "Flower",
+            "category": "Nouns"
+        },
+        {
+            "word": "Kahoy",
+            "syllables": [
+                "Ka",
+                "hoy"
+            ],
+            "stress_index": 1,
+            "meaning": "Wood / Tree",
+            "category": "Nouns"
+        },
+        {
+            "word": "Mabugnaw",
+            "syllables": [
+                "Ma",
+                "bug",
+                "naw"
+            ],
+            "stress_index": 2,
+            "meaning": "Cold",
+            "category": "Adjectives"
+        },
+        {
+            "word": "Mainit",
+            "syllables": [
+                "Ma",
+                "i",
+                "nit"
+            ],
+            "stress_index": 2,
+            "meaning": "Hot",
+            "category": "Adjectives"
+        },
+        {
+            "word": "Damo",
+            "syllables": [
+                "Da",
+                "mo"
+            ],
+            "stress_index": 1,
+            "meaning": "Many / A lot",
+            "category": "Adjectives"
+        }
+    ],
+    "grammar": [
+        {
+            "title": "Describing Weather & Nature",
+            "description": "To describe weather or natural conditions in Ilonggo, you use the adjective directly. The 'ma-' prefix on adjectives like 'mainit' and 'mabugnaw' means 'is [quality]'.",
+            "examples": [
+                "Mainit karon. (It is hot today.)",
+                "Mabugnaw ang dagat. (The sea is cold.)",
+                "Damo ang ulan. (There is a lot of rain.)"
+            ]
+        },
+        {
+            "title": "Combining Location Words",
+            "description": "Use 'sa' before a place noun to say where something is or where you're going.",
+            "examples": [
+                "Nagpunta ako sa baybayon. (I went to the beach.)",
+                "Diin ang bukid? (Where is the mountain?)",
+                "Maayo ang hangin sa dagat. (The wind at the sea is good.)"
+            ]
+        }
+    ],
+    "sentences": [
+        {
+            "english": "It is hot today.",
+            "chunks": "Mainit | karon.",
+            "distractors": "mabugnaw | maayo"
+        },
+        {
+            "english": "There is a lot of rain.",
+            "chunks": "Damo | ang | ulan.",
+            "distractors": "hangin | suga"
+        },
+        {
+            "english": "The beach is beautiful.",
+            "chunks": "Maayo | ang | baybayon.",
+            "distractors": "bukid | dagat"
+        },
+        {
+            "english": "The sea is cold.",
+            "chunks": "Mabugnaw | ang | dagat.",
+            "distractors": "mainit | ulan"
+        },
+        {
+            "english": "Where is the mountain?",
+            "chunks": "Diin | ang | bukid?",
+            "distractors": "dagat | baybayon"
+        },
+        {
+            "english": "There is a lot of wind.",
+            "chunks": "Damo | ang | hangin.",
+            "distractors": "ulan | suga"
+        },
+        {
+            "english": "The flower is beautiful.",
+            "chunks": "Maayo | ang | bulak.",
+            "distractors": "kahoy | suga"
+        },
+        {
+            "english": "It is cold here.",
+            "chunks": "Mabugnaw | diri.",
+            "distractors": "mainit | karon"
+        }
+    ],
+    "drills": [
+        {
+            "pattern": "Mainit ___.",
+            "correct": "karon",
+            "distractors": "mabugnaw | baybayon",
+            "meaning": "It is hot today.",
+            "category": "Adjectives"
+        },
+        {
+            "pattern": "Diin ang ___?",
+            "correct": "bukid",
+            "distractors": "ulan | mainit",
+            "meaning": "Where is the mountain?",
+            "category": "Nouns"
+        }
+    ]
+}

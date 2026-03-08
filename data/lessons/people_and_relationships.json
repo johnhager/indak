@@ -1,0 +1,202 @@
+{
+    "vocabulary": [
+        {
+            "word": "Tawo",
+            "syllables": [
+                "Ta",
+                "wo"
+            ],
+            "stress_index": 1,
+            "meaning": "Person / Man",
+            "category": "Nouns"
+        },
+        {
+            "word": "Bata",
+            "syllables": [
+                "Ba",
+                "ta"
+            ],
+            "stress_index": 1,
+            "meaning": "Child",
+            "category": "Nouns"
+        },
+        {
+            "word": "Abyan",
+            "syllables": [
+                "Ab",
+                "yan"
+            ],
+            "stress_index": 1,
+            "meaning": "Friend",
+            "category": "Nouns"
+        },
+        {
+            "word": "Gugma",
+            "syllables": [
+                "Gug",
+                "ma"
+            ],
+            "stress_index": 1,
+            "meaning": "Love",
+            "category": "Nouns"
+        },
+        {
+            "word": "Palangga",
+            "syllables": [
+                "Pa",
+                "lang",
+                "ga"
+            ],
+            "stress_index": 2,
+            "meaning": "Beloved / Dear one",
+            "category": "Nouns"
+        },
+        {
+            "word": "Gwapa",
+            "syllables": [
+                "Gwa",
+                "pa"
+            ],
+            "stress_index": 1,
+            "meaning": "Beautiful (female)",
+            "category": "Adjectives"
+        },
+        {
+            "word": "Gwapo",
+            "syllables": [
+                "Gwa",
+                "po"
+            ],
+            "stress_index": 1,
+            "meaning": "Handsome (male)",
+            "category": "Adjectives"
+        },
+        {
+            "word": "Masadya",
+            "syllables": [
+                "Ma",
+                "sad",
+                "ya"
+            ],
+            "stress_index": 2,
+            "meaning": "Happy / Joyful",
+            "category": "Adjectives"
+        },
+        {
+            "word": "Bulig",
+            "syllables": [
+                "Bu",
+                "lig"
+            ],
+            "stress_index": 1,
+            "meaning": "Help / Assist",
+            "category": "Verbs"
+        },
+        {
+            "word": "Hambal",
+            "syllables": [
+                "Ham",
+                "bal"
+            ],
+            "stress_index": 1,
+            "meaning": "Say / Tell / Speak",
+            "category": "Verbs"
+        },
+        {
+            "word": "Luyag",
+            "syllables": [
+                "Lu",
+                "yag"
+            ],
+            "stress_index": 1,
+            "meaning": "Like / Want",
+            "category": "Verbs"
+        }
+    ],
+    "grammar": [
+        {
+            "title": "Describing People",
+            "description": "Adjectives in Ilonggo precede the subject marker 'ang' + noun, or they can follow the noun as well. For people, adjectives like 'gwapa' and 'gwapo' agree with the gender of the person.",
+            "examples": [
+                "Gwapa ang babaye. (The woman is beautiful.)",
+                "Gwapo ang lalake. (The man is handsome.)",
+                "Masadya sila. (They are happy.)"
+            ]
+        },
+        {
+            "title": "Expressing Want/Like with Luyag",
+            "description": "'Luyag' means to like or want something. It's used before 'sang' + object to say what you want.",
+            "examples": [
+                "Luyag ako sang kape. (I want/like coffee.)",
+                "Luyag sila makaon. (They want to eat.)"
+            ]
+        },
+        {
+            "title": "Saying 'to Help' with Bulig / Hambal",
+            "description": "'Bulig' is help/assist. 'Hambal' is to say or speak. Both are action verbs that follow the nag-/naga-/mag- prefix system.",
+            "examples": [
+                "Nagbulig ako. (I helped.)",
+                "Naghambal sia. (He/she spoke.)",
+                "Magbulig kita. (Let's help. / We will help.)"
+            ]
+        }
+    ],
+    "sentences": [
+        {
+            "english": "The child is happy.",
+            "chunks": "Masadya | ang | bata.",
+            "distractors": "tawo | abyan"
+        },
+        {
+            "english": "I want coffee.",
+            "chunks": "Luyag | ako | sang | kape.",
+            "distractors": "isda | tubig"
+        },
+        {
+            "english": "They are my friends.",
+            "chunks": "Sila | ang | abyan | ko.",
+            "distractors": "kami | kita"
+        },
+        {
+            "english": "I will help.",
+            "chunks": "Magbulig | ako.",
+            "distractors": "nagbulig | nagabulig"
+        },
+        {
+            "english": "She is beautiful.",
+            "chunks": "Gwapa | sia.",
+            "distractors": "gwapo | masadya"
+        },
+        {
+            "english": "They want to eat.",
+            "chunks": "Luyag | sila | magkaon.",
+            "distractors": "indi | wala"
+        },
+        {
+            "english": "He spoke.",
+            "chunks": "Naghambal | sia.",
+            "distractors": "nagbulig | nagkaon"
+        },
+        {
+            "english": "Love is beautiful.",
+            "chunks": "Gwapa | ang | gugma.",
+            "distractors": "masadya | namit"
+        }
+    ],
+    "drills": [
+        {
+            "pattern": "Masadya ang ___.",
+            "correct": "bata",
+            "distractors": "kape | kusina",
+            "meaning": "The child is happy.",
+            "category": "Nouns"
+        },
+        {
+            "pattern": "Luyag ako sang ___.",
+            "correct": "kape",
+            "distractors": "bulig | hambal",
+            "meaning": "I want coffee.",
+            "category": "Verbs"
+        }
+    ]
+}

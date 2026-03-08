@@ -1,0 +1,252 @@
+{
+    "vocabulary": [
+        {
+            "word": "Isa",
+            "syllables": [
+                "I",
+                "sa"
+            ],
+            "stress_index": 1,
+            "meaning": "One",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Duha",
+            "syllables": [
+                "Du",
+                "ha"
+            ],
+            "stress_index": 1,
+            "meaning": "Two",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Tatlo",
+            "syllables": [
+                "Tat",
+                "lo"
+            ],
+            "stress_index": 1,
+            "meaning": "Three",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Apat",
+            "syllables": [
+                "A",
+                "pat"
+            ],
+            "stress_index": 1,
+            "meaning": "Four",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Lima",
+            "syllables": [
+                "Li",
+                "ma"
+            ],
+            "stress_index": 1,
+            "meaning": "Five",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Anum",
+            "syllables": [
+                "A",
+                "num"
+            ],
+            "stress_index": 1,
+            "meaning": "Six",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Pito",
+            "syllables": [
+                "Pi",
+                "to"
+            ],
+            "stress_index": 1,
+            "meaning": "Seven",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Walo",
+            "syllables": [
+                "Wa",
+                "lo"
+            ],
+            "stress_index": 1,
+            "meaning": "Eight",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Siyam",
+            "syllables": [
+                "Si",
+                "yam"
+            ],
+            "stress_index": 1,
+            "meaning": "Nine",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Napulo",
+            "syllables": [
+                "Na",
+                "pu",
+                "lo"
+            ],
+            "stress_index": 2,
+            "meaning": "Ten",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Karon",
+            "syllables": [
+                "Ka",
+                "ron"
+            ],
+            "stress_index": 1,
+            "meaning": "Today / Now",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Bwas",
+            "syllables": [
+                "Bwas"
+            ],
+            "stress_index": 0,
+            "meaning": "Tomorrow",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Kahapon",
+            "syllables": [
+                "Ka",
+                "ha",
+                "pon"
+            ],
+            "stress_index": 2,
+            "meaning": "Yesterday",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Adlaw",
+            "syllables": [
+                "Ad",
+                "law"
+            ],
+            "stress_index": 1,
+            "meaning": "Day / Sun",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Udto",
+            "syllables": [
+                "Ud",
+                "to"
+            ],
+            "stress_index": 1,
+            "meaning": "Noon",
+            "category": "Numbers & Time"
+        },
+        {
+            "word": "Pila",
+            "syllables": [
+                "Pi",
+                "la"
+            ],
+            "stress_index": 1,
+            "meaning": "How much / How many",
+            "category": "Grammar & Particles"
+        }
+    ],
+    "grammar": [
+        {
+            "title": "Counting in Ilonggo",
+            "description": "Ilonggo has two number systems: native Hiligaynon numbers (used for counting things) and Spanish-influenced numbers (used for money, time, and often in daily speech). We'll learn the native system first.",
+            "examples": [
+                "Isa (1), Duha (2), Tatlo (3), Apat (4), Lima (5)",
+                "Anum (6), Pito (7), Walo (8), Siyam (9), Napulo (10)"
+            ]
+        },
+        {
+            "title": "Asking 'How many?' with Pila",
+            "description": "'Pila' means 'how many' or 'how much'. Use it to ask about quantity or price.",
+            "examples": [
+                "Pila? (How much / How many?)",
+                "Pila ang plete? (How much is the fare?)"
+            ]
+        },
+        {
+            "title": "Time Words: Karon, Bwas, Kahapon",
+            "description": "These three words let you place events in time. They work like English 'today/now', 'tomorrow', and 'yesterday'.",
+            "examples": [
+                "Karon = Today / Right now",
+                "Bwas = Tomorrow",
+                "Kahapon = Yesterday",
+                "Nagkaon ako karon. (I ate today.)",
+                "Magsakay ako bwas. (I will ride tomorrow.)"
+            ]
+        }
+    ],
+    "sentences": [
+        {
+            "english": "How many?",
+            "chunks": "Pila?",
+            "distractors": "diin | ano"
+        },
+        {
+            "english": "One, two, three.",
+            "chunks": "Isa | duha | tatlo.",
+            "distractors": "apat | lima"
+        },
+        {
+            "english": "I ate today.",
+            "chunks": "Nagkaon | ako | karon.",
+            "distractors": "bwas | kahapon"
+        },
+        {
+            "english": "I will ride tomorrow.",
+            "chunks": "Magsakay | ako | bwas.",
+            "distractors": "karon | kahapon"
+        },
+        {
+            "english": "Where are you today?",
+            "chunks": "Diin | ka | karon?",
+            "distractors": "ako | mo"
+        },
+        {
+            "english": "Yesterday was good.",
+            "chunks": "Maayo | ang | kahapon.",
+            "distractors": "karon | bwas"
+        },
+        {
+            "english": "How much is the fare?",
+            "chunks": "Pila | ang | plete?",
+            "distractors": "diin | ano"
+        },
+        {
+            "english": "I will eat today.",
+            "chunks": "Magkaon | ako | karon.",
+            "distractors": "nagkaon | bwas"
+        }
+    ],
+    "drills": [
+        {
+            "pattern": "Isa, ___, tatlo.",
+            "correct": "duha",
+            "distractors": "apat | lima",
+            "meaning": "One, two, three.",
+            "category": "Numbers & Time"
+        },
+        {
+            "pattern": "Nagkaon ako ___.",
+            "correct": "karon",
+            "distractors": "bwas | kahapon",
+            "meaning": "I ate today.",
+            "category": "Numbers & Time"
+        }
+    ]
+}

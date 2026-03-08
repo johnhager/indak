@@ -1,0 +1,229 @@
+{
+    "vocabulary": [
+        {
+            "word": "Ako",
+            "syllables": [
+                "A",
+                "ko"
+            ],
+            "stress_index": 1,
+            "meaning": "I / Me",
+            "category": "Pronouns"
+        },
+        {
+            "word": "Ikaw",
+            "syllables": [
+                "I",
+                "kaw"
+            ],
+            "stress_index": 1,
+            "meaning": "You (singular)",
+            "category": "Pronouns"
+        },
+        {
+            "word": "Sia",
+            "syllables": [
+                "Si",
+                "a"
+            ],
+            "stress_index": 1,
+            "meaning": "He / She / It",
+            "category": "Pronouns"
+        },
+        {
+            "word": "Kami",
+            "syllables": [
+                "Ka",
+                "mi"
+            ],
+            "stress_index": 1,
+            "meaning": "We (excludes listener)",
+            "category": "Pronouns"
+        },
+        {
+            "word": "Kita",
+            "syllables": [
+                "Ki",
+                "ta"
+            ],
+            "stress_index": 1,
+            "meaning": "We (includes listener)",
+            "category": "Pronouns"
+        },
+        {
+            "word": "Kamo",
+            "syllables": [
+                "Ka",
+                "mo"
+            ],
+            "stress_index": 1,
+            "meaning": "You (plural)",
+            "category": "Pronouns"
+        },
+        {
+            "word": "Sila",
+            "syllables": [
+                "Si",
+                "la"
+            ],
+            "stress_index": 1,
+            "meaning": "They / Them",
+            "category": "Pronouns"
+        },
+        {
+            "word": "Ini",
+            "syllables": [
+                "I",
+                "ni"
+            ],
+            "stress_index": 1,
+            "meaning": "This (near speaker)",
+            "category": "Pronouns"
+        },
+        {
+            "word": "Ina",
+            "syllables": [
+                "I",
+                "na"
+            ],
+            "stress_index": 1,
+            "meaning": "That (near listener)",
+            "category": "Pronouns"
+        },
+        {
+            "word": "Huo",
+            "syllables": [
+                "Hu",
+                "o"
+            ],
+            "stress_index": 1,
+            "meaning": "Yes",
+            "category": "Grammar & Particles"
+        },
+        {
+            "word": "Indi",
+            "syllables": [
+                "In",
+                "di"
+            ],
+            "stress_index": 1,
+            "meaning": "No / Not (general)",
+            "category": "Grammar & Particles"
+        },
+        {
+            "word": "Wala",
+            "syllables": [
+                "Wa",
+                "la"
+            ],
+            "stress_index": 1,
+            "meaning": "No / Not (past / doesn't exist)",
+            "category": "Grammar & Particles"
+        },
+        {
+            "word": "May",
+            "syllables": [
+                "May"
+            ],
+            "stress_index": 0,
+            "meaning": "There is / To have",
+            "category": "Grammar & Particles"
+        },
+        {
+            "word": "Kag",
+            "syllables": [
+                "Kag"
+            ],
+            "stress_index": 0,
+            "meaning": "And",
+            "category": "Grammar & Particles"
+        }
+    ],
+    "grammar": [
+        {
+            "title": "Ilonggo Pronouns",
+            "description": "Ilonggo has a special distinction in the 'we' pronoun: 'Kami' excludes the person you're talking to, while 'Kita' includes them. English doesn't make this distinction!",
+            "examples": [
+                "Kami magkadto. (We will go — but NOT you.)",
+                "Kita magkadto. (We will go — you too!)",
+                "Kamo = you (plural, like 'y'all')",
+                "Sila = they/them"
+            ]
+        },
+        {
+            "title": "Negation: Indi vs Wala",
+            "description": "Ilonggo has two words for 'no/not'. 'Indi' negates future or general actions. 'Wala' negates past actions or denies the existence of something.",
+            "examples": [
+                "Indi ako makaon. (I will not eat. / I cannot eat.)",
+                "Wala ako nagkaon. (I did not eat.)",
+                "Wala siya. (He/She is not here.)"
+            ]
+        },
+        {
+            "title": "'May' — There is / To have",
+            "description": "'May' expresses existence or possession. It's like saying 'there is' or meaning someone 'has' something.",
+            "examples": [
+                "May tubig. (There is water.)",
+                "May plete ako. (I have fare money.)"
+            ]
+        }
+    ],
+    "sentences": [
+        {
+            "english": "Yes.",
+            "chunks": "Huo.",
+            "distractors": "indi | wala"
+        },
+        {
+            "english": "No / Not.",
+            "chunks": "Indi.",
+            "distractors": "huo | wala"
+        },
+        {
+            "english": "There is water.",
+            "chunks": "May | tubig.",
+            "distractors": "indi | wala"
+        },
+        {
+            "english": "He / she is not here.",
+            "chunks": "Wala | sia.",
+            "distractors": "may | huo"
+        },
+        {
+            "english": "I will not eat.",
+            "chunks": "Indi | ako | magkaon.",
+            "distractors": "wala | huo"
+        },
+        {
+            "english": "They are good.",
+            "chunks": "Maayo | sila.",
+            "distractors": "kami | kita"
+        },
+        {
+            "english": "We will eat together.",
+            "chunks": "Magkaon | kita.",
+            "distractors": "kami | sila"
+        },
+        {
+            "english": "This is water.",
+            "chunks": "Ini | ang | tubig.",
+            "distractors": "ina | wala"
+        }
+    ],
+    "drills": [
+        {
+            "pattern": "___ ako nagkaon.",
+            "correct": "Wala",
+            "distractors": "Indi | May",
+            "meaning": "I did not eat.",
+            "category": "Grammar & Particles"
+        },
+        {
+            "pattern": "___ tubig.",
+            "correct": "May",
+            "distractors": "Wala | Indi",
+            "meaning": "There is water.",
+            "category": "Grammar & Particles"
+        }
+    ]
+}

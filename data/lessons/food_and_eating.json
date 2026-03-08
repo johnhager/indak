@@ -1,0 +1,198 @@
+{
+    "vocabulary": [
+        {
+            "word": "Kape",
+            "syllables": [
+                "Ka",
+                "pe"
+            ],
+            "stress_index": 1,
+            "meaning": "Coffee",
+            "category": "Nouns"
+        },
+        {
+            "word": "Tinapay",
+            "syllables": [
+                "Ti",
+                "na",
+                "pay"
+            ],
+            "stress_index": 2,
+            "meaning": "Bread",
+            "category": "Nouns"
+        },
+        {
+            "word": "Isda",
+            "syllables": [
+                "Is",
+                "da"
+            ],
+            "stress_index": 1,
+            "meaning": "Fish",
+            "category": "Nouns"
+        },
+        {
+            "word": "Karne",
+            "syllables": [
+                "Kar",
+                "ne"
+            ],
+            "stress_index": 1,
+            "meaning": "Meat",
+            "category": "Nouns"
+        },
+        {
+            "word": "Prutas",
+            "syllables": [
+                "Pru",
+                "tas"
+            ],
+            "stress_index": 1,
+            "meaning": "Fruit",
+            "category": "Nouns"
+        },
+        {
+            "word": "Inasál",
+            "syllables": [
+                "I",
+                "na",
+                "sál"
+            ],
+            "stress_index": 2,
+            "meaning": "Grilled meat",
+            "category": "Nouns"
+        },
+        {
+            "word": "Laswá",
+            "syllables": [
+                "Las",
+                "wá"
+            ],
+            "stress_index": 1,
+            "meaning": "Vegetable stew",
+            "category": "Nouns"
+        },
+        {
+            "word": "Palamahaw",
+            "syllables": [
+                "Pa",
+                "la",
+                "ma",
+                "haw"
+            ],
+            "stress_index": 3,
+            "meaning": "Breakfast",
+            "category": "Nouns"
+        },
+        {
+            "word": "Panyapon",
+            "syllables": [
+                "Pan",
+                "ya",
+                "pon"
+            ],
+            "stress_index": 2,
+            "meaning": "Dinner",
+            "category": "Nouns"
+        },
+        {
+            "word": "Namit",
+            "syllables": [
+                "Na",
+                "mit"
+            ],
+            "stress_index": 1,
+            "meaning": "Delicious",
+            "category": "Adjectives"
+        },
+        {
+            "word": "Mainom",
+            "syllables": [
+                "Ma",
+                "i",
+                "nom"
+            ],
+            "stress_index": 2,
+            "meaning": "Drinkable / Will drink (mag+inom)",
+            "category": "Verbs"
+        }
+    ],
+    "grammar": [
+        {
+            "title": "Meal Words",
+            "description": "Ilonggo has specific words for each meal of the day. These are nouns, so they work with 'ang' as the subject marker.",
+            "examples": [
+                "Palamahaw = Breakfast",
+                "Panyaga = Lunch (borrowed from Spanish 'almuerzo' region, varies)",
+                "Panyapon = Dinner",
+                "Nagkaon ako sang palamahaw. (I ate breakfast.)"
+            ]
+        },
+        {
+            "title": "Describing Food with Namit",
+            "description": "'Namit' means delicious. It directly precedes or follows the noun it describes. Adjectives in Ilonggo can come before or after the thing they describe.",
+            "examples": [
+                "Namit ang isda. (The fish is delicious.)",
+                "Namit gid! (Really delicious! — adding 'gid' for emphasis)"
+            ]
+        }
+    ],
+    "sentences": [
+        {
+            "english": "The fish is delicious.",
+            "chunks": "Namit | ang | isda.",
+            "distractors": "karne | prutas"
+        },
+        {
+            "english": "I will eat breakfast.",
+            "chunks": "Magkaon | ako | sang | palamahaw.",
+            "distractors": "panyapon | isda"
+        },
+        {
+            "english": "They ate grilled meat.",
+            "chunks": "Nagkaon | sila | sang | inasál.",
+            "distractors": "tinapay | kape"
+        },
+        {
+            "english": "I will drink coffee.",
+            "chunks": "Maginom | ako | sang | kape.",
+            "distractors": "isda | tinapay"
+        },
+        {
+            "english": "The bread is delicious.",
+            "chunks": "Namit | ang | tinapay.",
+            "distractors": "isda | karne"
+        },
+        {
+            "english": "I ate dinner.",
+            "chunks": "Nagkaon | ako | sang | panyapon.",
+            "distractors": "palamahaw | kape"
+        },
+        {
+            "english": "There is fruit.",
+            "chunks": "May | prutas.",
+            "distractors": "isda | karne"
+        },
+        {
+            "english": "Really delicious!",
+            "chunks": "Namit | gid!",
+            "distractors": "maayo | dako"
+        }
+    ],
+    "drills": [
+        {
+            "pattern": "Namit ang ___.",
+            "correct": "isda",
+            "distractors": "tubig | karon",
+            "meaning": "The fish is delicious.",
+            "category": "Nouns"
+        },
+        {
+            "pattern": "Nagkaon ako sang ___.",
+            "correct": "palamahaw",
+            "distractors": "kape | prutas",
+            "meaning": "I ate breakfast.",
+            "category": "Nouns"
+        }
+    ]
+}

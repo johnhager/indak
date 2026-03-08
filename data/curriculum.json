@@ -3,7 +3,7 @@
         {
             "id": "基礎-1",
             "title": "Unit 1: Foundations",
-            "description": "Greetings, Numbers, and Basic Particles",
+            "description": "Greetings, transport, numbers, and core grammar",
             "lessons": [
                 {
                     "id": "greetings-101",
@@ -22,19 +22,80 @@
                     "settings": {
                         "timer": false
                     }
+                },
+                {
+                    "id": "numbers-and-time",
+                    "title": "Numbers & Time",
+                    "file": "numbers_and_time.json",
+                    "icon": "🔢",
+                    "settings": {
+                        "timer": false
+                    }
+                },
+                {
+                    "id": "pronouns-and-particles",
+                    "title": "Pronouns & Particles",
+                    "file": "pronouns_and_particles.json",
+                    "icon": "🧩",
+                    "settings": {
+                        "timer": false
+                    }
                 }
             ]
         },
         {
             "id": "dagat-1",
             "title": "Unit 2: Daily Life",
-            "description": "Around the house and daily activities",
+            "description": "Home, food, people, and daily activities",
             "lessons": [
                 {
                     "id": "household-essentials",
                     "title": "Household Essentials",
                     "file": "household_essentials.json",
                     "icon": "🏠",
+                    "settings": {
+                        "timer": false
+                    }
+                },
+                {
+                    "id": "food-and-eating",
+                    "title": "Food & Eating",
+                    "file": "food_and_eating.json",
+                    "icon": "🍽️",
+                    "settings": {
+                        "timer": false
+                    }
+                },
+                {
+                    "id": "people-and-relationships",
+                    "title": "People & Relationships",
+                    "file": "people_and_relationships.json",
+                    "icon": "🤝",
+                    "settings": {
+                        "timer": false
+                    }
+                }
+            ]
+        },
+        {
+            "id": "kalibutan-1",
+            "title": "Unit 3: The World",
+            "description": "Nature, movement, and describing the world around you",
+            "lessons": [
+                {
+                    "id": "nature-and-places",
+                    "title": "Nature & Places",
+                    "file": "nature_and_places.json",
+                    "icon": "🌿",
+                    "settings": {
+                        "timer": false
+                    }
+                },
+                {
+                    "id": "action-verbs",
+                    "title": "Action Verbs",
+                    "file": "action_verbs.json",
+                    "icon": "🏃",
                     "settings": {
                         "timer": false
                     }
