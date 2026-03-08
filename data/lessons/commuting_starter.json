@@ -11,14 +11,13 @@
             "category": "Verbs"
         },
         {
-            "word": "Manaog",
+            "word": "Naog",
             "syllables": [
-                "Ma",
-                "na",
+                "Na",
                 "og"
             ],
-            "stress_index": 2,
-            "meaning": "Get off",
+            "stress_index": 1,
+            "meaning": "To get off / To descend (root word; 'Manaog' is its future form)",
             "category": "Verbs"
         },
         {
@@ -106,7 +105,7 @@
             "description": "'Sa' works like 'to', 'at', or 'in' for places. Use it before a destination or location.",
             "examples": [
                 "Sakay sa jeep. (Get on the jeepney.)",
-                "Manaog sa diri. (Get off here.)"
+                "Naganaog ako sa jeep. (I am getting off the jeepney.)"
             ]
         },
         {
@@ -120,7 +119,7 @@
             "title": "Location Words: Diri / Didto",
             "description": "'Diri' means 'here' (close to you). 'Didto' means 'there' (far away).",
             "examples": [
-                "Manaog diri. (Get off here.)",
+                "Naog diri. (Get off here! — bare command)",
                 "Sakay didto. (Get on there.)"
             ]
         },
@@ -135,13 +134,13 @@
             ]
         },
         {
-            "title": "Verb Tenses: Practice with Manaog",
-            "description": "Let's apply the same prefix pattern to another verb you just learned — Manaog (get off).",
+            "title": "Verb Tenses: Practice with Naog",
+            "description": "Let's apply the same prefix pattern to 'Naog' (the root word for getting off). Note: the 'mag-' prefix contracts with 'n' — so mag + naog = Manaog.",
             "examples": [
-                "IMPERATIVE: Manaog! (Get off!)",
-                "PAST (nag-): Nagmanaog ako. (I got off.)",
-                "PRESENT (naga-): Nagamanaog ako. (I am getting off.)",
-                "FUTURE (mag-): Magmanaog ako. (I will get off.)"
+                "IMPERATIVE (bare root): Naog! (Get off!)",
+                "PAST (nag-): Nagnaog ako. (I got off.)",
+                "PRESENT (naga-): Naganaog ako. (I am getting off.)",
+                "FUTURE (mag+naog): Manaog ako. (I will get off.)"
             ]
         }
     ],
@@ -153,7 +152,7 @@
         },
         {
             "english": "Get off here.",
-            "chunks": "Manaog | diri.",
+            "chunks": "Naog | diri.",
             "distractors": "sakay | didto"
         },
         {
@@ -178,8 +177,8 @@
         },
         {
             "english": "I am getting off here.",
-            "chunks": "Manaog | ako | diri.",
-            "distractors": "sakay | didto"
+            "chunks": "Naganaog | ako | diri.",
+            "distractors": "nagsakay | didto"
         },
         {
             "english": "Where is the jeepney?",
@@ -196,7 +195,7 @@
             "category": "Nouns"
         },
         {
-            "pattern": "Manaog ___ .",
+            "pattern": "Naog ___ .",
             "correct": "diri",
             "distractors": "sakay | didto",
             "meaning": "Get off here.",

@@ -70,6 +70,31 @@ Verb forms are only permitted when the tense prefix system has been explicitly t
 
 ---
 
+## Step 4b: Verify Vocabulary Entries Are Root Words
+
+The `vocabulary` array must always list the **root form** of each word, not a pre-inflected form. Conjugated forms in sentences are derived from the root by applying the prefix system taught in `grammar`.
+
+**Common error pattern:**
+- ❌ Wrong: listing `"Manaog"` (which is `mag- + naog`) as the vocabulary word
+- ✅ Right: listing `"Naog"` as the root, with a note that `"Manaog"` is its future form
+
+**How to identify this error:**
+If a verb in the vocabulary list already starts with `mag-`, `nag-`, `naga-`, `ma-` (adjective), or another productive prefix, it is likely an inflected form, not a root.
+
+**Known Ilonggo prefix contractions to watch for:**
+| Pattern | Example | Correct root |
+|---|---|---|
+| mag + n → man | Manaog | Naog |
+| mag + l → mal (sometimes) | - | check case by case |
+| ma- adjective prefix | Maayo | root "ayo" (though Maayo is treated as stable) |
+
+**Rule:** When writing tense conjugation examples in `grammar`, always derive them from the root:
+- ✅ `nag + naog = Nagnaog` (not `nag + manaog = Nagmanaog`)
+- ✅ `naga + naog = Naganaog` (not `naga + manaog = Nagamanaog`)
+- ✅ `mag + naog = Manaog` (the future IS the vocabulary entry here)
+
+---
+
 ## Step 5: Fix Violations
 
 If a sentence uses an untaught word, you have two choices:
