@@ -211,5 +211,37 @@
             "meaning": "Get off here.",
             "category": "Location Words"
         }
+    ],
+    "situations": [
+        {
+            "prompt": "You want to tell the driver you're getting off right here.",
+            "choices": [
+                "Lugar lang!",
+                "Naog diri.",
+                "Pila ang plete?"
+            ],
+            "correct": "Lugar lang!",
+            "context": "'Lugar lang!' is the idiomatic way to say 'This is my stop/Pull over!'"
+        },
+        {
+            "prompt": "You are boarding the jeepney and want to ask the fare.",
+            "choices": [
+                "Pila ang plete?",
+                "Diin ang jeep?",
+                "Sakay sa tricycle."
+            ],
+            "correct": "Pila ang plete?",
+            "context": "Asking for the base fare."
+        },
+        {
+            "prompt": "The driver asks 'Diin ka?' (Where are you going?)",
+            "choices": [
+                "Diri lang.",
+                "Maayo man.",
+                "Salamat gid."
+            ],
+            "correct": "Diri lang.",
+            "context": "Indicating your destination is nearby ('Just here')."
+        }
     ]
 }

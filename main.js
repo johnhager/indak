@@ -5,6 +5,7 @@ import levelManager from './src/level_manager.js';
 import { SwipeSorter } from './src/swipe_sorter.js';
 import { SentenceBuilder } from './src/sentence_builder.js';
 import { MarkerMission } from './src/marker_mission.js';
+import { ContextMaster } from './src/context_master.js';
 import { RootRunner } from './src/root_runner.js';
 import { ParticlePulse } from './src/particle_pulse.js';
 import { Translator } from './src/translator.js';
@@ -178,6 +179,19 @@ startLessonBtn.addEventListener('click', () => {
     startCurriculumSession(selectedLesson);
 });
 
+const STAGES = ['swipe', 'marker', 'context', 'sentence'];
+
+function getNextStage(current, lessonData) {
+    const idx = STAGES.indexOf(current);
+    for (let i = idx + 1; i < STAGES.length; i++) {
+        const stage = STAGES[i];
+        if (stage === 'marker' && (!lessonData.drills || lessonData.drills.length === 0)) continue;
+        if (stage === 'context' && (!lessonData.situations || lessonData.situations.length === 0)) continue;
+        return stage;
+    }
+    return null; // Lesson complete
+}
+
 function startCurriculumSession(lesson) {
     // Check if we have saved progress for this lesson
     const savedStage = localStorage.getItem(`indak_lesson_${lesson.id}_stage`);
@@ -199,66 +213,59 @@ function runSessionGame(type, lesson) {
 
     if (type === 'swipe') {
         activeGame = new SwipeSorter(gameStage, globalVocabulary, lesson.data);
-        // We need to override the endGame to proceed to the next game
-        const originalEndGame = activeGame.endGame.bind(activeGame);
-        activeGame.endGame = () => {
-            originalEndGame();
-
-            const accuracy = activeGame.totalRounds === 0 ? 0 : Math.round((activeGame.score / activeGame.totalRounds) * 100);
-            const summaryEl = document.getElementById('summary-screen');
-            const actionBtn = document.createElement('button');
-            actionBtn.className = 'btn-primary';
-            actionBtn.style.marginTop = '1rem';
-            actionBtn.style.width = '100%';
-
-            if (accuracy >= 90) {
-                actionBtn.textContent = 'NEXT: SENTENCE BUILDING';
-                actionBtn.onclick = () => {
-                    summaryEl.classList.add('hidden');
-                    runSessionGame('sentence', lesson);
-                };
-                // Save sub-lesson state so they can resume
-                localStorage.setItem(`indak_lesson_${lesson.id}_stage`, 'sentence');
-            } else {
-                actionBtn.textContent = 'RETRY REQUIRED (<90%)';
-                actionBtn.style.background = '#ff4d4d';
-                actionBtn.onclick = () => {
-                    summaryEl.classList.add('hidden');
-                    runSessionGame('swipe', lesson);
-                };
-            }
-            summaryEl.querySelector('.glass-card').appendChild(actionBtn);
-        };
+    } else if (type === 'marker') {
+        activeGame = new MarkerMission(gameStage, [], lesson.data);
+    } else if (type === 'context') {
+        activeGame = new ContextMaster(gameStage, [], lesson.data);
     } else if (type === 'sentence') {
         activeGame = new SentenceBuilder(gameStage, globalSentences, lesson.data);
-        const originalEndGame = activeGame.endGame.bind(activeGame);
-        activeGame.endGame = () => {
-            originalEndGame();
+    }
 
-            const accuracy = activeGame.totalRounds === 0 ? 0 : Math.round((activeGame.score / activeGame.totalRounds) * 100);
-            const summaryEl = document.getElementById('summary-screen');
-            const actionBtn = document.createElement('button');
-            actionBtn.className = 'btn-primary';
-            actionBtn.style.marginTop = '1rem';
-            actionBtn.style.width = '100%';
+    if (!activeGame) return;
 
-            if (accuracy >= 90) {
+    // Standardized End Game Handler for all stages
+    const originalEndGame = activeGame.endGame.bind(activeGame);
+    activeGame.endGame = () => {
+        originalEndGame();
+
+        // Use uniform accuracy detection across game types
+        const accuracy = (activeGame.totalRounds > 0)
+            ? Math.round((activeGame.score / activeGame.totalRounds) * 100)
+            : Math.round((activeGame.score / activeGame.totalAttempts) * 100) || 0;
+
+        const summaryEl = document.getElementById('summary-screen');
+        const actionBtn = document.createElement('button');
+        actionBtn.className = 'btn-primary';
+        actionBtn.style.marginTop = '1rem';
+        actionBtn.style.width = '100%';
+
+        if (accuracy >= 80) { // 80% pass threshold for all
+            const nextStage = getNextStage(type, lesson.data);
+
+            if (nextStage) {
+                actionBtn.textContent = `NEXT: ${nextStage.toUpperCase().replace('_', ' ')}`;
+                actionBtn.onclick = () => {
+                    summaryEl.classList.add('hidden');
+                    runSessionGame(nextStage, lesson);
+                };
+                localStorage.setItem(`indak_lesson_${lesson.id}_stage`, nextStage);
+            } else {
                 actionBtn.textContent = 'COMPLETE LESSON';
                 actionBtn.onclick = () => {
                     summaryEl.classList.add('hidden');
                     completeLesson(lesson);
                 };
-            } else {
-                actionBtn.textContent = 'RETRY REQUIRED (<90%)';
-                actionBtn.style.background = '#ff4d4d';
-                actionBtn.onclick = () => {
-                    summaryEl.classList.add('hidden');
-                    runSessionGame('sentence', lesson);
-                };
             }
-            summaryEl.querySelector('.glass-card').appendChild(actionBtn);
-        };
-    }
+        } else {
+            actionBtn.textContent = `RETRY REQUIRED (<80%)`;
+            actionBtn.style.background = '#ff4d4d';
+            actionBtn.onclick = () => {
+                summaryEl.classList.add('hidden');
+                runSessionGame(type, lesson);
+            };
+        }
+        summaryEl.querySelector('.glass-card').appendChild(actionBtn);
+    };
 }
 
 function completeLesson(lesson) {

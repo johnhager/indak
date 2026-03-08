@@ -228,5 +228,37 @@
             "meaning": "How are you?",
             "category": "Pronouns"
         }
+    ],
+    "situations": [
+        {
+            "prompt": "Someone says: 'Maayong aga!'",
+            "choices": [
+                "Maayo man.",
+                "Salamat.",
+                "Halong ka."
+            ],
+            "correct": "Maayo man.",
+            "context": "Returning a morning greeting."
+        },
+        {
+            "prompt": "You want to ask someone's name naturally.",
+            "choices": [
+                "Ano ang ngalan mo?",
+                "Diin ka?",
+                "Kumusta ka?"
+            ],
+            "correct": "Ano ang ngalan mo?",
+            "context": "Meeting someone for the first time."
+        },
+        {
+            "prompt": "Someone says: 'Salamat gid.'",
+            "choices": [
+                "Walay sapayan.",
+                "Maayo man.",
+                "Halong."
+            ],
+            "correct": "Walay sapayan.",
+            "context": "A common response to 'Thank you' (Though 'Walay sapayan' is new, it's a great 'challenge' word)."
+        }
     ]
 }

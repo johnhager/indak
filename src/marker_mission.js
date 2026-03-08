@@ -199,7 +199,8 @@ export class MarkerMission {
         this.currentDrill = randomDrill;
 
         // Render Sentence with ___ as a target
-        const parts = randomDrill.sentence.split('___');
+        const sentencePattern = randomDrill.sentence || randomDrill.pattern;
+        const parts = sentencePattern.split('___');
         this.sentenceEl.innerHTML = `
             <span>${parts[0]}</span>
             <span class="gap-target" style="display: inline-block; width: 80px; border-bottom: 3px solid rgba(255,255,255,0.3); margin: 0 10px; transition: all 0.3s;">&nbsp;</span>
@@ -207,10 +208,14 @@ export class MarkerMission {
         `;
 
         this.categoryEl.textContent = randomDrill.category;
-        this.translationEl.textContent = `"${randomDrill.english}"`;
+        this.translationEl.textContent = `"${randomDrill.english || randomDrill.meaning}"`;
 
         // Render Choices
-        const choices = [...randomDrill.distractors, randomDrill.correct];
+        let distractors = randomDrill.distractors;
+        if (typeof distractors === 'string') {
+            distractors = distractors.split(' | ').map(s => s.trim());
+        }
+        const choices = [...distractors, randomDrill.correct];
         choices.sort(() => Math.random() - 0.5);
 
         this.choicesEl.innerHTML = '';
