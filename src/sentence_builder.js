@@ -39,6 +39,11 @@ export class SentenceBuilder {
         this.gameDirection = 'en-to-il';
         this.timerEnabled = lessonData?.settings?.timer !== false;
 
+        // Bind events once and store references for cleanup
+        this.boundOnPointerDown = this.onPointerDown.bind(this);
+        this.boundOnPointerMove = this.onPointerMove.bind(this);
+        this.boundOnPointerUp = this.onPointerUp.bind(this);
+
         if (this.lessonData) {
             if (this.lessonData.grammar) {
                 this.showLessonScreen(true);
@@ -53,6 +58,7 @@ export class SentenceBuilder {
 
     stop() {
         if (this.timerEnabled) this.stopTimer();
+        this.removeEvents();
         this.container.innerHTML = '';
         const summary = document.getElementById('summary-screen');
         if (summary) summary.classList.add('hidden');
@@ -237,9 +243,9 @@ export class SentenceBuilder {
     }
 
     bindEvents() {
-        this.container.addEventListener('pointerdown', this.onPointerDown.bind(this));
-        window.addEventListener('pointermove', this.onPointerMove.bind(this));
-        window.addEventListener('pointerup', this.onPointerUp.bind(this));
+        this.container.addEventListener('pointerdown', this.boundOnPointerDown);
+        window.addEventListener('pointermove', this.boundOnPointerMove);
+        window.addEventListener('pointerup', this.boundOnPointerUp);
 
         this.checkBtn.addEventListener('pointerdown', (e) => {
             e.stopPropagation();
@@ -252,6 +258,13 @@ export class SentenceBuilder {
             this.loadSentence();
         });
     }
+
+    removeEvents() {
+        this.container.removeEventListener('pointerdown', this.boundOnPointerDown);
+        window.removeEventListener('pointermove', this.boundOnPointerMove);
+        window.removeEventListener('pointerup', this.boundOnPointerUp);
+    }
+
 
     startRound() {
         // If playing a lesson, cap rounds at sentence count, otherwise default to 10
@@ -626,21 +639,24 @@ export class SentenceBuilder {
 
         if (!timeContainer || !timeDisplay) return;
 
-        let timeLeft = 5.0;
+        this.timeLeft = 5.0;
+
         timeContainer.style.display = 'block';
-        timeDisplay.textContent = timeLeft.toFixed(1);
+        timeDisplay.textContent = this.timeLeft.toFixed(1);
         timeDisplay.style.color = 'white';
 
         this.pulseTimer = setInterval(() => {
-            timeLeft -= 0.1;
+            this.timeLeft -= 0.1;
 
-            if (timeLeft <= 0) {
+            if (this.timeLeft <= 0) {
                 this.stopTimer();
                 timeDisplay.textContent = '0.0';
-                this.handleTimeout();
+                timeDisplay.style.color = '#ff4d4d';
+                this.isEvaluating = true;
+                this.evaluateSyntax(); // Auto-fail on timeout
             } else {
-                timeDisplay.textContent = timeLeft.toFixed(1);
-                if (timeLeft <= 2) {
+                timeDisplay.textContent = this.timeLeft.toFixed(1);
+                if (this.timeLeft <= 2) {
                     timeDisplay.style.color = '#ff4d4d'; // Red warning
                 }
             }

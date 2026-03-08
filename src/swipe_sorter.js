@@ -29,6 +29,11 @@ export class SwipeSorter {
         this.timerInterval = null;
         this.timeLeft = 5.0;
 
+        // Bind events once and store references for cleanup
+        this.boundOnPointerDown = this.onPointerDown.bind(this);
+        this.boundOnPointerMove = this.onPointerMove.bind(this);
+        this.boundOnPointerUp = this.onPointerUp.bind(this);
+
         this.init();
     }
 
@@ -198,11 +203,19 @@ export class SwipeSorter {
     }
 
     bindEvents() {
-        this.container.addEventListener('pointerdown', this.onPointerDown.bind(this));
-        this.container.addEventListener('pointermove', this.onPointerMove.bind(this));
-        window.addEventListener('pointerup', this.onPointerUp.bind(this));
-        window.addEventListener('pointercancel', this.onPointerUp.bind(this));
+        this.container.addEventListener('pointerdown', this.boundOnPointerDown);
+        this.container.addEventListener('pointermove', this.boundOnPointerMove);
+        window.addEventListener('pointerup', this.boundOnPointerUp);
+        window.addEventListener('pointercancel', this.boundOnPointerUp);
     }
+
+    removeEvents() {
+        this.container.removeEventListener('pointerdown', this.boundOnPointerDown);
+        this.container.removeEventListener('pointermove', this.boundOnPointerMove);
+        window.removeEventListener('pointerup', this.boundOnPointerUp);
+        window.removeEventListener('pointercancel', this.boundOnPointerUp);
+    }
+
 
     startRound() {
         this.gameActive = true;
@@ -471,6 +484,7 @@ export class SwipeSorter {
 
     stop() {
         this.clearTimer();
+        this.removeEvents();
         this.gameActive = false;
         this.container.innerHTML = '';
         const summary = document.getElementById('summary-screen');

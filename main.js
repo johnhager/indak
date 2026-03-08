@@ -187,8 +187,14 @@ function startCurriculumSession(lesson) {
 }
 
 function runSessionGame(type, lesson) {
+    if (activeGame && typeof activeGame.stop === 'function') {
+        activeGame.stop();
+    }
+
     hideMenu();
     showExitButton();
+    const summaryEl = document.getElementById('summary-screen');
+    if (summaryEl) summaryEl.classList.add('hidden');
     gameStage.innerHTML = '';
 
     if (type === 'swipe') {
