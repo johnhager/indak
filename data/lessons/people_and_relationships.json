@@ -133,7 +133,7 @@
         },
         {
             "title": "Saying 'to Help' with Bulig / Hambal",
-            "description": "'Bulig' is help/assist. 'Hambal' is to say or speak. Both are action verbs that follow the nag-/naga-/mag- prefix system.",
+            "description": "'Bulig' is help/assist. 'Hambal' is to say or speak. Both are action verbs that follow the nag-/ga-/ma- prefix system.",
             "examples": [
                 "Nagbulig ako. (I helped.)",
                 "Naghambal sia. (He/she spoke.)",
@@ -160,7 +160,7 @@
         {
             "english": "I will help.",
             "chunks": "Mabulig | ako.",
-            "distractors": "nagbulig | nagabulig"
+            "distractors": "nagbulig | gabulig"
         },
         {
             "english": "She is beautiful.",

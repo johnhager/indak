@@ -115,7 +115,7 @@
             "description": "'Sa' works like 'to', 'at', or 'in' for places. Use it before a destination or location.",
             "examples": [
                 "Sakay sa jeep. (Get on the jeepney.)",
-                "Naganaog ako sa jeep. (I am getting off the jeepney.)"
+                "Ganaog ako sa jeep. (I am getting off the jeepney.)"
             ]
         },
         {
@@ -139,7 +139,7 @@
             "examples": [
                 "IMPERATIVE (command / base form): Sakay! (Get on!)",
                 "PAST (nag-): Nagsakay ako. (I got on / I rode.)",
-                "PRESENT (naga-): Nagasakay ako. (I am riding.)",
+                "PRESENT (ga-): Gasakay ako. (I am riding.)",
                 "FUTURE (ma-): Masakay ako. (I will ride.)"
             ]
         },
@@ -149,7 +149,7 @@
             "examples": [
                 "IMPERATIVE (bare root): Naog! (Get off!)",
                 "PAST (nag-): Nagnaog ako. (I got off.)",
-                "PRESENT (naga-): Naganaog ako. (I am getting off.)",
+                "PRESENT (ga-): Ganaog ako. (I am getting off.)",
                 "FUTURE (mag+naog): Manaog ako. (I will get off.)"
             ]
         }
@@ -187,7 +187,7 @@
         },
         {
             "english": "I am getting off here.",
-            "chunks": "Naganaog | ako | diri.",
+            "chunks": "Ganaog | ako | diri.",
             "distractors": "nagsakay | didto"
         },
         {

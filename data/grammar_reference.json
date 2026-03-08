@@ -30,8 +30,8 @@
                         ],
                         [
                             "Present / Ongoing",
-                            "naga-",
-                            "Nagakaon ako.",
+                            "ga-",
+                            "Gakaon ako.",
                             "I am eating."
                         ],
                         [
@@ -54,134 +54,134 @@
                         "Root",
                         "Meaning",
                         "Past (nag-)",
-                        "Present (naga-)",
-                        "Future (mag-)"
+                        "Present (ga-)",
+                        "Future (ma-)"
                     ],
                     "rows": [
                         [
                             "Kaon",
                             "Eat",
                             "Nagkaon",
-                            "Nagakaon",
+                            "Gakaon",
                             "Makaon"
                         ],
                         [
                             "Inom",
                             "Drink",
                             "Naginom",
-                            "Nagainom",
+                            "Gainom",
                             "Mainom"
                         ],
                         [
                             "Tulog",
                             "Sleep",
                             "Nagtulog",
-                            "Nagaturlog",
+                            "Gatulog",
                             "Matulog"
                         ],
                         [
                             "Lakat",
                             "Walk",
                             "Naglakat",
-                            "Nagalakat",
+                            "Galakat",
                             "Malakat"
                         ],
                         [
                             "Dagan",
                             "Run",
                             "Nagdagan",
-                            "Nagadagan",
+                            "Gadagan",
                             "Madagan"
                         ],
                         [
                             "Lingkod",
                             "Sit",
                             "Naglingkod",
-                            "Nagalingkod",
+                            "Galingkod",
                             "Malingkod"
                         ],
                         [
                             "Tindog",
                             "Stand",
                             "Nagtindog",
-                            "Nagatindog",
+                            "Gatindog",
                             "Matindog"
                         ],
                         [
                             "Basa",
                             "Read",
                             "Nagbasa",
-                            "Nagabasa",
+                            "Gabasa",
                             "Mabasa"
                         ],
                         [
                             "Tuon",
                             "Study",
                             "Nagtuon",
-                            "Nagaturon",
+                            "Gatuon",
                             "Matuon"
                         ],
                         [
                             "Pamati",
                             "Listen",
                             "Nagpamati",
-                            "Nagapamati",
+                            "Gapamati",
                             "Mapamati"
                         ],
                         [
                             "Lantaw",
                             "Watch/Look",
                             "Naglantaw",
-                            "Nagalantaw",
+                            "Galantaw",
                             "Malantaw"
                         ],
                         [
                             "Hampang",
                             "Play",
                             "Naghampang",
-                            "Nagahampang",
+                            "Gahampang",
                             "Mahampang"
                         ],
                         [
                             "Pahuway",
                             "Rest",
                             "Nagpahuway",
-                            "Nagapahuway",
+                            "Gapahuway",
                             "Mapahuway"
                         ],
                         [
                             "Sakay",
                             "Ride/Board",
                             "Nagsakay",
-                            "Nagasakay",
+                            "Gasakay",
                             "Masakay"
                         ],
                         [
                             "Naog",
                             "Get off/Descend",
                             "Nagnaog",
-                            "Naganaog",
+                            "Ganaog",
                             "Manaog"
                         ],
                         [
                             "Kadto",
                             "Go (to far place)",
                             "Nagkadto",
-                            "Nagakadto",
+                            "Gakadto",
                             "Makadto"
                         ],
                         [
                             "Hambal",
                             "Say/Speak",
                             "Naghambal",
-                            "Nagahambal",
+                            "Gahambal",
                             "Mahambal"
                         ],
                         [
                             "Bulig",
                             "Help",
                             "Nagbulig",
-                            "Nagabulig",
+                            "Gabulig",
                             "Mabulig"
                         ]
                     ]

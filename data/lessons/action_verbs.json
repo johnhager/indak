@@ -115,11 +115,11 @@
     ],
     "grammar": [
         {
-            "title": "Action Verbs Review: nag- / naga- / mag-",
-            "description": "By now you know the prefix system. Let's apply it to movement and activity verbs. Remember: nag- = past, naga- = present, mag- = future.",
+            "title": "Action Verbs Review: nag- / ga- / ma-",
+            "description": "By now you know the prefix system. Let's apply it to movement and activity verbs. Remember: nag- = past, ga- = present, ma- = future.",
             "examples": [
                 "Naglakat ako. (I walked.)",
-                "Nagalakat ako. (I am walking.)",
+                "Galakat ako. (I am walking.)",
                 "Malakat ako. (I will walk.)"
             ]
         },
@@ -155,8 +155,8 @@
         },
         {
             "english": "They are playing.",
-            "chunks": "Nagahampang | sila.",
-            "distractors": "nagalakat | nagadagan"
+            "chunks": "Gahampang | sila.",
+            "distractors": "galakat | gadagan"
         },
         {
             "english": "I will study.",
@@ -170,8 +170,8 @@
         },
         {
             "english": "She is reading.",
-            "chunks": "Nagabasa | sia.",
-            "distractors": "nagalantaw | nagapahuway"
+            "chunks": "Gabasa | sia.",
+            "distractors": "galantaw | gapahuway"
         },
         {
             "english": "Let's go to the beach.",

@@ -187,10 +187,10 @@
         },
         {
             "title": "Verb Tenses Applied to Lesson Verbs",
-            "description": "Practice the nag-/naga-/mag- prefix system you learned with these new verbs: Kaon (eat), Inom (drink), Tulog (sleep).",
+            "description": "Practice the nag-/ga-/ma- prefix system you learned with these new verbs: Kaon (eat), Inom (drink), Tulog (sleep).",
             "examples": [
                 "PAST: Nagkaon ako. (I ate.)",
-                "PRESENT: Nagakaon ako. (I am eating.)",
+                "PRESENT: Gakaon ako. (I am eating.)",
                 "FUTURE: Makaon ako. (I will eat.)",
                 "PAST: Naginom sila. (They drank.)",
                 "FUTURE: Matulog ako. (I will sleep.)"
@@ -200,13 +200,13 @@
     "sentences": [
         {
             "english": "I am eating rice.",
-            "chunks": "Nagakaon | ako | sang | kan-on.",
+            "chunks": "Gakaon | ako | sang | kan-on.",
             "distractors": "tubig | tulog"
         },
         {
             "english": "They slept.",
             "chunks": "Nagtulog | sila.",
-            "distractors": "nagakaon | naginom"
+            "distractors": "gakaon | naginom"
         },
         {
             "english": "The house is big.",
@@ -231,7 +231,7 @@
         {
             "english": "They will eat.",
             "chunks": "Makaon | sila.",
-            "distractors": "nagkaon | nagakaon"
+            "distractors": "nagkaon | gakaon"
         },
         {
             "english": "The table is big.",
@@ -241,7 +241,7 @@
     ],
     "drills": [
         {
-            "pattern": "Nagakaon ako sang ___.",
+            "pattern": "Gakaon ako sang ___.",
             "correct": "kan-on",
             "distractors": "tubig | balay",
             "meaning": "I am eating rice.",
