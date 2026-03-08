@@ -45,12 +45,18 @@ export class ContextMaster {
                 <!-- Response Choices -->
                 <div class="responses-container" style="display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 400px;">
                 </div>
+
+                <!-- Next Button (Hidden until correct) -->
+                <button class="mm-next-btn hidden" style="margin-top: 2rem; padding: 1rem 3rem; border-radius: 50px; background: var(--accent-gold); color: black; border: none; font-weight: 800; letter-spacing: 1px; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3); transform: translateY(20px); opacity: 0; pointer-events: none;">PADAYON (Continue)</button>
             </div>
         `;
 
         this.promptEl = this.container.querySelector('.prompt-text');
         this.explanationEl = this.container.querySelector('.context-explanation');
         this.choicesEl = this.container.querySelector('.responses-container');
+        this.nextBtn = this.container.querySelector('.mm-next-btn');
+
+        this.nextBtn.addEventListener('click', () => this.loadSituation());
     }
 
     startRound() {
@@ -85,6 +91,16 @@ export class ContextMaster {
 
         this.promptEl.textContent = this.currentSituation.prompt;
         this.explanationEl.textContent = this.currentSituation.context;
+
+        // Hide next button
+        this.nextBtn.classList.add('hidden');
+        this.nextBtn.style.opacity = '0';
+        this.nextBtn.style.transform = 'translateY(20px)';
+        this.nextBtn.style.pointerEvents = 'none';
+
+        // Reset prompt card scale/opacity just in case
+        this.promptEl.parentElement.style.opacity = '1';
+        this.promptEl.parentElement.style.transform = 'translateY(0)';
 
         // Render Choices
         const choices = [...this.currentSituation.choices];
@@ -172,8 +188,13 @@ export class ContextMaster {
                 }
             });
 
-            // Move to next after delay
-            setTimeout(() => this.loadSituation(), 1800);
+            // Show Padayon button
+            this.nextBtn.classList.remove('hidden');
+            setTimeout(() => {
+                this.nextBtn.style.opacity = '1';
+                this.nextBtn.style.transform = 'translateY(0)';
+                this.nextBtn.style.pointerEvents = 'auto';
+            }, 500);
         } else {
             element.classList.add('wrong');
             element.style.background = 'rgba(255, 74, 74, 0.15)';
