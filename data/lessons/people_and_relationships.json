@@ -137,7 +137,7 @@
             "examples": [
                 "Nagbulig ako. (I helped.)",
                 "Naghambal sia. (He/she spoke.)",
-                "Magbulig kita. (Let's help. / We will help.)"
+                "Mabulig kita. (Let's help. / We will help.)"
             ]
         }
     ],
@@ -159,7 +159,7 @@
         },
         {
             "english": "I will help.",
-            "chunks": "Magbulig | ako.",
+            "chunks": "Mabulig | ako.",
             "distractors": "nagbulig | nagabulig"
         },
         {
@@ -169,7 +169,7 @@
         },
         {
             "english": "They want to eat.",
-            "chunks": "Luyag | sila | magkaon.",
+            "chunks": "Luyag | sila | makaon.",
             "distractors": "indi | wala"
         },
         {

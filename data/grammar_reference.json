@@ -36,8 +36,8 @@
                         ],
                         [
                             "Future / Infinitive",
-                            "mag-",
-                            "Magkaon ako.",
+                            "ma-",
+                            "Makaon ako.",
                             "I will eat."
                         ]
                     ]
@@ -63,98 +63,98 @@
                             "Eat",
                             "Nagkaon",
                             "Nagakaon",
-                            "Magkaon"
+                            "Makaon"
                         ],
                         [
                             "Inom",
                             "Drink",
                             "Naginom",
                             "Nagainom",
-                            "Maginom"
+                            "Mainom"
                         ],
                         [
                             "Tulog",
                             "Sleep",
                             "Nagtulog",
                             "Nagaturlog",
-                            "Magtulog"
+                            "Matulog"
                         ],
                         [
                             "Lakat",
                             "Walk",
                             "Naglakat",
                             "Nagalakat",
-                            "Maglakat"
+                            "Malakat"
                         ],
                         [
                             "Dagan",
                             "Run",
                             "Nagdagan",
                             "Nagadagan",
-                            "Magdagan"
+                            "Madagan"
                         ],
                         [
                             "Lingkod",
                             "Sit",
                             "Naglingkod",
                             "Nagalingkod",
-                            "Maglingkod"
+                            "Malingkod"
                         ],
                         [
                             "Tindog",
                             "Stand",
                             "Nagtindog",
                             "Nagatindog",
-                            "Magtindog"
+                            "Matindog"
                         ],
                         [
                             "Basa",
                             "Read",
                             "Nagbasa",
                             "Nagabasa",
-                            "Magbasa"
+                            "Mabasa"
                         ],
                         [
                             "Tuon",
                             "Study",
                             "Nagtuon",
                             "Nagaturon",
-                            "Magtuon"
+                            "Matuon"
                         ],
                         [
                             "Pamati",
                             "Listen",
                             "Nagpamati",
                             "Nagapamati",
-                            "Magpamati"
+                            "Mapamati"
                         ],
                         [
                             "Lantaw",
                             "Watch/Look",
                             "Naglantaw",
                             "Nagalantaw",
-                            "Maglantaw"
+                            "Malantaw"
                         ],
                         [
                             "Hampang",
                             "Play",
                             "Naghampang",
                             "Nagahampang",
-                            "Maghampang"
+                            "Mahampang"
                         ],
                         [
                             "Pahuway",
                             "Rest",
                             "Nagpahuway",
                             "Nagapahuway",
-                            "Magpahuway"
+                            "Mapahuway"
                         ],
                         [
                             "Sakay",
                             "Ride/Board",
                             "Nagsakay",
                             "Nagasakay",
-                            "Magsakay"
+                            "Masakay"
                         ],
                         [
                             "Naog",
@@ -168,21 +168,21 @@
                             "Go (to far place)",
                             "Nagkadto",
                             "Nagakadto",
-                            "Magkadto"
+                            "Makadto"
                         ],
                         [
                             "Hambal",
                             "Say/Speak",
                             "Naghambal",
                             "Nagahambal",
-                            "Maghambal"
+                            "Mahambal"
                         ],
                         [
                             "Bulig",
                             "Help",
                             "Nagbulig",
                             "Nagabulig",
-                            "Magbulig"
+                            "Mabulig"
                         ]
                     ]
                 }
@@ -312,7 +312,7 @@
                 {
                     "title": "Kami vs Kita — The Key Distinction",
                     "type": "note",
-                    "content": "This is one of the most important distinctions in Ilonggo:\n\n• Kami magkadto. → 'We are going.' (but NOT you — you're being left behind)\n• Kita magkadto. → 'We are going.' (all of us, including you)\n\nGetting this wrong can accidentally sound rude!"
+                    "content": "This is one of the most important distinctions in Ilonggo:\n\n• Kami makadto. → 'We are going.' (but NOT you — you're being left behind)\n• Kita makadto. → 'We are going.' (all of us, including you)\n\nGetting this wrong can accidentally sound rude!"
                 }
             ]
         },
@@ -335,7 +335,7 @@
                         [
                             "Indi",
                             "Future actions, general inability, or refusal",
-                            "Indi ako magkaon.",
+                            "Indi ako makaon.",
                             "I will not eat."
                         ],
                         [

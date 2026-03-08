@@ -120,7 +120,7 @@
             "examples": [
                 "Naglakat ako. (I walked.)",
                 "Nagalakat ako. (I am walking.)",
-                "Maglakat ako. (I will walk.)"
+                "Malakat ako. (I will walk.)"
             ]
         },
         {
@@ -138,7 +138,7 @@
             "description": "'Kadto' is the root for 'to go (to a far place)'. Combined with 'sa', it tells where you're going.",
             "examples": [
                 "Nagkadto ako sa merkado. (I went to the market.)",
-                "Magkadto kita sa baybayon. (Let's go to the beach.)"
+                "Makadto kita sa baybayon. (Let's go to the beach.)"
             ]
         }
     ],
@@ -160,7 +160,7 @@
         },
         {
             "english": "I will study.",
-            "chunks": "Magtuon | ako.",
+            "chunks": "Matuon | ako.",
             "distractors": "nagtuon | nagbasa"
         },
         {
@@ -175,7 +175,7 @@
         },
         {
             "english": "Let's go to the beach.",
-            "chunks": "Magkadto | kita | sa | baybayon.",
+            "chunks": "Makadto | kita | sa | baybayon.",
             "distractors": "bukid | dagat"
         },
         {
@@ -193,7 +193,7 @@
             "category": "Verbs"
         },
         {
-            "pattern": "Magkadto kita sa ___.",
+            "pattern": "Makadto kita sa ___.",
             "correct": "baybayon",
             "distractors": "karon | diri",
             "meaning": "Let's go to the beach.",

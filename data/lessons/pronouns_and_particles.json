@@ -144,8 +144,8 @@
             "title": "Ilonggo Pronouns",
             "description": "Ilonggo has a special distinction in the 'we' pronoun: 'Kami' excludes the person you're talking to, while 'Kita' includes them. English doesn't make this distinction!",
             "examples": [
-                "Kami magkadto. (We will go — but NOT you.)",
-                "Kita magkadto. (We will go — you too!)",
+                "Kami makadto. (We will go — but NOT you.)",
+                "Kita makadto. (We will go — you too!)",
                 "Kamo = you (plural, like 'y'all')",
                 "Sila = they/them"
             ]
@@ -191,7 +191,7 @@
         },
         {
             "english": "I will not eat.",
-            "chunks": "Indi | ako | magkaon.",
+            "chunks": "Indi | ako | makaon.",
             "distractors": "wala | huo"
         },
         {
@@ -201,7 +201,7 @@
         },
         {
             "english": "We will eat together.",
-            "chunks": "Magkaon | kita.",
+            "chunks": "Makaon | kita.",
             "distractors": "kami | sila"
         },
         {

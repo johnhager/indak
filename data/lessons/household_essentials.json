@@ -191,9 +191,9 @@
             "examples": [
                 "PAST: Nagkaon ako. (I ate.)",
                 "PRESENT: Nagakaon ako. (I am eating.)",
-                "FUTURE: Magkaon ako. (I will eat.)",
+                "FUTURE: Makaon ako. (I will eat.)",
                 "PAST: Naginom sila. (They drank.)",
-                "FUTURE: Magtulog ako. (I will sleep.)"
+                "FUTURE: Matulog ako. (I will sleep.)"
             ]
         }
     ],
@@ -215,7 +215,7 @@
         },
         {
             "english": "I will drink water.",
-            "chunks": "Maginom | ako | sang | tubig.",
+            "chunks": "Mainom | ako | sang | tubig.",
             "distractors": "kaon | tulog"
         },
         {
@@ -230,7 +230,7 @@
         },
         {
             "english": "They will eat.",
-            "chunks": "Magkaon | sila.",
+            "chunks": "Makaon | sila.",
             "distractors": "nagkaon | nagakaon"
         },
         {
@@ -255,7 +255,7 @@
             "category": "Nouns"
         },
         {
-            "pattern": "Maginom ako sang ___.",
+            "pattern": "Mainom ako sang ___.",
             "correct": "tubig",
             "distractors": "kan-on | sud-an",
             "meaning": "I will drink water.",

@@ -106,6 +106,17 @@
             "category": "Adjectives"
         },
         {
+            "word": "Makaon",
+            "syllables": [
+                "Ma",
+                "ka",
+                "on"
+            ],
+            "stress_index": 2,
+            "meaning": "Will eat (ma+kaon)",
+            "category": "Verbs"
+        },
+        {
             "word": "Mainom",
             "syllables": [
                 "Ma",
@@ -113,7 +124,7 @@
                 "nom"
             ],
             "stress_index": 2,
-            "meaning": "Drinkable / Will drink (mag+inom)",
+            "meaning": "Drinkable / Will drink (ma+inom)",
             "category": "Verbs"
         }
     ],
@@ -145,7 +156,7 @@
         },
         {
             "english": "I will eat breakfast.",
-            "chunks": "Magkaon | ako | sang | palamahaw.",
+            "chunks": "Makaon | ako | sang | palamahaw.",
             "distractors": "panyapon | isda"
         },
         {
@@ -155,7 +166,7 @@
         },
         {
             "english": "I will drink coffee.",
-            "chunks": "Maginom | ako | sang | kape.",
+            "chunks": "Mainom | ako | sang | kape.",
             "distractors": "isda | tinapay"
         },
         {

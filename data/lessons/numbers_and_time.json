@@ -187,7 +187,7 @@
                 "Bwas = Tomorrow",
                 "Kahapon = Yesterday",
                 "Nagkaon ako karon. (I ate today.)",
-                "Magsakay ako bwas. (I will ride tomorrow.)"
+                "Masakay ako bwas. (I will ride tomorrow.)"
             ]
         }
     ],
@@ -209,7 +209,7 @@
         },
         {
             "english": "I will ride tomorrow.",
-            "chunks": "Magsakay | ako | bwas.",
+            "chunks": "Masakay | ako | bwas.",
             "distractors": "karon | kahapon"
         },
         {
@@ -229,7 +229,7 @@
         },
         {
             "english": "I will eat today.",
-            "chunks": "Magkaon | ako | karon.",
+            "chunks": "Makaon | ako | karon.",
             "distractors": "nagkaon | bwas"
         }
     ],
