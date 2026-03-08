@@ -97,6 +97,16 @@
             "stress_index": 1,
             "meaning": "There",
             "category": "Location Words"
+        },
+        {
+            "word": "Pila",
+            "syllables": [
+                "Pi",
+                "la"
+            ],
+            "stress_index": 1,
+            "meaning": "How much / How many",
+            "category": "Interrogatives"
         }
     ],
     "grammar": [
@@ -112,7 +122,7 @@
             "title": "Object Marker: 'Sang'",
             "description": "'Sang' is used before a noun to mark it as the object of the action. Similar to 'the' in English, but specifically for things being acted upon.",
             "examples": [
-                "Ano ang plete sang jeep? (What is the jeepney fare?)"
+                "Pila ang plete sang jeep? (How much is the jeepney fare?)"
             ]
         },
         {
@@ -161,8 +171,8 @@
             "distractors": "ako | mo"
         },
         {
-            "english": "What is the fare?",
-            "chunks": "Ano | ang | plete?",
+            "english": "How much is the fare?",
+            "chunks": "Pila | ang | plete?",
             "distractors": "diin | sang"
         },
         {
@@ -171,8 +181,8 @@
             "distractors": "manaog | jeep"
         },
         {
-            "english": "What is the jeepney fare?",
-            "chunks": "Ano | ang | plete | sang | jeep?",
+            "english": "How much is the jeepney fare?",
+            "chunks": "Pila | ang | plete | sang | jeep?",
             "distractors": "tricycle | diri"
         },
         {
