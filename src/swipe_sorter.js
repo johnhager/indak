@@ -600,7 +600,13 @@ export class SwipeSorter {
 
         document.getElementById('swipe-restart-btn').addEventListener('click', () => {
             summaryEl.classList.add('hidden');
-            this.showStartScreen();
+            if (this.lessonData) {
+                // In lesson mode, skip the free-play setup screen and go straight back to the game
+                this.setupGameUI();
+                this.startRound();
+            } else {
+                this.showStartScreen();
+            }
         });
 
         document.getElementById('swipe-exit-btn').addEventListener('click', () => {
