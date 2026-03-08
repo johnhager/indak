@@ -73,14 +73,13 @@
             "category": "Nouns"
         },
         {
-            "word": "Palamahaw",
+            "word": "Pamahaw",
             "syllables": [
                 "Pa",
-                "la",
                 "ma",
                 "haw"
             ],
-            "stress_index": 3,
+            "stress_index": 2,
             "meaning": "Breakfast",
             "category": "Nouns"
         },
@@ -133,10 +132,10 @@
             "title": "Meal Words",
             "description": "Ilonggo has specific words for each meal of the day. These are nouns, so they work with 'ang' as the subject marker.",
             "examples": [
-                "Palamahaw = Breakfast",
+                "Pamahaw = Breakfast",
                 "Panyaga = Lunch (borrowed from Spanish 'almuerzo' region, varies)",
                 "Panyapon = Dinner",
-                "Nagkaon ako sang palamahaw. (I ate breakfast.)"
+                "Nagkaon ako sang pamahaw. (I ate breakfast.)"
             ]
         },
         {
@@ -156,7 +155,7 @@
         },
         {
             "english": "I will eat breakfast.",
-            "chunks": "Makaon | ako | sang | palamahaw.",
+            "chunks": "Makaon | ako | sang | pamahaw.",
             "distractors": "panyapon | isda"
         },
         {
@@ -177,7 +176,7 @@
         {
             "english": "I ate dinner.",
             "chunks": "Nagkaon | ako | sang | panyapon.",
-            "distractors": "palamahaw | kape"
+            "distractors": "pamahaw | kape"
         },
         {
             "english": "There is fruit.",
@@ -200,7 +199,7 @@
         },
         {
             "pattern": "Nagkaon ako sang ___.",
-            "correct": "palamahaw",
+            "correct": "pamahaw",
             "distractors": "kape | prutas",
             "meaning": "I ate breakfast.",
             "category": "Nouns"
