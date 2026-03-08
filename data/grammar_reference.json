@@ -1,0 +1,649 @@
+{
+    "sections": [
+        {
+            "id": "verb-tenses",
+            "title": "Verb Tenses",
+            "icon": "⏱️",
+            "intro": "Ilonggo expresses tense through prefixes added to the verb root — not through separate helper words like 'was' or 'will'. Master three prefixes and you can place any action in time.",
+            "sheets": [
+                {
+                    "title": "The Core Prefix System",
+                    "type": "table",
+                    "headers": [
+                        "Form",
+                        "Prefix",
+                        "Example (root: Kaon = eat)",
+                        "Meaning"
+                    ],
+                    "rows": [
+                        [
+                            "Imperative (command)",
+                            "— (root alone)",
+                            "Kaon!",
+                            "Eat!"
+                        ],
+                        [
+                            "Past",
+                            "nag-",
+                            "Nagkaon ako.",
+                            "I ate."
+                        ],
+                        [
+                            "Present / Ongoing",
+                            "naga-",
+                            "Nagakaon ako.",
+                            "I am eating."
+                        ],
+                        [
+                            "Future / Infinitive",
+                            "mag-",
+                            "Magkaon ako.",
+                            "I will eat."
+                        ]
+                    ]
+                },
+                {
+                    "title": "Prefix Contraction Rules",
+                    "type": "note",
+                    "content": "When mag- or nag- meets a root starting with certain consonants, the prefix contracts:\n• mag + naog → Manaog (not Maginaog)\n• nag + naog → Nagnaog (not Nagnagnaog)\nAlways apply the prefix to the ROOT, never to an already-prefixed form."
+                },
+                {
+                    "title": "Common Verb Conjugation Table",
+                    "type": "table",
+                    "headers": [
+                        "Root",
+                        "Meaning",
+                        "Past (nag-)",
+                        "Present (naga-)",
+                        "Future (mag-)"
+                    ],
+                    "rows": [
+                        [
+                            "Kaon",
+                            "Eat",
+                            "Nagkaon",
+                            "Nagakaon",
+                            "Magkaon"
+                        ],
+                        [
+                            "Inom",
+                            "Drink",
+                            "Naginom",
+                            "Nagainom",
+                            "Maginom"
+                        ],
+                        [
+                            "Tulog",
+                            "Sleep",
+                            "Nagtulog",
+                            "Nagaturlog",
+                            "Magtulog"
+                        ],
+                        [
+                            "Lakat",
+                            "Walk",
+                            "Naglakat",
+                            "Nagalakat",
+                            "Maglakat"
+                        ],
+                        [
+                            "Dagan",
+                            "Run",
+                            "Nagdagan",
+                            "Nagadagan",
+                            "Magdagan"
+                        ],
+                        [
+                            "Lingkod",
+                            "Sit",
+                            "Naglingkod",
+                            "Nagalingkod",
+                            "Maglingkod"
+                        ],
+                        [
+                            "Tindog",
+                            "Stand",
+                            "Nagtindog",
+                            "Nagatindog",
+                            "Magtindog"
+                        ],
+                        [
+                            "Basa",
+                            "Read",
+                            "Nagbasa",
+                            "Nagabasa",
+                            "Magbasa"
+                        ],
+                        [
+                            "Tuon",
+                            "Study",
+                            "Nagtuon",
+                            "Nagaturon",
+                            "Magtuon"
+                        ],
+                        [
+                            "Pamati",
+                            "Listen",
+                            "Nagpamati",
+                            "Nagapamati",
+                            "Magpamati"
+                        ],
+                        [
+                            "Lantaw",
+                            "Watch/Look",
+                            "Naglantaw",
+                            "Nagalantaw",
+                            "Maglantaw"
+                        ],
+                        [
+                            "Hampang",
+                            "Play",
+                            "Naghampang",
+                            "Nagahampang",
+                            "Maghampang"
+                        ],
+                        [
+                            "Pahuway",
+                            "Rest",
+                            "Nagpahuway",
+                            "Nagapahuway",
+                            "Magpahuway"
+                        ],
+                        [
+                            "Sakay",
+                            "Ride/Board",
+                            "Nagsakay",
+                            "Nagasakay",
+                            "Magsakay"
+                        ],
+                        [
+                            "Naog",
+                            "Get off/Descend",
+                            "Nagnaog",
+                            "Naganaog",
+                            "Manaog"
+                        ],
+                        [
+                            "Kadto",
+                            "Go (to far place)",
+                            "Nagkadto",
+                            "Nagakadto",
+                            "Magkadto"
+                        ],
+                        [
+                            "Hambal",
+                            "Say/Speak",
+                            "Naghambal",
+                            "Nagahambal",
+                            "Maghambal"
+                        ],
+                        [
+                            "Bulig",
+                            "Help",
+                            "Nagbulig",
+                            "Nagabulig",
+                            "Magbulig"
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "markers",
+            "title": "Markers (Ang / Sang / Sa)",
+            "icon": "🏷️",
+            "intro": "Markers are short words placed before nouns to show their role in the sentence. Think of them as a grammar GPS — they tell you whether a noun is the subject, object, or location.",
+            "sheets": [
+                {
+                    "title": "The Three Core Markers",
+                    "type": "table",
+                    "headers": [
+                        "Marker",
+                        "Role",
+                        "Example",
+                        "Meaning"
+                    ],
+                    "rows": [
+                        [
+                            "Ang",
+                            "Subject marker ('the' for the focus)",
+                            "Ang bata nagkaon.",
+                            "The child ate."
+                        ],
+                        [
+                            "Sang",
+                            "Object marker ('the' for the thing acted on)",
+                            "Nagkaon ako sang karne.",
+                            "I ate meat."
+                        ],
+                        [
+                            "Sa",
+                            "Location / Direction marker ('at', 'in', 'to')",
+                            "Nagkadto kami sa merkado.",
+                            "We went to the market."
+                        ]
+                    ]
+                },
+                {
+                    "title": "Quick Rule",
+                    "type": "note",
+                    "content": "• ANG = who or what the sentence is ABOUT (subject)\n• SANG = the thing being acted upon (object)\n• SA = where something is or where it's going (location)\n\nExample: Nagkaon ang bata sang karne sa kusina.\n(The child ate meat in the kitchen.)\n→ ang bata = subject, sang karne = object, sa kusina = location"
+                }
+            ]
+        },
+        {
+            "id": "pronouns",
+            "title": "Pronouns",
+            "icon": "👥",
+            "intro": "Ilonggo has a crucial distinction in its 'we' pronoun that English does not: whether the listener is included or not.",
+            "sheets": [
+                {
+                    "title": "Personal Pronouns",
+                    "type": "table",
+                    "headers": [
+                        "Ilonggo",
+                        "English",
+                        "Notes"
+                    ],
+                    "rows": [
+                        [
+                            "Ako",
+                            "I / Me",
+                            "First person singular"
+                        ],
+                        [
+                            "Ikaw / Ka",
+                            "You",
+                            "'Ka' is the short enclitic form used after a verb"
+                        ],
+                        [
+                            "Sia",
+                            "He / She / It",
+                            "Gender-neutral"
+                        ],
+                        [
+                            "Kami",
+                            "We (exclusive)",
+                            "Does NOT include the person you're speaking to"
+                        ],
+                        [
+                            "Kita",
+                            "We (inclusive)",
+                            "INCLUDES the person you're speaking to"
+                        ],
+                        [
+                            "Kamo",
+                            "You all / Y'all",
+                            "Second person plural"
+                        ],
+                        [
+                            "Sila",
+                            "They / Them",
+                            "Third person plural"
+                        ]
+                    ]
+                },
+                {
+                    "title": "Demonstrative Pronouns",
+                    "type": "table",
+                    "headers": [
+                        "Ilonggo",
+                        "English",
+                        "Distance"
+                    ],
+                    "rows": [
+                        [
+                            "Ini",
+                            "This",
+                            "Near the speaker"
+                        ],
+                        [
+                            "Ina",
+                            "That",
+                            "Near the listener"
+                        ],
+                        [
+                            "Ato / Ina",
+                            "That (over there)",
+                            "Far from both"
+                        ]
+                    ]
+                },
+                {
+                    "title": "Kami vs Kita — The Key Distinction",
+                    "type": "note",
+                    "content": "This is one of the most important distinctions in Ilonggo:\n\n• Kami magkadto. → 'We are going.' (but NOT you — you're being left behind)\n• Kita magkadto. → 'We are going.' (all of us, including you)\n\nGetting this wrong can accidentally sound rude!"
+                }
+            ]
+        },
+        {
+            "id": "negation",
+            "title": "Negation (Indi / Wala)",
+            "icon": "🚫",
+            "intro": "Ilonggo has two words for 'no' or 'not', and which one you choose depends on the TIME of the action being negated.",
+            "sheets": [
+                {
+                    "title": "Indi vs Wala",
+                    "type": "table",
+                    "headers": [
+                        "Word",
+                        "When to use",
+                        "Example",
+                        "Meaning"
+                    ],
+                    "rows": [
+                        [
+                            "Indi",
+                            "Future actions, general inability, or refusal",
+                            "Indi ako magkaon.",
+                            "I will not eat."
+                        ],
+                        [
+                            "Indi",
+                            "Present inability or general 'no'",
+                            "Indi ako makaon.",
+                            "I cannot eat."
+                        ],
+                        [
+                            "Wala",
+                            "Past actions that did NOT happen",
+                            "Wala ako nagkaon.",
+                            "I did not eat."
+                        ],
+                        [
+                            "Wala",
+                            "Something that doesn't exist or isn't there",
+                            "Wala sia.",
+                            "He/she is not here."
+                        ]
+                    ]
+                },
+                {
+                    "title": "Memory Trick",
+                    "type": "note",
+                    "content": "INDI = future / general = 'I won't' or 'I can't'\nWALA = past / existence = 'I didn't' or 'there isn't any'\n\nThink of WALA like 'zero' — it means there was nothing, it didn't exist, or it didn't happen."
+                }
+            ]
+        },
+        {
+            "id": "adjectives",
+            "title": "Adjectives & the Ma- Prefix",
+            "icon": "🎨",
+            "intro": "Ilonggo forms most descriptive adjectives by adding the prefix 'ma-' to a root word. This turns a concept into a quality.",
+            "sheets": [
+                {
+                    "title": "The Ma- Prefix in Action",
+                    "type": "table",
+                    "headers": [
+                        "Root",
+                        "Core Meaning",
+                        "Ma- Adjective",
+                        "Translation"
+                    ],
+                    "rows": [
+                        [
+                            "ayo",
+                            "good / fine",
+                            "Maayo",
+                            "Good / fine"
+                        ],
+                        [
+                            "init",
+                            "heat",
+                            "Mainit",
+                            "Hot"
+                        ],
+                        [
+                            "bugnaw",
+                            "cold",
+                            "Mabugnaw",
+                            "Cold"
+                        ],
+                        [
+                            "sadya",
+                            "joy",
+                            "Masadya",
+                            "Happy / Joyful"
+                        ],
+                        [
+                            "namit",
+                            "taste",
+                            "Namit / Manamit",
+                            "Delicious"
+                        ],
+                        [
+                            "tam-is",
+                            "sweetness",
+                            "Matam-is",
+                            "Sweet"
+                        ],
+                        [
+                            "aslum",
+                            "sourness",
+                            "Maaslum",
+                            "Sour"
+                        ],
+                        [
+                            "dako",
+                            "bigness",
+                            "Dako / Madako",
+                            "Big"
+                        ],
+                        [
+                            "gamay",
+                            "smallness",
+                            "Gamay / Magamay",
+                            "Small"
+                        ]
+                    ]
+                },
+                {
+                    "title": "Adjective Word Order",
+                    "type": "note",
+                    "content": "Adjectives in Ilonggo can come BEFORE or AFTER the noun they describe:\n\n• Before: Maayo ang balay. (The house is good.)\n• After (with 'nga' linker): Balay nga maayo (a good house)\n\nFor beginners, placing adjectives before 'ang + noun' is the safest pattern."
+                }
+            ]
+        },
+        {
+            "id": "questions",
+            "title": "Question Words",
+            "icon": "❓",
+            "intro": "Ilonggo question words almost always come at the START or END of a sentence. Learning these unlocks the ability to ask any question.",
+            "sheets": [
+                {
+                    "title": "All Question Words",
+                    "type": "table",
+                    "headers": [
+                        "Ilonggo",
+                        "English",
+                        "Example",
+                        "Meaning"
+                    ],
+                    "rows": [
+                        [
+                            "Ano",
+                            "What",
+                            "Ano ang ngalan mo?",
+                            "What is your name?"
+                        ],
+                        [
+                            "Diin",
+                            "Where",
+                            "Diin ka nagkadto?",
+                            "Where did you go?"
+                        ],
+                        [
+                            "Sin-o / Hin-o",
+                            "Who",
+                            "Sin-o sia?",
+                            "Who is he/she?"
+                        ],
+                        [
+                            "San-o",
+                            "When",
+                            "San-o ka magbalik?",
+                            "When will you return?"
+                        ],
+                        [
+                            "Nga-a / Ngaa",
+                            "Why",
+                            "Nga-a ka naghibi?",
+                            "Why are you crying?"
+                        ],
+                        [
+                            "Paano",
+                            "How",
+                            "Paano mo ginhimo?",
+                            "How did you do it?"
+                        ],
+                        [
+                            "Pila",
+                            "How much / How many",
+                            "Pila ang plete?",
+                            "How much is the fare?"
+                        ],
+                        [
+                            "Kamusta",
+                            "How are you",
+                            "Kumusta ka?",
+                            "How are you?"
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "particles",
+            "title": "Common Particles",
+            "icon": "✨",
+            "intro": "Particles are small words that add nuance, emphasis, or soften statements. They're the difference between sounding robotic and natural.",
+            "sheets": [
+                {
+                    "title": "Essential Particles",
+                    "type": "table",
+                    "headers": [
+                        "Particle",
+                        "Meaning / Feeling",
+                        "Example",
+                        "Translation"
+                    ],
+                    "rows": [
+                        [
+                            "Gid",
+                            "Emphasis: really / very / indeed",
+                            "Salamat gid!",
+                            "Thank you so much!"
+                        ],
+                        [
+                            "Man",
+                            "Also / too / agreement",
+                            "Maayo man ako.",
+                            "I am good too."
+                        ],
+                        [
+                            "Lang",
+                            "Just / only / softener",
+                            "Isa lang.",
+                            "Just one."
+                        ],
+                        [
+                            "Anay / Gid anay",
+                            "First / for a moment (polite)",
+                            "Hulat anay.",
+                            "Wait a moment, please."
+                        ],
+                        [
+                            "Na",
+                            "Already / now (indicates completion)",
+                            "Kaon na ta!",
+                            "Let's eat already!"
+                        ],
+                        [
+                            "Kuno",
+                            "Supposedly / reportedly",
+                            "Maayo kuno sia.",
+                            "He is supposedly good."
+                        ],
+                        [
+                            "Bala",
+                            "I wonder / expressing curiosity",
+                            "Maayo bala?",
+                            "I wonder if it's good?"
+                        ],
+                        [
+                            "Gali",
+                            "Surprise / turns out",
+                            "Maayo gali!",
+                            "Oh, turns out it's good!"
+                        ],
+                        [
+                            "Siguro",
+                            "Maybe / probably",
+                            "Siguro ulan.",
+                            "Maybe it will rain."
+                        ]
+                    ]
+                },
+                {
+                    "title": "May — There is / To have",
+                    "type": "note",
+                    "content": "'May' is one of the most useful words in Ilonggo. It expresses existence ('there is') and possession ('I have').\n\n• May tubig. → There is water.\n• May plete ako. → I have fare money.\n• May bata sila. → They have a child."
+                }
+            ]
+        },
+        {
+            "id": "location",
+            "title": "Location Words",
+            "icon": "📍",
+            "intro": "These words place things and people in space. Combined with 'sa', they let you describe exactly where things are.",
+            "sheets": [
+                {
+                    "title": "Location / Direction Words",
+                    "type": "table",
+                    "headers": [
+                        "Ilonggo",
+                        "English",
+                        "Example"
+                    ],
+                    "rows": [
+                        [
+                            "Diri",
+                            "Here (near speaker)",
+                            "Naog diri. (Get off here.)"
+                        ],
+                        [
+                            "Didto",
+                            "There (far from speaker)",
+                            "Nagkadto sia didto. (He went there.)"
+                        ],
+                        [
+                            "Doon / Dira",
+                            "Over there (near listener)",
+                            "Adto ka doon. (Go over there.)"
+                        ],
+                        [
+                            "Sulod",
+                            "Inside",
+                            "Sulod ang bata. (The child is inside.)"
+                        ],
+                        [
+                            "Gwa",
+                            "Outside",
+                            "Nagkadto sia sa gwa. (He went outside.)"
+                        ],
+                        [
+                            "Sang-ataas",
+                            "Above / On top",
+                            "Ang libro sang-ataas. (The book is on top.)"
+                        ],
+                        [
+                            "Sang-ubos",
+                            "Below / Under",
+                            "Ang sapatos sang-ubos. (The shoes are below.)"
+                        ]
+                    ]
+                }
+            ]
+        }
+    ]
+}

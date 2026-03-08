@@ -60,6 +60,10 @@
                         </div>
 
                         <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 0.8rem;">
+                            <button id="open-grammar-ref-btn" class="btn-secondary"
+                                style="background: rgba(255, 200, 0, 0.12); border: 1px solid var(--accent-gold); color: var(--accent-gold); padding: 0.8rem; border-radius: 12px; font-weight: 800; font-size: 0.9rem;">📖
+                                GRAMMAR REFERENCE</button>
+
                             <button id="open-translator-btn" class="btn-secondary"
                                 style="background: rgba(0, 255, 170, 0.1); border: 1px solid #00ffaa; color: #00ffaa; padding: 0.8rem; border-radius: 12px; font-weight: 800; font-size: 0.9rem;">🌐
                                 QUICK TRANSLATOR</button>
@@ -102,6 +106,36 @@
                                 SESSION</button>
                             <button id="close-lesson-modal" class="btn-secondary"
                                 style="background: transparent; border: none; font-size: 0.8rem; text-decoration: underline; color: rgba(255,255,255,0.5);">CLOSE</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Grammar Reference Pane -->
+                <div id="grammar-ref-pane" class="hidden"
+                    style="width: 95%; max-width: 520px; max-height: 88vh; display: flex; flex-direction: column;">
+                    <div class="glass-card"
+                        style="padding: 0; overflow: hidden; display: flex; flex-direction: column; height: 100%;">
+                        <!-- Header -->
+                        <div
+                            style="padding: 1.5rem 1.5rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); flex-shrink: 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <h2 style="margin: 0; font-size: 1.5rem; color: var(--accent-gold);">📖 Grammar
+                                        Reference</h2>
+                                    <p style="margin: 4px 0 0; font-size: 0.75rem; opacity: 0.6;">Ilonggo (Hiligaynon)
+                                        cheat sheets</p>
+                                </div>
+                                <button id="close-grammar-ref-btn"
+                                    style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 8px; color: white; font-size: 0.8rem; cursor: pointer;">✕
+                                    CLOSE</button>
+                            </div>
+                            <!-- Section Tab Pills -->
+                            <div id="grammar-ref-tabs"
+                                style="display: flex; gap: 8px; margin-top: 1rem; flex-wrap: wrap;"></div>
+                        </div>
+                        <!-- Content -->
+                        <div id="grammar-ref-content"
+                            style="overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; padding: 1.2rem 1.5rem; flex: 1;">
                         </div>
                     </div>
                 </div>

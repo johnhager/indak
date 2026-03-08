@@ -629,4 +629,129 @@ function createTapCircle(x, y) {
     setTimeout(() => circle.remove(), 400);
 }
 
+// ─── Grammar Reference ───────────────────────────────────────────────────────
+
+const grammarRefPane = document.getElementById('grammar-ref-pane');
+const grammarRefTabs = document.getElementById('grammar-ref-tabs');
+const grammarRefContent = document.getElementById('grammar-ref-content');
+const openGrammarRefBtn = document.getElementById('open-grammar-ref-btn');
+const closeGrammarRefBtn = document.getElementById('close-grammar-ref-btn');
+
+let grammarRefData = null;
+let activeGrammarSection = null;
+
+async function loadGrammarRef() {
+    if (grammarRefData) return grammarRefData;
+    try {
+        const resp = await fetch('./data/grammar_reference.json');
+        grammarRefData = await resp.json();
+    } catch (e) {
+        console.error('Failed to load grammar reference', e);
+        grammarRefData = { sections: [] };
+    }
+    return grammarRefData;
+}
+
+function renderGrammarRefTabs(sections) {
+    grammarRefTabs.innerHTML = sections.map(s => `
+        <button class="grammar-tab-btn" data-id="${s.id}"
+            style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+                   padding: 5px 12px; border-radius: 20px; color: rgba(255,255,255,0.7);
+                   font-size: 0.72rem; font-weight: 700; cursor: pointer; white-space: nowrap;
+                   transition: all 0.2s; font-family: inherit;">
+            ${s.icon} ${s.title}
+        </button>
+    `).join('');
+
+    grammarRefTabs.querySelectorAll('.grammar-tab-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const section = sections.find(s => s.id === btn.dataset.id);
+            if (section) showGrammarSection(section, btn);
+        });
+    });
+}
+
+function showGrammarSection(section, activeBtn) {
+    // Highlight active tab
+    grammarRefTabs.querySelectorAll('.grammar-tab-btn').forEach(b => {
+        b.style.background = 'rgba(255,255,255,0.08)';
+        b.style.borderColor = 'rgba(255,255,255,0.15)';
+        b.style.color = 'rgba(255,255,255,0.7)';
+    });
+    activeBtn.style.background = 'rgba(255, 200, 0, 0.18)';
+    activeBtn.style.borderColor = 'var(--accent-gold)';
+    activeBtn.style.color = 'var(--accent-gold)';
+
+    // Render content
+    const sheetsHtml = section.sheets.map(sheet => {
+        let bodyHtml = '';
+        if (sheet.type === 'table') {
+            const headerCells = sheet.headers.map(h =>
+                `<th style="text-align:left; padding: 8px 10px; font-size:0.7rem; text-transform:uppercase;
+                            letter-spacing:0.5px; color: rgba(255,255,255,0.5); white-space:nowrap;">${h}</th>`
+            ).join('');
+            const rows = sheet.rows.map((row, ri) =>
+                `<tr style="background: ${ri % 2 === 0 ? 'rgba(255,255,255,0.03)' : 'transparent'};">
+                    ${row.map((cell, ci) =>
+                    `<td style="padding: 9px 10px; font-size:${ci === 0 ? '0.85rem' : '0.8rem'};
+                                    font-weight:${ci === 0 ? '700' : '400'};
+                                    color:${ci === 0 ? '#00ffaa' : 'rgba(255,255,255,0.85)'};
+                                    border-bottom: 1px solid rgba(255,255,255,0.05); white-space:${ci < 2 ? 'nowrap' : 'normal'};">${cell}</td>`
+                ).join('')}
+                </tr>`
+            ).join('');
+            bodyHtml = `
+                <div style="overflow-x:auto; border-radius:10px; border:1px solid rgba(255,255,255,0.08);">
+                    <table style="width:100%; border-collapse:collapse;">
+                        <thead><tr style="background:rgba(0,0,0,0.3);">${headerCells}</tr></thead>
+                        <tbody>${rows}</tbody>
+                    </table>
+                </div>`;
+        } else if (sheet.type === 'note') {
+            const lines = sheet.content.split('\n').map(l =>
+                l.trim() ? `<p style="margin:0 0 0.5rem; line-height:1.6; font-size:0.85rem; color:rgba(255,255,255,0.85);">${l}</p>` : '<br>'
+            ).join('');
+            bodyHtml = `
+                <div style="background:rgba(255,200,0,0.07); border-left:3px solid var(--accent-gold);
+                            border-radius:0 10px 10px 0; padding:1rem 1.2rem;">
+                    ${lines}
+                </div>`;
+        }
+
+        return `
+            <div style="margin-bottom:1.5rem;">
+                <h4 style="font-size:0.8rem; font-weight:800; text-transform:uppercase;
+                           letter-spacing:1px; color:rgba(255,255,255,0.6); margin:0 0 0.7rem;">${sheet.title}</h4>
+                ${bodyHtml}
+            </div>`;
+    }).join('');
+
+    grammarRefContent.innerHTML = `
+        <div style="margin-bottom:1.2rem;">
+            <p style="font-size:0.85rem; color:rgba(255,255,255,0.65); line-height:1.6; margin:0;">${section.intro}</p>
+        </div>
+        ${sheetsHtml}`;
+
+    grammarRefContent.scrollTop = 0;
+}
+
+openGrammarRefBtn?.addEventListener('click', async () => {
+    heroSection.classList.add('hidden');
+    grammarRefPane.classList.remove('hidden');
+
+    const data = await loadGrammarRef();
+    if (data.sections.length > 0) {
+        renderGrammarRefTabs(data.sections);
+        // Auto-select first tab
+        const firstBtn = grammarRefTabs.querySelector('.grammar-tab-btn');
+        if (firstBtn) showGrammarSection(data.sections[0], firstBtn);
+    }
+});
+
+closeGrammarRefBtn?.addEventListener('click', () => {
+    grammarRefPane.classList.add('hidden');
+    heroSection.classList.remove('hidden');
+});
+
+
 console.log('Indak Core Initialized.');
