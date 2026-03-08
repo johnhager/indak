@@ -20,6 +20,7 @@ export class MarkerMission {
 
         this.gameActive = false;
         this.currentDrill = null;
+        this.drillPool = [];
 
         this.lessons = [
             {
@@ -180,6 +181,7 @@ export class MarkerMission {
         this.score = 0;
         this.totalAttempts = 0;
         this.gameActive = true;
+        this.drillPool = []; // Reset pool
         this.loadDrill();
     }
 
@@ -194,8 +196,17 @@ export class MarkerMission {
         this.translationEl.style.opacity = '0';
         this.translationEl.style.transform = 'translateY(10px)';
 
-        // Pick a random drill
-        const randomDrill = this.drills[Math.floor(Math.random() * this.drills.length)];
+        // Refill pool if empty
+        if (this.drillPool.length === 0) {
+            this.drillPool = [...this.drills].sort(() => Math.random() - 0.5);
+            // Prevention: if pool size > 1 and new first same as current, reshuffle
+            if (this.drillPool.length > 1 && this.drillPool[0] === this.currentDrill) {
+                this.drillPool.sort(() => Math.random() - 0.5);
+            }
+        }
+
+        // Pick next from pool
+        const randomDrill = this.drillPool.pop();
         this.currentDrill = randomDrill;
 
         // Render Sentence with ___ as a target

@@ -19,6 +19,7 @@ export class ContextMaster {
 
         this.gameActive = false;
         this.currentSituation = null;
+        this.situationPool = [];
 
         this.init();
     }
@@ -57,6 +58,7 @@ export class ContextMaster {
         this.score = 0;
         this.totalAttempts = 0;
         this.gameActive = true;
+        this.situationPool = []; // Reset pool
         this.loadSituation();
     }
 
@@ -71,9 +73,15 @@ export class ContextMaster {
         this.explanationEl.style.opacity = '0';
         this.explanationEl.style.transform = 'translateY(10px)';
 
-        // Pick a situation in order or random
-        const index = (this.currentRound - 1) % this.situations.length;
-        this.currentSituation = this.situations[index];
+        if (this.situationPool.length === 0) {
+            this.situationPool = [...this.situations].sort(() => Math.random() - 0.5);
+            if (this.situationPool.length > 1 && this.situationPool[0] === this.currentSituation) {
+                this.situationPool.sort(() => Math.random() - 0.5);
+            }
+        }
+
+        const nextSit = this.situationPool.pop();
+        this.currentSituation = nextSit;
 
         this.promptEl.textContent = this.currentSituation.prompt;
         this.explanationEl.textContent = this.currentSituation.context;

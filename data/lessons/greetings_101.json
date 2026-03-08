@@ -227,6 +227,27 @@
             "distractors": "ko | si",
             "meaning": "How are you?",
             "category": "Pronouns"
+        },
+        {
+            "pattern": "Salamat ___.",
+            "correct": "gid",
+            "distractors": "lang | man",
+            "meaning": "Thank you very much.",
+            "category": "Particles"
+        },
+        {
+            "pattern": "Maayo ___ ako.",
+            "correct": "man",
+            "distractors": "gid | lang",
+            "meaning": "I am good too.",
+            "category": "Particles"
+        },
+        {
+            "pattern": "Maayo ___ aga.",
+            "correct": "nga",
+            "distractors": "sang | ang",
+            "meaning": "Good morning (Linker Nga).",
+            "category": "Linkers"
         }
     ],
     "situations": [

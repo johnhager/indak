@@ -210,6 +210,34 @@
             "distractors": "sakay | didto",
             "meaning": "Get off here.",
             "category": "Location Words"
+        },
+        {
+            "pattern": "Pila ___ plete?",
+            "correct": "ang",
+            "distractors": "sang | si",
+            "meaning": "How much is the fare?",
+            "category": "Focus Markers"
+        },
+        {
+            "pattern": "Pila ang plete ___ jeep?",
+            "correct": "sang",
+            "distractors": "ang | sa",
+            "meaning": "How much is the jeepney fare?",
+            "category": "Markers"
+        },
+        {
+            "pattern": "___ ako sa jeep.",
+            "correct": "Ganaog",
+            "distractors": "Nagsakay | Pila",
+            "meaning": "I am getting off the jeep.",
+            "category": "Verbs"
+        },
+        {
+            "pattern": "___ ako sang plete.",
+            "correct": "Mabayad",
+            "distractors": "Sakay | Diri",
+            "meaning": "I will pay the fare. (Future)",
+            "category": "Verbs"
         }
     ],
     "situations": [
